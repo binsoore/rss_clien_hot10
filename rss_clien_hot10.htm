@@ -1,5 +1,715 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Fri, 11 Apr 2025 10:00:53 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 모빌리티쇼에서 기억에 남는것들..[8][5]</title><link>https://www.clien.net/service/board/cm_car/18953404</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Fri, 11 Apr 2025 11:00:58 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>생활상식 AI 데이터 분석하기: 엑셀 작업은 이제 그만[4][5]</title><link>https://www.clien.net/service/board/lecture/18952815</link><description>
+ 
+ 
+  &lt;p&gt;Claude 가 자료 분석에 정말 좋습니다.&lt;/p&gt;
+  &lt;p&gt;사용예제 보여드립니다.&lt;/p&gt;
+  &lt;p&gt;먼저, 서울시 공공데이터에서 받은 서울시 문화활동 연간 평균비용 통계 자료를 받아서 사용했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://data.seoul.go.kr/dataList/10304/S/2/datasetView.do?tab=S" target="_blank"&gt;https://data.seoul.go.kr/dataList/10304/S/2/datasetView.do?tab=S&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;엑셀파일을 첨부합니다. 그리고 아래처럼 작성합니다.&lt;/p&gt;
+  &lt;p&gt;[프롬프트] 서울시 문화행사 정보 자료이다. 봄에 진행된 행사와 종류 등 정보 정리와 표 작성&lt;/p&gt;
+  &lt;p&gt;실행하면 분석과정이 나오는데, 자바 스크립트를 자동으로 작성해서 분석 시작합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="서울시1.JPG" class="fr-dib fr-fil full" data-file-sn="15393988" data-gif="false" data-img-height="1173" data-img-width="2012" data-role="attach-image" src="https://edgio.clien.net/F01/15393988/57e9bb3c29d38f.JPG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;간단한 요약이 뜹니다.&lt;/p&gt;
+  &lt;p&gt;그리고, 오른쪽에 세부정보 분석 보고서와 그래프가 자동으로 나옵니다.&lt;/p&gt;
+  &lt;p&gt;그래프가 재미있는게, 변수가 많으면 인터액티브하게 변하기도 하고, 커서를 가져가면 수치도 뜹니다.&lt;/p&gt;
+  &lt;p&gt;한번 써보시면 감탄하게 됩니다. 대충 적어주면 알아서 자세히 분석해주니까요.&lt;/p&gt;
+  &lt;p&gt;직접 분석한다면 반나절에서 하루 종일 해야되겠죠. &lt;/p&gt;
+  &lt;p&gt;AI는 단 몇분만에 끝납니다.&lt;/p&gt;
+  &lt;p&gt;앞으로 엑셀에 들어가서 복사하고 붙이고, 정렬하고, 통계 돌리고, 그래프 그리고 이런 일이 필요없어집니다.&lt;/p&gt;
+  &lt;p&gt;엑셀이 없어도 자동으로 해주니까요. 정말 전문 소프트웨어도 사라지겠습니다.&lt;/p&gt;
+  &lt;p&gt;연구에 사용되는 통계분석도 스크립트 만들어서 다 해줍니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자료 요약&lt;/p&gt;
+  &lt;p&gt;서울시 봄철 문화행사 데이터를 분석한 결과를 보고서와 시각화 자료로 준비했습니다. 2023년 3월부터 5월까지 진행된 문화행사를 정리했으며, 주요 내용은 다음과 같습니다:&lt;/p&gt;
+  &lt;h2&gt;봄철 문화행사 주요 정보&lt;/h2&gt;
+  &lt;h3&gt;전체 현황&lt;/h3&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;strong&gt;총 행사 수&lt;/strong&gt;: 902건&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;개최 시기&lt;/strong&gt;: 2023년 3월~5월&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;월별 추이&lt;/strong&gt;: 3월(263건) → 4월(303건) → 5월(336건)으로 증가 추세&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h3&gt;행사 유형별 특징&lt;/h3&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;strong&gt;교육/체험 행사&lt;/strong&gt;가 263건(29.2%)으로 가장 많이 개최됨&lt;/li&gt;
+   &lt;li&gt;그 다음으로 &lt;strong&gt;전시/미술&lt;/strong&gt;(156건, 17.3%), &lt;strong&gt;클래식 공연&lt;/strong&gt;(130건, 14.4%) 순으로 많음&lt;/li&gt;
+   &lt;li&gt;다양한 유형의 &lt;strong&gt;축제&lt;/strong&gt;는 총 72건으로 전체의 약 8% 차지&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h3&gt;지역별 분포&lt;/h3&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;strong&gt;종로구&lt;/strong&gt;에서 가장 많은 282건(31.3%)의 행사가 개최됨&lt;/li&gt;
+   &lt;li&gt;상위 5개 자치구(종로구, 중구, 은평구, 송파구, 마포구)에서 전체 행사의 61.6% 집중&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h3&gt;유/무료 현황&lt;/h3&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;strong&gt;무료 행사&lt;/strong&gt;가 553건(61.3%)으로 유료 행사보다 많음&lt;/li&gt;
+   &lt;li&gt;유료 행사는 주로 콘서트, 클래식, 뮤지컬/오페라 등 공연 예술 분야에 집중&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h3&gt;주요 봄철 문화행사 사례&lt;/h3&gt;
+  &lt;ol&gt;
+   &lt;li&gt;&lt;strong&gt;[서울시립 북서울미술관] 서도호와 아이들 : 아트랜드&lt;/strong&gt; (2023.5.2~2025.12.31)&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;2023 서울우리소리박물관 특별전 [자장자장 도담도담]&lt;/strong&gt; (2023.5.5~2024.4.28)&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;[서울역사박물관] 말하는 박물관&lt;/strong&gt; (2023.3.15~2023.12.13)&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;[서울우리소리박물관] 자율학습프로그램 [자연관찰 우리소리]&lt;/strong&gt; (2023.4.4~2023.12.31)&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;첫 번째 아티팩트는 자세한 보고서를 담고 있으며, 두 번째 아티팩트는 데이터를 시각적으로 표현한 차트들을 포함하고 있습니다. 봄이 깊어질수록 행사 수가 증가하는 경향을 보였으며, 종로구를 중심으로 한 도심 지역에 문화행사가 집중된 것으로 나타났습니다. 이러한 분석을 통해 서울시 문화행사의 지역 간 균형과 계절별 특성을 파악할 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;세부정보 보고서입니다.&lt;/p&gt;
+  &lt;h1&gt;2023년 서울시 봄철 문화행사 분석 보고서&lt;/h1&gt;
+  &lt;h2&gt;1. 개요&lt;/h2&gt;
+  &lt;p&gt;본 보고서는 2023년 3월부터 5월까지 서울시에서 진행된 봄철 문화행사에 관한 데이터를 분석한 결과입니다. 총 902건의 봄철 행사가 진행되었으며, 행사의 종류, 지역별 분포, 월별 분포, 그리고 유·무료 현황을 중심으로 정리하였습니다.&lt;/p&gt;
+  &lt;h2&gt;2. 행사 유형별 분석&lt;/h2&gt;
+  &lt;h3&gt;2.1 행사 유형별 개최 건수&lt;/h3&gt;
+  &lt;table&gt;
+   &lt;thead&gt;
+    &lt;tr&gt;
+     &lt;th&gt;행사 유형&lt;/th&gt;
+     &lt;th&gt;개최 건수&lt;/th&gt;
+     &lt;th&gt;비율(%)&lt;/th&gt;
+    &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+    &lt;tr&gt;
+     &lt;td&gt;교육/체험&lt;/td&gt;
+     &lt;td&gt;263&lt;/td&gt;
+     &lt;td&gt;29.2%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;전시/미술&lt;/td&gt;
+     &lt;td&gt;156&lt;/td&gt;
+     &lt;td&gt;17.3%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;클래식&lt;/td&gt;
+     &lt;td&gt;130&lt;/td&gt;
+     &lt;td&gt;14.4%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;콘서트&lt;/td&gt;
+     &lt;td&gt;67&lt;/td&gt;
+     &lt;td&gt;7.4%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;독주/독창회&lt;/td&gt;
+     &lt;td&gt;48&lt;/td&gt;
+     &lt;td&gt;5.3%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;축제-문화/예술&lt;/td&gt;
+     &lt;td&gt;47&lt;/td&gt;
+     &lt;td&gt;5.2%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;뮤지컬/오페라&lt;/td&gt;
+     &lt;td&gt;40&lt;/td&gt;
+     &lt;td&gt;4.4%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;기타&lt;/td&gt;
+     &lt;td&gt;31&lt;/td&gt;
+     &lt;td&gt;3.4%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;연극&lt;/td&gt;
+     &lt;td&gt;30&lt;/td&gt;
+     &lt;td&gt;3.3%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;국악&lt;/td&gt;
+     &lt;td&gt;25&lt;/td&gt;
+     &lt;td&gt;2.8%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;무용&lt;/td&gt;
+     &lt;td&gt;21&lt;/td&gt;
+     &lt;td&gt;2.3%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;영화&lt;/td&gt;
+     &lt;td&gt;19&lt;/td&gt;
+     &lt;td&gt;2.1%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;축제-기타&lt;/td&gt;
+     &lt;td&gt;13&lt;/td&gt;
+     &lt;td&gt;1.4%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;축제-자연/경관&lt;/td&gt;
+     &lt;td&gt;6&lt;/td&gt;
+     &lt;td&gt;0.7%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;축제-전통/역사&lt;/td&gt;
+     &lt;td&gt;4&lt;/td&gt;
+     &lt;td&gt;0.4%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;축제-시민화합&lt;/td&gt;
+     &lt;td&gt;2&lt;/td&gt;
+     &lt;td&gt;0.2%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;&lt;strong&gt;합계&lt;/strong&gt;&lt;/td&gt;
+     &lt;td&gt;&lt;strong&gt;902&lt;/strong&gt;&lt;/td&gt;
+     &lt;td&gt;&lt;strong&gt;100%&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+   &lt;/tbody&gt;
+  &lt;/table&gt;
+  &lt;h3&gt;2.2 행사 유형별 특징&lt;/h3&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;strong&gt;교육/체험 행사&lt;/strong&gt;가 전체의 29.2%로 가장 높은 비중을 차지했으며, 주로 박물관 및 미술관에서 진행된 프로그램이 많았습니다.&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;전시/미술&lt;/strong&gt;과 &lt;strong&gt;클래식&lt;/strong&gt; 공연도 각각 17.3%와 14.4%로 높은 비중을 차지했습니다.&lt;/li&gt;
+   &lt;li&gt;다양한 유형의 &lt;strong&gt;축제&lt;/strong&gt;를 모두 합하면 총 72건으로, 전체의 약 8%를 차지했습니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2&gt;3. 지역별 분석&lt;/h2&gt;
+  &lt;h3&gt;3.1 상위 5개 자치구 행사 개최 현황&lt;/h3&gt;
+  &lt;table&gt;
+   &lt;thead&gt;
+    &lt;tr&gt;
+     &lt;th&gt;순위&lt;/th&gt;
+     &lt;th&gt;자치구&lt;/th&gt;
+     &lt;th&gt;개최 건수&lt;/th&gt;
+     &lt;th&gt;비율(%)&lt;/th&gt;
+    &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+    &lt;tr&gt;
+     &lt;td&gt;1&lt;/td&gt;
+     &lt;td&gt;종로구&lt;/td&gt;
+     &lt;td&gt;282&lt;/td&gt;
+     &lt;td&gt;31.3%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;2&lt;/td&gt;
+     &lt;td&gt;중구&lt;/td&gt;
+     &lt;td&gt;100&lt;/td&gt;
+     &lt;td&gt;11.1%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;3&lt;/td&gt;
+     &lt;td&gt;은평구&lt;/td&gt;
+     &lt;td&gt;81&lt;/td&gt;
+     &lt;td&gt;9.0%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;4&lt;/td&gt;
+     &lt;td&gt;송파구&lt;/td&gt;
+     &lt;td&gt;48&lt;/td&gt;
+     &lt;td&gt;5.3%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;5&lt;/td&gt;
+     &lt;td&gt;마포구&lt;/td&gt;
+     &lt;td&gt;44&lt;/td&gt;
+     &lt;td&gt;4.9%&lt;/td&gt;
+    &lt;/tr&gt;
+   &lt;/tbody&gt;
+  &lt;/table&gt;
+  &lt;h3&gt;3.2 지역별 특징&lt;/h3&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;strong&gt;종로구&lt;/strong&gt;에서 전체 행사의 약 1/3이 개최되어 서울의 문화 중심지로서의 역할을 보여주었습니다.&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;종로구&lt;/strong&gt;와 &lt;strong&gt;중구&lt;/strong&gt;를 합한 도심 지역에서 전체 행사의 42.4%가 진행되었습니다.&lt;/li&gt;
+   &lt;li&gt;상위 5개 자치구에서 전체 행사의 61.6%가 집중되어 있어, 문화행사의 지역 편중 현상이 나타났습니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2&gt;4. 월별 분석&lt;/h2&gt;
+  &lt;h3&gt;4.1 월별 행사 개최 현황&lt;/h3&gt;
+  &lt;table&gt;
+   &lt;thead&gt;
+    &lt;tr&gt;
+     &lt;th&gt;월&lt;/th&gt;
+     &lt;th&gt;개최 건수&lt;/th&gt;
+     &lt;th&gt;비율(%)&lt;/th&gt;
+    &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+    &lt;tr&gt;
+     &lt;td&gt;3월&lt;/td&gt;
+     &lt;td&gt;263&lt;/td&gt;
+     &lt;td&gt;29.2%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;4월&lt;/td&gt;
+     &lt;td&gt;303&lt;/td&gt;
+     &lt;td&gt;33.6%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;5월&lt;/td&gt;
+     &lt;td&gt;336&lt;/td&gt;
+     &lt;td&gt;37.2%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;&lt;strong&gt;합계&lt;/strong&gt;&lt;/td&gt;
+     &lt;td&gt;&lt;strong&gt;902&lt;/strong&gt;&lt;/td&gt;
+     &lt;td&gt;&lt;strong&gt;100%&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+   &lt;/tbody&gt;
+  &lt;/table&gt;
+  &lt;h3&gt;4.2 월별 특징&lt;/h3&gt;
+  &lt;ul&gt;
+   &lt;li&gt;봄이 깊어질수록 행사 수가 점진적으로 증가하여, 5월에 가장 많은 행사가 개최되었습니다.&lt;/li&gt;
+   &lt;li&gt;3월부터 5월까지 행사 수가 꾸준히 증가하는 추세를 보여 날씨가 따뜻해짐에 따라 문화행사도 활발해졌음을 알 수 있습니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2&gt;5. 유·무료 현황&lt;/h2&gt;
+  &lt;h3&gt;5.1 유·무료 행사 비율&lt;/h3&gt;
+  &lt;table&gt;
+   &lt;thead&gt;
+    &lt;tr&gt;
+     &lt;th&gt;구분&lt;/th&gt;
+     &lt;th&gt;개최 건수&lt;/th&gt;
+     &lt;th&gt;비율(%)&lt;/th&gt;
+    &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+    &lt;tr&gt;
+     &lt;td&gt;무료&lt;/td&gt;
+     &lt;td&gt;553&lt;/td&gt;
+     &lt;td&gt;61.3%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;유료&lt;/td&gt;
+     &lt;td&gt;349&lt;/td&gt;
+     &lt;td&gt;38.7%&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;&lt;strong&gt;합계&lt;/strong&gt;&lt;/td&gt;
+     &lt;td&gt;&lt;strong&gt;902&lt;/strong&gt;&lt;/td&gt;
+     &lt;td&gt;&lt;strong&gt;100%&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+   &lt;/tbody&gt;
+  &lt;/table&gt;
+  &lt;h3&gt;5.2 특징&lt;/h3&gt;
+  &lt;ul&gt;
+   &lt;li&gt;전체 행사의 61.3%가 무료로 진행되어, 시민들의 문화 접근성을 높이는 데 기여했습니다.&lt;/li&gt;
+   &lt;li&gt;유료 행사는 주로 콘서트, 클래식, 뮤지컬/오페라 등 공연 예술 분야에 집중되었습니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2&gt;6. 주요 봄철 문화행사 사례&lt;/h2&gt;
+  &lt;h3&gt;6.1 장기 전시 행사&lt;/h3&gt;
+  &lt;ol&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;[서울시립 북서울미술관] 서도호와 아이들 : 아트랜드&lt;/strong&gt;&lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;기간: 2023-05-02 ~ 2025-12-31&lt;/li&gt;
+     &lt;li&gt;장소: 서울시립 북서울미술관 1층 하트탱크&lt;/li&gt;
+     &lt;li&gt;자치구: 노원구&lt;/li&gt;
+    &lt;/ul&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;2023 서울우리소리박물관 특별전 [자장자장 도담도담]&lt;/strong&gt;&lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;기간: 2023-05-05 ~ 2024-04-28&lt;/li&gt;
+     &lt;li&gt;장소: 서울우리소리박물관 기획전시실&lt;/li&gt;
+     &lt;li&gt;자치구: 종로구&lt;/li&gt;
+    &lt;/ul&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;h3&gt;6.2 교육·체험 프로그램&lt;/h3&gt;
+  &lt;ol&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;[서울역사박물관] 말하는 박물관&lt;/strong&gt;&lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;기간: 2023-03-15 ~ 2023-12-13&lt;/li&gt;
+     &lt;li&gt;장소: 서울역사박물관&lt;/li&gt;
+     &lt;li&gt;자치구: 종로구&lt;/li&gt;
+     &lt;li&gt;이용대상: 5-7세 유아&lt;/li&gt;
+    &lt;/ul&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;[서울우리소리박물관] 자율학습프로그램 [자연관찰 우리소리]&lt;/strong&gt;&lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;기간: 2023-04-04 ~ 2023-12-31&lt;/li&gt;
+     &lt;li&gt;장소: 서울우리소리박물관 1층 누마루&lt;/li&gt;
+     &lt;li&gt;자치구: 종로구&lt;/li&gt;
+     &lt;li&gt;이용대상: 어린이&lt;/li&gt;
+    &lt;/ul&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;[서울역사박물관] 제39기 중학생 인턴제&lt;/strong&gt;&lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;기간: 2023-05-15 ~ 2023-11-11&lt;/li&gt;
+     &lt;li&gt;장소: 서울역사박물관&lt;/li&gt;
+     &lt;li&gt;자치구: 종로구&lt;/li&gt;
+    &lt;/ul&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;h2&gt;7. 결론 및 시사점&lt;/h2&gt;
+  &lt;ol&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;행사 유형의 다양성&lt;/strong&gt;: 교육/체험, 전시/미술, 클래식 등 다양한 유형의 문화행사가 개최되어 시민들에게 폭넓은 문화 경험 기회를 제공했습니다.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;지역 불균형&lt;/strong&gt;: 종로구와 중구 등 도심 지역에 문화행사가 집중되어 있어, 향후 서울 외곽 지역에서의 문화행사 확대가 필요합니다.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;계절적 특성 반영&lt;/strong&gt;: 봄이 깊어질수록 행사 수가 증가하는 경향을 보여, 날씨와 문화행사 간의 상관관계를 확인할 수 있었습니다.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;높은 무료 행사 비율&lt;/strong&gt;: 61.3%의 행사가 무료로 진행되어 문화 향유의 경제적 장벽을 낮추는 데 기여했습니다.&lt;/p&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;이러한 분석 결과를 바탕으로, 앞으로 서울시 문화행사는 지역 간 균형과 계절별 특성을 고려한 기획이 필요할 것으로 보입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/18952815</guid><pubDate>Thu, 10 Apr 2025 10:48:28 GMT</pubDate></item><item><title>개인적으로 홍정원은 국정원장감이 된다고 봐요.[52][3]</title><link>https://www.clien.net/service/board/park/18953484</link><description>
+ 
+ 
+  &lt;p&gt;그간 국정원에서 쌓은 경력을 봐도 그렇고, &lt;/p&gt;
+  &lt;p&gt;조금 전에 올라온 '김종배의 시선집중'에서 한 인터뷰를 보니 더 그렇고요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;홍장원 전 차장의 충성심은 상급자가 "물어!"하면 무조건 무는 충성심이 아닙니다. &lt;/p&gt;
+  &lt;p&gt;"최근에는 그렇게 생각하는 사람들이 없을 텐데요." 하며 맹목적인 충성심을 비판합니다. &lt;/p&gt;
+  &lt;p&gt;그러면서 윤석열이 최근에 이철우에게 "사람을 볼 때 가장 중요한 건 충성심"이라고 한 발언에 대해서 &lt;/p&gt;
+  &lt;p&gt;"당신께서 '저는 사람에게 충성하지 않습니다.'라고 했던 말을 잊으셨나봐요." 하면서 시원하게 까더군요. &lt;/p&gt;
+  &lt;p&gt;그러면서 현 조태용 국정원장의 국정원이 향후 대선 개입할 가능성을 우려하면서, &lt;/p&gt;
+  &lt;p&gt;"올바른 국정원의 후배들이 국정원의 정치 중립 전통을 세워야 한다."라고 강조하네요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;오, 글 쓰고 생각해보니 물론 이런 발언들조차 차기 국정원장 자리를 노린 계산된 발언일 수도 있겠다 싶습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;설령 그렇다고 하더라도 상급자의 정당하며 국익을 위한 명령이라면,&lt;/p&gt;
+  &lt;p&gt;국정원장으로서 충분히 그에 맞게 잘 역할을 수행하지 않을까 싶네요. &lt;/p&gt;
+  &lt;p&gt;뭐 인사 문제는 대통령 이재명께서 잘 하실테지만요! &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이번 대선에서 선대본부장 윤호중이 &lt;/p&gt;
+  &lt;p&gt;뒤에서 딴짓 말고 일 좀 제대로 하면 좋겠습니다. &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953484</guid><pubDate>Fri, 11 Apr 2025 10:33:04 GMT</pubDate></item><item><title>트럼프는 진짜 똑똑하네요...[28][1]</title><link>https://www.clien.net/service/board/park/18953477</link><description>
+ 
+ 
+  &lt;p&gt;이제는 보편관세 십퍼는 전세계인 모두가 디폴트로 받아들이는 분위깁니다.&lt;/p&gt;
+  &lt;p&gt;미친놈 전략으로 상호관세에 모든 집중을 돌리고&lt;/p&gt;
+  &lt;p&gt;상호관세만 없어지면 모두가 만족할 세상을 만들었어요.&lt;/p&gt;
+  &lt;p&gt;미친놈이긴하지만 능력자임은 부인할수가 없네요...&lt;/p&gt;
+  &lt;p&gt;지금 미 채권시장이 아작난다고하는데&lt;/p&gt;
+  &lt;p&gt;일시적이라고봅니다.&lt;/p&gt;
+  &lt;p&gt;slr규제 완화, 금리인하, 양적완화&lt;/p&gt;
+  &lt;p&gt;문제생기면 할수있는게 차고넘치고&lt;/p&gt;
+  &lt;p&gt;정부재정 긴축츠로 국채공급은 줄어들거고 노동시장 악화될거고...&lt;/p&gt;
+  &lt;p&gt;장기금리 낮추려는 방향으로 모든게 진행되네요...&lt;/p&gt;
+  &lt;p&gt;미국이란 나라에 대한 신뢰가 바닥을 치겠다는 우려는&lt;/p&gt;
+  &lt;p&gt;트럼프가 미친놈일뿐 미국은 신뢰할 수 있다라는 논리로 스쳐지나갈 겁니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953477</guid><pubDate>Fri, 11 Apr 2025 10:22:37 GMT</pubDate></item><item><title>'전세 10년 보장' 현실화되면…'그야말로 대혼란' 경고한 까닭 [돈앤톡][11][0]</title><link>https://www.clien.net/service/board/park/18953473</link><description>
+ 
+ 
+  &lt;p&gt;&lt;strong&gt;'전세 10년 보장', 다음 정부에 정말 현실화할까?&lt;br/&gt;&lt;br/&gt;
+     윤석열 전 대통령 파면에 정책 변화 '관심'&lt;br/&gt;
+     '전세 10년' 도입되면 시장 혼란 불가피&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;조기 대선 정국으로 접어들면서 부동산 시장 일각에선 벌써 정권 교체를 염두에 두고 전략을 짜는 실수요자와 투자자가 늘어나는 분위기입니다. 정권이 바뀌면 시장 정책에 어떤 변화가 있을지를 두고 예측이 분분합니다. 정책 변화에 민감한 부동산 시장에서 투자자와 실수요자들 모두 주목하는 정책이 하나 있습니다. 더불어민주당이 민생 의제로 띄웠던 '전세 10년 보장'을 골자로 한 주택임대차보호법 개정안입니다.&lt;br/&gt;&lt;br/&gt;
+    민주당은 지난달 12일 '20대 민생의제 발표회'를 열었습니다. 주요 정책 의제 가운데 세입자가 2년마다 전세 계약을 갱신해 최장 10년까지 점유할 수 있게 하는 내용을 골자로 한 주택임대차보호법 개정안이 포함돼 논란이 일었습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/015/0005116812?sid=101" ori-url="https://n.news.naver.com/mnews/article/015/0005116812?sid=101" target="_blank"&gt;https://n.news.naver.com/mnews/article/015/0005116812?sid=101&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;--------------------------------------------------------------------------------------------------------&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;안 한다고 했는데 왜 자꾸 기사를 쓰는지 모르겠네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953473</guid><pubDate>Fri, 11 Apr 2025 10:18:59 GMT</pubDate></item><item><title>권성동 '출마영상 속 웃는 이재명, 정치적 피비린내 못 감춰'[10][0]</title><link>https://www.clien.net/service/board/park/18953471</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/031/0000923724?sid=100" target="_blank"&gt;https://n.news.naver.com/article/031/0000923724?sid=100&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://v.daum.net/v/20250411093656193" target="_blank"&gt;https://v.daum.net/v/20250411093656193&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;딴지도 저 정도면...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/park/18952838" target="_blank"&gt;https://www.clien.net/service/board/park/18952838&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;권성동 "이재명 대통령 되면 대한민국 내전 일어나"&lt;/strong&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953471</guid><pubDate>Fri, 11 Apr 2025 10:16:26 GMT</pubDate></item><item><title>방금 있었던 이야기...47[35][6]</title><link>https://www.clien.net/service/board/park/18953469</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="1.jpg" class="fr-dib fr-fil full" data-file-sn="15394966" data-gif="false" data-img-height="1350" data-img-width="1080" data-role="attach-image" src="https://edgio.clien.net/F01/15394966/583b8a059b6f77.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;&lt;span style="font-weight: 600; color: inherit;"&gt;&lt;span style="color: rgb(184, 49, 47);"&gt;이 글에 등장하는 모든 명칭.인물.사건들은 허구이며.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;&lt;span style="color: rgb(184, 49, 47);"&gt;&lt;span style="font-weight: 600; color: inherit;"&gt;실존하는 인물.장소.건물.제품.회사와는 일절 관련이 없습니다.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;&lt;span style="font-weight: 600; color: inherit;"&gt;&lt;span style="color: rgb(184, 49, 47);"&gt;글쓴이의 망상으로 창작되었고 실제 이야기가 아닙니다.&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;.&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;.&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;.&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;매장 오픈하고 청소하는데 아저씨 한분이 들어옵니다.&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;오자마자 충전기를 이상한걸 줘서 바꾸러 오셨다네요?&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;뭐 이상이 있다면 교환해드리는게 맞습니다.&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;사용하는 번호를 여쭈어보고 조회했더니 5년전에 구입한겁니다.&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;(삼성 단말기 박스에 들어있던 번들충전기겠죠..)&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;-5년전에 저희매장에서 단말기 구입하셨던것 맞으신가요?&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;-얼마 안되었는데 무슨 이야기요? (5년 지났다니까 아니라고 우김)&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;-충전기 서비스기간이 1년인데요. 5년이 지났으면..&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;-아니 처음부터 충전도 안되고 하여간 문제가 있었어요.&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;-알겠습니다. 불량이라는 충전기랑 케이블 줘보세요.&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;-내가 그럴줄 알고 챙겨왔죠.&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;.&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;.&lt;/p&gt;
+  &lt;p style='font-size: 14.994px; margin-bottom: 0.333em; font-family: samsungsans, 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", "sans-serif"; background-color: rgb(255, 255, 255);'&gt;.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="20250411_100528.jpg" class="fr-dib fr-fil full" data-file-sn="15394968" data-gif="false" data-img-height="1848" data-img-width="4000" data-role="attach-image" src="https://edgio.clien.net/F01/15394968/583bc397e1fac6.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="20250411_100536.jpg" class="fr-dib fr-fil full" data-file-sn="15394969" data-gif="false" data-img-height="1848" data-img-width="4000" data-role="attach-image" src="https://edgio.clien.net/F01/15394969/583bc3c79d617d.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;하....&lt;/p&gt;
+  &lt;p&gt;할말은 많지만 이만 줄이겠습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953469</guid><pubDate>Fri, 11 Apr 2025 10:15:40 GMT</pubDate></item><item><title>사회생활 하면서 사람 만들어보신적 있으신가요??[15][0]</title><link>https://www.clien.net/service/board/park/18953463</link><description>
+ 
+ 
+  &lt;p&gt;저는 이제 사람은 고쳐 쓰는것 아니다 신봉자이긴 한데 &lt;/p&gt;
+  &lt;p&gt;사회생활 하면서 같이 하긴 싫지만 어쩔수 없이 같은 시공간을 공유해야 하는데&lt;/p&gt;
+  &lt;p&gt;그 상대가 저보다 직급이 낮은경우 ? 면접때 본 모습이랑 너무 틀려졌고 &lt;/p&gt;
+  &lt;p&gt;예의는 밥말아먹은 경우 무엇보다 이제 업무성과도 너무 엉망이고 &lt;/p&gt;
+  &lt;p&gt;그러면서 관두지도 않아요 그냥 난 진급 포기하고 월급만 받으면서 욜로 하면 다니겠다&lt;/p&gt;
+  &lt;p&gt;하는데 환장하겠네요 좋은말로 타이르면 ? 그냥 그때도 아니고 대놓고 전 바꿀 생각없습니다&lt;/p&gt;
+  &lt;p&gt;이러네요  예의도 없고  그냥 갈구면 된다지만 요즘은 그런 세상도 아니고요 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953463</guid><pubDate>Fri, 11 Apr 2025 10:07:55 GMT</pubDate></item><item><title>홍장원 1차장 인터뷰 했네요 ㅎㅎ[27][16]</title><link>https://www.clien.net/service/board/park/18953453</link><description>
+ 
+ 
+  &lt;p&gt;증거 채택 소회를 이야기 하는데 재미있네요 ㅎㅎ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953453</guid><pubDate>Fri, 11 Apr 2025 09:57:43 GMT</pubDate></item><item><title>막연히 이재명을 무서워하는 주변지인에게 효과 좋은 설득 지점은?[18][22]</title><link>https://www.clien.net/service/board/park/18953451</link><description>
+ 
+ 
+  &lt;p&gt;막연히 이재명을 무서워하는 사람들에게 효과적인 방법은 무엇일까? 고민하다&lt;/p&gt;
+  &lt;p&gt; 그가 인권변호사에서 성남시장이 되는 과정, 특히 '성남 시립병원 설립운동'이 좋은 설득의 고리가 될 수 있겠다 싶어 의견을 나눠봅니다.&lt;/p&gt;
+  &lt;p&gt;(아무리 정치에 관심 없는 사람도 의료에는 관심이 있으니까요)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;1. '명알못'도 알고 있는 사실&lt;/p&gt;
+  &lt;p&gt; - 가난했다는 것, 성남시장으로써 일은 잘했다는 건 귀가 있으니 대부분 알고 있습니다.&lt;/p&gt;
+  &lt;p&gt; - 박근혜 탄핵부터 경기도지사, 대통령 후보가 되는 과정은 보도가 워낙 많아 대략 알고 있습니다.&lt;/p&gt;
+  &lt;p&gt; - 엄청난 압수수색, 수사와 기소를 당했지만, '대장동'외에 딱히 큰 한방이 없는 것도 압니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;2. 이재명 혐오공작 논리&lt;/p&gt;
+  &lt;p&gt; - 제대로 교육 못 받은 아이 : 공장 다니던 애 인성이 제대로겠어? 어울리는 애들 빤한데...&lt;/p&gt;
+  &lt;p&gt; - 가난한집에 대한 편견 : '형수욕설'이 붙으면서, 가난한집 집안꼴이 뭐 그렇겠지...&lt;/p&gt;
+  &lt;p&gt; - 전과자 낙인효과 : 인성이 꽝인데, 머리는 좋으니 못된 짓을 하고도 변명은 잘하는 구먼...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;3. '명알못'이 잘 모르는 사실&lt;/p&gt;
+  &lt;p&gt; - 언제 무엇 때문에 전과자가 되었는지는 모름 (이명박은 전과 18범)&lt;/p&gt;
+  &lt;p&gt; - 성남 시립병원 설립을 지금의 국짐세력이 막았고, 10년 동안 성남은 전국평균에 못미치는 의료 사각지대였다는 것.&lt;/p&gt;
+  &lt;p&gt; - '힘없는 빈민+개발 호재' 조합으로 토착화된 성남시의 악질 토건 카르텔 (지금의 국짐 세력들이 대놓고 해먹던 곳)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;4. 그래서, 성남 시립병원 설립운동 시기가 중요한데,&lt;/p&gt;
+  &lt;p&gt; - 전과는 지금의 국짐 세력에 맞서 시립병원을 세우려하다 된 것.&lt;/p&gt;
+  &lt;p&gt; - 시장이 된 이유가 바로 시립병원을 직접 설립하기 위해서 (결국 시장이 되고 착공)&lt;/p&gt;
+  &lt;p&gt; - 이토록 못 잡아먹어 안달 인건, 성남시장때 토건 카르텔 부정 부패를 차단하며 그들의 공공의 적이 됨.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;5. 결론&lt;/p&gt;
+  &lt;p&gt; - 주변 지인의 이재명 혐오를 녹이려면 이재명이 인권변호사에서 성남시장이 되는 이 시기를 집중할 필요가 있다고 봅니다.&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p&gt;가진 재주가 영상제작이라, 핵심만 추려 짧은 영상으로 만들었으니 관심있는 분들은 참고해 보시기 바랍니다.&lt;/p&gt;
+  &lt;p&gt;(제 채널은 수익창출과 무관합니다. 유튜브 홍보 아닙니다.)&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/v_yAXGLxjy8" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953451</guid><pubDate>Fri, 11 Apr 2025 09:57:34 GMT</pubDate></item><item><title>'어머니, 식사는 잡쉈어?'…고속도로 갓길 할머니, 비번 경찰이 구조[2][8]</title><link>https://www.clien.net/service/board/park/18953449</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/011/0004472831?sid=102" target="_blank"&gt;https://n.news.naver.com/mnews/article/011/0004472831?sid=102&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://imgnews.pstatic.net/image/011/2025/04/11/0004472831_001_20250411074210908.png?type=w860"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://imgnews.pstatic.net/image/011/2025/04/11/0004472831_002_20250411074210954.png?type=w860"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아따 다부지게 경찰 다운 풍채 외모 만큼이나 경찰 다운 좋은일 하셨군요.&lt;/p&gt;
+  &lt;p&gt;아부지도 경찰이시고, 이번 외에도 비번날 구조 많이 했다고요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953449</guid><pubDate>Fri, 11 Apr 2025 10:15:26 GMT</pubDate></item><item><title>민주당 경선 룰 하루면 바꿀 수 있겠는데[3][12]</title><link>https://www.clien.net/service/board/park/18953447</link><description>
+ 
+ 
+  &lt;p&gt;그냥 바꾸죠&lt;/p&gt;
+  &lt;p&gt;하루 고민해서 개정안 내고 &lt;/p&gt;
+  &lt;p&gt;온라인에 붙치면 되는거 아닌가요?&lt;/p&gt;
+  &lt;p&gt;100% 당원투표로&lt;/p&gt;
+  &lt;p&gt;민주당원 200만이 넘는데&lt;/p&gt;
+  &lt;p&gt;무슨 국민 참여 경선 입니까?&lt;/p&gt;
+  &lt;p&gt;국민=민주당원이지&lt;/p&gt;
+  &lt;p&gt;그리고 당의 행사에 당원이 당연히 주인이죠&lt;/p&gt;
+  &lt;p&gt;도움만 된다면 우원식의장 선출때 처럼 탈당위협이라도 해서 &lt;/p&gt;
+  &lt;p&gt;바꿨으면 좋겠네요&lt;/p&gt;
+  &lt;h2&gt;&lt;strong&gt;민주당의 대통령 후보는 민주당원의 선택으로 선출하고 민주당원이 책임집니다&lt;/strong&gt;&lt;/h2&gt;
+  &lt;p&gt;&lt;strong&gt;당의 일에 국민을 넣는건 대한민국 투표에 외국인에게 선거권을 주는거 하고 뭐가 다른가요?&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;국민참여 희망하는 경선후보들 애기해 보세요 &lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;님은 님 가족일에 다른 사람 개입 시키나요?&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;당헌당규도 개정 후 시행까지 유예기간이 필요한가요?&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953447</guid><pubDate>Fri, 11 Apr 2025 09:58:53 GMT</pubDate></item><item><title>14만원 항공권으로 후쿠오카 가네요[14][0]</title><link>https://www.clien.net/service/board/park/18953446</link><description>
+ 
+ 
+  &lt;table align="center" cellpadding="0" cellspacing="0" width="100%"&gt;
+   &lt;tbody&gt;
+    &lt;tr&gt;
+     &lt;td colspan="2"&gt;운임 상세 정보&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td style="width: 37.7724%;" width="280"&gt;총 금액&lt;/td&gt;
+     &lt;td style="width: 62.0925%;" width="auto"&gt;&lt;strong&gt;146,500원&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+   &lt;/tbody&gt;
+  &lt;/table&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;11년만에 후쿠오카가서 둣근둣근거리네요&lt;/p&gt;
+  &lt;p&gt;일본이니까 맛있는 맛집도 많겠쥬&amp;gt;?&amp;gt;?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;엔틱한 카페랑&lt;/p&gt;
+  &lt;p&gt;한국보다 저렴한 물가랑&lt;/p&gt;
+  &lt;p&gt;기대됩니다  도키도키!&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953446</guid><pubDate>Fri, 11 Apr 2025 09:47:53 GMT</pubDate></item><item><title>연중 가장 많은 배당금 들어오는 날인데..[12][4]</title><link>https://www.clien.net/service/board/park/18953428</link><description>
+ 
+ 
+  &lt;p&gt;3년쯤  되었는데&lt;/p&gt;
+  &lt;p&gt;아마도 주가는 오늘 박살나겠지만&lt;/p&gt;
+  &lt;p&gt;무심하거나, 버티거나 할수 있는건&lt;/p&gt;
+  &lt;p&gt;배당적립투자라서 그런것 같습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;가장 많다고 해봐야 이번달 100만원&lt;/p&gt;
+  &lt;p&gt;조금 안됩니다. 언제 매달 100이 될려나..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;요즘 우려되는건&lt;/p&gt;
+  &lt;p&gt;&lt;span style="font-size: 14.4267px;"&gt;내계좌 떨어지는건  어차피 팔것도 아니라서&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;span style="font-size: 14.4267px;"&gt;그런갑다  하겠는데&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;schd류 비중이 크고 &lt;/p&gt;
+  &lt;p&gt;schd가 주로 전통산업,금융업 위주라&lt;/p&gt;
+  &lt;p&gt;트럼프 미친짓이 4년간 계속되면 사상첫&lt;/p&gt;
+  &lt;p&gt;배당삭감이 될수도? 라는 걱정이 드네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;코로나, 22년 하락장에서도 배당삭감 없었던&lt;/p&gt;
+  &lt;p&gt;schd가   만약 배당삭감되면  그때는 진짜 미국경기가&lt;/p&gt;
+  &lt;p&gt;중기적으로 않좋다는 신호라  도망가야 됩니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;윤버러지맛을 미리본 입장에서  트럼프를&lt;/p&gt;
+  &lt;p&gt;예상해보면  탄핵이 되거나 탄약밥이 되거나&lt;/p&gt;
+  &lt;p&gt;둘중 하나외엔 답없을듯 싶긴한데&lt;/p&gt;
+  &lt;p&gt;부통령이란 놈도 만만치 않아서요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그냥 지금부터 4년간 10% 이상만 하락하지&lt;/p&gt;
+  &lt;p&gt;않기만 바랍니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953428</guid><pubDate>Fri, 11 Apr 2025 09:29:21 GMT</pubDate></item><item><title>1만4천673건 제주4·3기록물, 유네스코 세계기록유산 등재[1][6]</title><link>https://www.clien.net/service/board/park/18953423</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/087/0001110071?event_id=087_1744328443357" target="_blank"&gt;https://n.news.naver.com/article/087/0001110071?event_id=087_1744328443357&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;유네스코에서 우리나라 아픈 현대사의 기록물들 또는 민주화운동 기록물들도 잘 인정해줘서 좋네요ㅎ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953423</guid><pubDate>Fri, 11 Apr 2025 09:53:59 GMT</pubDate></item><item><title>서울 중앙농협의 흔한 조합장 선거 공약[10][4]</title><link>https://www.clien.net/service/board/park/18953395</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/047/0002469362?sid=102" target="_blank"&gt;https://n.news.naver.com/article/047/0002469362?sid=102&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://v.daum.net/v/20250411065401243" target="_blank"&gt;https://v.daum.net/v/20250411065401243&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;김충기 서울 중앙농협 조합장, 3일 &amp;lt;오마이뉴스&amp;gt;와 한 전화통화에서:&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;기자:&lt;/p&gt;
+  &lt;p&gt;"지난 2023년 선거에서 금배지, 금열쇠. 금두꺼비 등 총 15돈을 조합원들에게 주겠다고 약속하신 적이 있냐?"&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;김충기 조합장:&lt;/p&gt;
+  &lt;p&gt;"네"&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;기자:&lt;/p&gt;
+  &lt;p&gt;"그 약속에 따라 조합원들에게 금 15돈을 줬느냐?"&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;김충기 조합장:&lt;/p&gt;
+  &lt;p&gt;"왜 물어보나? 그것은 취재 대상도 아닌데"&lt;/p&gt;
+  &lt;p&gt;"지금 회의 중이어서 나중에 말씀 드리겠다"&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;기자:&lt;/p&gt;
+  &lt;p&gt;"이것이 '공공단체 위탁선거법'에 위반될 수 있다"&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;김충기 조합장:&lt;br/&gt;
+    "법률적 판단을 받았다"&lt;/p&gt;
+  &lt;p&gt;"나중에 얘기하겠다"&lt;/p&gt;
+  &lt;p&gt;(전화를 끊음)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;p&gt;'공공단체 등 위탁선거에 관한 법률' 제58조(매수 및 이해유도죄)에 따르면, 선거운동을 목적으로 선거인이나 그의 가족 등에게 금전·물품·향응이나 그 밖의 재산상 이익이나 공사(公私)의 직을 제공하거나 제공의 의사를 표하거나 제공을 약속하면 3년 이하의 징역 또는 3000만 원 이하의 벌금에 처한다.&lt;/p&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;저게 허용...이 된다고요?&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953395</guid><pubDate>Fri, 11 Apr 2025 07:49:20 GMT</pubDate></item><item><title>尹 전 대통령,..'재산세+종부세' 안 낸다...[10][3]</title><link>https://www.clien.net/service/board/park/18953391</link><description>
+ 
+ 
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/oUwvXZQegaU" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://cp.news.search.daum.net/p/161402804" ori-url="https://cp.news.search.daum.net/p/161402804" target="_blank"&gt;&lt;strong&gt;尹 전 대통령, 서초 &lt;strong&gt;아크로비스타&lt;/strong&gt; 돌아가도 '&lt;strong&gt;재산세&lt;/strong&gt;+종부세' 안 낸다... 이유 봤더니&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://www.insight.co.kr/" ori-url="http://www.insight.co.kr/" target="_blank"&gt;인사이트&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;20시간전&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;파면된 윤석열 전 대통령이 이르면 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이번 주&lt;/p&gt;
+  &lt;p&gt; 서울 서초구 아크로비스타 아파트로 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;거처를 옮길 예정이다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그런데 &lt;/p&gt;
+  &lt;p&gt;윤 전 대통령이&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 서초구의 조례 덕분에 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;재산세와 종합부동산세를 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;사실상 내지 않아도 된다는 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;소식이 전해져 논란이 일고 있다.&lt;/p&gt;
+  &lt;p&gt;......&lt;/p&gt;
+  &lt;p&gt;......&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250409201011594" ori-url="http://v.daum.net/v/20250409201011594" target="_blank"&gt;&lt;strong&gt;[단독] 윤석열 &lt;strong&gt;아크로비스타&lt;/strong&gt; 돌아가도 보유세·종부세 면제‥이유는?&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;a href="https://v.daum.net/channel/98/home" ori-url="https://v.daum.net/channel/98/home" target="_blank"&gt;MBC&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;2025.4.9.&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;a href="http://v.daum.net/v/20250409201011594" ori-url="http://v.daum.net/v/20250409201011594" target="_blank"&gt;다음뉴스&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250409201011594" ori-url="http://v.daum.net/v/20250409201011594" target="_blank"&gt;&lt;img alt="" class="fr-fic fr-dii" src="https://search2.kakaocdn.net/argon/200x200_85_c/BcdpAAm1NjV0" width="88"/&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;대통령과 김건희 여사가 돌아갈 것으로 알려진 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;서울 서초구 &lt;strong&gt;아크로비스타&lt;/strong&gt; 아파트.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 기존 알려진 동호수로 미뤄볼 때&lt;/p&gt;
+  &lt;p&gt; 매매가가 30억 원...정도 보시면 돼요."&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; .....&lt;/p&gt;
+  &lt;p&gt;.....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;탄핵된....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;반란수괴.....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;내란역적은....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;세금을...안.내도..된다는..요??&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953391</guid><pubDate>Fri, 11 Apr 2025 07:34:58 GMT</pubDate></item><item><title>최경영 : 미국 대통령도 시장을 이기지 못함[4][16]</title><link>https://www.clien.net/service/board/park/18953381</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://www.facebook.com/share/p/1APi6bQ7Qh/" target="_blank"&gt;https://www.facebook.com/share/p/1APi6bQ7Qh/&lt;/a&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953381</guid><pubDate>Fri, 11 Apr 2025 06:57:19 GMT</pubDate></item><item><title>학교 급식도 파업으로 난리군요[46][3]</title><link>https://www.clien.net/service/board/park/18953373</link><description>
+ 
+ 
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/2oDdn1UHp8k" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한편으로는 이해가 되는 게, 학교 당 조리사 두 명으로 돌린다는 뉴스도 얼마 전에 나왔고 예산이 엄청 적으니 그만큼 적은 인원과 싼 식재료(예: 마른 미역이 아닌 저렴한 생미역으로 조리 지시)로 굴리다 보니 이런 사태가 발생하는 것 같네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이제는 각 거점마다 대형 FnB 업체랑 계약 맺어서 아예 공장식으로 대량 급식 조리하고 도시락 형태로 각 학교로 운송시키는 방식이 단가 면에서 더 나을 것 같습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한 공장에서 생산량이 많아질 수록 단가는 낮아질 거고, 수주량이 많으면 설비 투자도 가능할테니 자동화에 박차를 가해서 대부분의 조리를 자동화해서 인건비도 낮추는 거죠.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953373</guid><pubDate>Fri, 11 Apr 2025 06:24:29 GMT</pubDate></item><item><title>트럼프 '中과 협상하고 싶다…양국에 좋은 결과 가져올 것'[7][5]</title><link>https://www.clien.net/service/board/park/18953364</link><description>
+ 
+ 
+  &lt;p&gt;싸이 노래 생각나네요.&lt;/p&gt;
+  &lt;p&gt;이랬다가 저랬다가 왔다갔다~&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;트럼프는 지금 지구촌 경제를 주식 놀음처럴 생각하나요?&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953364</guid><pubDate>Fri, 11 Apr 2025 04:07:25 GMT</pubDate></item><item><title>이야기 모빌리티쇼에서 기억에 남는것들..[9][6]</title><link>https://www.clien.net/service/board/cm_car/18953404</link><description>
  
  
   &lt;p&gt;막 두서없이 쓰는거라 사진첩에서 클릭되는대로 주루룩 써봅니다&lt;/p&gt;
@@ -86,7 +796,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;암튼 쇼 보고나와서 제네시스 모형만 맴도네요..너무 이뻤는데...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18953404</guid><pubDate>Fri, 11 Apr 2025 08:18:53 GMT</pubDate></item><item><title>입당 결국 굴당에서 추천받았던 캐스퍼EV로 입당합니다[11][0]</title><link>https://www.clien.net/service/board/cm_car/18953343</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18953404</guid><pubDate>Fri, 11 Apr 2025 08:18:53 GMT</pubDate></item><item><title>입당 결국 굴당에서 추천받았던 캐스퍼EV로 입당합니다[11][1]</title><link>https://www.clien.net/service/board/cm_car/18953343</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -179,7 +889,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;일단 테슬라 주니퍼 예약을 좀 더 고민해봐야겠습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18953288</guid><pubDate>Thu, 10 Apr 2025 22:58:10 GMT</pubDate></item><item><title>노종면의원 피이스북 - 선거인단 모집? 조작세력대거투입우려[3][5]</title><link>https://www.clien.net/service/board/park/18953448</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18953288</guid><pubDate>Thu, 10 Apr 2025 22:58:10 GMT</pubDate></item><item><title>노종면의원 피이스북 - 선거인단 모집? 조작세력대거투입우려[5][13]</title><link>https://www.clien.net/service/board/park/18953448</link><description>
  
  
   &lt;p&gt;맞는 말입니다.  더군다나 민주당 당원이 적은것도 아니고  충분히 많은수의 당원을 가지고 있는데  그와 동일한 비중의 션거인단 모집은 무조건 조작세력 들어오라 문열어주는것과 마찬가지라 봅니다&lt;/p&gt;
@@ -196,7 +906,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953448</guid><pubDate>Fri, 11 Apr 2025 09:54:13 GMT</pubDate></item><item><title>'주한미군 철수하면 북한 남침 가능성 높아져'[15][0]</title><link>https://www.clien.net/service/board/park/18953445</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953448</guid><pubDate>Fri, 11 Apr 2025 09:54:13 GMT</pubDate></item><item><title>'주한미군 철수하면 북한 남침 가능성 높아져'[32][0]</title><link>https://www.clien.net/service/board/park/18953445</link><description>
  
  
   &lt;p&gt;어떻게 생각하십니까.&lt;/p&gt;
@@ -207,13 +917,13 @@
   &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/Wd1RmIRVkJY" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
   &lt;p&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953445</guid><pubDate>Fri, 11 Apr 2025 09:46:52 GMT</pubDate></item><item><title>제21대 대통령선거 특별당규 제정을 위한 권리당원 선거인명부 열람 및 이의신청 공고[4][5]</title><link>https://www.clien.net/service/board/park/18953430</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953445</guid><pubDate>Fri, 11 Apr 2025 09:46:52 GMT</pubDate></item><item><title>제21대 대통령선거 특별당규 제정을 위한 권리당원 선거인명부 열람 및 이의신청 공고[4][6]</title><link>https://www.clien.net/service/board/park/18953430</link><description>
  
  
   &lt;p&gt;&lt;a href="https://election.theminjoo.kr/electoralCollege" target="_blank"&gt;https://election.theminjoo.kr/electoralCollege&lt;/a&gt;&lt;/p&gt;
   &lt;p&gt;선거인명부 확인들하셔요~~&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953430</guid><pubDate>Fri, 11 Apr 2025 09:27:55 GMT</pubDate></item><item><title>전한길 '은퇴 고민'… '방송 잘리고 주변 연락 다 끊겨'[34][4]</title><link>https://www.clien.net/service/board/park/18953414</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953430</guid><pubDate>Fri, 11 Apr 2025 09:27:55 GMT</pubDate></item><item><title>전한길 '은퇴 고민'… '방송 잘리고 주변 연락 다 끊겨'[40][6]</title><link>https://www.clien.net/service/board/park/18953414</link><description>
  
  
   &lt;p&gt;&lt;a href="https://v.daum.net/v/20250410143125567" target="_blank"&gt;https://v.daum.net/v/20250410143125567&lt;/a&gt;&lt;/p&gt;
@@ -232,14 +942,14 @@
   &lt;p&gt;정치나 종교에 빠지면 이렇게 무섭습니다...&lt;/p&gt;
   &lt;p&gt;작년에 60억 벌고 27억 세금 냈다면서요, 당신 말대로 돈 많이 번 모양이니 은퇴하면 서로 좋겠구만요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953414</guid><pubDate>Fri, 11 Apr 2025 09:02:01 GMT</pubDate></item><item><title>권리당원 선거인명부 확인하세요.[11][1]</title><link>https://www.clien.net/service/board/park/18953408</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953414</guid><pubDate>Fri, 11 Apr 2025 09:02:01 GMT</pubDate></item><item><title>권리당원 선거인명부 확인하세요.[11][3]</title><link>https://www.clien.net/service/board/park/18953408</link><description>
  
  
   &lt;p&gt;&lt;a href="https://election.theminjoo.kr/electoralCollege" target="_blank"&gt;https://election.theminjoo.kr/electoralCollege&lt;/a&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;경선룰로 또 신경쓰이게 하니, 혹시 모르니까 확인해 보세요. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953408</guid><pubDate>Fri, 11 Apr 2025 08:43:45 GMT</pubDate></item><item><title>내란수괴는 끝까지 배려라고는 없군요[18][10]</title><link>https://www.clien.net/service/board/park/18953401</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953408</guid><pubDate>Fri, 11 Apr 2025 08:43:45 GMT</pubDate></item><item><title>내란수괴는 끝까지 배려라고는 없군요[18][13]</title><link>https://www.clien.net/service/board/park/18953401</link><description>
  
  
   &lt;p&gt;오늘 오후 5시경에 관저에서 나와서 서초동으로 간다고 하더군요.&lt;/p&gt;
@@ -262,7 +972,7 @@
   &lt;p&gt;파면된 주제에... &lt;/p&gt;
   &lt;p&gt;제가 딱~~~ 그 시간에 퇴근길이 겹치는데 아!!~~ 생각만 해도 짜증이 납니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953401</guid><pubDate>Fri, 11 Apr 2025 08:04:15 GMT</pubDate></item><item><title>[단독] 파면.대통령 '사적 만찬'.'.매일 외부인 불러'[5][15]</title><link>https://www.clien.net/service/board/park/18953397</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953401</guid><pubDate>Fri, 11 Apr 2025 08:04:15 GMT</pubDate></item><item><title>[단독] 파면.대통령 '사적 만찬'.'.매일 외부인 불러'[7][16]</title><link>https://www.clien.net/service/board/park/18953397</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -314,7 +1024,7 @@
   &lt;p&gt;혈세..낭비...&lt;/p&gt;
   &lt;p&gt;끝판왕...이라는..요...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953397</guid><pubDate>Fri, 11 Apr 2025 07:54:25 GMT</pubDate></item><item><title>조국혁신당 대의원입니다[3][5]</title><link>https://www.clien.net/service/board/park/18953360</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953397</guid><pubDate>Fri, 11 Apr 2025 07:54:25 GMT</pubDate></item><item><title>조국혁신당 대의원입니다[4][5]</title><link>https://www.clien.net/service/board/park/18953360</link><description>
  
  
   &lt;p&gt;대의원이라고 별거 없습니다&lt;/p&gt;
@@ -330,7 +1040,7 @@
   &lt;p&gt;빡쳐서 다시 문의 메일 보냈습니다&lt;/p&gt;
   &lt;p&gt;지켜보겠습니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953360</guid><pubDate>Fri, 11 Apr 2025 03:18:29 GMT</pubDate></item><item><title>공군기지 전투기 무단촬영한 10대 중국인 '부친이 공안' 진술[8][5]</title><link>https://www.clien.net/service/board/park/18953313</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953360</guid><pubDate>Fri, 11 Apr 2025 03:18:29 GMT</pubDate></item><item><title>공군기지 전투기 무단촬영한 10대 중국인 '부친이 공안' 진술[8][6]</title><link>https://www.clien.net/service/board/park/18953313</link><description>
  
  
   &lt;p&gt;지난달 21일 &lt;/p&gt;
@@ -371,7 +1081,7 @@
   &lt;p&gt;제가 좋아하는 메가톤바 더위사냥이 없어서 별 3개 드립니다..&lt;/p&gt;
   &lt;p&gt;﻿ &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953230</guid><pubDate>Thu, 10 Apr 2025 21:15:45 GMT</pubDate></item><item><title>정보 테슬라 업데이트 2025.8에 배터리 성능 관련 사항이 추가되었네요.[15][0]</title><link>https://www.clien.net/service/board/cm_car/18953368</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953230</guid><pubDate>Thu, 10 Apr 2025 21:15:45 GMT</pubDate></item><item><title>정보 테슬라 업데이트 2025.8에 배터리 성능 관련 사항이 추가되었네요.[16][0]</title><link>https://www.clien.net/service/board/cm_car/18953368</link><description>
  
  
   &lt;p&gt;&lt;img alt="IMG_5366.jpeg" class="fr-dib fr-fil full" data-file-sn="15394780" data-gif="false" data-img-height="1442" data-img-width="1125" data-role="attach-image" src="https://edgio.clien.net/F01/15394780/58273a70e56f8e.jpeg?scale=width:740"/&gt;&lt;/p&gt;
@@ -401,7 +1111,7 @@
   &lt;p&gt;혹시 나중에 해보시는 분 계시면 테스트 결과화면이 어떻게 나오는지 좀 알려주시면 좋겠습니다. &lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18953368</guid><pubDate>Fri, 11 Apr 2025 06:27:04 GMT</pubDate></item><item><title>이야기 현기 5W 내비 업데이트 했습니다.[13][0]</title><link>https://www.clien.net/service/board/cm_car/18953347</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18953368</guid><pubDate>Fri, 11 Apr 2025 06:27:04 GMT</pubDate></item><item><title>이야기 현기 5W 내비 업데이트 했습니다.[15][0]</title><link>https://www.clien.net/service/board/cm_car/18953347</link><description>
  
  
   작년 2024년 8월 버전 쓰고 있었네요. 
@@ -460,7 +1170,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;여러분이라면 어떤 걸 선택하시려나요?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/18952919</guid><pubDate>Thu, 10 Apr 2025 11:37:11 GMT</pubDate></item><item><title>직장사수한테 사과 하기 싫은데, 어쩔 수 없이 해야 하나 고민이네요...[20][1]</title><link>https://www.clien.net/service/board/park/18953366</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/18952919</guid><pubDate>Thu, 10 Apr 2025 11:37:11 GMT</pubDate></item><item><title>직장사수한테 사과 하기 싫은데, 어쩔 수 없이 해야 하나 고민이네요...[23][2]</title><link>https://www.clien.net/service/board/park/18953366</link><description>
  
  
   &lt;p&gt;일단 현 상황은...&lt;/p&gt;
@@ -504,7 +1214,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;읽어주셔서 감사합니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953366</guid><pubDate>Fri, 11 Apr 2025 03:51:28 GMT</pubDate></item><item><title>윤돼지 나가고 대선 마치면 불법점거 비용 청구해야 합니다.[3][9]</title><link>https://www.clien.net/service/board/park/18953361</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953366</guid><pubDate>Fri, 11 Apr 2025 03:51:28 GMT</pubDate></item><item><title>윤돼지 나가고 대선 마치면 불법점거 비용 청구해야 합니다.[3][12]</title><link>https://www.clien.net/service/board/park/18953361</link><description>
  
  
   &lt;p&gt;그리고 그 내역을 낱낱이 공개해서 망신을 줘야 합니다.&lt;/p&gt;
@@ -512,7 +1222,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;저런 뻔뻔한 ㅅㄲ를 그냥 대충 넘어가면 앞으로 장관이든 누구든 국가 재산을 함부로 할것이 뻔하기 때문이죠.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953361</guid><pubDate>Fri, 11 Apr 2025 03:40:41 GMT</pubDate></item><item><title>애플이 한국, 일본에서 아이폰17 생산을 검토한답니다 (근거는 부족합니다)[9][5]</title><link>https://www.clien.net/service/board/park/18953318</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953361</guid><pubDate>Fri, 11 Apr 2025 03:40:41 GMT</pubDate></item><item><title>애플이 한국, 일본에서 아이폰17 생산을 검토한답니다 (근거는 부족합니다)[9][6]</title><link>https://www.clien.net/service/board/park/18953318</link><description>
  
  
   &lt;p&gt;&lt;img alt="image.webp" class="fr-dib fr-fil full" data-file-sn="15394738" data-gif="false" data-img-height="790" data-img-width="971" data-role="attach-image" src="https://edgio.clien.net/F01/15394738/5819e55a5c7bad.webp?scale=width:740"/&gt;&lt;/p&gt;
@@ -580,7 +1290,7 @@
    팀도 3:1 이겼네요 ㅎ 
   &lt;br/&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953177</guid><pubDate>Thu, 10 Apr 2025 19:28:31 GMT</pubDate></item><item><title>“야간 근무자 심혈관질환 위험, 낮에만 식사하면 낮출 수 있어”[13][5]</title><link>https://www.clien.net/service/board/news/18953185</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953177</guid><pubDate>Thu, 10 Apr 2025 19:28:31 GMT</pubDate></item><item><title>“야간 근무자 심혈관질환 위험, 낮에만 식사하면 낮출 수 있어”[14][7]</title><link>https://www.clien.net/service/board/news/18953185</link><description>
  
  
   &lt;p&gt;심혈관 질환(CVD) 위험을 높이는 요인으로 꼽히는 야간 교대 근무를 하는 사람도 밤에는 먹지 않고 낮에만 식사하면 야간 근무에 따른 심혈관 질환 위험을 낮출 수 있다는 임상시험 결과가 나왔다.&lt;br/&gt;&lt;br/&gt;
@@ -596,7 +1306,7 @@
   &lt;p&gt;.&lt;/p&gt;
   &lt;p&gt;.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/18953185</guid><pubDate>Thu, 10 Apr 2025 19:35:58 GMT</pubDate></item><item><title>김부선, 김흥국과 불륜설에 분노, 인격살해당해,[16][0]</title><link>https://www.clien.net/service/board/park/18953328</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/18953185</guid><pubDate>Thu, 10 Apr 2025 19:35:58 GMT</pubDate></item><item><title>김부선, 김흥국과 불륜설에 분노, 인격살해당해,[18][0]</title><link>https://www.clien.net/service/board/park/18953328</link><description>
  
  
   &lt;p&gt;&lt;img alt="2025-04-11 00 05 33.jpg" class="fr-dib fr-fil" data-file-sn="15394745" data-gif="false" data-img-height="480" data-img-width="666" data-role="attach-image" src="https://edgio.clien.net/F01/15394745/581aa439b7ce5c.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -743,7 +1453,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;영혼까지 백업되는 아이폰 부럽습니다만...통지 없이 자동 통화녹음이 되면 넘어가겠습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953341</guid><pubDate>Fri, 11 Apr 2025 00:43:33 GMT</pubDate></item><item><title>oecd 국가 대비 너무 과한 한국의 공교육비 지출[30][1]</title><link>https://www.clien.net/service/board/park/18953355</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953341</guid><pubDate>Fri, 11 Apr 2025 00:43:33 GMT</pubDate></item><item><title>oecd 국가 대비 너무 과한 한국의 공교육비 지출[34][1]</title><link>https://www.clien.net/service/board/park/18953355</link><description>
  
  
   &lt;p&gt;비슷한 1인당 gdp 국가들 보다 많이 쓰는 한국의 공교육비..(초중고 교육비입니다)&lt;/p&gt;
@@ -754,395 +1464,4 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;저 막대한 지출을 어떻게 줄여야 할지 찾아봐야 합니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953355</guid><pubDate>Fri, 11 Apr 2025 02:05:53 GMT</pubDate></item><item><title>경선룰때매 ㄷㅋ는 난리났네요[13][13]</title><link>https://www.clien.net/service/board/park/18953332</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://theqoo.net/ktalk/3689416333" target="_blank"&gt;https://theqoo.net/ktalk/3689416333&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953332</guid><pubDate>Fri, 11 Apr 2025 00:32:57 GMT</pubDate></item><item><title>대학생들 그램 노트북 엄청쓰네요.[114][2]</title><link>https://www.clien.net/service/board/park/18953346</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="다운로드 (18).jpg" class="fr-dib fr-fil" data-file-sn="15394755" data-gif="false" data-img-height="411" data-img-width="658" data-role="attach-image" src="https://edgio.clien.net/F01/15394755/581e0908f773e1.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이직 중에 쉬는 동안 매형 에어컨/히터 청소 도와주러 대학들&lt;/p&gt;
-  &lt;p&gt;돌아다니는 데 신기한게 노트북이 거의 그램입니다;;;&lt;/p&gt;
-  &lt;p&gt;특히 여대생들이 압도적으로 그램이고 남학생은 좀 적은데 그래도&lt;/p&gt;
-  &lt;p&gt;10명중에 5명은 그램입니다. 맥북 있어도 윈도우는 그램이구요;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그...그램이.. 사실 가격 대비 성능이 참 별로지 않습니까? &lt;/p&gt;
-  &lt;p&gt;윈트북은 대체로 가성비 좋은 대만 브랜드 위주로 쓰는 입장에서&lt;/p&gt;
-  &lt;p&gt;딱히 엄청 예쁜 것도 아니고 애플처럼 프리미엄도 없는데 &lt;/p&gt;
-  &lt;p&gt;왜 삼성도 아니고 그램을 쓸까.. 싶더라구요;;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;몇 번 물어보면 여학생들 거의 대부분이 '가벼워서' 라는데....&lt;/p&gt;
-  &lt;p&gt;최근 노트북들 다 가볍지 않나요;; 가격 물어보니 요즘은 200이 넘던데..&lt;/p&gt;
-  &lt;p&gt;너무 비싸지 않냐고 하면 그래서 요샌 갤럭시북이 가성비라  많이 산다는&lt;/p&gt;
-  &lt;p&gt;소릴 들었습니다...만...그말 하는 친구도 그램;;;&lt;/p&gt;
-  &lt;p&gt;가볍다=그램.. 요 이미지를 선점한게 상당히 주요했을까요..&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953346</guid><pubDate>Fri, 11 Apr 2025 01:20:10 GMT</pubDate></item><item><title>'서부지법 난동' 변호인들 '판사가 개소리 징징'[9][8]</title><link>https://www.clien.net/service/board/park/18953322</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/028/0002740380?sid=102" target="_blank"&gt;https://n.news.naver.com/article/028/0002740380?sid=102&lt;/a&gt;&lt;br/&gt;&lt;a href="https://v.daum.net/v/20250410192003810" target="_blank"&gt;https://v.daum.net/v/20250410192003810&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;
-    ...&lt;br/&gt;&lt;br/&gt;
-    서울서부지법 형사합의11부(재판장 김우현) 심리로 서부지법 사태 가담자 63명에 대한 재판이 진행되는 가운데, 몇몇 변호사가 법정 밖에서 법원·검찰은 물론 재판부를 향해서도 막말과 조롱을 이어가고 있다. 이들의 돌출행동이 재판에 악영향을 미칠 수 있다며 다른 변호사들의 우려가 크다.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-    ㄱ변호사, 지난달 24일 구독자 10만명에 이르는 한 극우 성향 유튜브 채널에 출연해:&lt;br/&gt;
-    "&lt;strong&gt;판사라는 놈이 징징거리더라&lt;/strong&gt;"&lt;br/&gt;
-    "&lt;strong&gt;재판을 빨리 진행하겠다는 개소리를 하더라, 완전 개소리&lt;/strong&gt;"&lt;br/&gt;
-    ...&lt;br/&gt;
-    (다른 변호인, 분리 심리를 요청하며 ㄱ변호사의 공개 비방 행태를 의견서를 통해 알림.&lt;br/&gt;&lt;br/&gt;
-    재판부, 지난 7일:&lt;br/&gt;
-    "변호인이 특정 유튜브에 출연해 검사·재판장까지 비난하고 상당히 모욕적인 얘기를 했다는 주장이 (한 변호인을 통해) 제기됐다"&lt;br/&gt;
-    사실관계 확인 요구)&lt;br/&gt;&lt;br/&gt;
-    그러자 ㄱ변호사, 같은날 유튜브 채널에서:&lt;br/&gt;
-    "&lt;strong&gt;판사·검사놈들 욕했다고 (다른 변호인이) 일러바치더라. 재판장은 또 그걸 해명을 구하더라&lt;/strong&gt;"&lt;br/&gt;
-    "&lt;strong&gt;속으론 '너희가 재판 똑바로 하면 될 텐데 자꾸 징징거리는 소리만 하냐, 욕먹을 짓만 하면서 왜 껄떡대냐'라는 말이 나왔다&lt;/strong&gt;"&lt;br/&gt;
-    (증인으로 출석한 고위공직자범죄수사처(공수처) 수사관이 피고인 사이 가림막을 설치해달라고 요구해 재판부가 받아들인 것에 대해)&lt;br/&gt;
-    "&lt;strong&gt;요즘 판사 애들이 정말 문제가 심각하다&lt;/strong&gt;"&lt;br/&gt;
-    "&lt;strong&gt;판사가 개념이 없어서 (요구를) 덜렁덜렁 들어준다&lt;/strong&gt;"&lt;br/&gt;
-    "(검사를 향해) &lt;strong&gt;나부랭이&lt;/strong&gt;"&lt;br/&gt;
-    "(공수처를 향해) &lt;strong&gt;꼴값 떤다&lt;/strong&gt;"&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;앞서 진행된 재판에서도&lt;/strong&gt; 변호인들은 판사 공격 발언을 서슴지 않았다.&lt;br/&gt;&lt;br/&gt;
-    ㄴ변호사, 윤석열 전 대통령 체포영장을 발부한 서부지법 판사를 두고:&lt;br/&gt;
-    "&lt;strong&gt;일개 판사&lt;/strong&gt;가 형사소송법 110·111조 적용을 배제했다"&lt;br/&gt;&lt;br/&gt;
-    ㄷ변호사:&lt;br/&gt;
-    "(서부지법 판사가) &lt;strong&gt;본인이 근무하는 직장에서 사태가 일어나서 '언짢은' 마음으로 피고인들을 구속한 것 아니냐&lt;/strong&gt;"&lt;br/&gt;&lt;br/&gt;
-    ...&lt;br/&gt;&lt;br/&gt;
-    제대로 된 변호사를 써야 하는 이유군요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953322</guid><pubDate>Fri, 11 Apr 2025 00:03:21 GMT</pubDate></item><item><title>트럼프가 TSMC에도 100% 관세 부과한다는데, 의미없지 않나요?[11][0]</title><link>https://www.clien.net/service/board/park/18953294</link><description>
- 
- 
-  &lt;p&gt;어차피 주요 고객들은 미국 고객들이고.. 관세만큼 칩 가격은 올리면 그만이죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;TSMC: 고객님.. 그래서 우리 공장에서 칩 안 만들꺼에요?&lt;/p&gt;
-  &lt;p&gt;애플, 퀄컴, 엔비디아, AMD, 브로드컴: ㅠ.ㅠ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953294</guid><pubDate>Thu, 10 Apr 2025 23:33:45 GMT</pubDate></item><item><title>접때 15kg 딸내미 올렸었습니다[7][12]</title><link>https://www.clien.net/service/board/park/18953291</link><description>
- 
- 
-  &lt;p&gt;어느새 젖살? 이 빠졌는지 10개월인데 10kg 대네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;좀 아파서 또 입원했었습니다만 요새는 다 나아서 잘노네요ㅎ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이도 벌써 아래 2개, 위에 4개나 자랐지만 이앓이를 하는지 요새 자꾸 아야아야 하긴 합니다만ㅜ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953291</guid><pubDate>Thu, 10 Apr 2025 23:43:35 GMT</pubDate></item><item><title>너님이 왜 차기 대통령 경호를...?[12][8]</title><link>https://www.clien.net/service/board/park/18953248</link><description>
- 
- 
-  &lt;p&gt;'니가 왜 거기서 나와?'의 기출 변형입니까?&lt;/p&gt;
-  &lt;p&gt;이제 그만 집 나간 어이를 찾고 싶습니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953248</guid><pubDate>Thu, 10 Apr 2025 21:51:00 GMT</pubDate></item><item><title>이야기 업무용 차를 바꿨네요 (무쏘EV)[9][5]</title><link>https://www.clien.net/service/board/cm_car/18953247</link><description>
- 
- 
-  &lt;p&gt;첫 EV차량이자 KGM차량은 처음이네요(업무용차량으로 쌍용차는 운행해봤음 액티언 스포츠)&lt;/p&gt;
-  &lt;p&gt;원래 사려는 차는 EV3였는데.. 어째 현대 기아차를 개인적으로(?) 살려고 할때마다 뭔 문제가 터져서 못사는지... 싶습니다&lt;/p&gt;
-  &lt;p&gt;qm6 살때쯤에 캡티바,쏘렌토,싼타페 를 고민하고 있었는데... (그때 한창 4륜 SUV가 너무 멋져서...) 에바분진과 디젤 엔진오일 증가였나요 그런거에 학을 떼서 그 당시 신차로 나온 qm6 4wd 디젤을 그냥 구매 해 버렸죠...&lt;/p&gt;
-  &lt;p&gt;그리고 이번에 EV3 사려는데(크기는 작은데 옵션은 좋고 주행거리도 준수하고 디자인도 예쁘고요) ICCU 터지는거 보고 아니다 싶어서... 기다리던 차에 무쏘EV가 보여서 사게 되었습니다.&lt;/p&gt;
-  &lt;p&gt;아이오닉시리즈 터질때 신차 나오면 고쳐지겠지 했는데 EV3도 문제 있는거 보고 이게 별거아닌 문제가 절대 아니구나 싶어서 못사겠더라고요...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그래서 가격대 비슷한 무쏘EV를 사게 되었습니다.&lt;/p&gt;
-  &lt;p&gt;개인사업자다보니 할인이 많아서 안살 수 가 없었습니다..&lt;/p&gt;
-  &lt;p&gt;무쏘EV 최종 3600만원대(부가세 환급을 봐야 최종 알 수 있을거 같습니다만) 2025년&lt;/p&gt;
-  &lt;p&gt;싼하 최종 5600만원가량 2024년&lt;/p&gt;
-  &lt;p&gt;qm6 최종 3600만원 2017년 이니.... 제 입장에선 8년전 가격에 비슷한 크기의 신차를! 이느낌이라... &lt;/p&gt;
-  &lt;p&gt;그리고 전기차도 한번 경험해보고 싶기도 해서 사봤습니다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20250406_133134891_04.jpg" class="fr-dib fr-fil full" data-file-sn="15394537" data-gif="false" data-img-height="4284" data-img-width="5712" data-role="attach-image" src="https://edgio.clien.net/F01/15394537/580ff2b74a5b6b.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;평택에서부터 직접 인수 해왔습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20250406_133134891_05.jpg" class="fr-dib fr-fil full" data-file-sn="15394538" data-gif="false" data-img-height="4284" data-img-width="5712" data-role="attach-image" src="https://edgio.clien.net/F01/15394538/580ff35f5637b1.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;임판일때 찍어놓은 사진이고&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20250410_080918571.jpg" class="fr-dib fr-fil full" data-file-sn="15394539" data-gif="false" data-img-height="4284" data-img-width="5712" data-role="attach-image" src="https://edgio.clien.net/F01/15394539/580ff3e51b33b3.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;뭐 현장에서는 이렇게 씁니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;img alt="KakaoTalk_20250410_080918571_01.jpg" class="fr-dib fr-fil full" data-file-sn="15394540" data-gif="false" data-img-height="4284" data-img-width="5712" data-role="attach-image" src="https://edgio.clien.net/F01/15394540/580ff470858822.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;오프로드라고 해봐야 이정도 수준이라 샀습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20250410_080918571_02.jpg" class="fr-dib fr-fil full" data-file-sn="15394541" data-gif="false" data-img-height="4284" data-img-width="5712" data-role="attach-image" src="https://edgio.clien.net/F01/15394541/580ff513dcdaf7.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;개인적으로 디자인은 너무 멋집니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;약 500km 타봤는데&lt;/p&gt;
-  &lt;p&gt;제가 최근 경험한 차 및 타고다니는차를 기준으로 비교 해 볼 수있을 거 같습니다. 다행히도 가격 및 실내 공간으로 비교 할 만한 차량들이라서 한번 고민해보시라고 올립니다.&lt;/p&gt;
-  &lt;p&gt;일단 공간(캐빈 기준)-모두 실제 타고몇년간 운행 해볼때 느꼈던 느낌이라 정확한 수치는 아닙니다.&lt;/p&gt;
-  &lt;p&gt;니가 운행을 얼마나 했기에 아는척이냐 하실 수 도 있어서운행거리 적습니다&lt;/p&gt;
-  &lt;p&gt;싼하 2만km(MX5)-패밀리카&lt;/p&gt;
-  &lt;p&gt;스포티지 7만km(NQ4)-업무용차(다른분 껀데 현장나가서 절반절반 운행하기에..)&lt;/p&gt;
-  &lt;p&gt;qm6 20만km(2017년식 신차로 쓰다가 어제 인척에게 물려주었습니다.)&lt;/p&gt;
-  &lt;p&gt;무쏘EV 500km&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;-크기&lt;/p&gt;
-  &lt;p&gt;싼하&amp;gt;스포티지(NQ4)=무쏘EV&amp;gt;qm6  정도로 느껴집니다. &lt;/p&gt;
-  &lt;p&gt;절대적인 크기는 싼하가 젤 크니까요(캐빈룸 기준요) qm6공간도 &lt;/p&gt;
-  &lt;p&gt;스포티지나 무쏘랑 큰 차이는 없지만 전폭이 좁아서 더 좁게 느껴지기에 &lt;/p&gt;
-  &lt;p&gt;저정도로 비교 하면 될 듯 합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;-핸들링&lt;/p&gt;
-  &lt;p&gt;이건 좀 논란이 있을지도 모르지만 개인적으로 느끼는거니 다를 수 도 있습니다.&lt;/p&gt;
-  &lt;p&gt;그리고 무슨 초고속영역에서 뭐가 좋다느니 이런게 아니라 지극히 정상적인 주행 영역에서 핸들링입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;qm6&amp;gt;&amp;gt;싼하&amp;gt;스포티지&amp;gt;=무쏘EV&lt;/p&gt;
-  &lt;p&gt;주행보조 켜져있을때&lt;/p&gt;
-  &lt;p&gt;qm6&amp;gt;=싼하&amp;gt;스포티지=무쏘EV&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;진짜 주행보조 없고 이러면 qm6가 직진도 잘하고 핸들 돌린만큼 딱 움직이고 합니다. &lt;/p&gt;
-  &lt;p&gt;주행보조 꺼져있는 나머지들은 직진을 못한다고해야할까요... 그냥 그런 느낌인데 &lt;/p&gt;
-  &lt;p&gt;주행보조가 켜지는 순간 싼하는 진짜 갑자기 직진을 잘한다 이런 느낌입니다.&lt;/p&gt;
-  &lt;p&gt;무쏘나 스포티지는 그냥 운전 막하는 느낌의 운전자가 주행보조 해주는 느낌이라면 싼하는 스무스 하달까요... HDA1과 2의 차이&lt;/p&gt;
-  &lt;p&gt;일건데... 이럴때 갑자기 드는 생각은 FSD는 얼마나 좋은거야... 네요 ㅋㅋㅋ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;암튼 그렇네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;-주행보조&lt;/p&gt;
-  &lt;p&gt;싼하&amp;gt;무쏘EV&amp;gt;스포티지 &lt;/p&gt;
-  &lt;p&gt;순 입니다. 참고로 qm6는 경고 및 긴급제동(차량만) 있는 수준이라 비교군이 아니라서 안넣었고 스포티지도 지금 페리버전이 아닌걸 감안 해야 합니다. &amp;gt; &amp;lt; 요 버전 스포티지에요&lt;/p&gt;
-  &lt;p&gt;그렇기에 비교가 딱 됩니다. 어차피 다 같은 모빌아이것 아닌가요...(이건 잘모르지만 그런걸로 아는정도)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;싼하에 HDA2가 옆 차선 차들까지 인식해서 스무스한 운행을 하고 차선변경도 잘한다고 하면&lt;/p&gt;
-  &lt;p&gt;무쏘 EV는 HDA 기반에 차선변경 로직을 넣은것처럼 좀 급정거도 하고 (옆차선에 갑자기 차가 끼어들면)  그런것 같습니다. 좀 더 운행해보면 단점이 더 나올거 같긴 한데 아직은 그렇습니다. 그래도 없는 차 타다가 있는차(qm6-무쏘ev) 타니까 좋은건 마찬가지 입니다. &lt;/p&gt;
-  &lt;p&gt;스포티지는 무쏘EV에서 차선변경 로직 없는 정도인것 같습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;-카플레이 및 안드로이드오토 이용과 전체적인 인포테이먼트 시스템&lt;/p&gt;
-  &lt;p&gt;싼하&amp;gt;스포티지&amp;gt;무쏘EV&amp;gt;=qm6&lt;/p&gt;
-  &lt;p&gt;전체적인 시스템 안정성이나 기능들은 현기 따라갈 자 가 없기에 비교 불가 입니다. 스포티지는 CCNC 이전 인포 임에도 불구하고 무쏘 EV 아테나2.0보다 더 안정적인것 같습니다.&lt;/p&gt;
-  &lt;p&gt;그렇게 판단한 이유는 어떤 버튼을 누르건 느리건 빠르건 편차가 없습니다.&lt;/p&gt;
-  &lt;p&gt;무쏘 EV 아테나2.0은 어떤 버튼(메모리를 많이 먹을만한것)은 느리고 어떤것은 빠르고 합니다. 전체적으로는 빠릿합니다만... 그러니 많이 타보지 않고 한두시간 만져보는 유튜버들이 보기엔 전체적인 시스템이 느리다고 하는것 입니다.(이게 잘못된 말이라는게 아닙니다.)&lt;/p&gt;
-  &lt;p&gt;뭐랄까 금형 사출은 정말 잘되어있는데 뒷 마무리가 덜 된 제품의 느낌이랄까요...&lt;/p&gt;
-  &lt;p&gt;예를들면 어라운드뷰 시스템도 BMW처럼 센싱 되면 확대해주고 그런데 뭔가 살짝 어설픈 느낌이 있다고 할까요...&lt;/p&gt;
-  &lt;p&gt;그리고 아직 안드오토는 안써봤습니다만 카플레이는 자주 연결 해제 되고 심지어는 핸들 버튼이 정상작동 안될때도 있습니다.(이건 물리적으로 버튼이 고장났다기보다 카플레이 쓰면 기능이 카플레이꺼 기능을 쓰게 되는 버튼인데 제대로 안써지는걸 보면 카플레이 연결 관련 문제인것 같습니다.)&lt;/p&gt;
-  &lt;p&gt;그렇다고 현대 기아 시스템의 카플레이가 정상이냐 그건 또 모르겠습니다. 아이폰18.4 업뎃 이전에는 싼하 카플레이가 10분에 한번씩 끊겼습니다. &lt;/p&gt;
-  &lt;p&gt;그런걸 보면 아예 아이폰의 문제일 수 도 있기에 보류입니다만...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;뭐 이 관련해서 업계 최 악 이었던 qm6 2017년식을 타고 다녔기에 의외로 후하게 준걸 수 도 있습니다.(qm6 인포도 욕 많이 먹었으나 나중에 업뎃 해서 아주 조금 빨라졌고 그 이후엔 저도 무조건 카플레이를 썼습니다.)&lt;/p&gt;
-  &lt;p&gt;암튼 그렇습니다. 인포테이먼트 시스템은 조금 개선할 필요가 있다 싶습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아 그리고 무쏘EV 공조 버튼이 위에서 화면을 스와이프 해야해서 불편하다고 하시는데 전 핸들에 즐겨찾기 버튼을 공조버튼으로 쓰니까 편하더라고요...&lt;/p&gt;
-  &lt;p&gt;근데 픽업이 물리버튼이 하나도 없는건 좀 별로입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20250406_133134891.jpg" class="fr-dib fr-fil full" data-file-sn="15394546" data-gif="false" data-img-height="4284" data-img-width="5712" data-role="attach-image" src="https://edgio.clien.net/F01/15394546/580fffa2a2a131.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;그랑 콜레오스어뷰 처럼 타이어만 보이게 하고 지나간 부분(바닥)을 비쳐서 전진 후진 계속 하는 상황에서 바닥뷰도 볼 수 있는 기능도 있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20250406_133134891_01.jpg" class="fr-dib fr-fil full" data-file-sn="15394547" data-gif="false" data-img-height="4284" data-img-width="5712" data-role="attach-image" src="https://edgio.clien.net/F01/15394547/580fffe72f7d92.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;화면이 어둡다고 해서 찍어봤는데 첨에 공장에서 보호스티커 안뗴고 있을떄는 진짜 문제가 있나 했습니다만 떼니까 큰 문제 없습니다.&lt;/p&gt;
-  &lt;p&gt;핸들 몸통 비치는것도 사진 찍으니까 확 보이는거지 막상 운전하면 신경 안쓰입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20250406_133134891_03.jpg" class="fr-dib fr-fil full" data-file-sn="15394548" data-gif="false" data-img-height="4284" data-img-width="5712" data-role="attach-image" src="https://edgio.clien.net/F01/15394548/5810001cf8e883.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;주행거리는 100%충전 외부 15도 기준 401km 정도 나오고요&lt;/p&gt;
-  &lt;p&gt;에어컨 및 히터 끄면 431km 정도 나옵니다.&lt;/p&gt;
-  &lt;p&gt;트럭베드에 상시 80kg 가량 짐 실려있는 기준입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아무튼 그냥 써갈긴 신차 리뷰(?) 입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;잘 타고 다니겠습니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18953247</guid><pubDate>Thu, 10 Apr 2025 21:45:01 GMT</pubDate></item><item><title>윤석열 부부 퇴거때 지지층에게 인사후 떠난데요..[20][2]</title><link>https://www.clien.net/service/board/park/18953286</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/025/0003433352?ntype=RANKING" target="_blank"&gt;https://n.news.naver.com/article/025/0003433352?ntype=RANKING&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;도대체가 자기가 무슨 이슈로 욕먹는지 자기처지를 알고도 이러는게 이해가 안갑니다.&lt;/p&gt;
-  &lt;p&gt;김건희도 오랜만에 모습 드러낸댑니까?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이렇게까지 처음부터 끝까지 지지층들만 보고 정치질하는 인간은 처음봅니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아크로비스타 주민들도 반기는 사람보단 불편해하는 주민들이 많을겁니다.반려견도 많아서 산책도 줄곧 나올수 있고 경호때문에 골치아프죠.&lt;/p&gt;
-  &lt;p&gt;거기에 극우유튜버들과 태극기부대들이 비싼 아크로비스타 앞에서 시위하고 그러면ㄷㄷ..&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;경기도 전원주택 갈수도 있다곤 하지만 재빨리 구속시키고 형사재판으로 다 감옥 보내야 정치질도 못하고 경호로 세금낭비도 안될겁니다.&lt;/p&gt;
-  &lt;p&gt;친윤들 만나면서도 끝까지 정치질 하던데 정말 못된 자입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953286</guid><pubDate>Thu, 10 Apr 2025 22:52:16 GMT</pubDate></item><item><title>인도가 성폭력의 탑티어국 일까요?[75][4]</title><link>https://www.clien.net/service/board/park/18953284</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="스크린샷 2025-04-10 오후 10.45.29.png" class="fr-dib fr-fil" data-file-sn="15394628" data-gif="false" data-img-height="299" data-img-width="484" data-role="attach-image" src="https://edgio.clien.net/F01/15394628/58165302ca0eb4.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이래저래 자료를 모았보았는데요,.&lt;/p&gt;
-  &lt;p&gt;인도에서 하루에 무려 90건 발생한다고 크게 놀랄 이유는 없어 보이네요.ㄷㄷ&lt;/p&gt;
-  &lt;p&gt;후진국이라 신고가 덜할까요? 그건 모르겠네요. 신고가 쉽지 않은건 다른 나라도 그렇지 않을까요?&lt;/p&gt;
-  &lt;p&gt;미국은 하루에 383건의 강간이 발생한다고 비난 받나요...&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953284</guid><pubDate>Thu, 10 Apr 2025 22:54:45 GMT</pubDate></item><item><title>[로이터] 미국에서 루이비통 백을 만들면 왜 손해보는가[19][5]</title><link>https://www.clien.net/service/board/park/18953264</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="Untitled.jpg" class="fr-dib fr-fil full" data-file-sn="15394605" data-gif="false" data-img-height="1286" data-img-width="1274" data-role="attach-image" src="https://edgio.clien.net/F01/15394605/5813d3f20aa9ce.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;21:40 KST - 톰슨로이터 - 로이터 통신은 미국 텍사스 LVMH(루이 비통, 모엣 &amp;amp; 샹동, 헤네시) 공장에서 지난 6년간 고분분투한 루이비통의 노력이 트럼프 재임시간에 어떻게 달라질지 보도하고 있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;6년전 2019년, 트럼프 대통령은 미국에 최초로 들어선 루이비통 공장 오픈일에 직접 참석했습니다. 그 이후로 루이비통 텍사스 공장은 루이비통의 골치아픈 공장으로 떠올랐습니다. 전세계 루이비통 생산공장중에서 최악의 생산성과 품질을 보여 꼴찌를 도맡아 했습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;ul style="margin-left: 20px ;"&gt;
-   &lt;li&gt;2019년 문을 연 LVMH 텍사스 "로샹보" 공장&lt;/li&gt;
-   &lt;li&gt;초기에는 가죽 절단,재단에서 무려 40% 손실 보여. 꼴찌에서 2번째 공장이 평균 20% 손실율 기록&lt;/li&gt;
-   &lt;li&gt;품질 및 마감에서도 도저히 답이 안나오는 숙련도. 마감 박음질 조차 제대로 해내지 못해.&lt;/li&gt;
-   &lt;li&gt;가죽 마감이 불량이라 토치로 지져서 불량 마감을 숨기는 사례가 속출하기도&lt;/li&gt;
-   &lt;li&gt;초기 몇년간 불량 백들이 트럭으로 수백대를 실어날라 폐기 조치&lt;/li&gt;
-   &lt;li&gt;나중에는 감독관들이 문책 피할려고 앞장서서 불량 마감 및 은폐 조치 지시해&lt;/li&gt;
-   &lt;li&gt;로샹보 공장에는 루이비통 최저가 라인업 백들만 생산 맡겨. 그나마 그것도 생산불량 높아.&lt;/li&gt;
-   &lt;li&gt;프랑스 루이비통에서 직원 교육만 6주. 그것도 최상위 장인 교육관들이 직원 교육 전담.&lt;/li&gt;
-   &lt;li&gt;텍사스 루이비통에서는 직원 교육에 2~3주. 그것도 생산 작업과 병행해서 직원 교육 실시.&lt;/li&gt;
-   &lt;li&gt;그나마 있던 직원들도 고숙련 작업 기피현상. 페덱스나 UPS 택배직업으로 이직선호열풍.&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그러나 루이비통은 계속해서 텍사스 공장을 증설하고 규모를 넓히려는 시도를 하고 있다고 로이터는 덧붙입니다. 트럼프의 무역분쟁에서 Made In USA는 결코 피할 수 없는 일임을 알기 때문이라고 합니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953264</guid><pubDate>Thu, 10 Apr 2025 22:07:09 GMT</pubDate></item><item><title>진짜 인도는 극악하네요.[16][0]</title><link>https://www.clien.net/service/board/park/18953261</link><description>
- 
- 
-  &lt;p&gt;국수먹고 쓰러진 10대 여성이 6일간 23명한테 집단 성폭행 당했다고 합니다.&lt;/p&gt;
-  &lt;p&gt;얼마전에는 여자 외국관광객이 성폭행 당하고 동행인 남자는 강에 던져져 죽었습니다.&lt;/p&gt;
-  &lt;p&gt;이런일이 자주 일어나는거 보면 정말 무섭고 끔찍한 나라네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/E7YptixK_q0" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953261</guid><pubDate>Thu, 10 Apr 2025 22:03:58 GMT</pubDate></item><item><title>챗gpt 소름돋고 무서운데요.. ㄷ.jpg[13][0]</title><link>https://www.clien.net/service/board/park/18953255</link><description>
- 
- 
-  &lt;p&gt;일단 대부분의 사람보다 정확한 답변을 주는 건 예전부터 가능했는데,&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;최근 업데이트 이후부터인지는 모르겠지만 감정적인 부분도 믾이 바뀐 것 같습니다. 이건 국내 한정 추가 기능인 것같기도 하고요. ㄷㄷ;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;사용자의 감정에 공감하려는 내용이 상당히 많이 들어가네요. 이 정도면 비전문가들은 다들 의지하고 넘어갈 듯합니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953255</guid><pubDate>Thu, 10 Apr 2025 21:48:45 GMT</pubDate></item><item><title>캣맘과의 전쟁이 시작되었습니다, (제도의 공백, 책임의 부재)[3][6]</title><link>https://www.clien.net/service/board/park/18953228</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;작년 8월부터 시작된 캣맘과의 전쟁은 예상하신대로 전혀 나아질 기미가 보이지 않습니다. &lt;/p&gt;
-  &lt;p&gt;오히려 더 악화되어 파국을 향하고 있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아직까지 먹이를 뿌리는 특정인도 잡아내지 못했을 뿐더러 먹이와 물이랍시고 넣어놓고는 &lt;/p&gt;
-  &lt;p&gt;(그들은 갯수마저 늘렸습니다.) &lt;/p&gt;
-  &lt;p&gt;어디서 구했는지 우유박스로 벽을 만들어 사람들이 눈치채지 못하게 만들었고, 그 동안 계속해서 먹이를 살포했습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;안전신문고에 올려서 시청의 경고장을 붙이고, &lt;/p&gt;
-  &lt;p&gt;관리사무소에 연락해 철거시키기도 했습니다. &lt;/p&gt;
-  &lt;p&gt;(건물주는 애초에 관리용역업체에 건물의 유지보수를 넘긴상태였습니다.) &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;하지만 거기까지 였습니다. &lt;/p&gt;
-  &lt;p&gt;지자체와 관리용역의 처리만으로는 이 민족반역자들은 조직적이고, 악날하며, 뭉쳐있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;어서 새 정부가 들어서서 &lt;/p&gt;
-  &lt;p&gt;과학적/학술적/보건과 안보의 이유 외의 모든 먹이주기 행위를 금지하고, 이를 추적, 관리하도록 사전허가제로 바꿔야합니다. 또한 건물/시설의 소유자 및 거주자는 캣맘들의 모든 불법 시설물을 제거할 권리를 인정해야 합니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;민주적이고 정의로운 새 정부수립과 운영을 위해, 캣맘들과의 싸움, 이를 규제할 정책의 실현을 위해 계속 노력하겠습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;1. 캣맘은 왜 위험한가요? &lt;/p&gt;
-  &lt;p&gt; 그들은 자신들의 행위가 이웃에게 피해를 주고 위협을 가한다는 것을 알고 있습니다. &lt;/p&gt;
-  &lt;p&gt;그들은 알고 있음에도 아무 곳에서나 먹이를 뿌리고 다니고 있습니다. 지금 이 시간에도 말이죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그리고 이러한 행위를 합법화하고, 이로 인한 피해와 손실을 국가와 시민의 몫으로 떠넘기고 있습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;2. 국가의 피해/시민의 피해는 어떤 것이 있을까요? &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;2-1 국가의 피해 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;법정전염병/인수공통질병/공중보건비상사태의 빈도와 규모가 점점 커지고 잦아지며, &lt;/p&gt;
-  &lt;p&gt;인간과 동물을 가리지않고, 종의 장벽이 사라진 새로운/변종 질병이 휩쓸고 지나가게되면, 이에 대한 대응과 복구로 천문학적인 손실과 비용으로 국가의 존립을 위협함. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;캣맘으로 발생되는 생활/행정 상의 민원으로 인한 행정처리와 비용의 증가. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;2-2 시민의 피해&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;법정전염병/인수공통질병 감염확률의 증가&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;생활상의 불편과 피해, 정신적/물질적 피해&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;길고양이들의 인위적인 증가와 먹이로 인해 &lt;/p&gt;
-  &lt;p&gt;유해동물/해충의 급증 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;동물학대/살해자들의 명분확장으로, 고양이 혐오범죄 증가&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;동식물의 다양성 상실, 생태계 균형의 심각한 손상초례 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;3. 결국 이 문제는 어떻게 해야 합니까? &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;제도의 공백과 책임의 부재를 하루빨리 없애야 합니다. 민족반역자 캣맘의 행위를 권장하고 지원하는 자금줄과 지원세력들을 하루빨리 잡아내 처벌해야, 이 문제는 막을 내릴 것 입니다. &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953228</guid><pubDate>Thu, 10 Apr 2025 21:18:38 GMT</pubDate></item><item><title>전자책 무료라는 재테크에 주의하세요[5][8]</title><link>https://www.clien.net/service/board/park/18953179</link><description>
- 
- 
-  &lt;p&gt;클리앙에도 기존광고 업체 계정으로 의심되는 계정과 타 계정이 &lt;/p&gt;
-  &lt;p&gt;한바탕 하고갔는데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;재테크 관련 전자책 핑계로 그냥 챗gpt만 긁어도 나오는 내용의 얇은책 하나주고 결론은 설명회 초대를하는 건입니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그냥 유사수신이나 코인설명회 이런류 하면 안낚이니 스스로 낚이는 물고기를 찾는수법이죠&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://www.google.com/search?q=%22%EC%9D%B4%EC%9E%90%EC%97%90+%EB%AF%B8%EC%B9%98%EB%8B%A4%22+%EB%B6%81%EC%8A%A4%ED%8C%9F&amp;amp;newwindow=1&amp;amp;client=ms-android-samsung-ss&amp;amp;sca_esv=5aa11a5588fe31d3&amp;amp;bih=866&amp;amp;biw=411&amp;amp;hl=ko&amp;amp;sxsrf=AHTn8zp3-BxdiS5knTHqidZsOdNALB7ukw%3A1744280109736&amp;amp;source=hp&amp;amp;ei=LZr3Z-2BKv2evr0P7Oq32Q8&amp;amp;oq=&amp;amp;gs_lp=EhFtb2JpbGUtZ3dzLXdpei1ocCIAKgIIAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAkiTBlAAWABwAXgAkAEAmAEAoAEAqgEAuAEByAEAmAIBoAIZqAIPmAMZ8QXMAjKd6AOvapIHATGgBwCyBwC4BwA&amp;amp;sclient=mobile-gws-wiz-hp" target="_blank"&gt;https://www.google.com/search?q=%22%EC%9D%B4%EC%9E%90%EC%97%90+%EB%AF%B8%EC%B9%98%EB%8B%A4%22+%EB%B6%81%EC%8A%A4%ED%8C%9F&amp;amp;newwindow=1&amp;amp;client=ms-android-samsung-ss&amp;amp;sca_esv=5aa11a5588fe31d3&amp;amp;bih=866&amp;amp;biw=411&amp;amp;hl=ko&amp;amp;sxsrf=AHTn8zp3-BxdiS5knTHqidZsOdNALB7ukw%3A1744280109736&amp;amp;source=hp&amp;amp;ei=LZr3Z-2BKv2evr0P7Oq32Q8&amp;amp;oq=&amp;amp;gs_lp=EhFtb2JpbGUtZ3dzLXdpei1ocCIAKgIIAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAjIHECMYJxjqAkiTBlAAWABwAXgAkAEAmAEAoAEAqgEAuAEByAEAmAIBoAIZqAIPmAMZ8QXMAjKd6AOvapIHATGgBwCyBwC4BwA&amp;amp;sclient=mobile-gws-wiz-hp&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이런식으로 듣보 언론 기사 패키지 좀 사고&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://youtube.com/@my-lifetalk?si=kDErqHqGHm07Np7i" target="_blank"&gt;https://youtube.com/@my-lifetalk?si=kDErqHqGHm07Np7i&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;이런식으로 구독자많은 유투브채널하나사다가&lt;/p&gt;
-  &lt;p&gt;재연배우 사서 영상만들면 하나 뚝딱이죠&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;도메인 만든 날짜 2025.3.27&lt;/p&gt;
-  &lt;p&gt;유투브 타채널만든날짜 2025.3.27 답이없어요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;애초에 저런류 스테이킹은 메이저 거래소가 이미 지원다하고있고 이율이 그닥높지않습니다. 그거보다 더 높은 이자율이나 원금보장하는 특정사이트를 소개한다? 그런거없습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953179</guid><pubDate>Thu, 10 Apr 2025 19:17:27 GMT</pubDate></item><item><title>지난 대선 이재명 대표께서 클리앙 영상 &amp; 제21대 대통령 출마 선언 영상[4][5]</title><link>https://www.clien.net/service/board/park/18953089</link><description>
- 
- 
-  &lt;p&gt;저는 마지막에 우리들 동지라고 불려주시는 대표님이 참 좋더라고요&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/ow7-j9MSKLs" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/mr_2ywAJ4Lo" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953089</guid><pubDate>Thu, 10 Apr 2025 16:32:29 GMT</pubDate></item><item><title>이야기 전 아직까지 쌍용 액티언을 좋아합니다[12][1]</title><link>https://www.clien.net/service/board/cm_car/18953202</link><description>
- 
- 
-  &lt;p&gt;앞태가 시대를 너무 앞서가서 그랬지&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;옆태는 진짜 쿠페거든요....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;게다가 프레임 바디..&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이게 진짜 쿠페형 찐 SUV 아니겠습니까&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18953202</guid><pubDate>Thu, 10 Apr 2025 20:07:35 GMT</pubDate></item><item><title>지귀연, 내란범 재판 문 걸어 잠그고 진행[26][86]</title><link>https://www.clien.net/service/board/park/18953279</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="remi1744290047_943836231.jpg" class="fr-dib fr-fil full" data-file-sn="15394612" data-gif="false" data-img-height="1360" data-img-width="800" data-role="attach-image" src="https://edgio.clien.net/F01/15394612/581527fd3d4e2e.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="remi1744290048_1107433941.jpg" class="fr-dib fr-fil full" data-file-sn="15394624" data-gif="false" data-img-height="503" data-img-width="864" data-role="attach-image" src="https://edgio.clien.net/F01/15394624/5815d783390b5b.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;참 나 내란 재판을 비공개로 한다는 게 생각해도 어이가 없네요. 오히려 더 공개로 해야 하는 거 아님? 결국 검찰의 선관위 장악 연루 정황을 덮으려는 수작질에 재판부가 응답해 준 꼴인데 지귀연 저인간도 나중에 공수처 수사로 털어야 할 넘임&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953279</guid><pubDate>Thu, 10 Apr 2025 22:39:55 GMT</pubDate></item><item><title>'71년간 韓 사목' 프랑스 출신 두봉 주교 선종[41][77]</title><link>https://www.clien.net/service/board/park/18953276</link><description>
- 
- 
-  &lt;p&gt;한국에서의 헌신 잊지않겠습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;삼가 고인의 명복을 빕니다&lt;/p&gt;
-  &lt;p&gt;영면하시길..&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953276</guid><pubDate>Thu, 10 Apr 2025 22:35:21 GMT</pubDate></item><item><title>[속보] 검찰, 이재명 ‘선거법 위반’ 상고이유서 제출[10][58]</title><link>https://www.clien.net/service/board/park/18953263</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/comment/081/0003532549" target="_blank"&gt;https://n.news.naver.com/article/comment/081/0003532549&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;끝까지 발악을하는  정치검새들은 해체가 답이네요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953263</guid><pubDate>Thu, 10 Apr 2025 22:06:46 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18953355</guid><pubDate>Fri, 11 Apr 2025 02:05:53 GMT</pubDate></item></channel></rss>
