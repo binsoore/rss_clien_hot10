@@ -1,5 +1,91 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Mon, 21 Apr 2025 00:00:53 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>술 끊으신 분들은 계기나 범위? 가 있으신지[19][0]</title><link>https://www.clien.net/service/board/park/18959304</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Mon, 21 Apr 2025 01:00:50 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>기타 전자기기 [자작] ePaper 스누피 액자[1][12]</title><link>https://www.clien.net/service/board/lecture/18959109</link><description>
+ 
+ 
+  &lt;p&gt;안녕하세요&lt;br/&gt;&lt;br/&gt;
+    며칠전에 완성시킨 4.7" ePaper 액자가 작업완료 삼십분만에 고장나버려서(ㅠㅠ) 멘붕이 왔다가 그래도 작업진행과정은 여러분들과 공유해볼 가치가 있을것 같아 (눈물을 머금고 ㅠㅠ)올립니다&lt;br/&gt;&lt;br/&gt;
+    1. 당초 집사람 생일(10월)까지 완성을 목표로 여유있게 23년 8월경에 구입한 Lilygo 4.7" ePaper 모듈입니다. esp32s3모듈과 배터리 충전 모듈이 온보드라 제 목적에 딱 맞아떨어집니다. 가격은 호주$80정도로 좀 나가는 편입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="01.JPG" class="fr-dib fr-fil full" data-file-sn="15403005" data-gif="false" data-img-height="768" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/15403005/5b0de70dd73cfc.JPG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="02.JPG" class="fr-dib fr-fil full" data-file-sn="15403006" data-gif="false" data-img-height="768" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/15403006/5b0de9201e8e2d.JPG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;2. 4000mAh짜리 대용량 Lipo도 그즈음 같이 구매했습니다. 어떻게든 최소 한달은 충전없이 작동하는게 당초 목표였었습니다&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="03.JPG" class="fr-dib fr-fil full" data-file-sn="15403007" data-gif="false" data-img-height="768" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/15403007/5b0defdd193c94.JPG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;br/&gt;
+    3. 액자에 띄울 이미지는 미리 홈서버의 공유폴더에 시간날때마다 업로드해두고 매일 한번씩 rotate하게끔 배쉬스크립트를 짜줍니다. 스크립트는 액자가 하루 한번 deep sleep에서 깨어나서 루틴을 수행하고 딥슬립에 재돌입전 마지막으로 MQTT를 날려주면 그걸 받아보고 작동하게끔 했습니다. 배쉬스크립트 아리까리해서 잘 짜기 쉽지않지만 요즘은 AI가 다 해주니까 아주 쉽습니다.&lt;br/&gt;&lt;br/&gt;
+    4. 액자에 이미지띄우는 코드와 MQTT, 서버의 스크립트 등등만 잘 짜면 기본작동은 됩니다만 관건은 배터리입니다. 배터리 사용패턴을 역시 MQTT를 통해 influxDB에 읽어들이고 grafana로  그려줬습니다. 아래 그래프의 초록색점들을 보시면 대략 15일정도 작동하는걸 볼 수 있습니다. 당초 목표인 한달에는 한참 못미치지만 제 능력으론 여기까지인것 같아서 대충 이정도 선에서 만족하는것으로 했습니다. 프로젝이 일년 넘게 지연된게 다 이놈의 딥슬립때문이었답니다 (한편 그래프상의 노란선은 자작중인 다른 컨셉의 기기인데요 2000mah배터리로 거의 석달넘게 버팁니다@@)&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="04.jpg" class="fr-dib fr-fil full" data-file-sn="15403009" data-gif="false" data-img-height="442" data-img-width="924" data-role="attach-image" src="https://edgio.clien.net/F01/15403009/5b0dfb8fdfbcec.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;br/&gt;
+    5. 여기까지가 기초적인 작동방식이구요. 마누라 선물이다보니 외관을 예쁘게 꾸며야하겠기에 이번에 처음으로 도색을 시도합니다. 도색은 처음 해보는거라 고전을 거듭했습니다. 결과는 뭐 그럭저럭...&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="05.png" class="fr-dib fr-fil full" data-file-sn="15403010" data-gif="false" data-img-height="576" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/15403010/5b0e03a895350c.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="06.png" class="fr-dib fr-fil full" data-file-sn="15403011" data-gif="false" data-img-height="576" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/15403011/5b0e05b0851812.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="07.png" class="fr-dib fr-fil full" data-file-sn="15403012" data-gif="false" data-img-height="576" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/15403012/5b0e07852a05c7.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;6. 작업하다가 실수로 보드의 리셋버튼을 부러트리는 사고를 쳤는데요 덕분에 리셋버튼을 외부롤 깔끔하게 빼내서 더 편리하게 만들었습니다&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="08.JPG" class="fr-dib fr-fil full" data-file-sn="15403013" data-gif="false" data-img-height="768" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/15403013/5b0e100fbc8877.JPG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="09.JPG" class="fr-dib fr-fil full" data-file-sn="15403014" data-gif="false" data-img-height="768" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/15403014/5b0e11ca8ef2fe.JPG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="10.JPG" class="fr-dib fr-fil full" data-file-sn="15403015" data-gif="false" data-img-height="768" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/15403015/5b0e139740c29c.JPG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="11.png" class="fr-dib fr-fil full" data-file-sn="15403016" data-gif="false" data-img-height="576" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/15403016/5b0e1566127241.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;7. 배터리는 뒷판에 고정됩니다. 뒷판에는 제 자작에 항상 등장하는 충전 indicator 투명아크릴봉이 설치됩니다. 뒷판고정은 M3 스크류 한개로 깔끔하게 됩니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="12.png" class="fr-dib fr-fil full" data-file-sn="15403017" data-gif="false" data-img-height="576" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/15403017/5b0e1b00013316.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;br/&gt;
+    8. 완성입니다. 이제 잘 포장해서 마누라한테 선물하고 사랑받는일(?)만 남았는데... ㅠㅠ&lt;br/&gt;
+    테스트도중 그만 사망하시고 말았습니다. ㅠㅠ&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="13.png" class="fr-dib fr-fil full" data-file-sn="15403018" data-gif="false" data-img-height="576" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/15403018/5b0e1e216fdfca.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;
+    사망원인은 제 능력으론 알 수가 없습니다. 아마도 케이스에 보드를 맞춰서 우겨넣는(?) 과정에서 무언가 손상이 있었던게 아닌가 싶습니다. 위에 밝혔다시피 스위치를 부러뜨리는 등 여러가지 사건이 있었거든요. 아래 사진이 현재 상태인데 자세히 보시면 화면이 약간 흐릿해진것을 알 수 있습니다. 즉 무언가 하드웨어적인 문제가 발생된것 같고 그게 맞다면 제 능력으로 수리는 불가능하다고 봐야겠죠.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="14.JPG" class="fr-dib fr-fil full" data-file-sn="15403019" data-gif="false" data-img-height="1024" data-img-width="768" data-role="attach-image" src="https://edgio.clien.net/F01/15403019/5b0e21fc428e70.JPG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;(이게 이페이퍼다보니 사망하셔도 화면은 떠있습니다)&lt;br/&gt;&lt;br/&gt;
+    이상입니다. 혹시라도 저것 비슷한걸 자작하실 분이 계시다면 나름 조금이나마 참고가 되시라고 올렸습니다. 배쉬스크립트와 아두이노코드도 자료실에 올리겠습니다.&lt;br/&gt;&lt;br/&gt;
+    즐거운 주말 마무리하세요. 감사합니다&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/18959109</guid><pubDate>Mon, 21 Apr 2025 00:18:29 GMT</pubDate></item><item><title>'이재명 출마 포기 했으면..'광주 50男의 토로[12][2]</title><link>https://www.clien.net/service/board/park/18959302</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;제목 바꾸기 했는데 파이내셜 메인 제목은 위 제목으로 여전히 그대로 노출 되네요 그리고 저 신문사 뉴스보니 단체로 맛탱이 간거 같네요 정권 바뀌면 보조금부터 폐지 합시다~요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959302</guid><pubDate>Sun, 20 Apr 2025 23:32:49 GMT</pubDate></item><item><title>대행 한덕수 “선출직 대통령과 같다”…방위비 협상 또 ‘월권’ 논란[8][5]</title><link>https://www.clien.net/service/board/park/18959290</link><description>
+ 
+ 
+  &lt;p&gt;한미가 도널드 트럼프 미국 대통령이 부과하겠다는 상호관세에 대해 이번주 ‘2+2 협상’을 하기로 한 가운데, 한덕수 대통령 권한대행 국무총리가 협상 시작도 전에 ‘방위비 재협상’ 가능성을 시사해 논란이 일고 있다.&lt;/p&gt;
+  &lt;p&gt;한 권한대행은 20일 공개된 영국 ‘파이낸셜타임스’(FT) 인터뷰에서, 미국 정부와의 무역협상에서 주한미군 방위비 분담금 문제가 함께 논의될 수 있느냐는 질문에 현재로서는 안보 문제를 논의할 “명확한 틀이 없다”면서도, “사안의 성격에 따라” 방위비 협정을 다시 논의할 의사가 있다고 했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한 권한대행은 이 인터뷰에서 시종일관 미국의 의도에 맞추겠다는 식의 태도를 보였다. 그는 “한국전쟁 이후 미국은 우리에게 원조, 기술 이전, 투자와 안전 보장을 제공해 왔다. 우리의 산업 역량, 금융 발전, 문화, 성장, 부는 미국의 도움 덕분이 매우 크다”고 강조했다. 트럼프 대통령의 상호관세 조처에는 “맞대응하지 않겠다”며 한-미 관세협상에서 “둘 다 윈윈할 수 있는 해결책을 찾기 위해 노력하겠다”고도 말했다. 한 권한대행은 또, 미국의 액화천연가스(LNG)와 상업용 여객기를 구매하는 방식으로 대미 무역 흑자 축소를 논의할 의향이 있다며, 해군 조선 분야 협력 강화가 “한미 동맹 강화에 도움이 될 수 있다”고 말했다. 한국의 자동차 배기가스 규제, 30개월령 이상 미국산 쇠고기 수입 제한, 넷플릭스같은 글로벌 컨텐츠 업체에 부과하는 인터넷 네트워크 망 사용료 등 미국이 불만을 제기해 온 비관세 장벽 문제도 논의할 의향이 있다고 했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;후략&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;정신 나간 놈 이네요&lt;/p&gt;
+  &lt;p&gt;탄핵 마렵네요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959290</guid><pubDate>Sun, 20 Apr 2025 22:31:09 GMT</pubDate></item><item><title>오늘자 KBO 순위[10][1]</title><link>https://www.clien.net/service/board/park/18959281</link><description>
+ 
+ 
+  &lt;p&gt;1위 LG 8할 승률이 깨졌군요.&lt;/p&gt;
+  &lt;p&gt;사실 승률이 8할이 진짜 ㅎㄷㄷㄷ였죠&lt;/p&gt;
+  &lt;p&gt;사실 7할대도 미친 승률입니다 ㅋㅋㅋ&lt;/p&gt;
+  &lt;p&gt;2위부터 7위가 거의 5할대 언저리 승률에..&lt;/p&gt;
+  &lt;p&gt;2위에서 10위는 연패 한번하면 완전히 미끄러지거나 할 것 같은 살얼음판이네요..&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="순위.png" class="fr-dib fr-fil full" data-file-sn="15403282" data-gif="false" data-img-height="778" data-img-width="859" data-role="attach-image" src="https://edgio.clien.net/F01/15403282/5b25be2ff62f2d.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959281</guid><pubDate>Sun, 20 Apr 2025 22:16:11 GMT</pubDate></item><item><title>격조있는 국힘 경선 토론회 근황[10][4]</title><link>https://www.clien.net/service/board/park/18959279</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아니 저런건 우리 일반 시민들이나 저런걸로 놀리는거지&lt;/p&gt;
+  &lt;p&gt;가발쓰는거랑 정책이 무슨 관계가 있다고.... ㅋㅋㅋ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959279</guid><pubDate>Sun, 20 Apr 2025 22:02:00 GMT</pubDate></item><item><title>술 끊으신 분들은 계기나 범위? 가 있으신지[22][0]</title><link>https://www.clien.net/service/board/park/18959304</link><description>
  
  
   &lt;p&gt;20대에 먹지 않던 술을 30대에 먹기 시작해서 지금까지 왔는데&lt;/p&gt;
@@ -8,7 +94,7 @@
   &lt;p&gt;그리고 회사만 끊는다, 배우자나 연인하고만 먹는다 등등 기준이 있으신지도 궁금합니다.&lt;/p&gt;
   &lt;p&gt;정해진 답이 없어 두서없이 모공에 올려봅니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959304</guid><pubDate>Sun, 20 Apr 2025 23:38:44 GMT</pubDate></item><item><title>수능은 언제없어질까요?[34][0]</title><link>https://www.clien.net/service/board/park/18959303</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959304</guid><pubDate>Sun, 20 Apr 2025 23:38:44 GMT</pubDate></item><item><title>수능은 언제없어질까요?[51][1]</title><link>https://www.clien.net/service/board/park/18959303</link><description>
  
  
   &lt;p&gt;말이 공정한시험이지 전국민 줄세우기 시험&lt;/p&gt;
@@ -25,7 +111,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959303</guid><pubDate>Sun, 20 Apr 2025 23:34:40 GMT</pubDate></item><item><title>한덕수는 굉장히 음흉하고 추하네요[12][9]</title><link>https://www.clien.net/service/board/park/18959294</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959303</guid><pubDate>Sun, 20 Apr 2025 23:34:40 GMT</pubDate></item><item><title>한덕수는 굉장히 음흉하고 추하네요[14][13]</title><link>https://www.clien.net/service/board/park/18959294</link><description>
  
  
   &lt;p&gt;대선 출마여부 노코멘트라는거 자체가 &lt;/p&gt;
@@ -48,7 +134,7 @@
   &lt;p&gt;정말 역겹네요 &lt;/p&gt;
   &lt;p&gt;  &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959294</guid><pubDate>Sun, 20 Apr 2025 22:38:17 GMT</pubDate></item><item><title>와이프가 한동훈 팬이 된 것 같습니다.[10][0]</title><link>https://www.clien.net/service/board/park/18959244</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959294</guid><pubDate>Sun, 20 Apr 2025 22:38:17 GMT</pubDate></item><item><title>와이프가 한동훈 팬이 된 것 같습니다.[11][0]</title><link>https://www.clien.net/service/board/park/18959244</link><description>
  
  
   &lt;p&gt;한동훈 영상만 계속 찾아봅니다. &lt;/p&gt;
@@ -67,7 +153,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959244</guid><pubDate>Sun, 20 Apr 2025 20:24:06 GMT</pubDate></item><item><title>국힘 토론 수준이 장난이 아닙니다. 대비가 필요합니다.[10][2]</title><link>https://www.clien.net/service/board/park/18959230</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959244</guid><pubDate>Sun, 20 Apr 2025 20:24:06 GMT</pubDate></item><item><title>국힘 토론 수준이 장난이 아닙니다. 대비가 필요합니다.[12][2]</title><link>https://www.clien.net/service/board/park/18959230</link><description>
  
  
   &lt;p&gt;국힘 경선 토론 수준울 보니&lt;/p&gt;
@@ -103,7 +189,7 @@
   &lt;p&gt;전국에 키작은 사람들, 가발러 등이 부글부글&lt;/p&gt;
   &lt;p&gt;하것네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959165</guid><pubDate>Sun, 20 Apr 2025 17:08:33 GMT</pubDate></item><item><title>이야기 주행중에 핸드폰 사용 금지...강력하게 처벌해야 합니다...[22][3]</title><link>https://www.clien.net/service/board/cm_car/18959257</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959165</guid><pubDate>Sun, 20 Apr 2025 17:08:33 GMT</pubDate></item><item><title>이야기 주행중에 핸드폰 사용 금지...강력하게 처벌해야 합니다...[23][3]</title><link>https://www.clien.net/service/board/cm_car/18959257</link><description>
  
  
   &lt;p&gt;애지중지하던 이트론50을 동탄-봉담 고속도로 정체 구간에서 멈춰 서 있다가 후방 추돌로 하늘 나라로 보냈습니다. &lt;/p&gt;
@@ -137,7 +223,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;일본에게 지는건 못참죠 ㅋㅋㅋ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959227</guid><pubDate>Sun, 20 Apr 2025 20:12:39 GMT</pubDate></item><item><title>국힘당 사람들은 하나같이 양심을 찾아볼 수가 없네요.[2][5]</title><link>https://www.clien.net/service/board/park/18959214</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959227</guid><pubDate>Sun, 20 Apr 2025 20:12:39 GMT</pubDate></item><item><title>국힘당 사람들은 하나같이 양심을 찾아볼 수가 없네요.[2][6]</title><link>https://www.clien.net/service/board/park/18959214</link><description>
  
  
   &lt;p&gt;내란을 일으킨 자를 싸고돌았으면 양심이 있으면&lt;/p&gt;
@@ -191,7 +277,7 @@
   &lt;p&gt;5년이라고&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959185</guid><pubDate>Sun, 20 Apr 2025 17:56:09 GMT</pubDate></item><item><title>팰리세이드 하이브리드 돌풍 예고···더 진보된 기술력의 힘[11][3]</title><link>https://www.clien.net/service/board/news/18958984</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959185</guid><pubDate>Sun, 20 Apr 2025 17:56:09 GMT</pubDate></item><item><title>팰리세이드 하이브리드 돌풍 예고···더 진보된 기술력의 힘[12][3]</title><link>https://www.clien.net/service/board/news/18958984</link><description>
  
  
   &lt;p&gt;&lt;strong&gt;디 올 뉴 팰리세이드 HEV···차세대 하이브리드 시스템 적용 첫 모델&lt;/strong&gt;&lt;/p&gt;
@@ -354,7 +440,7 @@
   &lt;p&gt;AI를 이렇게 소소하게 일상에 활용하는 사례가 제가 생각지 못한 꿀팁이 많을것 같은데 함께 공유해보시죠!&lt;/p&gt;
   &lt;p&gt;집단지성!&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959271</guid><pubDate>Sun, 20 Apr 2025 21:33:51 GMT</pubDate></item><item><title>이재명 표지... ㄷㄷ[8][36]</title><link>https://www.clien.net/service/board/park/18959270</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959271</guid><pubDate>Sun, 20 Apr 2025 21:33:51 GMT</pubDate></item><item><title>이재명 표지... ㄷㄷ[10][43]</title><link>https://www.clien.net/service/board/park/18959270</link><description>
  
  
   &lt;p&gt;&lt;img alt="이재명.jpg" class="fr-dib fr-fil" data-file-sn="15403266" data-gif="false" data-img-height="854" data-img-width="640" data-role="attach-image" src="https://edgio.clien.net/F01/15403266/5b23e382fdbab1.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -368,7 +454,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959270</guid><pubDate>Sun, 20 Apr 2025 21:33:14 GMT</pubDate></item><item><title>전광훈, '집 팔아서 헌금 내라'[26][7]</title><link>https://www.clien.net/service/board/park/18959266</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959270</guid><pubDate>Sun, 20 Apr 2025 21:33:14 GMT</pubDate></item><item><title>전광훈, '집 팔아서 헌금 내라'[26][8]</title><link>https://www.clien.net/service/board/park/18959266</link><description>
  
  
   &lt;h1&gt;'대선 출마' 전광훈 "尹 통일 대통령 만들 것…집 팔아서 헌금 내라"&lt;/h1&gt;
@@ -450,7 +536,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;반박시 님말이 다 맞습니다. 제가 무슨 슈카 팬도 아니고, 슈카가 욕을 먹든 돈을 벌든 저랑 상관없고 맘대로 말씀하셔도 됩니다. 저도 그냥 제 생각 얘기한 거고 댓글은 안 달 겁니다. 그럼 20000&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959251</guid><pubDate>Sun, 20 Apr 2025 20:48:45 GMT</pubDate></item><item><title>구독자 356만명 채널이 일개 유튜버인가요?[20][5]</title><link>https://www.clien.net/service/board/park/18959248</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959251</guid><pubDate>Sun, 20 Apr 2025 20:48:45 GMT</pubDate></item><item><title>구독자 356만명 채널이 일개 유튜버인가요?[21][7]</title><link>https://www.clien.net/service/board/park/18959248</link><description>
  
  
   &lt;p&gt;논란을 가중시키고 싶은 의도는 아닙니다만, 좀 아닌거 같아서 몇자 더 써봅니다. &lt;/p&gt;
@@ -493,7 +579,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959248</guid><pubDate>Sun, 20 Apr 2025 20:41:31 GMT</pubDate></item><item><title>일본은 누가 대통령이 될지 이미 알고 있습니다[2][8]</title><link>https://www.clien.net/service/board/park/18959223</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959248</guid><pubDate>Sun, 20 Apr 2025 20:41:31 GMT</pubDate></item><item><title>일본은 누가 대통령이 될지 이미 알고 있습니다[2][9]</title><link>https://www.clien.net/service/board/park/18959223</link><description>
  
  
   &lt;p&gt;삿포로 큰 서점에서 발견한 책 입니다.&lt;/p&gt;
@@ -594,7 +680,7 @@
   &lt;p&gt;.....천재....&lt;/p&gt;
   &lt;p&gt;라는..요??&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959243</guid><pubDate>Sun, 20 Apr 2025 20:19:27 GMT</pubDate></item><item><title>준석열 망언 '주민센터 지하화' 논란[31][9]</title><link>https://www.clien.net/service/board/park/18959226</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959243</guid><pubDate>Sun, 20 Apr 2025 20:19:27 GMT</pubDate></item><item><title>준석열 망언 '주민센터 지하화' 논란[35][13]</title><link>https://www.clien.net/service/board/park/18959226</link><description>
  
  
   &lt;p&gt;준석열 망언 '주민센터 지하화' 논란&lt;/p&gt;
@@ -776,12 +862,12 @@
   &lt;p&gt;&lt;img alt="1111.webp" class="fr-dib fr-fil full" data-file-sn="15403121" data-gif="false" data-img-height="1405" data-img-width="900" data-role="attach-image" src="https://edgio.clien.net/F01/15403121/5b1704db66efeb.webp?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959179</guid><pubDate>Sun, 20 Apr 2025 17:35:57 GMT</pubDate></item><item><title>이재명, 충청 이어 영남도 압승…득표율 90.81%[3][19]</title><link>https://www.clien.net/service/board/park/18959172</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959179</guid><pubDate>Sun, 20 Apr 2025 17:35:57 GMT</pubDate></item><item><title>이재명, 충청 이어 영남도 압승…득표율 90.81%[3][20]</title><link>https://www.clien.net/service/board/park/18959172</link><description>
  
  
   &lt;p&gt;와 영남에서도 득표율 어마어마하네요!&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959172</guid><pubDate>Sun, 20 Apr 2025 17:24:56 GMT</pubDate></item><item><title>민주당 영남권 이재명 득표율 90.81% 압승~!![13][32]</title><link>https://www.clien.net/service/board/park/18959171</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959172</guid><pubDate>Sun, 20 Apr 2025 17:24:56 GMT</pubDate></item><item><title>민주당 영남권 이재명 득표율 90.81% 압승~!![13][33]</title><link>https://www.clien.net/service/board/park/18959171</link><description>
  
  
   &lt;p&gt;&lt;img alt="K-035.jpg" class="fr-dib fr-fil" data-file-sn="15403118" data-gif="false" data-img-height="856" data-img-width="716" data-role="attach-image" src="https://edgio.clien.net/F01/15403118/5b16cca9011420.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -894,7 +980,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959142</guid><pubDate>Sun, 20 Apr 2025 15:51:39 GMT</pubDate></item><item><title>국힘 경선 웃기네요 ㅋㅋ 홍준표가 한동훈한테[9][13]</title><link>https://www.clien.net/service/board/park/18959124</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959142</guid><pubDate>Sun, 20 Apr 2025 15:51:39 GMT</pubDate></item><item><title>국힘 경선 웃기네요 ㅋㅋ 홍준표가 한동훈한테[9][15]</title><link>https://www.clien.net/service/board/park/18959124</link><description>
  
  
   &lt;p&gt;키도 큰데 키높이 깔창은 왜까냐??&lt;br/&gt;
@@ -905,82 +991,4 @@
     어제는 동네 반상회 수준이였고&lt;/p&gt;
   &lt;p&gt;오늘은 개콘이네요 ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959124</guid><pubDate>Sun, 20 Apr 2025 15:14:01 GMT</pubDate></item><item><title>이야기 G70 2.5티 현시점 어떤가요[21][0]</title><link>https://www.clien.net/service/board/cm_car/18959120</link><description>
- 
- 
-  &lt;p&gt;와이프 퇴사로.. 아마 차 기추를 할것 같습니다.&lt;/p&gt;
-  &lt;p&gt;벤츠 c클. 제네시스 g70 이 후보입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;와이프가 제네시스 카프리블루에 푹빠져 아마 G70으로 가지싶은데요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;현시점에 어떨까요?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;1) 예전 3.5티.. 시승했을땐 정말 어마어마하게 재미있다 생각되었는데 2.5티 완성도는 어떨까요. 스펙보니 300마력 넘고. 토크 40넘으니 와이프가 주로 모는.입장에선 2.5도 고스펙 같아보이긴합니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;2) 스포츠패키지가 350정도 더 나가던데 LSD.브람보등 스포츠패키지가 더 괜찮을까요&lt;/p&gt;
-  &lt;p&gt;저도 아마.. 자주 운전 할거같긴합니다 ㅎ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;3) 단종으로 알고있는데 단종직전 크게 할인이 되지않을까 언제쯤 단종이된다는소식이 있을까요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;답변 미리감사드입니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18959120</guid><pubDate>Sun, 20 Apr 2025 15:19:29 GMT</pubDate></item><item><title>삼성 파운드리 사업은 왜 TSMC를 조금이라도 따라잡을 수 없게 된 것인가 ?[30][4]</title><link>https://www.clien.net/service/board/park/18959156</link><description>
- 
- 
-  &lt;p&gt;삼성(반도체)이 미세공정 경쟁 직전에 파운드리 사업에 뛰어 들었기 때문에 가능했었던...TSMC를 조금이라도 따라잡을 수 있었던 기회를 놓치게 된 결정적인 이유는 김기남 사장이라고 저는 생각합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="스크린샷 2025-04-20 002123.png" class="fr-dib fr-fil full" data-file-sn="15403074" data-gif="false" data-img-height="1082" data-img-width="826" data-role="attach-image" src="https://edgio.clien.net/F01/15403074/5b1319189ee747.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;하지만, 이 부분을 조금더 자세히 들여다 보면 김기남의 뻥카뒤에 숨겨진 내용도 있다고 생각합니다.&lt;br/&gt;
-    삼성의 반도체는 반도체 만 알지 그 반도체를 사용하는 컴퓨터 시스템 전체에 대한 이해가 없었다고 저는 생각합니다.&lt;br/&gt;
-    즉, 매뉴얼 보고 열심히 공부해서 생산만 잘하는 인재들만 넘치지 실제로 그 반도체가 사용되는 컴퓨터 시스템 전체에 대한 이해와 접근이 없었다는 것입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="스크린샷 2025-04-20 002353.png" class="fr-dib fr-fil full" data-file-sn="15403075" data-gif="false" data-img-height="1021" data-img-width="877" data-role="attach-image" src="https://edgio.clien.net/F01/15403075/5b133c2adc9626.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;저는 이 부분이 사실 우리나라의 멍청한 교육과도 관련이 있다고 생각합니다.&lt;br/&gt;
-    유연한 사고 / 원리를 이해하는 사고 / 전체를 바라보는 사고를 가르치는 교육이 아니고 대학에서 조차도 그냥 교과서 열심히 공부해서 시험만 잘치면 좋은 성적받는 교육과정의 한계가 드러난 것이라고 저는 생각합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="스크린샷 2025-04-20 002606.png" class="fr-dib fr-fil full" data-file-sn="15403076" data-gif="false" data-img-height="1120" data-img-width="894" data-role="attach-image" src="https://edgio.clien.net/F01/15403076/5b13596c784b13.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;고시 공부만 열심히한 삐뚤어진 엘리트가 친위쿠데타를 일의킨 한국의 문제점이 공대에는 정말 없는 것일까요 ?&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959156</guid><pubDate>Sun, 20 Apr 2025 16:30:31 GMT</pubDate></item><item><title>보는 사람들이 더 부끄럽습니다.[10][12]</title><link>https://www.clien.net/service/board/park/18959153</link><description>
- 
- 
-  &lt;p&gt;자당 대통령 탄핵되어 집에 간지&lt;/p&gt;
-  &lt;p&gt;3주도 안되었습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;집권여당으로 국가에 대한 책임감과&lt;/p&gt;
-  &lt;p&gt;국민에 대한 죄송함도 없고&lt;/p&gt;
-  &lt;p&gt;아주 재미있나 보네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="mtbi.png" class="fr-dib fr-fil" data-file-sn="15403070" data-gif="false" data-img-height="706" data-img-width="665" data-role="attach-image" src="https://edgio.clien.net/F01/15403070/5b12a923cf0eb7.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;일말의 부끄러움도&lt;/p&gt;
-  &lt;p&gt;죄송함도 미안함도&lt;/p&gt;
-  &lt;p&gt;책임감도 없는 정치꾼들&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그리고 이걸 뉴스라고 퍼나르는 &lt;/p&gt;
-  &lt;p&gt;언론사 및 기자양반들&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;왜 부끄러움은 항상 국민들의 몫입니까&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/016/0002459846" ori-url="https://n.news.naver.com/mnews/article/016/0002459846" target="_blank"&gt;https://n.news.naver.com/mnews/article/016/0002459846&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959153</guid><pubDate>Sun, 20 Apr 2025 16:21:07 GMT</pubDate></item><item><title>굳이 정치할 필요 없었다는 이준석[23][19]</title><link>https://www.clien.net/service/board/park/18959130</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그냥 자연스럽게 정치판 떠나시면 될 것 같긴 합니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959130</guid><pubDate>Sun, 20 Apr 2025 15:23:51 GMT</pubDate></item><item><title>나경원) 댓글 국적 표기법 발의 ㅋㅋㅋㅋ[10][0]</title><link>https://www.clien.net/service/board/park/18959108</link><description>
- 
- 
-  &lt;p&gt;최근에 발의 했다고...&lt;/p&gt;
-  &lt;p&gt;사이버 사상전에 대비 해야 한다고 하네요. ㅋㅋㅋㅋ&lt;/p&gt;
-  &lt;p&gt;근데 국회에서 논의가 안되고 있다고 울상이네요.&lt;/p&gt;
-  &lt;p&gt;그 좋은 국회의원 권한을 얻더니 &lt;/p&gt;
-  &lt;p&gt;'에라 아무거나 발의하자' 뭐 이런 건가요?&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959108</guid><pubDate>Sun, 20 Apr 2025 14:52:47 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18959124</guid><pubDate>Sun, 20 Apr 2025 15:14:01 GMT</pubDate></item></channel></rss>
