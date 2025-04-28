@@ -1,5 +1,183 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Mon, 28 Apr 2025 17:00:54 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Q/A 신호 위반 일까요??[11][0]</title><link>https://www.clien.net/service/board/cm_car/18963676</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Mon, 28 Apr 2025 18:00:52 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 NACS 북미 표준화는 역사적 사건이지 싶습니다.[10][1]</title><link>https://www.clien.net/service/board/cm_car/18963672</link><description>
+ 
+ 
+  &lt;p&gt;유럽 제조사들이 주도해 북미 제조사들과 협력하여 개발한 북미용 CCS1.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;테슬라는 이를 거부했죠.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;크고 투박한 커넥터 대신, 자신들만의 디자인으로 AC/DC 충전을 통합, 사용자 친화적으로 더 작고 가볍게 만들었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;레거시 제조사들의 무시 속에 한때 독자 생태계로 고립되었지만, 끊임없는 충전 네트웍 확장을 통해 포드에 이어 GM의 채택을 이끌어냈고..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;결국 북미 표준이 됐죠.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;신생 기업이 자국의 기존 산업 표준을 밀어내고 충전 경험을 재정의한..&lt;/p&gt;
+  &lt;p&gt;전기차 전환 역사에 주목할만한 사건 중 하나가 아닌가 싶습니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18963672</guid><pubDate>Mon, 28 Apr 2025 16:36:15 GMT</pubDate></item><item><title>기타 전자기기 HSS란[2][5]</title><link>https://www.clien.net/service/board/lecture/18963553</link><description>
+ 
+ 
+  &lt;p&gt;최근 (SKT 사태와 연관된) HSS에 대한 간략한 설명입니다. 수정 및 의견은 언제나 환영합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;1. HSS가 해킹 당했대, HSS가 뭔데?&lt;/strong&gt; HSS는 Home Subscriber Server의 약자입니다. 사용자의 단말(휴대폰, 태블릿 등)이 LTE 네트워크에 접속하려 할 때, 해당 가입자(SIM 카드)가 정상적으로  LTE 서비스를 이용할 권한이 있는지(개통 상태, 요금 납부 상태 등)를 확인하고 관리하는 &lt;strong&gt;중앙 데이터베이스 및 인증 관련 기능을 수행하는 장비&lt;/strong&gt;라고 보면 됩니다. 휴대폰을 개통할 때 SIM 카드를 새로 받거나 번호를 변경하여 개통하기도 하는데, HSS는 해당 SIM 카드의 전화번호, 고유 번호(IMSI), 그리고 가장 중요한 SIM 카드 인증에 사용되는 비밀 키 값(K, OP 또는 OPc)을 보관하고 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;2. HSS가 해킹 당하면 뭐가 문제인데?&lt;/strong&gt; SIM 카드 자체에는 가입자 고유 번호(IMSI)와 인증에 사용되는 비밀 키(K, OP 또는 OPc) 등이 저장되어 있습니다. SIM 카드를 휴대폰에 꽂고 전원을 켜면, 휴대폰은 SIM 카드의 정보(IMSI 등)를 이용해 LTE 네트워크에 접속을 시도하고, 통신 사업자는 HSS에 저장된 가입자 정보와 비교하여 인증 절차를 진행합니다. IMSI는 특정 도구를 이용하면 읽을 수 있지만, &lt;strong&gt;K와 OPc 같은 인증에 핵심적인 비밀 키 값은 HSS와 SIM 카드 내 보안 영역 외에는 누구도 알 수 없도록 설계&lt;/strong&gt;되어 있습니다. 인증 과정에서는 이 비밀 키 값 자체를 주고받는 것이 아니라, 이 키 값으로 &lt;strong&gt;계산된 결과 값&lt;/strong&gt;만을 주고받기 때문에 K와 OPc 값은 외부로 유출되어서는 안 되는 매우 민감한 정보입니다. 만약 어떤 사람이 특정 가입자의 IMSI와 비밀 키(K, OP 또는 OPc) 값을 모두 알게 된다면, USIM 카드 리더/라이터 장비와 프로그래밍 가능한 SIM 공카드(Blank SIM)를 이용해 동일한 인증 능력을 가진 SIM 카드(복제 SIM)를 만들 수 있습니다. 이렇게 복제 SIM이 만들어지면, 실제 사용하는 가입자의 휴대폰과 마찬가지로 네트워크에 접속할 수 있게 됩니다. 이는 &lt;strong&gt;실제 사용자의 휴대폰을 탈취한 것과 동일한 영향&lt;/strong&gt;을 줄 수 있으며, 해당 가입자의 전화번호로 오는 &lt;strong&gt;문자 메시지나 전화 통화를 가로채는 것이 가능&lt;/strong&gt;해집니다. 우리나라에서는 전화번호를 통한 본인 인증 서비스가 다양한 용도로 활용되고 있으며, 많은 웹사이트나 서비스에서 본인 확인, ID 찾기, 비밀번호 변경 등에 사용됩니다. 만약 공격 대상 사이트가 이러한 전화번호 인증 방식을 활용한다면, 복제 SIM을 통해 특정 사용자의 계정(ID와 비밀번호)을 변경하여 탈취하는 것이 가능해집니다. 금융권에서는 ID와 비밀번호 외에 OTP 카드(일회용 비밀번호 생성기) 등 추가적인 인증 수단을 사용하는 경우가 많습니다. 이런 경우, ID와 비밀번호가 탈취되더라도 OTP 단계에서 막히게 되어 계정을 보호할 수 있습니다. 따라서 물리적인 OTP 카드 등 이중 인증 수단은 계정을 보호하는 중요한 장치입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;3. OPC, K 값이 그렇게 중요한 거라고? 그런데 이게 왜 유출되는 건가?&lt;/strong&gt; OPC, K 값은 SIM 카드 제조 시점에 결정되어 SIM 카드 내 보안 영역에 기록되며, 한 번 정해지면 외부에서 임의로 수정하거나 읽어내는 것이 불가능하도록 설계되어 있습니다. 이 값들은 HSS와 대칭 키 방식으로 인증에 사용되도록 설계되어 있습니다. SIM 카드 자체도 여러 단계의 보안 장치로 키 값 유출을 막고 있으며, HSS 또한 높은 수준의 보안 환경에서 보호됩니다. 하지만 모든 시스템이 완벽할 수는 없기에, 이번 사태는 HSS 또는 관련된 핵심 시스템의 보안이 침해되어 가입자 인증 정보(K, OP/OPc)가 유출되었을 가능성을 보여준다고 볼 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;4. 그럼 3G나 5G(NR)은 괜찮은 건가?&lt;/strong&gt; 만약 이번 문제가 &lt;strong&gt;HSS 자체에 국한되어 해당 시스템의 가입자 정보만 유출&lt;/strong&gt;된 것이라면, 3G(주로 HLR 사용)나 5G(UDM, AUSF 등 사용)는 직접적인 영향이 없을 수 있습니다. 하지만 우리나라는 LTE 전국망이 구축되어 있고 5G 사용자들도 LTE 네트워크를 함께 사용(Fallback 등)하기 때문에, 문제가 발생한 근본 원인이나 유출된 정보의 범위에 따라 &lt;strong&gt;어떤 범위까지 영향이 있을지는 단정하기 어렵습니다.&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;5. 그럼 뭘 해야 하는가?&lt;/strong&gt; 물리적인 SIM 카드의 OPC/K 값을 사용자가 직접 변경하는 것은 불가능합니다. 새로 SIM 카드를 발급받는 경우, &lt;strong&gt;새로운 IMSI와 새로운 K/OP 값을 가진 SIM 카드를 받게 됩니다.&lt;/strong&gt; 만약 이번 사태의 유출이 특정 시점의 HSS 데이터베이스에 국한된 것이라면, &lt;strong&gt;이전에 유출된 데이터에 포함되지 않은 새로운 키 값을 가진 SIM 카드로 교체하는 것이 기존 SIM 카드보다는 안전할 수 있습니다.&lt;/strong&gt; 특히 사태 발생 이후 완전히 새롭게 제조된 SIM 카드는 새로운 키 생성 절차를 거쳤을 가능성이 높으므로 더욱 안전할 수 있습니다. 이외에도 &lt;strong&gt;eSIM으로 변경하는 방법&lt;/strong&gt;이 있습니다. eSIM은 프로필 다운로드 시 &lt;strong&gt;새로운 K/OP 값을 원격으로 안전하게 주입받기 때문&lt;/strong&gt;에, 이전 문제가 발생한 데이터와는 무관한 새로운 키를 사용하게 될 가능성이 있습니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/18963553</guid><pubDate>Mon, 28 Apr 2025 17:12:55 GMT</pubDate></item><item><title>유심보호서비스 대기시간 ㅋㅋㅋㅋㅋㅋㅋ.jpg[12][1]</title><link>https://www.clien.net/service/board/park/18963708</link><description>
+ 
+ 
+  &lt;p&gt;잠시만 기다려주세요. 라네요...&lt;/p&gt;
+  &lt;p&gt;잠시만 =&amp;gt; 168시간 9분 4초............&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;에라이....&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="유심보호서비스..png" class="fr-dib fr-fil" data-file-sn="15410256" data-gif="false" data-img-height="793" data-img-width="602" data-role="attach-image" src="https://edgio.clien.net/F01/15410256/5d8addd54a2219.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963708</guid><pubDate>Mon, 28 Apr 2025 17:19:51 GMT</pubDate></item><item><title>이준석 '대통령 당선시, 조건없는 남북정상회담 제안할것'[24][0]</title><link>https://www.clien.net/service/board/park/18963704</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="제목 없음.png" class="fr-dib fr-fil full" data-file-sn="15410254" data-gif="false" data-img-height="548" data-img-width="1240" data-role="attach-image" src="https://edgio.clien.net/F01/15410254/5d8a71aefc1e03.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963704</guid><pubDate>Mon, 28 Apr 2025 17:13:04 GMT</pubDate></item><item><title>민주 'SKT 대응 임시방편…위약금 없는 번호이동 즉각 허용해야'[11][13]</title><link>https://www.clien.net/service/board/park/18963699</link><description>
+ 
+ 
+  &lt;p&gt;한덕수가 해야할일을 민주당이 하고있네요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963699</guid><pubDate>Mon, 28 Apr 2025 17:00:42 GMT</pubDate></item><item><title>지귀연 지귀연 지귀연[5][13]</title><link>https://www.clien.net/service/board/park/18963697</link><description>
+ 
+ 
+  &lt;p&gt;절대 잊지않겠습니다. &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963697</guid><pubDate>Mon, 28 Apr 2025 17:02:30 GMT</pubDate></item><item><title>이재명 후보와 민주당은 길게보고 큰그림을 그리고 있는거라 봅니다.[4][11]</title><link>https://www.clien.net/service/board/park/18963694</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이번 대선의 목표는 이미 어제 민주당 당원들과 함께 같이 외치며 발표했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;1. 내란을 극복하고 민주주의를 회복하자.&lt;/p&gt;
+  &lt;p&gt;2. 민생을 회복하고 경제를 살려내자.&lt;/p&gt;
+  &lt;p&gt;3. 국민을 통합하고 세계로 나아가자.&lt;/p&gt;
+  &lt;p&gt;4. 패배를 딛고 반드시 승리하자.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이것을 해내기 위해서는 지금의 국힘당을 비롯한 기득권 카르텔을 쪼개고 약화 시키는게 필요조건입니다.&lt;/p&gt;
+  &lt;p&gt;그러기에 민주당은 우클릭을 해가며 기존의 정치자영업자로 나라팔아먹으며 자기배만 불려온 자칭 보수세력들을 &lt;/p&gt;
+  &lt;p&gt;앞으로의 역사에서 퇴출시키려 한다고 봅니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그것의 탄력을 얻기위해 무엇보다 압도적인 대선승리가 필요합니다. &lt;/p&gt;
+  &lt;p&gt;그래서 필요한것이 중도와 합리적보수를 품을수있는 우클릭행보입니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;지금 이재명과 민주당의 우클릭 행보에 가슴이 떨리며 불안할 사람은 민주세력이 아니라&lt;/p&gt;
+  &lt;p&gt;극우보수국힘당 세력입니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;전~~혀 불안하거나 속상할 이유도 없고 오히려 잘한다고 박수쳐줄 일입니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963694</guid><pubDate>Mon, 28 Apr 2025 17:31:54 GMT</pubDate></item><item><title>백종원, 바비큐 조리기기 ‘분할 수입’ 의혹…4개 기관 조사[11][1]</title><link>https://www.clien.net/service/board/park/18963692</link><description>
+ 
+ 
+  &lt;p&gt;백종원 더본코리아 대표가 튀르키예에서 들여 온 전기 회전 바비큐 조리기기에 대해 관세법 등 위반 의혹이 제기됐다. 백 대표는 지난해 8월 유튜브 채널 '백종원 PAIK JONG WON'에 공개한 예산맥주페스티벌 홍보영상에서 튀르키예에서 수입한 해당 조리기기에 대해 "모터를 빼고 기계를 들여왔다"고 말해 논란이 일고 있다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;본지는 지난 14일 더본코리아 측에 백 대표의 해당 발언에 대해 모터·전기장비 없이 수입한 프레임은 어떤 명칭과 용도로 신고했는지, 분해해서 수입한 조리 기구가 전기기기로 조립될 것을 전제로 한 구조라는 점을 세관에 명시했는지 등을 문의했다.&lt;br/&gt;&lt;br/&gt;
+    더본코리아 측은 지난 22일 튀르키예 현지에서 해당 장비를 수입·통관을 진행한 업체 대표가 튀르키예 사람이라서 아직 정확한 확인이 안되고 있다며 조금 더 기다려달라고 했다. 이후 더본코리아 측은 25일 "튀르키예 바비큐 그릴 수입 관련 24일 서울세관에서 민원이 접수됐다는 연락을 받았다"며 "서울세관에서 수입 주체와 수입 필증 제출을 요청받아 25일 제출했으며, 서울세관의 진행 사항에 성실히 응할 예정"이라고 공식 답변을 보냈다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;더본코리아의 수입 조리기기 관련 '분할 수입' 의혹은 지난 22일 관세청과 식품의약품안전처, 한국제품안전관리원, 예산군 등에 각각 민원이 접수됐다. 현재 서울세관 조사1국 조사정보과에서 조사 중이며, 처리 예정일은 오는 7월 18일이다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963692</guid><pubDate>Mon, 28 Apr 2025 16:59:11 GMT</pubDate></item><item><title>[너튭] 누가 이선균을 죽였는가[2][7]</title><link>https://www.clien.net/service/board/park/18963673</link><description>
+ 
+ 
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/-dZS5xwtmXs" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;소름 돋네요. 여론 호도용으로 연예인 커리어 나락으로 보내고&lt;/p&gt;
+  &lt;p&gt;인생을 막다른 곳으로 몰아서 죽이기 까지.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그리고 여기서 나오는 익숙한 이름, 지귀연&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;정권 바뀌면, 이선균 관련자들과 세관 마약 통과 사건을 제대로 수사해 줬으면 좋겠네요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963673</guid><pubDate>Mon, 28 Apr 2025 16:46:16 GMT</pubDate></item><item><title>여론조사 결과에 방심하는 분들이 많은 것 같아요.[6][5]</title><link>https://www.clien.net/service/board/park/18963668</link><description>
+ 
+ 
+  &lt;p&gt;말 그대로 여론조사는 여론조사입니다.&lt;/p&gt;
+  &lt;p&gt;아직 선거 판에 무슨 일이 더 벌어질지 아무도 모릅니다.&lt;/p&gt;
+  &lt;p&gt;저는 그 무슨 일이 사람들이 당연히 민주당이 이길 거니까 하는 그 마음이라고 봅니다.&lt;/p&gt;
+  &lt;p&gt;세상에 당연한 건 없습니다. 모든 국민들이 민주당원 같지 않습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이재명 후보를 많이 찍어줘야 이재명 후보가 당선되는 겁니다.  &lt;/p&gt;
+  &lt;p&gt;모든 일은 끝날 때까지 끝난 게 아닙니다.&lt;/p&gt;
+  &lt;p&gt;여론조사 결과가 선거결과로 나오려면 투표를 해야 합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;지금 내란견들이 삼삼오오 모여 스레드, 유튜브, 인스타그램, SNS 가리지 않고 부정선거를 강조하고 다닙니다.&lt;/p&gt;
+  &lt;p&gt;그 사람들이 노인들만 있는 게 아니라 정신 멀쩡해 보이는 20대 남자나 여자 가리지 않고 말하고 다닌다는 거죠.&lt;/p&gt;
+  &lt;p&gt;물론 여론으로 만들기 위해 몇 개의 아이디로 쉼 없이 작업하는 게 저는 보이지만 아닌 사람들도 있다는 거죠,&lt;/p&gt;
+  &lt;p&gt;그래서 방심할 수가 없습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;여론조사 1등은 당연하지만 선거결과가 나오기 전까지 투표를 독려해주세요. &lt;/p&gt;
+  &lt;p&gt;그래서 투표를 해서 내란 세력을 완전히 끝낼 수 있게 되는 겁니다.&lt;/p&gt;
+  &lt;p&gt;특히 대선 투표의 표가 얼마나 많이 받느냐 아니냐에 따라 국정에 붙는 힘이 달라집니다. &lt;/p&gt;
+  &lt;p&gt;조선일보가 500만표 차이로 이재명 후보가 이기는 게 두렵다고 쓴 이유가&lt;/p&gt;
+  &lt;p&gt;이명박이 그렇게 많은 표 차이로 이겨서 차기정권까지 깔끔히 박근혜에게 이양했던 원동력이 됐기 때문입니다. &lt;/p&gt;
+  &lt;p&gt;저는 가급적으로 많은 국민들이 나오셔서 투표를 하는 게 내란 종식에도 좋고 국짐당을 완전히 끝장내는 게 도움이 될거라고 봅니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;다시는 내란세력들에게 권력을 주는 일이 없도록 이번에 완전히 끝냅시다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963668</guid><pubDate>Mon, 28 Apr 2025 16:21:14 GMT</pubDate></item><item><title>이재명이 장성철 말 만큼은 새겨들어선 안됩니다.[7][5]</title><link>https://www.clien.net/service/board/park/18963592</link><description>
+ 
+ 
+  &lt;p&gt;장성철은 굉장히 사악하고 영악한 인간입니다.&lt;/p&gt;
+  &lt;p&gt;심지어 정치 평론을 하면서도 평론에만 그치지 않고 본인이 Player로서 행동하죠.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자신의 발언으로 인해 특정 후보를 띄우거나, 혹은 끊임없이 악의적 프레임을 반복 언급함으로써 &lt;/p&gt;
+  &lt;p&gt;주위를 환기시키고 현황을 바꾸려고 끊임없이 시도하는데&lt;/p&gt;
+  &lt;p&gt;장성철이 꾀하는 것은 단 하나&lt;/p&gt;
+  &lt;p&gt;보수의 재건입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그걸 위해서 윤석열, 홍준표, 김문수 등을 까는거지&lt;/p&gt;
+  &lt;p&gt;장성철이 지 말 처럼 합리적이고 상식적이어서가 아니에요. &lt;/p&gt;
+  &lt;p&gt;장성철이 바라보는 보수의 재건과 미래엔 이준석, 오세훈 등이 통치하는 유니버스 입니다. &lt;/p&gt;
+  &lt;p&gt;그래서 그들은 무한 쉴드쳐주고 있는 것이기도 하죠. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한편 장성철이 김무성이 굉장한 전략가이자 똑똑하다며 최근 이재명에게 천거한 것으로 압니다.&lt;/p&gt;
+  &lt;p&gt;(솔직히 어처구니가 없죠. 김무성이 똑똑하다니...ㅋㅋ) &lt;/p&gt;
+  &lt;p&gt;이건 다 속셈이 있는 거에요.&lt;/p&gt;
+  &lt;p&gt;TK에서 완전히 영향력을 잃은 김무성에게 불씨를 주기 위한 건데&lt;/p&gt;
+  &lt;p&gt;이건 김무성 뿐만 아니라 유승민에게도 번질 수 있는 불씨죠. &lt;/p&gt;
+  &lt;p&gt;완전히 죽은 김무성을 굳이 소환해서 저들의 코어가 될 가능성을 단 0.1%라도 늘릴 필요는 없어요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;신인규 말대로 보수는 한 번 완전히 망해야 합니다.&lt;/p&gt;
+  &lt;p&gt;장성철이야 말로 이 기회를 놓치지 않으려는 자이고 무조건 경계해야 합니다. &lt;/p&gt;
+  &lt;p&gt;가장 악질 중의 악질이에요. &lt;/p&gt;
+  &lt;p&gt;장성철은 보수만을 바라보며 보수만을 위한 Play를 하는 플레이어라는 걸 간과해선 안됩니다.&lt;/p&gt;
+  &lt;p&gt;그가 하는 모든 조언은 &lt;/p&gt;
+  &lt;p&gt;보수 세력을 위한 것이지 이재명과 우리나라를 위한 조언이 아니에요. &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963592</guid><pubDate>Mon, 28 Apr 2025 14:43:37 GMT</pubDate></item><item><title>홍준표 갑자기 또 단일화 반대[10][1]</title><link>https://www.clien.net/service/board/park/18963557</link><description>
+ 
+ 
+  &lt;p&gt; 국힘당 4인 경선 여조가 오늘밤에 완료된다고 들었는데&lt;/p&gt;
+  &lt;p&gt; 홍준표 또 말 바꾸네요..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 한덕수 출마 여론이 안 좋은거 보고&lt;/p&gt;
+  &lt;p&gt; 다시 생각 바꾸면서.. 한동훈도 때리려고 하는 듯... &lt;/p&gt;
+  &lt;p&gt; 무슨 전략 일까요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 한덕수 나와도 무소속으로 나와서 단일화 하든지&lt;/p&gt;
+  &lt;p&gt; 절대 국힘당으로 들어와서 출마하지는 말라는 의도인듯 보입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p&gt;&lt;img alt="홍준표.png" class="fr-dib fr-fil" data-file-sn="15410104" data-gif="false" data-img-height="203" data-img-width="500" data-role="attach-image" src="https://edgio.clien.net/F01/15410104/5d8064460cafe2.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963557</guid><pubDate>Mon, 28 Apr 2025 14:09:54 GMT</pubDate></item><item><title>Q/A 신호 위반 일까요??[17][0]</title><link>https://www.clien.net/service/board/cm_car/18963676</link><description>
  
  
   &lt;p&gt;&lt;img alt="1s.jpg" class="fr-dib fr-fil full" data-file-sn="15410218" data-gif="false" data-img-height="720" data-img-width="960" data-role="attach-image" src="https://edgio.clien.net/F01/15410218/5d87d8375795a7.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -42,13 +220,13 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;비슷한 문제를 겪거나 해결하신 분 계실까요?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/18963400</guid><pubDate>Mon, 28 Apr 2025 11:57:40 GMT</pubDate></item><item><title>이재명이 대통령되면 맥도날드 스타벅스 못간다.JPG[12][1]</title><link>https://www.clien.net/service/board/park/18963684</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/18963400</guid><pubDate>Mon, 28 Apr 2025 11:57:40 GMT</pubDate></item><item><title>이재명이 대통령되면 맥도날드 스타벅스 못간다.JPG[23][1]</title><link>https://www.clien.net/service/board/park/18963684</link><description>
  
  
   &lt;p&gt;&lt;img alt="bbjs1745801675_1065944004.jpg" class="fr-dib fr-fil" data-file-sn="15410235" data-gif="false" data-img-height="4096" data-img-width="607" data-role="attach-image" src="https://edgio.clien.net/F01/15410235/5d88d73304418d.jpg?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;어이상실. ㅡㅡ; &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963684</guid><pubDate>Mon, 28 Apr 2025 16:42:31 GMT</pubDate></item><item><title>이념 논쟁을 가져오지 말고, 통합 측면을 보시길[10][2]</title><link>https://www.clien.net/service/board/park/18963681</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963684</guid><pubDate>Mon, 28 Apr 2025 16:42:31 GMT</pubDate></item><item><title>이념 논쟁을 가져오지 말고, 통합 측면을 보시길[13][4]</title><link>https://www.clien.net/service/board/park/18963681</link><description>
  
  
   &lt;p&gt; 첫 행보가 현충원 참배시 이승만, 박정희가 끼여 있어&lt;/p&gt;
@@ -75,7 +253,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963681</guid><pubDate>Mon, 28 Apr 2025 16:39:49 GMT</pubDate></item><item><title>이재명 후보의 우클릭 행보를 보면 가슴이…[11][3]</title><link>https://www.clien.net/service/board/park/18963675</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963681</guid><pubDate>Mon, 28 Apr 2025 16:39:49 GMT</pubDate></item><item><title>이재명 후보의 우클릭 행보를 보면 가슴이…[13][4]</title><link>https://www.clien.net/service/board/park/18963675</link><description>
  
  
   웅장해집니다. 
@@ -113,7 +291,7 @@
    이재명이 할 수 있다고 믿습니다. 
   &lt;br/&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963675</guid><pubDate>Mon, 28 Apr 2025 16:31:47 GMT</pubDate></item><item><title>박정희 이승만 참배.[13][0]</title><link>https://www.clien.net/service/board/park/18963670</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963675</guid><pubDate>Mon, 28 Apr 2025 16:31:47 GMT</pubDate></item><item><title>박정희 이승만 참배.[17][0]</title><link>https://www.clien.net/service/board/park/18963670</link><description>
  
  
   &lt;p&gt;제가 생각한 것보다 우클릭하시네요.&lt;/p&gt;
@@ -122,7 +300,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963670</guid><pubDate>Mon, 28 Apr 2025 16:20:59 GMT</pubDate></item><item><title>지금 sk 에서 교체해 주는 유심이 china 라고 하던데[15][0]</title><link>https://www.clien.net/service/board/park/18963646</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963670</guid><pubDate>Mon, 28 Apr 2025 16:20:59 GMT</pubDate></item><item><title>지금 sk 에서 교체해 주는 유심이 china 라고 하던데[18][0]</title><link>https://www.clien.net/service/board/park/18963646</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -144,7 +322,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt; 민주당 정성호 의원님을 태그했네유 ㅎㅎ  &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963642</guid><pubDate>Mon, 28 Apr 2025 15:48:22 GMT</pubDate></item><item><title>키보드 펑션열 자주 쓰시나요[13][0]</title><link>https://www.clien.net/service/board/park/18963632</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963642</guid><pubDate>Mon, 28 Apr 2025 15:48:22 GMT</pubDate></item><item><title>키보드 펑션열 자주 쓰시나요[15][0]</title><link>https://www.clien.net/service/board/park/18963632</link><description>
  
  
   &lt;p&gt;&lt;img alt="스크린샷 2025-04-28 153139.png" class="fr-dib fr-fil full" data-file-sn="15410163" data-gif="false" data-img-height="403" data-img-width="865" data-role="attach-image" src="https://edgio.clien.net/F01/15410163/5d850e819c6bc0.png?scale=width:740"/&gt;&lt;/p&gt;
@@ -155,7 +333,7 @@
   &lt;p&gt;거의 안써서 그냥 펑션열 날린거 살까 생각하다가도 &lt;/p&gt;
   &lt;p&gt;그래도 있는게 나을까 갈팡질팡하는 마음입니다 &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963632</guid><pubDate>Mon, 28 Apr 2025 15:34:23 GMT</pubDate></item><item><title>이낙연 전총리가 대선에 나오면 누구 표를 가져갈까요..?[11][0]</title><link>https://www.clien.net/service/board/park/18963629</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963632</guid><pubDate>Mon, 28 Apr 2025 15:34:23 GMT</pubDate></item><item><title>이낙연 전총리가 대선에 나오면 누구 표를 가져갈까요..?[12][0]</title><link>https://www.clien.net/service/board/park/18963629</link><description>
  
  
   &lt;p&gt;이낙연 전총리에게 갈 표가..&lt;/p&gt;
@@ -170,7 +348,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963629</guid><pubDate>Mon, 28 Apr 2025 15:32:15 GMT</pubDate></item><item><title>숏츠 중독을 처음 보네요[12][3]</title><link>https://www.clien.net/service/board/park/18963627</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963629</guid><pubDate>Mon, 28 Apr 2025 15:32:15 GMT</pubDate></item><item><title>숏츠 중독을 처음 보네요[13][3]</title><link>https://www.clien.net/service/board/park/18963627</link><description>
  
  
   &lt;p&gt;지하철 타고 병원에 가는 길인데&lt;/p&gt;
@@ -187,7 +365,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;저같이 나이 먹어 템포 느린게 익숙한 사람은 하래도 못 하겠어요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963627</guid><pubDate>Mon, 28 Apr 2025 15:29:26 GMT</pubDate></item><item><title>이재명 후보의 우클릭이 보수에 보내는 구명정처럼 보이네요.[7][5]</title><link>https://www.clien.net/service/board/park/18963610</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963627</guid><pubDate>Mon, 28 Apr 2025 15:29:26 GMT</pubDate></item><item><title>이재명 후보의 우클릭이 보수에 보내는 구명정처럼 보이네요.[7][6]</title><link>https://www.clien.net/service/board/park/18963610</link><description>
  
  
   &lt;p&gt;행복회로 돌리다가 타버린 것일 수 도 있겠습니다만&lt;/p&gt;
@@ -370,7 +548,7 @@
   &lt;p style='font-family: "Pretendard JP";'&gt;외관도 맘에 들고.. 성능 테스트같은건 안하는 편이라 이제 노트북은 이 제품으로 쭉 사용 할 예정입니다.&lt;/p&gt;
   &lt;p style='font-family: "Pretendard JP";'&gt;뜬금엔딩입니다. 감사합니다~&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/18962518</guid><pubDate>Sat, 26 Apr 2025 16:09:32 GMT</pubDate></item><item><title>송영길 의원이 생각나네요[14][18]</title><link>https://www.clien.net/service/board/park/18963639</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/18962518</guid><pubDate>Sat, 26 Apr 2025 16:09:32 GMT</pubDate></item><item><title>송영길 의원이 생각나네요[14][19]</title><link>https://www.clien.net/service/board/park/18963639</link><description>
  
  
   &lt;p&gt;잼대표 후보 수락 연설을 보면서 제 머릿속에 떠오른 인물은 저번 보궐 때 잼대표를 위해 희생한 송영길 의원이었습니다.&lt;/p&gt;
@@ -396,7 +574,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;아무쪼록 앞으로는 이런 일이 없으면 좋겠네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963638</guid><pubDate>Mon, 28 Apr 2025 15:42:23 GMT</pubDate></item><item><title>사무실을 뺐습니다.[13][18]</title><link>https://www.clien.net/service/board/park/18963637</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963638</guid><pubDate>Mon, 28 Apr 2025 15:42:23 GMT</pubDate></item><item><title>사무실을 뺐습니다.[15][21]</title><link>https://www.clien.net/service/board/park/18963637</link><description>
  
  
   &lt;p&gt;사무실을 빼게 되었습니다. 옮기는 것도 아니고 아예 집에서 하기로 했습니다. 마지막 이삿짐을 빼고 조악한 폼보드 간판도 떼고 나니 울쩍 하네요.&lt;/p&gt;
@@ -411,14 +589,14 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963637</guid><pubDate>Mon, 28 Apr 2025 15:42:57 GMT</pubDate></item><item><title>SKT 해킹 사고에도 '尹 그림자'가…'전문성 없는 前검찰 수사관이 KISA 원장'[5][13]</title><link>https://www.clien.net/service/board/park/18963630</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963637</guid><pubDate>Mon, 28 Apr 2025 15:42:57 GMT</pubDate></item><item><title>SKT 해킹 사고에도 '尹 그림자'가…'전문성 없는 前검찰 수사관이 KISA 원장'[6][15]</title><link>https://www.clien.net/service/board/park/18963630</link><description>
  
  
   &lt;p&gt;&lt;a href="https://www.financialpost.co.kr/news/articleView.html?idxno=225218" target="_blank"&gt;https://www.financialpost.co.kr/news/articleView.html?idxno=225218&lt;/a&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;수사한 검찰이 제일 전문가라고했던 윤석열의 비상식이 참&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963630</guid><pubDate>Mon, 28 Apr 2025 15:33:21 GMT</pubDate></item><item><title>이승만 참배에 대하여..[18][0]</title><link>https://www.clien.net/service/board/park/18963624</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963630</guid><pubDate>Mon, 28 Apr 2025 15:33:21 GMT</pubDate></item><item><title>이승만 참배에 대하여..[21][0]</title><link>https://www.clien.net/service/board/park/18963624</link><description>
  
  
   &lt;p&gt;희대의 살인마 이승만을 이재명 후보님이 참배하셨네요.&lt;/p&gt;
@@ -430,7 +608,7 @@
  
   &lt;p&gt;혹시 관련 업종에 있으신 분 의견을 듣고 십네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963617</guid><pubDate>Mon, 28 Apr 2025 15:10:53 GMT</pubDate></item><item><title>한덕수는 매국노였네요..[5][8]</title><link>https://www.clien.net/service/board/park/18963615</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963617</guid><pubDate>Mon, 28 Apr 2025 15:10:53 GMT</pubDate></item><item><title>한덕수는 매국노였네요..[5][9]</title><link>https://www.clien.net/service/board/park/18963615</link><description>
  
  
   &lt;p&gt;요즘 유투브로 한덕수가 여러가지 과거에 저지른 만행들이 나오는데, 기가막히네요.&lt;/p&gt;
@@ -557,7 +735,7 @@
   &lt;p&gt;7월 18일. 정미, 맑다. 새벽에 이덕필과 변홍달이 와서 전하길 "16일 새벽에 수군이 대패했습니다. 통제사 원균과 전라 우수사 이억기와 충청 수사 최호와 뭇 장수들이 다수 살해당했습니다."라고 하였다. 통곡을 이기지 못했다.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963605</guid><pubDate>Mon, 28 Apr 2025 15:00:35 GMT</pubDate></item><item><title>SKT 사건의 그림자엔 '그'가 있습니다.[5][20]</title><link>https://www.clien.net/service/board/park/18963603</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963605</guid><pubDate>Mon, 28 Apr 2025 15:00:35 GMT</pubDate></item><item><title>SKT 사건의 그림자엔 '그'가 있습니다.[5][24]</title><link>https://www.clien.net/service/board/park/18963603</link><description>
  
  
   &lt;p&gt;&lt;a href="https://www.yna.co.kr/view/AKR20240118131600017" ori-url="https://www.yna.co.kr/view/AKR20240118131600017" target="_blank"&gt;한국인터넷진흥원장에 이상중 전 대검 사이버수사실장 취임 | 연합뉴스&lt;/a&gt; &lt;/p&gt;
@@ -584,7 +762,7 @@
   &lt;p&gt;그렇군요 그렇군요~&lt;/p&gt;
   &lt;p&gt;인터넷 진흥원장을 검사 출신 부정선거 무새를 앉히니 이사단이었군요~&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963603</guid><pubDate>Mon, 28 Apr 2025 14:56:55 GMT</pubDate></item><item><title>SKT vs 노젓는 KT 입니다! ㅋㅋㅋㅋ[6][6]</title><link>https://www.clien.net/service/board/park/18963578</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963603</guid><pubDate>Mon, 28 Apr 2025 14:56:55 GMT</pubDate></item><item><title>SKT vs 노젓는 KT 입니다! ㅋㅋㅋㅋ[6][7]</title><link>https://www.clien.net/service/board/park/18963578</link><description>
  
  
   &lt;p&gt;&lt;img alt="skt.JPG" class="fr-dib fr-fil full" data-file-sn="15410110" data-gif="false" data-img-height="454" data-img-width="864" data-role="attach-image" src="https://edgio.clien.net/F01/15410110/5d81a1de605e53.JPG?scale=width:740"/&gt;&lt;/p&gt;
@@ -594,7 +772,7 @@
   &lt;p&gt;&lt;img alt="DQoK1745816694_1991520167.jpg" class="fr-dib fr-fil full" data-file-sn="15410112" data-gif="false" data-img-height="1395" data-img-width="850" data-role="attach-image" src="https://edgio.clien.net/F01/15410112/5d81a51a1bd3cd.jpg?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;물이 들어왔나요... 도찐 개찐....yo!&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963578</guid><pubDate>Mon, 28 Apr 2025 14:31:33 GMT</pubDate></item><item><title>내란 총리 드디어 미쳤네요, '당선 1년 뒤 사퇴할 것'[13][3]</title><link>https://www.clien.net/service/board/park/18963571</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963578</guid><pubDate>Mon, 28 Apr 2025 14:31:33 GMT</pubDate></item><item><title>내란 총리 드디어 미쳤네요, '당선 1년 뒤 사퇴할 것'[14][3]</title><link>https://www.clien.net/service/board/park/18963571</link><description>
  
  
   &lt;h2&gt;"개헌·통상 마무리짓고 1년내 사퇴"…한덕수의 대선 시나리오&lt;/h2&gt;
@@ -649,7 +827,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18963522</guid><pubDate>Mon, 28 Apr 2025 13:38:46 GMT</pubDate></item><item><title>이야기 i4에서 cle 200 카브리올레 가면 후회할까요…??[14][0]</title><link>https://www.clien.net/service/board/cm_car/18963458</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18963522</guid><pubDate>Mon, 28 Apr 2025 13:38:46 GMT</pubDate></item><item><title>이야기 i4에서 cle 200 카브리올레 가면 후회할까요…??[17][0]</title><link>https://www.clien.net/service/board/cm_car/18963458</link><description>
  
  
   bmw i4 -&amp;gt; 벤츠 cle 200 카브리올레로 기변하면 
@@ -715,7 +893,7 @@
    한 일주일만 뚜따를 렌트해보고 싶은데 단기로는 잘 없네요 
   &lt;br/&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18963458</guid><pubDate>Mon, 28 Apr 2025 12:16:51 GMT</pubDate></item><item><title>백종원이 여태까지 벌인 프랜차이즈 브랜드 리스트[26][4]</title><link>https://www.clien.net/service/board/park/18963584</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18963458</guid><pubDate>Mon, 28 Apr 2025 12:16:51 GMT</pubDate></item><item><title>백종원이 여태까지 벌인 프랜차이즈 브랜드 리스트[28][4]</title><link>https://www.clien.net/service/board/park/18963584</link><description>
  
  
   &lt;p&gt;보통 프랜차이즈 회사들은 한개의 회사에서 보통 브랜드 한개, 많으면 수개 정도이지 백종원 더본코리아 수준으로 운영하는 곳이 없습니다.&lt;/p&gt;
@@ -859,7 +1037,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963570</guid><pubDate>Mon, 28 Apr 2025 14:24:25 GMT</pubDate></item><item><title>한덕수, 5월1일 출마 선언 유력[11][0]</title><link>https://www.clien.net/service/board/park/18963565</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963570</guid><pubDate>Mon, 28 Apr 2025 14:24:25 GMT</pubDate></item><item><title>한덕수, 5월1일 출마 선언 유력[12][0]</title><link>https://www.clien.net/service/board/park/18963565</link><description>
  
  
   &lt;p&gt;난가병 제대로 걸렸나 보네요&lt;/p&gt;
@@ -891,221 +1069,4 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963548</guid><pubDate>Mon, 28 Apr 2025 13:58:13 GMT</pubDate></item><item><title>독일 회사랑 컨퍼런스 콜 한 후기[11][0]</title><link>https://www.clien.net/service/board/park/18963546</link><description>
- 
- 
-  &lt;p&gt;저희 회사가 독일 쪽 sw 총판이라 &lt;/p&gt;
-  &lt;p&gt;그래도 어느정도 관계는 좋은 회사입니다.&lt;/p&gt;
-  &lt;p&gt;정말 처음으로 회의 참석 했고 저는 영알못이라 번역기로 들었는데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;대충 내용이 &lt;/p&gt;
-  &lt;p&gt; 나중에 하겠다 지금 안된다&lt;/p&gt;
-  &lt;p&gt; 일정에 그런 계획없다.&lt;/p&gt;
-  &lt;p&gt; 왜 그런것이 필요하냐? &lt;/p&gt;
-  &lt;p&gt; 그건 될수도 있고 안될수도 있다&lt;/p&gt;
-  &lt;p&gt; 개발팀이랑 협의해봐야한다 (회의에 개발팀 팀장 참여중)&lt;/p&gt;
-  &lt;p&gt; 누가 휴가라서 일정에 포함해야 한다 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;진짜 제가 비개발자라 모르겠는데 &lt;/p&gt;
-  &lt;p&gt;무슨 이상한 코드 보여주면서 이래서 안된다 ㅇㅈㄹ &lt;/p&gt;
-  &lt;p&gt;ㅎㅎ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;우리를 일하게 만들려면 너희가 우리가 일할수 있게&lt;/p&gt;
-  &lt;p&gt;완벽한 준비와 근거 자료와 돈을 준비하면 우리가 겨우 해줄수 있다 ㅎㅎ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;번역기로 들었지만 듣는 내내 진짜 일안한다 그래도 우리가 고객사인데 &lt;/p&gt;
-  &lt;p&gt;우리 일정이나 요구사항은 일정 들을생각도 없고 &lt;/p&gt;
-  &lt;p&gt;그냥 마이웨이  ㅎ 회의 내내 안된다 기다려라 검토해보겠다 &lt;/p&gt;
-  &lt;p&gt;아니  근데 회의는 그따그로 하면서 돈은 진짜 따박따박 잘 받아가고 그때만 진지해져요 &lt;/p&gt;
-  &lt;p&gt;뭔가 돈 준대도 안할려고만 들고 고객 일정보다 무조건 자기들 위주인것 같아요 &lt;/p&gt;
-  &lt;p&gt;아니 하다못해 사전에 약속한 일정은 지킬줄 알았는데&lt;/p&gt;
-  &lt;p&gt;그것도 미루고 ?  약속한 기능도 하다 말고 이게 내가 생각하는 독일사람들 맞나 싶었어요 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;한번 겪어봤지만 독일 회사랑 일하기 싫어지네요 그나마 &lt;/p&gt;
-  &lt;p&gt;다른 유럽 국가들 보다 양호한것이겠죠 &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963546</guid><pubDate>Mon, 28 Apr 2025 13:54:20 GMT</pubDate></item><item><title>와이프에게.. 이번 기회에 번이 하자고 했는데..[14][0]</title><link>https://www.clien.net/service/board/park/18963544</link><description>
- 
- 
-  &lt;p&gt;해킹 사태를 브리핑 해주고.. 이번 기회에 최신폰으로 번이 하자고 했는데..&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;단 한가지 조건을 달더군요..&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지금 지출되는 통신비보다 저렴하면 이동할께..&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;저 : 54,000원 (4G 요금제, 복지할인 등..)&lt;/p&gt;
-  &lt;p&gt;아내 : 35,000원 (4G 요금제)&lt;/p&gt;
-  &lt;p&gt;인터넷&amp;amp; TV : 55,000원..&lt;/p&gt;
-  &lt;p&gt;총 : 144,000원,.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;음….. 번이해도 저 금액만큼 이상으로 나올듯 하군요 ㅠㅠ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그냥,, 유심이나 교체하자 했네요 ㅋㅋ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963544</guid><pubDate>Mon, 28 Apr 2025 13:48:20 GMT</pubDate></item><item><title>민주당..윤여준을 선대위장으로 영입,김부겸.김두관.김경수도 영입 검토중[25][1]</title><link>https://www.clien.net/service/board/park/18963541</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/025/0003437128" target="_blank"&gt;https://n.news.naver.com/article/025/0003437128&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;보수인사들 영입이 이번 선거때는 부쩍 늘것 같은 느낌은 듭니다.그 1호가 윤여준인것 같네요.&lt;/p&gt;
-  &lt;p&gt;요새 김무성.권오을.김무성등등 영입 소문이 무성하죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다만..상임 선대위장에 김부겸.김두관을 영입하려는 움직임도 보이는데 흠..이건 합당한 선택이 맞을지..&lt;/p&gt;
-  &lt;p&gt;김경수까지는 그렇다 치더라도..&lt;/p&gt;
-  &lt;p&gt;밖에서 딴짓 못하게 묶어두는게 나으려나요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963541</guid><pubDate>Mon, 28 Apr 2025 13:44:25 GMT</pubDate></item><item><title>아트뮤, 무선 보조배터리 상품설명과 달리 열차단패드 없네요[14][4]</title><link>https://www.clien.net/service/board/park/18963533</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="IMG_5075.jpeg" class="fr-dib fr-fil full" data-file-sn="15410033" data-gif="false" data-img-height="458" data-img-width="900" data-role="attach-image" src="https://edgio.clien.net/F01/15410033/5d7ead54ccbd04.jpeg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="IMG_5076.jpeg" class="fr-dib fr-fil full" data-file-sn="15410034" data-gif="false" data-img-height="1138" data-img-width="1170" data-role="attach-image" src="https://edgio.clien.net/F01/15410034/5d7ead6d3c8b69.jpeg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="8308053532_3254535_f238565611c606d2dc2e8c260ccbd301.png" class="fr-dib fr-fil full" data-file-sn="15410071" data-gif="false" data-img-height="506" data-img-width="900" data-role="attach-image" src="https://edgio.clien.net/F01/15410071/5d7f6264773ae1.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;누구나 볼수있는 공홈, 자기네 유튜브, 스마트스토어에는 공지 안하고&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;상품설명만 스리슬쩍 수정한다음&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;디스코드 가입하고 아트뮤 채널 초청링크 눌러서 초대장 받아야만 볼수있는 자기네 디스코드에만 공지했네요 ㅋㅋㅋ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이에 앞서서 패스스루 된다고 광고했는데 안된다는것까지 2연타라고하는군요 ㄷㄷ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963533</guid><pubDate>Mon, 28 Apr 2025 13:48:26 GMT</pubDate></item><item><title>호상이란 없는 듯 합니다.[15][7]</title><link>https://www.clien.net/service/board/park/18963527</link><description>
- 
- 
-  &lt;p&gt;강풀의 '그대를 사랑합니다'에서 &lt;/p&gt;
-  &lt;p&gt;주인공인 할아버지께서 상가집에서 호상이라고 말하는 &lt;/p&gt;
-  &lt;p&gt;옆테이블 문상객에게 역정을 내시던게 생각납니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;최근에 할머니께서 돌아가셨습니다.&lt;/p&gt;
-  &lt;p&gt;90이 넘은 나이셨고,  일년 가까이 노환을 앓고 계셔서 다들 마음의 준비는 하고 있었습니다.&lt;/p&gt;
-  &lt;p&gt;할머니께서 고생은 많이 하셨지만, 6남매 낳아 잘 키우셨고 물질적으로는 크게 부족함 없이 사셨습니다.&lt;/p&gt;
-  &lt;p&gt;그럭저럭 괜찮은 인생이었다는 생각이 들었습니다. &lt;/p&gt;
-  &lt;p&gt;그래서 돌아가셔도 그리 애통하진 않을꺼라 생각했습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;하지만 아니네요.&lt;/p&gt;
-  &lt;p&gt;화장장에서 할머니와 물리적?으로 마지막 이별할때&lt;/p&gt;
-  &lt;p&gt;삼촌들의 곡소리가 너무나도 컸습니다. 물론 저도 많이 울었구요.&lt;/p&gt;
-  &lt;p&gt;돌아가신지 일주일인데 아직도 감정의 여운이 강하게 남아있네요.&lt;/p&gt;
-  &lt;p&gt;호상이란 없는 듯 합니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963527</guid><pubDate>Mon, 28 Apr 2025 13:35:43 GMT</pubDate></item><item><title>살면서 잘 한 일 리스트[14][3]</title><link>https://www.clien.net/service/board/park/18963476</link><description>
- 
- 
-  &lt;p&gt;제 인생 가장 잘한 일 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;1. 담배 끊은 것&lt;/p&gt;
-  &lt;p&gt;2. 골프 시작 안한 것 &lt;/p&gt;
-  &lt;p&gt;3. 일찌감치 주식사기 당한 것 (덕분에 주식 같은 건 안보고 그냥 일만 열심히 합니다)&lt;/p&gt;
-  &lt;p&gt;4. 배우자와 유럽 렌트카 여행 3회 (돈은 많이 깨졌지만 추억이 남네요. 50 넘으면 힘들어서 못하겠죠) &lt;/p&gt;
-  &lt;p&gt;5. 업계 떠날까 여러번 생각했지만 안 떠난 것 &lt;/p&gt;
-  &lt;p&gt;6. 지난 대선 경선에서 이재명 찍은 것 (이낙연이 되면 나라 망하겠다 싶었습니다)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아웃룩 업데이트하면서 딴짓하고 있네요. &lt;/p&gt;
-  &lt;p&gt;오후 열심히 일하겠습니다~&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963476</guid><pubDate>Mon, 28 Apr 2025 12:30:49 GMT</pubDate></item><item><title>SK 알뜰폰입니다. 다른 통신사로 번호이동 시도중인데..[7][6]</title><link>https://www.clien.net/service/board/park/18963427</link><description>
- 
- 
-  &lt;p&gt;번호이동은 기존 통신사의 인증을 받아야 해서 &lt;/p&gt;
-  &lt;p&gt;ARS 연결을 해서 동의 절차를 진행해야 하는데. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;대기도 없이 통화량 많다고 ARS 에서 컷 해버리네요. &lt;/p&gt;
-  &lt;p&gt;아.. 쳐 망해버렸음 좋겠다 그지같은 기업&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963427</guid><pubDate>Mon, 28 Apr 2025 11:34:25 GMT</pubDate></item><item><title>이재명의 우클릭, 윤석열에 의해 망가진 대한민국을 전면 고치겠다는 뜻으로 해석하겠[10][2]</title><link>https://www.clien.net/service/board/park/18963421</link><description>
- 
- 
-  &lt;p&gt;이재명 당대표 경선 승리 연설을 3번 정도 계속 들었습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그리고 그의 우클릭 행보와 관련해 생각해보았습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;저는 크게 2가지로 읽힙니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;1. 내란 세력 종식을 위해 압도적 승리를 위해 보수 인사 영입과 만남이라 생각합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;2. 그리고 남천동 및 각종 유튜브에 출연해 그가 말한 발언을 연결해 보면, 윤건희에 의해 완전히 붕괴된 국가 시스템을 빠르게 재건하기 위해 유능한 인사를 이념과 가리지 않고 쓰겠다고 읽혀집니다. 즉 그는 윤석열은 친위쿠데타로 한국내전을 일으켰고, 전후 이를 수습하고 재건하기 위해 비록 이념은 다르더라도 능력은 검증된 인사를 가리지 않고 쓰겠다는 뜻으로 보입니다. 아마도 이게 유시민 작가와 뜻이 다른 부분이라 생각합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이러한 결정을 내리는데 있어 지난 총선부터 시작되었다 생각됩니다. 수박들이 장악한 민주당은 친문이라고 포장한 바운더리에서국정운영과 비전에 대해 아무 검증되지 않은 채 친목질로 점철된 사람들로만 가득차 있구나 깨닫았을 겁니다. 그래서 본인의 개혁 의지의 스피커로 이언주, 박지원 등도 데려다 쓴 것이라 생각합니다. 그 당시 클리앙에서는 큰 우려가 있어왔었지만 결과론적으로 이재명 당대표 하에서는 충실한 스피커로 역할을 잘 하고 있다고 생각합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이번 우클릭으로 지적받는 그의 행보도 이러한 관념에서 생각하면 이재명은 국민을 위한 개인적 원한을 뛰어넘어 큰 결단으로 큰 그림을 그리고 있다고 생각합니다. 그래서 트럼프 교역의 담을 넘기 위해 김현종으로부터 30편이상의 보고서를 받고 있겠지요. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이제 몇 일 남지 않았습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;새롭게 시작될 대한민국, 너무 기대되고, 이제 내 아들과 딸에게 자랑스런 대한민국을 돌려 줄 수 있게 되어 이 또한 기쁩니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963421</guid><pubDate>Mon, 28 Apr 2025 11:35:03 GMT</pubDate></item><item><title>이야기 결국 폴스타4 듀얼 출고할 것 같습니다.[31][6]</title><link>https://www.clien.net/service/board/cm_car/18963521</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;마칸ev, q6, ix 등을 시승도 해보고 열심히 알아보았으나&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;현재로서는 회사 risk(...)를 제외하고는 폴스타4를 대적할만한 차종이 없다는게 결론이네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;제일 끌린 부분은 디자인이고, 심지어 지금 타고 있는(와이프가 강탈해간) 타이칸 페리 베이스보다 제로백도 빠른데 차값도 8000만원.. 이건 그냥 가성비로는 미친 수준이라고 말할 수 밖에 없어요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;5월 말쯤 출고 예정입니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18963521</guid><pubDate>Mon, 28 Apr 2025 13:27:00 GMT</pubDate></item><item><title>Q/A 아우디 디젤 3.0 원래 그런가요?[16][0]</title><link>https://www.clien.net/service/board/cm_car/18963381</link><description>
- 
- 
-  &lt;p&gt;맨날 음악듣고 다니다가 최근에 안듣는데&lt;/p&gt;
-  &lt;p&gt;저알피엠에서 악셀링 살살하면&lt;/p&gt;
-  &lt;p&gt;무슨 따락따락 따다다다다&lt;/p&gt;
-  &lt;p&gt;알피엠 올라가는 박자에 맞춰서 소리 나네요&lt;/p&gt;
-  &lt;p&gt;알피엠 2가까이 되거나 악셀링을 좀 깊게 하면 안나긴 합니다&lt;/p&gt;
-  &lt;p&gt;근데 너무 거슬리는데... 타이밍체인 소리인가요?&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18963381</guid><pubDate>Mon, 28 Apr 2025 10:57:13 GMT</pubDate></item><item><title>잡담 SK Esim 쓰시는분들 114 전화 안하셔도 됩니다.[17][2]</title><link>https://www.clien.net/service/board/cm_iphonien/18963367</link><description>
- 
- 
-  재발급요청하려고 ... 
-  &lt;br/&gt;
-   114겨우 연결해서 문의하니 
-  &lt;br/&gt;
-   114에서는 해줄 수 없고 셀프로 하면 된다고 하네요 
-  &lt;br/&gt;
-     
-  &lt;br/&gt;
-   ㅡㅡ;; 
-  &lt;br/&gt;
-   공지에 띄워 놓으면 참 좋았을텐데... 
-  &lt;br/&gt;
-     
-  &lt;br/&gt;
-   아래 경로 들어가서 재발급 진행하세요!!! 
-  &lt;br/&gt;
-     
-  &lt;br/&gt;
-   [Web발신] 
-  &lt;br/&gt;
-   - 온라인 T다이렉트샵 &amp;gt; USIM/자급제 &amp;gt; eSIM 셀프 가입 &amp;gt; eSIM 셀프 개통 신청하기 
-  &lt;br/&gt;
-   (eSIM 셀프개통 운영 시간: 월~토 10:00 ~ 20:00, 일요일/공휴일 제외) 
-  &lt;br/&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/18963367</guid><pubDate>Mon, 28 Apr 2025 10:36:30 GMT</pubDate></item><item><title>질문 15프로맥스 사용하는데 자꾸 벨소리가 작아지네요[11][0]</title><link>https://www.clien.net/service/board/cm_iphonien/18962808</link><description>
- 
- 
-  &lt;p&gt;별도로 조절한적도, 설정한적도 없는데 알람이 안울려 확인해보면 항상 벨소리가 가장 작게 되어있네요. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;iOS18 최신버전 사용중이고 폰 바꾸면서 DFU리셋도 했는데...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;13프로 사용할때는 이런일이 없었는데 15프맥 변경 이후로부턴 자주 그러네요..&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아.. 2025년에 볼륨조절 버그나 신경쓰는 폰을 쓰고있다니.....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아무리봐도 버그인거같은데 비슷한증상 겪으시는분 계신가요?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;애케플 가입중인데 초기화후에도 동일현상 재발시 리퍼라도 받고싶은 심정인데.. 증상 재현해내기가 어렵네요. &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/18962808</guid><pubDate>Sun, 27 Apr 2025 09:52:47 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18963548</guid><pubDate>Mon, 28 Apr 2025 13:58:13 GMT</pubDate></item></channel></rss>
