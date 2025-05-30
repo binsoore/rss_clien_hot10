@@ -1,5 +1,216 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Fri, 30 May 2025 08:00:47 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>IMF 시대상을 웃으면서 노래하는 여중생들[3][5]</title><link>https://www.clien.net/service/board/park/18989008</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Fri, 30 May 2025 09:00:52 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>PC/모바일 SKT 유심 재설정은 유심 교체와 동등한 효과가 있는지 분석[1][6]</title><link>https://www.clien.net/service/board/lecture/18988768</link><description>
+ 
+ 
+  &lt;p&gt;SK텔레콤에서는 "유심 재설정"이 "유심 교체"와 &lt;strong&gt;동등한 효과&lt;/strong&gt;가 있다고 뉴스룸을 통해 공지했습니다.&lt;/p&gt;
+  &lt;p&gt;참고: &lt;a href="https://news.sktelecom.com/212246" ori-url="https://news.sktelecom.com/212246" target="_blank"&gt;https://news.sktelecom.com/212246&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;SK텔레콤은 "유심 재설정"에 대해 "유심 재설정은 실물 유심을 교체하지 않고도 &lt;strong&gt;유심 내부의 일부 정보를 초기화해 새롭게 등록&lt;/strong&gt;하는 방식"이라고 안내하고 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그래서 이 "유심 재설정"이 정확히 어느 부분을 변경하는 것인지 분석한 글이 있어서 요약해서 가져왔습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;"유심 재설정"에서 어느 부분이 변경되었는지 확인을 하기 위해서는 우선 "유심 재설정"하기 전의 SIM카드 데이터와 "유심 재설정" 후의SIM카드 데이터가 있어야겠죠?&lt;/p&gt;
+  &lt;p&gt;그래서 이 실험을 진행하시는 분께서 직접 "유심 재설정" 전/후의 데이터를 가지고 분석합니다.&lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;우선 분석 대상으로는 아래와 같은 데이터를 위주로 봅니다:&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;가입자 식별 번호 &lt;strong&gt;&lt;em&gt;IMSI&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+   &lt;li&gt;GSM 시절부터 사용된 SIM 인증 키 &lt;strong&gt;&lt;em&gt;K&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+   &lt;li&gt;UMTS 시절부터 들어온 오퍼레이터 인증 키 &lt;strong&gt;&lt;em&gt;OPc&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
+   &lt;li&gt;MILENAGE 알고리듬 상수 &lt;strong&gt;&lt;em&gt;c&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;r&lt;/em&gt;&lt;sub&gt;&lt;em&gt;i&lt;/em&gt;&lt;/sub&gt;&lt;/strong&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;여기서 &lt;strong&gt;&lt;em&gt;IMSI&lt;/em&gt;&lt;/strong&gt;의 경우 쉽게 값을 가져올 수 있지만, &lt;strong&gt;&lt;em&gt;K&lt;/em&gt;&lt;/strong&gt;와 &lt;strong&gt;&lt;em&gt;OPc&lt;/em&gt;&lt;/strong&gt; 값의 경우 기본적으로 SIM카드 내부에만 존재하며 인증 결과 값만 가져올 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;그러면 &lt;em&gt;&lt;strong&gt;K&lt;/strong&gt;&lt;/em&gt;와 &lt;em&gt;&lt;strong&gt;OPc&lt;/strong&gt;&lt;/em&gt; 값의 변화를 어떻게 파악하느냐에 대해선, 아래와 같은 SIM카드 인증 결과 코드를 통해 검증하려고 합니다:&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;strong&gt;&lt;em&gt;MAC&lt;/em&gt;&lt;/strong&gt; 과 &lt;strong&gt;&lt;em&gt;XMAC&lt;/em&gt;&lt;/strong&gt; 이 불일치할 때 나오는 &lt;strong&gt;인증 에러&lt;/strong&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;&lt;em&gt;MAC&lt;/em&gt;&lt;/strong&gt; 은 &lt;strong&gt;&lt;em&gt;XMAC&lt;/em&gt;&lt;/strong&gt; 과 일치하지만, SEQ 넘버가 시간 역행을 하여 생기는 &lt;strong&gt;동기화 실패 오류&lt;/strong&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;검증을 위해 "유심 재설정" 이전 실 네트워크 인증 순서에서 &lt;strong&gt;&lt;em&gt;RAND&lt;/em&gt;&lt;/strong&gt; 와 &lt;strong&gt;&lt;em&gt;AUTN&lt;/em&gt;&lt;/strong&gt; 을 캡처한 뒤, "유심 재설정" 이후 &lt;strong&gt;ADF.USIM&lt;/strong&gt; 에 인증 요청을 해봅니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;만약 SK텔레콤이 "유심 재설정" 을 통해 &lt;strong&gt;&lt;em&gt;K&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;OPc&lt;/em&gt;&lt;/strong&gt;, &lt;em&gt;&lt;strong&gt;c&lt;sub&gt;i&lt;/sub&gt;&lt;/strong&gt;&lt;/em&gt;, &lt;em&gt;&lt;strong&gt;r&lt;sub&gt;i&lt;/sub&gt;&lt;/strong&gt;&lt;/em&gt; 중 어떤 것이라도 바꿨다면&lt;br/&gt;
+     -&amp;gt; &lt;strong&gt;인증 에러&lt;/strong&gt;&lt;/li&gt;
+   &lt;li&gt;만약 SK텔레콤이 "유심 재설정" 을 통해 위 값을 변경하지 않았다면&lt;br/&gt;
+     -&amp;gt; &lt;strong&gt;동기화 실패&lt;/strong&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;의 결과물을 볼 수 있게 됩니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;실험에는 아래와 같은 도구가 사용되었습니다:&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;SKT SIM카드&lt;/li&gt;
+   &lt;li&gt;퀄콤 모뎀이 들어가 QCDIAG 인터페이스가 열리는 단말기&lt;/li&gt;
+   &lt;li&gt;스마트 카드 리더&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;실험 과정:&lt;/p&gt;
+  &lt;ol&gt;
+   &lt;li&gt;GSMTAP LTE캡처를 통해 프레임을 획득 후, 인증 요청 프레임을 찾아 해당 응답과 요청을 필터합니다.&lt;/li&gt;
+   &lt;li&gt;해당 프레임에서 replay 를 위한 &lt;em&gt;&lt;strong&gt;RAND&lt;/strong&gt;&lt;/em&gt;와 &lt;strong&gt;&lt;em&gt;AUTN&lt;/em&gt;&lt;/strong&gt;값을 캡처할 수 있습니다.&lt;/li&gt;
+   &lt;li&gt;이제 단말기에서 SIM카드를 뺀 후, 스마트 카드 리더에 삽입하고 &lt;em&gt;pySIM-shell&lt;/em&gt; 을 실행합니다.&lt;/li&gt;
+   &lt;li&gt;이후 &lt;strong&gt;EF.IMSI&lt;/strong&gt;, &lt;strong&gt;EF.ICCID&lt;/strong&gt; 파일의 내용과 &lt;strong&gt;DF.GSM&lt;/strong&gt;, &lt;strong&gt;ADF.USIM&lt;/strong&gt; 에 인증 쿼리를 한 내용을 기록합니다.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;table style="width: 100%;"&gt;
+   &lt;tbody&gt;
+    &lt;tr&gt;
+     &lt;td style="width: 50%; text-align: center;"&gt;유심 재설정 전&lt;/td&gt;
+     &lt;td style="width: 50%; text-align: center;"&gt;유심 재설정 후&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td style="width: 50.0000%;"&gt;Using reader PCSC[Alcor Micro AU9540 00 00]&lt;br/&gt;
+       Waiting for card...&lt;br/&gt;
+       Info: Card is of type: UICC&lt;br/&gt;
+       Detected UICC Add-on "SIM"&lt;br/&gt;
+       AIDs on card:&lt;br/&gt;
+        USIM: a0000000871002ffffffff89040300ff (EF.DIR)&lt;br/&gt;
+        unknown: a000000063504b43532d3135 (EF.DIR)&lt;br/&gt;
+        unknown: a0000003420001ffffffff89040500ff (EF.DIR)&lt;br/&gt;
+        ADF.ISD: a000000003000000&lt;br/&gt;
+       Welcome to pySim-shell!&lt;br/&gt;
+       (C) 2021-2023 by Harald Welte, sysmocom - s.f.m.c. GmbH and contributors&lt;br/&gt;
+       Online manual available at &lt;a href="https://downloads.osmocom.org/docs/pysim/master/html/shell.html" target="_blank"&gt;https://downloads.osmocom.org/docs/pysim/master/html/shell.html&lt;/a&gt;&lt;br/&gt;
+       pySIM-shell (00:MF)&amp;gt; select EF.ICCID&lt;br/&gt;
+       pySIM-shell (00:MF/EF.ICCID)&amp;gt; read_binary_decoded&lt;br/&gt;
+       {&lt;br/&gt;
+           "iccid": "898205********2"&lt;br/&gt;
+       }&lt;br/&gt;
+       pySIM-shell (00:MF/EF.ICCID)&amp;gt; select DF.GSM&lt;br/&gt;
+       pySIM-shell (00:MF/DF.GSM)&amp;gt; select EF.IMSI&lt;br/&gt;
+       pySIM-shell (00:MF/DF.GSM/EF.IMSI)&amp;gt; read_binary_decoded&lt;br/&gt;
+       {&lt;br/&gt;&lt;span style="background-color: rgb(247, 218, 100);"&gt;    "imsi": "45005******&lt;strong&gt;0&lt;/strong&gt;"&lt;/span&gt;&lt;br/&gt;
+       }&lt;br/&gt;
+       pySIM-shell (00:MF/DF.GSM/EF.IMSI)&amp;gt; select DF.GSM&lt;br/&gt;
+       pySIM-shell (00:MF/DF.GSM)&amp;gt; authenticate 8188388ad5cdd481b02298ff29827791&lt;br/&gt;
+       "6b22e8416c38ae445619b72a"&lt;br/&gt;
+       pySIM-shell (00:MF/DF.GSM)&amp;gt; select ADF.USIM&lt;br/&gt;
+       pySIM-shell (00:MF/ADF.USIM)&amp;gt; authenticate b88dc61f07b5147cc9f545b2f7ddb1b8 944ced****&lt;br/&gt;
+       {&lt;br/&gt;
+           "synchronisation_failure": {&lt;br/&gt;
+               "auts": "f531af*********"&lt;br/&gt;
+           }&lt;br/&gt;
+       }&lt;br/&gt;
+       pySIM-shell (00:MF/ADF.USIM)&amp;gt;&lt;/td&gt;
+     &lt;td style="width: 50.0000%;"&gt;Using reader PCSC[Alcor Micro AU9540 00 00]&lt;br/&gt;
+       Waiting for card...&lt;br/&gt;
+       Info: Card is of type: UICC&lt;br/&gt;
+       Detected UICC Add-on "SIM"&lt;br/&gt;
+       AIDs on card:&lt;br/&gt;
+        USIM: a0000000871002ffffffff89040300ff (EF.DIR)&lt;br/&gt;
+        unknown: a000000063504b43532d3135 (EF.DIR)&lt;br/&gt;
+        unknown: a0000003420001ffffffff89040500ff (EF.DIR)&lt;br/&gt;
+        ADF.ISD: a000000003000000&lt;br/&gt;
+       Welcome to pySim-shell!&lt;br/&gt;
+       (C) 2021-2023 by Harald Welte, sysmocom - s.f.m.c. GmbH and contributors&lt;br/&gt;
+       Online manual available at &lt;a href="https://downloads.osmocom.org/docs/pysim/master/html/shell.html" target="_blank"&gt;https://downloads.osmocom.org/docs/pysim/master/html/shell.html&lt;/a&gt;&lt;br/&gt;
+       pySIM-shell (00:MF)&amp;gt; select EF.ICCID&lt;br/&gt;
+       pySIM-shell (00:MF/EF.ICCID)&amp;gt; read_binary_decoded&lt;br/&gt;
+       {&lt;br/&gt;
+           "iccid": "898205********2"&lt;br/&gt;
+       }&lt;br/&gt;
+       pySIM-shell (00:MF/EF.ICCID)&amp;gt; select DF.GSM&lt;br/&gt;
+       pySIM-shell (00:MF/DF.GSM)&amp;gt; select EF.IMSI&lt;br/&gt;
+       pySIM-shell (00:MF/DF.GSM/EF.IMSI)&amp;gt; read_binary_decoded&lt;br/&gt;
+       {&lt;br/&gt;&lt;span style="background-color: rgb(247, 218, 100);"&gt;    "imsi": "45005******&lt;strong&gt;6&lt;/strong&gt;"&lt;/span&gt;&lt;br/&gt;
+       }&lt;br/&gt;
+       pySIM-shell (00:MF/DF.GSM/EF.IMSI)&amp;gt; select DF.GSM&lt;br/&gt;
+       pySIM-shell (00:MF/DF.GSM)&amp;gt; authenticate 8188388ad5cdd481b02298ff29827791&lt;br/&gt;
+       "6b22e8416c38ae445619b72a"&lt;br/&gt;
+       pySIM-shell (00:MF/DF.GSM)&amp;gt; select ADF.USIM&lt;br/&gt;
+       pySIM-shell (00:MF/ADF.USIM)&amp;gt; authenticate b88dc61f07b5147cc9f545b2f7ddb1b8 944ced****&lt;br/&gt;
+       {&lt;br/&gt;
+           "synchronisation_failure": {&lt;br/&gt;
+               "auts": "f531af**********"&lt;br/&gt;
+           }&lt;br/&gt;
+       }&lt;br/&gt;
+       pySIM-shell (00:MF/ADF.USIM)&amp;gt;&lt;br/&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+   &lt;/tbody&gt;
+  &lt;/table&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;해당 결과를 보면 다음 결과를 확인할 수 있습니다:&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;strong&gt;&lt;em&gt;ICCID&lt;/em&gt;&lt;/strong&gt; 는 변경되지 않았음&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;&lt;em&gt;IMSI&lt;/em&gt;&lt;/strong&gt; 는 변경됨&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;&lt;em&gt;K&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;OPc&lt;/em&gt;&lt;/strong&gt;, &lt;em&gt;&lt;strong&gt;c&lt;/strong&gt;&lt;/em&gt;&lt;sub&gt;&lt;strong&gt;&lt;em&gt;i&lt;/em&gt;&lt;/strong&gt;&lt;/sub&gt;, &lt;em&gt;&lt;strong&gt;r&lt;/strong&gt;&lt;/em&gt;&lt;sub&gt;&lt;strong&gt;&lt;em&gt;i&lt;/em&gt;&lt;/strong&gt;&lt;/sub&gt; 는 변경되지 않음&lt;br/&gt;
+     (변경되었으면 &lt;strong&gt;9862: Security management – Authentication error&lt;/strong&gt; 응답이 돌아와야 함)&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 결과로, &lt;strong&gt;&lt;em&gt;IMSI&lt;/em&gt;&lt;/strong&gt;는 변경되나 &lt;strong&gt;&lt;em&gt;K&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;OPc&lt;/em&gt;&lt;/strong&gt; 가 변경되지 않았음을 확인할 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;이는 SKT 의 주장과 다르게 "유심 재설정"은 모든 값이 교체되는 SIM카드 교체와 동등한 효과가 아님을 알 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이번 사태에서는 일반 사용자가 할 수 있는 조치가 별로 많지는 않습니다.&lt;/p&gt;
+  &lt;p&gt;SIM카드를 새 물리 SIM카드나 eSIM으로 가능한 빨리 교체하거나 번호 이동 외에는 방법이 없습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;더 자세한 내용은 원본글&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://blog.quendi.moe/2025/05/29/ko-skt-%EC%9C%A0%EC%8B%AC-%EC%9E%AC%EC%84%A4%EC%A0%95-%EB%B6%84%EC%84%9D-%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%B0%94%EB%80%8C%EB%8A%94%EA%B0%80/" ori-url="https://blog.quendi.moe/2025/05/29/ko-skt-%EC%9C%A0%EC%8B%AC-%EC%9E%AC%EC%84%A4%EC%A0%95-%EB%B6%84%EC%84%9D-%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%B0%94%EB%80%8C%EB%8A%94%EA%B0%80/" target="_blank"&gt;https://blog.quendi.moe/2025/05/29/ko-skt-%EC%9C%A0%EC%8B%AC-%EC%9E%AC%EC%84%A4%EC%A0%95-%EB%B6%84%EC%84%9D-%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%B0%94%EB%80%8C%EB%8A%94%EA%B0%80/&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;를 참고하세요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/18988768</guid><pubDate>Fri, 30 May 2025 00:31:23 GMT</pubDate></item><item><title>이대남이 아니라 펨베남이 맞는거 같습니다[2][9]</title><link>https://www.clien.net/service/board/park/18989128</link><description>
+ 
+ 
+  &lt;p&gt;20대 남성들 중 제정신인 청년 생각보다 많은데&lt;/p&gt;
+  &lt;p&gt;정신돌아서 이상한 말이나 행동하는 남성은 대부분&lt;/p&gt;
+  &lt;p&gt;펨코나일베 유저 더라구요&lt;/p&gt;
+  &lt;p&gt;“나 그런 사이트 안하는데?” 하다가도 좀더 말섞어보면&lt;/p&gt;
+  &lt;p&gt;”사실 펨코는 가끔 봐“ 이럽디다 어휴&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18989128</guid><pubDate>Fri, 30 May 2025 08:46:21 GMT</pubDate></item><item><title>카리나 사건이 짜증나는건[17][1]</title><link>https://www.clien.net/service/board/park/18989121</link><description>
+ 
+ 
+  &lt;p&gt;Sm이 그래도. 나라의 큰 사건 이슈가 있을때&lt;/p&gt;
+  &lt;p&gt;Sm에서. 티나지 않게 그 사건에 대해 노래를 만들어서 발표했었는데요.&lt;/p&gt;
+  &lt;p&gt;광야의 반항정신 이랄까요?&lt;/p&gt;
+  &lt;p&gt;그래서 더욱 sm이 좋았거든요.&lt;/p&gt;
+  &lt;p&gt;근데 이 카리나가 그 이미지 마저 망쳐놨어요.&lt;/p&gt;
+  &lt;p&gt;독재하려던 내란당 지지를&lt;/p&gt;
+  &lt;p&gt; 그 뻔한 포즈와. 옷을 입고 했어요..&lt;/p&gt;
+  &lt;p&gt;앞으로 카리나 너는 x된줄 알아라..요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18989121</guid><pubDate>Fri, 30 May 2025 08:33:09 GMT</pubDate></item><item><title>경남 양산 사전투표했습니다.[1][5]</title><link>https://www.clien.net/service/board/park/18989119</link><description>
+ 
+ 
+  &lt;p&gt;  출근 시간 보다 1시간 일찍 일어나 씻고 아침 먹고 나와 투표했더니 시간이 너무 많이 남았네요.&lt;/p&gt;
+  &lt;p&gt;  뿌듯한 마음으로 다시 집으로 가서 쉬었다 출근하겠습나다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18989119</guid><pubDate>Fri, 30 May 2025 08:57:57 GMT</pubDate></item><item><title>밭갈이 노력[1][6]</title><link>https://www.clien.net/service/board/park/18989118</link><description>
+ 
+ 
+  &lt;p&gt;3년만에 글이 또 밭갈이글이네요^^a&lt;/p&gt;
+  &lt;p&gt;경남 창원(마산)입니다.&lt;/p&gt;
+  &lt;p&gt;지난 대선때와는 분위기가 다르네요&lt;/p&gt;
+  &lt;p&gt;지난 대선ㅡ 어찌되었건 2찍&lt;/p&gt;
+  &lt;p&gt;이번 대선ㅡ 윤석렬당 안된다 김문수 싫다.&lt;/p&gt;
+  &lt;p&gt;                   하지만 이재명은 더 싫다.&lt;/p&gt;
+  &lt;p&gt;                   그래서 투표안할란다.&lt;/p&gt;
+  &lt;p&gt;ㅡ밭갈이 홍보자료ㅡ&lt;/p&gt;
+  &lt;p&gt;ㆍ이재명님 상대원연설 영상&lt;/p&gt;
+  &lt;p&gt;ㆍ김문수 식민시절 국적은 일본이다 영상&lt;/p&gt;
+  &lt;p&gt;ㆍ전당대표 젓가락 영상&lt;/p&gt;
+  &lt;p&gt;ㆍ임명장&lt;/p&gt;
+  &lt;p&gt;가족회식 주선ㅡ임명장활용, 20만원지출&lt;/p&gt;
+  &lt;p&gt;  (처남댁ㆍ조카ㆍ장모님 성공)&lt;/p&gt;
+  &lt;p&gt;캠핑접대ㅡ홍보자료 총동원&lt;/p&gt;
+  &lt;p&gt;(친구2+친구와이프님2 3성공1보류)&lt;/p&gt;
+  &lt;p&gt;친척홍보ㅡ임명장 활용&lt;/p&gt;
+  &lt;p&gt;(작은아버지,작은어머니,사촌동생3+3,고모,고모부,사촌동생2+2)&lt;/p&gt;
+  &lt;p&gt;아파트경비 아버님2분ㅡ명절마다 선물,임명장&lt;/p&gt;
+  &lt;p&gt;(2분다 배우신 분들인지 중도에 가까운 분들이라 긍정적 반응)&lt;/p&gt;
+  &lt;p&gt;의외로 임명장이 잘먹히는 분위기네요^^&lt;/p&gt;
+  &lt;p&gt;지난대선 0.7퍼 좌절 후 마신 쓰디쓴 깡소주가 생각납니다.&lt;/p&gt;
+  &lt;p&gt;이번엔 달달한 양념치킨에 시원한 쏘맥을 먹었으면 합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18989118</guid><pubDate>Fri, 30 May 2025 08:25:35 GMT</pubDate></item><item><title>[단독] 김재원 '어젯밤 이준석 측으로부터 만남 제안받았으나 최종 무산'[22][3]</title><link>https://www.clien.net/service/board/park/18989112</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/052/0002199658?sid=100" target="_blank"&gt;https://n.news.naver.com/mnews/article/052/0002199658?sid=100&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;어제 김민석 이재명 sns가 괜히 올라온게 아니었군요 ㅋㅋ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18989112</guid><pubDate>Fri, 30 May 2025 08:12:25 GMT</pubDate></item><item><title>IMF 시대상을 웃으면서 노래하는 여중생들[3][5]</title><link>https://www.clien.net/service/board/park/18989008</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -65,7 +276,7 @@
   &lt;p&gt;그의 이름은 "이중성" &lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18989041</guid><pubDate>Fri, 30 May 2025 04:48:52 GMT</pubDate></item><item><title>Q/A 어르신 타고 내리기 편한 차량 추천요[16][0]</title><link>https://www.clien.net/service/board/cm_car/18989009</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18989041</guid><pubDate>Fri, 30 May 2025 04:48:52 GMT</pubDate></item><item><title>Q/A 어르신 타고 내리기 편한 차량 추천요[35][0]</title><link>https://www.clien.net/service/board/cm_car/18989009</link><description>
  
  
   &lt;p style='margin-bottom: 0px; color: rgb(0, 0, 0); font-family: "맑은 고딕", "Malgun Gothic", gulim; font-size: 15px;'&gt;현재 벤츠 e300인데&lt;/p&gt;
@@ -79,7 +290,7 @@
   &lt;p style='margin-bottom: 0px; color: rgb(0, 0, 0); font-family: "맑은 고딕", "Malgun Gothic", gulim; font-size: 15px;'&gt;레이나 아반떼처럼 2열 좁은차도 빼고&lt;/p&gt;
   &lt;p style='color: rgb(0, 0, 0); font-family: "맑은 고딕", "Malgun Gothic", gulim; font-size: 15px;'&gt;이런 부모님한데 내리기 편한차가 뭐가 있을까요?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18989009</guid><pubDate>Fri, 30 May 2025 00:35:16 GMT</pubDate></item><item><title>뉴스타파 압수수색 강추 합니다.[1][12]</title><link>https://www.clien.net/service/board/park/18989032</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/18989009</guid><pubDate>Fri, 30 May 2025 00:35:16 GMT</pubDate></item><item><title>뉴스타파 압수수색 강추 합니다.[1][14]</title><link>https://www.clien.net/service/board/park/18989032</link><description>
  
  
   &lt;p&gt;&lt;a href="https://www.clien.net/service/board/park/18988968?od=T31&amp;amp;po=1&amp;amp;category=0&amp;amp;groupCd=" ori-url="https://www.clien.net/service/board/park/18988968?od=T31&amp;amp;po=1&amp;amp;category=0&amp;amp;groupCd=" target="_blank"&gt;https://www.clien.net/service/board/park/18988968?od=T31&amp;amp;po=1&amp;amp;category=0&amp;amp;groupCd=&lt;/a&gt;&lt;/p&gt;
@@ -157,7 +368,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;저는 출근하면서 했는데 누구는 6시간을 운전해서 투표한분들도 있군요. 한국에 살지도 않는데 이렇게 열심히 투표한분들을 위해서 우리도 투표율이 높았으면 좋겠네요 &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988937</guid><pubDate>Thu, 29 May 2025 22:29:38 GMT</pubDate></item><item><title>가짜뉴스 유투브 채널 신고 부탁드립니다.[3][11]</title><link>https://www.clien.net/service/board/park/18989025</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988937</guid><pubDate>Thu, 29 May 2025 22:29:38 GMT</pubDate></item><item><title>가짜뉴스 유투브 채널 신고 부탁드립니다.[6][14]</title><link>https://www.clien.net/service/board/park/18989025</link><description>
  
  
   &lt;p&gt;채널이름은 효잉 이고&lt;/p&gt;
@@ -188,7 +399,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18989025</guid><pubDate>Fri, 30 May 2025 02:04:21 GMT</pubDate></item><item><title>2찍들이 중국인이였다니...[7][8]</title><link>https://www.clien.net/service/board/park/18989023</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18989025</guid><pubDate>Fri, 30 May 2025 02:04:21 GMT</pubDate></item><item><title>2찍들이 중국인이였다니...[7][10]</title><link>https://www.clien.net/service/board/park/18989023</link><description>
  
  
   &lt;p&gt;이재명 뽑을사람들이 뭐하러 투표용지 빼내오겠어요..&lt;/p&gt;
@@ -201,7 +412,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;대충 눈치 챘지만 참으로 어설프네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18989023</guid><pubDate>Fri, 30 May 2025 01:06:13 GMT</pubDate></item><item><title>이준석의 극단적 나르시시즘 해부[8][20]</title><link>https://www.clien.net/service/board/park/18989015</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18989023</guid><pubDate>Fri, 30 May 2025 01:06:13 GMT</pubDate></item><item><title>이준석의 극단적 나르시시즘 해부[8][22]</title><link>https://www.clien.net/service/board/park/18989015</link><description>
  
  
   &lt;p&gt;※ 글이 길어서 목차를 첨부했습니다.&lt;/p&gt;
@@ -424,7 +635,7 @@
  
   &lt;p&gt;ㅇㅇㅇ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988997</guid><pubDate>Fri, 30 May 2025 00:08:18 GMT</pubDate></item><item><title>이준석 뉴스 댓글 장원~[10][19]</title><link>https://www.clien.net/service/board/park/18988992</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988997</guid><pubDate>Fri, 30 May 2025 00:08:18 GMT</pubDate></item><item><title>이준석 뉴스 댓글 장원~[10][22]</title><link>https://www.clien.net/service/board/park/18988992</link><description>
  
  
   &lt;p&gt;&lt;strong&gt;역시 풍자와 해학의 민족~  아니 이제 드립의 민족 입니다~ ㅋㅋ&lt;/strong&gt;&lt;/p&gt;
@@ -471,7 +682,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988991</guid><pubDate>Thu, 29 May 2025 23:59:17 GMT</pubDate></item><item><title>선관위, 황교안 고발…“회원들에게 투표 업무 방해 교육”[5][18]</title><link>https://www.clien.net/service/board/park/18988984</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988991</guid><pubDate>Thu, 29 May 2025 23:59:17 GMT</pubDate></item><item><title>선관위, 황교안 고발…“회원들에게 투표 업무 방해 교육”[5][20]</title><link>https://www.clien.net/service/board/park/18988984</link><description>
  
  
   &lt;p class="text" style='margin-top: 40px; margin-bottom: 40px; padding: 0px; border: 0px; font-family: "gothic bold", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Arial, sans-serif; vertical-align: baseline; text-size-adjust: 100%; color: rgb(42, 42, 42); line-height: 1.7; font-size: 18px; letter-spacing: -0.3px; background-color: rgb(255, 255, 255);'&gt;중앙선거관리위원회는 부정선거 음모론을 퍼뜨리며 지속적으로 선관위 업무를 방해하고, 사전투표관리관을 협박한 ㄱ단체와 대표자 ㄴ씨를 공직선거법 위반 혐의로 27일 경찰에 고발했다고 28일 밝혔다.&lt;/p&gt;
@@ -481,7 +692,7 @@
   &lt;p class="text" style='margin-top: 40px; margin-bottom: 40px; padding: 0px; border: 0px; font-family: "gothic bold", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Arial, sans-serif; vertical-align: baseline; text-size-adjust: 100%; color: rgb(42, 42, 42); line-height: 1.7; font-size: 18px; letter-spacing: -0.3px; background-color: rgb(255, 255, 255);'&gt;오늘 한두 곳에서 난리친게 아니더라구요.&lt;/p&gt;
   &lt;p class="text" style='margin-top: 40px; margin-bottom: 40px; padding: 0px; border: 0px; font-family: "gothic bold", Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Arial, sans-serif; vertical-align: baseline; text-size-adjust: 100%; color: rgb(42, 42, 42); line-height: 1.7; font-size: 18px; letter-spacing: -0.3px; background-color: rgb(255, 255, 255);'&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988984</guid><pubDate>Thu, 29 May 2025 23:53:49 GMT</pubDate></item><item><title>극한직업 경찰서장 페북[3][33]</title><link>https://www.clien.net/service/board/park/18988982</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988984</guid><pubDate>Thu, 29 May 2025 23:53:49 GMT</pubDate></item><item><title>극한직업 경찰서장 페북[3][35]</title><link>https://www.clien.net/service/board/park/18988982</link><description>
  
  
   &lt;p&gt;&lt;img alt="Screenshot_20250529_232402_Facebook.jpg" class="fr-dib fr-fil full" data-file-sn="15443077" data-gif="false" data-img-height="1137" data-img-width="1439" data-role="attach-image" src="https://edgio.clien.net/F01/15443077/67234076e527ad.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -708,343 +919,4 @@
   &lt;p&gt;이제 내란 퇴출에 이어 혐오도 퇴출시켜 주십시오&lt;/p&gt;
   &lt;p&gt;오직 혐오 하나에 기대어 연맹해온 이준석의 정치를 퇴장시켜 주십시오&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988868</guid><pubDate>Thu, 29 May 2025 20:40:59 GMT</pubDate></item><item><title>음악 74년산,76년산 펜더 텔레캐스터 대면기[12][7]</title><link>https://www.clien.net/service/board/use/18988237</link><description>
- 
- 
-  &lt;p&gt;74년산,76년산 펜더 텔레캐스터 대면기입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;원래 뮬이나 다른 카페에 쓸법한 글인데 아무래도 다른 악기 가진분들의 이해관계도 있고 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;악기에 대한 평가라는게 주관적이다보니 마찰을 피하기위해 이곳에 써봅니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;일렉기타를 잘모르는 분들도 이름은 들어보셨을법한 펜더라는 브랜드의 악기입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;펜더 텔레캐스터는 최초로 상용판매된 솔리드바디 일렉기타로 알고 있습니다.(이름은 바뀌었습니다만,)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그래서 그런건지 다른 모델보다 조금 더 원초적이고 날것의 소리가 난다고 저는 생각합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;실력이 적나라하게 드러나서 조금 더 신경써서 연주하게 되고 그만큼 표현할수 있는범위도 넓은 기타라고 생각해요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;특유의 캐릭터가 있어서 싫어하는사람도 많지만 한번 빠지면 헤어나올수 없는 매력이 있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;서론이 길었네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;현행 펜더 텔레캐스터 모델은 대략 일곱종류 정도 입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;멕펜 플레이어2&lt;/p&gt;
-  &lt;p&gt;일펜 트레디셔널&lt;/p&gt;
-  &lt;p&gt;일펜 하이브리드2&lt;/p&gt;
-  &lt;p&gt;미펜 퍼포머&lt;/p&gt;
-  &lt;p&gt;일펜 헤리티지&lt;/p&gt;
-  &lt;p&gt;미펜 프로페셔널2&lt;/p&gt;
-  &lt;p&gt;미펜 빈티지2&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아래로 내려올수록 비싸집니다.&lt;/p&gt;
-  &lt;p&gt;그리고 커스텀샵 모델은 미펜 빈티지2의 2배가격입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;비쌀수록 50,60년대 모델의 사양을 더 정교하게 복각한 모델이됩니다.&lt;/p&gt;
-  &lt;p&gt;그리고 커스텀샵은 레릭이 추가(낡은것을 표현)&lt;/p&gt;
-  &lt;p&gt;곡률이 다릅니다.(연주감의 개선)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;저는 상기의 거의 모든 모델을 소유하거나 연주해보았는데 뭔가 뭔가 하나씩 빠진 느낌을 지울수 없었습니다.&lt;/p&gt;
-  &lt;p&gt;물론 소리나 연주감 기타의 완성도는 비쌀수록 좋고 좋은악기임이 분명합니다만 &lt;/p&gt;
-  &lt;p&gt;아무래도 진짜가 아니라 복각품이라서 그런지 마음한켠에 채워지지 않는 욕망이 남고&lt;/p&gt;
-  &lt;p&gt;요즘나오는것들은 레릭의 완성도도 뭔가 좀 엉성한것 같고 목재등급도 그렇게 좋지않은 느낌적인 느낌이랄까요...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;각설하고 저는 진짜가 가지고 싶었습니다.&lt;/p&gt;
-  &lt;p&gt;무언가를 재해석하거나 복각한 모델이 아닌 진짜 그시대에 나온 기타가 가지고 싶었습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그러나 50년대 60년대 빈티지 모델은 일반인이 가지기에는 너무 비싸기도 하고 &lt;/p&gt;
-  &lt;p&gt;욕심과 용기를 내어 산다고 해도 거의 문화재취급이라 맘편히 연주할수도 없을것 같았습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;하지만 아직 70년대의 악기라면 손에 닿는 가격입니다 ㅎ&lt;/p&gt;
-  &lt;p&gt;70년대는 펜더사가 cbs라는 방송국회사에 팔려서 품질이 떨어지고 이전과 다른 새로운 시도를 많이 하던시기라&lt;/p&gt;
-  &lt;p&gt;빈티지악기지만 아직 상대적으로 저렴한편입니다.&lt;/p&gt;
-  &lt;p&gt;텔레캐스터 모델은 70년대 개체들도 상대적으로 60년대모델과 큰차이가 없어 &lt;/p&gt;
-  &lt;p&gt;잘만고르면 가성비좋게 빈티지악기를 손에 넣을수 있다고 생각했습니다.&lt;/p&gt;
-  &lt;p&gt;(개인적으로 75년까지는 빈티지 악기라고 생각합니다 그이후는 그냥 중고기타구요)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그리고 어릴때 재미있게 보았던 beck이라는 만화의 주인공이 사용하던 기타도 72년중반~76년중반까지 생산되었던 모델이기도 하구요.(사실 이게 제일 중요했습니다 ㅎ)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그래서 손에 넣었습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="IMG_4172.jpg" class="fr-dib fr-fil full" data-file-sn="15442077" data-gif="false" data-img-height="2142" data-img-width="2856" data-role="attach-image" src="https://edgio.clien.net/F01/15442077/66fac5f0989bcd.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;빨간하드케이스에 들어있는게 76년산&lt;/p&gt;
-  &lt;p&gt;아크릴 하드케이스에 들어있는게 74년산입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;추측하건데 당시 한가닥 하던 어르신들이 소중하게 보관하다 유품으로 어딘가에 팔려 경매에 나온개체라고 생각합니다.&lt;/p&gt;
-  &lt;p&gt;운좋게도 모든 파츠가 오리지널이었고 잘모르는 제가 보기에도 목재가 요즘 기타들과 차이가 있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그리고 이건 기대하지 않았던 부분인데 케이스가 요즘 나오는 G&amp;amp;G케이스와 달리 완성도가 높았습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="IMG_4067.jpg" class="fr-dib fr-fil full" data-file-sn="15442088" data-gif="false" data-img-height="2142" data-img-width="2856" data-role="attach-image" src="https://edgio.clien.net/F01/15442088/66fb08cdd8507a.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;위에것이 2020모델 커스텀샵 케이스&lt;/p&gt;
-  &lt;p&gt;아래가 76년산 케이스입니다.&lt;/p&gt;
-  &lt;p&gt;물론 낡고 녹슬었지만 자물쇠의 조작감이라던가 케이스로서의 완성도가 요즘것보다 높아서 &lt;/p&gt;
-  &lt;p&gt;커스텀샵케이스는 팔아버렸습니다...&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="IMG_4061.jpg" class="fr-dib fr-fil full" data-file-sn="15442095" data-gif="false" data-img-height="2142" data-img-width="2856" data-role="attach-image" src="https://edgio.clien.net/F01/15442095/66fb24968b1fbc.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;76년산 텔레 프론트 픽업입니다.&lt;/p&gt;
-  &lt;p&gt;요즘 나오는 픽업은 뭔가 제조과정이 생략된건지 가운데가 평평하지 않고 울룩불룩한데 &lt;/p&gt;
-  &lt;p&gt;평평하고 너무 예쁘게 잘가공되어 있습니다.&lt;/p&gt;
-  &lt;p&gt;당시 공정의 차이로 60년대의 픽업과는 다르게 양끝의 높이는 조금 낮지만 완성도 자체는 차이가 없다고 생각합니다.&lt;/p&gt;
-  &lt;p&gt;소리도 너무 좋습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="IMG_4072.jpg" class="fr-dib fr-fil full" data-file-sn="15442101" data-gif="false" data-img-height="2142" data-img-width="2856" data-role="attach-image" src="https://edgio.clien.net/F01/15442101/66fb5d3f8a3fd1.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;헤드부분입니다. &lt;/p&gt;
-  &lt;p&gt;자세히 보면 펜더 로고 테두리 부분이 살짝 튀어나와있습니다.&lt;/p&gt;
-  &lt;p&gt;복각품에는 없는 디테일입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;운좋게도 어릴때부터 동경하던 모델을 두대나 손에 넣게 되었습니다.&lt;/p&gt;
-  &lt;p&gt;76년산은 이것저것 픽업교체나 스텐레스 프렛으로 교체도 해보며 즐길 예정이고&lt;/p&gt;
-  &lt;p&gt;74년산은 오리지널 상태그대로 보관하려고 합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;빈티지 악기는 소유한다기 보다는 잠시 맡아서 관리한다는 느낌이네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이상 저의 기타 자랑질을 마칩니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/18988237</guid><pubDate>Thu, 29 May 2025 13:19:04 GMT</pubDate></item><item><title>기타 돈 버는법 알려주는 이재명[9][17]</title><link>https://www.clien.net/service/board/lecture/18988729</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;span style="background-color: transparent; color: inherit; font-size: 1.167em;"&gt;사람이 마음먹고 행정을 하면 어디까지 할 수 있는지를 보여주는 귀한 강좌가 있습니다.&lt;/span&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="2025-05-29_17-45.png" class="fr-dib fr-fil full" data-file-sn="15442682" data-gif="false" data-img-height="1420" data-img-width="938" data-role="attach-image" src="https://edgio.clien.net/F01/15442682/671113a8c036a6.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;제가 8년 가까이 성남시장 재임하면서&lt;/p&gt;
-  &lt;p&gt;정말 행복하게 시정을 했어요&lt;/p&gt;
-  &lt;p&gt;내 인생에서 가장 행복했던 시기를 꼽으라면&lt;/p&gt;
-  &lt;p&gt;저는 성남시장 할 때라고 지금도 여전히 생각합니다&lt;/p&gt;
-  &lt;p&gt;정말로 행복했어요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;빈터에 어린이 놀이터라도 하나 만들고 &lt;/p&gt;
-  &lt;p&gt;안 되면 다라이에 물통에 물이라도 넣어서 &lt;/p&gt;
-  &lt;p&gt;어린이들 퐁당퐁당하게 하고 &lt;/p&gt;
-  &lt;p&gt;그러면 또 좋아하시고 &lt;/p&gt;
-  &lt;p&gt;그런 걸 보면 제가 너무 행복했어요 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;작은 정성으로 사람들이 소소한 행복을 느끼고 &lt;/p&gt;
-  &lt;p&gt;가로등이 깨지면 즉각 바꿔 주고 &lt;/p&gt;
-  &lt;p&gt;도로가 덜컥덜컥 거리게 &lt;/p&gt;
-  &lt;p&gt;엉터리로 복구해 놓은거는&lt;/p&gt;
-  &lt;p&gt;제가 그업자 불러다가 직접 수리하게 시켜라 &lt;/p&gt;
-  &lt;p&gt;하자 보수증권 이런 걸로 대신시키지 마라 &lt;/p&gt;
-  &lt;p&gt;꼭 공사한 그 업체가 &lt;/p&gt;
-  &lt;p&gt;직접 다시 뜯었다가 다시 하게 만들어라&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그리고 제가 상수도 관을 묻는데 &lt;/p&gt;
-  &lt;p&gt;밑에는 모래를 묻고 그 위에는 흙을 묻고 &lt;/p&gt;
-  &lt;p&gt;뭐 이런 걸 해야 되는데 &lt;/p&gt;
-  &lt;p&gt;대충 묻었다는 제보가 있어 가지고 &lt;/p&gt;
-  &lt;p&gt;가서 파봤어요 파봤더니 &lt;/p&gt;
-  &lt;p&gt;그 엉터리로 묻어놨더라고 &lt;/p&gt;
-  &lt;p&gt;그래서 제가 다시 파내고 &lt;/p&gt;
-  &lt;p&gt;다시 묻으라 그래라 시켰습니다 &lt;/p&gt;
-  &lt;p&gt;그래서 성남시에는 그다음부터 공사할 때 &lt;/p&gt;
-  &lt;p&gt;엉터리로 복구해 가지고 차가 &lt;/p&gt;
-  &lt;p&gt;덜커덕 덜커덕 이러는게 다 사라졌죠&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;도로에 아스팔트 새카맣게 다시 깔길래 &lt;/p&gt;
-  &lt;p&gt;앞으로는 도로에 어디를 복구할지 왜 하는지 &lt;/p&gt;
-  &lt;p&gt;사진 찍어 와서 검사받고 &lt;/p&gt;
-  &lt;p&gt;도로 재포장 하라고 시켰죠 &lt;/p&gt;
-  &lt;p&gt;그래서 제가 사진 가져오면 요거는 그냥 쓰고 &lt;/p&gt;
-  &lt;p&gt;요거는 좀 더 버티고 요거는 요만큼만 잘라서 &lt;/p&gt;
-  &lt;p&gt;옛날에 옷 깁듯이 기워 가지고 거기만 하고 &lt;/p&gt;
-  &lt;p&gt;길게 몇십 미터씩 가지 마라 시켰죠 &lt;/p&gt;
-  &lt;p&gt;차 타고 지나가는데 아무 지장 없죠?&lt;/p&gt;
-  &lt;p&gt;그 돈 예산 아끼지 않습니까.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그래서 성남시에 가 보시면은 &lt;/p&gt;
-  &lt;p&gt;똑같은 보도인데 중간에 색깔이 약간 다른게 있어요&lt;/p&gt;
-  &lt;p&gt;보통 보도불럭 깨지면 통째로 갈잖아요&lt;/p&gt;
-  &lt;p&gt;그것만 쏙 뽑고 거기다가 한장만 싹 새로 꽂았는데 &lt;/p&gt;
-  &lt;p&gt;그게 새거라서 색깔이 다른 거예요 &lt;/p&gt;
-  &lt;p&gt;뭐 걸어 다니는데 지장 있습니까?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;제가 또 돈이 아까워서 저기 가로등 있잖아요 가로등&lt;/p&gt;
-  &lt;p&gt;보수 유지 보수 예산 그거를 제가 &lt;/p&gt;
-  &lt;p&gt;연간 단가 계약을 해 가지고 개당 얼마고 그러면 &lt;/p&gt;
-  &lt;p&gt;연간 고장 나거나 추가로 하는 개수가 있는데 &lt;/p&gt;
-  &lt;p&gt;예산을 편성을 했는데 거 이상하게 &lt;/p&gt;
-  &lt;p&gt;2년 3년 지나도 똑같은 수가 고장이 난단 말이에요 &lt;/p&gt;
-  &lt;p&gt;그거 이상하다, 꼭 다 써요. 이상하다 &lt;/p&gt;
-  &lt;p&gt;뭐 남는게 있든지 모자라는게 있는게 정상인데 &lt;/p&gt;
-  &lt;p&gt;그래서 제가 실험을 삼아서 20%인가 25%인가 &lt;/p&gt;
-  &lt;p&gt;350억에 70억을 했으니까 한 20% 정도 깎았군요 &lt;/p&gt;
-  &lt;p&gt;수정구 중원구 분당구 구청장 그 시설 담당 과장을 &lt;/p&gt;
-  &lt;p&gt;다 불러다가 앞으로 내년 20%씩 싹 깎는다 &lt;/p&gt;
-  &lt;p&gt;근데 혹시 부족하면은 내년 가을에 추경해 줄테니까 &lt;/p&gt;
-  &lt;p&gt;추경 신청하세요 그리고 제가 그다음에 가을에 &lt;/p&gt;
-  &lt;p&gt;가 가지고 물어봤어요 혹시 부족해요? &lt;/p&gt;
-  &lt;p&gt;작년보다 20% 깎았는데 &lt;/p&gt;
-  &lt;p&gt;혹시 예산 부족하지 않습니까 &lt;/p&gt;
-  &lt;p&gt;그랬더니 아 괜찮대 문제 없대요&lt;/p&gt;
-  &lt;p&gt;그래서 거기서 한 70억을 아껴 가지고&lt;/p&gt;
-  &lt;p&gt;연간 70억을 아껴서 그걸로 교복 만 명 30억&lt;/p&gt;
-  &lt;p&gt;해줘도 아무 지장 없지 않습니까&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그리고 청년 배당도 100억 &lt;/p&gt;
-  &lt;p&gt;뭐 2조 3조에 되는 예산에서 다른 거 아껴서 하니까 &lt;/p&gt;
-  &lt;p&gt;아무 무리 없이 빚 더 지지 않고 &lt;/p&gt;
-  &lt;p&gt;우리 성남 시민들한테 세금 더 걷지 않고 &lt;/p&gt;
-  &lt;p&gt;빛 갚아가면서 다 그런 복지하고도 &lt;/p&gt;
-  &lt;p&gt;걱정이 없이 다 되더라 그 말입니다 &lt;/p&gt;
-  &lt;p&gt;희안하지 않습니까 여러분?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;제가 또 다니다 보니까 현수막이 이렇게 많은데 &lt;/p&gt;
-  &lt;p&gt;그걸 다 태우느라고 &lt;/p&gt;
-  &lt;p&gt;막 냄새나고 일거리 늘고 그런데요 &lt;/p&gt;
-  &lt;p&gt;아 저 천을 왜 갖다 버리지 아깝게 &lt;/p&gt;
-  &lt;p&gt;그래서 제가 현수막을 걷어다가 &lt;/p&gt;
-  &lt;p&gt;쓰레기 버리는 봉투로 봉다리로 만들어서 &lt;/p&gt;
-  &lt;p&gt;그걸 쓰라고 시켜 가지고 &lt;/p&gt;
-  &lt;p&gt;지금 성남시에 가면 아직도 현수막으로 만든 &lt;/p&gt;
-  &lt;p&gt;쓰레기 봉다리가 여기저기 비치 돼 있어요&lt;/p&gt;
-  &lt;p&gt;얼마나 좋습니까 여러분 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;자기 돈이면 그렇게 안 하겠죠&lt;/p&gt;
-  &lt;p&gt;남의 돈이니까 그냥 쓰는 거예요&lt;/p&gt;
-  &lt;p&gt;그리고 그걸 아낀다고 뭐 칭찬해 주는 것도 없고&lt;/p&gt;
-  &lt;p&gt;이렇게 예산 아껴가지고 시민들 복지를 &lt;/p&gt;
-  &lt;p&gt;늘린다고 누가 상을 주기를 합니까 &lt;/p&gt;
-  &lt;p&gt;안 하는 거죠 그러나 시장이 정신 바짝 차리고 &lt;/p&gt;
-  &lt;p&gt;앞으로 사고가 안 나게 하면 승진시켜 주겠다 &lt;/p&gt;
-  &lt;p&gt;동네 민원 많이 찾아오면 &lt;/p&gt;
-  &lt;p&gt;숫자 많이 발굴해 오면 승진시켜 주겠다 &lt;/p&gt;
-  &lt;p&gt;이러니까 동네에 가 가지고 우리 동장들이 &lt;/p&gt;
-  &lt;p&gt;혹시 뭐 필요한 거 없어요 &lt;/p&gt;
-  &lt;p&gt;혹시 어디 뭐 문제 되는 거 없나 &lt;/p&gt;
-  &lt;p&gt;막 다니면서 민원을 발굴을 해 가지고 &lt;/p&gt;
-  &lt;p&gt;심지어 이골목의 쓰레기 저골목의 쓰레기 있으면 &lt;/p&gt;
-  &lt;p&gt;A 쓰레기 발견 B 쓰레기 발견 &lt;/p&gt;
-  &lt;p&gt;이렇게 써 가지고 저한테 보고하잖아요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그러면은 동장이 할 거 동장이 하고 &lt;/p&gt;
-  &lt;p&gt;구청장이 할 거 구청장이 처리하고 &lt;/p&gt;
-  &lt;p&gt;본청에 과장들이 할 거 처리하고 &lt;/p&gt;
-  &lt;p&gt;국장이 처리하고 부시장이 해도 안 되면 &lt;/p&gt;
-  &lt;p&gt;나한테 가져와라 시장한테 &lt;/p&gt;
-  &lt;p&gt;시장한테 가져오면 이거 왜 가능한데 안 했어?&lt;/p&gt;
-  &lt;p&gt;하면 혼나죠 &lt;/p&gt;
-  &lt;p&gt;네 그러니까 다 처리하고 &lt;/p&gt;
-  &lt;p&gt;처리 불가능한 건 불가능하다고 설명하니까 &lt;/p&gt;
-  &lt;p&gt;동네 민원이 다 사라졌어요 &lt;/p&gt;
-  &lt;p&gt;그러니까 얼마나 사람들이 좋아해요 &lt;/p&gt;
-  &lt;p&gt;또 다 사라졌다니까 야 열개 남았는데 &lt;/p&gt;
-  &lt;p&gt;허위 사실 공표했다고 고발할라&lt;/p&gt;
-  &lt;p&gt;거의다로 수정합니다 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그래서 여러분 성남 시민들이 지금도 저를 보면 &lt;/p&gt;
-  &lt;p&gt;좋아하세요 왜 인천갔냐 다시 돌아와라 그러는데 &lt;/p&gt;
-  &lt;p&gt;저는 그런 걸 볼 때마다 정말로 행복합니다 &lt;/p&gt;
-  &lt;p&gt;인생을 사는 묘미가 있잖아요 &lt;/p&gt;
-  &lt;p&gt;보람이 있잖아요 공직자의 보람 &lt;/p&gt;
-  &lt;p&gt;저는 그래서 성남 시장 시절이 &lt;/p&gt;
-  &lt;p&gt;정말 생각하면 할수록 행복해요 &lt;/p&gt;
-  &lt;p&gt;국정도 저는 마찬가지라고 생각해요&lt;/p&gt;
-  &lt;p&gt;애정을 가지고 성실하게 정말 실력 발휘를 하면&lt;/p&gt;
-  &lt;p&gt;지금보다야 훨씬 나은 대한민국 &lt;/p&gt;
-  &lt;p&gt;되지 않겠습니까 여러분?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=vYgoFa0_ceA" ori-url="https://www.youtube.com/watch?v=vYgoFa0_ceA" rel="noopener noreferrer" target="_blank"&gt;출처&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="786876.png" class="fr-dib fr-fil full" data-file-sn="15442684" data-gif="false" data-img-height="2048" data-img-width="1668" data-role="attach-image" src="https://edgio.clien.net/F01/15442684/671130211e5fab.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이재명은 돈을 벌어서 국민들에게 쓴다는 사실을 여러차례 증명했습니다.&lt;/p&gt;
-  &lt;p&gt;그래서 저의 이익을 위해 이재명을 도구로 쓰고자 합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;방법은 정말 간단합니다.&lt;/p&gt;
-  &lt;p&gt;투표하면 됩니다.&lt;/p&gt;
-  &lt;p&gt;투표하지 않고 살림살이 나아지길 바라지 맙시다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지난 대선 1% 미만의 차이로 진 결과는 끔찍했습니다.&lt;/p&gt;
-  &lt;p&gt;마음으로만 지지하고 투표하지 않으면 또 이렇게 됩니다.&lt;/p&gt;
-  &lt;p&gt;투표장에 가서 투표함에 표를 넣어야 당선이 되는 겁니다.&lt;/p&gt;
-  &lt;p&gt;다섯명 중에 한명만 투표하지 않아도 득표율 20%가 빠집니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;투표 한번으로 행정 끝판왕 5년 부려먹기, 얼마나 큰 이득입니까?&lt;/p&gt;
-  &lt;p&gt;제발 투표장에 갑시다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="Resized_1748411759147[1].jpg" class="fr-dib fr-fil full" data-file-sn="15442875" data-gif="false" data-img-height="960" data-img-width="965" data-role="attach-image" src="https://edgio.clien.net/F01/15442875/671a0d50367ac0.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;집근처 사전투표소 찾기&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://vo.la/uehUYAt" target="_blank"&gt;https://vo.la/uehUYAt&lt;/a&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/18988729</guid><pubDate>Thu, 29 May 2025 18:32:14 GMT</pubDate></item><item><title>끝까지 투표 독려하는 것이 중요하고, 대선 이후가 진짜 싸움의 시작입니다.[1][10]</title><link>https://www.clien.net/service/board/park/18988923</link><description>
- 
- 
-  &lt;p&gt;끝난 게 끝난 것이 아니고 사전 투표율 높다고 방심해서도 안됩니다.&lt;/p&gt;
-  &lt;p&gt;주변에 투표 계속 독려하면서 대선 결과 발표 날 때까지 절대 끝난 것이 아닙니다.&lt;/p&gt;
-  &lt;p&gt;대선 이후부터는 새로운 싸움 시즌2 입니다!&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988923</guid><pubDate>Thu, 29 May 2025 22:09:39 GMT</pubDate></item><item><title>[단독] 윤.관저 물2년 전부터 ‘월800t’ 썼다.고지서 입수[19][9]</title><link>https://www.clien.net/service/board/park/18988922</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250529181509499" ori-url="http://v.daum.net/v/20250529181509499" target="_blank"&gt;&lt;strong&gt;[단독] 윤석열·김건희, &lt;strong&gt;관저&lt;/strong&gt; &lt;strong&gt;물&lt;/strong&gt; 2년 전부터 ‘월 800t’ 썼다…고지서 입수&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;&lt;a href="https://v.daum.net/channel/17/home" ori-url="https://v.daum.net/channel/17/home" target="_blank"&gt;한겨레&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;3시간전&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;&lt;a href="http://v.daum.net/v/20250529181509499" ori-url="http://v.daum.net/v/20250529181509499" target="_blank"&gt;다음뉴스&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250529181509499" ori-url="http://v.daum.net/v/20250529181509499" target="_blank"&gt;입주 6개월 후부터 비정상 증가…퇴거 때까지&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250529181509499" ori-url="http://v.daum.net/v/20250529181509499" target="_blank"&gt;전문가 “물 대량 사용하는 특정 시설물 의심”&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250529181509499" ori-url="http://v.daum.net/v/20250529181509499" target="_blank"&gt;&lt;img alt="" class="fr-fic fr-dii" src="https://search2.kakaocdn.net/argon/200x200_85_c/9dVxegMxIG90" width="88"/&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;.....&lt;/p&gt;
-  &lt;p&gt;알 수 없는 이유로 급격히 증가한 것으로 밝혀졌다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;윤 전 대통령 부부는 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지난 4월 파면 이후 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;민간인 신분으로 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;관저&lt;/strong&gt;에&lt;/p&gt;
-  &lt;p&gt; 일주일간 머무르며&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt; 228톤이 넘는 &lt;strong&gt;물&lt;/strong&gt;을 사용해 논란이 일었는데, &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;2년 전부터 &lt;/p&gt;
-  &lt;p&gt;이미 통상적이지 않은 수준의 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;수도를 사용한 것으로 확인됐다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;한겨레...&lt;/p&gt;
-  &lt;p&gt;....&lt;/p&gt;
-  &lt;p&gt;....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;뭔가......&lt;/p&gt;
-  &lt;p&gt;미스터리가...&lt;/p&gt;
-  &lt;p&gt;있다는...요...&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988922</guid><pubDate>Thu, 29 May 2025 22:02:46 GMT</pubDate></item><item><title>디시펌) 뇌정지 온 천하람 ㅋㅋㅋ[10][35]</title><link>https://www.clien.net/service/board/park/18988920</link><description>
- 
- 
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/r3Qe-LVaiic" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이거 처음 봤는데 웃기네욬 ㅋㅋㅋㅋㅋ&lt;/p&gt;
-  &lt;p&gt;이게 무슨 말인지 저만 이해 안가나요?&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988920</guid><pubDate>Thu, 29 May 2025 22:00:25 GMT</pubDate></item><item><title>정말 가관이네요[94][0]</title><link>https://www.clien.net/service/board/park/18988880</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="1748504771.jpg" class="fr-dib fr-fil full" data-file-sn="15442876" data-gif="false" data-img-height="1584" data-img-width="850" data-role="attach-image" src="https://edgio.clien.net/F01/15442876/671a24857e409d.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="1748517705.jpg" class="fr-dib fr-fil full" data-file-sn="15442877" data-gif="false" data-img-height="1124" data-img-width="750" data-role="attach-image" src="https://edgio.clien.net/F01/15442877/671a266e0ff330.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;진지하게 중국인들은 어떻게 투표를 하는건가요? 이런거는 여야를 떠나서 공론화 하고 문제 삼아야 되는거 아닌가 싶네요;;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988880</guid><pubDate>Thu, 29 May 2025 20:48:52 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/18988868</guid><pubDate>Thu, 29 May 2025 20:40:59 GMT</pubDate></item></channel></rss>
