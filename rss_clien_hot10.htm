@@ -1,5 +1,83 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Thu, 03 Jul 2025 04:00:49 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이재명 정부 지지합니다.[5][8]</title><link>https://www.clien.net/service/board/park/19016242</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Thu, 03 Jul 2025 05:00:49 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>집에서 만든 CPU와 C 컴파일러로 Xv6 유닉스 계열 OS를 구동[8][5]</title><link>https://www.clien.net/service/board/news/19016367</link><description>
+ 
+ 
+  &lt;h2&gt;프로젝트 개요&lt;/h2&gt;
+  &lt;ul&gt;
+   &lt;li&gt;본 프로젝트는 &lt;strong&gt;Tokyo University 정보과학과&lt;/strong&gt;의 대표적인 실험 과제로, 학생들이 중앙처리장치(CPU)와 하드웨어 설계, 컴파일러 제작, 애플리케이션 실행 경험을 쌓는 데 중점을 둠&lt;/li&gt;
+   &lt;li&gt;프로젝트의 목표는 &lt;strong&gt;자체 설계한 CPU의 ISA&lt;/strong&gt;로 FPGA에 직접 구현하고, 이를 위한 &lt;strong&gt;C 툴체인(Ucc)&lt;/strong&gt; 제작, 그리고 XO6와 같은 &lt;strong&gt;운영체제 포팅&lt;/strong&gt;으로 확대함&lt;/li&gt;
+   &lt;li&gt;실험 과정의 대부분은 &lt;strong&gt;자기주도 학습&lt;/strong&gt;으로 진행됨&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2&gt;CPU 실험과 과제&lt;/h2&gt;
+  &lt;ul&gt;
+   &lt;li&gt;4~5인 팀이 각자 새로운 &lt;strong&gt;CPU 아키텍처&lt;/strong&gt; 설계 및 FPGA 구현, 그리고 해당 아키텍처용 컴파일러 개발에 참여함&lt;/li&gt;
+   &lt;li&gt;OCaml 서브셋 컴파일러 제작 후 &lt;strong&gt;레이 트레이싱 프로그램 실행&lt;/strong&gt;까지가 필수 평가 항목임&lt;/li&gt;
+   &lt;li&gt;추가적으로 시간 여유가 생기면 고유의 도전과제를 설정할 수 있으며, 일부 학생은 CPU 고속화, 멀티코어 개발, 음악/게임 실행 등 &lt;strong&gt;확장 실험&lt;/strong&gt;을 진행함&lt;/li&gt;
+   &lt;li&gt;Group 6 팀은 특히 &lt;strong&gt;운영체제 포팅&lt;/strong&gt;을 목표로, 여기서부터 새로운 공동팀(Group X)이 결성됨&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2&gt;Xv6 OS와 이식 도전&lt;/h2&gt;
+  &lt;ul&gt;
+   &lt;li&gt;이식 대상으로 &lt;strong&gt;MIT에서 교육용으로 개발한 Xv6(Unix v6 기반, x86 용)&lt;/strong&gt; 선택&lt;/li&gt;
+   &lt;li&gt;Xv6는 간단한 유닉스 기반(OS)지만 실제 하드웨어 실행을 위한 &lt;strong&gt;C89 컴파일러, 특수 인터럽트, 가상 주소 지원, 포터블성 부족 등 다양한 문제&lt;/strong&gt;가 존재함&lt;/li&gt;
+   &lt;li&gt;Xv6는 C 언어 기준 &lt;code&gt;char&lt;/code&gt; 1바이트, &lt;code&gt;int&lt;/code&gt; 4바이트 등 x86 특성을 전제로 만들어져 있어, 이식 시 많은 문제가 발생함&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2&gt;컴파일러 및 툴체인 개발(Ucc)&lt;/h2&gt;
+  &lt;ul&gt;
+   &lt;li&gt;기존 실험에서는 OCaml 컴파일러 개발이 표준이었으나, Xv6 구동을 위해서는 &lt;strong&gt;C89 컴파일러&lt;/strong&gt;가 필요해 직접 개발을 결정함&lt;/li&gt;
+   &lt;li&gt;팀원 중 한 명의 &lt;strong&gt;C 컴파일러 프로토타입&lt;/strong&gt;을 기반으로, 새로운 툴체인을 자체 구축(Ucc)&lt;/li&gt;
+   &lt;li&gt;컴파일러 뿐 아니라 &lt;strong&gt;Primitive Linker&lt;/strong&gt; 및 디버그 도구 등도 직접 설계함&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2&gt;CPU 및 시뮬레이터 설계&lt;/h2&gt;
+  &lt;ul&gt;
+   &lt;li&gt;하드웨어 서술 언어(HDL, 예: Verilog / VHDL)로 CPU 회로 설계 후 Vivado/Quartus 등 논리합성 과정으로 실물 FPGA에 구현함&lt;/li&gt;
+   &lt;li&gt;반복적인 논리합성 과정은 시간이 매우 오래 걸려 실질적으로 많은 대기 시간이 수반됨&lt;/li&gt;
+   &lt;li&gt;CPU 기본 기능 이후 &lt;strong&gt;인터럽트, MMU, TLB&lt;/strong&gt; 등 OS 구동에 필요한 하드웨어 지원도 별도 설계&lt;/li&gt;
+   &lt;li&gt;GAIA라는 이름의 CPU로 완성됨&lt;/li&gt;
+   &lt;li&gt;시뮬레이터에는 실제 인터럽트, 가상 주소 변환, 디버깅 툴 추가됨&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2&gt;이식 과정의 문제와 해결&lt;/h2&gt;
+  &lt;ul&gt;
+   &lt;li&gt;Xv6의 &lt;strong&gt;포팅성 부족&lt;/strong&gt;으로, CPU 및 컴파일러 사양에 따라 비정상적인 동작 발생 
+    &lt;ul&gt;
+     &lt;li&gt;예시: &lt;code&gt;char&lt;/code&gt;와 &lt;code&gt;int&lt;/code&gt;가 32비트로 정의되면서 포인터 연산 및 스택 구조가 깨지는 문제 등&lt;/li&gt;
+     &lt;li&gt;컴파일러 Ucc에서 &lt;code&gt;char&lt;/code&gt;를 8비트로 맞추도록 개선&lt;/li&gt;
+    &lt;/ul&gt;&lt;/li&gt;
+   &lt;li&gt;인터럽트 처리는 고난도 영역으로, 자체 시뮬레이터에 &lt;strong&gt;분해기, 상태 덤프 등 디버깅 도구&lt;/strong&gt;가 추가됨&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;캐시 알리아스&lt;/strong&gt; 이슈는 GAIA가 가상 주소로 캐시 인덱스 삼으면서 발생, &lt;strong&gt;Page Coloring&lt;/strong&gt; 기법 도입으로 해결&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2&gt;최종 결과: OS 및 앱 실행&lt;/h2&gt;
+  &lt;ul&gt;
+   &lt;li&gt;3월 1일 최종적으로 Xv6를 완전히 시뮬레이터와 실 CPU(하드웨어)에서 실행하는 데 성공함&lt;/li&gt;
+   &lt;li&gt;자체 미니 curses, SL 명령, Minesweeper, 2048 등 &lt;strong&gt;인터랙티브 앱&lt;/strong&gt;구동 성공 
+    &lt;ul&gt;
+     &lt;li&gt;특히 2048은 논 캔터노컬(non-canonical) 입력 지원 설계 추가&lt;/li&gt;
+     &lt;li&gt;Xv6 수정을 통해 POSIX 스타일의 ioctl, termios 등에 해당하는 기능까지 추가&lt;/li&gt;
+     &lt;li&gt;소형 assembler, mini vi 등도 구현, 실질적 ‘실시간 프로그래밍 환경’ 실현&lt;/li&gt;
+    &lt;/ul&gt;&lt;/li&gt;
+   &lt;li&gt;레이 트레이싱 프로그램도 &lt;strong&gt;운영체제 위&lt;/strong&gt;에서 동작시켜 원래의 실험 목적 이상의 결과 달성&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2&gt;프로젝트의 의의와 후속 사례&lt;/h2&gt;
+  &lt;ul&gt;
+   &lt;li&gt;본 실험 이후 여러 세대 학생들이 &lt;strong&gt;직접 CPU와 OS를 만들어 다양한 실험을 지속적으로 수행함&lt;/strong&gt;
+    &lt;ul&gt;
+     &lt;li&gt;예를 들어 RISC-V ISA 채택, 자체 OS, Linux 구동 등으로 확장&lt;/li&gt;
+    &lt;/ul&gt;&lt;/li&gt;
+   &lt;li&gt;실습을 통해 직접 하드웨어/소프트웨어 전 스택을 경험하며 &lt;strong&gt;알고리듬, 하드웨어-소프트웨어 통합, 저수준 구조&lt;/strong&gt;에 대한 실질적 이해 증진&lt;/li&gt;
+   &lt;li&gt;“바퀴 재발명”이 비효율적이라는 비판도 있으나, 실제로 만들어 보며 배우는 학습효과와 재미는 매우 큼&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2&gt;실제 체험 및 소스 코드&lt;/h2&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;a href="https://nullpo-head.github.io/emcc-gaia-simu/xv6.html" ori-url="https://nullpo-head.github.io/emcc-gaia-simu/xv6.html" target="_blank"&gt;GAIA CPU + Xv6 데모&lt;/a&gt;에서 직접 실행 가능&lt;/li&gt;
+   &lt;li&gt;MIPS 포팅 버전은 &lt;a href="https://github.com/nullpo-head/xv6-mips" ori-url="https://github.com/nullpo-head/xv6-mips" target="_blank"&gt;이곳&lt;/a&gt;에서 오픈소스로 공개됨&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h2&gt;결론&lt;/h2&gt;
+  &lt;ul&gt;
+   &lt;li&gt;“직접 만드는 것만큼 배우는 것은 없다”는 교훈과 함께, &lt;strong&gt;하드웨어-소프트웨어 통합 경험의 중요성&lt;/strong&gt;을 강조함&lt;/li&gt;
+   &lt;li&gt;후속 학생들도 계속해서 새로운 목표에 도전하며, 미래엔 자체 ISA상에서 Linux나 VM이 구동될 수 있기를 기대함&lt;/li&gt;
+   &lt;li&gt;프로젝트 참여 멤버들의 이름을 끝으로 이야기 마무리&lt;/li&gt;
+  &lt;/ul&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/19016367</guid><pubDate>Thu, 03 Jul 2025 00:14:48 GMT</pubDate></item><item><title>이재명 정부 지지합니다.[5][8]</title><link>https://www.clien.net/service/board/park/19016242</link><description>
  
  
   &lt;p&gt;예전 문정부때 생각해 보면 &lt;/p&gt;
@@ -91,7 +169,7 @@
   &lt;p&gt;관심있는 타이어를 비교한걸 자세히 보니 조금 신뢰성을 잃게 되었네요&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19016324</guid><pubDate>Wed, 02 Jul 2025 21:40:09 GMT</pubDate></item><item><title>(페북 펌) 이재명 대통령이 문재인 정부에게 받은 것은 없습니다.[12][10]</title><link>https://www.clien.net/service/board/park/19016386</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19016324</guid><pubDate>Wed, 02 Jul 2025 21:40:09 GMT</pubDate></item><item><title>(페북 펌) 이재명 대통령이 문재인 정부에게 받은 것은 없습니다.[13][10]</title><link>https://www.clien.net/service/board/park/19016386</link><description>
  
  
   &lt;p&gt;&lt;img alt="1.jpg" class="fr-dib fr-fil" data-file-sn="15480273" data-gif="false" data-img-height="449" data-img-width="659" data-role="attach-image" src="https://edgio.clien.net/F01/15480273/719326e99c2cd7.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -244,7 +322,7 @@
   &lt;p&gt;지적까지만하고 그다음은 존중으로 &lt;/p&gt;
   &lt;p&gt;매듭지어야한다 봅니다 &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016364</guid><pubDate>Wed, 02 Jul 2025 22:49:20 GMT</pubDate></item><item><title>[단독] 특검, 20대 대선 '신천지와 국민의힘' 유착 의혹 조사[3][35]</title><link>https://www.clien.net/service/board/park/19016361</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016364</guid><pubDate>Wed, 02 Jul 2025 22:49:20 GMT</pubDate></item><item><title>[단독] 특검, 20대 대선 '신천지와 국민의힘' 유착 의혹 조사[4][38]</title><link>https://www.clien.net/service/board/park/19016361</link><description>
  
  
   &lt;p&gt;전략&lt;/p&gt;
@@ -263,7 +341,7 @@
   &lt;p&gt;국짐은 해산 하고 신천지는 문 닫게 해 주십시오.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016361</guid><pubDate>Wed, 02 Jul 2025 22:48:02 GMT</pubDate></item><item><title>혁신당은 직접적인 검찰 피해잡니다.[24][20]</title><link>https://www.clien.net/service/board/park/19016354</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016361</guid><pubDate>Wed, 02 Jul 2025 22:48:02 GMT</pubDate></item><item><title>혁신당은 직접적인 검찰 피해잡니다.[24][21]</title><link>https://www.clien.net/service/board/park/19016354</link><description>
  
  
   &lt;p&gt;충분히 이해해 줘야 돼요.&lt;/p&gt;
@@ -304,7 +382,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016354</guid><pubDate>Wed, 02 Jul 2025 22:29:29 GMT</pubDate></item><item><title>이재명 대통령 긍정평가 59.3%…PK서 전국 평균 웃돌아[2][6]</title><link>https://www.clien.net/service/board/park/19016340</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016354</guid><pubDate>Wed, 02 Jul 2025 22:29:29 GMT</pubDate></item><item><title>이재명 대통령 긍정평가 59.3%…PK서 전국 평균 웃돌아[2][7]</title><link>https://www.clien.net/service/board/park/19016340</link><description>
  
  
   &lt;p&gt;&lt;img alt="2025-07-02_21-59-03.png.jpeg" class="fr-dib fr-fil full" data-file-sn="15480188" data-gif="false" data-img-height="324" data-img-width="1266" data-role="attach-image" src="https://edgio.clien.net/F01/15480188/718de475baa2a0.jpeg?scale=width:740"/&gt;&lt;/p&gt;
@@ -314,7 +392,7 @@
     한국사회여론연구소(KSOI)가 지난달 30일부터 지난 1일까지 전국 만 18세 이상 1002명을 대상으로 실시한 조사에서 이 대통령의 국정운영에 대해 ‘잘하고 있다’는 응답은 59.3%, ‘잘 못하고 있다’는 응답은 34.6%를 기록했다. 가장 잘하고 있는 분야로는 ‘경제회복’이라는 응답이 33.6%로 가장 높았다.&lt;br/&gt;&lt;br/&gt;&lt;strong&gt;지역별로는 PK 지역에서 긍정 응답이 61.7%, 대구·경북(TK)에서도 48.8%로, 모두 부정평가보다 높은 수치를 보였다.&lt;/strong&gt;&lt;/p&gt;
   &lt;p&gt;&lt;u&gt;자세한 내용은 기사 전문을 참고하시기 바랍니다.&lt;/u&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016340</guid><pubDate>Wed, 02 Jul 2025 22:10:07 GMT</pubDate></item><item><title>오늘 뉴스 보면서 이재명 대통령이 당선되지 못했다면...[4][18]</title><link>https://www.clien.net/service/board/park/19016339</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016340</guid><pubDate>Wed, 02 Jul 2025 22:10:07 GMT</pubDate></item><item><title>오늘 뉴스 보면서 이재명 대통령이 당선되지 못했다면...[4][20]</title><link>https://www.clien.net/service/board/park/19016339</link><description>
  
  
   &lt;p&gt;12.3 내란이 성공했다면 우리는 지금 어떻게 살고 있을까요&lt;/p&gt;
@@ -355,7 +433,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;모든 기관들에게 이런저런 이야기도 듣고 지원도 하고 그럴수록 공무원들 나태해지지 않을것이고 국민들도 행정적으로 더 도움 많이 받을거라 봅니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016338</guid><pubDate>Wed, 02 Jul 2025 21:58:41 GMT</pubDate></item><item><title>무지성 지지[9][28]</title><link>https://www.clien.net/service/board/park/19016336</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016338</guid><pubDate>Wed, 02 Jul 2025 21:58:41 GMT</pubDate></item><item><title>무지성 지지[10][29]</title><link>https://www.clien.net/service/board/park/19016336</link><description>
  
  
   &lt;p&gt;2017년부터 이재명 원픽으로 지지했던 사람으로서&lt;/p&gt;
@@ -440,7 +518,7 @@
   &lt;p&gt;해방되고 반민특위를 결성할 거면 최소한 노덕술이를 반민특위원으로 임명하면 안 되는 겁니다.&lt;/p&gt;
   &lt;p&gt;친윤 검찰 행패 때문에 검찰 개혁을 한다고 해 놓고 그 윤석열 따까리들을 전부 데려다 개혁을 맡기겠다니 이 무슨 개소리들인가요. 이건 진짜 윤석열 사면급의 소리나 마찬가집니다. 전 당장 내일부터 조국혁신당이 정의당처럼 반민주로 돌아선다 해도 그려러니 하렵니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016323</guid><pubDate>Wed, 02 Jul 2025 21:23:02 GMT</pubDate></item><item><title>김어준 말대로네요[24][39]</title><link>https://www.clien.net/service/board/park/19016319</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016323</guid><pubDate>Wed, 02 Jul 2025 21:23:02 GMT</pubDate></item><item><title>김어준 말대로네요[25][44]</title><link>https://www.clien.net/service/board/park/19016319</link><description>
  
  
   김어준이 얼마전 겸공에서 
@@ -678,7 +756,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;이광환 감독님 덕분에 1994년 우승을 즐길 수 있었으며, 남긴 유산 덕분에 현재에도 야구가 한층 더 발전할 수 있었습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016258</guid><pubDate>Wed, 02 Jul 2025 19:06:59 GMT</pubDate></item><item><title>봉지욱 기자의 검찰인사에 대한 의견[61][66]</title><link>https://www.clien.net/service/board/park/19016253</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016258</guid><pubDate>Wed, 02 Jul 2025 19:06:59 GMT</pubDate></item><item><title>봉지욱 기자의 검찰인사에 대한 의견[61][68]</title><link>https://www.clien.net/service/board/park/19016253</link><description>
  
  
   &lt;p&gt;   &lt;a href="https://x.com/ddongeya/status/1940318520115700191?s=61&amp;amp;t=8gE42K1NjshVO6Sy1aaVJg" ori-url="https://x.com/ddongeya/status/1940318520115700191?s=61&amp;amp;t=8gE42K1NjshVO6Sy1aaVJg" target="_blank"&gt;https://x.com/ddongeya/status/1940318520115700191?s=61&amp;amp;t=8gE42K1NjshVO6Sy1aaVJg&lt;/a&gt;&lt;/p&gt;
@@ -766,7 +844,7 @@
     대통령실 관계자는 "이 대통령이 토론을 통해 사안을 파악하고 대안을 찾는 집단 지성에 대한 믿음이 강하다"며 "시나리오 대로 진행되는 회의는 사라질 것"이라고 전했습니다.&lt;/p&gt;
   &lt;p&gt;&lt;u&gt;자세한 내용은 기사 전문을 참고하시기 바랍니다.&lt;/u&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016311</guid><pubDate>Wed, 02 Jul 2025 20:48:53 GMT</pubDate></item><item><title>박은정이고 최강욱이고 적당히 해야죠.[115][31]</title><link>https://www.clien.net/service/board/park/19016307</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016311</guid><pubDate>Wed, 02 Jul 2025 20:48:53 GMT</pubDate></item><item><title>박은정이고 최강욱이고 적당히 해야죠.[120][34]</title><link>https://www.clien.net/service/board/park/19016307</link><description>
  
  
   &lt;p&gt;이재명 대통령 우습게 보는 것도 아니고&lt;/p&gt;
@@ -808,7 +886,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;그리고 우리가 선거 이긴 마당에 갈라치기가 성립이 되는 컨셉인가 싶기도 합니다. 앞으로 최소 4년 11개월은 잼프와 우리들의 시간인데요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016301</guid><pubDate>Wed, 02 Jul 2025 20:35:42 GMT</pubDate></item><item><title>박은정은 입법만으로 되는게 아니니 더 제대로 해야한다는 주장입니다.[19][19]</title><link>https://www.clien.net/service/board/park/19016300</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016301</guid><pubDate>Wed, 02 Jul 2025 20:35:42 GMT</pubDate></item><item><title>박은정은 입법만으로 되는게 아니니 더 제대로 해야한다는 주장입니다.[20][19]</title><link>https://www.clien.net/service/board/park/19016300</link><description>
  
  
   &lt;p&gt;"입법만으로 되는거면 법무장관과 검찰총장은 아무나(윤, 한) 해도 되겠네요" 라는 말을 하는건데&lt;br/&gt;&lt;br/&gt;
@@ -824,7 +902,7 @@
     하는 꼴입니다.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016300</guid><pubDate>Wed, 02 Jul 2025 20:34:43 GMT</pubDate></item><item><title>우리가 선출한 대통령은 못 믿고[44][55]</title><link>https://www.clien.net/service/board/park/19016296</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016300</guid><pubDate>Wed, 02 Jul 2025 20:34:43 GMT</pubDate></item><item><title>우리가 선출한 대통령은 못 믿고[45][58]</title><link>https://www.clien.net/service/board/park/19016296</link><description>
  
  
   &lt;p&gt;순번에 따라 선출된 국회의원 및 유튜버는 믿고.&lt;/p&gt;
@@ -854,7 +932,7 @@
   &lt;p&gt;건강한 토론과 비판을 너무 두려워하지 맙시다. 임기내 지지하고 힘을 실어줘야 하지만 그 방법이 맹목적인 추종일 필요는 없습니다. 무결점의 지도자가 있을 수 없기 때문에 우리는 왕정이 아닌 민주주의를 선택하고 있는 것입니다.&lt;/p&gt;
   &lt;p&gt;어쩌면 노무현 대통령을 지키지 못했던 트라우마가 민주세력에겐 아직 너무 크게 남아있다는 생각도 하게 됩니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016292</guid><pubDate>Wed, 02 Jul 2025 20:17:39 GMT</pubDate></item><item><title>"9월까지 검찰청 폐지", "폭풍처럼 몰아쳐야"…강경론 쏟아낸 박찬대·정청래[6][23]</title><link>https://www.clien.net/service/board/park/19016290</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016292</guid><pubDate>Wed, 02 Jul 2025 20:17:39 GMT</pubDate></item><item><title>"9월까지 검찰청 폐지", "폭풍처럼 몰아쳐야"…강경론 쏟아낸 박찬대·정청래[6][24]</title><link>https://www.clien.net/service/board/park/19016290</link><description>
  
  
   &lt;a href="https://v.daum.net/v/20250702190038736" target="_blank"&gt;https://v.daum.net/v/20250702190038736&lt;/a&gt;
@@ -944,7 +1022,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;아니 이대통령은 검찰한테 뭐 안당한줄 아시나요?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016276</guid><pubDate>Wed, 02 Jul 2025 19:40:31 GMT</pubDate></item><item><title>박지훈변호사, 윤석열이랑 관계없는 검사들이 어디 있습니까?[7][19]</title><link>https://www.clien.net/service/board/park/19016273</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016276</guid><pubDate>Wed, 02 Jul 2025 19:40:31 GMT</pubDate></item><item><title>박지훈변호사, 윤석열이랑 관계없는 검사들이 어디 있습니까?[7][20]</title><link>https://www.clien.net/service/board/park/19016273</link><description>
  
  
   &lt;p&gt;&lt;span style='color: rgb(0, 0, 0); font-family: TwitterChirp, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 14px; white-space-collapse: preserve;'&gt;&lt;/span&gt;&lt;/p&gt;
@@ -972,7 +1050,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016173</guid><pubDate>Wed, 02 Jul 2025 17:04:20 GMT</pubDate></item><item><title>폴란드, K2전차 추가계약 공식 발표[5][9]</title><link>https://www.clien.net/service/board/news/19016271</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016173</guid><pubDate>Wed, 02 Jul 2025 17:04:20 GMT</pubDate></item><item><title>폴란드, K2전차 추가계약 공식 발표[6][9]</title><link>https://www.clien.net/service/board/news/19016271</link><description>
  
  
   &lt;p&gt;방위사업청 보도자료:&lt;/p&gt;
@@ -1042,21 +1120,4 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;지금은 쫌..믿고 응원해줬으면 좋겠습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016232</guid><pubDate>Wed, 02 Jul 2025 18:29:56 GMT</pubDate></item><item><title>전 민주당원이라서[4][7]</title><link>https://www.clien.net/service/board/park/19016231</link><description>
- 
- 
-  &lt;p&gt;조국당은 걍 3당으로 봅니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정의당,기본소득당,진보당과 같은 반윤연대중의 하나&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그래서 걍 객관적인 시각으로 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이재명 대통령님께서 제헌절에 조국 사면해주고&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;더 이상 국정 관여 안하는걸로 딜봤으면 합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;너무 발목잡히는거 같아 안타깝네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;영길이형은 민주당으로 돌아오시구요ㅜㅜ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016231</guid><pubDate>Wed, 02 Jul 2025 18:41:54 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19016232</guid><pubDate>Wed, 02 Jul 2025 18:29:56 GMT</pubDate></item></channel></rss>
