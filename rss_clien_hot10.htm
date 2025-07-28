@@ -1,5 +1,430 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Mon, 28 Jul 2025 20:00:57 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>정보 BYD 씰 구형 재고차량 아닌 한국전용 차량[14][0]</title><link>https://www.clien.net/service/board/cm_car/19033183</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Mon, 28 Jul 2025 21:00:56 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>PC/모바일 ChatGPT 에이전트 모드 : 연간교육일정 크롤링, GPTs 챗봇 만들기[2][5]</title><link>https://www.clien.net/service/board/lecture/19033114</link><description>
+ 
+ 
+  &lt;p&gt;얼마전에 ChatGPT에 에이전트 기능이 업데이트 됐습니다. &lt;/p&gt;
+  &lt;p&gt;클로드 MCP나 마누스에 준하는 에이전트 기능이 업데이트 됐습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 133535.png" class="fr-dib fr-fil full" data-file-sn="15504360" data-gif="false" data-img-height="1145" data-img-width="1554" data-role="attach-image" src="https://edgio.clien.net/F01/15504360/796d82a2d56ff7.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;Pro 요금제는 오픈이 됐고, 400 남음이라고 뜨는데 횟수가 아니라 그 사이에 자기들이 처리한 횟수 인거 같습니다. &lt;/p&gt;
+  &lt;p&gt;그리고 Plus 요금제는 순차로 오픈 중이라고 합니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;글이 꽤 긴데요. 간단하게 요약하면 &lt;/p&gt;
+  &lt;p&gt;에이전트 모드로 웹크롤링을 할 수 있습니다. &lt;/p&gt;
+  &lt;p&gt;8개 기관에서 진행하는 연간 교육자료를 취합해서, 응답을 하는 챗봇(GPTs)을 간단하게 만들어 봤습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://chatgpt.com/g/g-688714a778e48191b1bfea62677bf21a-2025nyeon-yeongan-gyoyugiljeong-annae" target="_blank"&gt;https://chatgpt.com/g/g-688714a778e48191b1bfea62677bf21a-2025nyeon-yeongan-gyoyugiljeong-annae&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 152006.png" class="fr-dib fr-fil full" data-file-sn="15504528" data-gif="false" data-img-height="646" data-img-width="1102" data-role="attach-image" src="https://edgio.clien.net/F01/15504528/79746ad6686fd4.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그러면 ChatGPT 에이전트를 어떻게 활용할수 있을지 강좌를 시작해보겠습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h1&gt;&lt;strong&gt;1. 커넥터 추가&lt;/strong&gt;&lt;/h1&gt;
+  &lt;p&gt;AI에 관심이 있으면 MCP라는 용어를 들어보신적 있을 겁니다. &lt;/p&gt;
+  &lt;p&gt;AI 서비스간에 빠른 작업을 위한 프로토콜, 커넥터라고 보시면 됩니다.&lt;/p&gt;
+  &lt;p&gt;클로드에 적용되던 MCP들이 ChatGPT에도 들어왔습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 134354.png" class="fr-dib fr-fil full" data-file-sn="15504395" data-gif="false" data-img-height="940" data-img-width="1075" data-role="attach-image" src="https://edgio.clien.net/F01/15504395/796df10c2feb12.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;커넥터로 구글 캘린더, 지메일, 아웃룩 캘린더, 아웃룩 이메일, 팀즈, 드롭박스, 노션, 구글드라이브등이 추가되었습니다.&lt;/p&gt;
+  &lt;p&gt;커넥터로 계정 로그인을하고 권한을 획득하면 이렇게 사용할 수 있습니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;저희는 전체 일정은 구글캘린더, 회사 메일은 아웃룩을 쓰고 있습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;blockquote&gt;
+   구글 캘린더에서 내일 일정 불러오고 내일 일정과 관련된 아웃룩 메일 최근 1주일 관련 메일 찾아줘
+  &lt;/blockquote&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이렇게 물어볼 수 있죠 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;에이전트 모드에서 데스크톱을 활성화합니다. &lt;/p&gt;
+  &lt;p&gt;그리고는 제 계정의 구글캘린더에서 내일일정을 불러오고 그걸 키워드 삼아서 관련 이메일을 찾기 시작합니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 135629.png" class="fr-dib fr-fil full" data-file-sn="15504426" data-gif="false" data-img-height="728" data-img-width="979" data-role="attach-image" src="https://edgio.clien.net/F01/15504426/796ea910d6201b.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;필요하면 파이썬 코딩도 합니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 140447.png" class="fr-dib fr-fil full" data-file-sn="15504431" data-gif="false" data-img-height="719" data-img-width="854" data-role="attach-image" src="https://edgio.clien.net/F01/15504431/796f16eb4d3ebe.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 154409.png" class="fr-dib fr-fil full" data-file-sn="15504530" data-gif="false" data-img-height="1689" data-img-width="1250" data-role="attach-image" src="https://edgio.clien.net/F01/15504530/7974834b0a2b0e.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;전체 2분이 걸렸다고 하고, 내일 4개의 일정과 관련된 메일들을 찾아서 정리해줍니다. &lt;/p&gt;
+  &lt;p&gt;이제 제법 쓸만한 수준까지 올라오고는 있는거 같습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이런것도 가능합니다. 제가 유료구독은 G메일로 다 쓰고 있는데, &lt;/p&gt;
+  &lt;p&gt;올해 구독했던것들 정리해달라고 하니 정리해줍니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 153040.png" class="fr-dib fr-fil full" data-file-sn="15504523" data-gif="false" data-img-height="1698" data-img-width="1112" data-role="attach-image" src="https://edgio.clien.net/F01/15504523/7973cb91950910.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;찍먹하려고 가입했던 AI 서비스들 정리해서 다 해지했습니다 ㅎ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그리고 MCP 서버를 가져와서 적용하는 것도 가능합니다. &lt;/p&gt;
+  &lt;p&gt;그래서 점차로 정식으로 지원되지 않을까 해요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 140900.png" class="fr-dib fr-fil" data-file-sn="15504433" data-gif="false" data-img-height="897" data-img-width="726" data-role="attach-image" src="https://edgio.clien.net/F01/15504433/796f5096e2e051.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h1&gt;2. 에이전트 모드 활용 = 가벼운 바이브코딩&lt;/h1&gt;
+  &lt;p&gt;MCP처럼 커넥터 연결해서 쓰는건 알았는데, 이걸로 내 업무에 직접적인 연관이 있기는 쉽지 않습니다. &lt;/p&gt;
+  &lt;p&gt;웹크롤링을 통해 긁어올때, 가벼운 코딩이 필요한 영역을 에이전트 모드로 대신 할 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;직원 교육으로 외부 교육자료들을 정리해서 소개, 추천 하는 업무를 하는 분이 계신데&lt;/p&gt;
+  &lt;p&gt;아래 8군데 기관의 연간 교육일정자료를 긁어와서 AI 챗봇으로 활용법에 대해 문의를 주셨습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;서울대학교 대학행정교육원&lt;/p&gt;
+  &lt;p&gt;국민권익위원회 청렴연수원&lt;/p&gt;
+  &lt;p&gt;한국생산성본부&lt;/p&gt;
+  &lt;p&gt;휴넷&lt;/p&gt;
+  &lt;p&gt;한국대학교육협의회 고등교육연수원&lt;/p&gt;
+  &lt;p&gt;KMA 한국능률협회&lt;/p&gt;
+  &lt;p&gt;기획재정부 e재정배움터&lt;/p&gt;
+  &lt;p&gt;공공조달역량개발원&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이걸 바이브코딩으로 만들어도 되지만, &lt;/p&gt;
+  &lt;p&gt;마침 에이전트 모드가 나와서 이를 에이전트 모드로 만들어봤습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;1. 사이트 교육일정 크롤링 -&amp;gt; 엑셀 변환&lt;/p&gt;
+  &lt;p&gt;2. 엑셀 -&amp;gt; Json 으로 변환&lt;/p&gt;
+  &lt;p&gt;3. Json으로 ChatGPT GPTs로 제작 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이렇게 방향을 잡았습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;2.1 사이트 교육일정 크롤링&lt;/h2&gt;
+  &lt;p&gt;서울대학교 대학행정교육원입니다. 연간일정이 웹페이지로 표로 나눠서 들어있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 143610.png" class="fr-dib fr-fil full" data-file-sn="15504446" data-gif="false" data-img-height="1640" data-img-width="1683" data-role="attach-image" src="https://edgio.clien.net/F01/15504446/7970cfcfd5dda9.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;blockquote&gt;
+   &lt;a href="https://aua.snu.ac.kr/sub_edu/schedule.php" target="_blank"&gt;https://aua.snu.ac.kr/sub_edu/schedule.php&lt;/a&gt; 2025학년도 연간교육일정자료를 내용을 전부 긁어서 하나의 엑셀파일로 만들어줘 컬럼명은 해당교육일정이 제공하고 있는 정보를 모두 포함해줘
+  &lt;/blockquote&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이렇게 프롬프트를 넣었습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그러면, 에이전트 모드가 아닌 ChatGPT나 퍼플렉시티에서 하면 되지 않냐? 란 생각이 들수도 있는데요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;ChatGPT는 코드를 주고, 퍼플렉시티는 긁어올 수 없다고 합니다. &lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 144228.png" class="fr-dib fr-fil full" data-file-sn="15504455" data-gif="false" data-img-height="1090" data-img-width="1278" data-role="attach-image" src="https://edgio.clien.net/F01/15504455/797125f2a1abbf.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 144219.png" class="fr-dib fr-fil full" data-file-sn="15504456" data-gif="false" data-img-height="1466" data-img-width="1038" data-role="attach-image" src="https://edgio.clien.net/F01/15504456/79712c1aa25fe7.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;다시 에이전트 모드로 돌아와서 에이전트에게 위 프롬프트를 주면&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 144344.png" class="fr-dib fr-fil full" data-file-sn="15504457" data-gif="false" data-img-height="1084" data-img-width="1140" data-role="attach-image" src="https://edgio.clien.net/F01/15504457/79713553c75e1a.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;열심히 데스크톱을 만들어서 사이트를 접속하고, 코드를 만들어서 자료를 취합해서 작업을 합니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 144721.png" class="fr-dib fr-fil full" data-file-sn="15504467" data-gif="false" data-img-height="1117" data-img-width="1057" data-role="attach-image" src="https://edgio.clien.net/F01/15504467/79716830e48bf6.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이렇게 8분정도 걸려서 교육일정을 취합해 옵니다. &lt;/p&gt;
+  &lt;p&gt;그리고, 엑셀파일 다운로드도 가능하죠. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이걸 8번 반복하면되는데요. &lt;/p&gt;
+  &lt;p&gt;그러면 64분정도 걸리는건가요? 라고 했을때&lt;/p&gt;
+  &lt;p&gt;동시에 여러개를 띄워서 작업하면됩니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;결론적으로는 저희 인턴에게 맡기고 인턴이 1시간 안걸려서 8개 사이트 전체를 다 정리를 했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 144948.png" class="fr-dib fr-fil full" data-file-sn="15504476" data-gif="false" data-img-height="288" data-img-width="947" data-role="attach-image" src="https://edgio.clien.net/F01/15504476/79718b782933fc.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;2.2 하나의 엑셀로 취합 및 Json 변환&lt;/h2&gt;
+  &lt;p&gt;각기 다른 컬럼들이 있는 엑셀 파일 8개가 만들어졌습니다. &lt;/p&gt;
+  &lt;p&gt;이것도 방법은 마찬가지 입니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;ChatGPT를 켜고 (에이전트 모드쓰지 않고)&lt;/p&gt;
+  &lt;p&gt;먼저 8개 파일을 다 때려넣고, 이 정보들을 다 아우르는 공통 컬럼(스키마)를 만들어 달라고 합니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 145518.png" class="fr-dib fr-fil full" data-file-sn="15504482" data-gif="false" data-img-height="1099" data-img-width="1010" data-role="attach-image" src="https://edgio.clien.net/F01/15504482/7971dd957b99c6.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이렇게 만들어진 스키마를 복사해서 &lt;/p&gt;
+  &lt;p&gt;에이전트 모드에서 엑셀파일 하나로 취합해달라고 합니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 145719.png" class="fr-dib fr-fil full" data-file-sn="15504486" data-gif="false" data-img-height="1411" data-img-width="1219" data-role="attach-image" src="https://edgio.clien.net/F01/15504486/7971f5153359e9.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그러면 에이전트 모드에서 8개 엑셀을 하나로 취합해 줍니다. (화면에는 6개지만 나중에 2개더 추가해서 8개 취합했습니다)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이렇게 해서 15,000여개의 교육일정 데이터를 확보했습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 153701.png" class="fr-fic fr-dii full" data-file-sn="15504526" data-gif="false" data-img-height="243" data-img-width="1353" data-role="attach-image" src="https://edgio.clien.net/F01/15504526/79741eccda935b.png?scale=width:740"/&gt; &lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 145922.png" class="fr-dib fr-fil full" data-file-sn="15504488" data-gif="false" data-img-height="727" data-img-width="1195" data-role="attach-image" src="https://edgio.clien.net/F01/15504488/797210389e71a7.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그런다음 JSON으로 변환해달라고 하면 됩니다. &lt;/p&gt;
+  &lt;p&gt;JSON형식은 텍스트형식의 가벼운 DB 타입이라고 보시면 됩니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;2.3 GPTs 제작&lt;/h2&gt;
+  &lt;p&gt;사실 나만의 ChatGPT 만들기는 GPT 4.0 나올때 나왔는데 잘 쓰지 않아서 첨들어 보신분들도 있을겁니다.&lt;/p&gt;
+  &lt;p&gt;이게 공개/링크있는사용자만/비공개 이렇게도 사용할 수 있어서 &lt;/p&gt;
+  &lt;p&gt;내부 활용으로도 쓰실 수 있습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 150447.png" class="fr-dib fr-fil" data-file-sn="15504504" data-gif="false" data-img-height="383" data-img-width="313" data-role="attach-image" src="https://edgio.clien.net/F01/15504504/797333565284a2.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;ChatGPT 사이드바에서 GPT를 클릭합니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 150607.png" class="fr-dib fr-fil full" data-file-sn="15504505" data-gif="false" data-img-height="1051" data-img-width="1771" data-role="attach-image" src="https://edgio.clien.net/F01/15504505/797336c493a897.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;그러면 GPTs 메인 화면이 뜨는데요 여기서 오른쪽 위에 만들기를 클릭합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 151141.png" class="fr-dib fr-fil full" data-file-sn="15504506" data-gif="false" data-img-height="1737" data-img-width="2165" data-role="attach-image" src="https://edgio.clien.net/F01/15504506/79733be2b9e578.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;그러면 이렇게 왼쪽 구성에 내용을 넣을 수 있는데요&lt;/p&gt;
+  &lt;p&gt;다른 내용들은 ChatGPT 에 물어가며 완성을 해도 됩니다&lt;/p&gt;
+  &lt;p&gt;그리고 가장 중요한 "지식"에 아까 만든 Json 파일을 업로드해 주면 됩니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 151714.png" class="fr-dib fr-fil full" data-file-sn="15504507" data-gif="false" data-img-height="1742" data-img-width="2162" data-role="attach-image" src="https://edgio.clien.net/F01/15504507/797349cd78ac20.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이러면 끝입니다&lt;/p&gt;
+  &lt;p&gt;오른쪽 위 만들기를 클릭하면 공유 방식을 설정할 수 있습니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 151803.png" class="fr-dib fr-fil" data-file-sn="15504508" data-gif="false" data-img-height="649" data-img-width="722" data-role="attach-image" src="https://edgio.clien.net/F01/15504508/79734eaf07b050.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://chatgpt.com/g/g-688714a778e48191b1bfea62677bf21a-2025nyeon-yeongan-gyoyugiljeong-annae" target="_blank"&gt;https://chatgpt.com/g/g-688714a778e48191b1bfea62677bf21a-2025nyeon-yeongan-gyoyugiljeong-annae&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 152006.png" class="fr-dib fr-fil full" data-file-sn="15504515" data-gif="false" data-img-height="646" data-img-width="1102" data-role="attach-image" src="https://edgio.clien.net/F01/15504515/797357db6a6a43.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이렇게 완성이 됐습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="스크린샷 2025-07-28 151951.png" class="fr-dib fr-fil full" data-file-sn="15504516" data-gif="false" data-img-height="1439" data-img-width="1677" data-role="attach-image" src="https://edgio.clien.net/F01/15504516/79735a3d627f3b.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;그리고 이런식으로 활용 할 수 있겠죠. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;에이전트 모드로 웹사이트 웹크롤링을 스마트하게 사용할수 있고, &lt;/p&gt;
+  &lt;p&gt;이건 가볍게 생각해볼수 있는 단계고, 앞으로 수많은 활용들과 업데이트로 풍성해질것 같습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;Plus요금제도 오픈이 되고 있다고 하니, 한번씩 테스트 해보시면 좋을거 같습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19033114</guid><pubDate>Mon, 28 Jul 2025 19:25:59 GMT</pubDate></item><item><title>[단독] 김건희 특검, 최은순에 국고손실 혐의..[4][10]</title><link>https://www.clien.net/service/board/park/19033262</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250728192146407" ori-url="http://v.daum.net/v/20250728192146407" target="_blank"&gt;&lt;strong&gt;[단독] 김건희 특검, &lt;strong&gt;최은순&lt;/strong&gt;에 국고손실 혐의…공흥지구 개발 특혜 의혹&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;a href="https://v.daum.net/channel/17/home" ori-url="https://v.daum.net/channel/17/home" target="_blank"&gt;한겨레&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;11분전&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;a href="http://v.daum.net/v/20250728192146407" ori-url="http://v.daum.net/v/20250728192146407" target="_blank"&gt;다음뉴스&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250728192146407" ori-url="http://v.daum.net/v/20250728192146407" target="_blank"&gt;&lt;img alt="" class="fr-fic fr-dii" src="https://search2.kakaocdn.net/argon/200x200_85_c/4CbPF7INUGN0" width="88"/&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;p&gt; 특별검사팀이&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 양평 공흥지구 개발 특혜와 관련해&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 김 여사의 모친인 &lt;strong&gt;최은순&lt;/strong&gt;씨와 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;오빠 김진우씨에게 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;특정범죄가중처벌법의 &lt;/p&gt;
+  &lt;p&gt;국고손실&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 혐의를 적용해&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 수사 중인 것으로 확인됐다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;특검팀은 28일 오빠 김씨를...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이보게....&lt;/p&gt;
+  &lt;p&gt;사위....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;깜방에...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;남는...빈방...좀...있나....요??&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033262</guid><pubDate>Mon, 28 Jul 2025 19:40:16 GMT</pubDate></item><item><title>우리나라 AI 투자규모 대단하네요[10][2]</title><link>https://www.clien.net/service/board/park/19033261</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="Screenshot 2025-07-28 at 19.30.06.JPG" class="fr-dib fr-fil full" data-file-sn="15504661" data-gif="false" data-img-height="854" data-img-width="999" data-role="attach-image" src="https://edgio.clien.net/F01/15504661/7980d843c0b30f.JPG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;1.6조 원 투자라는 얘기듣고 각국 투자 비용으로 우니라라가 100이라고 볼때 얼마인지 계산해달라고 했는데&lt;/p&gt;
+  &lt;p&gt;저기서 많은것 아니지만 애초에 비교 불가능한 국가들이고 ㅎㅎ &lt;/p&gt;
+  &lt;p&gt;일본은 ? 3천억으로 뭐할지 모르겠지만  (무슨 조사가 잘못된것지?? 일본은 미국에 오천억 달러 쓸돈은 있는데)&lt;/p&gt;
+  &lt;p&gt;우리나라는 정말 목숨걸고 하는것 같네요 &lt;/p&gt;
+  &lt;p&gt;(그와중에 미국은 경원 ;;)&lt;/p&gt;
+  &lt;p&gt;저돈이 잘쓰여질지 모르겠지만 뭐라도 가시적인 성과를 낼테고 손가락 빨고 있을것이 아니라 뭐라도 해야죠 &lt;/p&gt;
+  &lt;p&gt;한가지 장담하는것은 157조 쓴 프랑스보다는 잘할것 같습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033261</guid><pubDate>Mon, 28 Jul 2025 19:35:26 GMT</pubDate></item><item><title>김용남 의원 방송에서 국힘 패는거 보면 ..[14][4]</title><link>https://www.clien.net/service/board/park/19033258</link><description>
+ 
+ 
+  &lt;p&gt;딱 마음에 듭니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;강선우 이야기 꺼내면 &lt;/p&gt;
+  &lt;p&gt;응 근데&lt;/p&gt;
+  &lt;p&gt;느그 송언석은 그럼 ? &lt;/p&gt;
+  &lt;p&gt;아 됐고 송언석은 ? &lt;/p&gt;
+  &lt;p&gt;내로남불 쩐다 !! &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;솔직히 지금 민주당 &lt;/p&gt;
+  &lt;p&gt;패널로 나가서 싸우기 이보다 더 좋을 수 있습니까? &lt;/p&gt;
+  &lt;p&gt;공격 받으면 방어할 필요가 없습니다 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;응 그래서 김건희는 ? &lt;/p&gt;
+  &lt;p&gt;응 그래서 윤석열은 ? &lt;/p&gt;
+  &lt;p&gt;응 너넨 내란당 해체할거야&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이런 좋은 판을 두고 도대체 뭘 하는건지..&lt;/p&gt;
+  &lt;p&gt;손바닥 왕자 쉴드치던 김용남을 보고 통쾌해야하는게 맞나 싶습니다&lt;/p&gt;
+  &lt;p&gt;(진짜 김용남 나오면 방송 돌리고 싶었던게 한두번이 아니었어요) &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;눈치나 살살 보라고 민주당 그 거대 의석 만들어준게 아니에요&lt;/p&gt;
+  &lt;p&gt;그냥 당원이 바라는거 시키는거 중도니 우파니 신경 쓰지말고 밀어붙이라고 뽑어준겁니다 .. &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033258</guid><pubDate>Mon, 28 Jul 2025 19:27:27 GMT</pubDate></item><item><title>쿠팡 설치 에어컨 불량 후기[12][2]</title><link>https://www.clien.net/service/board/park/19033255</link><description>
+ 
+ 
+  &lt;p&gt;안녕하세요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;쿠팡에서 직수입해다 설치,판매하는 에어컨 불량 후기 입니다.&lt;/p&gt;
+  &lt;p&gt;가격 무난하고 5년 고장수리 보험료도 저렴해서 구입했습니다.&lt;/p&gt;
+  &lt;p&gt;잘 쓰면 문제 없는데 불량시 대처가 쿠팡 다워 공유 합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;1. 6월 초에 설치. 발코니에 실외기실 비슷한 공간있어서 실외기 놓으려 했는데 기사님 권장해서 앵글 설치&lt;/p&gt;
+  &lt;p&gt;2.  7월 초 고장. 더울때긴 했는데 그래도 빠르게 와서 수리해주고감&lt;/p&gt;
+  &lt;p&gt;3. 지난주 목요일 같은 증상 고장. 기사가 없어서 오늘 와서 점검.&lt;/p&gt;
+  &lt;p&gt;4. 점검결과 설치기사 실수로 배선 쇼트. 불날뻔함. 그리고 실외기 사망.&lt;/p&gt;
+  &lt;p&gt;5. 어쨌든 알았으니 빨리 교체해줘라 요청&lt;/p&gt;
+  &lt;p&gt;6. 쿠팡 고객센터. 품절이라 환불만 됩니다. 답변&lt;/p&gt;
+  &lt;p&gt;7. 쿠팡 들어가보니 여전히 같은 상품 판매중&lt;/p&gt;
+  &lt;p&gt;8. 아니 멀쩡히 팔고 있는데 뭔 품절이냐 항의&lt;/p&gt;
+  &lt;p&gt;9. 그건 니가 보기에 그런거고 쿠팡 전산내 아이템 품번이 다르기 때문에 같은게 같은게 아님&lt;/p&gt;
+  &lt;p&gt;10. 아니 뭐 그런게 어딨냐. 너무한거 아니냐. 더운데 며칠씩이나 고생하고 있는데. 보상이라도 해줘야 하는거 아니냐. 설치비는 어쩔껀데.&lt;/p&gt;
+  &lt;p&gt;11. 규정상 보상 없음. 설치비는 나중에 에어컨 쓸때 니가 쓰면 되느까 쿠팡이 알빠 아님&lt;/p&gt;
+  &lt;p&gt;12. 그럼 빨리 가져가라 새거 사게.&lt;/p&gt;
+  &lt;p&gt;13. 전산상 환불이 되야 수거할거임. 환불후에 기사한테 연락 올테니까 협의해서 수거날짜 잡아.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;날도 더운데 더 열받네요.&lt;/p&gt;
+  &lt;p&gt;제품이야 고장날수도 있고 설치기사가 실수할 수도 있으니 며칠 더운건 열받지만 그럴수 있다고 생각하는데 멀쩡히 같은 제품 파는데 전산상 품번이 다르다고 교환도 안해주는것. 주관적으로 판단해서 설치비 환불 안해주는것. 이건 너무 한것 같네요.&lt;/p&gt;
+  &lt;p&gt;쿠팡의 여러 사회적 문제들이 뭉갤수 있는 문제는 뭉개고 이익이 되는 방향으로만 가기 때문인걸 알고는 있었지만 고객 응대도 같은 방식일지는 몰랐네요.&lt;/p&gt;
+  &lt;p&gt;참고하시라고 올립니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033255</guid><pubDate>Mon, 28 Jul 2025 19:27:43 GMT</pubDate></item><item><title>전공의 파업은 일종의 월급쟁이 노동자의 파업 아닌가요?[11][0]</title><link>https://www.clien.net/service/board/park/19033250</link><description>
+ 
+ 
+  &lt;p&gt;제가 정말 몰라서 한번 물어보는 글임을 먼저 말씀드립니다.&lt;/p&gt;
+  &lt;p&gt;정말 몰라서 하는 말이니 너그럽게 재미로 한번 읽어보시고 지적해주시면 감사하겠습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;전공의 파업은 일종의 월급쟁이 노동자의 파업 아닌가요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 제가 보기에는 의대생 2000명 증원은 그냥 정부와 재벌대기업의 정경유착형 기업비리로 흔한 일감 몰아주기로 보입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;관련 분야 사람들은 다들 현실적으로 어렵다는 일을 그는 그냥 발표나했지 관련해서 일한건 하나도 없어 보여요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;애초에 누군가의 청부민원이 아니었을까요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그게 현실적으로 불가능한 이유가 여러가지가 있겠지만 그중에서도&lt;/p&gt;
+  &lt;p&gt;늘어난 학생수를 감당할 강의실 / 물리적 공간과&lt;/p&gt;
+  &lt;p&gt;교육을 진행할 선생님/교수를 &lt;/p&gt;
+  &lt;p&gt;단기간에 감당할 수 없어서라고 하던데&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;지난 전공의파업과 학생이탈등 일련의 일들이 일어나면서 지방의 상대적으로 젊고 유능한 교수들은 서울 빅5병원들이 많이 스카웃했다고 합니다.&lt;/p&gt;
+  &lt;p&gt;이빅5 병원들 중 파업기간동안 특히 지원 많이 받은 병원이 있었죠&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;돈있는 병원은 단기간에 수업에 필요한 시설과 공간 확보가 가능하고 지방의대의 젊고 유능한 의대교수를 의료진들로 흡수로&lt;/p&gt;
+  &lt;p&gt;수련의들을 많이 배출하고 보유할수있는 토대를 특별한 노력없이 마련한 것으로 보여집니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;거기에 사보험의 확대와&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;의료기기의 성능검사등을 대폭 축소해서 사용가능허가를 간소허게 해주는등의 일련의 행정절차를 간소화해주는 일 등을 보면&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이익 보는 쪽이 너무 뻔하지 않나요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이런상황을 종합해보면&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;전정권에서 어려움을 격던 기업중에 국내 공격루트 확보를 위한 청부민원은 아니었을까라는 황당하고 개인적인 망상을 해봤습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;허접한 긴글 읽어주셔서 감시합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;행복하세요 ^^&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033250</guid><pubDate>Mon, 28 Jul 2025 19:19:48 GMT</pubDate></item><item><title>건양대병원 총파업 돌입…'희생 강요 말고 노동조건 개선해야'[10][1]</title><link>https://www.clien.net/service/board/park/19033138</link><description>
+ 
+ 
+  &lt;h1&gt;건양대병원 총파업 돌입…"희생 강요 말고 노동조건 개선해야"&lt;/h1&gt;
+  &lt;h2&gt;&lt;br/&gt;&lt;/h2&gt;
+  &lt;h2&gt;&lt;strong&gt;총파업 지켜본 환자·보호자, 일부는 지지하거나 항의하기도&lt;/strong&gt;&lt;/h2&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;대전공공어린이재활병원에 이어 대전 지역 상급종합병원인 건양대병원 노조도 28일 출정식을 열고 총파업에 돌입했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;br/&gt;
+    민주노총 전국보건의료산업노동조합 대전충남지역본부 건양대의료원지부는 이날 오전 병원 로비에서 총파업 출정식과 기자회견을 열고 "의료인 희생만을 강요하지 말고 노동 조건을 개선하라"며 건양대의료원을 규탄했다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;(중략) &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;
+    몇몇 환자와 보호자는 노조를 향해 큰 소리로 항의하기도 했다.&lt;br/&gt;&lt;br/&gt;
+    한 중년 남성은 "뇌출혈이 갑자기 왔던 우리 아들은 병원 9곳을 돌면서 죽을 뻔한 적도 있다"며 "환자들 볼모로 파업하는 게 말이 되느냐. 환자들한테 피해주지 말라"고 강하게 항의했다.&lt;br/&gt;&lt;br/&gt;
+    총파업 첫날인 이날은 아직까지 진료 공백 상황은 발생하진 않았지만, 총파업이 장기화한다면 진료 차질이 우려된다.&lt;br/&gt;&lt;br/&gt;
+    건양대병원 직원 2천여명 가운데 조합원은 1천97명으로, 대부분 간호사이며 방사선사·작업치료사·물리치료사·임상병리사 등으로 구성됐다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이날 암 환자인 남편 외래진료로 병원을 찾은 보호자 안창남(64)씨는 "오늘 남편의 염증 수치가 높아져서 입원해야 할 수도 있을 것 같아 입원이 가능한지 물어보니 (총파업 때문에) 이미 입원한 환자들도 중증이 아니면 퇴원 수속을 안내하고 있다고 하더라"고 전했다.&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;(중략) &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한편 대전세종충남공공어린이재활병원 노조도 지난 25일부터 총파업에 들어가 일부 외래진료를 제외한 검사와 치료 등이 중단된 상태다.&lt;br/&gt;&lt;br/&gt;
+    병원은 파업 미참여 인원을 중심으로 비상진료체계를 운영하지만, 전체 직원 98명 가운데 조합원이 77명이라 차질이 불가피하다.&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/001/0015533678" target="_blank"&gt;https://n.news.naver.com/article/001/0015533678&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;병원에 파업 소식이 많네요 &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033138</guid><pubDate>Mon, 28 Jul 2025 16:25:59 GMT</pubDate></item><item><title>정보 BYD 씰 구형 재고차량 아닌 한국전용 차량[15][0]</title><link>https://www.clien.net/service/board/cm_car/19033183</link><description>
  
  
   &lt;p&gt;저말대로 한다면 라인을 별도로 운영한다는 말인데 이러면 엄청나게 마이너스 날건데 말이죠?&lt;/p&gt;
@@ -10,7 +435,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;결국 가장 중요한건 구형은 맞는거죠&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19033183</guid><pubDate>Mon, 28 Jul 2025 17:13:05 GMT</pubDate></item><item><title>Q/A 테슬라 모델 Y 주니퍼 운전석 창문이 떨리네요;[10][0]</title><link>https://www.clien.net/service/board/cm_car/19033181</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19033183</guid><pubDate>Mon, 28 Jul 2025 17:13:05 GMT</pubDate></item><item><title>Q/A 테슬라 모델 Y 주니퍼 운전석 창문이 떨리네요;[11][0]</title><link>https://www.clien.net/service/board/cm_car/19033181</link><description>
  
  
   &lt;p&gt;이전에 벤츠 프레임리스 도어 차량도 몰아봤지만 이렇게 떨리는 건 처음 봤습니다.&lt;/p&gt;
@@ -28,7 +453,7 @@
   &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/mD97J-8Sng8" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
   &lt;p&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19033181</guid><pubDate>Mon, 28 Jul 2025 17:07:39 GMT</pubDate></item><item><title>배당 35%에서 밸류업은 퇴색됐네요 근데 왜 진성준 안대로만 가는거죠?[13][1]</title><link>https://www.clien.net/service/board/park/19033245</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19033181</guid><pubDate>Mon, 28 Jul 2025 17:07:39 GMT</pubDate></item><item><title>배당 35%에서 밸류업은 퇴색됐네요 근데 왜 진성준 안대로만 가는거죠?[17][3]</title><link>https://www.clien.net/service/board/park/19033245</link><description>
  
  
   &lt;p&gt;부자 감세니 머니.. 그러면 부자들이 잘도 부동산 투자 안하고 주식으로 오겠네요&lt;/p&gt;
@@ -42,7 +467,7 @@
   &lt;p&gt;이정도 결과로 부동산 돈이 주식으로 온다?? 택도 없을 것 같긴 합니다.&lt;/p&gt;
   &lt;p&gt;일단 부자들 돈 오지 말라고 하는 거니;; 참고로 미국 배당세율 20퍼대 입니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033245</guid><pubDate>Mon, 28 Jul 2025 19:09:12 GMT</pubDate></item><item><title>[속보]'노란봉투법', 국회 환노위 소위서 與 주도 통과[1][7]</title><link>https://www.clien.net/service/board/park/19033240</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033245</guid><pubDate>Mon, 28 Jul 2025 19:09:12 GMT</pubDate></item><item><title>[속보]'노란봉투법', 국회 환노위 소위서 與 주도 통과[1][8]</title><link>https://www.clien.net/service/board/park/19033240</link><description>
  
  
   &lt;p&gt;[속보] '손배청구 제한·교섭권 강화' 노조법 개정안, 여당 주도로 환노위 소위 통과&lt;/p&gt;
@@ -65,7 +490,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;피플파워는 또 퇴장인가요...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033240</guid><pubDate>Mon, 28 Jul 2025 19:04:22 GMT</pubDate></item><item><title>[단독]신천지, 국.힘..추정 당원 가입 명단 입수[1][10]</title><link>https://www.clien.net/service/board/park/19033239</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033240</guid><pubDate>Mon, 28 Jul 2025 19:04:22 GMT</pubDate></item><item><title>[단독]신천지, 국.힘..추정 당원 가입 명단 입수[1][12]</title><link>https://www.clien.net/service/board/park/19033239</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -108,7 +533,7 @@
   &lt;p&gt;..추진력이...생깁니다....&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033239</guid><pubDate>Mon, 28 Jul 2025 19:05:40 GMT</pubDate></item><item><title>독일의 자전거와 보행문화.JPG[14][3]</title><link>https://www.clien.net/service/board/park/19033225</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033239</guid><pubDate>Mon, 28 Jul 2025 19:05:40 GMT</pubDate></item><item><title>독일의 자전거와 보행문화.JPG[16][4]</title><link>https://www.clien.net/service/board/park/19033225</link><description>
  
  
   &lt;p&gt;&lt;img alt="20250622_203252.jpg" class="fr-dib fr-fil full" data-file-sn="15504627" data-gif="false" data-img-height="1440" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/15504627/797c285b11b094.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -260,7 +685,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;작은거 3개, 큰거 1개 인가 보네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033163</guid><pubDate>Mon, 28 Jul 2025 16:41:07 GMT</pubDate></item><item><title>이야기 아이오닉6페리 가격 &amp; 전비 나왔네요[15][1]</title><link>https://www.clien.net/service/board/cm_car/19033175</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033163</guid><pubDate>Mon, 28 Jul 2025 16:41:07 GMT</pubDate></item><item><title>이야기 아이오닉6페리 가격 &amp; 전비 나왔네요[21][1]</title><link>https://www.clien.net/service/board/cm_car/19033175</link><description>
  
  
   &lt;p&gt;18인치 롱레인지 2wd 복합 562km ㄷㄷ&lt;/p&gt;
@@ -270,7 +695,7 @@
   &lt;p&gt;심지어 awd 20인치는 동일인치 ev6보다도 떨어지네요.&lt;/p&gt;
   &lt;p&gt;가장 큰 문제는 가격이... 뭔 자신감일까요?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19033175</guid><pubDate>Mon, 28 Jul 2025 17:03:42 GMT</pubDate></item><item><title>대통령 할아버지가 세탁기 바꿔주셨어[4][10]</title><link>https://www.clien.net/service/board/park/19033232</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19033175</guid><pubDate>Mon, 28 Jul 2025 17:03:42 GMT</pubDate></item><item><title>대통령 할아버지가 세탁기 바꿔주셨어[8][10]</title><link>https://www.clien.net/service/board/park/19033232</link><description>
  
  
   아내가 딸한테 
@@ -405,7 +830,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033219</guid><pubDate>Mon, 28 Jul 2025 18:18:59 GMT</pubDate></item><item><title>[속보]대통령실 '대미 관세협상에 있어 가장 큰 기준은 '국익''[3][10]</title><link>https://www.clien.net/service/board/park/19033217</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033219</guid><pubDate>Mon, 28 Jul 2025 18:18:59 GMT</pubDate></item><item><title>[속보]대통령실 '대미 관세협상에 있어 가장 큰 기준은 '국익''[3][12]</title><link>https://www.clien.net/service/board/park/19033217</link><description>
  
  
   &lt;p&gt;李대통령, 한미 통상 협의 현황 보고받아…"변수 고려해 치열하게 협의"&lt;/p&gt;
@@ -421,7 +846,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;(생략)&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033217</guid><pubDate>Mon, 28 Jul 2025 18:09:38 GMT</pubDate></item><item><title>전공의들 사과한 날 의대 교수들 '정부·국회가 사과해야'[16][5]</title><link>https://www.clien.net/service/board/park/19033216</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033217</guid><pubDate>Mon, 28 Jul 2025 18:09:38 GMT</pubDate></item><item><title>전공의들 사과한 날 의대 교수들 '정부·국회가 사과해야'[17][5]</title><link>https://www.clien.net/service/board/park/19033216</link><description>
  
  
   &lt;p&gt;"(전의비는 "이들의 복귀는 학업과 수련의 연속성을 회복하려는 책임 있는 노력이고, 이는 결국 미래 환자의 안전과 국민 건강을 위한 기반이 된다"며 "(의대생) 수업 재개는 다른 학과 학생들에게 허용되는 유연한 복귀 방식과는 전혀 다른 구조 속에서 이뤄지는 일로, 이는 특혜가 아니라 의대 학사의 구조적 특수성에 기초한 최소한의 필요조건"이라고 했다.&lt;br/&gt;&lt;br/&gt;
@@ -443,14 +868,14 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/001/0015534373?rc=N&amp;amp;ntype=RANKING" target="_blank"&gt;https://n.news.naver.com/mnews/article/001/0015534373?rc=N&amp;amp;ntype=RANKING&lt;/a&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033216</guid><pubDate>Mon, 28 Jul 2025 18:05:06 GMT</pubDate></item><item><title>성심당 공지..[11][8]</title><link>https://www.clien.net/service/board/park/19033209</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033216</guid><pubDate>Mon, 28 Jul 2025 18:05:06 GMT</pubDate></item><item><title>성심당 공지..[12][9]</title><link>https://www.clien.net/service/board/park/19033209</link><description>
  
  
   &lt;p&gt;&lt;img alt="54394f1dc9d4521a2d755ceecb021b01_1753686139_4196.jpg" class="fr-dib fr-fil full" data-file-sn="15504620" data-gif="false" data-img-height="1080" data-img-width="1080" data-role="attach-image" src="https://edgio.clien.net/F01/15504620/797b06804e5b23.jpg?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;매출이 1000억이 넘는다죠....&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033209</guid><pubDate>Mon, 28 Jul 2025 17:47:22 GMT</pubDate></item><item><title>[속보] 이상민 전 행안 장관 법원 구속심사 31일 오후 2시[8][5]</title><link>https://www.clien.net/service/board/park/19033206</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033209</guid><pubDate>Mon, 28 Jul 2025 17:47:22 GMT</pubDate></item><item><title>[속보] 이상민 전 행안 장관 법원 구속심사 31일 오후 2시[8][6]</title><link>https://www.clien.net/service/board/park/19033206</link><description>
  
  
   &lt;p&gt;&lt;img alt="2025-07-28_17-36-34.png.jpeg" class="fr-dib fr-fil full" data-file-sn="15504617" data-gif="false" data-img-height="266" data-img-width="1224" data-role="attach-image" src="https://edgio.clien.net/F01/15504617/797aa8af9aae4c.jpeg?scale=width:740"/&gt;&lt;/p&gt;
@@ -503,7 +928,7 @@
    시간되시면 한번 보시길. 
   &lt;br/&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033153</guid><pubDate>Mon, 28 Jul 2025 16:34:15 GMT</pubDate></item><item><title>계엄 선포가 녹화 방송이었군요[26][35]</title><link>https://www.clien.net/service/board/park/19033212</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033153</guid><pubDate>Mon, 28 Jul 2025 16:34:15 GMT</pubDate></item><item><title>계엄 선포가 녹화 방송이었군요[28][45]</title><link>https://www.clien.net/service/board/park/19033212</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -516,7 +941,7 @@
   &lt;p&gt;그럼 계엄을 미리 알고 있었던 사람들이 늘어나겠군요.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033212</guid><pubDate>Mon, 28 Jul 2025 17:56:19 GMT</pubDate></item><item><title>정청래·박찬대, 이준석 압수수색에 '체포동의안 오면 즉시 처리'[4][11]</title><link>https://www.clien.net/service/board/park/19033207</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033212</guid><pubDate>Mon, 28 Jul 2025 17:56:19 GMT</pubDate></item><item><title>정청래·박찬대, 이준석 압수수색에 '체포동의안 오면 즉시 처리'[4][14]</title><link>https://www.clien.net/service/board/park/19033207</link><description>
  
  
   &lt;p&gt;(생략)&lt;/p&gt;
@@ -552,7 +977,7 @@
   &lt;p&gt;거부하는 자가!! 범인이죠?!&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033207</guid><pubDate>Mon, 28 Jul 2025 17:44:11 GMT</pubDate></item><item><title>[단독]내란 특검, 이상민 구속영장에 “계엄 주무 장관 역할 수행”[5][7]</title><link>https://www.clien.net/service/board/park/19033204</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033207</guid><pubDate>Mon, 28 Jul 2025 17:44:11 GMT</pubDate></item><item><title>[단독]내란 특검, 이상민 구속영장에 “계엄 주무 장관 역할 수행”[5][8]</title><link>https://www.clien.net/service/board/park/19033204</link><description>
  
  
   &lt;p&gt;&lt;img alt="2025-07-28_17-21-00.png.jpeg" class="fr-dib fr-fil full" data-file-sn="15504616" data-gif="false" data-img-height="320" data-img-width="1436" data-role="attach-image" src="https://edgio.clien.net/F01/15504616/797a92c41a133e.jpeg?scale=width:740"/&gt;&lt;/p&gt;
@@ -572,7 +997,7 @@
     새로운 위촉 전문위원 중 눈에 띄는 인물은 정보인권전문위에 위촉된 연취현 변호사다. 연 변호사는 지난 1월19일 윤석열 전 대통령 구속영장 발부에 항의하며 서부지법에 난입해 폭력을 행사한 피고인들의 변호인으로, 이 사태를 계기로 결성된 ‘서부자유변호사협회’ 공동회장도 맡고 있다. 이 협회는 지난 5월10일 창단선언문에서 서부지법 난동을 ‘항쟁’으로 표현하며 “계엄령 선포 후 불법체포에 항의한 시민들이 법원 앞 평화 시위 중 무더기 구속됐다”고 주장했다.&lt;/p&gt;
   &lt;p&gt;&lt;u&gt;자세한 내용은 기사 전문을 참고하시기 바랍니다.&lt;/u&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033191</guid><pubDate>Mon, 28 Jul 2025 17:31:41 GMT</pubDate></item><item><title>[단독] 이승환 구미 콘서트, 10년 새 유일한 ‘직권취소’…전문가 경고도 묵살[9][12]</title><link>https://www.clien.net/service/board/park/19033189</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033191</guid><pubDate>Mon, 28 Jul 2025 17:31:41 GMT</pubDate></item><item><title>[단독] 이승환 구미 콘서트, 10년 새 유일한 ‘직권취소’…전문가 경고도 묵살[9][13]</title><link>https://www.clien.net/service/board/park/19033189</link><description>
  
  
   &lt;p&gt;&lt;img alt="2025-07-28_17-12-44.png.jpeg" class="fr-dib fr-fil full" data-file-sn="15504600" data-gif="false" data-img-height="398" data-img-width="1436" data-role="attach-image" src="https://edgio.clien.net/F01/15504600/79795babfe2808.jpeg?scale=width:740"/&gt;&lt;/p&gt;
@@ -584,7 +1009,7 @@
     하지만 김 시장이 언급한 이씨의 발언 이후인 지난해 12월19일 공연 개최 여부와 관련해 구미시가 연 전문가 회의에서 외부 전문가 6명 전원은 모두 콘서트 취소 반대 의견을 냈다.&lt;/p&gt;
   &lt;p&gt;&lt;u&gt;자세한 내용은 기사 전문을 참고하시기 바랍니다.&lt;/u&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033189</guid><pubDate>Mon, 28 Jul 2025 17:16:04 GMT</pubDate></item><item><title>정동영장관은 아직도 00년대에 살고 계시나요[29][2]</title><link>https://www.clien.net/service/board/park/19033187</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033189</guid><pubDate>Mon, 28 Jul 2025 17:16:04 GMT</pubDate></item><item><title>정동영장관은 아직도 00년대에 살고 계시나요[32][2]</title><link>https://www.clien.net/service/board/park/19033187</link><description>
  
  
   &lt;p&gt;지금상황에 한미 연합훈련 조정 이런 발언 꺼내면 어떤 프레임이 걸리고 국민적 인식이 어떤지 생각을 못할까요?&lt;/p&gt;
@@ -602,7 +1027,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;좀.. 바뀔 때가 되지 않았나요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033187</guid><pubDate>Mon, 28 Jul 2025 17:14:48 GMT</pubDate></item><item><title>[단독] 경찰, '이준석 여론조사비 대납 의혹' 수사 착수…'강혜경 출석 조율'[2][12]</title><link>https://www.clien.net/service/board/park/19033185</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033187</guid><pubDate>Mon, 28 Jul 2025 17:14:48 GMT</pubDate></item><item><title>[단독] 경찰, '이준석 여론조사비 대납 의혹' 수사 착수…'강혜경 출석 조율'[2][13]</title><link>https://www.clien.net/service/board/park/19033185</link><description>
  
  
   &lt;p&gt;&lt;img alt="2025-07-28_17-08-23.png.jpeg" class="fr-dib fr-fil full" data-file-sn="15504597" data-gif="false" data-img-height="346" data-img-width="1470" data-role="attach-image" src="https://edgio.clien.net/F01/15504597/79791ef04b5c57.jpeg?scale=width:740"/&gt;&lt;/p&gt;
@@ -613,7 +1038,7 @@
     이 대표는 지난 2021년 국민의힘 당 대표 경선 당시 정치지망생 배 모 씨로부터 여론조사 비용을 대납받았다는 의혹을 받고 있습니다.&lt;/p&gt;
   &lt;p&gt;&lt;u&gt;자세한 내용은 기사 전문을 참고하시기 바랍니다.&lt;/u&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033185</guid><pubDate>Mon, 28 Jul 2025 17:55:36 GMT</pubDate></item><item><title>스마트폰의 무게... 어느정도가 마지노선인가요?[12][0]</title><link>https://www.clien.net/service/board/park/19033184</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033185</guid><pubDate>Mon, 28 Jul 2025 17:55:36 GMT</pubDate></item><item><title>스마트폰의 무게... 어느정도가 마지노선인가요?[13][0]</title><link>https://www.clien.net/service/board/park/19033184</link><description>
  
  
   &lt;p&gt;14프로맥스.. 몇년을 써도 무겁네요. 적응이 안됩니다.  여성분들은 더 힘들듯.&lt;/p&gt;
@@ -631,7 +1056,7 @@
  
   &lt;p&gt;그런거 없숩니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033174</guid><pubDate>Mon, 28 Jul 2025 17:00:44 GMT</pubDate></item><item><title>우리나라에는 한중 우호의 숲이 있습니다.[12][1]</title><link>https://www.clien.net/service/board/park/19033171</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033174</guid><pubDate>Mon, 28 Jul 2025 17:00:44 GMT</pubDate></item><item><title>우리나라에는 한중 우호의 숲이 있습니다.[13][1]</title><link>https://www.clien.net/service/board/park/19033171</link><description>
  
  
   &lt;p&gt;&lt;img alt="KakaoTalk_20250728_165306985.jpg" class="fr-dib fr-fil full" data-file-sn="15504582" data-gif="false" data-img-height="1600" data-img-width="901" data-role="attach-image" src="https://edgio.clien.net/F01/15504582/7978652ea53899.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -654,7 +1079,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;(생략)&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033169</guid><pubDate>Mon, 28 Jul 2025 16:59:09 GMT</pubDate></item><item><title>테슬라 165억 달러의 삼성과의 거래는 최소 금액[12][1]</title><link>https://www.clien.net/service/board/park/19033147</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033169</guid><pubDate>Mon, 28 Jul 2025 16:59:09 GMT</pubDate></item><item><title>테슬라 165억 달러의 삼성과의 거래는 최소 금액[14][1]</title><link>https://www.clien.net/service/board/park/19033147</link><description>
  
  
   &lt;p&gt;8년짜리 계약이라 사실 연단위로 보면 엄청 큰 계약은 아닌데 &lt;/p&gt;
@@ -705,7 +1130,7 @@
   &lt;p&gt;불과 3-4년 전이네요&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033140</guid><pubDate>Mon, 28 Jul 2025 16:20:08 GMT</pubDate></item><item><title>유튜브 댓글에 노노 거리는거 좀 짜증나더군요[12][8]</title><link>https://www.clien.net/service/board/park/19033126</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033140</guid><pubDate>Mon, 28 Jul 2025 16:20:08 GMT</pubDate></item><item><title>유튜브 댓글에 노노 거리는거 좀 짜증나더군요[12][9]</title><link>https://www.clien.net/service/board/park/19033126</link><description>
  
  
   &lt;p&gt;예를 들면&lt;/p&gt;
@@ -792,7 +1217,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;무슨 말도 안되는 가격인건지 어이가 없네요 ㅋㅋㅋㅋㅋ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033160</guid><pubDate>Mon, 28 Jul 2025 16:42:29 GMT</pubDate></item><item><title>소비쿠폰을 쓰려다가 멈칫,[22][1]</title><link>https://www.clien.net/service/board/park/19033157</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033160</guid><pubDate>Mon, 28 Jul 2025 16:42:29 GMT</pubDate></item><item><title>소비쿠폰을 쓰려다가 멈칫,[23][1]</title><link>https://www.clien.net/service/board/park/19033157</link><description>
  
  
   &lt;p&gt;저는 지난 주 후반에 선불카드로 받아 왔습니다. 주말에 어디서 쓸까 하다 너무 더워서 외출을 안해 쓰지 못했구요&lt;/p&gt;
@@ -803,7 +1228,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;근데 소비쿠폰에 금액 제한이 있다는 말은 처음듣네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033157</guid><pubDate>Mon, 28 Jul 2025 16:36:26 GMT</pubDate></item><item><title>[속보]정동영 '남북 5대 합의서 국회 비준 요청할 것'..8월 한미합동 훈련 조정 건의[22][15]</title><link>https://www.clien.net/service/board/park/19033156</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033157</guid><pubDate>Mon, 28 Jul 2025 16:36:26 GMT</pubDate></item><item><title>[속보]정동영 '남북 5대 합의서 국회 비준 요청할 것'..8월 한미합동 훈련 조정 건의[22][16]</title><link>https://www.clien.net/service/board/park/19033156</link><description>
  
  
   &lt;p&gt;정동영 통일부 장관이 28일 "남북간 체결 5대 합의에 대해 국회의 비준을 요청할 것"이라고 28일 밝혔다. 또한 "이재명 대통령에게 남북문제 통일문제와 관련해 사회적 대화기구를 설치하겠다고 보고했다"고 정 장관은 밝혔다.&lt;/p&gt;
@@ -827,7 +1252,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;apec 관련 큰 그림 그리고 있으려나요...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033156</guid><pubDate>Mon, 28 Jul 2025 16:37:59 GMT</pubDate></item><item><title>야산서 사육하는 흑염소 14마리 사냥한 양궁동호회[29][13]</title><link>https://www.clien.net/service/board/park/19033148</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033156</guid><pubDate>Mon, 28 Jul 2025 16:37:59 GMT</pubDate></item><item><title>야산서 사육하는 흑염소 14마리 사냥한 양궁동호회[29][14]</title><link>https://www.clien.net/service/board/park/19033148</link><description>
  
  
   &lt;p&gt;부산 강서구 야산에서 주민들이 방목해 기르고 있는 흑염소를 레저용 활로 사냥한 동호회원들이 경찰에 붙잡혔다.&lt;br/&gt;&lt;br/&gt;
@@ -846,7 +1271,7 @@
   &lt;p&gt;이게 그냥 일반인도 가능한 수준은 아니지않나요;;&lt;/p&gt;
   &lt;p&gt; &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033148</guid><pubDate>Mon, 28 Jul 2025 16:24:11 GMT</pubDate></item><item><title>[속보]李대통령 '계엄 후 부당한 지시 소극 임한 간부 특진 추진'[7][30]</title><link>https://www.clien.net/service/board/park/19033135</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033148</guid><pubDate>Mon, 28 Jul 2025 16:24:11 GMT</pubDate></item><item><title>[속보]李대통령 '계엄 후 부당한 지시 소극 임한 간부 특진 추진'[7][34]</title><link>https://www.clien.net/service/board/park/19033135</link><description>
  
  
   &lt;p&gt;[속보]李대통령 "계엄 후 부당한 지시 소극 임한 간부 특진 추진"&lt;/p&gt;
@@ -856,147 +1281,4 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;신상필벌인거죠.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033135</guid><pubDate>Mon, 28 Jul 2025 16:14:02 GMT</pubDate></item><item><title>속보] 李대통령, 김여정 담화에 "남북, 평화 분위기 속 신뢰회복 중요"[1][13]</title><link>https://www.clien.net/service/board/park/19033130</link><description>
- 
- 
-  &lt;p&gt;1보 입니다.&lt;/p&gt;
-  &lt;p&gt;/Vollago&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033130</guid><pubDate>Mon, 28 Jul 2025 16:19:28 GMT</pubDate></item><item><title>삼전이 6.5% 상승인데 코스피는 0.5% 상승 중 이네요[15][0]</title><link>https://www.clien.net/service/board/park/19033124</link><description>
- 
- 
-  &lt;p&gt;세제 개편안 덕분인지.. 아쉽습니다.&lt;/p&gt;
-  &lt;p&gt;잠정 결정되었다는 배당 분리과세안이나 거래세 등을 보면,&lt;/p&gt;
-  &lt;p&gt;코스피 추가 상승은 어렵겠네요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033124</guid><pubDate>Mon, 28 Jul 2025 15:56:58 GMT</pubDate></item><item><title>매불쇼 정대택 나오네오[7][9]</title><link>https://www.clien.net/service/board/park/19033118</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;전에 사연 들으니까&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;살아계신게 대단하시던데.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033118</guid><pubDate>Mon, 28 Jul 2025 15:59:54 GMT</pubDate></item><item><title>[포착] “딱 걸렸다”…소림사 주지승, 여러 여성과 내연관계·아이 출산[10][3]</title><link>https://www.clien.net/service/board/park/19033116</link><description>
- 
- 
-  &lt;a href="https://v.daum.net/v/20250728133728876" target="_blank"&gt;https://v.daum.net/v/20250728133728876&lt;/a&gt;
-  &lt;br/&gt;
-     
-  &lt;br/&gt;
-   관리처는 “스융신은 불교 계율을 심각하게 위반하고 오랜 기간 여러 여성과 부적절한 관계를 유지하며 사생아를 낳은 혐의도 받고 있다”고 설명했다. 
-  &lt;br/&gt;
-     
-  &lt;br/&gt;
-   앞서 현지 SNS에는 소림사 주지승이 체포됐다는 소문과 함께, 스 주지가 내연관계인 여러 여성 및 자녀들과 함께 도주하려다 공항에서 붙잡혔다는 소문도 돌았다. 소림사는 애초 스 주지와 관련한 부정적 소문을 부인하다가 27일 저녁 그가 관계 부처의 조사를 받고 있다고 인정했다. 
-  &lt;br/&gt;
-   —— 
-  &lt;br/&gt;
-   염불은 관심이 없고 잿밥에만 관심 있는 주지승 이네요 -_-;; 
-  &lt;br/&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033116</guid><pubDate>Mon, 28 Jul 2025 15:46:03 GMT</pubDate></item><item><title>“한국인 조직원 2천명” 캄보디아 ‘보이스피싱타운’[11][4]</title><link>https://www.clien.net/service/board/park/19033110</link><description>
- 
- 
-  &lt;p&gt;조선일보 기사고 책상 소설은 아니고 실제 취재를 했다는데, 읽어볼만한거 같아 올려봅니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/023/0003919679?sid=102" target="_blank"&gt;https://n.news.naver.com/mnews/article/023/0003919679?sid=102&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;“한국인 조직원들만 2000명” 캄보디아 ‘보이스피싱 타운’&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="19일 오후 캄보디아 시아누크빌 오트레 해변 인근의 한 건물. 중국어 간판이 달린 1층 상점들 위로, 사람이 빠져나올 수 없도록 발코니마다 철창이 빽빽하게 달려 있는 창문과 널려 있는 빨랫감이 보인다. 기자와 동행한" class="fr-fic fr-dii" src="https://imgnews.pstatic.net/image/023/2025/07/28/0003919679_001_20250728134110033.jpg?type=w860"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;em&gt;19일 오후 캄보디아 시아누크빌 오트레 해변 인근의 한 건물. 중국어 간판이 달린 1층 상점들 위로, 사람이 빠져나올 수 없도록 발코니마다 철창이 빽빽하게 달려 있는 창문과 널려 있는 빨랫감이 보인다. 기자와 동행한 현지 교민은 “이런 건물들은 모두 중국계 범죄 조직의 아지트”라며 “한때 인근 건물 단지에 잡혀 있는 한국인만 500~600명에 달한다는 소문이 돌았다”고 했다.&lt;/em&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="그래픽=박상훈" class="fr-fic fr-dii" src="https://imgnews.pstatic.net/image/023/2025/07/28/0003919679_003_20250728134110970.jpg?type=w860"/&gt; &lt;/p&gt;
-  &lt;p&gt;캄보디아 수도 프놈펜에서 남서쪽으로 250㎞ 달리면 최대 항구 도시 시아누크빌의 오트레 해변이 나온다. 새하얀 모래 해변과 잔잔한 포말(泡沫)로 전 세계 관광객들에게 ‘숨은 보석’이라고 불려왔다. 지난 19일 해변에서 약 500m 떨어진 차이나타운을 찾았더니 35도를 넘는 날씨에도 으스스했다. 2차선 도로 양쪽에 늘어선 고층 건물들은 짓다 만 상태로 마감도 안 돼 있었다. 그늘이 진 골목에 있는 마트와 게스트하우스들은 폐업한 지 오래였다. &lt;/p&gt;
-  &lt;p&gt;...&lt;/p&gt;
-  &lt;p&gt;동남아 대표 관광지인 캄보디아가 보이스피싱 범죄 조직의 주요 근거지로 떠오르고 있다. 최근 몇 년간은 수도 프놈펜에 이어 시아누크빌로 범죄 조직들이 몰리고 있다. 미국평화연구소(USIP)에 따르면 작년 캄보디아에서 발생한 온라인 범죄 규모는 125억달러(약 17조2500억원)로 이 나라 국내총생산(GDP)의 27%에 달했다. 동원된 노동력은 15만명이 넘었다. 이 조직들은 주로 중국인들이 이끌지만, 조직원들은 한국인이 상당수 포함돼 있다. 이들이 우리 국민을 타깃 삼아 매년 수백억~수천억 원을 가로채고 있다. 그러나 해외에 있어 검거가 쉽지 않다.&lt;/p&gt;
-  &lt;p&gt;...&lt;/p&gt;
-  &lt;p&gt; 코로나 팬데믹, 글로벌 경기 침체가 겹쳐 중국 자본이 빠져나가면서 곳곳에 미완공 건물이 늘어났다. 중국 정부의 해외 도박 단속 강화가 겹치면서 카지노 건설도 중단됐다. 이렇게 짓다 만 건물들은 중국 범죄 조직들의 아지트가 되고 있다. 시아누크빌에서 식당을 운영하는 한 교민은 “이곳에서 중국 범죄자들 지시를 받는 조직원 중 한국인 비율이 계속 늘고 있다”며 “한국인들이 해외까지 와서 중국 두목 지시를 받고 조국을 등쳐먹는 기가 막힌 상황”이라고 했다.&lt;br/&gt;&lt;br/&gt;
-    본지는 캄보디아 국경 도시 목바이의 범죄 조직에서 활동했다는 한 조직원을 만났다. “대기업이라고 보시면 돼요. CEO(최고경영자) 등 경영진은 중국 조폭들인데, 말단은 한국·태국·베트남인들이죠. 몇 개 층을 통째로 빌려서 작업장으로 씁니다.” 이 조직들은 중국계 총책 주도로 범죄 수법에 따라 수사·금융 기관을 사칭해 피해자들을 압박하는 ‘검찰팀’, 피해자 휴대폰에 악성 프로그램을 설치하도록 유도하는 ‘해킹팀’, 조직 자금을 관리·세탁하는 ‘이체팀’ 등으로 업무를 나누고 있다. 중국인 윗선이 만든 사기 시나리오 한글 번역, 피해자들 관심을 끌기 위한 한국어 인터넷 방송 진행, 한국어 전화 응대 등 철저한 분업화, 한국화를 통해 우리 국민을 노리고 있다.&lt;br/&gt;&lt;br/&gt;
-    그간 중국 조직들은 특별한 기술이 필요 없는 고소득 알바 등의 홍보 문구를 내세워 한국인들을 이곳으로 유인해 납치·감금한 뒤 보이스피싱 일을 강요해왔다. 하지만 최근 2~3년간 언론을 통해 이 같은 사실이 많이 알려지자, 요즘은 계약을 맺고 고용하는 이른바 범죄 스타트업으로 진화하고 있다. 한 달 2000~3000달러(약 270만~415만원) 월급에 성과에 따라 인센티브를 주고 외출이나 휴대폰 통화도 자유롭게 해주는 경우가 늘고 있다. 제대로 월급을 줘도 ‘남는 장사’기 때문이다.&lt;br/&gt;&lt;br/&gt;
-    ‘입사’와 동시에 조직이 여권을 가져가기 때문에 마음대로 한국으로 돌아가지는 못한다. 그러나 현지에서 만난 한 한국인 조직원은 “성과를 크게 내 에이스로 평가받는 조직원들에겐 윗선에서 ‘여기서 떼돈을 버는 게 한국에서 아등바등 일하는 것보다 낫지 않으냐’며 여권을 돌려주기도 한다”고 했다. 현지 경찰 관계자는 “최근엔 돈벌이를 위해 자발적으로 조직에 가담하는 경우가 적지 않다”고 했다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/023/0003919678?sid=102" target="_blank"&gt;https://n.news.naver.com/mnews/article/023/0003919678?sid=102&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;“월1400만원 준다 유혹, 두 달 갇혀 맞아가며 일해”&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;캄보디아 보이스피싱 조직 탈출 2인&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;img alt="이기우(오른쪽) 본지 기자가 지난 19일 캄보디아 시아누크빌 시내에서 현지 범죄 조직에서 활동했던 한국인 A(58)씨와 인터뷰를 하고 있다. B씨는 “이 바닥이 좁아 뒤통수만 봐도 알 사람은 안다”며 근처에 놓여 있" class="fr-fic fr-dii" src="https://imgnews.pstatic.net/image/023/2025/07/28/0003919678_001_20250728005217127.jpg?type=w860"/&gt;&lt;em&gt;이기우(오른쪽) 본지 기자가 지난 19일 캄보디아 시아누크빌 시내에서 현지 범죄 조직에서 활동했던 한국인 A(58)씨와 인터뷰를 하고 있다. B씨는 “이 바닥이 좁아 뒤통수만 봐도 알 사람은 안다”며 근처에 놓여 있던 오토바이 헬멧을 쓴 채로 사진 촬영에 응했다./현지 교민 촬영&lt;/em&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;“도착하자마자 휴대폰과 여권을 빼앗아갔습니다. ‘왜 그러느냐’고 소리치자마자 중국인 조직원이 전기가 흐르는 삼단봉을 휘둘러 정신을 잃었습니다.”&lt;br/&gt;&lt;br/&gt;
-    지난 18일 오후 캄보디아 수도 프놈펜에서 만난 한국인 A(30)씨는 손을 떨면서 이렇게 말했다. 경남 창원에서 왔다는 그는 지난 2022년 캄보디아 보이스피싱 범죄 조직에 들어가 활동했다고 한다. 고등학교를 졸업하고 서울로 올라온 뒤 술집에서 요리·서빙 일을 해왔지만, 코로나로 일자리를 잃었다. 그러다 인터넷 구직 사이트에서 기술 없이도 한 달이면 1만달러(약 1400만원)를 벌 수 있다는 광고를 발견했다. ‘일하고 싶다’고 했더니 대뜸 캄보디아행 항공권을 보내왔다.&lt;br/&gt;&lt;br/&gt;
-    이상한 느낌이 들었지만 일거리도 없는데 ‘밑져야 본전’이란 생각이 들었다. 프놈펜 공항에 마중 나온 승합차는 그를 태우고 40여 분을 달려 창살이 빼곡히 설치된 낡은 아파트 단지로 데려갔다. 그는 “두 달간 감금돼 있었는데, 하루 6시간만 재우고 나머지는 노예처럼 일을 시켰다”며 “한국인들 말고도 중국인과 베트남인, 인도네시아인들이 맞아가면서 일했다”고 했다.&lt;br/&gt;&lt;br/&gt;
-    그때 겨우 탈출하고도 그는 3년 만인 최근 다시 한번 캄보디아를 찾았다. “빚만 1500만원이었는데 새 출발을 하고 싶었어요. 감금되든 맞든 ‘일’만 잘하면 돈은 벌 수 있다고 생각했어요.” 하지만 그는 보이스피싱 조직에 들어가기도 전 캄보디아 시내에서 술을 먹다가 시비에 휘말려 집단 폭행을 당했다. 현지 교민의 도움으로 구조됐다. 정신을 차려보니 여권과 현금도 다 없어진 상태였다. A씨는 “이젠 캄보디아는 절대 안 오겠다. 한국으로 돌아가면 정말 성실하게 살아보겠다”고 했다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;...&lt;br/&gt;&lt;br/&gt;
-    19일 캄보디아 항구도시 시아누크빌에서 만난 보이스피싱 조직원 출신 B씨는 58세였다. 그는 지난 4월부터 두 달간 캄보디아와 베트남 국경도시 목바이에서 ‘광산 투자 사기’에 가담했다. 빨간색의 모조 보석을 최상급 루비로 속여 소셜미디어 생방송에서 보여주고 “이 루비 광산에 투자하면 수익을 나눠주겠다”며 투자자를 끌어모았다. B씨는 “원래 20년간 강원랜드를 전전한 도박꾼 인생이었다”며 “캄보디아 카지노에서 놀던 중 ‘한 달 일하면 2000달러를 준다’는 말에 혹해 발을 들였다”고 했다.&lt;br/&gt;&lt;br/&gt;
-    하지만 현실은 달랐다. 컴퓨터를 잘 쓸 줄 몰라 모조 보석을 씻어 진열하는 단순 노동만 했다. 실적이 없어 월급도 제대로 안 나왔고 여권도 빼앗겨 돌아갈 수도 없었다. 두 달 뒤 조직 윗선에 “제발 내보내 달라”고 일주일간 하소연한 끝에 겨우 나올 수 있었다. B씨는 “어차피 한국으로 돌아가 봐야 돌봐줄 가족도 없다”며 “카지노에서 소액 도박으로 하루 벌어 하루 먹고 살다가 죽어서 한국으로 돌아가지 않겠느냐”고 했다.&lt;br/&gt;&lt;br/&gt;
-    현지에 파견된 한국 경찰 영사는 “뇌병변 등 후유증으로 제대로 걷지도 못하는 이들이 휠체어까지 타고 캄보디아에 와 범죄를 저지르는 경우도 봤다”고 했다. 한국에서 범죄를 저질러 캄보디아로 도주하거나, 현지 카지노에서 돈을 몽땅 잃은 뒤 보이스피싱 범죄에 연루된 이들도 많다고 한다. 한 현지 교민은 “자의로 (범죄 조직에) 들어갔다 아니다 싶으니 한인회나 대사관 등에 ‘탈출을 도와달라’는 연락이 최근 1주일에 한두 건은 온다”며 “정말 사기를 당해 억울하게 조직에 감금된 이도 많지만 처음부터 범죄인 줄 알고 이곳을 찾는 사람들도 늘고 있다”고 했다.&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;한국에서 제대로 취업하기 어려운 사람들이 자발적으로 건너가서 중국인 부하가 되어 조국을 등쳐먹는다... 참...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;뭐 한국만 당하는게 아니라 자기나라 중국이나 일본 전세계가 타겟일텐데, 그 무섭다는 중국 공안들은 뭐하는 걸까요.&lt;/p&gt;
-  &lt;p&gt;타국이라도 크게 개의치 않을거 같은데...&lt;/p&gt;
-  &lt;p&gt;미국은 엄한 중동이나 다른나라 털지말고 저런데 탈탈털면 얼마나 좋을까 하는 상상을 해봅니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033110</guid><pubDate>Mon, 28 Jul 2025 15:43:44 GMT</pubDate></item><item><title>조국 전 대표 책이 나왔나 본데요[1][9]</title><link>https://www.clien.net/service/board/park/19033106</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="123.jpg" class="fr-dib fr-fil full" data-file-sn="15504522" data-gif="false" data-img-height="682" data-img-width="1068" data-role="attach-image" src="https://edgio.clien.net/F01/15504522/7973cb2922c88b.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;문재인 전 대통령께서 추천사를 쓰셨나본데&lt;/p&gt;
-  &lt;p&gt;책방지기님 추천사가 참 아름다워서 들고 와봤습니다&lt;/p&gt;
-  &lt;p&gt; - 존엄을 위한 공부는 쓸쓸하지 않다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033106</guid><pubDate>Mon, 28 Jul 2025 16:03:08 GMT</pubDate></item><item><title>방금전 나온 속보 몇가지 요약본[14][3]</title><link>https://www.clien.net/service/board/park/19033101</link><description>
- 
- 
-  &lt;h1&gt;김건희 특검   윤상현 "윤석열과 공천 관련 통화"…특검에 진술&lt;/h1&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h2&gt;[속보] 삼성전자 테슬라 대규모 수주에 장중 7만원 터치&lt;/h2&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;[속보] 李대통령, 8월 15일 광복절 행사서 '국민 임명식'&lt;/h1&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;[속보] "李대통령 임명식에 前대통령들 초청…尹 부부는 제외"&lt;/h1&gt;
-  &lt;h1&gt;&lt;br/&gt;&lt;/h1&gt;
-  &lt;h1&gt;[속보]대통령실 "美 농축산물 개방 요구 사실…가능한 국내산업 보호"&lt;/h1&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h3&gt;[속보]대통령실 美 협상 목록에 국방비 증액·미국산 무기 구매 포함"&lt;/h3&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;[속보]李 '국민임명식'에 국민 1만여명 초청…"누구나 참여"&lt;/h1&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;[속보]"국민임명식에서 '나의 대통령으로 임명한다' 낭독 예정...낭독자는 공개 어려워"&lt;/h1&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;[속보]"국민임명식에 해외 정상급 초청은 하지 않아···행사전 외교 사절들과 만찬"&lt;/h1&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;[속보]"국민임명식, 역대 대통령 취임식 중 가장 많은 국민 함께 하는 열린 행사"&lt;/h1&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;[속보] 김건희특검 “윤 전 대통령 측, 아직 출석여부 안 밝혀”&lt;/h1&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;[속보] 민주당, 법사위 소위서 '집중투표제' 등 2차 상법 개정안 처리&lt;/h1&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;[속보] 김백 YTN 사장 전격 사임&lt;/h1&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;[속보] 생일상 차려준 아들 총격 살해한 60대 신상정보 비공개 결정&lt;/h1&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h2&gt;[속보] 대통령실 "정치인 사면 검토 시작 안 해"&lt;/h2&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;[속보] 윤석열 전 대통령, 김건희 특검 소환 조사 불출석 가닥&lt;/h1&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그렇다고 합니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="132044257.1.webp" class="fr-dib fr-fil" data-file-sn="15504517" data-gif="false" data-img-height="0" data-img-width="0" data-role="attach-image" src="https://edgio.clien.net/F01/15504517/7973a2714bc457.webp?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033101</guid><pubDate>Mon, 28 Jul 2025 15:29:16 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19033135</guid><pubDate>Mon, 28 Jul 2025 16:14:02 GMT</pubDate></item></channel></rss>
