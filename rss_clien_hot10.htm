@@ -1,5 +1,153 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Thu, 31 Jul 2025 02:00:52 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>수영하는데 인분 '둥둥' 700t 물 교체 후 재발에 이용객들 분통[10][0]</title><link>https://www.clien.net/service/board/park/19034798</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Thu, 31 Jul 2025 03:00:52 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>PC/모바일 Google Sheets로 와이어프레임을 그려보자[2][5]</title><link>https://www.clien.net/service/board/lecture/19034400</link><description>
+ 
+ 
+  &lt;p&gt;요즘은 서비스 기획할 때 와이어프레임도 Figma로 그리는 경우가 대부분입니다. 주로 다음과 같은 장점 때문인 것 같습니다.&lt;/p&gt;
+  &lt;ol&gt;
+   &lt;li&gt;웹 디자이너가 동일한 Figma 환경에서 내가 만든 와이어프레임을 보고 바로 디자인 작업을 시작할 수 있다.&lt;/li&gt;
+   &lt;li&gt;협업하기에 좋다&lt;/li&gt;
+   &lt;li&gt;대세는 Figma&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그런데 제가 지금까지 작업해 왔던 웹사이트/앱들은 디자인적인 요소만으로는 개발자가 이해하기 힘든 부분이 많았기 때문에 Figma에 예시 데이터를 입력해 줘야 했는데 Figma는 디자인 툴이지 데이터 입력에 편리한 툴은 아니기 때문에 작업성과가 잘 나오지 않았습니다. 그래서 저는 주로 Google Sheets에 와이어프레임을 작업하는 편입니다. Google Sheets로 와이어프레임 작업시에는 다음과 같은 장단점이 있습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;장점&lt;/strong&gt;&lt;/p&gt;
+  &lt;ol&gt;
+   &lt;li&gt;데이터를 입력하고 유저의 선택에 따른 다양한 경우의 수를 시뮬레이션 하기 쉽다.&lt;/li&gt;
+   &lt;li&gt;웹에서 데이터를 긁어서 시트에 붙여 넣고 배열만 해 주면 데이터 값들을 쉽게 넣을 수 있다.&lt;/li&gt;
+   &lt;li&gt;메뉴와 버튼, 박스 크기, 마진 등을 픽셀 단위로 지정하지 않아도 되어서 시간이 절약된다.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;단점&lt;/strong&gt;&lt;/p&gt;
+  &lt;ol&gt;
+   &lt;li&gt;중첩된 구성요소는 표현하기 힘들다. 예를 들어 이미지 위에 버튼이 있다거나 하는 부분.&lt;/li&gt;
+   &lt;li&gt;협업시 댓글로 소통할 수 있긴 하지만 알림을 받기 위해서는 설정이 다소 까다롭다.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;여기서는 제가 사이드 프로젝트로 기획했던 장례절차 및 부고문자 서비스의 모바일 앱 와이어프레임을 예로 들어 보겠습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h1&gt;&lt;strong&gt;Google Sheets로 모바일 앱 와이어프레임 만들기 (&lt;/strong&gt;&lt;a href="https://docs.google.com/spreadsheets/d/1neIlgjtYOW5cjIsE4I0PyQA-oj8CqAsf7CrpxXhosp8/edit?gid=8841431#gid=8841431" ori-url="https://docs.google.com/spreadsheets/d/1neIlgjtYOW5cjIsE4I0PyQA-oj8CqAsf7CrpxXhosp8/edit?gid=8841431#gid=8841431" rel="noopener noreferrer" target="_blank"&gt;&lt;strong&gt;&lt;u&gt;링크&lt;/u&gt;&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;)&lt;/strong&gt;&lt;/h1&gt;
+  &lt;p&gt;스샷으로 붙여 넣으니 이미지가 흐릿해 보여서 관심 있으신 분들은 위의 '링크'를 클릭해서 Google Sheets에서 보시는 걸 추천해 드립니다. 참고로, 인도/파키스탄 개발자에게 개발을 맡긴 프로젝트라서 버튼명이나 메시지가 일부 영어로 번역되어 있습니다. googletranslate 함수 사용하면 많은 양의 한국어 텍스트를 한꺼번에 영어 등 다른 언어로 번역할 수 있는 장점도 있다는 점 추가로 알려 드립니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="fu02.PNG" class="fr-dib fr-fil full" data-file-sn="15506026" data-gif="false" data-img-height="770" data-img-width="1813" data-role="attach-image" src="https://edgio.clien.net/F01/15506026/7a048795fd7efd.PNG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;우선 'Obituary workflow' 시트부터 설명 드리겠습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;1. 선 그리기&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;엑셀과 마찬가지로 Google Sheets도 많은 단축키를 지원합니다. 선 그리기에는 다음과 같은 단축키가 사용됩니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;Ctrl+Shft+7 : 박스 그리기&lt;/li&gt;
+   &lt;li&gt;Ctrl+Shft+1 : 윗쪽선 그리기&lt;/li&gt;
+   &lt;li&gt;Ctrl+Shft+2 : 오른쪽선 그리기&lt;/li&gt;
+   &lt;li&gt;Ctrl+Shft+3 : 아랫쪽선 그리기&lt;/li&gt;
+   &lt;li&gt;Ctrl+Shft+4 :  왼쪽 선 그리기&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;strong&gt;2. 이미지 삽입&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;image 함수로 image url 붙여넣기&lt;/li&gt;
+   &lt;li&gt;원하는 이미지 복사해서 셀 안에 삽입 옵션 선택하거나 로컬에서 이미지 업로드&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;제가 사용한 아이콘 이미지들은 &lt;a href="https://www.iconfinder.com/search/icons?family=phosphor-duotone" ori-url="https://www.iconfinder.com/search/icons?family=phosphor-duotone" rel="noopener noreferrer" target="_blank"&gt;&lt;u&gt;Iconfinder&lt;/u&gt;&lt;/a&gt;에서 전부 갖다 쓴 것들입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;3. 셀 합치기/취소&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;셀 합치기 : Alt+H+M+M&lt;/li&gt;
+   &lt;li&gt;셀 합치기 취소 : Alt+H+M+U&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;다음은 'Translations' 시트입니다.&lt;/p&gt;
+  &lt;p&gt;이 시트는 다른 프로젝트에 사용된 토스트 메시지인데  googletranslate 함수로 많은 양의 텍스트를 한번에 번역하는 방법을 보여 드리기 위해 추가로 넣었습니다. 셀 하나만 googletranslate 함수를 입력하신 뒤 나머지 행은 함수를 복붙하시면 됩니다. 한가지 더 팁을 드리자면 보통 다국어 웹사이트의 언어별 텍스트 표시를 위해서 json 파일이나 tsx 파일(Typescript 기준)에 구글 번역 내용을 하나하나 복붙하는 수고를 해야 하는데 아래에 보이는 구글 시트를 Google Sheets API로 연동하면 다국어 사이트 관리도 훨씬 쉽다는 점입니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="fu03.PNG" class="fr-dib fr-fil full" data-file-sn="15506032" data-gif="false" data-img-height="699" data-img-width="1633" data-role="attach-image" src="https://edgio.clien.net/F01/15506032/7a04ff6c09f8d8.PNG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;다음은 'Gemini-generated DB' 시트입니다.  &lt;/p&gt;
+  &lt;p&gt;Google Sheets 우측상단에 보시면 Gemini 버튼이 있습니다. 여기에 대략 '부고장 10개를 임의의 데이터로 만들건데 여기에 들어갈 내용을 표로 만들어 줘'와 같은 프롬프트를 입력하면 아래와 같은 표를 만들어 줍니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="FU04.PNG" class="fr-dib fr-fil full" data-file-sn="15506035" data-gif="false" data-img-height="374" data-img-width="1125" data-role="attach-image" src="https://edgio.clien.net/F01/15506035/7a052fc0783c07.PNG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그럼 이걸 어디에 사용하느냐? 아까 말씀 드린 바와 같이 셀렉트박스에서 필요한 아이템을 가져오기 위해 사용합니다. Google Sheets 메뉴에서는 데이터 - 데이터 확인 - 데이터 확인 규칙 추가로 기능을 구현하시면 됩니다. (자세한 내용은 따로 질문 주시면 알려 드리겠습니다.)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;마지막으로 'table' 시트입니다. &lt;/p&gt;
+  &lt;p&gt;이 시트도 셀렉트박스에서 필요한 아이템을 가져오기 위해 주로 사용합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="FU05.PNG" class="fr-dib fr-fil full" data-file-sn="15506059" data-gif="false" data-img-height="711" data-img-width="1857" data-role="attach-image" src="https://edgio.clien.net/F01/15506059/7a08362669d73e.PNG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;추가로, 링크된 Google Sheets에는 없지만 관리자 사이트의 UI를 구성하거나 API 명세서를 작성할 때도 유용하게 사용할 수 있습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="FU06.PNG" class="fr-dib fr-fil full" data-file-sn="15506060" data-gif="false" data-img-height="903" data-img-width="1433" data-role="attach-image" src="https://edgio.clien.net/F01/15506060/7a087a23c0a901.PNG?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;프로젝트 규모가 크고 협업 인원이 많아지면 기획서, 와이어프레임, API 명세서 작성을 위해 각각의 용도에 맞는 툴을 사용하는 것이 당연히 좋지만 소규모 프로젝트일 경우 이렇게 서비스 기획을 할 수도 있다는 점을 알려 드립니다. 보시면서 궁금하신 점 있으시면 댓글 달아 주세요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;감사합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19034400</guid><pubDate>Wed, 30 Jul 2025 15:25:22 GMT</pubDate></item><item><title>방금 전 최민희의원 페북[1][10]</title><link>https://www.clien.net/service/board/park/19034815</link><description>
+ 
+ 
+  &lt;p&gt;[내공있는 개혁 당대표, 정청래!]&lt;/p&gt;
+  &lt;p&gt;요즘 정청래후보를 보면 "강철은 어떻게 단련되는가?" 란 &lt;a href="" ori-url="" target="_blank"&gt;&lt;/a&gt;소설이 떠오른다. &lt;/p&gt;
+  &lt;p&gt;고온과 담금질 속에서 더 단단해지는 강철처럼 그가 단단하게 다져져가고 있기 때문이다.&lt;/p&gt;
+  &lt;p&gt;아마도 그는 당대표 선거 과정에서 학생운동과 민주화투쟁 과정에서 당한 고문과 투옥 그리고&lt;/p&gt;
+  &lt;p&gt;낙선하고 낙천당하면서 받은 충격과 모멸 보다 더 큰 내면적 시련을 겪고 있을지 모르겠다.&lt;/p&gt;
+  &lt;p&gt;본래 믿는 도끼에 발등 찎히는 게 더 아픈 법, 내란세력의 비난이야 헛지거리로 넘길 수 있지만&lt;/p&gt;
+  &lt;p&gt;같은 쪽 사람들로 부터 듣는 "왕수박"류의 비난은 아무리 이해하고 넘어가려 해도 그냥  넘기기 쉽지 않았을 터이다.&lt;/p&gt;
+  &lt;p&gt;그러나&lt;/p&gt;
+  &lt;p&gt;그는 결코 네가티브를 네가티브로 대응하지 않았다.&lt;/p&gt;
+  &lt;p&gt;때론 풍자와 해학으로 때론 너털웃음으로 네가티브를 허공에 날려버렸다.&lt;/p&gt;
+  &lt;p&gt;참으로 멋지지 아니한가. 그런데 그게 다가 아니었다.&lt;/p&gt;
+  &lt;p&gt;수해복구로 대표경선 일부 일정이 연기된 후 정후보는 거의 모든 시간을 수해현장에서 보냈다.&lt;/p&gt;
+  &lt;p&gt;갈수록 홀쭉해지는 그의 모습이 걱정스러웠다.&lt;/p&gt;
+  &lt;p&gt;다들 정후보가 수해복구에 진심이라고들 했다.&lt;/p&gt;
+  &lt;p&gt;그정도 했음 됐다 싶었지만 그는 수해현장 봉사활동을 멈추지 않았다.&lt;/p&gt;
+  &lt;p&gt;그러다 사진 한 장, 지쳐서 등을 펴지 못한채 쪼그리고 앉은 그의 뒷모습 사진을 보고 비로소 나는 알게 되었다.&lt;/p&gt;
+  &lt;p&gt;정말 힘들었구나...정청래의원, 정말 힘들었구나...&lt;/p&gt;
+  &lt;p&gt;마음이 힘들 땐 지칠 때 까지 몸을 움직이면 견딜 수 있다고 선배들이 말했었다.&lt;/p&gt;
+  &lt;p&gt;군부독재와 싸운다는 것, 정말 힘에 겨웠다. 마음도 그렇게 고달플 수가 없었다. &lt;/p&gt;
+  &lt;p&gt;그래서 참 많이도 걷고 뛰었다. &lt;/p&gt;
+  &lt;p&gt;참 많이 눈물도 흘렸다. 울면서 또 걷고 뛰었다. 그러다보면 견딜만 해졌다.&lt;/p&gt;
+  &lt;p&gt;어쩌면 정청래후보는 수해현장 봉사활동을 하며 비오듯 땀을 흘리면서 몰래 눈물도 많이 흘렸을 지 모른다. &lt;/p&gt;
+  &lt;p&gt;정말 만감이 교차 했겠지...&lt;/p&gt;
+  &lt;p&gt;하지만 당대표 선거 TV토론이 시작되면 그는 다시 개혁의 투사로 오랜시간 단련해온 내공으로 &lt;/p&gt;
+  &lt;p&gt;거침없이 시대정신을 논하고 개혁적 여당대표로서 손색없이 준비된 면모를 과시했다.&lt;/p&gt;
+  &lt;p&gt;당대표선거를 거치며 더 성숙해가는 그를 지켜보는 건 뿌듯한 일이었다!!!&lt;/p&gt;
+  &lt;p&gt;내란세력 일소는 아무나 하는 것이 아니다.&lt;/p&gt;
+  &lt;p&gt;우리에겐 이재명대통령과 호흡을 맞추며 당원과ㆍ지지자 ㆍ시민들과 함께 발맞춰 나갈 수 있는 당대표가 필요하다.&lt;/p&gt;
+  &lt;p&gt;언론개혁ㆍ검찰개혁ㆍ사법 개혁을 몽골기병처럼 빠르고 강력하게 해치울 당대표가 필요하다.&lt;/p&gt;
+  &lt;p&gt;군부독재 종식과 민주화를 위해 긴 시간 싸워온 사람, 민주당을 위해 선당후사한 사람,&lt;/p&gt;
+  &lt;p&gt;윤석열탄핵의 선봉에 선 사람, 이재명대통령 지키기에 전력을 다해온 사람, 한마디로 오랜기간 검증돼온 사람,&lt;/p&gt;
+  &lt;p&gt;그리고 &lt;/p&gt;
+  &lt;p&gt;한 번 시작하면 반드시 성과를 만들어 내는 사람!&lt;/p&gt;
+  &lt;p&gt;내공있는 개혁 당대표 정청래후보에게 압도적 지지를!!!&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="526476139_24014412501584789_1056720044030621571_n.jpg" class="fr-dib fr-fil" data-file-sn="15506718" data-gif="false" data-img-height="640" data-img-width="515" data-role="attach-image" src="https://edgio.clien.net/F01/15506718/7a341f0d88428c.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;깊은밤 9분 전 따끈따끈한 포스트입니다. 줄바꿈만 조금 손봤습니다&lt;/p&gt;
+  &lt;p&gt;차라리 몸을 써야 속이 편하겠다는 생각, 저만 한게 아니었군요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034815</guid><pubDate>Thu, 31 Jul 2025 02:36:57 GMT</pubDate></item><item><title>근데 4천억 투자하는것이 이상한가요?[10][0]</title><link>https://www.clien.net/service/board/park/19034775</link><description>
+ 
+ 
+  &lt;p&gt;우리가 미국에 4천 억 투자 하기로 했다고 한들 &lt;/p&gt;
+  &lt;p&gt;다른 주요국도 마찬가지고 우방이라는 캐나다 미국 밥이라는 멕시코도&lt;/p&gt;
+  &lt;p&gt;저렇게 쳐맞고 있는데 우리라고 뭐 다르겠어요 &lt;/p&gt;
+  &lt;p&gt;유럽은 7천억 달러?? 일본은 5천억 달러  등등&lt;/p&gt;
+  &lt;p&gt;아마도 평소 같으면 도저히 납득할수 없는 ? 결과일것이 뻔한데&lt;/p&gt;
+  &lt;p&gt;이걸 가지고 정부의 협상력 ? 망했네 뭐네 의미없어 보입니다.&lt;/p&gt;
+  &lt;p&gt;그리고 전부터 개인적으로 의심가는것이 트럼프의 이 말도 안되는 비안간적인 &lt;/p&gt;
+  &lt;p&gt;전략 왠지 똘끼 충만한 AI 의 작품이고 AI 써준 대본 각본대로 각국 대하는것 아닌지 모르겠어요 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034775</guid><pubDate>Wed, 30 Jul 2025 23:32:17 GMT</pubDate></item><item><title>수영하는데 인분 '둥둥' 700t 물 교체 후 재발에 이용객들 분통[11][0]</title><link>https://www.clien.net/service/board/park/19034798</link><description>
  
  
   &lt;p&gt;아.. 겨울에 실내수영장에서 생존수영 배울라고 했는데... &lt;/p&gt;
@@ -8,7 +156,7 @@
   &lt;p&gt;연속으로 떵을 두번이나 싸고 튀다니.. &lt;/p&gt;
   &lt;p&gt;제정신이 아닌 사람들 많네요..&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034798</guid><pubDate>Thu, 31 Jul 2025 00:32:47 GMT</pubDate></item><item><title>이동형 작가와 박지훈 변호사의 이야기를 들어볼만 합니다[12][6]</title><link>https://www.clien.net/service/board/park/19034797</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034798</guid><pubDate>Thu, 31 Jul 2025 00:32:47 GMT</pubDate></item><item><title>이동형 작가와 박지훈 변호사의 이야기를 들어볼만 합니다[13][7]</title><link>https://www.clien.net/service/board/park/19034797</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -64,7 +212,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;간만에 강추합니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034771</guid><pubDate>Wed, 30 Jul 2025 23:51:02 GMT</pubDate></item><item><title>이야기 2025년 상반기 세계 최대 판매 자동차 제조사 TOP3[11][3]</title><link>https://www.clien.net/service/board/cm_car/19034723</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034771</guid><pubDate>Wed, 30 Jul 2025 23:51:02 GMT</pubDate></item><item><title>이야기 2025년 상반기 세계 최대 판매 자동차 제조사 TOP3[12][3]</title><link>https://www.clien.net/service/board/cm_car/19034723</link><description>
  
  
   &lt;p style="width: 100%;"&gt;&lt;img alt="" class="fr-fic fr-dii" src="https://dailykanban.com/wp-content/uploads/2025/07/6M25.png" style="max-width: 100%; height: auto;"/&gt;&lt;/p&gt;
@@ -73,7 +221,7 @@
   &lt;p style="width: 100%;"&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p style="width: 100%;"&gt;&lt;a href="https://dailykanban.com/2025/07/30/worlds-largest-automakers-halftime-2025/" target="_blank"&gt;https://dailykanban.com/2025/07/30/worlds-largest-automakers-halftime-2025/&lt;/a&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19034723</guid><pubDate>Wed, 30 Jul 2025 21:28:41 GMT</pubDate></item><item><title>쿠팡 점검 간 노동부 장관[7][12]</title><link>https://www.clien.net/service/board/park/19034800</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19034723</guid><pubDate>Wed, 30 Jul 2025 21:28:41 GMT</pubDate></item><item><title>쿠팡 점검 간 노동부 장관[7][14]</title><link>https://www.clien.net/service/board/park/19034800</link><description>
  
  
   &lt;p&gt;&lt;img alt="c0ac28aa09d83652a95e3210965127a1.png" class="fr-dib fr-fil full" data-file-sn="15506705" data-gif="false" data-img-height="2139" data-img-width="1080" data-role="attach-image" src="https://edgio.clien.net/F01/15506705/7a2ec4b4ae424b.png?scale=width:740"/&gt;&lt;/p&gt;
@@ -87,7 +235,7 @@
   &lt;p&gt;재대로 점검해서 죽지않는 일터 만들어주시길&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034800</guid><pubDate>Thu, 31 Jul 2025 00:47:17 GMT</pubDate></item><item><title>신도림 디큐브시티내 쇼핑몰 이제 다 철수했더군요[15][0]</title><link>https://www.clien.net/service/board/park/19034779</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034800</guid><pubDate>Thu, 31 Jul 2025 00:47:17 GMT</pubDate></item><item><title>신도림 디큐브시티내 쇼핑몰 이제 다 철수했더군요[16][0]</title><link>https://www.clien.net/service/board/park/19034779</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -171,7 +319,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19034668</guid><pubDate>Wed, 30 Jul 2025 19:57:27 GMT</pubDate></item><item><title>해외에 물건 사보고 한국 쇼핑 인증 너무 불편하더라구요[15][3]</title><link>https://www.clien.net/service/board/park/19034761</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19034668</guid><pubDate>Wed, 30 Jul 2025 19:57:27 GMT</pubDate></item><item><title>해외에 물건 사보고 한국 쇼핑 인증 너무 불편하더라구요[16][3]</title><link>https://www.clien.net/service/board/park/19034761</link><description>
  
  
   &lt;p&gt;얼마전에 드론을 해외에서 구매했었는데, &lt;/p&gt;
@@ -195,7 +343,7 @@
   &lt;p&gt;특검팀은 21일 “김건희씨를 2025년 8월6일 오전 10시 자본시장법 위반 등 혐의로 소환 통보했다”고 밝혔다. 보름 이상의 넉넉한 간격을 두고 소환 일정을 알린 것으로, 도이치모터스 주가조작 외에 집사 게이트, 코바나컨텐츠 뇌물성 협찬 의혹, 건진법사를 통한 청탁금지법 위반, 공천 개입 의혹 등 광범위하게 수사를 진행한 뒤 김 여사를 조사하겠다는 전략으로 읽힌다. 특검팀은 또 오는 29일엔 윤석열 전 대통령도 공직선거법 위반 혐의로 조사하겠다고 밝혔다.&lt;/p&gt;
   &lt;p&gt;내일은 명태균 소환조사하고 뜨거운 8월초가 되겠군요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034752</guid><pubDate>Wed, 30 Jul 2025 22:15:42 GMT</pubDate></item><item><title>[단독]집까지 쫒아와 성폭행 시도했는데도 구속영장 기각...이유는?[4][8]</title><link>https://www.clien.net/service/board/park/19034750</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034752</guid><pubDate>Wed, 30 Jul 2025 22:15:42 GMT</pubDate></item><item><title>[단독]집까지 쫒아와 성폭행 시도했는데도 구속영장 기각...이유는?[5][8]</title><link>https://www.clien.net/service/board/park/19034750</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -231,7 +379,7 @@
   &lt;p&gt;아무래도 신지가 그 동안 결혼 안 한 것...  김종민을 좋아해서리 기다린것?&lt;/p&gt;
   &lt;p&gt;김종민이 결혼 하는 바람에 신지가 급하게 결혼 터트린것 아닌지?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034746</guid><pubDate>Wed, 30 Jul 2025 21:52:43 GMT</pubDate></item><item><title>관세협상 정부 제안안.jpg[15][0]</title><link>https://www.clien.net/service/board/park/19034744</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034746</guid><pubDate>Wed, 30 Jul 2025 21:52:43 GMT</pubDate></item><item><title>관세협상 정부 제안안.jpg[15][1]</title><link>https://www.clien.net/service/board/park/19034744</link><description>
  
  
   &lt;p&gt;미국측에서 받아들이면 구글맵 지도 반출, 공공클라우드 규제 문제(CSAP 인증), 망중립성 문제 해결되겠네요&lt;/p&gt;
@@ -363,12 +511,12 @@
     최근 출시된 '갤럭시Z플립7'에 엑시노스 2500이 다시 적용됐지만, 갤럭시S 시리즈가 삼성전자의 주력 제품이기 때문에 플립과는 공급량에서 차이가 있다. 엑시노스 2600 공급은 시스템LSI사업부 운명과 직결된 셈이다.&lt;br/&gt;&lt;br/&gt;
     또 삼성 파운드리 사업에도 영향을 미친다. 삼성전자 시스템LSI사업부가 엑시노스 2600을 설계하면 생산은 파운드리사업부가 전담한다. 엑시노스 2600이 갤럭시S26에 탑재돼야 파운드리사업부도 일감을 확보할 수 있는 구조다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/19034437</guid><pubDate>Wed, 30 Jul 2025 14:05:52 GMT</pubDate></item><item><title>[속보] '건진법사 목걸이 청탁' 통일교 전 간부 윤영호 구속[2][10]</title><link>https://www.clien.net/service/board/park/19034739</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/19034437</guid><pubDate>Wed, 30 Jul 2025 14:05:52 GMT</pubDate></item><item><title>[속보] '건진법사 목걸이 청탁' 통일교 전 간부 윤영호 구속[3][12]</title><link>https://www.clien.net/service/board/park/19034739</link><description>
  
  
   &lt;p&gt;연합뉴스 속보 입니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034739</guid><pubDate>Wed, 30 Jul 2025 21:46:06 GMT</pubDate></item><item><title>김경수도 정말 제대로 맘 고쳐만 먹는다면[23][0]</title><link>https://www.clien.net/service/board/park/19034734</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034739</guid><pubDate>Wed, 30 Jul 2025 21:46:06 GMT</pubDate></item><item><title>김경수도 정말 제대로 맘 고쳐만 먹는다면[24][0]</title><link>https://www.clien.net/service/board/park/19034734</link><description>
  
  
   &lt;p&gt;대권후보로도 나설수 있다는 생각이 드는데...&lt;/p&gt;
@@ -675,7 +823,7 @@
   &lt;p&gt;4. 결론&lt;/p&gt;
   &lt;p&gt;- 현재 할인 200해도 취득세까지 하면 5,400에 가까운 가격인데..시승 느낌은 참 괜찮았습니다만 솔직히 가격대가 너무 오버입니다. 환율도 금방 떨어질것 같지않고, 혼다도 굳이 더 들여와서 할인해 팔 생각은 없어보이네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19034602</guid><pubDate>Wed, 30 Jul 2025 18:31:41 GMT</pubDate></item><item><title>서영교 의정평가 300명중 1위...ㅠㅠ[14][41]</title><link>https://www.clien.net/service/board/park/19034667</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19034602</guid><pubDate>Wed, 30 Jul 2025 18:31:41 GMT</pubDate></item><item><title>서영교 의정평가 300명중 1위...ㅠㅠ[14][42]</title><link>https://www.clien.net/service/board/park/19034667</link><description>
  
  
   &lt;p&gt;&lt;img alt="1817.jpg" class="fr-dib fr-fil full" data-file-sn="15506510" data-gif="false" data-img-height="1576" data-img-width="1080" data-role="attach-image" src="https://edgio.clien.net/F01/15506510/7a1e45d08c13b7.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -694,7 +842,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;이유가 없는 지지입니다 저는 개인소신껏 하겠습니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034648</guid><pubDate>Wed, 30 Jul 2025 19:16:16 GMT</pubDate></item><item><title>[단독] 병장보다 낮은 하사 월급 확 올린다…李정부, 5년간 초급간부 월급 300만원 넘긴[15][19]</title><link>https://www.clien.net/service/board/park/19034642</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034648</guid><pubDate>Wed, 30 Jul 2025 19:16:16 GMT</pubDate></item><item><title>[단독] 병장보다 낮은 하사 월급 확 올린다…李정부, 5년간 초급간부 월급 300만원 넘긴[16][20]</title><link>https://www.clien.net/service/board/park/19034642</link><description>
  
  
   &lt;p&gt;낮은 처우와 복지 문제로 '군 간부 이탈'이 폭증하는 가운데, 이재명 정부에서 임기 동안 군 초급간부의 초봉 월급을 현행 200만원 안팎에서 300만원대까지 단계적으로 인상하는 국방개혁안을 국정과제 초안에 반영한 것으로 확인됐다.&lt;/p&gt;
@@ -729,7 +877,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034569</guid><pubDate>Wed, 30 Jul 2025 17:19:35 GMT</pubDate></item><item><title>LG “엑사원 4.0 잠재력 증명했다”…글로벌 11위 韓 기준 1위[2][6]</title><link>https://www.clien.net/service/board/news/19034509</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034569</guid><pubDate>Wed, 30 Jul 2025 17:19:35 GMT</pubDate></item><item><title>LG “엑사원 4.0 잠재력 증명했다”…글로벌 11위 韓 기준 1위[2][7]</title><link>https://www.clien.net/service/board/news/19034509</link><description>
  
  
   &lt;p&gt; “이번 결과는 LG의 엑사원이 세계 최고 수준의 프런티어 AI 모델들과 경쟁할 수 있는 지능과 잠재력을 갖추고 있다는 것을 증명한 것이다. 글로벌 AI 3대 강국 달성을 위해 세계 최고 수준의 AI 모델 개발을 위한 도전을 이어갈 것이다.”&lt;/p&gt;
@@ -787,7 +935,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;할 말이 없습니다. ㅋㅋㅋㅋㅋㅋ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034613</guid><pubDate>Wed, 30 Jul 2025 18:23:55 GMT</pubDate></item><item><title>민주당 의원들 정치 생명 끊어버릴 작정이신가요?[115][101]</title><link>https://www.clien.net/service/board/park/19034611</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034613</guid><pubDate>Wed, 30 Jul 2025 18:23:55 GMT</pubDate></item><item><title>민주당 의원들 정치 생명 끊어버릴 작정이신가요?[121][101]</title><link>https://www.clien.net/service/board/park/19034611</link><description>
  
  
   &lt;p&gt;너무 나서서 이런글 쓰면 설레발이라고 메모될까봐 꺼림찍하기는 합니다만, &lt;/p&gt;
@@ -832,42 +980,4 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034611</guid><pubDate>Wed, 30 Jul 2025 18:26:10 GMT</pubDate></item><item><title>트럼프 이후도 문제죠[12][1]</title><link>https://www.clien.net/service/board/park/19034608</link><description>
- 
- 
-  &lt;p&gt;트럼프가 한 짓이 통했으니&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다음 미국 대통령도 트럼프처럼 행동 할 가능성이 크죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이제 우리는 경제구조를 바꿔야한다는 고민을 진지하게  시작해야합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;무역 흑자에 집착할수록 지금 같은 삥 뜯기과 무역 적자국에 대한 경제적 열세는 계속 있을겁니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;결국 내수를 키워서 초과공급을 국내에서 소화해야합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아니면 공급(제조업의 실업)을 줄이던가요. 또는제조업이 아닌 서비스업으로의 구조변화를 해야죠&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034608</guid><pubDate>Wed, 30 Jul 2025 18:11:12 GMT</pubDate></item><item><title>또 댓글부대 창궐했나요?[4][9]</title><link>https://www.clien.net/service/board/park/19034605</link><description>
- 
- 
-  &lt;p&gt;최근들어 유튜브나, 뉴스, 조작 글등 너무나 어수선하고 어지럽네요&lt;/p&gt;
-  &lt;p&gt;온라인과 오프라인 반응이 너무 다릅니다.&lt;/p&gt;
-  &lt;p&gt;이상해요.&lt;/p&gt;
-  &lt;p&gt;뭔가가 또 조직적으로 개입된 것 같은 추측입니다..&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034605</guid><pubDate>Wed, 30 Jul 2025 18:18:43 GMT</pubDate></item><item><title>의사 부족한데 병상·장비만 넘쳐…OECD가 드러낸 민낯[40][0]</title><link>https://www.clien.net/service/board/park/19034604</link><description>
- 
- 
-  &lt;p&gt;의사는 부족한데 병상과 장비는 넘치고, 의료 이용은 세계 최고 수준이다. 고령화와 비급여 확대 등으로 의료비는 국내총생산(GDP) 대비 8.5%를 넘어 빠르게 늘고 있다. 의정 갈등으로 의대 증원 논의가 멈춘 가운데, 경제협력개발기구(OECD) 보건 통계는 한국 의료의 민낯을 드러냈다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;보건복지부가 30일 공개한 ‘OECD 보건 통계 2025’에 따르면, 2023년 기준 한국의 임상 의사 수(한의사 포함)는 인구 1000명당 2.66명으로, OECD 30개국(평균 3.86명) 중 일본(2.65명) 다음으로 적었다. 한의사를 제외하면 사실상 최하위다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;의학 계열 졸업자 수도 인구 10만 명당 7.4명으로, OECD 평균(14.3명)의 절반 수준이다. 이스라엘(7.2명), 캐나다(7.3명)에 이어 세 번째로 적다. 고령화 속 의사 부족 경고가 수년째 이어졌지만, 의사 반발에 밀려 의대 증원은 멈춰 섰다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;반면 ‘돈이 되는’ 병상과 장비는 과잉이다. 병원 병상 수는 인구 1000명당 12.6개로 OECD 1위였고, MRI는 인구 100만 명당 38.7대, CT는 45.3대로, OECD 평균(MRI 21.2대·CT 31.1대)을 크게 웃돌았다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;과잉 공급은 과잉 이용으로 이어졌다. CT 이용량은 인구 1000명 당 333.5건으로, OECD 국가 중 가장 많았다. OECD 평균은 177.9건이다. CT 이용량은 연평균 8.3%, MRI는 13.2%씩 늘고 있다. 국민 1인당 외래 진료 횟수는 연 18.0회로 OECD 1위이자, 평균(6.5회)보다 3배 많다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;생각해볼만한 점이 있는 통계네요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034604</guid><pubDate>Wed, 30 Jul 2025 18:10:59 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19034611</guid><pubDate>Wed, 30 Jul 2025 18:26:10 GMT</pubDate></item></channel></rss>
