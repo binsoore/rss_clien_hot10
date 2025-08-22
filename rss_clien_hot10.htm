@@ -1,5 +1,396 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Fri, 22 Aug 2025 14:01:03 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 가속하면서 끼어드는 게 그렇게 기름이 아까울까요?[37][0]</title><link>https://www.clien.net/service/board/cm_car/19047495</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Fri, 22 Aug 2025 15:01:00 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 테슬라 BMS_A079 불량 급증에 대한 조사와 저의 추정[12][0]</title><link>https://www.clien.net/service/board/cm_car/19047541</link><description>
+ 
+ 
+  &lt;p&gt;많은 분들이 파나소닉 배터리 셀의 열화를 의심합니다.&lt;/p&gt;
+  &lt;p&gt;저는 여러 정보들을 토대로 설계 취약점 + 특정 로트 조립불량으로 인한 진행성 불량 (신뢰성 불량)으로 판단하게 되었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;- 주행거리 무관하게 나타납니다.&lt;/p&gt;
+  &lt;p&gt;- 급속 완속 비율 무관합니다.&lt;/p&gt;
+  &lt;p&gt;- 여름철 급증하기 시작했습니다.&lt;/p&gt;
+  &lt;p&gt;- 특정 브릭(병렬로 묶인 원통형 배터리 셀의 다발)의 전압 강하로 인한 브릭간 전압 불균형(imbalance)가 일정 수준 이상이 되면 발생하고 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://evclinic.eu/2024/12/08/tesla-model-3-y-why-its-crucial-to-address-battery-issues-immediately-and-not-wait/" target="_blank"&gt;https://evclinic.eu/2024/12/08/tesla-model-3-y-why-its-crucial-to-address-battery-issues-immediately-and-not-wait/&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;해외의 배터리 수리 업체가 뜯어보고 설계 결함을 지적한 내용입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;많은 사람들이 원통형 배터리를 알카라인 건전지처럼 생각해서 튀어나온 쪽 +, 바닥 평평한쪽 -니까 위 아래로 배선을 연결했겠구나 생각합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그런데 테슬라의 2170 배터리팩은 버스바가 아래쪽에 있고, 아래 방향에서 +, -가 모두 용접 된다고 합니다. 이로 인해 온습도 변화로 결로가 생기거나 팩에 손상이 되어 외부에서 물이 유입되는 등의 상황이 생기면 이로 인한 쇼트가 생길 수도 있고, 부식이 생길 수도 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;최근 배터리 교체 해야한다는 판정 받은 분의 배터리에 물이 고여 있었다는 이야기도 있었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;얻은 정보들을 통한 제 가설입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;브릭에서 특정 셀이 쇼트가 나면 셀퓨즈가 터져 끊어질 것이고, 부식으로 떨어져 나가도 마찬가지로 셀 하나가 이탈할겁니다. 그러면 브릭은 병렬 연결이기 때문에 96개 직렬로 전압을 만드는 브릭 중 하나가 용량이 적은 상태가 됩니다. 같은 충전량을 넣었을때 전압 커브가 달라집니다. 그리고 이러한 현상이 여러 셀이 죽었을 때는 전압 편차가 크게 나타날거고 전압 불균형으로 에러를 띄우게 됩니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이러한 가설의 힌트가 된 내용이 며칠 전 모카에 나왔던 내용인데요. 테슬라에서 일했던 직원 분이 리만 배터리가 재활용 배터리가 아닐 것이라며  수천개의 배터리 셀을 용접하면 한두개씩 안 붙는 불량이 나오고, 이로 인해 전체 용량이 좀 부족하게 나오는 팩을 리매뉴팩처드 배터리로 공급하고 있을것이라는 추측을 말씀해 주셨습니다. (그러니까 시작 용량이 적은데도 거기서부터 빠른 열화가 진행됩니다. 열화가 안정화된 용량이 아니니까요) 새 차를 받아도 완충 용량이 조금씩 달랐던 것은 전체 팩 4400개 셀에서 1~2개 죽은건 양품 처리를 했기 때문일지 모릅니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;화재가 퍼져나가는 현상을 지연 시키고 냉각에 도움이 되기 위해서 레진을 채웠을텐데, 응축수로 인한 쇼트를 막기 위해 바닥까지 채워지도록 주입 하려고 했을 것 같습니다. 그런데 공정조건이 안정화가 덜 된 상황에서 작업하면서 주입이 덜 된 곳이 생기고, 부분적으로 셀이 죽어나가기 시작하고, 이 현상이 여름철 장마, 폭염 등으로 가속화 되면서 최근 급증한 것이 아닐까 생각 됩니다. 이 가설대로라면 당시 생산된 거의 모든 차는 잠재적으로 시간 흐름에 따라 불량이 발생하게 될 운명입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이건 누군가 보증기간 지난 분이 배터리를 자비 교체하고 고장난 배터리를 받아서 까보면 증명이 될텐데 그러긴 힘들겠죠. 아마 테슬라는 당연히 인지하고 있을겁니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;점점 공론화가 시작되고 있는 단계인데요. 빨리 국토부가 쎄게 물어줬음 좋겠습니다. 나몰라라 하고 있는 테슬라 코리아 대신 본사가 인지하게 만들고 평생보증이든 개선품 교환 리콜이든 받아내야지요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19047541</guid><pubDate>Fri, 22 Aug 2025 14:30:03 GMT</pubDate></item><item><title>이야기 서울 영동대교 남단 올림픽대교 합류구간 하남방향 상시정체[13][1]</title><link>https://www.clien.net/service/board/cm_car/19047522</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="화면 캡처 2025-08-22 134218.png" class="fr-dib fr-fil full" data-file-sn="15525510" data-gif="false" data-img-height="1055" data-img-width="1162" data-role="attach-image" src="https://edgio.clien.net/F01/15525510/811a8644021ea9.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="화면 캡처 2025-08-22 134321.png" class="fr-dib fr-fil full" data-file-sn="15525511" data-gif="false" data-img-height="1068" data-img-width="1411" data-role="attach-image" src="https://edgio.clien.net/F01/15525511/811a897e0b3015.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="화면 캡처 2025-08-22 134354.png" class="fr-dib fr-fil full" data-file-sn="15525512" data-gif="false" data-img-height="938" data-img-width="1332" data-role="attach-image" src="https://edgio.clien.net/F01/15525512/811a8ab00d6df5.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;외근 때 여기 이용할 때마다 답답해서 수명이 깎이는 느낌입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;올림픽대교 진입하는 차, 반대차선에서 공중부양으로 유턴하는 차로, 코엑스 나가는차, 분당수서진입로까지 4방향을 합쳐놔서 낮에도 막히고 밤에도 막히고 심지어 새벽에도 막히는 곳인데요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;정말 이게 최선일까 하는 생각이 드네요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;퇴근할때 동부간선-내부순환 진입로도 강변북로 진입차와 성수대교북단진입차를 섞어놔서 대환장파티인데&lt;/p&gt;
+  &lt;p&gt;여기 영동대교 남단이 한수 위라고 보이네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;제가 예전에 노원구 월계지하차도 교통흐름 개선의견을 내서 공사가 실제로 된 적이 있는데요.&lt;/p&gt;
+  &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/cm_car/18017379" target="_blank"&gt;https://www.clien.net/service/board/cm_car/18017379&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;여기도 어떻게 차선만 바꿔그려서 뭐가 될까? 고민을 해보는데 답이 없네요. ㅎㅎ &lt;/p&gt;
+  &lt;p&gt;입체로로 영동대교 남단에서 진입하는 차를 1차로 쪽으로 빼야할 것 같은데 그러자니 이미 있는 유턴우회로가 걸리고..&lt;/p&gt;
+  &lt;p&gt;그럼 코엑스로 나가는차, 분당수서 나가는 차들을 미리 지하로 빼자니 바로 밑이 한강이라 이게 될까 싶고..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;토목이 안들어가고 해결을 하는 길은 없어보입니다. &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19047522</guid><pubDate>Fri, 22 Aug 2025 13:53:37 GMT</pubDate></item><item><title>이야기 유사과학 - 으르렁 터보 '녹색기술인증' 획득[10][0]</title><link>https://www.clien.net/service/board/cm_car/19047511</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="fdd84ae9-869d-41aa-83b4-c4e03c990b75.png" class="fr-dib fr-fil full" data-file-sn="15525480" data-gif="false" data-img-height="1024" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/15525480/81195180fda1d0.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="405fd59f-490e-460d-bec1-1cc1a24c92fc.jpg" class="fr-dib fr-fil" data-file-sn="15525481" data-gif="false" data-img-height="600" data-img-width="595" data-role="attach-image" src="https://edgio.clien.net/F01/15525481/8119530fc246bd.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://www.joongang.co.kr/article/25360129" target="_blank"&gt;https://www.joongang.co.kr/article/25360129&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;"이 장치는 이공계 석·박사 출신 연구진이 5년간 개발한 성과다. 와류장치(Vortex Generator)를 적용해 엔진의 공기 흡입과 배출을 조절, 완전연소를 유도한다. 이를 통해 ▲공기 흐름 개선 ▲열·소음 감소 ▲부품 마모 최소화 효과를 얻을 수 있다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;실제 대형 버스·트럭에 적용한 결과, 하루 300km 주행 기준 경유 15리터 이상의 절감 효과가 확인됐다. 이는 연간 수천만 원의 연료비 절감으로 이어지며, 경제성과 환경성을 동시에 갖춘 기술로 평가된다. "&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;[출처:중앙일보] &lt;a href="https://www.joongang.co.kr/article/25360129" target="_blank"&gt;https://www.joongang.co.kr/article/25360129&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h3 data-role="cut-string"&gt;전세계 모든 완성차 업체 씹어먹는 연비개선 장치.jpg&lt;/h3&gt;
+  &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/park/18805452" target="_blank"&gt;https://www.clien.net/service/board/park/18805452&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="7491514059_6761627_9d03fe7348b9efd064f44e6b3a12ff64.jpg" class="fr-fic fr-dii full" data-file-sn="15196479" data-gif="false" data-img-height="720" data-img-width="1280" data-role="attach-image" src="https://edgio.clien.net/F01/15196479/19e5e512c286ce.jpg?scale=width:740"/&gt; &lt;img alt="21fc692ac4c3e00024a5e2ec996041ad.png" class="fr-fic fr-dii full" data-file-sn="15196482" data-gif="false" data-img-height="1143" data-img-width="965" data-role="attach-image" src="https://edgio.clien.net/F01/15196482/19e5e53b2877e8.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;ㅋㅋㅋ 무동력인데 어떻게 도움이되나..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;으르렁 터보&lt;/strong&gt;는 실제 과학적 원리와 무관한 장난감 수준의 소음 발생 장치다.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;엔진 출력, 연비, 효율에는 &lt;strong&gt;아무런 영향도 주지 않는다&lt;/strong&gt;.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;단지 바람 소리를 과장해 터보차저처럼 느끼게 하는 &lt;strong&gt;심리적 효과&lt;/strong&gt;에 불과하다.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;실제 터보차저의 복잡한 공기 압축·연소 원리를 전혀 구현하지 못한다.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;결국 돈만 낭비하는 &lt;strong&gt;유사과학 사기성 상품&lt;/strong&gt;이다.&lt;/p&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;라고 챗지피티가 대답하네요. 판사님 저는 아무말도 하지않았습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19047511</guid><pubDate>Fri, 22 Aug 2025 13:30:50 GMT</pubDate></item><item><title>이야기 벤츠에 들어가는 BMW 의 엔진 (외신)[10][1]</title><link>https://www.clien.net/service/board/cm_car/19047451</link><description>
+ 
+ 
+  &lt;h3&gt;&lt;strong&gt;[오늘 안그래도 해석해둘라고 따로 뺴놯는데 국내소식에 바로올라와서 가져와봅니다..ㅎㅎ]&lt;/strong&gt;&lt;/h3&gt;
+  &lt;h3&gt;&lt;br/&gt;&lt;/h3&gt;
+  &lt;h3&gt;&lt;strong&gt;당신의 다음 벤츠에는 BMW 엔진이 탑재될 수 있습니다&lt;img alt=" Your Next Mercedes Could Have A BMW Engine" class="fr-fic fr-dii" sizes="(min-width: 1300px) 832px, (min-width: 1055px) calc(100vw - 372px), 100vw" src="https://www.carscoops.com/wp-content/uploads/2025/08/BMW-VS-Mercedes-main-1024x576.jpg" srcset="https://www.carscoops.com/wp-content/uploads/2025/08/BMW-VS-Mercedes-main.jpg 2500w, https://www.carscoops.com/wp-content/uploads/2025/08/BMW-VS-Mercedes-main-400x225.jpg 400w, https://www.carscoops.com/wp-content/uploads/2025/08/BMW-VS-Mercedes-main-1024x576.jpg 1024w, https://www.carscoops.com/wp-content/uploads/2025/08/BMW-VS-Mercedes-main-768x432.jpg 768w, https://www.carscoops.com/wp-content/uploads/2025/08/BMW-VS-Mercedes-main-1536x864.jpg 1536w, https://www.carscoops.com/wp-content/uploads/2025/08/BMW-VS-Mercedes-main-2048x1152.jpg 2048w" width="2500"/&gt;&lt;/strong&gt;&lt;/h3&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;요약: 두 라이벌 자동차 회사가 엔진 공급 계약을 협상 중이며, 성사될 경우 2027년까지 BMW 엔진이 벤츠 차량에 탑재될 수 있습니다.&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;메르세데스-벤츠와 BMW는 오랫동안 자동차 세계에서 가장 치열한 라이벌 관계를 유지해 왔지만, 때로는 이런 경쟁자들도 공동의 이익을 위해 손을 잡기도 합니다. 최근 보도에 따르면, 메르세데스는 BMW로부터 4기통 엔진을 공급받는 방안을 검토하고 있습니다. 이는 브랜드가 완전한 전동화 라인업으로 전환하는 속도를 조절하면서, 미래 내연기관 모델의 개발 비용을 절감하기 위한 움직임입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 소식은 독일의 '매니저 매거진(Manager Magazin)'을 통해 처음 알려졌으며, BMW 엔진을 탑재한 최초의 벤츠 모델이 빠르면 2027년에 등장할 수 있다고 언급했습니다. 또한, 양측의 논의는 단순한 엔진 공급을 넘어 변속기, 심지어는 전동화 파워트레인 전체를 공유하는 가능성까지 확장되어, 단순한 거래 이상의 깊은 협력이 이루어질 수 있음을 시사하고 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h4&gt;&lt;strong&gt;변화하는 우선순위&lt;/strong&gt;&lt;/h4&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 제휴가 성사된다면, 메르세데스는 미래의 4기통 모델에 대한 연구개발(R&amp;amp;D) 비용을 획기적으로 줄이고, 대신 6기통 및 8기통 엔진 개발에 자원을 집중할 수 있게 됩니다. 반면 BMW는 오스트리아 슈타이어(Steyr) 공장의 남는 생산 능력을 활용하면서 수익을 증대시키는 이점을 얻게 됩니다.&lt;/p&gt;
+  &lt;p&gt;영국의 오토카(Autocar)에 따르면, 한 메르세데스 내부 소식통은 이 논의가 "상당히 높은 수준의 계획 및 협상 단계"에 있으며, 공식 발표는 2025년 말 이전에 있을 것으로 예상된다고 전했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h4&gt;&lt;strong&gt;왜 BMW 엔진인가?&lt;/strong&gt;&lt;/h4&gt;
+  &lt;p&gt;&lt;span class="fr-img-caption fr-fic fr-dii fr-draggable" draggable="false" style="width: 789px;"&gt;&lt;span class="fr-img-wrap"&gt;&lt;img alt="https://www.carscoops.com/wp-content/uploads/webp/2025/03/2026-Mercedes-CLA-313-24-1024x682.webp" class="fr-fic fr-dii" src="https://www.carscoops.com/wp-content/uploads/webp/2025/03/2026-Mercedes-CLA-313-24-1024x682.webp"/&gt;&lt;span class="fr-inner"&gt;신형 CLA 에 들어가는 지리와 합작의 1.5리터 4기통 M252엔진&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;메르세데스는 이미 중국의 지리(Geely) 자동차와 엔진 공급 계약을 맺고 있으며, 마일드 하이브리드 CLA 모델에 사용되는 1.5리터 4기통 터보 엔진(M252)을 생산하고 있습니다. 하지만 북미와 같은 시장에서는 BMW와 같은 유럽 파트너가 더 적합할 수 있으며, 계속해서 확장되는 벤츠의 다양한 모델 라인업에 대한 해결책을 제공할 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;span class="fr-img-caption fr-fic fr-dii fr-draggable" draggable="false" style="width: 789px;"&gt;&lt;span class="fr-img-wrap"&gt;&lt;img alt="BMW-b48-engine" class="fr-fic fr-dii" sizes="(max-width: 1200px) 100vw, 1200px" src="https://bmwtuning.co/wp-content/uploads/2023/07/bmw-b48-engine.jpg" srcset="https://bmwtuning.co/wp-content/uploads/2023/07/bmw-b48-engine.jpg 1200w, https://bmwtuning.co/wp-content/uploads/2023/07/bmw-b48-engine-300x200@2x.jpg 600w, https://bmwtuning.co/wp-content/uploads/2023/07/bmw-b48-engine-300x200.jpg 300w, https://bmwtuning.co/wp-content/uploads/2023/07/bmw-b48-engine-1024x684.jpg 1024w, https://bmwtuning.co/wp-content/uploads/2023/07/bmw-b48-engine-768x513.jpg 768w" width="1200"/&gt;&lt;img alt="BMW B48: Reliability, Efficiency and Tuning" src="https://cdn.bmwblog.com/wp-content/uploads/2020/03/The-new-BMW-M235i-xDrive-Gran-Coupe-F44-UK-34-830x553.jpg"/&gt;&lt;img alt="Mini Cooper S F55 2.0 Petrol B48 Engine B48A20A 141KW 192PS Engine Moteur |  eBay" src="https://i.ebayimg.com/images/g/1WUAAOSwA3dYkNwN/s-l400.jpg"/&gt;&lt;span class="fr-inner"&gt;BMW B48 엔진 및 미니 B48&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;현재 고려 중인 옵션 중 하나는 BMW의 &lt;strong&gt;B48 터보차저 2.0리터 엔진&lt;/strong&gt;입니다. 이 엔진은 이미 다양한 BMW와 미니 모델에 탑재되어 검증을 마친 유닛입니다. 특히 엔진을 세로(종감속) 및 가로(횡감속) 방식으로 모두 배치할 수 있어 활용도가 높고, 플러그인 하이브리드(PHEV) 시스템을 지원하며 특정 차량에서는 주행거리 연장용 엔진(Range-Extender)으로도 사용될 수 있는 잠재력을 가지고 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h4&gt;&lt;strong&gt;더 큰 그림&lt;/strong&gt;&lt;/h4&gt;
+  &lt;p&gt;&lt;img alt="Mini 2.0L B48 Turbo I-4 Engine" class="fr-fic fr-dii" sizes="450px" src="https://static.wixstatic.com/media/b2046c_3faa5c6098744398a56d717b6ab6a7b9~mv2.jpg/v1/fill/w_450,h_400,al_c,q_80,enc_avif,quality_auto/b2046c_3faa5c6098744398a56d717b6ab6a7b9~mv2.jpg" srcset="https://static.wixstatic.com/media/b2046c_3faa5c6098744398a56d717b6ab6a7b9~mv2.jpg/v1/fill/w_450,h_400,al_c,q_80,enc_avif,quality_auto/b2046c_3faa5c6098744398a56d717b6ab6a7b9~mv2.jpg 1x, https://static.wixstatic.com/media/b2046c_3faa5c6098744398a56d717b6ab6a7b9~mv2.jpg/v1/fill/w_540,h_480,al_c,lg_1,q_80,enc_avif,quality_auto/b2046c_3faa5c6098744398a56d717b6ab6a7b9~mv2.jpg 2x" width="450"/&gt;&lt;img alt="" class="fr-fic fr-dii" sizes="(max-width: 930px) 100vw, 930px" src="https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-930x620.png" srcset="https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-930x620.png 930w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-300x200@2x.png 600w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-300x200.png 300w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-416x277.png 416w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-356x237.png 356w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-296x197.png 296w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-336x224.png 336w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-246x164.png 246w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-756x504.png 756w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-608x405.png 608w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-696x464.png 696w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-516x344.png 516w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-455x303.png 455w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-368x245.png 368w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-294x196.png 294w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-338x225.png 338w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-248x165.png 248w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-306x204.png 306w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine.png 2000w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-930x620@2x.png 1860w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-416x277@2x.png 832w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-356x237@2x.png 712w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-296x197@2x.png 592w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-336x224@2x.png 672w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-246x164@2x.png 492w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-756x504@2x.png 1512w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-608x405@2x.png 1216w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-696x464@2x.png 1392w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-516x344@2x.png 1032w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-455x303@2x.png 910w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-368x245@2x.png 736w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-294x196@2x.png 588w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-338x225@2x.png 676w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-248x165@2x.png 496w, https://bmwtuning.co/wp-content/uploads/2020/07/B48-Engine-306x204@2x.png 612w" width="930"/&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;만약 이 파트너십이 현실화된다면, 두 회사는 유럽을 넘어 공동 생산을 확대할 수도 있습니다. 핵심 시장인 미국에서 관세를 피하고 제조 비용을 분담하기 위해 공동 파워트레인 시설을 짓는 방안도 가능성으로 거론되고 있습니다.&lt;/p&gt;
+  &lt;p&gt;메르세데스뿐만 아니라 많은 자동차 제조사들이 전동화 전환 시간표를 재검토하고 있습니다. 예상보다 더딘 전기차(EV) 수요 증가는 여러 브랜드가 보다 유연한 입장을 취하게 만들었고, 메르세데스 역시 이러한 변화를 공개적으로 인정했습니다. 올라 칼레니우스(Ola Källenius) CEO는 최근 이러한 변화를 **"궤도 수정(course correction)"**이라고 표현하며, 전동화된 내연기관 엔진이 원래 계획보다 더 오랫동안 라인업의 일부로 남을 것임을 확인했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://www.carscoops.com/2025/08/your-next-mercedes-could-have-a-bmw-engine/" target="_blank"&gt;https://www.carscoops.com/2025/08/your-next-mercedes-could-have-a-bmw-engine/&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;재미니 해석본입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="https://www.carscoops.com/wp-content/uploads/webp/2023/06/2024-BMW-X1-M35i-xDrive-29-1024x683.webp" class="fr-fic fr-dii" src="https://www.carscoops.com/wp-content/uploads/webp/2023/06/2024-BMW-X1-M35i-xDrive-29-1024x683.webp"/&gt;&lt;img alt="" class="fr-fic fr-dii" sizes="(max-width: 1621px) 100vw, 1621px" src="https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-19.jpg" srcset="https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-19.jpg 1621w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-19-830x553.jpg 830w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-19-1537x1024.jpg 1537w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-19-768x512.jpg 768w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-19-1536x1023.jpg 1536w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-19-300x200.jpg 300w" width="1621"/&gt;&lt;img alt="" class="fr-fic fr-dii" sizes="(max-width: 830px) 100vw, 830px" src="https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-11-830x553.jpg" srcset="https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-11-830x553.jpg 830w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-11-1537x1024.jpg 1537w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-11-768x512.jpg 768w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-11-1536x1023.jpg 1536w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-11-300x200.jpg 300w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-11.jpg 1621w" width="830"/&gt;&lt;img alt="" class="fr-fic fr-dii" sizes="(max-width: 830px) 100vw, 830px" src="https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-15-830x553.jpg" srcset="https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-15-830x553.jpg 830w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-15-1537x1024.jpg 1537w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-15-768x512.jpg 768w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-15-1536x1023.jpg 1536w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-15-300x200.jpg 300w, https://cdn.bmwblog.com/wp-content/uploads/2022/10/MINI-Clubman-JCW-15.jpg 1621w" width="830"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="mini_john_cooper_works_clubman_0719_039.webp" class="fr-dib fr-fil full" data-file-sn="15525403" data-gif="false" data-img-height="549" data-img-width="976" data-role="attach-image" src="https://edgio.clien.net/F01/15525403/81134895af55a8.webp?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="mini_john_cooper_works_clubman_0719_045.webp" class="fr-dib fr-fil full" data-file-sn="15525404" data-gif="false" data-img-height="549" data-img-width="976" data-role="attach-image" src="https://edgio.clien.net/F01/15525404/81134a77f293f0.webp?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="mini_john_cooper_works_clubman_0719_074.webp" class="fr-dib fr-fil full" data-file-sn="15525405" data-gif="false" data-img-height="549" data-img-width="976" data-role="attach-image" src="https://edgio.clien.net/F01/15525405/81134b91645771.webp?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="mini_john_cooper_works_clubman_0719_136.webp" class="fr-dib fr-fil full" data-file-sn="15525406" data-gif="false" data-img-height="549" data-img-width="976" data-role="attach-image" src="https://edgio.clien.net/F01/15525406/81134c4a274192.webp?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;[전 개인적으로// X1 , X2 보단.. 미니 클럽맨이 조금더 이쁘네요..] [브리티쉬? 레이싱 그린과 투톱으로 멜팅 실버도 갠춘한듯..]&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;스톡으로 181부터 302마력까지 낼수있다네요..&lt;/p&gt;
+  &lt;p&gt;20i 는 저마력 / 30i 는 252~258마력사이 / 302마력에는 강화크랭크랑 베어링 피스톤이 들어가고 토크또한 다양하네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;Mini B48, 2.0L Turbo&lt;/h2&gt;
+  &lt;p&gt;-F54 Mini Clubman B48 2.0 (2016-2020)&lt;/p&gt;
+  &lt;p&gt;-F57 Mini Convertible B48 2.0 (2016-2020)&lt;/p&gt;
+  &lt;p&gt;-F56 Mini Cooper B48 2.0 (2014-2016)&lt;/p&gt;
+  &lt;p&gt;-F60 Mini Countryman B48 2.0 (2017-2020)&lt;/p&gt;
+  &lt;p&gt;-F56 Mini Hardtop 2 Door B48 2.0 (2017-2020)&lt;/p&gt;
+  &lt;p&gt;-F55 Mini Hardtop 4 Door B48 2.0 (2017-2020)&lt;/p&gt;
+  &lt;p&gt;-F56 Mini John Cooper Works B48 2.0 (2015-2020)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h4&gt; BMW’s use the B48 Engine?&lt;span class="out_img"&gt;&lt;a class="search_link" href="https://www.carscoops.com/wp-content/uploads/webp/2025/03/2026-Mercedes-CLA-313-24-1024x682.webp" ori-url="https://www.carscoops.com/wp-content/uploads/webp/2025/03/2026-Mercedes-CLA-313-24-1024x682.webp" target="_blank"&gt;&lt;i class="fa fa-search"&gt;&lt;/i&gt; LINK&lt;/a&gt;&lt;/span&gt;&lt;/h4&gt;
+  &lt;ul&gt;
+   &lt;li&gt;2016-2019 120i&lt;/li&gt;
+   &lt;li&gt;2019-present M35i&lt;/li&gt;
+   &lt;li&gt;2016-present 220i / 230i&lt;/li&gt;
+   &lt;li&gt;2019-present M235i&lt;/li&gt;
+   &lt;li&gt;2016-present 320i / 330i / 330e&lt;/li&gt;
+   &lt;li&gt;2016-present 420i / 430i&lt;/li&gt;
+   &lt;li&gt;2017-present 520i / 530i&lt;/li&gt;
+   &lt;li&gt;2017-present 630i&lt;/li&gt;
+   &lt;li&gt;2016-present X1 20i / 25i / 28i / 30i&lt;/li&gt;
+   &lt;li&gt;2017-present X2 20i / 25i / 28i / 30i / M35i&lt;/li&gt;
+   &lt;li&gt;2018-present X3 20i / 30i / 30e&lt;/li&gt;
+   &lt;li&gt;2018-present Z3 20i / 30i&lt;/li&gt;
+   &lt;li&gt;2019-present Toyota Supra&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;[아무리봐도.. 벤츠가 중국이랑 합작으로 가려고했는데 생각보다 안팔리고 저항이 거세서 독일끼리 뭉치자 이런느낌이네요]&lt;/p&gt;
+  &lt;p&gt;&lt;span class="out_img"&gt;&lt;br/&gt;&lt;a class="search_link" href="https://www.carscoops.com/wp-content/uploads/webp/2023/06/2024-BMW-X1-M35i-xDrive-29-1024x683.webp" ori-url="https://www.carscoops.com/wp-content/uploads/webp/2023/06/2024-BMW-X1-M35i-xDrive-29-1024x683.webp" target="_blank"&gt;&lt;i class="fa fa-search"&gt;&lt;/i&gt; LINK&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19047451</guid><pubDate>Fri, 22 Aug 2025 11:35:55 GMT</pubDate></item><item><title>미국의 자발적 노숙하는 분들 연봉이...[11][2]</title><link>https://www.clien.net/service/board/park/19047536</link><description>
+ 
+ 
+  &lt;p&gt;아! 이런 글을 쓰면 오해하시는 분들 계셔서 미리 언질하자면,&lt;/p&gt;
+  &lt;p&gt;다 그렇다는 것이 아닙니다. 개 중에 이런 사람도 적지 않다는 얘깁니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;연봉 1억이면 미국에서도 나쁘지도 좋지도 않은 연봉일 것입니다.&lt;/p&gt;
+  &lt;p&gt;그런데 이게 대도시로 가면 얘기가 달라지는데...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;미국 1인당 GDP가 한국의 약 2.5배 정도지만, &lt;/p&gt;
+  &lt;p&gt;대도시는 달라서...&lt;/p&gt;
+  &lt;p&gt;미국에선 연봉 2.5억 정도 되야 한국에서의 연봉 6천 정도와 비슷한 생활을 할 수 있는데요.&lt;/p&gt;
+  &lt;p&gt;GDP 격차보다 더 심한 차이가 나는 이유는,&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;1. 대도시여서,&lt;/p&gt;
+  &lt;p&gt;2. 거주비, 보험 등이 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;물론 이게 다가 아니고 여러 차이가 있긴 합니다만... 주로...&lt;/p&gt;
+  &lt;p&gt;여튼 연봉 1억 정도 하는 직장인이 뉴욕에서 빠져나와 다른 곳으로 이주할 것이 아니라면,&lt;/p&gt;
+  &lt;p&gt;계속 직장 생활을 이어가기 위해....월세를 부담하면... 쪼매라도 남는 것이 아니라&lt;/p&gt;
+  &lt;p&gt;빚을 지고 살아가야 할 판이 되니...자발적 노숙을 하는 이들이 생긴다는 건데요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;지역 마다 다르지만, 노숙자가 많은 대도시들은 이런 양상이 나타날 수 밖에 없는&lt;/p&gt;
+  &lt;p&gt;구조를 안고 있으니....해결이 쉽지 않아 보입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 구조를 만드는 중요한 축으로는 대도시의 상당한 부동산을 쥐고 있는&lt;/p&gt;
+  &lt;p&gt;몇 곳의 엄청난 부동산 기업들의 영향이 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;라스베이거스의 경우에는 ... 주로 호텔을 포함한 부동산을 많이 갖고 있는 곳들이&lt;/p&gt;
+  &lt;p&gt;관광 산업 자체를 뒤흔들고 있다는 말들이 많죠.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;부동산으로 미국 또한 몸살을 앓고 있는 경우가 왕왕 있다는 얘깁니다.&lt;/p&gt;
+  &lt;p&gt;여기에 ... 대도시에 빌딩을 갖고 있을 때 부과되는 보유세가...상당합니다.&lt;/p&gt;
+  &lt;p&gt;그런데도 구조적으로 부동산 값을 쥐락펴락 하는 이들...&lt;/p&gt;
+  &lt;p&gt;이 외에도 여러 이유가 복합적으로 존재 하지만...&lt;/p&gt;
+  &lt;p&gt;주제와 관련 된... 즉 노숙자 중에 일을 하면서도&lt;/p&gt;
+  &lt;p&gt;노숙을 하는 일부.. 그러나 적지 않은 수의 사람들이 있는&lt;/p&gt;
+  &lt;p&gt;주된 이유 중에 부동산이 가장 큰 몫을 차지하고 있다는 얘기였습니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047536</guid><pubDate>Fri, 22 Aug 2025 14:21:45 GMT</pubDate></item><item><title>[속보] 李대통령 '불법추심·보이스피싱·전세사기 막을 금융정책 강구'[7][17]</title><link>https://www.clien.net/service/board/park/19047529</link><description>
+ 
+ 
+  &lt;h2&gt;[속보] 李대통령 "불법추심·보이스피싱·전세사기 막을 금융정책 강구"&lt;/h2&gt;
+  &lt;h2&gt;[속보] 李대통령 "공시송달·소멸시효 미공지 따른 불법추심 막아야"…법 개정 지시&lt;/h2&gt;
+  &lt;h2&gt;&lt;br/&gt;&lt;/h2&gt;
+  &lt;h2&gt;[속보]대통령실 "박병석 등 중국 특사단 24~27일 중국 방문 예정"&lt;/h2&gt;
+  &lt;h2&gt;[속보]"이재명 정부 중국 특사단, 25일 왕이 면담 예정"&lt;/h2&gt;
+  &lt;h2&gt;[속보] 대통령실 "중국 특사단 李대통령 친서 전달…시진핑 만남은 없을 듯"&lt;/h2&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;[속보]이재명 대통령, 전 부문별 자살 예방 대책 보고받아&lt;/h2&gt;
+  &lt;h2&gt;[속보]"이재명 대통령, 군인·금융 취약계층 자살 원인에 큰 관심"&lt;/h2&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/JECC1BFL3FA" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047529</guid><pubDate>Fri, 22 Aug 2025 14:12:44 GMT</pubDate></item><item><title>창원 중3, 女교사 폭행해 전치 12주 중상…'교권 추락' 또다시 도마 위[22][10]</title><link>https://www.clien.net/service/board/park/19047528</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/003/0013436207?sid=102" ori-url="https://n.news.naver.com/article/003/0013436207?sid=102" target="_blank"&gt;https://n.news.naver.com/article/003/0013436207?sid=102&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;
+    하...진짜 욕 나오는군요.&lt;br/&gt;
+    3학년이 왜 1학년 교실에 왜 들어오냐고 물었을뿐인데&lt;br/&gt;
+    다짜고짜 폭행하며 중상을 입혔습니다.&lt;br/&gt;
+    교권은 언제까지 이렇게ㅠ&lt;br/&gt;&lt;br/&gt;
+    정부가 각종 사회문제에 대해 관심가고 지시하는데&lt;br/&gt;
+    (미혼부 소비쿠폰 문제.자살률 문제.산재 문제.남녀갈등 등등 관심가지고 해결하려고 노력중인것처럼요.)&lt;br/&gt;&lt;br/&gt;
+    교권문제도 빨리 해결되려면 교육시스템 바꾸고 부모님들 책임강화하고 아동학대법 개정이 필수입니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047528</guid><pubDate>Fri, 22 Aug 2025 14:01:09 GMT</pubDate></item><item><title>방한 외국인 환자 작년 2배 늘어 117만명…의료비 1조4000억원 썼다[14][0]</title><link>https://www.clien.net/service/board/park/19047506</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;지난해 117만 명의 외국인 환자가 한국을 방문한 것으로 집계됐다. 이는 전년(61만 명)보다 두 배 가까이 늘어난 수준이다.&lt;/p&gt;
+  &lt;p&gt;.&lt;/p&gt;
+  &lt;p&gt;.&lt;/p&gt;
+  &lt;p&gt;.&lt;/p&gt;
+  &lt;p&gt;외국인 환자의 국적은 총 202개국으로 다양했으며, 일본(44만 명), 중국(26만 명), 미국(10만 명), 대만(8만 명), 태국(8만 명) 순으로 많았다. 특히 일본과 대만은 전년 대비 각각 135%, 550%의 증가율을 보이며 방한 의료 수요가 급증한 것으로 나타났다.&lt;/p&gt;
+  &lt;p&gt;.&lt;/p&gt;
+  &lt;p&gt;.&lt;/p&gt;
+  &lt;p&gt;진료과목별로는 피부과가 전체의 56.6%(70만 명)로 가장 많았다. 이는 2023년에 비해 194.9% 증가한 것으로, 1년 만에 3배 수준으로 확대됐다. 성형외과(11.4%)와 내과(10%)가 뒤를 이었다.&lt;/p&gt;
+  &lt;p&gt;.&lt;/p&gt;
+  &lt;p&gt;.&lt;/p&gt;
+  &lt;p&gt;보건산업진흥원은 하반기에 큰 변수가 있지 않으면 올해는 외국인 환자가 최대 140만명까지 집계될 것으로 보고 있다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;===&lt;/p&gt;
+  &lt;p&gt;증가세 장난 아니군요ㄷㄷㄷ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047506</guid><pubDate>Fri, 22 Aug 2025 13:21:36 GMT</pubDate></item><item><title>[단독]​건진.'김건희.몸과 마음을 치유해 줬다' 증언[12][0]</title><link>https://www.clien.net/service/board/park/19047505</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822130914246" ori-url="http://v.daum.net/v/20250822130914246" target="_blank"&gt;&lt;strong&gt;[&lt;strong&gt;단독&lt;/strong&gt;] 검찰·경찰 수많은 '청탁 이력서' 묻자…건진 "운명 본 것"&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822130914246" ori-url="http://v.daum.net/v/20250822130914246" target="_blank"&gt;건진법사 "김건희 여사, 몸과 마음을 치유해 줬다" 증언&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822130914246" ori-url="http://v.daum.net/v/20250822130914246" target="_blank"&gt;&lt;img alt="" class="fr-fic fr-dii" src="https://search3.kakaocdn.net/argon/200x200_85_c/H5QsZPkewGk0" width="88"/&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://v.daum.net/channel/310/home" ori-url="https://v.daum.net/channel/310/home" target="_blank"&gt;JTBC&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;1분전&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822130914246" ori-url="http://v.daum.net/v/20250822130914246" target="_blank"&gt;다음뉴스&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;10여 년간 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;김씨의 몸과 마음을 치유해 줬다는&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 건진법사의 증언, &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;저녁 6시 30분 뉴스룸에서 전해드립니다.&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;서....설마...&lt;/p&gt;
+  &lt;p&gt;라....라스푸틴...?..요??&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아닐겁니다...&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047505</guid><pubDate>Fri, 22 Aug 2025 13:14:20 GMT</pubDate></item><item><title>'윤석열, 매일 폭탄주.가득.1톤 탑차..대통령실로...[8][5]</title><link>https://www.clien.net/service/board/park/19047490</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822083012943" ori-url="http://v.daum.net/v/20250822083012943" target="_blank"&gt;&lt;strong&gt;"윤석열, &lt;strong&gt;매일&lt;/strong&gt; &lt;strong&gt;폭탄주&lt;/strong&gt;…소주·맥주 가득 실은 1톤 탑차, 매주 대통령실로 배달 다녀"&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;a href="https://v.daum.net/channel/12/home" ori-url="https://v.daum.net/channel/12/home" target="_blank"&gt;프레시안&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;4시간전&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;a href="http://v.daum.net/v/20250822083012943" ori-url="http://v.daum.net/v/20250822083012943" target="_blank"&gt;다음뉴스&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822083012943" ori-url="http://v.daum.net/v/20250822083012943" target="_blank"&gt;&lt;img alt="" class="fr-fic fr-dii" src="https://search2.kakaocdn.net/argon/200x200_85_c/EX35ygPmHFH0" width="88"/&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;윤석열 전 대통령이 재임 초에 거의 매일 술을 마셨고, 소주와 맥주를 가득 실은 1톤 화물 탑차가 매주 대통령실에 배달을 다녔다는 증언이 나왔다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&amp;lt;월간중앙&amp;gt;에 지난 19일 공개한 "김건희는 신성불가침, 직언(直言)하면 그대로 '모가지'"라는 제목의 기사는 윤석열 정부 초의 '비하인드 스토리'를 담아냈다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;윤석열 전 대통령이 재임 초에 거의 &lt;strong&gt;매일&lt;/strong&gt; 술을 마셨고, 소주와 맥주를 가득 실은 1톤 화물 탑차가 매주 대통령실에 배달을 다녔다는...를 담아냈다. 이 보도에 따르면 윤 전 대통령은 평소 &lt;strong&gt;폭탄주&lt;/strong&gt;를 연거푸 들이키는 '폭음'을 즐겨왔다고 한다. 이 기사가 소개한 윤...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://cp.news.search.daum.net/p/166930724" ori-url="https://cp.news.search.daum.net/p/166930724" target="_blank"&gt;&lt;strong&gt;“김건희는 신성불가침, 직언(直言)하면 그대로 ‘모가지’”&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;a href="http://jmagazine.joins.com/monthly" ori-url="http://jmagazine.joins.com/monthly" target="_blank"&gt;월간중앙&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;2025.8.19&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://cp.news.search.daum.net/p/166930724" ori-url="https://cp.news.search.daum.net/p/166930724" target="_blank"&gt;&lt;img alt="" class="fr-fic fr-dii" src="https://search4.kakaocdn.net/argon/200x200_85_c/LEYkttdTNKe0" width="88"/&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;윤 전 대통령이 애주가란 건 검찰 시절부터 누구나 알던 사실이다. &lt;strong&gt;폭탄주&lt;/strong&gt;를 연거푸 들이켜는 폭음을 즐기는 것으로 유명했다. 방송과...&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;파견 나갔던&lt;/p&gt;
+  &lt;p&gt; 한 경찰 간부는&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; “취임 초 VIP가&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 거의 &lt;strong&gt;매일&lt;/strong&gt; 술 마시느라 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;귀가하지 않아 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;경호원들도&lt;/p&gt;
+  &lt;p&gt; 심야까지 대기하는 게&lt;/p&gt;
+  &lt;p&gt; 일상...&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이태원...참사나...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;오송..지하차도...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;참사...때도...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그랬을까요??&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047490</guid><pubDate>Fri, 22 Aug 2025 12:42:37 GMT</pubDate></item><item><title>그놈들이 대한민국의 독립은 연합국 승리의 부산물이라고 하는 이유[7][5]</title><link>https://www.clien.net/service/board/park/19047467</link><description>
+ 
+ 
+  &lt;p&gt;아래는 챗gpt를 통해 받은 답변입니다. 그놈들의 구질구질한 개수작을 제대로 파악하고 있어 놀랍네요. (다른 이의 글에 답글로 달았던 건데 글삭튀(?)해서 모공에 다시 올려봅니다.)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;
+    뉴라이트 진영에서 흔히 주장하는 **“대한민국의 독립은 연합국 승리의 부산물”**이라는 관점은 단순한 역사 해석이 아니라 정치·이념적 목적을 담고 있습니다. 이를 정리해보면 다음과 같아요:&lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;h3&gt;1. &lt;strong&gt;민족운동의 역사적 역할 축소&lt;/strong&gt;&lt;/h3&gt;
+  &lt;ul&gt;
+   &lt;li&gt;전통적 역사관(특히 민족주의 역사관)은 3·1운동, 의열단, 대한민국임시정부, 광복군, 국내외 독립운동 등을 독립의 핵심 동력으로 강조합니다.&lt;/li&gt;
+   &lt;li&gt;그러나 뉴라이트 사관은 이를 “실질적으로 독립을 가져온 힘은 아니었다”고 깎아내리고, 국제정세(연합국의 대일 승리)에만 초점을 맞춥니다.&lt;br/&gt;
+     ➡️ 결과적으로 독립운동 세력의 공로와 정통성을 약화시킵니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;hr/&gt;
+  &lt;h3&gt;2. &lt;strong&gt;대한민국 건국의 '주체' 전환&lt;/strong&gt;&lt;/h3&gt;
+  &lt;ul&gt;
+   &lt;li&gt;독립을 “외부적 요인(미·영·중·소의 승리)”의 부산물로 규정하면, 독립운동 세력의 기여보다는 1945년 이후 한반도에 진주한 &lt;strong&gt;미군과 미국 주도의 냉전질서&lt;/strong&gt;가 대한민국 수립의 핵심 동력이 됩니다.&lt;/li&gt;
+   &lt;li&gt;이는 곧 &lt;strong&gt;이승만·미국·자유민주주의 체제&lt;/strong&gt;가 대한민국의 정통성의 근원이라는 해석으로 이어집니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;hr/&gt;
+  &lt;h3&gt;3. &lt;strong&gt;친일 청산 문제의 희석&lt;/strong&gt;&lt;/h3&gt;
+  &lt;ul&gt;
+   &lt;li&gt;“민족 자체의 힘으로 이뤄낸 독립이 아니다”라는 논리는 친일 세력에 대한 책임론을 상대적으로 약화시킵니다.&lt;/li&gt;
+   &lt;li&gt;독립이 국제정세 덕분이라면, “친일했던 이들도 이후 건국 과정에서 기여했다”는 식으로 면죄부를 줄 수 있기 때문입니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;hr/&gt;
+  &lt;h3&gt;4. &lt;strong&gt;정치적·이념적 목적&lt;/strong&gt;&lt;/h3&gt;
+  &lt;ul&gt;
+   &lt;li&gt;결과적으로 뉴라이트가 얻고자 하는 것은 **대한민국 정통성을 ‘민족운동 계보’가 아니라 ‘건국 이후 자유민주주의·시장경제 체제’**에 두는 역사관 확립입니다.&lt;/li&gt;
+   &lt;li&gt;다시 말해, 대한민국의 출발점을 **1945 해방 → 1948 건국(이승만 정부 수립)**으로 강조하고, 이를 “긍정적인 근대화·발전의 서사”로 이어가려는 것입니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;hr/&gt;
+  &lt;p&gt;✅ 정리하면, 뉴라이트가 이런 논리를 통해 얻고자 하는 것은&lt;br/&gt;
+    **“대한민국은 독립운동의 산물이 아니라, 미국과 자유민주주의 진영 덕분에 태어난 국가이며, 그 정통성은 건국 세력(특히 이승만)에게 있다”**라는 인식 확립입니다.&lt;br/&gt;
+    즉, 독립운동의 공로를 축소하고, 건국 이후 보수적 정치세력의 정당성을 강화하는 것이 목표라고 할 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047467</guid><pubDate>Fri, 22 Aug 2025 11:53:12 GMT</pubDate></item><item><title>이야기 가속하면서 끼어드는 게 그렇게 기름이 아까울까요?[44][1]</title><link>https://www.clien.net/service/board/cm_car/19047495</link><description>
  
  
   &lt;p&gt;끼어들려는 위치가 너무 빠듯하고  앞에 차량도 있어서 가속을 못하는 상황이면 당연히 이해하지만&lt;/p&gt;
@@ -43,7 +434,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;찾아지네요 이게 ㅎㅎ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19046599</guid><pubDate>Wed, 20 Aug 2025 20:03:15 GMT</pubDate></item><item><title>[단독] 추미애..첫.법안은 '더 센 김건희 특검법'[2][6]</title><link>https://www.clien.net/service/board/park/19047520</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19046599</guid><pubDate>Wed, 20 Aug 2025 20:03:15 GMT</pubDate></item><item><title>[단독] 추미애..첫.법안은 '더 센 김건희 특검법'[6][23]</title><link>https://www.clien.net/service/board/park/19047520</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -82,14 +473,14 @@
   &lt;p&gt;추다르크...가..&lt;/p&gt;
   &lt;p&gt;돌아왔다...는요...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047520</guid><pubDate>Fri, 22 Aug 2025 13:48:30 GMT</pubDate></item><item><title>김상욱, 현직 의원 신분으로 대부업체 사내 이사 겸직[16][0]</title><link>https://www.clien.net/service/board/park/19047514</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047520</guid><pubDate>Fri, 22 Aug 2025 13:48:30 GMT</pubDate></item><item><title>김상욱, 현직 의원 신분으로 대부업체 사내 이사 겸직[20][0]</title><link>https://www.clien.net/service/board/park/19047514</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/article/015/0005174050?sid=100" target="_blank"&gt;https://n.news.naver.com/article/015/0005174050?sid=100&lt;/a&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;업체측은 자기들 실수라고 하는데 이건 또 뭔일인지요..&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047514</guid><pubDate>Fri, 22 Aug 2025 13:33:51 GMT</pubDate></item><item><title>노란봉투법 반대 규탄 기자회견하는 '청년'단체.jpg[18][10]</title><link>https://www.clien.net/service/board/park/19047507</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047514</guid><pubDate>Fri, 22 Aug 2025 13:33:51 GMT</pubDate></item><item><title>노란봉투법 반대 규탄 기자회견하는 '청년'단체.jpg[23][13]</title><link>https://www.clien.net/service/board/park/19047507</link><description>
  
  
   &lt;p&gt;보리수: “저는 대기업 갈 거라 노동자 안 할 거거든요? 참내”&lt;/p&gt;
@@ -99,7 +490,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;,한국의 미래가 어둡다 보는 근거 중 하나가 저런류 가치관 생각 가진 인간들이 오프라인에 많이 보인다는 부분입니다..&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047507</guid><pubDate>Fri, 22 Aug 2025 13:18:38 GMT</pubDate></item><item><title>임은정이 세관마약수사를 이끈다.(MBC보도)[2][14]</title><link>https://www.clien.net/service/board/park/19047500</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047507</guid><pubDate>Fri, 22 Aug 2025 13:18:38 GMT</pubDate></item><item><title>임은정이 세관마약수사를 이끈다.(MBC보도)[3][19]</title><link>https://www.clien.net/service/board/park/19047500</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -123,7 +514,7 @@
   &lt;p&gt;개인적인 생각엔 특검 하나는 &lt;/p&gt;
   &lt;p&gt;이재명 정부 임기 내내 계속 될거 같은 생각이... &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047500</guid><pubDate>Fri, 22 Aug 2025 13:13:59 GMT</pubDate></item><item><title>윤석열 취임후 4개월간 지지율(갤럽)[5][11]</title><link>https://www.clien.net/service/board/park/19047497</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047500</guid><pubDate>Fri, 22 Aug 2025 13:13:59 GMT</pubDate></item><item><title>윤석열 취임후 4개월간 지지율(갤럽)[8][13]</title><link>https://www.clien.net/service/board/park/19047497</link><description>
  
  
   &lt;p&gt; 이재명 대통령님 취임후 2개월하고 3주 가량 지났는데,&lt;/p&gt;
@@ -134,7 +525,7 @@
   &lt;p&gt;&lt;img alt="스크린샷 2025-08-22 125401.png" class="fr-dib fr-fil full" data-file-sn="15525468" data-gif="false" data-img-height="802" data-img-width="983" data-role="attach-image" src="https://edgio.clien.net/F01/15525468/8117bf4b1a2957.png?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047497</guid><pubDate>Fri, 22 Aug 2025 13:14:03 GMT</pubDate></item><item><title>슈퍼맨각성제... 기억력 3배 집중력 5배...[17][0]</title><link>https://www.clien.net/service/board/park/19047494</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047497</guid><pubDate>Fri, 22 Aug 2025 13:14:03 GMT</pubDate></item><item><title>슈퍼맨각성제... 기억력 3배 집중력 5배...[19][0]</title><link>https://www.clien.net/service/board/park/19047494</link><description>
  
  
   &lt;p&gt;넷플릭스에 다큐로 있는데, &lt;/p&gt;
@@ -220,7 +611,7 @@
   &lt;p&gt;혹시 이런 경험 있으신 분 계시나요?&lt;/p&gt;
   &lt;p&gt;찾아보니.. 23년에 관련 S/W 업데이트가 있긴 하던데, 그 이후 출고 차량인데.. ㅠ &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19047394</guid><pubDate>Fri, 22 Aug 2025 10:08:17 GMT</pubDate></item><item><title>국힘 반드시 해산 시키겠다는 정청래 대표의 다짐[2][12]</title><link>https://www.clien.net/service/board/park/19047487</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19047394</guid><pubDate>Fri, 22 Aug 2025 10:08:17 GMT</pubDate></item><item><title>국힘 반드시 해산 시키겠다는 정청래 대표의 다짐[3][16]</title><link>https://www.clien.net/service/board/park/19047487</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/article/014/0005395198?sid=100" ori-url="https://n.news.naver.com/article/014/0005395198?sid=100" target="_blank"&gt;https://n.news.naver.com/article/014/0005395198?sid=100&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;
@@ -229,13 +620,13 @@
     지금도 신천지 통일교 관련 당원명부 압색을 협조 안하고 있으니 말이죠.&lt;br/&gt;
     (그들은 오히려 3년전 김어준 말 빗대면서 민주당에 신천지 명부도 조사해라 이러면서 ㅂㄷㅂㄷ 대고 있더군요.)&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047487</guid><pubDate>Fri, 22 Aug 2025 12:51:17 GMT</pubDate></item><item><title>조국 '김건희 봐주고 도망간 검사'.jpg[10][51]</title><link>https://www.clien.net/service/board/park/19047483</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047487</guid><pubDate>Fri, 22 Aug 2025 12:51:17 GMT</pubDate></item><item><title>조국 '김건희 봐주고 도망간 검사'.jpg[11][70]</title><link>https://www.clien.net/service/board/park/19047483</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;제목이 직관적이고 이해하기 쉽네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047483</guid><pubDate>Fri, 22 Aug 2025 12:31:32 GMT</pubDate></item><item><title>황정음 이라는 배우 기억 나십니까?[32][0]</title><link>https://www.clien.net/service/board/park/19047471</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047483</guid><pubDate>Fri, 22 Aug 2025 12:31:32 GMT</pubDate></item><item><title>황정음 이라는 배우 기억 나십니까?[33][0]</title><link>https://www.clien.net/service/board/park/19047471</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -261,7 +652,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;구입할지 말지 고민이네요. 싼거 같기는 한데...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047469</guid><pubDate>Fri, 22 Aug 2025 11:57:01 GMT</pubDate></item><item><title>29분 3초 동안 물속에서 숨 참고 버텨…기네스 기록 경신[18][2]</title><link>https://www.clien.net/service/board/park/19047464</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047469</guid><pubDate>Fri, 22 Aug 2025 11:57:01 GMT</pubDate></item><item><title>29분 3초 동안 물속에서 숨 참고 버텨…기네스 기록 경신[20][2]</title><link>https://www.clien.net/service/board/park/19047464</link><description>
  
  
   &lt;p&gt;크로아티아 프리다이버가 물속에서 29분 3초 동안 숨을 참아 기네스 세계 기록을 세웠다. &lt;/p&gt;
@@ -277,7 +668,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047464</guid><pubDate>Fri, 22 Aug 2025 11:47:27 GMT</pubDate></item><item><title>충북 영동군에 기증한 수억대 조경수 27그루가 사라졌다[12][5]</title><link>https://www.clien.net/service/board/park/19047459</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047464</guid><pubDate>Fri, 22 Aug 2025 11:47:27 GMT</pubDate></item><item><title>충북 영동군에 기증한 수억대 조경수 27그루가 사라졌다[12][7]</title><link>https://www.clien.net/service/board/park/19047459</link><description>
  
  
   &lt;p&gt;&lt;a href="https://m.ohmynews.com/NWS_Web/Mobile/at_pg.aspx?CNTN_CD=A0003158513" target="_blank"&gt;https://m.ohmynews.com/NWS_Web/Mobile/at_pg.aspx?CNTN_CD=A0003158513&lt;/a&gt;&lt;/p&gt;
@@ -290,7 +681,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;span style='color: rgb(51, 51, 51); font-family: applemint, "Helvetica Neue", "Apple SD Gothic Neo", sans-serif, Helvetica-light, AppleSDGothicNeo-Light, "Malgun Gothic", "맑은 고딕", Dotum, 돋움; font-size: 18px; letter-spacing: -0.25px;'&gt;조경석은 아예 몰?루?고요 &lt;/span&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047459</guid><pubDate>Fri, 22 Aug 2025 11:42:45 GMT</pubDate></item><item><title>창원서 남학생이 밀어 여교사 요추 골절…전치 12주 부상[15][3]</title><link>https://www.clien.net/service/board/park/19047450</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047459</guid><pubDate>Fri, 22 Aug 2025 11:42:45 GMT</pubDate></item><item><title>창원서 남학생이 밀어 여교사 요추 골절…전치 12주 부상[14][4]</title><link>https://www.clien.net/service/board/park/19047450</link><description>
  
  
   &lt;p&gt;&lt;img alt="ch_1755826924983_582511_0.webp" class="fr-dib fr-fil" data-file-sn="15525396" data-gif="false" data-img-height="307" data-img-width="610" data-role="attach-image" src="https://edgio.clien.net/F01/15525396/8112db2e1c5e27.webp?scale=width:740"/&gt;&lt;/p&gt;
@@ -354,7 +745,7 @@
   &lt;p&gt;합의없이 형사고발하십시오. &lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047319</guid><pubDate>Fri, 22 Aug 2025 08:02:06 GMT</pubDate></item><item><title>李대통령 'R&amp;D 예산 35.3조 편성…대한민국 발전 시금석 되길'[3][8]</title><link>https://www.clien.net/service/board/news/19047468</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047319</guid><pubDate>Fri, 22 Aug 2025 08:02:06 GMT</pubDate></item><item><title>李대통령 'R&amp;D 예산 35.3조 편성…대한민국 발전 시금석 되길'[3][10]</title><link>https://www.clien.net/service/board/news/19047468</link><description>
  
  
   &lt;p&gt;"굴곡 있었지만 정상 증가세로 복귀…과학기술 천시하는 국가는 망해"&lt;/p&gt;
@@ -610,7 +1001,7 @@
   &lt;p&gt;&lt;img alt="250823 조간 (보도참고) 이재명 정부 첫번째 R&amp;amp;D 예산안 발표, 역대 최대 규모 35.3조원 투자(최종) image003.png" class="fr-dib fr-fil full" data-file-sn="15525449" data-gif="false" data-img-height="3508" data-img-width="2480" data-role="attach-image" src="https://edgio.clien.net/F01/15525449/8115ea7d168902.png?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/19047468</guid><pubDate>Fri, 22 Aug 2025 11:55:23 GMT</pubDate></item><item><title>전자기기 유튜브 촬영을 위한 갤럭시25 + 맥세이프 요상한 조합 후기[15][4]</title><link>https://www.clien.net/service/board/use/19047287</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/19047468</guid><pubDate>Fri, 22 Aug 2025 11:55:23 GMT</pubDate></item><item><title>전자기기 유튜브 촬영을 위한 갤럭시25 + 맥세이프 요상한 조합 후기[21][5]</title><link>https://www.clien.net/service/board/use/19047287</link><description>
  
  
   &lt;p&gt;저는 취미로 유튜브 영상을 제작하고 있는데 ( 주로 제품 리뷰입니다. )&lt;/p&gt;
@@ -665,7 +1056,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19047287</guid><pubDate>Fri, 22 Aug 2025 03:33:27 GMT</pubDate></item><item><title>고속도로 2차선 1차선 화물 및 트럭[13][1]</title><link>https://www.clien.net/service/board/park/19047458</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19047287</guid><pubDate>Fri, 22 Aug 2025 03:33:27 GMT</pubDate></item><item><title>고속도로 2차선 1차선 화물 및 트럭[16][1]</title><link>https://www.clien.net/service/board/park/19047458</link><description>
  
  
   &lt;p&gt;단속안하나요?&lt;/p&gt;
@@ -675,7 +1066,7 @@
   &lt;p&gt;ㅜㅜ&lt;/p&gt;
   &lt;p&gt;/Vollago&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047458</guid><pubDate>Fri, 22 Aug 2025 11:42:31 GMT</pubDate></item><item><title>대한민국 쓰레기[10][22]</title><link>https://www.clien.net/service/board/park/19047457</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047458</guid><pubDate>Fri, 22 Aug 2025 11:42:31 GMT</pubDate></item><item><title>대한민국 쓰레기[10][26]</title><link>https://www.clien.net/service/board/park/19047457</link><description>
  
  
   &lt;p&gt;김치찌개 저것도 주 메뉴는 한우와 돼지갈비였는대 말입니다.&lt;/p&gt;
@@ -685,7 +1076,7 @@
  
   &lt;p&gt;             &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047456</guid><pubDate>Fri, 22 Aug 2025 11:38:01 GMT</pubDate></item><item><title>[속보]EBS법 국회 본회의 통과…방송3법 마무리[18][25]</title><link>https://www.clien.net/service/board/park/19047454</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047456</guid><pubDate>Fri, 22 Aug 2025 11:38:01 GMT</pubDate></item><item><title>[속보]EBS법 국회 본회의 통과…방송3법 마무리[19][26]</title><link>https://www.clien.net/service/board/park/19047454</link><description>
  
  
   &lt;h2&gt;[속보]EBS법 국회 본회의 통과…방송3법 마무리&lt;/h2&gt;
@@ -701,7 +1092,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047454</guid><pubDate>Fri, 22 Aug 2025 11:33:01 GMT</pubDate></item><item><title>자꾸 중국인으로 물타면 안됩니다.(MBC보도)[14][14]</title><link>https://www.clien.net/service/board/park/19047452</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047454</guid><pubDate>Fri, 22 Aug 2025 11:33:01 GMT</pubDate></item><item><title>자꾸 중국인으로 물타면 안됩니다.(MBC보도)[15][15]</title><link>https://www.clien.net/service/board/park/19047452</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -794,13 +1185,13 @@
   &lt;p&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047422</guid><pubDate>Fri, 22 Aug 2025 10:46:00 GMT</pubDate></item><item><title>한덕수 '尹이 계엄선포문 줬다' 진술번복[2][7]</title><link>https://www.clien.net/service/board/park/19047381</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047422</guid><pubDate>Fri, 22 Aug 2025 10:46:00 GMT</pubDate></item><item><title>한덕수 '尹이 계엄선포문 줬다' 진술번복[2][8]</title><link>https://www.clien.net/service/board/park/19047381</link><description>
  
  
   &lt;p&gt;&lt;img alt="제목 없음.png" class="fr-dib fr-fil full" data-file-sn="15525312" data-gif="false" data-img-height="503" data-img-width="988" data-role="attach-image" src="https://edgio.clien.net/F01/15525312/810dfc7259e7d8.png?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;사형 같이가라 尹 과 함께요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047381</guid><pubDate>Fri, 22 Aug 2025 10:38:39 GMT</pubDate></item><item><title>이제 한덕수도 잘 가시겠네요[1][10]</title><link>https://www.clien.net/service/board/park/19047377</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047381</guid><pubDate>Fri, 22 Aug 2025 10:38:39 GMT</pubDate></item><item><title>이제 한덕수도 잘 가시겠네요[2][11]</title><link>https://www.clien.net/service/board/park/19047377</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -839,7 +1230,7 @@
   &lt;p&gt;8핀충전이 남아있는게 계속 불편하긴 하네요 ㅎㅎ&lt;/p&gt;
   &lt;p&gt;c타입으로 변경해서는안내주려나요 ㅎ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19046515</guid><pubDate>Wed, 20 Aug 2025 17:03:34 GMT</pubDate></item><item><title>"윤석열, 매일 폭탄주…소주·맥주 가득 실은 1톤 탑차, 매주 대통령실로 배달 다녀"[34][30]</title><link>https://www.clien.net/service/board/park/19047397</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19046515</guid><pubDate>Wed, 20 Aug 2025 17:03:34 GMT</pubDate></item><item><title>"윤석열, 매일 폭탄주…소주·맥주 가득 실은 1톤 탑차, 매주 대통령실로 배달 다녀"[37][35]</title><link>https://www.clien.net/service/board/park/19047397</link><description>
  
  
   &lt;a href="https://v.daum.net/v/20250822083012943" target="_blank"&gt;https://v.daum.net/v/20250822083012943&lt;/a&gt;
@@ -867,267 +1258,4 @@
    근데 저거 다 국민세금으로 마신거죠? ㅠ 
   &lt;br/&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047397</guid><pubDate>Fri, 22 Aug 2025 10:14:59 GMT</pubDate></item><item><title>검찰이 조용해진 이유는 특활비가 없어서입니다[17][65]</title><link>https://www.clien.net/service/board/park/19047392</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;특활비 라는게 별게 아닙니다&lt;/p&gt;
-  &lt;p&gt;결국 밥값 술값인데요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;검찰이 하는일이 사무실에서 이미 지나간 사건 다루는건데&lt;/p&gt;
-  &lt;p&gt;뭔 대단한 첩보활동을 한다고 특활비가 필요해요?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;검찰 특활비는 언플하고 재판조작하는 비용입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지귀연 같은 애들에게 룸싸롱가서 술사먹이는 돈이고요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;기레기들 거기 잠깐 불러서 폭탄주 한잔 말아주되&lt;/p&gt;
-  &lt;p&gt;겸상은 안할테니 딱 한잔만 먹이고 돌려보내면서 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;언플 기사내는 대가로 용돈 봉투 찔러주는 비용이에요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이걸 지금까지 국민 혈세로 한거지요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이게 똑 떨어지니 익명의 검찰발 기사 양이 확 줄어든거고요&lt;/p&gt;
-  &lt;p&gt;지들끼리야 열심히 씹겠지요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다만 봉투를 안주니 기레기들이 기사로 안싸는거고요.&lt;/p&gt;
-  &lt;p&gt;어차피 대의나 의리 관계는 아니니까요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이런 상황이라고 서초동에 살고있는 바퀴벌레가 알려줬습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047392</guid><pubDate>Fri, 22 Aug 2025 10:06:32 GMT</pubDate></item><item><title>[단독] 故이선균 마약 수사 정보 유출 해놓고…파면 과하다 소송까지 냈다[9][11]</title><link>https://www.clien.net/service/board/park/19047391</link><description>
- 
- 
-  &lt;p&gt;이씨 사건 수사정보 누설·내부 보고서 유출&lt;/p&gt;
-  &lt;p&gt;징계위원회, 파면 의결&lt;/p&gt;
-  &lt;p&gt;A씨 “파면 과하다”며 불복 소송 냈지만&lt;/p&gt;
-  &lt;p&gt;패소…법원 “경찰직무 공공성 훼손”&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;(생략)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;경찰 징계위원회는 지난해 7월, A씨에 대해 파면을 의결했다. 파면은 공무원 징계 중 가장 무거운 처분이다. 공무원 신분을 박탈할 뿐 아니라 연금을 수령할 권리 등도 상실시킨다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;징계위원회는 “A씨의 비위 행위로 경찰에 대한 비난성 언론 기사가 다수 보도됐다”며 “본인은 물론 경찰 조직 전체의 신뢰를 실추시킨 행위이므로 공직기강 확립을 위해 책임을 엄중히 물어야 한다”고 밝혔다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;A씨는 “징계의 정도가 너무 무거워 부당하다”며 인사혁신처 소청심사위원회에 심사 청구를 했지만 기각됐다. 이후 법원을 찾아 “징계 처분을 취소해달라”며 소송을 걸었다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;재판 과정에서 A씨 측은 “경찰과 기자 사이의 통상적인 관계를 고려하면 기자에게 정보를 제공하고 협조한 것 자체가 크게 비난받을 일이라고 볼 수 없다”며 “비위 행위를 깊게 반성하고 있는 점, 10년간 경찰로서 성실하게 근무한 점, 표창 수상 경력 등을 고려했을 때 파면은 지나치게 무거워 위법하다”고 주장했다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;1심 법원은 A씨의 주장을 받아들이지 않았다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;1심 재판부는 “A씨는 직무 성격상 고도의 준법성과 직무윤리가 요구되는 경찰이었다”며 “수사 중인 사건 피의자의 개인정보보호 및 수사내용 보안의 중요성을 충분히 인식할 수 있는 직위에 있었다”고 전제했다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이어 “A씨가 유출한 보고서엔 수사 대상자의 입건 여부가 담겨있어 수사에 지장을 초래할 가능성이 있다”며 “경찰의 통상적인 언론 대응 수준을 넘었을 뿐 아니라 수사대상자들의 권리를 침해하고 경찰 직무의 공공성을 심히 훼손시킨 것”이라고 지적했다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그러면서 “고의성이 충분히 인정되고, 비위의 정도가 매우 무거운 것으로 보인다”고 밝혔다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;법원은 “파면 처분을 통해 달성하고자 하는 공직기강의 확립과 수사대상자에 대한 개인정보 보호, 수사 내용의 보안 엄수, 수사기관과 언론의 유착 근절, 경찰에 대한 국민의 신뢰 회복 등 공익이 A씨가 입게 될 불이익에 비해 훨씬 크다”며 파면이 정당하다고 결론 내렸다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아직 이 판결은 확정되지 않았다. A씨가 “1심 판결은 부당하다”며 “2심 판단을 다시 받아보겠다”고 항소했다. 2심이 서울고등법원(인천)에서 열릴 예정이다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;A씨와 검찰 수사관 B씨는 공무상 비밀누설 등 혐의로 형사 재판도 받고있다. A씨와 B씨에게 관련 정보를 제공받은 기자 3명은 불기소 처분을 받았다. 개인정보를 제공한 자가 아니라 제공받은 자는 ‘영리 또는 부정한 목적’이 있어야 처벌이 가능하다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;(생략)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;hr/&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정보를 받은 3명은 불기소였군요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;span class="fr-video fr-fvc fr-dvi fr-draggable" data-file-sn="15525317" data-role="image-mp4"&gt;
-    &lt;video autoplay="" data-file-key="810e5843b2fa35" id="810e5843b2fa35" loop="loop" muted="" playsinline="" poster="https://edgio.clien.net/F01/15525319/810e5843b2fa35.gif?scale=width:740" preload="auto" webkit-playsinline=""&gt;
-     &lt;source src="https://edgio.clien.net/F01/15525317/810e5843b2fa35.mp4" type="video/mp4"/&gt;
-    &lt;/video&gt;&lt;button class="search_link" onclick='app.gifDownConfirm("15525319", "810e5843b2fa35", "351", "265")'&gt;&lt;i class="fa fa-download"&gt;&lt;/i&gt;GIF&lt;/button&gt; &lt;/span&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047391</guid><pubDate>Fri, 22 Aug 2025 10:05:14 GMT</pubDate></item><item><title>유승민 딸, 유담 31세로 인천대 교수 임용[35][10]</title><link>https://www.clien.net/service/board/park/19047384</link><description>
- 
- 
-  &lt;p&gt;강사가 아니고&lt;/p&gt;
-  &lt;p&gt;전임교원의 자격으로 31세의 젊은 나이로 인천대학교 무역학부 교수 임용이네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이번에 6학점을 강의한다고 하는데,&lt;/p&gt;
-  &lt;p&gt;동국대 법학과 졸업하고, 연세대고려대 경영학과에 석사졸업.&lt;/p&gt;
-  &lt;p&gt;고려대에서 경영학 박사 학위취득했네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;고려대 박사 공부중,  고려대에서도, 국제경영론 강의를 하기도 했었다고 합니다.&lt;/p&gt;
-  &lt;p&gt;그 당시, 고려대 커뮤니티에서도,  유담씨의 강의가 인기가 대단했다고 하네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;해외 학위가 없는 상황에서,&lt;/p&gt;
-  &lt;p&gt;어떤 논문을 발표했기에, 이 젊은나이에 성공했는지 관심이 갑니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;저는 개인적으로, 아빠찬스 의심이 듭니다만,  &lt;/p&gt;
-  &lt;p&gt;기자들은 아화둥둥 하고 있네요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047384</guid><pubDate>Fri, 22 Aug 2025 10:00:56 GMT</pubDate></item><item><title>사우디가 동계아시안게임 양보할 모양입니다.[23][0]</title><link>https://www.clien.net/service/board/park/19047382</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://www.msn.com/ko-kr/news/world/2029-%EB%8F%99%EA%B3%84%EC%95%84%EC%8B%9C%EC%95%88%EA%B2%8C%EC%9E%84-%EC%82%AC%EC%9A%B0%EB%94%94-%EC%A4%80%EB%B9%84-%EB%82%9C%ED%95%AD-%EB%8C%80%EC%B2%B4%EC%A7%80%EB%A1%9C-%E9%9F%93-%EB%93%B1-%EA%B1%B0%EB%A1%A0/ar-AA1KVzLr?ocid=msedgntp&amp;amp;pc=U531&amp;amp;cvid=f225d53bb2f54c14b9f94ea48069a042&amp;amp;ei=30" ori-url="https://www.msn.com/ko-kr/news/world/2029-%EB%8F%99%EA%B3%84%EC%95%84%EC%8B%9C%EC%95%88%EA%B2%8C%EC%9E%84-%EC%82%AC%EC%9A%B0%EB%94%94-%EC%A4%80%EB%B9%84-%EB%82%9C%ED%95%AD-%EB%8C%80%EC%B2%B4%EC%A7%80%EB%A1%9C-%E9%9F%93-%EB%93%B1-%EA%B1%B0%EB%A1%A0/ar-AA1KVzLr?ocid=msedgntp&amp;amp;pc=U531&amp;amp;cvid=f225d53bb2f54c14b9f94ea48069a042&amp;amp;ei=30" target="_blank"&gt;"'2029 동계아시안게임' 사우디, 준비 난항…대체지로 韓 등 거론"&lt;/a&gt; &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;우리나라 거론이라..&lt;/p&gt;
-  &lt;p&gt;평창 동계올림픽은 꽤 성공적이었다는 평가라서&lt;/p&gt;
-  &lt;p&gt; 개최부담은 상대적으로 덜하지 않을까 싶네요.&lt;/p&gt;
-  &lt;p&gt;만약 우리나라가 가져온다면 평창말고 어디가 좋을까요? &lt;/p&gt;
-  &lt;p&gt;일단 무주가 유력할것 같긴한데&lt;/p&gt;
-  &lt;p&gt;기존 시설 활용하면서 최대한 경제적으로 치르려면 &lt;/p&gt;
-  &lt;p&gt;강릉도 좋지 않을까 싶습니다.&lt;/p&gt;
-  &lt;p&gt;대관령에 제단쌓고 돔 한마리 제사상에 올리면 가능할지도.. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047382</guid><pubDate>Fri, 22 Aug 2025 09:57:42 GMT</pubDate></item><item><title>태풍 링링이 일본쪽으로 갔네요[10][2]</title><link>https://www.clien.net/service/board/park/19047238</link><description>
- 
- 
-  &lt;p&gt;우리나라 폭염쫌 밀어내고 시원한 바람쫌 불었으면 좋겠네요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047238</guid><pubDate>Thu, 21 Aug 2025 22:55:54 GMT</pubDate></item><item><title>‘검찰’ 사라지는데 ‘끽소리’도 없는 검사들…왜?[9][8]</title><link>https://www.clien.net/service/board/park/19047219</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://v.daum.net/v/20250821163705576" target="_blank"&gt;https://v.daum.net/v/20250821163705576&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;35일 뒤면 1948년 정부조직법·검찰청법 제정 때부터 있었던 검찰·검찰청이 법 본문에서 사라질 전망이다. 더불어민주당은 오는 9월25일 국회 본회의에서 검찰청을 삭제하고 공소청을 신설하는 내용을 뼈대로 한 정부조직법 개정안을 처리하기로 했다. 77년 만에 수사와 기소를 핵심으로 하는 검찰 제도 폐지의 서막을 올리는 것이다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;과거 검찰개혁이 추진될 때마다 집단행동 수준의 조직적 반발을 해왔던 검찰 조직은 아직 이렇다 할 움직임이 없다. 윤석열 정권과 한 몸처럼 움직였던 ‘정치 검사 원죄론’의 무게 때문에 검찰개혁, 수사개혁을 ‘숙명’으로 받아들이는 분위기가 감지된다. 특히 검사동일체의 정점이자 구심점인 검찰총장 부재의 영향이 크다. 이재명 대통령이 ‘정무적 판단’에 따라 공석으로 두고 있다는 분석이 나오는 이유다. 후임 검찰총장을 두고 한동안 하마평이 무성했지만, 검찰 내부에서는 ‘검찰 문을 닫는’ 후임자 임명은 당분간 없을 것으로 보고 있다. 21일 법무부가 서울중앙지검과 대검찰청, 법무부 등 주요 부서 중간간부 인사를 단행한 것도 검찰의 ‘침묵’에 영향을 미친 것으로 보인다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;----------------&amp;gt; 9월25일 본회의에서 처리하는군요. &lt;/p&gt;
-  &lt;p&gt;지은 죄가 있으니 찍소리 못한다는 건데, 강약약강 이니 강하게 나가야 합니다.&lt;/p&gt;
-  &lt;p&gt;아직도 노통때 검사와의 대화 가 생각납니다...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이재명 대통령과 정청래 더불어민주당 대표 등 여당 지도부는 20일 ‘추석 전 검찰청 폐지 입법 완료’라는 시간표에 뜻을 모았다. 일단 다음달 25일 본회의에 올라가는 정부조직법에서 그 ‘표현’과 ‘존재’만 제거하는 것이어서 한동안 검찰청 조직과 기능은 유지된다. 이후 연말까지 △검찰청 폐지법안 △공소청 설치법안 △중대범죄수사청 설치법안 △국가수사위원회 설치법안 등을 논의하게 된다. 공소청 검사가 직접 보완 수사를 하거나 보완 수사를 요구할 수 있는지가 핵심 쟁점이다. 민주당, 법무부, 경찰, 변호사단체, 법학계, 시민사회 등의 입장이 첨예하게 갈린다. 추석 전 검찰개혁 4법 처리가 현실적으로 어렵다고 보는 주요 근거다.  &lt;/p&gt;
-  &lt;p&gt;----------------&amp;gt; " ‘표현’과 ‘존재’만 제거하는 것이어서 한동안 검찰청 조직과 기능은 유지된다."&lt;/p&gt;
-  &lt;p&gt;쉽지 않군요... 잘 지켜봐야겠습니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047219</guid><pubDate>Thu, 21 Aug 2025 22:27:03 GMT</pubDate></item><item><title>이야기 모델YL이 중국 첫날 예약 4만대ㄷㄷ[21][2]</title><link>https://www.clien.net/service/board/cm_car/19047301</link><description>
- 
- 
-  &lt;p&gt;환불불가 계약금인데 첫날만 4만대랍니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;당분간 한국 출시는 없…. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;2열도 통풍시트가 들어가고 중앙 모니터도 16인치로 커지고&lt;/p&gt;
-  &lt;p&gt;스피커도 18개로 기존 와이보다 한 개 더&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;주니퍼 무이자 기다리다 yl 출시 기다리는 걸로 바꿨네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19047301</guid><pubDate>Fri, 22 Aug 2025 07:01:11 GMT</pubDate></item><item><title>Q/A 이래저래 중고차 고민[18][0]</title><link>https://www.clien.net/service/board/cm_car/19047103</link><description>
- 
- 
-  &lt;p&gt;슴식이 여기까지 인가?&lt;/p&gt;
-  &lt;p&gt;9월 되면 20살 되는 SM7이 갑자기 문제가 생겼네요&lt;/p&gt;
-  &lt;p&gt;동네에서 일주일에 서너번 왔다리 갔다리 하는 용도였는데 지난 주말 갑자기 멈춰 섰습니다&lt;/p&gt;
-  &lt;p&gt;컴퓨터 스캔상으로는 전혀 문제가 없다고 하는데&lt;/p&gt;
-  &lt;p&gt;주행 중 가다 서다를 반복하면 시동이 꺼지는 증상이 생기네요&lt;/p&gt;
-  &lt;p&gt;첫번째 정비소에서는 아무 문제를 발견 못했으나, 다시 동네 마실 중 시동이 꺼질려고 하는 증상이 포착되어&lt;/p&gt;
-  &lt;p&gt;다시 다른 정비소에 가서 점검을 받았는데, 일반 주행에서는 전혀 문제가 없는데&lt;/p&gt;
-  &lt;p&gt;가다 서다를 반복하니 증상이 발견되네요. &lt;/p&gt;
-  &lt;p&gt;아무래도 제너레이터에서 배터리쪽으로 전기가 공급되는 과정에서 문제가 있나 봅니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;한 대 더?&lt;/p&gt;
-  &lt;p&gt;차량이 2대라 다른 차량을 이용해도 되긴 합니다.&lt;/p&gt;
-  &lt;p&gt;두 차량 다 1년에 5000 km 미만 운행을 하지만&lt;/p&gt;
-  &lt;p&gt;아내가 운전하기에 불편하다고...&lt;/p&gt;
-  &lt;p&gt;굴러가기만 하면 되니까 한 대 더 사면 안되겠냐 그러네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;머리는 아반떼, 마음은?&lt;/p&gt;
-  &lt;p&gt;어떤 차가 좋을까? 우선 예산은 천만원 초반 정도로 정했습니다.&lt;/p&gt;
-  &lt;p&gt;킬로수는 13만 미만 (8,9만 보단 10만을 넘긴게 좋다 라고 많이들 말씀하셔서...)&lt;/p&gt;
-  &lt;p&gt;차를 많이 쓰지도 않을 뿐더러 장거리 용도가 아니기에&lt;/p&gt;
-  &lt;p&gt;마실용으로 타기에 좋은 차가 무엇일까? 고민을 하는데&lt;/p&gt;
-  &lt;p&gt;일단 경차는 제외했습니다. &lt;/p&gt;
-  &lt;p&gt;K car와 엔카를 둘러봤는데 아반떼는 감가가 거의 없더라구요&lt;/p&gt;
-  &lt;p&gt;와~~ 괜히 아반떼 아반떼 하는게 아닌 걸 알았습니다.&lt;/p&gt;
-  &lt;p&gt;그리 좋은 지는 잘 모르겠던데... 그 만큼 나쁜 점도 없단 뜻이겠죠?&lt;/p&gt;
-  &lt;p&gt;고개를 조금 들어 위를 올려다보니,&lt;/p&gt;
-  &lt;p&gt;K5, 소나타, SM6, 말리부가 보이네요&lt;/p&gt;
-  &lt;p&gt;K5: Gen3는 좋아보이던데, Gen2가 한계인 듯 보이고&lt;/p&gt;
-  &lt;p&gt;소나타: 그냥저냥 무난무나... 약간 택시? 사람들은 그래도 소나타가 짱이라고....&lt;/p&gt;
-  &lt;p&gt;SM6 :사골 디자인에 옵션 풍부 가격 저렴, 정비비 비싸나 정비소 집 근처&lt;/p&gt;
-  &lt;p&gt;말리부: 가격 저렴 실내는 올드 1.3은 실용적, 외부는 OK 그러나 정비비 고가&lt;/p&gt;
-  &lt;p&gt;쭈욱 타라면 르쌍쉐 무방, 나중에 팔려면 현기&lt;/p&gt;
-  &lt;p&gt;이래도 저래도 결론은 아반떼??&lt;/p&gt;
-  &lt;p&gt;어렵다 어려워 다 그게 그거 같아서 어렵네요.&lt;/p&gt;
-  &lt;p&gt;근데 폭바 파샤트는 이상하리만큼 저렴하네요?&lt;/p&gt;
-  &lt;p&gt;연비 좋으나 정비 비용이 넘사다 라는 이야기는 많이 들었는데&lt;/p&gt;
-  &lt;p&gt;그게 반영된 건가요? 우아~~ 그 시기에 할인이 미치도록 된건가요?&lt;/p&gt;
-  &lt;p&gt;그나저나 좀 빡시게 고민 살짝 해봐야 되겠네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이러다 새차? 아니야 마실용 새차는....&lt;/p&gt;
-  &lt;p&gt;기존 차도 있는데... 그츄?&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19047103</guid><pubDate>Thu, 21 Aug 2025 17:58:24 GMT</pubDate></item><item><title>[단독] 김 여사.“.최대 1억 달하는 가방 교환”[6][7]</title><link>https://www.clien.net/service/board/park/19047374</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822090138722" ori-url="http://v.daum.net/v/20250822090138722" target="_blank"&gt;&lt;strong&gt;[&lt;strong&gt;단독&lt;/strong&gt;] 김 여사의 못 말리는 명품 사랑…“2023년 말 최대 1억 달하는 가방 교환”&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://v.daum.net/channel/178/home" ori-url="https://v.daum.net/channel/178/home" target="_blank"&gt;시사저널&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;38분전&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822090138722" ori-url="http://v.daum.net/v/20250822090138722" target="_blank"&gt;다음뉴스&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822090138722" ori-url="http://v.daum.net/v/20250822090138722" target="_blank"&gt;에르메스 매장에서 한 제품을&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822090138722" ori-url="http://v.daum.net/v/20250822090138722" target="_blank"&gt; 해당 브랜드 가방으로 교환한 정황 포착&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822090138722" ori-url="http://v.daum.net/v/20250822090138722" target="_blank"&gt;귀금속과 달리 &lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822090138722" ori-url="http://v.daum.net/v/20250822090138722" target="_blank"&gt;가방은 공직자 신고 대상 포함 안 돼&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822090138722" ori-url="http://v.daum.net/v/20250822090138722" target="_blank"&gt;&lt;img alt="" class="fr-fic fr-dii" src="https://search4.kakaocdn.net/argon/200x200_85_c/ArRFX77Fe0p0" width="88"/&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;지난 20대 대통령선거 당시 윤 전 대통령을 돕기 위한 '비밀캠프'에 금전적 지원을 한 것으로 파악됐다(시사저널 8월14일자 「[&lt;strong&gt;단독&lt;/strong&gt;] "서희건설 건물 2층 '양재동 비밀캠프' 임대료 받은 기록 없어"」 기사 참조). 서희건설 측은 이에 대해 "비밀캠프 제공 사실이...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;....&lt;/p&gt;
-  &lt;p&gt;....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;거니의..명품사랑...??...&lt;/p&gt;
-  &lt;p&gt;이라는..요??&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047374</guid><pubDate>Fri, 22 Aug 2025 09:46:58 GMT</pubDate></item><item><title>[단독].민간인.금고에서 “.국정원급”.자료 발견[3][24]</title><link>https://www.clien.net/service/board/park/19047373</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822060656406" ori-url="http://v.daum.net/v/20250822060656406" target="_blank"&gt;&lt;strong&gt;[&lt;strong&gt;단독&lt;/strong&gt;] ‘민간인’ 노상원 금고에서 “방첩사·국정원급” 군 인사 자료 발견&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;&lt;a href="https://v.daum.net/channel/17/home" ori-url="https://v.daum.net/channel/17/home" target="_blank"&gt;한겨레&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;3시간전&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;&lt;a href="http://v.daum.net/v/20250822060656406" ori-url="http://v.daum.net/v/20250822060656406" target="_blank"&gt;다음뉴스&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822060656406" ori-url="http://v.daum.net/v/20250822060656406" target="_blank"&gt;친인척 관계·정치인 친분·비화폰 번호까지 기재 &lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822060656406" ori-url="http://v.daum.net/v/20250822060656406" target="_blank"&gt;“국방부 인사 관계자보다 많은 정보…충격적”&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20250822060656406" ori-url="http://v.daum.net/v/20250822060656406" target="_blank"&gt;&lt;img alt="" class="fr-fic fr-dii" src="https://search4.kakaocdn.net/argon/200x200_85_c/EbJqG7So8FS0" width="88"/&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;.....&lt;/p&gt;
-  &lt;p&gt;‘민간인 비선’인 &lt;/p&gt;
-  &lt;p&gt;노상원 전 정보사령관이 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;장군 인사에도 관여했다는 의혹이 제기된 가운데, &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그가 ‘국가정보원·방첩사급’의 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;군 인사자료를 갖고 있었던 것으로 전해졌다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;내란 사건을...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;...&lt;/p&gt;
-  &lt;p&gt;...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;버거보살.....금고에서...&lt;/p&gt;
-  &lt;p&gt;나왔다는.....요....&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047373</guid><pubDate>Fri, 22 Aug 2025 09:44:14 GMT</pubDate></item><item><title>‘조국 사면’ 처음 건의한 강득구 “지금 모습 당혹스러워… 자숙해야”[17][10]</title><link>https://www.clien.net/service/board/park/19047361</link><description>
- 
- 
-  &lt;p&gt;자숙이란 단어는 맘에 안들지만... &lt;/p&gt;
-  &lt;p&gt;초반에는 가족들과 시간보내시며 건강과 마음을 회복하시고&lt;/p&gt;
-  &lt;p&gt;국민들이 조국을 찾을 때 다시 정치무대로 돌아오시는 그림이&lt;/p&gt;
-  &lt;p&gt;본인에게도 사면 결단을 내린 대통령에게도 더 좋았을 것이라는 생각이 드네요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047361</guid><pubDate>Fri, 22 Aug 2025 09:33:05 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19047397</guid><pubDate>Fri, 22 Aug 2025 10:14:59 GMT</pubDate></item></channel></rss>
