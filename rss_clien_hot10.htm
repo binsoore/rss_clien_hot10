@@ -1,5 +1,181 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sun, 05 Oct 2025 04:00:50 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>에일리언 어스 : 보지 마세요.[12][2]</title><link>https://www.clien.net/service/board/park/19073707</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sun, 05 Oct 2025 05:00:47 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>기타 전자기기 Lenovo Smart Frame 을 mini pc 통해 사진 끌어오기 (WINDOWS 편)[2][5]</title><link>https://www.clien.net/service/board/lecture/19073279</link><description>
+ 
+ 
+  &lt;h1&gt;이 글을 작성하게 된 배경&lt;/h1&gt;
+  &lt;hr/&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;FOTOO 를 설치하였으나 Google Photo 의 API 막힘 문제 (아직 앨범은 잘 불러와 지는거 같아요 동기화는 모르지만)&lt;/li&gt;
+   &lt;li&gt;동기화 방식은 영 꺼림칙 하신분, 수동으로 선택하며 올리는게 좋으신분&lt;/li&gt;
+   &lt;li&gt;집에 저전력 PC 가 갈피없이 굴러 다니시는분&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h1&gt;주의하실점&lt;/h1&gt;
+  &lt;hr/&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;WINDOWS 공유기능으로 간단하다 생각하면 초간단 할 수 있음&lt;/li&gt;
+   &lt;li&gt;하지만 FOTOO가 SMB1.0 만 지원하는 지라 보안 대책을 강구 해야함&lt;/li&gt;
+   &lt;li&gt;그러므로 주로 사용하는 메인PC에 설정 하지말고 굴러다니는 PC로 세팅 할 것을 추천&lt;/li&gt;
+   &lt;li&gt;또한 그 이유로 보안설정 이야기가 세팅보다 더 많음&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h1&gt;목차&lt;/h1&gt;
+  &lt;hr/&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;1. 공유설정용 계정만들기&lt;/p&gt;
+  &lt;p&gt;2. 공유폴더 생성 및 공유 설정&lt;/p&gt;
+  &lt;p&gt;3. SMB 1.0 활성화&lt;/p&gt;
+  &lt;p&gt;4. FOTOO 에서 서버 PC 사진 끌어오기 설정&lt;/p&gt;
+  &lt;p&gt;5. 폰으로 서버에 업로드해보고 FOTOO가 반영하는지 확인&lt;/p&gt;
+  &lt;p&gt;6. VPN 설정해서 멀리 있는 부모님의 서버 PC에 사진 틈틈이 넣어주기&lt;/p&gt;
+  &lt;p&gt;7. 방화벽 설정&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;두가지 케이스를 도식화 하면 아래와 같습니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="10.png" class="fr-dib fr-fil full" data-file-sn="15563923" data-gif="false" data-img-height="2212" data-img-width="3111" data-role="attach-image" src="https://edgio.clien.net/F01/15563923/b1a3bb6acaace.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="12.png" class="fr-dib fr-fil full" data-file-sn="15563925" data-gif="false" data-img-height="3385" data-img-width="3174" data-role="attach-image" src="https://edgio.clien.net/F01/15563925/b1a7841291849.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;공유설정용 계정만들기&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;사진공유용 폴더 생성 후 [제어판] - [계정] - [다른사용자] - [다른사용자 추가] - [계정추가]&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="1.jpg" class="fr-dib fr-fil full" data-file-sn="15563902" data-gif="false" data-img-height="1359" data-img-width="2044" data-role="attach-image" src="https://edgio.clien.net/F01/15563902/b19498f24fb0b.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;[ 이 사람의 로그인 정보를 가지고 있지 않습니다 ] 선택&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="2.jpg" class="fr-dib fr-fil full" data-file-sn="15563888" data-gif="false" data-img-height="1262" data-img-width="1300" data-role="attach-image" src="https://edgio.clien.net/F01/15563888/b183e81cd4cea.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;[ Microsoft 계정 없이 사용자 추가 ] 선택&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="3.jpg" class="fr-dib fr-fil full" data-file-sn="15563889" data-gif="false" data-img-height="1267" data-img-width="1308" data-role="attach-image" src="https://edgio.clien.net/F01/15563889/b1858745cc1cc.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;[ 원하는 아이디와 비밀번호 입력]  - 공유용 계정 생성완료&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="4.jpg" class="fr-dib fr-fil full" data-file-sn="15563891" data-gif="false" data-img-height="1267" data-img-width="1308" data-role="attach-image" src="https://edgio.clien.net/F01/15563891/b186e97f11860.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;사진 업로드 및 FOTOO가 사진 처리할 폴더 생성 후 - [마우스 오른쪽 버튼] - [속성] - [공유 탭] 선택&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="5.jpg" class="fr-dib fr-fil full" data-file-sn="15563892" data-gif="false" data-img-height="861" data-img-width="1745" data-role="attach-image" src="https://edgio.clien.net/F01/15563892/b189aacdc6b1f.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;우리가 아까 생성한 공유계정 선택후 [공유] 눌러줌&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="6.jpg" class="fr-dib fr-fil full" data-file-sn="15563893" data-gif="false" data-img-height="944" data-img-width="1228" data-role="attach-image" src="https://edgio.clien.net/F01/15563893/b18b932b4593a.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;뭐 저는 컴에있는 영상을&lt;/p&gt;
+  &lt;p&gt;TV로 보려고 윈도우 공유기능 자주 씁니다 아무생각없이&lt;/p&gt;
+  &lt;p&gt;그건 SMB 2.0 ~3.0 규격이고 털어 갈것도 없어서 그렇긴 한데&lt;/p&gt;
+  &lt;p&gt;SMB1.0 은 좀 취약하니 보안 할수 있는거 다 하고 가시지요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;다음 스텝은 네트워크상의 다른 기기가 서버를 찾을 수 있게 설정합니다&lt;/p&gt;
+  &lt;p&gt;"같은 네트워크" 이므로 유선이던 와이파이 이던 같은 공유기 아래의 생태계에 있으면 됩니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;[ 설정 ] - [ 네트워크 및 인터넷 ] - [ 고급 네트워크 설정 ] - [ 고급 공유 설정 ]&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;[ 프라이빗 네트워크 ]와 [ 모든 네트워크 ] 에서 아래와 같이 체크해줍니다&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="7.jpg" class="fr-dib fr-fil full" data-file-sn="15563901" data-gif="false" data-img-height="1359" data-img-width="2044" data-role="attach-image" src="https://edgio.clien.net/F01/15563901/b192d116337b7.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자 이제 SMB 1.0 을 설정해줘야 합니다 &lt;/p&gt;
+  &lt;p&gt;기본적으로 WINDOWS 10~11  은 기본적으로 SMB 2.0 ~ 3.0 이라서 이거 따로 켜줘야합니다&lt;/p&gt;
+  &lt;p&gt;[ winodws 기능 켜기/끄기 ]  찾어서 실행시켜줍니다&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="8.jpg" class="fr-dib fr-fil full" data-file-sn="15563909" data-gif="false" data-img-height="1430" data-img-width="1528" data-role="attach-image" src="https://edgio.clien.net/F01/15563909/b1971124bc4d7.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;[ SMB 1.0 / CIFS 파일공유 지원 ] 체크박스 선택 후 [ 재부팅 ] 해줍니다&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="9.jpg" class="fr-dib fr-fil full" data-file-sn="15563910" data-gif="false" data-img-height="787" data-img-width="762" data-role="attach-image" src="https://edgio.clien.net/F01/15563910/b19893238bb36.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자 이제 FOTOO와 연결하기 위해서 mini PC의 IP를 확인합니다&lt;/p&gt;
+  &lt;p&gt;[ 설정 ] - [ 네트워크 및 인터넷 ]  - [ 속성 ] &lt;/p&gt;
+  &lt;p&gt;&lt;img alt="13.jpg" class="fr-dib fr-fil full" data-file-sn="15563932" data-gif="false" data-img-height="1359" data-img-width="2044" data-role="attach-image" src="https://edgio.clien.net/F01/15563932/b1b84be5f16ad.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이게 mini pc의 IP 주소입니다 이 주소로 연결합니다&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="14.jpg" class="fr-dib fr-fil full" data-file-sn="15563933" data-gif="false" data-img-height="1359" data-img-width="2044" data-role="attach-image" src="https://edgio.clien.net/F01/15563933/b1b9a755049eb.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;일단 스마트프레임에서 기존에 연결해두었던 플랫폼들은 다 연결 해제 해주시구요&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="15.jpg" class="fr-dib fr-fil full" data-file-sn="15563934" data-gif="false" data-img-height="605" data-img-width="1089" data-role="attach-image" src="https://edgio.clien.net/F01/15563934/b1c5502a8ee83.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;Local Network 선택&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="16.jpg" class="fr-dib fr-fil full" data-file-sn="15563935" data-gif="false" data-img-height="709" data-img-width="1167" data-role="attach-image" src="https://edgio.clien.net/F01/15563935/b1c6beda4f3ba.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;공유용 계정 만들었을떄와 똑같이 입력해주시면 추가완료&lt;/p&gt;
+  &lt;p&gt;추가하시고 공유폴더에 사진 집어넣고  몇번 껐다 키면 제대로 사진 들어올겁니다 &lt;/p&gt;
+  &lt;p&gt;&lt;img alt="17.jpg" class="fr-dib fr-fil full" data-file-sn="15563936" data-gif="false" data-img-height="817" data-img-width="1139" data-role="attach-image" src="https://edgio.clien.net/F01/15563936/b1c78ef143134.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자 이제 폰으로 한번 업로드 해볼게요 (아이폰)&lt;/p&gt;
+  &lt;p&gt;아이폰 - [파일 앱] - [ 점세개 ] - [ 서버에 연결 ]&lt;/p&gt;
+  &lt;p&gt;등록사용자 체크 후 공유계정 아이디하고 비밀번호 입력&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="18.jpg" class="fr-dib fr-fil" data-file-sn="15563938" data-gif="false" data-img-height="853" data-img-width="375" data-role="attach-image" src="https://edgio.clien.net/F01/15563938/b1cde2daddfc7.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="19.jpg" class="fr-dib fr-fil" data-file-sn="15563939" data-gif="false" data-img-height="877" data-img-width="397" data-role="attach-image" src="https://edgio.clien.net/F01/15563939/b1ced47de59a1.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;갤러리에 가서 보내실 사진들 선택한 후 [무수정 원본 내보내기] - 서버경로 선택하면 전송될것입니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="20.jpg" class="fr-dib fr-fil" data-file-sn="15563941" data-gif="false" data-img-height="869" data-img-width="388" data-role="attach-image" src="https://edgio.clien.net/F01/15563941/b1d09c3addc9d.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;전송 됬죠? ㅎㅎ &lt;/p&gt;
+  &lt;p&gt;이제 폰에서 스마트 프레임으로 (정확히는 mini pc에)  사진 마구 날릴수 있게되었습니다&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="21.jpg" class="fr-dib fr-fil full" data-file-sn="15563943" data-gif="false" data-img-height="612" data-img-width="971" data-role="attach-image" src="https://edgio.clien.net/F01/15563943/b1d207baf091e.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;스마트 프레임에도 잘 넘겨저서 나오는&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="22.jpg" class="fr-dib fr-fil full" data-file-sn="15563944" data-gif="false" data-img-height="778" data-img-width="1163" data-role="attach-image" src="https://edgio.clien.net/F01/15563944/b1d725d4aeb7e.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이제 같은 네트워크가 아니고 멀리서도 부모님 서버에 사진 소매넣기 하는법입니다.&lt;/p&gt;
+  &lt;p&gt;부모님 공유기 관리 페이지에 들어가서 VPN 설정합니다&lt;/p&gt;
+  &lt;p&gt;(iptime 공유기 관리자페이지 주소 : 192.168.0.1)&lt;/p&gt;
+  &lt;p&gt;아래 이미지와 같이 설정해주세요&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="23.jpg" class="fr-dib fr-fil full" data-file-sn="15563946" data-gif="false" data-img-height="833" data-img-width="1751" data-role="attach-image" src="https://edgio.clien.net/F01/15563946/b1e1d3376ac64.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;table style="width: 100%;"&gt;
+   &lt;tbody&gt;
+    &lt;tr&gt;
+     &lt;td style="width: 19.6593%;"&gt;VPN 접속계정&lt;/td&gt;
+     &lt;td style="width: 80.3407%;"&gt;접속할때 승인할 ID&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td style="width: 19.6593%;"&gt;VPN 접속암호&lt;/td&gt;
+     &lt;td style="width: 80.3407%;"&gt;접속할때 쓸 암호&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td style="width: 19.6593%;"&gt;할당될 IP 주소&lt;/td&gt;
+     &lt;td style="width: 80.3407%;"&gt;내 폰의 IP를 부모님 내트워크에 사용하는 내부 IP로 덧씌움 (잘 사용안하는 숫자로 입력) &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td style="width: 19.6593%;"&gt;보안문자&lt;/td&gt;
+     &lt;td style="width: 80.3407%;"&gt;보이는데로 입력&lt;/td&gt;
+    &lt;/tr&gt;
+   &lt;/tbody&gt;
+  &lt;/table&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;[ 시스템 요약정보] 에서 외부IP 주소 기억해두기 이걸로 이제 바깥에서 접속할겁니다&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="24.jpg" class="fr-dib fr-fil full" data-file-sn="15563948" data-gif="false" data-img-height="1128" data-img-width="1751" data-role="attach-image" src="https://edgio.clien.net/F01/15563948/b1e5fde271e3d.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아이폰 케이스로 설명드릴게요 결은 같아서 안드로이드도 쉽게 하실수 있을겁니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;톱니바퀴 - 설정 - 일반 - VPN 기기관리 - VPN - VPN 구성추가 - 공유기에서 설정한 IP 아이디 비번 패스키 입력&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이제 &lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;span style="font-size: 18px; color: rgb(209, 72, 65);"&gt;와이파이 연결 해제하신후 - 셀룰러인 상태에서 VPN 연결 해보십니다&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="25.jpg" class="fr-dib fr-fil full" data-file-sn="15563951" data-gif="false" data-img-height="881" data-img-width="2008" data-role="attach-image" src="https://edgio.clien.net/F01/15563951/b1ee2f097e9ce.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;같은 네트워크가 아닌상태 (와이파이 아니고 5G 떠있는 걸로 확인) 에서&lt;/p&gt;
+  &lt;p&gt;한번 서버로 보내보았으며 제대로 보내졌음을 확인&lt;/p&gt;
+  &lt;p&gt;원거리에서도 사진 소매넣기 할 수 있음을 확인&lt;/p&gt;
+  &lt;p&gt;안쓸땐 VPN 끄시면 됩니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="27.jpg" class="fr-dib fr-fil full" data-file-sn="15563954" data-gif="false" data-img-height="877" data-img-width="1578" data-role="attach-image" src="https://edgio.clien.net/F01/15563954/b20a120d604c2.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;사진 제한에 걸려서 보안설정은 다음에 작성해야 할것 같습니다&lt;/p&gt;
+  &lt;p&gt;나머지 보안설정은 다음 글에 작성하도록 하겠습니다 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;보기힘든 글 여기까지 읽어주셔서 감사합니다 ㅠㅠ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19073279</guid><pubDate>Sat, 04 Oct 2025 08:43:08 GMT</pubDate></item><item><title>에일리언 어스 : 보지 마세요.[13][2]</title><link>https://www.clien.net/service/board/park/19073707</link><description>
  
  
   &lt;p&gt;그럭저럭 볼만한 초반에 비해 6을 넘어 7,8(최종화)는 눈뜨고 보지 못할 정도의 똥망작이네요.&lt;/p&gt;
@@ -66,7 +242,7 @@
   &lt;p&gt;어서 이런 유전성 질환도 &lt;/p&gt;
   &lt;p&gt;치료 법이 나오면 좋겠습니다...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073602</guid><pubDate>Sat, 04 Oct 2025 20:50:46 GMT</pubDate></item><item><title>전세계 군함 방어가 드론 때문에 발칵 뒤집혔다네요[15][0]</title><link>https://www.clien.net/service/board/park/19073705</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073602</guid><pubDate>Sat, 04 Oct 2025 20:50:46 GMT</pubDate></item><item><title>전세계 군함 방어가 드론 때문에 발칵 뒤집혔다네요[16][0]</title><link>https://www.clien.net/service/board/park/19073705</link><description>
  
  
   &lt;p&gt;러우 전에서 러시아가 최근에 실전에 사용한 드론 전술인데 &lt;/p&gt;
@@ -88,7 +264,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073705</guid><pubDate>Sun, 05 Oct 2025 01:20:17 GMT</pubDate></item><item><title>중국, 서해 해양조사 상습방해…5번중 1번 ‘어깃장’[10][1]</title><link>https://www.clien.net/service/board/park/19073679</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073705</guid><pubDate>Sun, 05 Oct 2025 01:20:17 GMT</pubDate></item><item><title>중국, 서해 해양조사 상습방해…5번중 1번 ‘어깃장’[10][2]</title><link>https://www.clien.net/service/board/park/19073679</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -171,7 +347,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073548</guid><pubDate>Sat, 04 Oct 2025 17:52:56 GMT</pubDate></item><item><title>다카이치 당선 일본 트위터 반응[9][14]</title><link>https://www.clien.net/service/board/park/19073694</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073548</guid><pubDate>Sat, 04 Oct 2025 17:52:56 GMT</pubDate></item><item><title>다카이치 당선 일본 트위터 반응[11][17]</title><link>https://www.clien.net/service/board/park/19073694</link><description>
  
  
   &lt;p&gt;&lt;img alt="11111.jpg" class="fr-dib fr-fil full" data-file-sn="15564571" data-gif="false" data-img-height="1631" data-img-width="1080" data-role="attach-image" src="https://edgio.clien.net/F01/15564571/b680f2edae645.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -271,7 +447,7 @@
   &lt;p&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/19072981</guid><pubDate>Fri, 03 Oct 2025 11:49:53 GMT</pubDate></item><item><title>국짐당 주진우 얘 대체 뭐하는 애죠?ㅋㅋㅋㅋ[3][18]</title><link>https://www.clien.net/service/board/park/19073640</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/19072981</guid><pubDate>Fri, 03 Oct 2025 11:49:53 GMT</pubDate></item><item><title>국짐당 주진우 얘 대체 뭐하는 애죠?ㅋㅋㅋㅋ[3][19]</title><link>https://www.clien.net/service/board/park/19073640</link><description>
  
  
   &lt;p&gt;ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ&lt;/p&gt;
@@ -284,7 +460,7 @@
   &lt;p&gt;폰도 그렇고 이번 노트북도 144Hz까지 지원하는데 60이랑 144 비교해보면 체감이 잘안되는데 이거 내눈이 이상한걸까요&lt;/p&gt;
   &lt;p&gt;눈 시력은 1.2라 문제 없는거 같은데 혹시 144이상 사용하시는 분들 체감 하시나요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073638</guid><pubDate>Sat, 04 Oct 2025 21:38:28 GMT</pubDate></item><item><title>힘든 명절 입니다[14][5]</title><link>https://www.clien.net/service/board/park/19073623</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073638</guid><pubDate>Sat, 04 Oct 2025 21:38:28 GMT</pubDate></item><item><title>힘든 명절 입니다[15][5]</title><link>https://www.clien.net/service/board/park/19073623</link><description>
  
  
   &lt;p&gt;클리앙에 이런 글을 올리게 될줄은 몰랐습니다..&lt;/p&gt;
@@ -306,7 +482,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;﻿&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073623</guid><pubDate>Sat, 04 Oct 2025 21:19:57 GMT</pubDate></item><item><title>하나로마트 맥주득템[15][1]</title><link>https://www.clien.net/service/board/park/19073619</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073623</guid><pubDate>Sat, 04 Oct 2025 21:19:57 GMT</pubDate></item><item><title>하나로마트 맥주득템[16][1]</title><link>https://www.clien.net/service/board/park/19073619</link><description>
  
  
   &lt;p&gt;12캔 사서 축지법 점프스텝으로 집에 가는 중입니다&lt;/p&gt;
@@ -333,14 +509,14 @@
   &lt;p&gt;재밌는 판결이네요. 체포자체는 적법한데 굳이 유지시킬 이유는 없어서 석방이라니..&lt;/p&gt;
   &lt;p&gt;이진숙 주목만 받게 해줬네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073607</guid><pubDate>Sat, 04 Oct 2025 20:30:16 GMT</pubDate></item><item><title>안규백 교체 정말 시급합니다.[13][24]</title><link>https://www.clien.net/service/board/park/19073600</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073607</guid><pubDate>Sat, 04 Oct 2025 20:30:16 GMT</pubDate></item><item><title>안규백 교체 정말 시급합니다.[14][25]</title><link>https://www.clien.net/service/board/park/19073600</link><description>
  
  
   &lt;p&gt;정성호도 시급한데 그보다 당장 안규백은 잘라야 해요.&lt;/p&gt;
   &lt;p&gt;이게 대체 뭡니까.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073600</guid><pubDate>Sat, 04 Oct 2025 20:30:10 GMT</pubDate></item><item><title>권성동, 이재명 죽여라 지시[5][29]</title><link>https://www.clien.net/service/board/park/19073589</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073600</guid><pubDate>Sat, 04 Oct 2025 20:30:10 GMT</pubDate></item><item><title>권성동, 이재명 죽여라 지시[5][33]</title><link>https://www.clien.net/service/board/park/19073589</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -404,7 +580,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;현실은 대선후보까지 갈꺼 같네요.. ㅋㅋㅋ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073610</guid><pubDate>Sat, 04 Oct 2025 20:39:03 GMT</pubDate></item><item><title>일본 정치 보면 진짜 병맛인게 국가원수를 국민이 못뽑아요 ㅋㅋ[14][18]</title><link>https://www.clien.net/service/board/park/19073604</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073610</guid><pubDate>Sat, 04 Oct 2025 20:39:03 GMT</pubDate></item><item><title>일본 정치 보면 진짜 병맛인게 국가원수를 국민이 못뽑아요 ㅋㅋ[17][18]</title><link>https://www.clien.net/service/board/park/19073604</link><description>
  
  
   &lt;p&gt;진짜 의원내각제 하자는 소리는&lt;/p&gt;
@@ -511,7 +687,7 @@
   &lt;p&gt;경찰 출석요청에는 불출석 하다가&lt;/p&gt;
   &lt;p&gt;판사 앞에서는 성실한 출석을 약속하다니 비굴 하네요...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073559</guid><pubDate>Sat, 04 Oct 2025 18:24:25 GMT</pubDate></item><item><title>미국인들의 한국 관세 반응입니다.[7][16]</title><link>https://www.clien.net/service/board/park/19073525</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073559</guid><pubDate>Sat, 04 Oct 2025 18:24:25 GMT</pubDate></item><item><title>미국인들의 한국 관세 반응입니다.[8][16]</title><link>https://www.clien.net/service/board/park/19073525</link><description>
  
  
   &lt;p&gt;트럼프는 10%의 생각 대다수는. &lt;/p&gt;
@@ -582,7 +758,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;박주민이면 오세훈한테 진다는 패배의식은 좀 그만했으면 합니다. 팩트는, 서울은 야당 심판의 여론이 더 강합니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073417</guid><pubDate>Sat, 04 Oct 2025 13:07:05 GMT</pubDate></item><item><title>국짐 주진우 정말 역겹습니다..[28][41]</title><link>https://www.clien.net/service/board/park/19073527</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073417</guid><pubDate>Sat, 04 Oct 2025 13:07:05 GMT</pubDate></item><item><title>국짐 주진우 정말 역겹습니다..[28][42]</title><link>https://www.clien.net/service/board/park/19073527</link><description>
  
  
   &lt;p&gt;오송지하차도 참사때..&lt;/p&gt;
@@ -654,26 +830,4 @@
   &lt;p&gt;주황색 가즈아&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19072678</guid><pubDate>Thu, 02 Oct 2025 19:28:25 GMT</pubDate></item><item><title>집값 잡으려고 다른데 돈 엄청 쓸 필요없이[30][6]</title><link>https://www.clien.net/service/board/park/19073483</link><description>
- 
- 
-  &lt;p&gt;그냥 그돈으로 좋은 지역에 임대 주택(아파트) 많이 지어서 저렴한 월세로 대량 공급해버리면 됩니다.&lt;/p&gt;
-  &lt;p&gt;그러면 집값 정상화 금방입니다. &lt;s&gt;물론 &lt;/s&gt;&lt;s&gt;주변 시세 엄청 떨어질겁니다.&lt;/s&gt;&lt;/p&gt;
-  &lt;p&gt;세금을 올리는 것도 맞는 방향일 수는 있겠으나 그건 단기로 하기엔 저항이 심하고&lt;/p&gt;
-  &lt;p&gt;이쪽이 명분도 챙기고 실리도 얻는 방법이죠.&lt;/p&gt;
-  &lt;p&gt;이러면 단기간 건설경기도 좋아지고 주거비가 저렴해지면서 가용소득이 늘어나죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;//예산 이야기 나올거 같았는데&lt;/p&gt;
-  &lt;p&gt;이거에 들어가는 예산이 정작 효과도 못보는 많은 경기 활성, 출산율 극복 예산보다 훠얼씬 적게 들어가기 때문에&lt;/p&gt;
-  &lt;p&gt;여기다 돌리면 됩니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;//영차가 심하긴한데&lt;/p&gt;
-  &lt;p&gt;좋은 지역의 기준은 SOC입니다.&lt;/p&gt;
-  &lt;p&gt;강남 한복판에 지을게 아니라면 땅이 없진 않고 대량이라고 하지만 수요를 낮출 정도만 시작해도&lt;/p&gt;
-  &lt;p&gt;집값 특성상 수요가 낮아지면 하락할 수밖에 없습니다.&lt;/p&gt;
-  &lt;p&gt;지금은 임대도 거의 로또 수준이라 영향이 없죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;//부동산 정책의 가장 큰 난관은 저항입니다.&lt;/p&gt;
-  &lt;p&gt;그래서 쉬우면서도 어려운거죠.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19073483</guid><pubDate>Sat, 04 Oct 2025 15:35:29 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19072678</guid><pubDate>Thu, 02 Oct 2025 19:28:25 GMT</pubDate></item></channel></rss>
