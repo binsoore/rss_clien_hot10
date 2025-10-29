@@ -1,5 +1,153 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Wed, 29 Oct 2025 20:01:00 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 역시 경차는 유채색이 예쁘네요[10][0]</title><link>https://www.clien.net/service/board/cm_car/19085860</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Wed, 29 Oct 2025 21:00:52 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 테슬라 FSD 관련 최근 알려진 기술 정보[3][5]</title><link>https://www.clien.net/service/board/cm_car/19085983</link><description>
+ 
+ 
+  &lt;p&gt;테슬라의 FSD 개발을 총괄하고 있는 부사장 아쇽 엘루스와미가 최근 어닝콜 이후 FSD 기술에 대해 상당한 내용을 공개한 아티클이 있어 X에서는 화제가 되었는데 클리앙에서는 소개된 적 없는것 같아 가져와 봤습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;레이더, 초음파, 라이다 등을 쓰지 않고 카메라만 쓴다는 점은 이미 잘 알려진 사실이고,&lt;/p&gt;
+  &lt;p&gt;카메라를 RGB가 아닌 RAW값 (센서가 수광한 Photon 개수)을 그대로 넣는다는 점도 관심 있는 분들은 다 알고 있을 내용이고,&lt;/p&gt;
+  &lt;p&gt;주행 정책을 결정하는 정책이 코드 기반이 아닌 인공신경망 기반 플래너로 입력부터 제어명령까지 E2E 네트워크라는 점도 알만한 분들은 다 알고 계셨을 정보입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;제가 이번에 알려진 사실 중 가장 경악한 부분은&lt;/p&gt;
+  &lt;p&gt;"월드 시뮬레이터가 물리엔진이 아닌 신경망이다" 라는 점입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;제가 알고 있기로는 자율주행 연구 중인 모든 곳에서 물리엔진을 구현한 시뮬레이터를 써서 주행을 검증하는 것으로 알고 있는데요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;테슬라는 물리법칙이 정확하게 계산되는 시뮬레이터 공간에서 테스트 주행을 하거나, 학습 데이터를 증강 생성하는게 아니라. 시뮬레이터가 환경을 만들어낼 때 생성형 AI (최근 수준이 많이 올라와 놀라움을 주고 있는 Sora와 같은 방식)를 사용하고 있었다고 합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;영상 생성은 매우 GPU 자원 사용이 많을텐데, 매우 빠르게 생성하고 있다고 하니 더 놀라운 일이죠. 어쩐지 GPU에 조 단위를 쓰더라니...&lt;/p&gt;
+  &lt;p&gt;우리에게 동영상 생성 AI가 친숙해진 것은 얼마 안 됐는데 몇년 전부터 사용하고 있다는게 참 놀라운 점입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;또 한가지 놀랍고도 흥미로운 부분은,&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;FSD 모델이 Explainable 하다는 점입니다. 자연어를 이용해&lt;/p&gt;
+  &lt;p&gt;"너 왜 여기서 이런 판단을 했어?"를 질의 하고 답변을 받을 수 있다고 하네요. LLM도 통합되어 있는 것입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자율주행 구현에 테슬라 방식이 유일한 방법은 아닐지 몰라도, 그 누구도 쉽게 따라할 수는 없는 독보적인 (돈지랄) 방법임은 틀림 없는 것 같습니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;* 추가로, 이 월드시뮬레이터를 그대로 옵티머스에 활용하고 있다고 합니다&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19085983</guid><pubDate>Wed, 29 Oct 2025 20:31:20 GMT</pubDate></item><item><title>이재명을 경험했던 민주당 지지자들이 이토록 이재명 대통령을 외쳤던 이유가[4][6]</title><link>https://www.clien.net/service/board/park/19086100</link><description>
+ 
+ 
+  &lt;p&gt;오늘 증명되고 있습니다!&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 시국에 열리는 APEC이라는 초대형 이벤트를 이렇게 우리의 이벤트로 만들어버린것이야말로 정부의 능력이죠.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;진짜.. 와 이건 뭐 할 말을 잃게 만드네요 ㄷㄷㄷㄷ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086100</guid><pubDate>Wed, 29 Oct 2025 20:27:05 GMT</pubDate></item><item><title>협상 말이 안나오네요[3][9]</title><link>https://www.clien.net/service/board/park/19086059</link><description>
+ 
+ 
+  &lt;p&gt;일본에 비해서 모든 조건이 압도적으로 좋네요.&lt;/p&gt;
+  &lt;p&gt;금관 이왕 주는거 도금 말고 순금으로 줄 껄 그랬나봐요.&lt;/p&gt;
+  &lt;p&gt;트럼프 상대로 이정도 선방이라니 정말 대단합니다.&lt;/p&gt;
+  &lt;p&gt;나라를 살린 협상이네요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086059</guid><pubDate>Wed, 29 Oct 2025 19:54:32 GMT</pubDate></item><item><title>결과론적으로 윤석렬이 임기중 가장 잘했던일.[3][5]</title><link>https://www.clien.net/service/board/park/19086048</link><description>
+ 
+ 
+  &lt;p&gt;하루빨리 내려올수있게했던 불법게엄선포라고 생각합니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086048</guid><pubDate>Wed, 29 Oct 2025 19:47:24 GMT</pubDate></item><item><title>트럼프 방명록 작성 장면[6][5]</title><link>https://www.clien.net/service/board/park/19086046</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_35028.png" class="fr-dib fr-fil full" data-file-sn="15583244" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2025/10/15583244/1306e902915c03.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/SKYPBhfT5oc" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;방명록 작성 하면서 이렇게 웃는 것은 처음 보네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://imgnews.pstatic.net/image/001/2025/10/29/PYH2025102929740001300_P4_20251029194116052.jpg?type=w860"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://imgnews.pstatic.net/image/001/2025/10/29/PYH2025102929750001300_P4_20251029194117895.jpg?type=w860"/&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://imgnews.pstatic.net/image/001/2025/10/29/PYH2025102929780001300_P4_20251029194125693.jpg?type=w860"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;[속보]트럼프, 방명록에 "위대한 정상회담의 아름다운 시작"&lt;/h2&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086046</guid><pubDate>Wed, 29 Oct 2025 19:46:14 GMT</pubDate></item><item><title>속보] 트럼프, 李 대통령에 '어려운 일 있으면 아무 때나 연락하라'[8][8]</title><link>https://www.clien.net/service/board/park/19086037</link><description>
+ 
+ 
+  &lt;pre&gt;&lt;/pre&gt;
+  &lt;p&gt;아..좋네요!!!&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086037</guid><pubDate>Wed, 29 Oct 2025 19:41:39 GMT</pubDate></item><item><title>대통령실 '의약품·목재 등 최혜국대우…항공기부품·의약품 무관세'[1][5]</title><link>https://www.clien.net/service/board/park/19086032</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/422/0000796120?sid=100" ori-url="https://n.news.naver.com/mnews/article/422/0000796120?sid=100" target="_blank"&gt;https://n.news.naver.com/mnews/article/422/0000796120?sid=100&lt;/a&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086032</guid><pubDate>Wed, 29 Oct 2025 19:39:25 GMT</pubDate></item><item><title>진짜 선방했네요[8][9]</title><link>https://www.clien.net/service/board/park/19086029</link><description>
+ 
+ 
+  &lt;p&gt;기자회견 들어보니 통화스와프 제시하면서 미국에 우리나라 외환시장 상황에 대해 이해시키고 &lt;/p&gt;
+  &lt;p&gt;연간 금액 상한 정하는걸로 옮겨가서 그 금액 정하는데 오래걸린거 같네요&lt;/p&gt;
+  &lt;p&gt;잘 마무리되어서 정말 다행이네요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086029</guid><pubDate>Wed, 29 Oct 2025 19:37:14 GMT</pubDate></item><item><title>[속보] 대통령실 “자동차 및 자동차 부품관세 15%로 인하”[3][6]</title><link>https://www.clien.net/service/board/park/19086027</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/018/0006150467?sid=100" ori-url="https://n.news.naver.com/mnews/article/018/0006150467?sid=100" target="_blank"&gt;https://n.news.naver.com/mnews/article/018/0006150467?sid=100&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086027</guid><pubDate>Wed, 29 Oct 2025 19:36:04 GMT</pubDate></item><item><title>김용범 '한미, 원리금 상환 전까지 수익 5대 5 배분…추후 조정도 가능'[3][10]</title><link>https://www.clien.net/service/board/park/19086026</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/056/0012056196?sid=001" ori-url="https://n.news.naver.com/mnews/article/056/0012056196?sid=001" target="_blank"&gt;https://n.news.naver.com/mnews/article/056/0012056196?sid=001&lt;/a&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086026</guid><pubDate>Wed, 29 Oct 2025 19:33:39 GMT</pubDate></item><item><title>10년 할부에 연 상한선 둔 건 참 잘한 일인게...[5][10]</title><link>https://www.clien.net/service/board/park/19086025</link><description>
+ 
+ 
+  &lt;p&gt;이렇게 하면 트럼프가 임기 중 실각을 하거나 임기를 다 해도 다음 정부 들어오면 재협상을 할 여지가 생겼네요.&lt;/p&gt;
+  &lt;p&gt;미국의 다음 정부는 우방국 대우를 위해 다른 협상을 다시 하자 할 수도 있는데 지금 일시불로 다 주면(다 줄 돈도 없긴 하지만...)&lt;/p&gt;
+  &lt;p&gt;일말의 다음 기회도 없으니까요.&lt;/p&gt;
+  &lt;p&gt;개인적인 우려보다 훨씬 나은 방향으로 잡혀서 참 다행이라 봅니다. 전 솔직히 더 나쁜 결과도 각오는 해야 한다고 봤던지라...&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086025</guid><pubDate>Wed, 29 Oct 2025 19:34:15 GMT</pubDate></item><item><title>관세협상 진짜 대통령 효능감 느끼네요[7][18]</title><link>https://www.clien.net/service/board/park/19086022</link><description>
+ 
+ 
+  &lt;p&gt;힘든 협상을 이렇게 마무리한게 진짜 대단하네요.&lt;/p&gt;
+  &lt;p&gt;탄핵안되었다면 어땠을지 무서울 정도네요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;핵잠수함까지 된다면 민주당 정권은 안보 키워드도 가져올 수 있겠네요.&lt;/p&gt;
+  &lt;p&gt;문재인 대통령은 미사일 탄두 증량해제&lt;/p&gt;
+  &lt;p&gt;이재명 대통령은 핵잠수함&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;최곱니다 진짜&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086022</guid><pubDate>Wed, 29 Oct 2025 19:29:55 GMT</pubDate></item><item><title>[속보] 김용범 '쌀·소고기 포함 농산물 추가 시장 개방 철저히 방어'[3][8]</title><link>https://www.clien.net/service/board/park/19086018</link><description>
+ 
+ 
+  &lt;h2&gt;[속보] 김용범 "쌀·소고기 포함 농산물 추가 시장 개방 철저히 방어"&lt;/h2&gt;
+  &lt;h2&gt;[속보] 김용범 "대미 투자 원리금 20년내 상환 불가시 수익배분 비율 조정 가능"&lt;/h2&gt;
+  &lt;h2&gt;[속보] 김용범 "대미 펀드, 상환 전 수익 배분 5대 5…비율 조정 가능"&lt;/h2&gt;
+  &lt;h2&gt;[속보]김용범 "원금회수 위한 다층적 장치 마련…원금 보장 사업에만 투자키로 명시"&lt;/h2&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/2EnSuDRRL40" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086018</guid><pubDate>Wed, 29 Oct 2025 19:29:49 GMT</pubDate></item><item><title>[속보] 대통령실 '마스가, 한국 기업 주도로 추진…보증도 포함'[2][7]</title><link>https://www.clien.net/service/board/park/19086017</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/422/0000796117?sid=001" ori-url="https://n.news.naver.com/mnews/article/422/0000796117?sid=001" target="_blank"&gt;https://n.news.naver.com/mnews/article/422/0000796117?sid=001&lt;/a&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086017</guid><pubDate>Wed, 29 Oct 2025 19:29:47 GMT</pubDate></item><item><title>김용범 '美, 의약품 등 품목관세 분야에서 韓 최혜국 대우'[1][5]</title><link>https://www.clien.net/service/board/park/19086015</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/421/0008572038?sid=001" ori-url="https://n.news.naver.com/mnews/article/421/0008572038?sid=001" target="_blank"&gt;https://n.news.naver.com/mnews/article/421/0008572038?sid=001&lt;/a&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086015</guid><pubDate>Wed, 29 Oct 2025 20:12:01 GMT</pubDate></item><item><title>이야기 역시 경차는 유채색이 예쁘네요[10][0]</title><link>https://www.clien.net/service/board/cm_car/19085860</link><description>
  
  
   &lt;p&gt;어제 아파트 주차하고 지나가다 캐스퍼ev를 봤는데&lt;/p&gt;
@@ -61,18 +209,18 @@
   &lt;p&gt;진심으로 전율이 돋고 감격스럽네요.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086063</guid><pubDate>Wed, 29 Oct 2025 19:55:12 GMT</pubDate></item><item><title>진짜 이재명 정부 대박이네요 ㅋㅋ[1][5]</title><link>https://www.clien.net/service/board/park/19086052</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086063</guid><pubDate>Wed, 29 Oct 2025 19:55:12 GMT</pubDate></item><item><title>진짜 이재명 정부 대박이네요 ㅋㅋ[1][11]</title><link>https://www.clien.net/service/board/park/19086052</link><description>
  
  
   &lt;p&gt;저런 트럼프 상대로 협상을 이정도로 해냈을 줄은 몰랐습니다..&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086052</guid><pubDate>Wed, 29 Oct 2025 19:55:16 GMT</pubDate></item><item><title>[속보] 위성락 “한미정상, 핵추진 재래식 잠수함 도입 협의”[12][18]</title><link>https://www.clien.net/service/board/park/19086047</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086052</guid><pubDate>Wed, 29 Oct 2025 19:55:16 GMT</pubDate></item><item><title>[속보] 위성락 “한미정상, 핵추진 재래식 잠수함 도입 협의”[16][25]</title><link>https://www.clien.net/service/board/park/19086047</link><description>
  
  
   &lt;p&gt; &lt;a href="https://www.edaily.co.kr/news/read?newsId=05736726642337840" ori-url="https://www.edaily.co.kr/news/read?newsId=05736726642337840" target="_blank"&gt;https://www.edaily.co.kr/news/read?newsId=05736726642337840&lt;/a&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086047</guid><pubDate>Wed, 29 Oct 2025 19:46:44 GMT</pubDate></item><item><title>현대차그룹, 관세협상 타결에 '정부에 감사…내실 다지겠다'[4][7]</title><link>https://www.clien.net/service/board/park/19086040</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086047</guid><pubDate>Wed, 29 Oct 2025 19:46:44 GMT</pubDate></item><item><title>현대차그룹, 관세협상 타결에 '정부에 감사…내실 다지겠다'[5][8]</title><link>https://www.clien.net/service/board/park/19086040</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/article/001/0015710242?sid=101" ori-url="https://n.news.naver.com/article/001/0015710242?sid=101" target="_blank"&gt;현대차그룹, 한미 관세협상 타결에 "정부에 감사…내실 다지겠다"&lt;/a&gt;&lt;/p&gt;
@@ -88,7 +236,7 @@
   &lt;p&gt;미국이 무조건적인 이득인 협상이니까요.&lt;/p&gt;
   &lt;p&gt;어쨌든 일본이 먼저 트롤링을 한 상황에서 최대한으로 잘 협상한것같습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086038</guid><pubDate>Wed, 29 Oct 2025 19:42:38 GMT</pubDate></item><item><title>[속보] 대통령실 '트럼프, 이재명 대통령에 백악관 초청 의사'[3][6]</title><link>https://www.clien.net/service/board/park/19086036</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19086038</guid><pubDate>Wed, 29 Oct 2025 19:42:38 GMT</pubDate></item><item><title>[속보] 대통령실 '트럼프, 이재명 대통령에 백악관 초청 의사'[4][8]</title><link>https://www.clien.net/service/board/park/19086036</link><description>
  
  
   &lt;p&gt;&lt;strong&gt;&lt;a href="https://n.news.naver.com/article/008/0005270347?sid=100" ori-url="https://n.news.naver.com/article/008/0005270347?sid=100" target="_blank"&gt;https://n.news.naver.com/article/008/0005270347?sid=100&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
@@ -142,7 +290,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;속보라 추가 내용은 곧 나올겁니다. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085992</guid><pubDate>Wed, 29 Oct 2025 18:46:40 GMT</pubDate></item><item><title>오늘자 조선일보 개망신.jpg[2][13]</title><link>https://www.clien.net/service/board/park/19085988</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085992</guid><pubDate>Wed, 29 Oct 2025 18:46:40 GMT</pubDate></item><item><title>오늘자 조선일보 개망신.jpg[2][17]</title><link>https://www.clien.net/service/board/park/19085988</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -370,7 +518,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;이와중에 권영국은 시민단체들이랑 저기서 뭐합니까?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085899</guid><pubDate>Wed, 29 Oct 2025 16:13:24 GMT</pubDate></item><item><title>입당 RS3 아스카리 블루 계약했습니다.[13][8]</title><link>https://www.clien.net/service/board/cm_car/19085914</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085899</guid><pubDate>Wed, 29 Oct 2025 16:13:24 GMT</pubDate></item><item><title>입당 RS3 아스카리 블루 계약했습니다.[16][9]</title><link>https://www.clien.net/service/board/cm_car/19085914</link><description>
  
  
   &lt;p&gt;대기 예약 2개나 걸어놓고 기다리다 지쳐 포기할 때 쯤 다른 딜러에게서 연락 받아서 오늘 계약하고 왔습니다.&lt;/p&gt;
@@ -386,276 +534,4 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19085914</guid><pubDate>Wed, 29 Oct 2025 16:34:17 GMT</pubDate></item><item><title>이야기 운전하면서 분노를 참을 수 없는 거...[13][1]</title><link>https://www.clien.net/service/board/cm_car/19085893</link><description>
- 
- 
-  &lt;p&gt;교차로에서 신호 기다리다가 파란불 들어와서 가려는데&lt;/p&gt;
-  &lt;p&gt;골목길에서 합류 못하는 차가 있길래 양보했더니&lt;/p&gt;
-  &lt;p&gt;1차로(좌회전차로) 타겠다고 길막할 때...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;저도 모르게 빠아아앙 했습니다..&lt;/p&gt;
-  &lt;p&gt;아랑곳 않더군요.&lt;/p&gt;
-  &lt;p&gt;덕분에 신호등 다시 바뀌고... &lt;/p&gt;
-  &lt;p&gt;그 차는 좌회전 신호받고 사라지고...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;화가 다스려지지 않더군요&lt;/p&gt;
-  &lt;p&gt;분노조절장애인가... ㅠ&lt;/p&gt;
-  &lt;p&gt;며칠 전 얘기입니다.&lt;/p&gt;
-  &lt;p&gt;아랫글 보고 생각나서요 크흑&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19085893</guid><pubDate>Wed, 29 Oct 2025 16:13:45 GMT</pubDate></item><item><title>입당 초희귀 하이퍼카 대거 목격![10][0]</title><link>https://www.clien.net/service/board/cm_car/19084340</link><description>
- 
- 
-  &lt;p&gt;몬자 sp2, 포드 GT, 포르쉐 911 gts 만타르 레이싱, 방치 슈퍼카, 페어레이디 등등 하이퍼카 목격했습니다!&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19084340</guid><pubDate>Sun, 26 Oct 2025 22:46:37 GMT</pubDate></item><item><title>예전에 썻던 대선토론관련 댓글에 방금 고소되었다는 전화를 받았네요.[21][2]</title><link>https://www.clien.net/service/board/park/19085911</link><description>
- 
- 
-  &lt;p&gt;스펨인줄 알았는데 저에게도 이런 시간이 오는군요.&lt;/p&gt;
-  &lt;p&gt;아직 정보공개 청구는 안했는데 부산경찰서에서 온거봐서는 개혁신당쪽에서 한거 같네요.  명예훼손 건으로 걸고 들어온거 같습니다.&lt;/p&gt;
-  &lt;p&gt;처음이라 어떨떨 하네요.&lt;/p&gt;
-  &lt;p&gt;부산에서 집 근처 경찰서로 이관하고 이관한 경찰서에서 연락 준다고 합니다. 흠... 조금 살떨리네요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085911</guid><pubDate>Wed, 29 Oct 2025 16:29:46 GMT</pubDate></item><item><title>런던베이글 과로사 효원씨 업무량[10][2]</title><link>https://www.clien.net/service/board/park/19085908</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="17617027623930.jpg" class="fr-dib fr-fil" data-file-sn="15583102" data-gif="false" data-img-height="387" data-img-width="600" data-role="attach-image" src="https://edgio.clien.net/F01/2025/10/15583102/12f9fcfaabfe10.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;21시간 근무는 대체......&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085908</guid><pubDate>Wed, 29 Oct 2025 16:26:48 GMT</pubDate></item><item><title>정청래 '내년 지선, 지도부 내리꽂기 없다…전략지역 컷오프 아냐'[6][7]</title><link>https://www.clien.net/service/board/park/19085892</link><description>
- 
- 
-  &lt;h2&gt;정청래 "내년 지선, 지도부 내리꽂기 없다…전략지역 컷오프 아냐" - 뉴스1&lt;/h2&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;"가장 공정한 경선 실시…민주적 방식으로 룰 세팅 중"&lt;br/&gt;
-       "필요한 경우 전략공천…상황 봐가며 결정할 것"&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정청래 더불어민주당 대표는 29일 내년 지방선거 공천과 관련 "지도부에서 특별하게 옛날 방식처럼 내리꽂는 일은 있을 수 없다"며 당원 참여 확대를 강조했다. 전략공천에 대해선 "승리를 위해 꼭 필요한 경우에 하겠다"며 "그걸 컷오프라고 보긴 어렵다"고 밝혔다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정 대표는 이날 국회박물관에서 열린 민주당 참좋은지방정부위원회 발대식에 참석해 "지방선거 승리를 보장하기 위한 가장 공정하고, 가장 민주적인, 그리고 가장 많은 권리당원이 참여하는 경선을 실시하려고 한다"며 이같이 말했다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정 대표는 "지선 승리가 우리의 지상과제이고 이재명 정부 성공의 핵심열쇠라고 봤을 때 전체 구성원들이 경선에 참여하는 것이 승리의 가장 큰 주춧돌이라고 생각한다"고 강조했다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;(본문 생략, 출처 링크를 참고하세요.)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;hr/&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/MDF2K8oZ6cE?start=418" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p align="center"&gt;&lt;strong&gt;정청래 당대표, 참좋은지방정부위원회 발대식 인사말&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;□ 일시 : 2025년 10월 29일(수) 오후 1시&lt;/p&gt;
-  &lt;p&gt;□ 장소 : 국회박물관 2층 체험관&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;■ 정청래 당대표&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;바쁘실 텐데, 오늘 참좋은지방정부위원회 발대식에 오신 여러분 환영합니다. 여러분 혹시 그거 아세요? 유신헌법에 ‘지방자치제도를 실시한다. 단, 조국 통일 이후에 한다’ 실제로 유신헌법에 나와 있던 내용입니다. 안 하겠다는 이야기죠. 잘 아시다시피, 김대중 대통령께서 13일간의 단식을 통해서 지방자치제도가 정착하게 되었습니다. 그 이후로 눈부신 발전을 해왔습니다. &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;여러분 정치란 무엇일까요? 혹시 생각해보신 적 있으십니까? 제가 쓴 책에 나옵니다. &amp;lt;정치를 알아야 세상을 바꾼다&amp;gt; 앞부분에 ‘정치란 의사결정 또는 의사결정 과정의 모든 행위 이것이 정치’라고 규정하고 있습니다. 제 이야기가 아니라 여러 정치학자들의 규정입니다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;한 사람이 의사 결정을 하는 것을 보고 절대왕정이라고 하죠. 우리 정치는 의사결정에 1인에서 소수로, 소수에서 다수로, 다수에서 전체 구성원으로 의사 결정에 참여하는 것으로 정치는 발전해 왔습니다. 그것을 민주주의의 발전 과정이라고도 볼 수 있겠습니다. &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;우리는 헌법에서 보장된 ‘보통·평등·직접·비밀’ 투표권을 얻기 위해서 수천 년 동안 수많은 사람들이 피 흘려 싸웠습니다. 그래서 ‘민주주의란 피를 먹고 자란 나무’라는 말까지 있습니다. 오늘의 지방자치가 부활해서 정착하기까지 그동안 수없이 많은 사람들의 피눈물 나는 노력이 있었습니다. &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;의사 결정에 많은 전체 구성원들이 참여하는 것이 가장 민주적인 정치라고 봤을 때 민주주의의 꽃인 선거에 당원들의 권리가 확대되고 국민들의 의사에 비례해서 지방선거가 결정되는 것은 지방선거 그 자체 존재 이유와 목표이기도 합니다. 따라서 이번 지방선거는 가장 민주적인 경선, 가장 공정한 경선 그리고 전체 구성원 권리당원들이 참여하는 경선이 될 것입니다. &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;저는 지방선거 승리가 우리의 지상 과제이고 이재명 정부의 성공에 핵심 열쇠라고 봤을 때 가장 많은 권리당원들이, 전체 구성원들이 경선에 참여하는 것이 지방선거 승리의 가장 큰 주춧돌이라고 생각합니다. 그래서 이번 지방선거는 권리당원의 참여가 100% 전면 확대되는 선거가 될 것입니다. 저는 확신합니다. &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;따라서 이번 지방선거 승리를 보장하기 위한 가장 공정하고 가장 민주적이고 가장 많은 권리당원들이 참여하는 경선을 실시하려고 합니다. 어제 조승래 사무총장으로부터 지방선거 룰에 대해 보고를 받았습니다. 자세하게 받았는데, 가장 민주적인 방식으로 룰 세팅이 진행되고 있다는 말씀을 드립니다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;그렇다고 하여 자격도 되지 않는 누구나 경선에 참여하는 것은 아닙니다. 자격 심사 여부는 엄격하게 하겠습니다. 그래서 부자격자가 경선에 참여하는 일은 없도록 조치하겠습니다. 그래서 사무총장님 두 가지 기준 뭐였죠? ‘예외 없는 부적격’은 예외가 없습니다. 그냥 그것은 서류 탈락입니다. 그리고 그다음 부적격, 정상 참작을 하거나 아니면 심사위원 3분의 2의 결정으로 달리 정할 수 있는 구제책도 또 마련해놨습니다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;그래서 ‘예외 없는 부적격’은 어떻게 해볼 도리가 없습니다. 그런 경우는 사회의 지탄을 받는 그런 사람들로 구성되어 있을 것입니다. 그리고 전략공천은 당헌·당규대로 보장이 되어있습니다. 그것을 어느 정도까지 행사할지는 상황을 봐가면서 하겠습니다. 그래서 필요한 경우는 전략공천을 하는데 그것은 컷오프라고 보기는 어렵습니다. 승리를 위해서 꼭 필요한 경우 그런 경우는 그렇게 지방선거 룰이 세팅되어 있다고 말씀을 드리겠습니다. 사무총장님 제가 얘기하는 것이 맞죠? 전략 지역 하는 것은 컷오프 이런 것이 아니죠? 사무총장에게 어제 그렇게 보고를 받았습니다. 관심이 많을 것 같아서 제가 자세히 설명을 드렸습니다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;내년 지방선거가 그렇게 녹록하지 않습니다. 우리 국민들의 사랑을 받고 지역 유권자들의 사랑을 받는 일, 사람의 마음을 얻는 일이 어찌 그리 쉽겠습니까? 그래서 지방선거 승리의 벨이 울릴 때까지 우리는 한시도 방심하지 말고 진정성 있게 가장 낮은 곳으로 가서 유권자와 국민을 만나는 일에 소홀함이 없어야 할 것입니다. 저부터 그런 모범을 보이겠다는 말씀을 드립니다. &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;어떻게 보면 당대표와 우리 최고위원 지도부가 갖고 있던 권한과 권리를 대폭적으로 내려놓는 지방선거가 되지 않을까 그렇게 생각을 합니다. 지금 지방선거 공천 룰에 의하면 지도부에서 특별하게 옛날 방식으로 뭘 내리꽂거나 그런 일이 있을 수가 없습니다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;그래서 여러분들도 갖고 있는 역량으로 소신껏 지방선거를 준비하시고 또 참좋은지방정부위원회에서는 많은 인재들이 발굴되어서 그 인재들이 성공하고 진출할 수 있도록 돕는 그런 플랫폼 창구 역할을 해주실 것을 부탁드립니다. &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;제가 반 농담으로 말씀드리면, 여러분 지역에 있는 국회의원들 눈치를 그렇게 안 봐도 됩니다. 임오경 의원, 조승래 총장, 황명선 최고위원, 서삼석 최고위원도 와계시는데 국회의원들이 그렇게 입김을 행사할 수 있는 그런 지방선거 룰이 아닙니다. 그래서 가장 민주적으로 가장 풀뿌리 지방자치제도에 맞게 앞으로 지방선거를 잘 치렀으면 좋겠다는 말씀을 드리고요. &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;저도 굉장히 바쁩니다. 4시부터 전라북도 출마 예정자들 워크숍이 있는데 제가 오늘 강사를 합니다. 그래서 1시 반에 여기서 출발을 해야 하는데요. 행사를 제가 끝까지 다 못 보고 가더라도 널리 양해해 주시길 바라고, 박승원 참좋은지방정부위원장님께서 17개 시도 예산정책협의할 때마다 5분 발언하려고 그 먼 길까지 다 다녔거든요. 그래서 “괜히 맡겼나, 저렇게 고생하는데” 그런 생각도 들었습니다. 우리 박승원 광명시장께 여러분 큰 박수 부탁드리겠습니다. 감사합니다. &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p align="center"&gt;&lt;strong&gt;2025년 10월 29일&lt;/strong&gt;&lt;/p&gt;
-  &lt;p align="center"&gt;&lt;strong&gt;더불어민주당 공보국&lt;/strong&gt; &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085892</guid><pubDate>Wed, 29 Oct 2025 16:05:29 GMT</pubDate></item><item><title>국감서 연필 눕혀 ‘고릴라 데생’ 유영하 “마음 달래려고…”[10][0]</title><link>https://www.clien.net/service/board/park/19085875</link><description>
- 
- 
-  &lt;p&gt;유 의원은 “경위야 어찌 됐든 국감장에서 집중하지 못한 모습을 보여 미안한 마음이고 질책을 피할 생각도 없다”며 거듭 사과했다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;사과는 했네요.&lt;/p&gt;
-  &lt;p&gt;그림 그리는건 또 처음 봅니다.ㅎ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085875</guid><pubDate>Wed, 29 Oct 2025 15:31:09 GMT</pubDate></item><item><title>[단독] 대한항공 독점 확대… LCC·지역경제 타격[13][0]</title><link>https://www.clien.net/service/board/park/19085795</link><description>
- 
- 
-  &lt;p&gt;&lt;strong&gt;점유율 과반 국제선 22개인데… ‘틈새’ 독점까지 노리는 대한항공&lt;/strong&gt;&lt;img alt="" class="fr-fic fr-dii" src="https://imgnews.pstatic.net/image/081/2025/09/15/0003574542_001_20250915050217006.jpg?type=w647" width="647"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;대한항공과 아시아나항공, 진에어·에어부산·에어서울(저비용항공사·LCC) 등을 거느리게 된 한진그룹의 항공시장 독과점 체제가 현실화하고 있다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;공정거래위원회는 국내 1, 2위 국적 항공사의 합병으로 인한 독점 가능성을 제한하기 위해 특정 노선에 대해 ‘슬롯’(각 항공사에 배정된 출발·도착 시간)과 ‘운수권’(특정 국가에 취항할 수 있는 권리)을 이전하도록 했지만, 대한항공은 규제 사각지대를 찾아 독점을 확대하는 모습이다.&lt;br/&gt;&lt;br/&gt;
-    서울신문이 14일 박상혁 더불어민주당 의원실이 국토교통부로부터 받은 국내 취항 항공사의 노선별 운항 현황 자료를 분석한 결과 올해 상반기 기준 대한항공과 아시아나항공이 운항 중인 111개 국제노선(인천발 기준) 가운데 &lt;strong&gt;두 항공사의 통합 점유율이 50% 이상인 노선은 22개(단독 노선 제외)인 것으로 나타났다&lt;/strong&gt;.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt; 인천발 뉴욕 JFK와 런던 히스로, 프라하 등 3개 왕복 노선은 두 항공사를 합친 점유율이 100&lt;/strong&gt;%였으며 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;인천발 라스베이거스, 로스앤젤레스, 시애틀, 호놀룰루, 시드니, 창사, 시안, 베이징, 프놈펜, 도쿄 하네다 등 19개 노선은 50%를 넘었다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;후략....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://m.entertain.naver.com/home/article/081/0003574542" target="_blank"&gt;https://m.entertain.naver.com/home/article/081/0003574542&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아시아나만 타다가 최근에 어쩔수 없이(직항노선이 없어서) &lt;/p&gt;
-  &lt;p&gt;최근에 대한항공을 몇번 타보니..(때로는 비지니스였는데) &lt;/p&gt;
-  &lt;p&gt;이 좌석을 이 돈받고? 필아???? 싶더군요 ㄷㄷㄷㄷ&lt;/p&gt;
-  &lt;p&gt;앞으로 통합되면....더 심화되겠네요...........&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085795</guid><pubDate>Wed, 29 Oct 2025 13:22:10 GMT</pubDate></item><item><title>이야기 타이어 가게가 폐업한다고 하네요;;[14][0]</title><link>https://www.clien.net/service/board/cm_car/19085834</link><description>
- 
- 
-  &lt;p&gt;5년째 잘 이용하고 있던 타이어 가게가 내년초에 폐업을 하신다고 하네요.&lt;/p&gt;
-  &lt;p&gt;타이어 교환작업도 꼼꼼하게 해주시고, 보관도 가능해서 좋았었는데...&lt;/p&gt;
-  &lt;p&gt;이번 차도 출고해서 2년밖에 안되서 윈터도 아직 짱짱하고 썸머도 아직 짱짱한데&lt;/p&gt;
-  &lt;p&gt;앞으로 3~4년 어디다가 보관을 해야할까요...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;요즘 윈터타이어 보관해주는 업체 찾기도 쉽지 않고&lt;/p&gt;
-  &lt;p&gt;자기네 타이어 가게에서 구입하지 않은건 보관도 안해줄 것 같은데...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;집에다 보관할 장소는 전혀 나오질 않고요...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;집 주변에 개인창고 알아보니 가장 저렴한데가 한달에 6만원 정도 하네요.&lt;/p&gt;
-  &lt;p&gt;창고 하나 빌리면 2~3명은 보관할 수 있을거 같긴한데 사람 구하기도 쉽지 않을거 같고...&lt;/p&gt;
-  &lt;p&gt;1년에 보관 비용 72만원을 내면서 보관하기는 힘들거 같고...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이 참에 올웨더로 가야할까요???&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;우선 사무실 갖고 있는 친구 베란다에 좀 보관할 수 있는지 물어봐야겠네요;;ㅠ.ㅠ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;믿고있던 곳인데 참 아쉽네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;용인 동그란XXXX에서 문자 받으신분들 저말고도 계시죠??&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19085834</guid><pubDate>Wed, 29 Oct 2025 14:31:01 GMT</pubDate></item><item><title>이준석은 진짜 비열하군요 ㄷㄷㄷ[17][6]</title><link>https://www.clien.net/service/board/park/19085909</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="2025-10-29 16 16 41.png" class="fr-dib fr-fil full" data-file-sn="15583101" data-gif="false" data-img-height="116" data-img-width="872" data-role="attach-image" src="https://edgio.clien.net/F01/2025/10/15583101/12f9db75bb4290.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;(후략)&lt;/p&gt;
-  &lt;p&gt;기사원문 &lt;a href="https://imnews.imbc.com/news/2025/politics/article/6769982_36711.html" target="_blank"&gt;https://imnews.imbc.com/news/2025/politics/article/6769982_36711.html&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;국정감사에 출석하는 여성 공직자를 '여사'로 호칭한 전례가 있었나요?&lt;br/&gt;
-    노림수가 너무 뻔한 프레임인데, 진짜 인성의 바닥을 드러낸다고 밖에...   &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085909</guid><pubDate>Wed, 29 Oct 2025 16:24:54 GMT</pubDate></item><item><title>시진핑) 한국, 임진왜란 때 함께 싸워 有[40][3]</title><link>https://www.clien.net/service/board/park/19085904</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="20251029142355_mH2kRP7KIs.webp" class="fr-dib fr-fil full" data-file-sn="15583099" data-gif="false" data-img-height="902" data-img-width="900" data-role="attach-image" src="https://edgio.clien.net/F01/2025/10/15583099/12f9b3e9ec3279.webp?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;a href="https://news.nate.com/view/20251029n16836" target="_blank"&gt;https://news.nate.com/view/20251029n16836&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;명나라 : ??&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085904</guid><pubDate>Wed, 29 Oct 2025 16:19:08 GMT</pubDate></item><item><title>핵연료 중국 언급이 실언이라니[15][4]</title><link>https://www.clien.net/service/board/park/19085901</link><description>
- 
- 
-  &lt;p&gt;좀 어처구니가 없네요&lt;br/&gt;&lt;br/&gt;
-    국가안보는 어떤순간이든 최우선이어야 하는데&lt;br/&gt;&lt;br/&gt;
-    이걸 가지고 실언이라니 누가 실언을 하고있는지 모르겠군요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085901</guid><pubDate>Wed, 29 Oct 2025 16:13:27 GMT</pubDate></item><item><title>이재명 진짜 잘하네요.[22][33]</title><link>https://www.clien.net/service/board/park/19085900</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;일하는 중인데 저희 회사에서도 이재명 대통령 칭찬 일색입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;심지어 보수성향이던 분도 핵잠관련 요구에서는&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;저건 진짜 잘하고 있는거라며 칭찬하네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;중도층이나 보수쪽에 북/중관련 강경한 입장을 가진 유권자들이 많은데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이재명 대통령 께서는 제가 볼 때는&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;대중들이 옳다고 생각되는 것을 강력하게 밀고 나가는 것 같습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;민주당쪽 표뿐만 아니라 중도층까지, 심지어 보수쪽표도 다수 가져올 수 있겠네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;경제도 잘하고, 안보도 잘하고, 민생도 잘 보듬으시고&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;진짜 이렇게 완벽한 대통령이 대한민국 역사에 있었습니까?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;진짜 시원시원하고 여유있고 너무 멋집니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085900</guid><pubDate>Wed, 29 Oct 2025 16:13:07 GMT</pubDate></item><item><title>[속보] SK하이닉스 3분기 영업익 11조3834억원. 창사 이래 최대[16][0]</title><link>https://www.clien.net/service/board/park/19085891</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/005/0001810806" ori-url="https://n.news.naver.com/article/005/0001810806" target="_blank"&gt;SK하이닉스 3분기 영업익 11.4조…“내년 HBM 공급사 협의 완료”&lt;/a&gt; &lt;/p&gt;
-  &lt;p&gt;- 자료출처 네이버 -&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;우리나라의 살 길은 중소기업을 집중 지원 육성하여 &lt;/p&gt;
-  &lt;p&gt;제2 제3...... 제N의  거대 수출 기업으로 만드는 것이 답이 아닐까 하네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;자본이 모이는 곳에 첨단 기술과 인력이 모이는 것이라 봅니다.&lt;/p&gt;
-  &lt;p&gt;국민들이 부동산은 이제 그만 바라봤으면 좋겠네요. ㅋ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085891</guid><pubDate>Wed, 29 Oct 2025 16:05:16 GMT</pubDate></item><item><title>한은 총재 “서울 오피스 공급안을 주택으로 바꿔 공급량 늘려야”[14][1]</title><link>https://www.clien.net/service/board/park/19085887</link><description>
- 
- 
-  &lt;p class="text" style='margin-top: 40px; margin-bottom: 40px; padding: 0px; border: 0px; font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Arial, sans-serif; vertical-align: baseline; text-size-adjust: 100%; font-size: 18px; line-height: 1.86; color: rgb(34, 36, 37); letter-spacing: -0.3px; background-color: rgb(255, 255, 255);'&gt;이창용 한국은행 총재가 서울의 오피스(사무실) 물량을 주택으로 전환해 공급량을 늘려야 한다는 제안을 내놨다.&lt;/p&gt;
-  &lt;p class="text" style='margin-top: 40px; margin-bottom: 40px; padding: 0px; border: 0px; font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Arial, sans-serif; vertical-align: baseline; text-size-adjust: 100%; font-size: 18px; line-height: 1.86; color: rgb(34, 36, 37); letter-spacing: -0.3px; background-color: rgb(255, 255, 255);'&gt;이 총재는 29일 국회 기획재정위원회 종합감사에서 부동산 시장 안정과 관련한 의원들의 질의에 “세계적으로 오피스 수요가 줄고 있고 앞으로 인공지능(AI) 등으로 더 감소할 것으로 예상되는 만큼, 오피스보다는 가구에 주택을 공급하는 게 중요하다”며 “서울 오피스 공급안을 주택으로 바꿔 획기적으로 공급량을 늘리는 정책이 필요하다”고 밝혔다. 급감하고 있는 서울 사무실 수요를 주거 용도로 전환해 공급난을 완화하자는 제언이다.&lt;/p&gt;
-  &lt;p class="text" style='margin-top: 40px; margin-bottom: 40px; padding: 0px; border: 0px; font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Arial, sans-serif; vertical-align: baseline; text-size-adjust: 100%; font-size: 18px; line-height: 1.86; color: rgb(34, 36, 37); letter-spacing: -0.3px; background-color: rgb(255, 255, 255);'&gt;&lt;span style='font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Arial, sans-serif; letter-spacing: -0.3px;'&gt;&lt;strong&gt;이 총재는 주택 공급 정책뿐 아니라 서울로의 인구 유입을 억제하는 대책이 병행돼야 한다고 강조했다. 그는 “공급을 늘려도 계속 새 집이 생기면 지방에서 서울로 똘똘한 한 채를 갖기 위해 더 들어올 것”이라며 “몇 군데 대체제를 만들어주지 않으면 계속 문제가 반복될 수밖에 없는 만큼 공급 하나만으로 해결할 수 없고 종합적 대책이 필요하다”고 말했다.&lt;/strong&gt; 부동산 세제와 관련해서는 “주택 가격을 잡기 위한 세제가 아니라 자산 보유세의 형평성 차원에서 근본적 개혁이 일관성 있게 몇 년 지속돼야 (부동산) 문제가 해결될 수 있다”고 말했다.&lt;/span&gt;&lt;/p&gt;
-  &lt;p class="text" style='margin-top: 40px; margin-bottom: 40px; padding: 0px; border: 0px; font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Arial, sans-serif; vertical-align: baseline; text-size-adjust: 100%; font-size: 18px; line-height: 1.86; color: rgb(34, 36, 37); letter-spacing: -0.3px; background-color: rgb(255, 255, 255);'&gt;&lt;span style='font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", Dotum, 돋움, Arial, sans-serif; letter-spacing: -0.3px;'&gt;(후략)&lt;/span&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085887</guid><pubDate>Wed, 29 Oct 2025 15:59:59 GMT</pubDate></item><item><title>[긴글주의] 일기 꾸준히 쓰기 성공 (4년차) feat. 원노트[10][2]</title><link>https://www.clien.net/service/board/park/19085774</link><description>
- 
- 
-  &lt;p&gt;디지털치매인지, 생활에 너무 관심이 없어서 그런지&lt;/p&gt;
-  &lt;p&gt;루틴하게 지내온 평일의 삶은 어제일도 기억이 나지 않습니다.&lt;/p&gt;
-  &lt;p&gt;어제 점심에 뭘먹었지? 하고 한참 1분이상 생각해야 기억이 날까말까 합니다.&lt;/p&gt;
-  &lt;p&gt;이틀전에 일을 복기하기가 힘듭니다. &lt;/p&gt;
-  &lt;p&gt;물론 퇴근길 햄버거랑 키워드가 떠오르면 &lt;/p&gt;
-  &lt;p&gt;" 아 어제 퇴근길에 버거킹에 들러서 햄버거 사먹고 들어가서 운동하고 잤지!" 가 떠오르는데&lt;/p&gt;
-  &lt;p&gt;햄버거란 키워드가기억이 안나면 아예 기억이 나지않습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;또한 주말에 만나서 노는 약속은 루틴하지 않기에 서울숲가서 놀았던 내용은 다 떠오르지만&lt;/p&gt;
-  &lt;p&gt;이게 저번주였는지 저저번주였는지는 기억이 나지 않습니다.&lt;/p&gt;
-  &lt;p&gt;이래서 일기를 쓰면 좋습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;어릴때는 그저 싫던 일기쓰기가 20살 넘어가니까 쓰고싶어졌었습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;노트로 사서 쓸려고하니 난관이 있었습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;1. 혹여나 나중에 누가볼까봐 솔직한 감정을 쓰질못함&lt;/p&gt;
-  &lt;p&gt;2. 악필임&lt;/p&gt;
-  &lt;p&gt;3. 공책이나 일기장을 피지컬하게 보관하는게 꾸준히쓸스록 양이 많아짐&lt;/p&gt;
-  &lt;p&gt;결국 쓰다말다 쓰다말다 하다가&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;20대 중반쯤에 그냥 워드 프로그램에 쓰기 시작했습니다만&lt;/p&gt;
-  &lt;p&gt;까먹고 잘 안쓰게 되더군요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;결국 30대 중반쯤에 문득 다시 일기쓰고싶어서 원노트로 쓰기 시작했습니다.&lt;/p&gt;
-  &lt;p&gt;장점이 꽤 많더군요.&lt;/p&gt;
-  &lt;p&gt;1. 장소제약없이 아이패드 컴퓨터 핸드폰 등 제약없이 어디서든 쓸수있음&lt;/p&gt;
-  &lt;p&gt;2. 사진 및 미디어도 첨부할수있음&lt;/p&gt;
-  &lt;p&gt;3. 아이패드 이용하면 손글씨도 쓸수있음&lt;/p&gt;
-  &lt;p&gt;4. 나만볼수있음, 아주 적나라하게 솔직한 감정 쓰기 좋음&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;덕분에 하루에 일기쓰기용 생활사진을 찍게되고, 사진일기처럼 일기내용 + 사진을 첨부해두면&lt;/p&gt;
-  &lt;p&gt;5년전 일도 아주 상세하게 잘 떠오릅니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;4년밖에 못썼지만 그당시만해도 아 내가 생각이 이랬고 저랬구나 하면서 돌아볼수있어 흐뭇합니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19085774</guid><pubDate>Wed, 29 Oct 2025 13:24:22 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19085914</guid><pubDate>Wed, 29 Oct 2025 16:34:17 GMT</pubDate></item></channel></rss>
