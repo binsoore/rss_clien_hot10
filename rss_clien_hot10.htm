@@ -1,5 +1,91 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sun, 09 Nov 2025 22:00:47 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>잡담 쌀쌀해지니 가죽케이스가 생각나네요[10][0]</title><link>https://www.clien.net/service/board/cm_iphonien/19090717</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sun, 09 Nov 2025 23:00:48 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>전자기기 5070 Ti 가 프리징되는 현상을 잡기 위한 반년간의 여정[10][3]</title><link>https://www.clien.net/service/board/use/19091312</link><description>
+ 
+ 
+  &lt;p&gt;이걸로 고생한 시간과 노력이 너무 길고 아까워서 두서없이 글이라도 남겨둡니다...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;### 배경&lt;/h2&gt;
+  &lt;p&gt;- 초여름에 컴퓨존에서 조립PC (Ultra 7 265K + 5070 Ti + ASUS B860-i + SFF 케이스)를 주문하고 곧 증상이 발생해서 선발송 맞교환 서비스를 받았으나, 몇주 후부터 같은 문제가 여전히 있었습니다. 찾아보니 5070 Ti 가 드라이버 버전 문제가 있다는거 같아서, 좀 놔두거나 좀 건드려보면 해결될 문제일줄 알고 그냥 놔뒀습니다. 이후로 얼마나 고생할지는 미처 모르고...&lt;/p&gt;
+  &lt;p&gt;- 사족으로 어마어마한 매출 규모 덕에 가능하겠지만 선발송 맞교환은 정말 대단한거 같습니다. 근데 앞으로 컴퓨존 조립 서비스는 안쓸거 같아요. SFF라서 직접 하기 힘들까봐 맡긴건데, 오히려 SFF라서 힘들어서 그런지 첫번째는 GPU 뒤의 보호비닐을 안떼서 공기흐름을 막아놨고, 두번째는 케이스 내부 ATX 연장 케이블이 수냉팬 브라켓에 찝혀서 완전 눌려있는 상태로 보냈더라구요. 두번 다 수냉이나 전원 케이블들은 가이드 무시하고 아무렇게나 배치하고... 예전에는 "나보다 낫다" 느낌이었는데 이번에 제대로 실망했네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;### 증상&lt;/h2&gt;
+  &lt;p&gt;- &lt;strong&gt;5070 Ti 사용 중 PC가 동작 중에 그대로 멈추거나, 검은 화면으로 멈추거나, 멈췄다가 재부팅됩니다.&lt;/strong&gt;&lt;br/&gt;
+    - 부하가 걸리기 시작할때 주로 그러는거 같았는데 이랬다저랬다 해서 좀 애매합니다. 될때는 또 한창 잘되고...&lt;br/&gt;
+    - 한번 증상 발생하면 직후로는 금방금방 멈춰요. 윈도우 로그인까지도 못가기도 하고...&lt;br/&gt;
+    - 계속 안될때 내장그래픽만 이용해서 부팅해보면 장치관리자에 GPU가 "&lt;strong&gt;오류 43&lt;/strong&gt;" 나와있는 경우가 있습니다 (정상처럼 보일때도 있고)&lt;br/&gt;
+    - 윈도우 이벤트 뷰어에 &lt;strong&gt;WHEA-Logger&lt;/strong&gt; AER이 수십~수백건씩 수시로 다발해 있습니다.&lt;br/&gt;
+    - 죽는 마지막 순간에 &lt;strong&gt;nvlddmkm 153 이벤트&lt;/strong&gt;가 기록된 경우도 있었습니다.&lt;br/&gt;
+    - 그래픽카드만 4070 Super 로 바꿔보면 아무 증상 없어서, 바쁘고 귀찮고 등등 반년간 그냥 이걸로 사용했습니다...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;### 전세계 인터넷에 "it worked" 후기가 있던 것들&lt;/h2&gt;
+  &lt;p&gt;- &lt;strong&gt;제조사로 A/S 보내기&lt;/strong&gt;: 하루 테스트 정상 판정 받고 그대로 돌아옴. 박스며 완충재까지 보냈던거 그대로 재사용하셔서 처음엔 테스트를 하긴 했나... 싶었으나 여러 정황상 괜한 한순간의 의심이었습니다.&lt;/p&gt;
+  &lt;p&gt;- &lt;strong&gt;GPU 드라이버 버전 변경&lt;/strong&gt;: DDU니 뭐니 첫버전 중간버전 최신버전 온갖 버전을 엎고 덮다가 반년을 기다려서 최신으로 다시 시도해봐도 여전히 안됐네요.&lt;/p&gt;
+  &lt;p&gt;- &lt;strong&gt;NVIDIA_UEFI_Firmware_Updater 로 GPU 펌웨어 업데이트&lt;/strong&gt;: 뭔가 버전은 올라갔으나 해결은 안됐습니다.&lt;/p&gt;
+  &lt;p&gt;- &lt;strong&gt;PCIe 라이저 케이블 변경&lt;/strong&gt;: 케이스에 따라온 케이블은 gen4 사양이고 x8로 붙는 이슈가 있었어요. 사실 라이저 없이 테스트를 해보는게 좋았겠지만 SFF 케이스라 전부 분해하기 전에는 불가능했고... PCIe 5.0 x16 지원하는 케이블 구매해서 사용했으나 해결은 안됐습니다.&lt;/p&gt;
+  &lt;p&gt;- &lt;strong&gt;PCIe 링크 속도를 gen4나 gen3 로 낮추기&lt;/strong&gt;: WHEA-Logger 오류가 줄어드는거 같기는 하네요. 근데 gen2로 낮춰도 완전 해결은 안됐습니다., (gen2까지 가면 4K 60fps 게임은 1초마다 멈칫거려서 아예 불가능해지는 수준이더군요)&lt;/p&gt;
+  &lt;p&gt;- &lt;strong&gt;BIOS 및 Windows 설정에서 ASPM 등 PCIe 링크 절전 관련한거 전부 해제&lt;/strong&gt;: 좋아지는줄 알았으나 완전 해결은 안됐습니다.&lt;/p&gt;
+  &lt;p&gt;- &lt;strong&gt;Nvidia 제어판의 "전원 관리 모드" 를 "최고 성능 선호" 로 변경&lt;/strong&gt;: 해결된줄 알았으나 완전 해결은 안됐습니다.&lt;/p&gt;
+  &lt;p&gt;- &lt;strong&gt;장치 관리자에서 Nvidia audio device를 사용 안함으로 변경&lt;/strong&gt;: 됐나 싶었으나 해결이 안됐습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;### 전원 or 온도 or 신호품질 이슈인가 싶어서 추가로 해본 것들&lt;/h2&gt;
+  &lt;p&gt;- &lt;strong&gt;12VHPWR 모듈러 케이블 변경&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;- &lt;strong&gt;ATX 파워 케이블 변경&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;- &lt;strong&gt;CPU 수냉팬 상시 max로 설정 + 오픈케이스&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;- &lt;strong&gt;USB 허브 겸용 모니터에서 모든 USB 케이블 분리&lt;/strong&gt;: 예전 PC 사용 시 가끔 USB 전력 초과 관련 오류가 뜬적이 있었어서 해봤네요&lt;/p&gt;
+  &lt;p&gt;- &lt;strong&gt;DP 대신 HDMI 사용&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이것 저것 해봐도 해보는 것마다 괜찮아졌나 싶다가 펼쳐놓은 것들 정리하고 다시 쓰려고 하면 어느샌가 또 프리징되는 현상의 반복... 스트레스...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;### 임시로 사용 가능한 방법&lt;/h2&gt;
+  &lt;p&gt;- DP 케이블을 내장 그래픽에 연결해서 사용. 데스크탑인데도 별다른 설정 없이도 게임할때는 5070 Ti가 작업을 맡더라구요. 인풋렉이 생길거라는데 그런거 따질 상황은 아니고...&lt;/p&gt;
+  &lt;p&gt;- 다만 저부하 상황에서 5070 Ti가 지 혼자 죽어있을 때가 있어서, 이럴때 게임을 켜면 iGPU 만 돌아요. 재부팅 하던지 장치관리자에서 사용안함/사용함 반복하다 보면 낮은 확률로 해결이 되구요. Stream Deck의 System Vitals 플러그인이 GPU 모니터링을 해줘서, 지금 살아있는지 죽어있는지 알수 있어서 그나마 다행이었네요.&lt;/p&gt;
+  &lt;p&gt;- 게임 중간에 죽는 경우는 없었는데 사실 이 셋업으로 많이 써보진 않아서 그럴수도 있었을지는 잘 모르겠습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;### 결국 찾은 해결책&lt;/h2&gt;
+  &lt;p&gt;- 메인보드 ARGB 조명 관련 전부 끄기 + Armoury Crate 및 기타 ASUS 메인보드 bloatware 전부 삭제&lt;/p&gt;
+  &lt;p&gt;- 이걸로 해결될 줄은 전혀 몰랐습니다... 그동안은 이쪽에 증상이 없었는데 마지막에 갑자기 RGB가 기본값으로 돌아가있어서 좀 보니까 이벤트 뷰어에 AURA 서비스가 충돌했다고 떠있어서 혹시나 하고 다 날려봤는데... 갑자기 멀쩡해졌네요.&lt;/p&gt;
+  &lt;p&gt;- 아마 악명높은 Armoury Crate의 문제였을거고 ARGB는 다시 켜도 될거같지만... 더 손대보기도 싫어서 이대로 쓰렵니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19091312</guid><pubDate>Sat, 08 Nov 2025 18:37:12 GMT</pubDate></item><item><title>파리지옥도 꽃 피우는군요.JPG[3][7]</title><link>https://www.clien.net/service/board/park/19091716</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="1.jpg" class="fr-dib fr-fil full" data-file-sn="15592060" data-gif="false" data-img-height="918" data-img-width="900" data-role="attach-image" src="https://edgio.clien.net/F01/2025/11/15592060/3745d12d134f2.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="2.jpg" class="fr-dib fr-fil full" data-file-sn="15592061" data-gif="false" data-img-height="913" data-img-width="900" data-role="attach-image" src="https://edgio.clien.net/F01/2025/11/15592061/3745deef6572c.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;꽃 피우는줄 몰랐습니다 ㅋㅋㅋ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091716</guid><pubDate>Sun, 09 Nov 2025 21:08:07 GMT</pubDate></item><item><title>스카이넷 진짜 별거 아니었네요.[3][5]</title><link>https://www.clien.net/service/board/park/19091667</link><description>
+ 
+ 
+  &lt;p&gt;&lt;span class="fr-video"&gt;
+    &lt;video autoplay="" class="fr-draggable" controls="" loop="loop" muted="" playsinline="" preload="auto" webkit-playsinline=""&gt;
+     &lt;source src="https://video.twimg.com/ext_tw_video/1987376748212985858/pu/vid/avc1/1280x720/89o0f7U4wsCIBhWz.mp4?tag=12"/&gt;
+    &lt;/video&gt;&lt;a class="search_link fr-draggable" href="https://video.twimg.com/ext_tw_video/1987376748212985858/pu/vid/avc1/1280x720/89o0f7U4wsCIBhWz.mp4?tag=12" ori-url="https://video.twimg.com/ext_tw_video/1987376748212985858/pu/vid/avc1/1280x720/89o0f7U4wsCIBhWz.mp4?tag=12" target="_blank"&gt;&lt;i class="fa fa-search"&gt;&lt;/i&gt; LINK&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;터미네이터 3에서 스카이넷이 발동되는 순간인데&lt;/p&gt;
+  &lt;p&gt;"Skynet fully operational, processing at 60 teraflops a second".&lt;/p&gt;
+  &lt;p&gt;라고...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="images.jpeg" class="fr-dib fr-fil" data-file-sn="15591983" data-gif="false" data-img-height="185" data-img-width="273" data-role="attach-image" src="https://edgio.clien.net/F01/2025/11/15591983/166246b86dab9a.jpeg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;RTX 4090이 82.6 teraflops.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그래픽 카드만도 못한 스카이넷...  &lt;/p&gt;
+  &lt;p&gt;알고보니 ㅈㅂ이었어요...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091667</guid><pubDate>Sun, 09 Nov 2025 18:56:01 GMT</pubDate></item><item><title>A.I로 인한 일자리 초유의 사태[8][5]</title><link>https://www.clien.net/service/board/park/19091608</link><description>
+ 
+ 
+  &lt;p&gt;원래 경제가 성장하면 일자리가 늘어나는게 정설이었는데&lt;/p&gt;
+  &lt;p&gt;chatgpt(점선) 등장이후로 일자리는 없어지는데 경제는 성장하는&lt;/p&gt;
+  &lt;p&gt;이상한 일이 벌어지고 있습니다.&lt;/p&gt;
+  &lt;p&gt;금리인하가 소용이 없을거라 하네요&lt;/p&gt;
+  &lt;p&gt;기본소득 시대가 점점 가까워지고 있지 않나 싶습니다&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091608</guid><pubDate>Sun, 09 Nov 2025 16:19:42 GMT</pubDate></item><item><title>잡담 쌀쌀해지니 가죽케이스가 생각나네요[10][0]</title><link>https://www.clien.net/service/board/cm_iphonien/19090717</link><description>
  
  
   &lt;p&gt;에어 모델 케이스 없이 만족하며 사용중인데&lt;/p&gt;
@@ -12,13 +98,13 @@
   &lt;p&gt;위사진에 이모델이 있던데&lt;/p&gt;
   &lt;p&gt;고민중입니다 ㅎㅎㅎ 에어 사용하시는분들 케이스 사용하시나요?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19090717</guid><pubDate>Fri, 07 Nov 2025 10:14:22 GMT</pubDate></item><item><title>흔한 밑장 빼기....jpg[5][5]</title><link>https://www.clien.net/service/board/park/19091696</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19090717</guid><pubDate>Fri, 07 Nov 2025 10:14:22 GMT</pubDate></item><item><title>흔한 밑장 빼기....jpg[6][6]</title><link>https://www.clien.net/service/board/park/19091696</link><description>
  
  
   &lt;p&gt;대부분 로또 몇등인지 확인 다 하고 갈텐데, 그걸 밑장빼기하는군요 ㅋㅋㅋ&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091696</guid><pubDate>Sun, 09 Nov 2025 20:20:11 GMT</pubDate></item><item><title>서울에 집구하러 갔다가 사기 당할뻔했습니다. (feat.피터팬의 좋은방 구하기)[3][5]</title><link>https://www.clien.net/service/board/park/19091618</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091696</guid><pubDate>Sun, 09 Nov 2025 20:20:11 GMT</pubDate></item><item><title>서울에 집구하러 갔다가 사기 당할뻔했습니다. (feat.피터팬의 좋은방 구하기)[3][7]</title><link>https://www.clien.net/service/board/park/19091618</link><description>
  
  
   &lt;p&gt;지방에 작은 아파트 월세주고 서울에 방2개 짜리 월세 알아보려고 직방, 다방 앱 둘다 번갈아 검색하고&lt;/p&gt;
@@ -49,7 +135,7 @@
     부디 다른분들도 매매부터 전월세 계약할때 조심하시길 바랍니다.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
     제가 겪은 일과 비슷한 사례를 다룬 기사 링크입니다.&lt;br/&gt;&lt;a href="https://www.bizhankook.com/bk/article/29031" target="_blank"&gt;https://www.bizhankook.com/bk/article/29031&lt;/a&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091618</guid><pubDate>Sun, 09 Nov 2025 16:41:35 GMT</pubDate></item><item><title>이야기 취미를 좋은데 써보고자 합니다.[13][5]</title><link>https://www.clien.net/service/board/cm_car/19091580</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091618</guid><pubDate>Sun, 09 Nov 2025 16:41:35 GMT</pubDate></item><item><title>이야기 취미를 좋은데 써보고자 합니다.[13][6]</title><link>https://www.clien.net/service/board/cm_car/19091580</link><description>
  
  
   &lt;p style="text-align: center;"&gt;이글이 홍보...의 소지가 있다면 지적주세요.&lt;/p&gt;
@@ -61,12 +147,12 @@
   &lt;p style="text-align: center;"&gt;아무튼.. 전주에서 소소하게 세차를 취미로해보고...&lt;/p&gt;
   &lt;p style="text-align: center;"&gt;연말에 소식 들고오겠습니다!&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19091580</guid><pubDate>Sun, 09 Nov 2025 14:53:39 GMT</pubDate></item><item><title>김규현 : 검찰 대장동 항소포기 정리[4][12]</title><link>https://www.clien.net/service/board/park/19091697</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19091580</guid><pubDate>Sun, 09 Nov 2025 14:53:39 GMT</pubDate></item><item><title>김규현 : 검찰 대장동 항소포기 정리[5][20]</title><link>https://www.clien.net/service/board/park/19091697</link><description>
  
  
   &lt;p&gt;계란판의 구라yo&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091697</guid><pubDate>Sun, 09 Nov 2025 20:27:53 GMT</pubDate></item><item><title>대장동 항소 포기[11][0]</title><link>https://www.clien.net/service/board/park/19091690</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091697</guid><pubDate>Sun, 09 Nov 2025 20:27:53 GMT</pubDate></item><item><title>대장동 항소 포기[12][0]</title><link>https://www.clien.net/service/board/park/19091690</link><description>
  
  
   &lt;p&gt;이건 어떻게 이해해야 할까요??  &lt;/p&gt;
@@ -77,7 +163,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;정치를 잘 알지 못하는 1인으로서 궁금해서 질문듧니다ㅠ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091690</guid><pubDate>Sun, 09 Nov 2025 20:07:44 GMT</pubDate></item><item><title>몇日을 며칠로 발음하게된 이유[34][1]</title><link>https://www.clien.net/service/board/park/19091688</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091690</guid><pubDate>Sun, 09 Nov 2025 20:07:44 GMT</pubDate></item><item><title>몇日을 며칠로 발음하게된 이유[35][1]</title><link>https://www.clien.net/service/board/park/19091688</link><description>
  
  
   &lt;p&gt;몇日은 며딜로 발음해야 맞으나, &lt;/p&gt;
@@ -95,7 +181,7 @@
   &lt;p&gt;진짜 누구 머리에서 나온건지 참 어이없습니다.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091688</guid><pubDate>Sun, 09 Nov 2025 20:06:56 GMT</pubDate></item><item><title>항소 포기 반발? 윤석열 때는 뭐했나요?[5][6]</title><link>https://www.clien.net/service/board/park/19091680</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091688</guid><pubDate>Sun, 09 Nov 2025 20:06:56 GMT</pubDate></item><item><title>항소 포기 반발? 윤석열 때는 뭐했나요?[6][6]</title><link>https://www.clien.net/service/board/park/19091680</link><description>
  
  
   &lt;p&gt;동아대 로스쿨 출신이자 작년에 임용되신 모 검사님이 이번 불기소에 반발한다는 기사를 봤습니다. &lt;/p&gt;
@@ -140,7 +226,7 @@
   &lt;p&gt;2030.. 은 이제 뭐 어찌 도리가 없습니다&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091662</guid><pubDate>Sun, 09 Nov 2025 18:48:25 GMT</pubDate></item><item><title>공공도서관 E-book 대여 사업 해주면 좋겠습니다.[19][0]</title><link>https://www.clien.net/service/board/park/19091677</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091662</guid><pubDate>Sun, 09 Nov 2025 18:48:25 GMT</pubDate></item><item><title>공공도서관 E-book 대여 사업 해주면 좋겠습니다.[21][0]</title><link>https://www.clien.net/service/board/park/19091677</link><description>
  
  
   &lt;p&gt;시립이나 구립 도서관 가면 수만 권의 책들을 매입하거나 기부받아서 지역 주민들에게 무료로 대여해주는데, 솔직히 디지털 시대에 IT강국 대한민국에서 아직까지 실물 책 바코드 찍어가며 분실, 낙서, 훼손 등의 우려 속에서 대여를 하는 건 안 맞는 것 같습니다.&lt;/p&gt;
@@ -177,7 +263,7 @@
   &lt;p&gt;그럼에도 진짜 꾸준히 영포티 타령을 미는군요&lt;/p&gt;
   &lt;p&gt;미디어나 SNS 를 통한 영포티 타령 지긋지긋 할 정도네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091665</guid><pubDate>Sun, 09 Nov 2025 18:49:17 GMT</pubDate></item><item><title>덴마크, 15살 미만 SNS 사용 금지하기로…조만간 의회 표결[4][11]</title><link>https://www.clien.net/service/board/park/19091654</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091665</guid><pubDate>Sun, 09 Nov 2025 18:49:17 GMT</pubDate></item><item><title>덴마크, 15살 미만 SNS 사용 금지하기로…조만간 의회 표결[5][12]</title><link>https://www.clien.net/service/board/park/19091654</link><description>
  
  
   &lt;p&gt;덴마크 정부가 15살 미만의 사회관계망서비스(SNS) 사용을 금지하기로 했다. 아동들의 에스엔에스 남용과 인터넷 중독 우려가 커지면서다.&lt;/p&gt;
@@ -194,7 +280,7 @@
   &lt;p&gt;우리나라도 논의 정도는 활성화 해야지 싶네요.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091654</guid><pubDate>Sun, 09 Nov 2025 18:27:29 GMT</pubDate></item><item><title>[단독] 법무부, '연어 술파티' 편의점 결제 내역 '소주 맞다'[8][23]</title><link>https://www.clien.net/service/board/park/19091650</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091654</guid><pubDate>Sun, 09 Nov 2025 18:27:29 GMT</pubDate></item><item><title>[단독] 법무부, '연어 술파티' 편의점 결제 내역 '소주 맞다'[9][31]</title><link>https://www.clien.net/service/board/park/19091650</link><description>
  
  
   &lt;p&gt;&lt;img alt="스크린샷 2025-11-09 061946.png" class="fr-dib fr-fil" data-file-sn="15591974" data-gif="false" data-img-height="468" data-img-width="620" data-role="attach-image" src="https://edgio.clien.net/F01/2025/11/15591974/1660c7079f09d5.png?scale=width:740"/&gt;&lt;/p&gt;
@@ -206,13 +292,13 @@
   &lt;p&gt;정성호 장관이 지시한 수사를 통해 드러났나 보네요&lt;/p&gt;
   &lt;p&gt;저걸로 조작수사 검사들 전부 잡아들여야 합니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091650</guid><pubDate>Sun, 09 Nov 2025 18:23:24 GMT</pubDate></item><item><title>가난하지 않았다면 다른것을 해보고 싶었다는 이재명 대통령[8][14]</title><link>https://www.clien.net/service/board/park/19091649</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091650</guid><pubDate>Sun, 09 Nov 2025 18:23:24 GMT</pubDate></item><item><title>가난하지 않았다면 다른것을 해보고 싶었다는 이재명 대통령[8][15]</title><link>https://www.clien.net/service/board/park/19091649</link><description>
  
  
   &lt;p&gt;??: 그 핵 곧 꿈이 이루어..아 아닙니다^^&lt;/p&gt;
   &lt;p&gt;정말 과학 연구원에 대한 각별한 관심이 있으셨네용.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091649</guid><pubDate>Sun, 09 Nov 2025 18:21:23 GMT</pubDate></item><item><title>일본에 거주하는 한국 국적 혐한 유튜버[10][10]</title><link>https://www.clien.net/service/board/park/19091638</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091649</guid><pubDate>Sun, 09 Nov 2025 18:21:23 GMT</pubDate></item><item><title>일본에 거주하는 한국 국적 혐한 유튜버[14][14]</title><link>https://www.clien.net/service/board/park/19091638</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -225,7 +311,7 @@
     해외에서 국익 훼손하고 범죄일으키는 인간들은 한국소환한 다음에 해외 다시는 못나가도록 여권뺏고  가중처벌하도록 입법이 필요합니다. 미국에서 짖고있는 전한길도 마찬가지구요.&lt;/p&gt;
   &lt;p&gt;강훈식 비서실장이 조치한다고 했으니 사이다 결말 기대해보겠습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091638</guid><pubDate>Sun, 09 Nov 2025 17:43:26 GMT</pubDate></item><item><title>가세연 김세의는 사람아니네요[7][9]</title><link>https://www.clien.net/service/board/park/19091634</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091638</guid><pubDate>Sun, 09 Nov 2025 17:43:26 GMT</pubDate></item><item><title>가세연 김세의는 사람아니네요[8][16]</title><link>https://www.clien.net/service/board/park/19091634</link><description>
  
  
   &lt;p&gt;은현장 쇼츠 떠서 보니,&lt;/p&gt;
@@ -248,7 +334,7 @@
   &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/1qP3oyIe0BY" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
   &lt;p&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091634</guid><pubDate>Sun, 09 Nov 2025 17:44:02 GMT</pubDate></item><item><title>AI 버블은 아직 오지 않았다는 증거[24][2]</title><link>https://www.clien.net/service/board/park/19091606</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091634</guid><pubDate>Sun, 09 Nov 2025 17:44:02 GMT</pubDate></item><item><title>AI 버블은 아직 오지 않았다는 증거[25][2]</title><link>https://www.clien.net/service/board/park/19091606</link><description>
  
  
   &lt;p&gt;지금 주식 가격이 비싼 것은 맞습니다.&lt;/p&gt;
@@ -381,7 +467,7 @@
   &lt;p&gt;&lt;img alt="IMG_3624.JPG" class="fr-dib fr-fil full" data-file-sn="15591562" data-gif="false" data-img-height="3024" data-img-width="4032" data-role="attach-image" src="https://edgio.clien.net/F01/2025/11/15591562/1641635e726621.JPG?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091459</guid><pubDate>Sun, 09 Nov 2025 08:49:24 GMT</pubDate></item><item><title>이야기 언제부터 국민농도가 정착된걸까요?[18][4]</title><link>https://www.clien.net/service/board/cm_car/19091575</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091459</guid><pubDate>Sun, 09 Nov 2025 08:49:24 GMT</pubDate></item><item><title>이야기 언제부터 국민농도가 정착된걸까요?[20][5]</title><link>https://www.clien.net/service/board/cm_car/19091575</link><description>
  
  
   &lt;p&gt;제가 차에 관심을 갖게 된 시기는 국민농도 35/15가 되어버린 이후라 궁금해졌습니다. &lt;/p&gt;
@@ -399,7 +485,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19091575</guid><pubDate>Sun, 09 Nov 2025 14:51:05 GMT</pubDate></item><item><title>잡담 카카오보험이 좋아졌군요[28][3]</title><link>https://www.clien.net/service/board/cm_iphonien/19091478</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19091575</guid><pubDate>Sun, 09 Nov 2025 14:51:05 GMT</pubDate></item><item><title>잡담 카카오보험이 좋아졌군요[30][3]</title><link>https://www.clien.net/service/board/cm_iphonien/19091478</link><description>
  
  
   한도가 1회 130만원으로 상향되서 
@@ -430,7 +516,7 @@
   &lt;p&gt;상당한 자원낭비로 끝나는 종이책의 삶..&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091604</guid><pubDate>Sun, 09 Nov 2025 15:56:35 GMT</pubDate></item><item><title>도서관에서 폐기할 책을 찾았네요[14][40]</title><link>https://www.clien.net/service/board/park/19091598</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091604</guid><pubDate>Sun, 09 Nov 2025 15:56:35 GMT</pubDate></item><item><title>도서관에서 폐기할 책을 찾았네요[16][44]</title><link>https://www.clien.net/service/board/park/19091598</link><description>
  
  
   &lt;p&gt;똥도 못 닦을 쓰레기 같은 책이 &lt;/p&gt;
@@ -475,7 +561,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091589</guid><pubDate>Sun, 09 Nov 2025 15:31:30 GMT</pubDate></item><item><title>이재명 대통령, &lt;신의 영역을 대신하고 계신 소방공무원 여러분께 경의를 표합니다[4][17]</title><link>https://www.clien.net/service/board/park/19091585</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091589</guid><pubDate>Sun, 09 Nov 2025 15:31:30 GMT</pubDate></item><item><title>이재명 대통령, &lt;신의 영역을 대신하고 계신 소방공무원 여러분께 경의를 표합니다[4][18]</title><link>https://www.clien.net/service/board/park/19091585</link><description>
  
  
   &lt;p&gt;&lt;img alt="brave_screenshot_www.facebook.com (50).png" class="fr-fic fr-dii" data-file-sn="15591828" data-gif="false" data-img-height="408" data-img-width="591" data-role="attach-image" src="https://edgio.clien.net/F01/2025/11/15591828/36131f1291a9e.png?scale=width:740"/&gt; &lt;br/&gt;&lt;/p&gt;
@@ -490,7 +576,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091585</guid><pubDate>Sun, 09 Nov 2025 15:20:16 GMT</pubDate></item><item><title>음주운전 이슈가 슬슬 올라오네요[22][4]</title><link>https://www.clien.net/service/board/park/19091569</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091585</guid><pubDate>Sun, 09 Nov 2025 15:20:16 GMT</pubDate></item><item><title>음주운전 이슈가 슬슬 올라오네요[24][4]</title><link>https://www.clien.net/service/board/park/19091569</link><description>
  
  
   &lt;p&gt;기사도 많아지고 &lt;/p&gt;
@@ -742,56 +828,4 @@
   &lt;p&gt; &lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091446</guid><pubDate>Sun, 09 Nov 2025 07:28:52 GMT</pubDate></item><item><title>이야기 한국GM 직영 서비스센터 이관 예정[10][0]</title><link>https://www.clien.net/service/board/cm_car/19091020</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="AISelect_20251107_213641_Samsung Internet.jpg" class="fr-dib fr-fil full" data-file-sn="15590826" data-gif="false" data-img-height="1627" data-img-width="1078" data-role="attach-image" src="https://edgio.clien.net/F01/2025/11/15590826/15ce5d054073b4.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;직영 서비스센터를 접는군요..&lt;/p&gt;
-  &lt;p&gt;슈퍼 크루즈도 들여오고 뭔가 해보려나 싶은데&lt;/p&gt;
-  &lt;p&gt;수입 브랜드 포지션으로 가고 싶은걸까요?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19091020</guid><pubDate>Fri, 07 Nov 2025 23:06:38 GMT</pubDate></item><item><title>김병기 '대장동·대북송금 檢수사, 국조·청문회·상설특검 검토'[16][44]</title><link>https://www.clien.net/service/board/park/19091527</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;원대 움직이네요. 대장동 대북송금 국조, 특검 둘다 갑시다.&lt;/p&gt;
-  &lt;p&gt;청문회수준에서 끝나면 안됩니다.&lt;/p&gt;
-  &lt;p&gt;개검들 쓸어버릴수있는 절호의 기회&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="1000028266.jpg" class="fr-dib fr-fil" data-file-sn="15591699" data-gif="false" data-img-height="1205" data-img-width="360" data-role="attach-image" src="https://edgio.clien.net/F01/2025/11/15591699/164be1011e6bd2.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="1000028268.jpg" class="fr-dib fr-fil full" data-file-sn="15591705" data-gif="false" data-img-height="688" data-img-width="1080" data-role="attach-image" src="https://edgio.clien.net/F01/2025/11/15591705/164c676cb3276f.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/469/0000896506?type=breakingnews&amp;amp;cds=news_edit" target="_blank"&gt;https://n.news.naver.com/article/469/0000896506?type=breakingnews&amp;amp;cds=news_edit&lt;/a&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091527</guid><pubDate>Sun, 09 Nov 2025 12:03:03 GMT</pubDate></item><item><title>cgv 는 예매가 불편해서 장사가 더 안 되겠네요 ㄷㄷㄷ (예매 오류)[15][2]</title><link>https://www.clien.net/service/board/park/19091522</link><description>
- 
- 
-  &lt;ol&gt;
-   &lt;li&gt;모바일 앱에서 예매 시도 =&amp;gt; 결제창 띄울 때 에러 =&amp;gt; 선택한 자리는 차지한 걸로 나옴&lt;/li&gt;
-   &lt;li&gt;다시 데스크탑 브라우저에서 예매 시도 =&amp;gt; 결제창 띄울 때 에러 =&amp;gt; 선택한 자리 차지한 걸로 나옴&lt;/li&gt;
-   &lt;li&gt;혹시 설치한 익스텐션 충돌인가 싶어서 시크릿 모드로 데스크탑에서 재시도 =&amp;gt; 또 결제창 띄울 때 에러 =&amp;gt; 1번에서 선택했던 자리는 풀림&lt;/li&gt;
-   &lt;li&gt;모바일 브라우저에서 재시도 =&amp;gt; 또 결제창 띄울 때 에러 =&amp;gt; 선택한 자리 차지.... ㄷㄷㄷ&lt;/li&gt;
-  &lt;/ol&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;결제창 연결이 문제인가 싶어서&lt;/p&gt;
-  &lt;p&gt;모바일 상품권을 산 다음에 상품권 먹이고&lt;/p&gt;
-  &lt;p&gt;데스크탑 브라우저에서 시도했더니, 성공했네요. ㄷㄷㄷ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;영화를 꼭 보겠다는 의지를 가진 사람들에게만 영화 관람을 허가하는 제도인 건지, 일시 오류인 건지 모르겠지만,&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이런 일이 종종 발생한다면 정말 장사 안 될 것 같네요. ㄷㄷㄷ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091522</guid><pubDate>Sun, 09 Nov 2025 11:25:58 GMT</pubDate></item><item><title>중국 국적 20대 남성 만취 상태로 광명고속도로서 역주행, 마주 오던 차량 들이받아 6[44][8]</title><link>https://www.clien.net/service/board/park/19091505</link><description>
- 
- 
-  &lt;p&gt;우리나라 음주운전자에게 피해받는 외국인들도 생기더니&lt;br/&gt;
-    이제는 외국인이 음주운전해서 인명피해 일으키는 사고들도 나오고 음주운전 사건들 진짜 이대로 두면 안됩니다.&lt;br/&gt;&lt;br/&gt;
-    사망자는 없어 천만다행이네요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091505</guid><pubDate>Sun, 09 Nov 2025 10:52:57 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19091446</guid><pubDate>Sun, 09 Nov 2025 07:28:52 GMT</pubDate></item></channel></rss>
