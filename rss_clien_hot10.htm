@@ -1,5 +1,147 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sun, 07 Dec 2025 15:00:50 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 윈터타이어 제약[10][0]</title><link>https://www.clien.net/service/board/cm_car/19106038</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sun, 07 Dec 2025 16:00:50 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>기타 1인 출판사 설립 후기: 공공기관 사용기[4][5]</title><link>https://www.clien.net/service/board/use/19106096</link><description>
+ 
+ 
+  &lt;p&gt;안녕하세요. 현업 개발자입니다. 평소 AI(LLM) 모델을 다루면서 문득 움베르토 에코의 소설 『푸코의 진자』에 나오는 컴퓨터 '아불라피아'가 떠올랐습니다. 무작위 텍스트를 조합해 새로운 의미를 창조하는 그 모습이 지금의 생성형 AI와 너무 닮아 보였거든요.&lt;/p&gt;
+  &lt;p&gt;그 길로 에코의 소설들을 다시 읽으며 AI와 기호학을 연결하는 글을 쓰기 시작했고, 5개월의 집필 끝에 책을 완성했습니다. 하지만 투고한 출판사로부터는 거절 메일만... (흑흑)&lt;/p&gt;
+  &lt;p&gt; 우울한 마음에 편의점에 갔다가 '교보문고 맛' 크림빵을 사 먹었는데, 순간 머릿속에 섬광이 스쳤습니다. "그래, 맛도 봤으니(?) 직접 출판해 보자!"&lt;/p&gt;
+  &lt;p&gt;그렇게 시작된 개발자의 '맨땅에 1인 출판사 헤딩기'를 공유합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;&lt;strong&gt;1. Ebook 코딩: "개발자에겐 HTML이잖아요?"&lt;/strong&gt;&lt;/h2&gt;
+  &lt;p&gt;전자책(EPUB)을 만드는 건 생각보다 쉽습니다. 기본적으로 HTML/CSS니까요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;도구 : Sigil(epub 전용 툴), VS Code&lt;/p&gt;
+  &lt;p&gt;이슈 (EPUB 2.0 vs 3.0) :&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;텍스트 위주라면 호환성 좋은 2.0이 무난합니다.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;하지만 저는 수식(MathML)이 필수라 EPUB 3.0을 선택했습니다. 이게 나중에 고생길이 될 줄은…&lt;/p&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;책의 표지는 Canva에서 작업했습니다.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;h2&gt;&lt;strong&gt;2. 유통 플랫폼의 좌절 (유페이퍼)&lt;/strong&gt;&lt;/h2&gt;
+  &lt;p&gt;처음엔 전자책 중개 플랫폼인 '유페이퍼'를 이용하려 했습니다. 정산 비율도 좋고 편해 보였거든요.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;문제 발생 : 유페이퍼는 EPUB 2.0만 지원합니다. 3.0으로 만든 제 원고는 유효성 검사에서 계속 튕겼고, 오류 메시지도 불친절해서 원인 파악에만 한참 걸렸습니다.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;결론 : 플랫폼에 맞추려니 수식을 포기해야 해서, 과감히 직접 유통을 결심했습니다&lt;/p&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;h4&gt;&lt;br/&gt;&lt;/h4&gt;
+  &lt;h2&gt;&lt;strong&gt;3. 출판사 설립: "서류와의 전쟁"&lt;/strong&gt;&lt;/h2&gt;
+  &lt;p&gt;플랫폼을 안 거치려면 내가 출판사가 되어야 합니다. 의외로 절차는 명확합니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;출판사 신고 (민원24) : '출판사 신고확인증' 발급.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;사업자 등록 (홈택스) :&lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;p&gt;업태: 정보통신업 / 종목: 일반 서적 출판업&lt;/p&gt;&lt;/li&gt;
+     &lt;li&gt;
+      &lt;p&gt;팁: 전자책만 내더라도 '출판사 신고확인증'을 요구하는 경우가 많으니 미리 받아두세요.&lt;/p&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/li&gt;
+   &lt;li style="font-weight: bold;"&gt;
+    &lt;p&gt;&lt;strong&gt;통장 개설 (주의!):&lt;/strong&gt;&lt;/p&gt;
+    &lt;ul style="font-weight: initial;"&gt;
+     &lt;li&gt;
+      &lt;p&gt;카카오뱅크 사업자 통장은 개설은 쉽지만, 나중에 '전자세금계산서용 공동인증서' 발급이 안 됩니다.&lt;/p&gt;&lt;/li&gt;
+     &lt;li&gt;
+      &lt;p&gt;저는 이걸 몰라서 나중에 오프라인 은행으로 다시 뛰어갔습니다. (꼭 일반 시중은행 쓰세요.)&lt;/p&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;4. ISBN 발급: "드디어 내 책에 주민번호를"&lt;/h2&gt;
+  &lt;p&gt;개인 자격으로 서점에 올리면 서점 명의의 ISBN이 붙지만, 출판사를 차리면 내 브랜드의 ISBN을 가질 수 있습니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;국립중앙도서관 서지정보시스템 (Seoji): 여기서 '발행자 번호'를 먼저 신청하고, 승인나면 ISBN을 신청합니다.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;기간은 넉넉잡아 2~3일 정도 걸립니다.&lt;/p&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;여기까지가 책을 만들기까지의 과정입니다. 이 다음엔 온라인 서점과 직접 계약하고 상품을 동록하는 일을 진행해야 하죠. 각 서점별로 진행 과정과 특색을 다음 글에서 정리하도록 하겠습니다. 그 다음엔 POD로 종이책을 출간하는 과정을 또 설명드릴게요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19106096</guid><pubDate>Sun, 07 Dec 2025 14:17:24 GMT</pubDate></item><item><title>조진웅은 그래도 부끄러워 할 줄 아는 사람입니다.[34][6]</title><link>https://www.clien.net/service/board/park/19106143</link><description>
+ 
+ 
+  &lt;p&gt;30여년 미성년자 시절에 저질렀던 불법행위. 지탄 받을 만 합니다.&lt;/p&gt;
+  &lt;p&gt;그 사실이 밝혀졌을 때, 그동안 조진웅이라는 연예인에게 줬던 사랑과 관심이 배신감으로 느껴지는 것도 이해됩니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이후 조진웅 배우는 자신의 과오를 반성하며 은퇴를 선언했습니다.&lt;/p&gt;
+  &lt;p&gt;이 사람은 최소한. 부끄러움은 아는거죠.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 정도면 죄과를 과거에 모두 치른 사람에게 해야할 비난은 그쳐도 되지 않나요?&lt;/p&gt;
+  &lt;p&gt;아니면, 죽을 때까지 기필코 죽으라고 욕을 해대는 게 맞는 처사입니까?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아니면 혹시, 조진웅씨가 유명한 배우가 된 이후에 한 멋진, 잘한 일들도&lt;/p&gt;
+  &lt;p&gt;다 소년 강도범 새끼들이나 하는 나쁜 짓 이었을 뿐이다. 조진웅을 위시한 비슷한 너희들, 다 위선자 아냐?&lt;/p&gt;
+  &lt;p&gt;그런 말 하고 싶은 거 아닌가요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;작년 1년동안 내란을 저질러놓고 부끄러움 한 점 없이, 지금 이 시점에도 다시 나라를 뒤집어야 한다고 말하는 정당.&lt;/p&gt;
+  &lt;p&gt;내란을 동조해놓고 벌이 자신에게도 미칠까봐 내란과 국정문란을 눈감고 있는 조희대 대법원장과 그 똘마니들.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 인간들 중에, 자신들이 저지른 일에 부끄러워서 어쩔 줄 몰라서 죄송하다. 은퇴해서 반성하며 조용히 살겠다.&lt;/p&gt;
+  &lt;p&gt;그런 인간 한마리라도 보신 적 있나요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아직도 반성 1도 안하는 인간들에게 퍼붓는 비난과&lt;/p&gt;
+  &lt;p&gt;바로 인정하고 반성하고 은퇴하고 부끄러워 하는 사람에 대한 비난의 양이&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;공정해야 된다고 생각합니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106143</guid><pubDate>Sun, 07 Dec 2025 15:35:57 GMT</pubDate></item><item><title>이준석 조진웅 대통령[15][1]</title><link>https://www.clien.net/service/board/park/19106123</link><description>
+ 
+ 
+  &lt;p&gt;저는 젓가락 섹스톤 이 인간을 인간적으로 경멸합니다. &lt;/p&gt;
+  &lt;p&gt;조용하다 했네요.&lt;/p&gt;
+  &lt;p&gt;추가로 이놈은 황제병특 의혹도 있었죠.&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://v.daum.net/v/20251207121849366" target="_blank"&gt;https://v.daum.net/v/20251207121849366&lt;/a&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106123</guid><pubDate>Sun, 07 Dec 2025 15:01:20 GMT</pubDate></item><item><title>중고나라 신종사기 방식 일까요?[10][1]</title><link>https://www.clien.net/service/board/park/19106083</link><description>
+ 
+ 
+  &lt;p&gt;근래 중고나라 와 번개 장터에 중고 물품 몇개를 팔고 있습니다만&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;유독 중고나라에서만 이상한 연락이 많습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;뭐 타 사이트에 올려달라는건 하루에도 몇번이고..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그런데 어제 판매 금액 10만원의 상품을  살수 있냐고 연락이 왔고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;계좌 달라해서 줬더니 몇분후 잘못 입금했다고 확인하셨냐고 문자가 오네요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;은행 내역을 보니  보낸 사람 이름이 400000원 보낸돈은 1원 이였어요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그래서 1원이요? 라고 답문을 하니 그후부턴 연락이 없네요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;찜찜해서 생각을 해보니  그걸 반대로 보신분이 계셔서 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;30만원이 더왔다고 착각하여  돌려 보냈다면? 그걸 노리는 신종사기인가 생각이 드네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;여러분들 생각은 어떠신지요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106083</guid><pubDate>Sun, 07 Dec 2025 13:42:33 GMT</pubDate></item><item><title>이번 쿠팡 유출에서 가장 민감한 정보가...[10][2]</title><link>https://www.clien.net/service/board/park/19106020</link><description>
+ 
+ 
+  &lt;p&gt;공동 현관 비밀 번호라고 생각합니다.&lt;/p&gt;
+  &lt;p&gt;(사실 카드번호...이겠지만, 재발급 받아도 되고, 알림도 오고 하니...)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;일단  우리나라 웬만한 아파트 동...은 다 들어갈 수 있고&lt;/p&gt;
+  &lt;p&gt;그 동에 사는 사람 동호수랑 이름 연락처 다 알고 있고...&lt;/p&gt;
+  &lt;p&gt;문 앞에는 cctv도 없으며&lt;/p&gt;
+  &lt;p&gt;무려 새벽에도 진입할 수 있죠.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;내일 관리사무소 연락해서...다 바꾸자고 할 생각입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106020</guid><pubDate>Sun, 07 Dec 2025 11:21:05 GMT</pubDate></item><item><title>이야기 윈터타이어 제약[12][0]</title><link>https://www.clien.net/service/board/cm_car/19106038</link><description>
  
  
   &lt;p&gt;보관비 아닐까합니다..&lt;/p&gt;
@@ -15,7 +157,7 @@
   &lt;p&gt;그래서 전 이번에 5번째 시즌 윈터를 여름전까지타고&lt;/p&gt;
   &lt;p&gt;올웨더 갈아탈려합니다@@&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19106038</guid><pubDate>Sun, 07 Dec 2025 12:03:10 GMT</pubDate></item><item><title>당근 기부세차, 진행상황 공유[4][5]</title><link>https://www.clien.net/service/board/park/19106105</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19106038</guid><pubDate>Sun, 07 Dec 2025 12:03:10 GMT</pubDate></item><item><title>당근 기부세차, 진행상황 공유[5][7]</title><link>https://www.clien.net/service/board/park/19106105</link><description>
  
  
   &lt;p&gt;세차광 나로킴입니다.&lt;/p&gt;
@@ -44,7 +186,7 @@
   &lt;p&gt;연말에.. 마음따뜻하게 보내고자.. 취미 생활 겸 생애첫기부를 준비중입니다 ㅎㅎ&lt;/p&gt;
   &lt;p&gt;&lt;span style="color: rgb(38, 38, 38); font-family: DcBodyFont; font-size: 16px; background-color: transparent;"&gt;개인의 소소한 취미로 시작된 작고 초라하기만한 기부지만....응원부탁드립니다!&lt;/span&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106105</guid><pubDate>Sun, 07 Dec 2025 14:29:49 GMT</pubDate></item><item><title>광선검을 높이 든 서영교의원[1][5]</title><link>https://www.clien.net/service/board/park/19106094</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106105</guid><pubDate>Sun, 07 Dec 2025 14:29:49 GMT</pubDate></item><item><title>광선검을 높이 든 서영교의원[1][6]</title><link>https://www.clien.net/service/board/park/19106094</link><description>
  
  
   &lt;p&gt;탄핵안 1차부결로 좌절했던 그 날을 기억하기 위해&lt;/p&gt;
@@ -95,7 +237,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106094</guid><pubDate>Sun, 07 Dec 2025 14:11:32 GMT</pubDate></item><item><title>키보드는 참 오묘한 상품 같네요[10][0]</title><link>https://www.clien.net/service/board/park/19106093</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106094</guid><pubDate>Sun, 07 Dec 2025 14:11:32 GMT</pubDate></item><item><title>키보드는 참 오묘한 상품 같네요[11][0]</title><link>https://www.clien.net/service/board/park/19106093</link><description>
  
  
   &lt;p&gt;수 없이 많은 제품이 있는데&lt;/p&gt;
@@ -106,7 +248,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;다양성이 아니라 쏠림이 너무 심한 분야 같아요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106093</guid><pubDate>Sun, 07 Dec 2025 14:07:41 GMT</pubDate></item><item><title>이모든 것은 언론개혁이 안된 탓입니다.[1][7]</title><link>https://www.clien.net/service/board/park/19106091</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106093</guid><pubDate>Sun, 07 Dec 2025 14:07:41 GMT</pubDate></item><item><title>이모든 것은 언론개혁이 안된 탓입니다.[1][9]</title><link>https://www.clien.net/service/board/park/19106091</link><description>
  
  
   &lt;p&gt;특히, 리박.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
@@ -114,14 +256,14 @@
     기소-결국 기각.&lt;br/&gt;&lt;br/&gt;
     결국 쇼한거 같네요. 솜방망이 처벌하겠죠...... .......기각하면 증거인멸할시간은 있겠군요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106091</guid><pubDate>Sun, 07 Dec 2025 14:29:17 GMT</pubDate></item><item><title>하정우는 영화감독도 하고 잘만 나오던데요[21][1]</title><link>https://www.clien.net/service/board/park/19106086</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106091</guid><pubDate>Sun, 07 Dec 2025 14:29:17 GMT</pubDate></item><item><title>하정우는 영화감독도 하고 잘만 나오던데요[27][2]</title><link>https://www.clien.net/service/board/park/19106086</link><description>
  
  
   &lt;p&gt;너무 선택적 분노가 아닌지&lt;/p&gt;
   &lt;p&gt;이참에 전과자 연애인들 파묘해서&lt;/p&gt;
   &lt;p&gt;끝장을 내보는건 어떨지요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106086</guid><pubDate>Sun, 07 Dec 2025 13:50:41 GMT</pubDate></item><item><title>쿠팡은 더 이상 성장할게 없지 않나요?[10][0]</title><link>https://www.clien.net/service/board/park/19106041</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106086</guid><pubDate>Sun, 07 Dec 2025 13:50:41 GMT</pubDate></item><item><title>쿠팡은 더 이상 성장할게 없지 않나요?[11][0]</title><link>https://www.clien.net/service/board/park/19106041</link><description>
  
  
   &lt;p&gt;한달 활성유저가 2500만명 가까이 되면&lt;/p&gt;
@@ -130,7 +272,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;국내 새벽배송 유통망 때문에 컸기 때문에 알리,테무,아마존 처럼 해외 사업 진출이 가능 한 것도 아니고 이제 와우 회원비 올려서 기존 회원 고혈 빠는 것 외엔 안 보이네요. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106041</guid><pubDate>Sun, 07 Dec 2025 12:10:14 GMT</pubDate></item><item><title>Q/A 최상급 선팅 브랜드/모델명 추천 부탁드립니다[11][0]</title><link>https://www.clien.net/service/board/cm_car/19105988</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106041</guid><pubDate>Sun, 07 Dec 2025 12:10:14 GMT</pubDate></item><item><title>Q/A 최상급 선팅 브랜드/모델명 추천 부탁드립니다[12][0]</title><link>https://www.clien.net/service/board/cm_car/19105988</link><description>
  
  
   &lt;p&gt;어쩌다 보니 발품 안팔고 현대 대리점에서 계약할 것 같습니다.&lt;/p&gt;
@@ -156,7 +298,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;후면과 뒷자석은 더 어둡게 하시는 경우가 많은 것 같은데 저는 윈도우 커튼이 있고 가족 태울 일도 많지 않아서 어두울 필요는 없을 것 같습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19105988</guid><pubDate>Sun, 07 Dec 2025 09:52:29 GMT</pubDate></item><item><title>유시민 “통화·메시지 도청, 조선일보에 다 들어간다 생각하고 행동해야”[8][12]</title><link>https://www.clien.net/service/board/park/19106063</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19105988</guid><pubDate>Sun, 07 Dec 2025 09:52:29 GMT</pubDate></item><item><title>유시민 “통화·메시지 도청, 조선일보에 다 들어간다 생각하고 행동해야”[13][15]</title><link>https://www.clien.net/service/board/park/19106063</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/028/0002780127" target="_blank"&gt;https://n.news.naver.com/mnews/article/028/0002780127&lt;/a&gt;&lt;/p&gt;
@@ -164,7 +306,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;span style='color: rgb(48, 48, 56); font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", sans-serif; font-size: 18px; letter-spacing: -0.3px;'&gt;유시민 전 노무현재단 이사장이 최근 불거진 ‘김남국 인사청탁 논란’에 대해 “몹시 위험하다”며 “우리가 하는 모든 통화, (주고받는) 모든 메시지가 모두 도청되고 있다, 조선일보나 모든 재래식(레거시) 언론 기자들에게 다 들어간다고 생각(하고 행동)해야 한다”고 경고했다.&lt;/span&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106063</guid><pubDate>Sun, 07 Dec 2025 13:13:50 GMT</pubDate></item><item><title>김원이 의원 이 분은 또 왜이러나요..[13][0]</title><link>https://www.clien.net/service/board/park/19106061</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106063</guid><pubDate>Sun, 07 Dec 2025 13:13:50 GMT</pubDate></item><item><title>김원이 의원 이 분은 또 왜이러나요..[15][0]</title><link>https://www.clien.net/service/board/park/19106061</link><description>
  
  
   &lt;p&gt;&lt;img alt="2.jpg" class="fr-dib fr-fil full" data-file-sn="15614800" data-gif="false" data-img-height="1805" data-img-width="900" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15614800/1ee732f5b00336.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -174,7 +316,7 @@
   &lt;p&gt;조진웅 배우관련 이 분이 쓴 글이 전 커뮤에 퍼져서 난리네요.&lt;/p&gt;
   &lt;p&gt;국회의원씩이나 돼서 걍 가만히 있는게 그렇게 어려운지 이해가 안갑니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106061</guid><pubDate>Sun, 07 Dec 2025 12:54:52 GMT</pubDate></item><item><title>저혈당 무섭네요..[16][3]</title><link>https://www.clien.net/service/board/park/19106049</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106061</guid><pubDate>Sun, 07 Dec 2025 12:54:52 GMT</pubDate></item><item><title>저혈당 무섭네요..[32][3]</title><link>https://www.clien.net/service/board/park/19106049</link><description>
  
  
   &lt;p&gt;오늘도 출근합니다..&lt;/p&gt;
@@ -212,7 +354,7 @@
   &lt;p&gt;배 고프네요.. 밥 먹으러 가야..&lt;/p&gt;
   &lt;p&gt;회원분들도 맛점 하세요..&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106049</guid><pubDate>Sun, 07 Dec 2025 12:33:21 GMT</pubDate></item><item><title>이해민 의원이 이야기하는 쿠팡의 또 다른 문제[5][8]</title><link>https://www.clien.net/service/board/park/19106019</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106049</guid><pubDate>Sun, 07 Dec 2025 12:33:21 GMT</pubDate></item><item><title>이해민 의원이 이야기하는 쿠팡의 또 다른 문제[5][10]</title><link>https://www.clien.net/service/board/park/19106019</link><description>
  
  
   &lt;p&gt;돈은 한국에서 벌고&lt;br/&gt;
@@ -222,7 +364,7 @@
     아오 정말 쿠팡스럽습니다.ㅡㅡ&lt;br/&gt;
     이번 기회에 제대로 혼내야해요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106019</guid><pubDate>Sun, 07 Dec 2025 11:21:04 GMT</pubDate></item><item><title>법원회의가 웃긴게 자기들은 불법 판단하면 되는곳인데[4][6]</title><link>https://www.clien.net/service/board/park/19106017</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106019</guid><pubDate>Sun, 07 Dec 2025 11:21:04 GMT</pubDate></item><item><title>법원회의가 웃긴게 자기들은 불법 판단하면 되는곳인데[4][7]</title><link>https://www.clien.net/service/board/park/19106017</link><description>
  
  
   &lt;p&gt;위헌 판단만 하네요&lt;/p&gt;
@@ -259,7 +401,7 @@
   &lt;p&gt;테슬라에 대항해 NVIDIA 버스에 빠르게 탑승하는 방법이 가장 현실적이며 효율적으로 보입니다.&lt;/p&gt;
   &lt;p&gt;영상 설명은 며칠전 공개한 NVIDIA 알파마요입니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19105813</guid><pubDate>Sat, 06 Dec 2025 20:45:07 GMT</pubDate></item><item><title>조진웅이 사태가 과하다고요?[74][24]</title><link>https://www.clien.net/service/board/park/19106046</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19105813</guid><pubDate>Sat, 06 Dec 2025 20:45:07 GMT</pubDate></item><item><title>조진웅이 사태가 과하다고요?[90][29]</title><link>https://www.clien.net/service/board/park/19106046</link><description>
  
  
   &lt;p&gt;전 2달된 딸 애 아버지 입장에서 사람으로 안보이는데 말이죠.&lt;/p&gt;
@@ -281,7 +423,7 @@
  
   &lt;p&gt;미국에서까지 로비했다는 글을 보니 참을수가 없네요. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106036</guid><pubDate>Sun, 07 Dec 2025 11:57:42 GMT</pubDate></item><item><title>박찬대 의원님이 민주당 당대표 후보 시절 공약 ' 대의원 및 권리당원 1인 1표제 도입[16][1]</title><link>https://www.clien.net/service/board/park/19106030</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106036</guid><pubDate>Sun, 07 Dec 2025 11:57:42 GMT</pubDate></item><item><title>박찬대 의원님이 민주당 당대표 후보 시절 공약 ' 대의원 및 권리당원 1인 1표제 도입[17][1]</title><link>https://www.clien.net/service/board/park/19106030</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -299,7 +441,7 @@
   &lt;p&gt;&lt;img alt="Screenshot 2025-11-19 at 10.59.04.JPG" class="fr-dib fr-fil full" data-file-sn="15614751" data-gif="false" data-img-height="1549" data-img-width="1244" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15614751/1ee4097f455590.JPG?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106030</guid><pubDate>Sun, 07 Dec 2025 11:41:02 GMT</pubDate></item><item><title>집회 후기: 지금 가장 중요한 것은 제 1당인 민주당을 움직이는 것입니다.[3][11]</title><link>https://www.clien.net/service/board/park/19106026</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106030</guid><pubDate>Sun, 07 Dec 2025 11:41:02 GMT</pubDate></item><item><title>집회 후기: 지금 가장 중요한 것은 제 1당인 민주당을 움직이는 것입니다.[5][11]</title><link>https://www.clien.net/service/board/park/19106026</link><description>
  
  
   &lt;blockquote&gt;
@@ -496,7 +638,7 @@
   &lt;p&gt;이런 이야기도 못할 정도면 저 콘텐츠는 망한 콘텐츠네요.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106015</guid><pubDate>Sun, 07 Dec 2025 11:04:27 GMT</pubDate></item><item><title>[단독]국민의힘 당 대변인 강제추행 혐의로 피소…윤리위 제소에도 직 유지[6][8]</title><link>https://www.clien.net/service/board/park/19106008</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106015</guid><pubDate>Sun, 07 Dec 2025 11:04:27 GMT</pubDate></item><item><title>[단독]국민의힘 당 대변인 강제추행 혐의로 피소…윤리위 제소에도 직 유지[6][10]</title><link>https://www.clien.net/service/board/park/19106008</link><description>
  
  
   &lt;p&gt;&lt;img alt="IMG_2615.jpeg" class="fr-dib fr-fil full" data-file-sn="15614708" data-gif="false" data-img-height="1349" data-img-width="1008" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15614708/1ee01710e055bf.jpeg?scale=width:740"/&gt;&lt;/p&gt;
@@ -510,7 +652,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;이 건은 참 조용하네요 &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106008</guid><pubDate>Sun, 07 Dec 2025 10:45:47 GMT</pubDate></item><item><title>서비스/SW AI로 법인등기 단돈 5만원에 '셀프'로 하기[7][18]</title><link>https://www.clien.net/service/board/use/19105943</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106008</guid><pubDate>Sun, 07 Dec 2025 10:45:47 GMT</pubDate></item><item><title>서비스/SW AI로 법인등기 단돈 5만원에 '셀프'로 하기[7][23]</title><link>https://www.clien.net/service/board/use/19105943</link><description>
  
  
   &lt;p&gt;소규모 사업장을 운영하고 있습니다.&lt;/p&gt;
@@ -658,7 +800,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19105943</guid><pubDate>Sun, 07 Dec 2025 08:35:44 GMT</pubDate></item><item><title>조진웅 보단 오세훈시 희림과 520억 수의계약이 더 크게 이유되어야하는거 아닌가요?[11][38]</title><link>https://www.clien.net/service/board/park/19106013</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19105943</guid><pubDate>Sun, 07 Dec 2025 08:35:44 GMT</pubDate></item><item><title>조진웅 보단 오세훈시 희림과 520억 수의계약이 더 크게 이유되어야하는거 아닌가요?[12][41]</title><link>https://www.clien.net/service/board/park/19106013</link><description>
  
  
   &lt;p&gt;솔직히 연예인이 뭘 했던 제 삶에 영향을 미치지 않기에....&lt;/p&gt;
@@ -672,7 +814,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106013</guid><pubDate>Sun, 07 Dec 2025 10:52:19 GMT</pubDate></item><item><title>자유대학,쿠팡 지지선언!.jpg[20][25]</title><link>https://www.clien.net/service/board/park/19106009</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106013</guid><pubDate>Sun, 07 Dec 2025 10:52:19 GMT</pubDate></item><item><title>자유대학,쿠팡 지지선언!.jpg[22][31]</title><link>https://www.clien.net/service/board/park/19106009</link><description>
  
  
   &lt;p&gt;자유대학-&amp;gt;중국혐오&lt;/p&gt;
@@ -680,7 +822,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;대학가에 이런 일베충들이 득시글하다는게 경악스럽습니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106009</guid><pubDate>Sun, 07 Dec 2025 10:48:02 GMT</pubDate></item><item><title>수사청 가겠다는 검사가 0.8%라니 잘되었네요.[10][0]</title><link>https://www.clien.net/service/board/park/19106007</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106009</guid><pubDate>Sun, 07 Dec 2025 10:48:02 GMT</pubDate></item><item><title>수사청 가겠다는 검사가 0.8%라니 잘되었네요.[10][1]</title><link>https://www.clien.net/service/board/park/19106007</link><description>
  
  
   &lt;p&gt;보아하니  책상머리 대장질 하다가&lt;/p&gt;
@@ -715,7 +857,7 @@
   &lt;p&gt;&lt;img alt="스크린샷 2025-12-06 02.04.42.png" class="fr-dib fr-fil full" data-file-sn="15614696" data-gif="false" data-img-height="1847" data-img-width="1626" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15614696/1edfa60179145b.png?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106005</guid><pubDate>Sun, 07 Dec 2025 10:48:12 GMT</pubDate></item><item><title>김경호 변호사 '조진웅 배우의 과거와 조희대 대법원장의 과거'[7][15]</title><link>https://www.clien.net/service/board/park/19106003</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106005</guid><pubDate>Sun, 07 Dec 2025 10:48:12 GMT</pubDate></item><item><title>김경호 변호사 '조진웅 배우의 과거와 조희대 대법원장의 과거'[10][21]</title><link>https://www.clien.net/service/board/park/19106003</link><description>
  
  
   &lt;p&gt;우선 조희대는 국민적 공분을 사고있고 저런 과거 판결들도 분명 문제는 맞습니다.저런 과거 판결들도 크나큰 문제라고 생각하구요.지금은 어떻게든 내란세력들을 감싸거나 자기들의 개혁에 애해서 방어만 치려하는 모습에 더 화가납니다.&lt;/p&gt;
@@ -827,7 +969,7 @@
   &lt;p&gt;과거이력....도.....&lt;/p&gt;
   &lt;p&gt;잘...살펴보아요...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105993</guid><pubDate>Sun, 07 Dec 2025 11:03:53 GMT</pubDate></item><item><title>美국방 '韓같은 모범동맹은 특혜…자기역할 못하는 동맹엔 후과'[5][7]</title><link>https://www.clien.net/service/board/park/19105991</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105993</guid><pubDate>Sun, 07 Dec 2025 11:03:53 GMT</pubDate></item><item><title>美국방 '韓같은 모범동맹은 특혜…자기역할 못하는 동맹엔 후과'[5][8]</title><link>https://www.clien.net/service/board/park/19105991</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/article/001/0015782437?sid=104" target="_blank"&gt;https://n.news.naver.com/article/001/0015782437?sid=104&lt;/a&gt;&lt;/p&gt;
@@ -852,7 +994,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105987</guid><pubDate>Sun, 07 Dec 2025 09:50:26 GMT</pubDate></item><item><title>정말 20대가 집값이 올라서 불만일까요?[24][5]</title><link>https://www.clien.net/service/board/park/19106002</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105987</guid><pubDate>Sun, 07 Dec 2025 09:50:26 GMT</pubDate></item><item><title>정말 20대가 집값이 올라서 불만일까요?[26][6]</title><link>https://www.clien.net/service/board/park/19106002</link><description>
  
  
   &lt;p&gt;20대 애들이 집값이 올라서 불만이라고요?&lt;/p&gt;
@@ -864,7 +1006,7 @@
   &lt;p&gt;멍청한데 이기적인 진상같은 것인데&lt;/p&gt;
   &lt;p&gt;진상 대처법은 강하게 나가는거지, 숙이고 들어가면 밑도끝도 없습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106002</guid><pubDate>Sun, 07 Dec 2025 10:34:51 GMT</pubDate></item><item><title>2030이 수도의 양질의 집을 턱턱 사는 선진국은 없습니다 -_-;;[62][3]</title><link>https://www.clien.net/service/board/park/19105998</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19106002</guid><pubDate>Sun, 07 Dec 2025 10:34:51 GMT</pubDate></item><item><title>2030이 수도의 양질의 집을 턱턱 사는 선진국은 없습니다 -_-;;[64][3]</title><link>https://www.clien.net/service/board/park/19105998</link><description>
  
  
   &lt;p&gt;집값 상승이 절망?이라는 2030 극우남들 이해 안 가네요..&lt;/p&gt;
@@ -873,7 +1015,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;왜 유독 한국에서만 저게 논란인지 모르겠네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105998</guid><pubDate>Sun, 07 Dec 2025 10:22:32 GMT</pubDate></item><item><title>미국 전과자 연예인 리스트 입니다.[40][6]</title><link>https://www.clien.net/service/board/park/19105996</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105998</guid><pubDate>Sun, 07 Dec 2025 10:22:32 GMT</pubDate></item><item><title>미국 전과자 연예인 리스트 입니다.[47][8]</title><link>https://www.clien.net/service/board/park/19105996</link><description>
  
  
   &lt;ul&gt;
@@ -896,7 +1038,7 @@
   &lt;p&gt;주식공부에도 활용하고, 실제로 코딩을 통해서 뭔가를 만들어내서 꼭 돈이 아니라 먼가 가치창출을 좀 해보고 싶은데말이죠.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105992</guid><pubDate>Sun, 07 Dec 2025 10:02:22 GMT</pubDate></item><item><title>부산사람이 추천하는 늘 가는 바다코스.[22][8]</title><link>https://www.clien.net/service/board/park/19105990</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105992</guid><pubDate>Sun, 07 Dec 2025 10:02:22 GMT</pubDate></item><item><title>부산사람이 추천하는 늘 가는 바다코스.[23][8]</title><link>https://www.clien.net/service/board/park/19105990</link><description>
  
  
   &lt;p&gt;오늘도 가볼까? 하는&lt;/p&gt;
@@ -949,7 +1091,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105990</guid><pubDate>Sun, 07 Dec 2025 10:00:24 GMT</pubDate></item><item><title>미처버린 러닝붐 근황[26][5]</title><link>https://www.clien.net/service/board/park/19105982</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105990</guid><pubDate>Sun, 07 Dec 2025 10:00:24 GMT</pubDate></item><item><title>미처버린 러닝붐 근황[30][5]</title><link>https://www.clien.net/service/board/park/19105982</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -1016,7 +1158,7 @@
   &lt;p&gt;아직 많이 부족해 보이네요 &lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105824</guid><pubDate>Sat, 06 Dec 2025 20:51:31 GMT</pubDate></item><item><title>이야기 눈오면 운전 안한다는 분은 뭘까요?[39][7]</title><link>https://www.clien.net/service/board/cm_car/19105968</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105824</guid><pubDate>Sat, 06 Dec 2025 20:51:31 GMT</pubDate></item><item><title>이야기 눈오면 운전 안한다는 분은 뭘까요?[44][9]</title><link>https://www.clien.net/service/board/cm_car/19105968</link><description>
  
  
   &lt;p&gt;눈오면 운전 안하는게&lt;/p&gt;
@@ -1089,97 +1231,4 @@
  
   &lt;p&gt;건축가 프랑크 게리가 96세의 나이로 영면했다고 합니다(1929-2025). 캐나다 출신으로 1989년 프리츠커상을 수상했으며 해체주의 건축을 대표하는 건축가이기도 합니다. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105874</guid><pubDate>Sat, 06 Dec 2025 23:22:19 GMT</pubDate></item><item><title>박제) 아이디 moonhyangsm 닉네임 고구마사과[3][10]</title><link>https://www.clien.net/service/board/park/19105932</link><description>
- 
- 
-  &lt;p&gt;댓글작성 시 운영규칙 위반하지 않게 주의하시기 바랍니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="Cap 2025-12-07 04-23-07-190.png" class="fr-dib fr-fil" data-file-sn="15614591" data-gif="false" data-img-height="535" data-img-width="409" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15614591/1ecb5fc6c5be75.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/park/19105609?po=0&amp;amp;sk=commenter&amp;amp;sv=moonhyangsm&amp;amp;groupCd=&amp;amp;pt=0" target="_blank"&gt;https://www.clien.net/service/board/park/19105609?po=0&amp;amp;sk=commenter&amp;amp;sv=moonhyangsm&amp;amp;groupCd=&amp;amp;pt=0&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="Cap 2025-12-07 04-21-42-103.png" class="fr-dib fr-fil" data-file-sn="15614592" data-gif="false" data-img-height="138" data-img-width="305" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15614592/1ecb64d6af0b59.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/park/19105797?po=0&amp;amp;sk=commenter&amp;amp;sv=moonhyangsm&amp;amp;groupCd=&amp;amp;pt=0" target="_blank"&gt;https://www.clien.net/service/board/park/19105797?po=0&amp;amp;sk=commenter&amp;amp;sv=moonhyangsm&amp;amp;groupCd=&amp;amp;pt=0&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="Cap 2025-12-07 04-24-10-727.png" class="fr-dib fr-fil" data-file-sn="15614593" data-gif="false" data-img-height="172" data-img-width="411" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15614593/bd5f406b58b4e.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/park/19101019?po=0&amp;amp;sk=commenter&amp;amp;sv=moonhyangsm&amp;amp;groupCd=&amp;amp;pt=0" target="_blank"&gt;https://www.clien.net/service/board/park/19101019?po=0&amp;amp;sk=commenter&amp;amp;sv=moonhyangsm&amp;amp;groupCd=&amp;amp;pt=0&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/park/19100248?po=0&amp;amp;sk=commenter&amp;amp;sv=moonhyangsm&amp;amp;groupCd=&amp;amp;pt=0" target="_blank"&gt;https://www.clien.net/service/board/park/19100248?po=0&amp;amp;sk=commenter&amp;amp;sv=moonhyangsm&amp;amp;groupCd=&amp;amp;pt=0&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="Cap 2025-12-07 04-29-34-010.png" class="fr-dib fr-fil" data-file-sn="15614594" data-gif="false" data-img-height="208" data-img-width="339" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15614594/bd63ea0893900.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/park/19102583?c=true#150802864" target="_blank"&gt;https://www.clien.net/service/board/park/19102583?c=true#150802864&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="Cap 2025-12-07 04-30-40-662.png" class="fr-dib fr-fil" data-file-sn="15614595" data-gif="false" data-img-height="260" data-img-width="360" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15614595/1ecbc7c60137a9.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다른 박제 글&lt;/p&gt;
-  &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/park/19103859" target="_blank"&gt;https://www.clien.net/service/board/park/19103859&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105932</guid><pubDate>Sun, 07 Dec 2025 07:22:19 GMT</pubDate></item><item><title>조희대를 향한 민주당 원내대변인의 구구절절 명문 논평[1][11]</title><link>https://www.clien.net/service/board/park/19105931</link><description>
- 
- 
-  &lt;p&gt;&lt;strong&gt;민주당 "사법부, 반성 없이 겁박만… 지금이라도 국민 앞에 사과해야"&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;더불어민주당은 전국법원장회의에서 내란전담재판부 설치법과 법 왜곡죄에 대한 우려가 제기된 것과 관련해 6일 &lt;strong&gt;"국회와 국민을 향한 겁박만 확인되었을 뿐, 사법부가 스스로를 돌아보는 모습은 찾아볼 수 없었다"&lt;/strong&gt;면서 "지금이라도 각성하고 국민 앞에 사과하라"고 날을 세웠다.&lt;br/&gt;&lt;br/&gt;
-    백승아 민주당 원내대변인은 이날 논평을 통해 "어제 열린 전국법원장회의는 국민의 불안과 분노에 응답하는 자리가 되지 못했다"면서 "불법계엄 사태와 내란 재판 지연으로 무너진 사법 신뢰에 대한 반성과 사과는 끝내 외면했다"고 비판했다. 전날 열린 전국법원장회의에서는 내란전담재판부와 법 왜곡죄와 관련해 "위헌성이 커 심각한 우려를 표명한다"는 공식 입장이 발표됐다.&lt;br/&gt;&lt;br/&gt;
-    민주당은 특히 국민 불신을 키우는 사법부 태도를 지적하면서 내란전담재판부의 필요성을 역설했다. 백 원내대변인은 "불법 계엄 이후 1년이 다 되어가도록 내란 재판은 지지부진하게 지연되고 있으며, 그 사이 윤석열은 한때 석방되었고, 내란 주요 공범에 대한 구속영장은 잇따라 기각됐다"며 "심지어 재판정에서는 내란 주요범들이 재판을 주도하는 듯한 장면까지 연출됐다"고 말했다. 이어 "국민이 느끼는 감정은 더 이상 단순한 허탈과 분노에 그치지 않는다"면서&lt;strong&gt; "이제는 '과연 정의로운 판결이 가능한가'라는 근본적인 불안과 두려움으로 번지고 있다"&lt;/strong&gt;고 주장했다.&lt;br/&gt;&lt;br/&gt;
-    백 원내대변인은 "사법부는 스스로를 방어하는 데에만 급급하다"면서 "사법 신뢰가 왜 무너졌는지에 대한 성찰 없이 책임은 외면한 채 권한만을 앞세우는 모습에 국민의 좌절은 더욱 깊어지고 있다"고 말했다. 이어 사법부를 향해 "지금이라도 계엄 당시의 소극적 대응에 대해 국민 앞에 공식으로 사과하고, 내란 재판의 장기 지연과 잇따른 구속영장 기각으로 증폭된 국민적 불안을 무겁게 받아들여야 한다"면서 "어떠한 권력에도 흔들리지 않고 오직 헌법과 정의에 따라 끝까지 책임 있게 재판하겠다는 각성과 결의를 분명히 밝히라"고 촉구했다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;a href="https://n.news.naver.com/article/469/0000901603?iid=1190" target="_blank"&gt;https://n.news.naver.com/article/469/0000901603?iid=1190&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;"국회와 국민을 향한 겁박만 확인되었을 뿐, 사법부가 스스로를 돌아보는 모습은 찾아볼 수 없었다."&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;"불법계엄 사태와 내란 재판 지연으로 무너진 사법 신뢰에 대한 반성과 사과는 끝내 외면했다."&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;"불법 계엄 이후 1년이 다 되어가도록 내란 재판은 지지부진하게 지연되고 있으며, 그 사이 윤석열은 한때 석방되었고, 내란 주요 공범에 대한 구속영장은 잇따라 기각됐다." &lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;"심지어 재판정에서는 내란 주요범들이 재판을 주도하는 듯한 장면까지 연출됐다." &lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;"사법 신뢰가 왜 무너졌는지에 대한 성찰 없이 책임은 외면한 채 권한만을 앞세우는 모습에 국민의 좌절은 더욱 깊어지고 있다." &lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;"지금이라도 계엄 당시의 소극적 대응에 대해 국민 앞에 공식으로 사과하고, 내란 재판의 장기 지연과 잇따른 구속영장 기각으로 증폭된 국민적 불안을 무겁게 받아들여야 한다."&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;민주당 백승아 대변인의 &lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;구구절절 명문 논평입니다.&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105931</guid><pubDate>Sun, 07 Dec 2025 05:23:00 GMT</pubDate></item><item><title>쿠팡 보안사고는 결국 인재군요.[3][7]</title><link>https://www.clien.net/service/board/park/19105818</link><description>
- 
- 
-  &lt;p&gt;해킹이 아니네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;서명키 하나 들고 나갔는데, 수개월동안 아무도 몰랐다니.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이건 한국사람 개인 정보는 거의 지킬 생각이 없고, 자기들 장사에 필요한 업무처리용 자료 정도로 밖에 안보았다는 뜻이지요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;검은 머리 외국인이 너무 많은 거 같네요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105818</guid><pubDate>Sat, 06 Dec 2025 20:46:23 GMT</pubDate></item><item><title>[단독]내란 비밀리 계획하는데…'尹·秋 '공모 목격자' 왜 없냐'는 법원[22][32]</title><link>https://www.clien.net/service/board/park/19105949</link><description>
- 
- 
-  &lt;p&gt;저들의 집요한 증거 인멸로 아직도 밝혀지지 않은 게 많은데 단지 사전 공모의 증거가 없다고, 당시 통화가 짧았다고 구속 영장을 기각하는 건 말도 안 되죠. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;실제로 사전 공모가 없던 홍장원 차장에게 2분보다 짧은 통화로 방첩사 협조를 지시한 게 바로 윤석열입니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;실행을 안 했을 뿐, 만약 그 지시에 따랐다면 사전 모의 없는 2분도 안 되는 통화로 그는 중요임무종사자가 되게 되는 거였죠. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;현재까지 이상민을 빼고 내란 관련해 청구한 구속영장을 다 기각한 게 지금 사법부입니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이제 와서 법원장들이 당시 계엄은 위헌, 불법이었다고 외쳐도 지금 영장 판사들의 행태를 보면 그 저의를 의심할 수밖에 없습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지금이라도 국민들이 납득할 만한 신뢰를 보이던가, 내란전담재판부를 수용하던가 선택은 사법부의 몫입니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105949</guid><pubDate>Sun, 07 Dec 2025 07:21:50 GMT</pubDate></item><item><title>전국 법원장들 '12,3 계엄은 위헌 ...신속한 재판 위해 모든 지원'[36][52]</title><link>https://www.clien.net/service/board/park/19105941</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/028/0002780096?sid1=001" ori-url="https://n.news.naver.com/mnews/article/028/0002780096?sid1=001" rel="nofollow" target="_blank"&gt;https://n.news.naver.com/mnews/article/028/0002780096?sid1=001&lt;/a&gt; &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;늑장재판 원흉 지귀연이라도&lt;/p&gt;
-  &lt;p&gt;갈아치워야 믿죠&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105941</guid><pubDate>Sun, 07 Dec 2025 06:20:50 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19105874</guid><pubDate>Sat, 06 Dec 2025 23:22:19 GMT</pubDate></item></channel></rss>
