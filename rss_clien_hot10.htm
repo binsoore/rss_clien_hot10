@@ -1,5 +1,140 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Wed, 17 Dec 2025 14:00:59 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>후기 어항&amp;윈터 조합으로 처음 맞는 겨울[23][4]</title><link>https://www.clien.net/service/board/cm_car/19111568</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Wed, 17 Dec 2025 15:01:05 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>입당 fsd가 e2e. 웨이모는 vlm으로 잡는다?.[11][0]</title><link>https://www.clien.net/service/board/cm_car/19111659</link><description>
+ 
+ 
+  &lt;p&gt;FSD가 e2e라서 블랙박스라서 오류수정이 힘들고 그래서 vlm붙여놓은 웨이모가 더 낫다?.&lt;/p&gt;
+  &lt;p&gt;FSD의 e2e전환은 llm 개발방향을 보고 아쇽이 제안한거죠.?.  결국 둘다 어느정도 블랙박스입니다.&lt;/p&gt;
+  &lt;p&gt;gemini에게 물어봤습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;테슬라의 FSD(특히 v12 이후)와 LLM(거대언어모델)은 작동 원리와 학습 철학 측면에서 본질적으로 같은 'E2E(End-to-End) 블랙박스' 모델&lt;/strong&gt;입니다.&lt;/p&gt;
+  &lt;p&gt;두 기술이 어떻게 닮아있는지, 그리고 왜 이 방식이 '블랙박스'라고 불리는지 명쾌하게 비교해 드리겠습니다.&lt;/p&gt;
+  &lt;h3&gt;1. 테슬라 FSD (v12 이후): "비디오를 보고 운전을 배운다"&lt;/h3&gt;
+  &lt;p&gt;과거의 자율주행(v11 이전)은 사람이 직접 짠 수십만 줄의 C++ 코드가 규칙(Rule-based)을 정했습니다. ("빨간불이면 멈춰라", "차선이 보이면 중앙을 유지해라")&lt;/p&gt;
+  &lt;p&gt;하지만 &lt;strong&gt;FSD v12부터 적용된 E2E(End-to-End) 뉴럴넷&lt;/strong&gt;은 이 중간 과정을 없애버렸습니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;입력 (Input):&lt;/strong&gt; 카메라로 들어오는 날것의 영상 정보 (Photons)&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;처리 (Black Box):&lt;/strong&gt; 거대한 신경망이 영상을 분석 (중간에 사람이 개입한 규칙 없음)&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;출력 (Output):&lt;/strong&gt; 핸들 조향, 가속, 감속 명령 (Control)&lt;/p&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;즉, "이 상황에서는 이렇게 해"라고 코딩한 것이 아니라, **수백만 명의 사람이 운전하는 영상을 보여주고 AI가 그 행동 패턴을 통째로 모방(Imitation Learning)**하도록 만든 것입니다. 이 과정에서 AI가 내부적으로 어떤 판단 근거를 가지는지는 개발자도 정확히 알 수 없기에 **'블랙박스'**라고 부릅니다.&lt;/p&gt;
+  &lt;h3&gt;2. LLM (거대언어모델): "텍스트를 보고 말을 배운다"&lt;/h3&gt;
+  &lt;p&gt;GPT와 같은 LLM도 FSD와 똑같은 구조입니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;입력 (Input):&lt;/strong&gt; 사용자의 질문 텍스트 (Token)&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;처리 (Black Box):&lt;/strong&gt; 수천억 개의 파라미터가 확률 계산&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;출력 (Output):&lt;/strong&gt; 다음에 올 가장 적절한 단어 (Next Token Prediction)&lt;/p&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;개발자들은 AI에게 "주어 뒤에는 동사를 써라"라는 문법 규칙을 가르친 적이 없습니다. 그저 방대한 텍스트 데이터를 통째로(End-to-End) 넣었더니, AI가 스스로 언어의 패턴과 논리를 깨우친 것입니다.&lt;/p&gt;
+  &lt;h3&gt;3. 결론: 둘은 '형제'나 다름없습니다&lt;/h3&gt;
+  &lt;p&gt;질문하신 대로 두 모델은 **"입력과 출력 사이의 복잡한 과정을 사람이 설계하지 않고, 데이터와 신경망에 온전히 맡긴다"**는 점에서 기술적 뿌리가 같습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;FSD나 llm이나 둘다 블박이죠. e2e가 블랙박스라 이걸 vlm으로 잡는다는건.... &lt;/p&gt;
+  &lt;p&gt;운전은 글로하는게 아니죠.llm의 영상버전이 fsd인데,그걸 굳이 vlm?. 리소스가 엄청나다면 할수도 있죠...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111659</guid><pubDate>Wed, 17 Dec 2025 14:15:31 GMT</pubDate></item><item><title>이야기 국내출시 GMC 세 차종 중 마지막 하나는 허머 EV 라고 합니다.[17][1]</title><link>https://www.clien.net/service/board/cm_car/19111646</link><description>
+ 
+ 
+  &lt;p&gt;&lt;strong&gt;GM, 프리미엄 SUV '허머 EV' 국내 출시 예고&lt;/strong&gt; &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;제너럴 모터스(GM)의 프리미엄 SUV·픽업 브랜드 GMC가 허머 EV를 필두로 한국 시장에서의 브랜드 활동을 본격화한다. 티저 영상 공개와 ‘허머 인 더 시티’ 이벤트를 통해 허머 EV의 압도적 존재감을 강조하며 브랜드 모멘텀을 강화해 나간다는 계획이다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://imgnews.pstatic.net/image/018/2025/12/17/0006185116_001_20251217120330394.jpg?type=w860"/&gt; &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;먼저, GMC는 오늘부터 허머 EV 티저 영상을 공개하며 국내 출시를 예고한다. 이와 함께 GMC 공식 홈페이지와 소셜 채널을 통해 ‘허머 인 더 시티’ 이벤트 일정과 참여 방법을 안내한다.&lt;br/&gt;&lt;br/&gt;
+    ‘허머 인 더 시티’ 이벤트는 오는 19일부터 28일까지 운영되며, 허머 EV가 성수, 강남, 한남 등 서울 주요 인구 밀집 지역의 예상치 못한 장소에 깜짝 등장할 예정이다. 19일부터 21일까지는 성수역과 서울숲 일대에서, 12월 23일부터 24일까지는 도산대로·신사·강남대로를 중심으로 한 강남 지역에서, 12월 26일부터 28일까지는 이태원과 한강진 일대에서 차량을 확인할 수 있다.&lt;br/&gt;&lt;br/&gt;
+    또한, 12월 21일과 27일에는 각각 성수연방과 이태원 카페 포이어에서 크리스마스 분위기의 허머 EV 포토존이 운영된다. 포토존에서 허머 EV를 더 가까이에서 만나볼 수 있으며, 현장을 방문한 모든 고객에게는 사은품이 제공된다.&lt;br/&gt;&lt;br/&gt;
+    이와 함께 이벤트 기간 내 거리에서 허머 EV를 목격하거나 포토존을 방문한 고객은 SNS 이벤트에 참여할 수 있다. 차량을 직접 촬영한 뒤 GMC 공식 인스타그램을 팔로우하고 필수 해시태그를 포함해 개인 계정에 업로드하면 응모가 완료된다. 참여자 중 추첨을 통해 △허머 EV 시승 및 럭셔리 호텔 숙박 패키지(3명) △GMC 와인잔 세트(30명)가 증정되며, 당첨자는 2026년 1월 9일 발표될 예정이다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://imgnews.pstatic.net/image/018/2025/12/17/0006185116_002_20251217120330399.jpg?type=w860"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;허머 EV는 GMC가 야심 차게 선보인 순수 전기 슈퍼트럭·SUV로 브랜드 전통의 강인한 이미지와 최첨단 전기차 기술을 결합한 모델이다. GM의 첨단 EV 플랫폼을 바탕으로 최신 EV 기술이 집약됐으며, 특히 4륜 조향 기반의 크랩워크 기능을 통해 차량을 대각선으로 움직일 수 있어 좁은 공간과 험로 모두에서 뛰어난 기동성과 차별화된 주행 경험을 제공한다.&lt;br/&gt;&lt;br/&gt;
+    한편, GMC는 이번 허머 EV 이벤트를 통해 한국 시장에서의 브랜드 활동을 더욱 강화할 계획이다. 120년의 헤리티지를 바탕으로 GMC만의 브랜드 가치와 혁신적인 전기차 기술력을 결합해 국내 프리미엄 전동화 시장에서 새로운 선택지를 제시한다는 전략이다. 특히, 2026년 초 허머 EV를 비롯한 GMC 3개 차종을 국내 시장에 새롭게 선보이는 등 공격적인 포트폴리오 확대로 내수시장에 대한 확고한 의지를 표명할 계획이다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://www.clien.net/service/board/cm_car/19111531?od=T31&amp;amp;po=0&amp;amp;category=0&amp;amp;groupCd=" ori-url="https://www.clien.net/service/board/cm_car/19111531?od=T31&amp;amp;po=0&amp;amp;category=0&amp;amp;groupCd=" target="_blank"&gt;한국 GM, 뷰익 브랜드 론칭 공식화 : 클리앙&lt;/a&gt; &lt;/p&gt;
+  &lt;p&gt;캐니언 AT4X, 아카디아.....다음에는 허머 EV 군요...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;에스컬레이드 IQ에 허머EV에...주차 공간 어쩔...&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111646</guid><pubDate>Wed, 17 Dec 2025 13:56:24 GMT</pubDate></item><item><title>해수부 이전에서 보듯이 적절한 지원만 이뤄지면 정부 부처 지역 이전도 충분히 가능합[19][2]</title><link>https://www.clien.net/service/board/park/19111657</link><description>
+ 
+ 
+  &lt;p&gt;부산 이전하면 해수부 직원들 다 도망갈 것 처럼 하더니 적절한 지원이 이루어지니 오히려 부산 이전하는 해수부로 적을 옮기겠다는 직원이 더 많은 판입니다.&lt;/p&gt;
+  &lt;p&gt;상식적으로 봐도 부산이 세종보다는 훨씬 대도시고, 지원까지 더해지니 굳이 세종에 머무를 필요가 없는거죠.&lt;/p&gt;
+  &lt;p&gt;다른 말로 하면 지원만 충분하면 서울에 있는 정부부처도 부산이전이 충분히 가능하다는 이야기입니다.&lt;/p&gt;
+  &lt;p&gt;더군다나 최근 부산 mbc 여론 조사에서도 부산사람 대상으로 한 조사에서 부산에서 떠나지 않고 살고 싶다가 70%를 넘을 정도로 꽤 살만한 도시라는게 부산사람들끼리도 인정된바 있으니 그래도 살기 괜찮은 도시라는 소리입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;해수부 이전을 참고해서 이번 기회에 서울경기지역에 있는 정부 다른 부처도 모두 부산으로 옮겨 서울제외한 부산과 세종을 같이 행정수도로 개발했으면 좋겠습니다.&lt;/p&gt;
+  &lt;p&gt;지역발전을 떠나 분단국가에서 휴전선 바로 앞에 있는 서울경기에 수도권이라는 이름을 붙이고 거기에 행정시설을 몰빵해서 배치한 것 부터가 비정상이죠. &lt;/p&gt;
+  &lt;p&gt;기업들은 절대 서울경기지역을 떠날 수 없다하니 그냥 놔두고  장기적으로 정치수도 북경, 경제수도 상하이인 중국처럼 서울경기지역은 기업 위주로 가고 정부부처 모두 부산, 세종으로 옮겨 부산, 세종을 행정수도로 만들면 딱 좋겠네요. 서울경기지역 인구 과밀화도 해결되고 지역발전도 되고 짱입니다. 그러다 기업들이 서울경기에서 부산, 세종으로 옮기면 더 좋고요.&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111657</guid><pubDate>Wed, 17 Dec 2025 14:09:13 GMT</pubDate></item><item><title>한은 총재는 꼭 교체하면 좋겠습니다[13][1]</title><link>https://www.clien.net/service/board/park/19111650</link><description>
+ 
+ 
+  &lt;p&gt;고환율의 원인을 두고 말이 많지만 그건 논외로 하고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;일단 고환율에 대해 너무 나이브합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;내년 물가가 올해랑 차이가 없을거라고 말하면서 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;환율 방어 할 생각을 안하던데&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;월급이 몇%씩 사라지니 당연히 수요부족으로 물가가 안오르죠...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111650</guid><pubDate>Wed, 17 Dec 2025 13:57:24 GMT</pubDate></item><item><title>탈출러쉬 걱정하던 해수부 근황[11][3]</title><link>https://www.clien.net/service/board/park/19111623</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://s3.damoang.net/data/file/free/9e7782e.jpg"/&gt;&lt;img class="fr-fic fr-dib" src="https://s3.damoang.net/data/file/free/bf3ff37.jpg"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;되레 전입 희망자가 늘었다고 합니다..&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111623</guid><pubDate>Wed, 17 Dec 2025 13:13:04 GMT</pubDate></item><item><title>둔촌주공, 레고랜드 이 2가지는 지금 생각해도 치명적이네요.[6][6]</title><link>https://www.clien.net/service/board/park/19111595</link><description>
+ 
+ 
+  &lt;p&gt;둔촌주공이 수면에 올라왔을 때 구조조정을 했다면&lt;/p&gt;
+  &lt;p&gt;레고랜드 사태를 일으키지 않았다면&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 2가지가 어떻게 보면 큰 흐름을 일으킨 원인이 아닌가 생각을 합니다. &lt;/p&gt;
+  &lt;p&gt;모두 윤석열 때 일어났고, 윤석열과 그 일당이 얼마나 쓰레기 같은 놈들인지 생각하기도 ....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;구조조정의 적기를 잃어버리고 부동산에 몰빵&lt;/p&gt;
+  &lt;p&gt;자본시장의 신뢰를 버린 행동&lt;/p&gt;
+  &lt;p&gt;제 생각에 이 2가지는 두고두고 치명적인 영향을 끼칠거라 생각합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;끝나기는 꺼녕 현재진행형입니다. &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111595</guid><pubDate>Wed, 17 Dec 2025 12:34:34 GMT</pubDate></item><item><title>긴 문장을 못 읽겠네요;;[10][3]</title><link>https://www.clien.net/service/board/park/19111587</link><description>
+ 
+ 
+  &lt;p&gt;긴 글을 읽기 어려운 건 아닙니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;근데 소설처럼 외모를 묘사하기 위해 15줄 가까이를 쓰는 경우라면, 읽던 와중에 앞 내용이 머리 속에서 빠져나갑니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;도스토예프스키 소설이니까 작가의 필력이 문제인 건 아닐테고, 제 문제일텐데..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;머리 속 RAM 용량이 확 줄어든 느낌입니다 ㅜㅜ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;GPT를 사용한 이후로 좀 심해진 거 같네요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111587</guid><pubDate>Wed, 17 Dec 2025 12:24:25 GMT</pubDate></item><item><title>캄보디아에서 좋은 소식이 있나 봅니다[10][3]</title><link>https://www.clien.net/service/board/park/19111501</link><description>
+ 
+ 
+  &lt;p&gt;태국어로 고맙다가...뭐..뭐죠&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111501</guid><pubDate>Wed, 17 Dec 2025 10:14:02 GMT</pubDate></item><item><title>후기 어항&amp;윈터 조합으로 처음 맞는 겨울[26][4]</title><link>https://www.clien.net/service/board/cm_car/19111568</link><description>
  
  
   &lt;p&gt;제목 그대로 20년 조금 넘게 운전하면서 한번도 윈터 끼운 적 없고, 한번도 선팅 안한적 없습니다.&lt;/p&gt;
@@ -44,7 +179,7 @@
   &lt;p&gt;요 제품으로 보고 있는데.. 후기들은 찾아보니 다들 완속 충전기에 물려 쓰시는거 같은데&lt;/p&gt;
   &lt;p&gt;국내법상 때문인지 연장선으로 사용할 수 없다고 되어있더라구요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111387</guid><pubDate>Wed, 17 Dec 2025 07:47:46 GMT</pubDate></item><item><title>청문회에 외국인 보낸 쿠팡 '한국어 몰라, 장모님 단어는 알아'[6][5]</title><link>https://www.clien.net/service/board/park/19111640</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111387</guid><pubDate>Wed, 17 Dec 2025 07:47:46 GMT</pubDate></item><item><title>청문회에 외국인 보낸 쿠팡 '한국어 몰라, 장모님 단어는 알아'[10][9]</title><link>https://www.clien.net/service/board/park/19111640</link><description>
  
  
   &lt;p&gt;&lt;a href="https://v.daum.net/v/20251217111501835" target="_blank"&gt;https://v.daum.net/v/20251217111501835&lt;/a&gt;&lt;/p&gt;
@@ -52,7 +187,7 @@
   &lt;p&gt;가지가지 합니다&lt;/p&gt;
   &lt;p&gt;나라와 공권력을 우습게 보는게 저쪽 집단이랑 같네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111640</guid><pubDate>Wed, 17 Dec 2025 13:37:17 GMT</pubDate></item><item><title>오세훈 2차 고발사건 고발인조사 받으러 가는 중...[6][17]</title><link>https://www.clien.net/service/board/park/19111635</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111640</guid><pubDate>Wed, 17 Dec 2025 13:37:17 GMT</pubDate></item><item><title>오세훈 2차 고발사건 고발인조사 받으러 가는 중...[6][22]</title><link>https://www.clien.net/service/board/park/19111635</link><description>
  
  
   &lt;p&gt;&amp;lt;오세훈 2차 고발사건 고발인조사 받으러 가는 중...&amp;gt;&lt;/p&gt;
@@ -67,7 +202,7 @@
   &lt;p&gt;&lt;img alt="1000024788.jpg" class="fr-dib fr-fil full" data-file-sn="15622695" data-gif="false" data-img-height="2232" data-img-width="3968" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622695/f059327ff29cc.jpg?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111635</guid><pubDate>Wed, 17 Dec 2025 13:32:47 GMT</pubDate></item><item><title>본의 아니게 한국 특산물.jpg[14][0]</title><link>https://www.clien.net/service/board/park/19111633</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111635</guid><pubDate>Wed, 17 Dec 2025 13:32:47 GMT</pubDate></item><item><title>본의 아니게 한국 특산물.jpg[17][0]</title><link>https://www.clien.net/service/board/park/19111633</link><description>
  
  
   &lt;p&gt;&lt;img alt="2944370508_zD6aIbpy_9NvqFEjPic8wCnkW.jpg" class="fr-dib fr-fil full" data-file-sn="15622694" data-gif="false" data-img-height="1042" data-img-width="854" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622694/21fafe7102cdcf.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -76,7 +211,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;우리로 치면 일본에서는 삼성 메모리가 저렴해서 일본 여행 갔다가 사온다면 비슷한 느낌이려나 싶습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111633</guid><pubDate>Wed, 17 Dec 2025 13:32:20 GMT</pubDate></item><item><title>늦게나마 쿠팡 손절했습니다.[1][5]</title><link>https://www.clien.net/service/board/park/19111630</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111633</guid><pubDate>Wed, 17 Dec 2025 13:32:20 GMT</pubDate></item><item><title>늦게나마 쿠팡 손절했습니다.[3][9]</title><link>https://www.clien.net/service/board/park/19111630</link><description>
  
  
   &lt;p&gt;축구보려고 가입했었는데,&lt;/p&gt;
@@ -88,7 +223,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;(가망이 없어보이지만)정신차리길 바라네요 으으..&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111630</guid><pubDate>Wed, 17 Dec 2025 13:57:16 GMT</pubDate></item><item><title>환율1~2원에 일희일비 할 필요는 없지만 장기간 누적되면 경계해야...[19][0]</title><link>https://www.clien.net/service/board/park/19111604</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111630</guid><pubDate>Wed, 17 Dec 2025 13:57:16 GMT</pubDate></item><item><title>환율1~2원에 일희일비 할 필요는 없지만 장기간 누적되면 경계해야...[24][0]</title><link>https://www.clien.net/service/board/park/19111604</link><description>
  
  
   &lt;p&gt;&lt;img alt="1b35c127f9d304.webp" class="fr-dib fr-fil" data-file-sn="15622659" data-gif="false" data-img-height="676" data-img-width="740" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622659/21f7584775d494.webp?scale=width:740"/&gt;&lt;/p&gt;
@@ -109,7 +244,7 @@
   &lt;p&gt;1. 월봉으로 길게 보면 환율 상태가 좋지 않은것은 명확하다.. &lt;/p&gt;
   &lt;p&gt;2. 컴퓨터 구매시기 놓치신 분들도 쉽지 않은 상황.. 메모리 수요도 단시간 이내에 기대하기 쉽지 않고 환율이 잠깐 내려왔다 싶은 느낌이 들 때가 되는 날이 오면 그 때나 노려봐야... 추후 나올 RTX6090이라던지 아이폰 18이라던지 이런것들도 환율지금처럼 지속되면 악조건에서 구매하신다고 봐야합니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111604</guid><pubDate>Wed, 17 Dec 2025 12:45:59 GMT</pubDate></item><item><title>성범죄 무죄 중 꽃뱀은 소수라고 봅니다[10][0]</title><link>https://www.clien.net/service/board/park/19111600</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111604</guid><pubDate>Wed, 17 Dec 2025 12:45:59 GMT</pubDate></item><item><title>성범죄 무죄 중 꽃뱀은 소수라고 봅니다[14][0]</title><link>https://www.clien.net/service/board/park/19111600</link><description>
  
  
   &lt;p&gt;대부분 지금의 틀어진 감정으로 인한 과거사건의 재해석&lt;/p&gt;
@@ -171,7 +306,7 @@
   &lt;p&gt;걱정이네요&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111589</guid><pubDate>Wed, 17 Dec 2025 12:29:50 GMT</pubDate></item><item><title>[속보] 검찰 '백해룡 수사서류 유포 중대 위법…엄중 조치 요청'[16][0]</title><link>https://www.clien.net/service/board/park/19111578</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111589</guid><pubDate>Wed, 17 Dec 2025 12:29:50 GMT</pubDate></item><item><title>[속보] 검찰 '백해룡 수사서류 유포 중대 위법…엄중 조치 요청'[17][1]</title><link>https://www.clien.net/service/board/park/19111578</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/001/0015800471?sid=102" target="_blank"&gt;https://n.news.naver.com/mnews/article/001/0015800471?sid=102&lt;/a&gt;&lt;/p&gt;
@@ -179,14 +314,14 @@
   &lt;p&gt;검사님 심기를 건드리면 이렇게 되는거군요. &lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111578</guid><pubDate>Wed, 17 Dec 2025 12:13:02 GMT</pubDate></item><item><title>이야기 글삭러 질문글에는 관심을 안주는게 좋을듯하네요.[34][22]</title><link>https://www.clien.net/service/board/cm_car/19111575</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111578</guid><pubDate>Wed, 17 Dec 2025 12:13:02 GMT</pubDate></item><item><title>이야기 글삭러 질문글에는 관심을 안주는게 좋을듯하네요.[40][24]</title><link>https://www.clien.net/service/board/cm_car/19111575</link><description>
  
  
   &lt;p&gt;&lt;img alt="스크린샷 2025-12-17 120258.png" class="fr-dib fr-fil full" data-file-sn="15622627" data-gif="false" data-img-height="1158" data-img-width="884" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622627/f00d9f3e76b7e.png?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/cm_car/19111387" target="_blank"&gt;https://www.clien.net/service/board/cm_car/19111387&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
   &lt;p&gt;글 왜 지우냐는 댓글은 가볍게 무시하고 본인이 원하는 정보 댓글에만 피드백, 그리고 자신이 원하는 정보만 쏙 받아 먹고 글은 삭제, 공들여 글 작성한 사람의 노고와 나중에 정보를 찾아올 사람들의 대한 배려는 하나도 없는 그저 이기적인 행태입니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111575</guid><pubDate>Wed, 17 Dec 2025 12:08:19 GMT</pubDate></item><item><title>이야기 한국 GM, 뷰익 브랜드 론칭 공식화[13][1]</title><link>https://www.clien.net/service/board/cm_car/19111531</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111575</guid><pubDate>Wed, 17 Dec 2025 12:08:19 GMT</pubDate></item><item><title>이야기 한국 GM, 뷰익 브랜드 론칭 공식화[14][1]</title><link>https://www.clien.net/service/board/cm_car/19111531</link><description>
  
  
   &lt;p&gt;&lt;img alt="0000076453_001_20251215103707812.jpg" class="fr-dib fr-fil full" data-file-sn="15622579" data-gif="false" data-img-height="484" data-img-width="860" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622579/21f2e4f29aeb5b.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -212,7 +347,7 @@
   &lt;p&gt;&lt;img alt="KakaoTalk_20250410_102125624_06.jpg" class="fr-dib fr-fil" data-file-sn="15622582" data-gif="false" data-img-height="432" data-img-width="648" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622582/efd757e192651.jpg?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111531</guid><pubDate>Wed, 17 Dec 2025 11:03:06 GMT</pubDate></item><item><title>이야기 고급차 상징은 앞유리 스티커 아니었나요[13][1]</title><link>https://www.clien.net/service/board/cm_car/19111371</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111531</guid><pubDate>Wed, 17 Dec 2025 11:03:06 GMT</pubDate></item><item><title>이야기 고급차 상징은 앞유리 스티커 아니었나요[13][2]</title><link>https://www.clien.net/service/board/cm_car/19111371</link><description>
  
  
   &lt;p&gt;첫번째 허들 30억 이상 주택(아파트) 스티커가 붙으면 아주 고급스럽고  &lt;span style='color: rgb(66, 66, 66); font-family: -apple-system, system-ui, "SF Pro Text", Roboto, "Helvetica Neue", "Apple SD Gothic Neo"; font-size: 16px; letter-spacing: -0.3px;'&gt;발렛 스티커 붙은 차들보면 더더욱 고급스럽던데요.&lt;/span&gt;&lt;/p&gt;
@@ -228,7 +363,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111371</guid><pubDate>Wed, 17 Dec 2025 06:45:04 GMT</pubDate></item><item><title>경상도 에만 있는 맛의 표현, 씹다[13][1]</title><link>https://www.clien.net/service/board/park/19111586</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111371</guid><pubDate>Wed, 17 Dec 2025 06:45:04 GMT</pubDate></item><item><title>경상도 에만 있는 맛의 표현, 씹다[15][1]</title><link>https://www.clien.net/service/board/park/19111586</link><description>
  
  
   &lt;p&gt;아래 경상도 방언의 맛 표현 글이 있어서...&lt;/p&gt;
@@ -243,7 +378,7 @@
   &lt;p&gt;sharp-bitter 나 pungent bitter 정도 된다고&lt;/p&gt;
   &lt;p&gt;지피티님이 그러시네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111586</guid><pubDate>Wed, 17 Dec 2025 12:22:35 GMT</pubDate></item><item><title>환율은 근본적으로 그 나라의 가치입니다.[54][5]</title><link>https://www.clien.net/service/board/park/19111577</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111586</guid><pubDate>Wed, 17 Dec 2025 12:22:35 GMT</pubDate></item><item><title>환율은 근본적으로 그 나라의 가치입니다.[58][6]</title><link>https://www.clien.net/service/board/park/19111577</link><description>
  
  
   &lt;p&gt;서학개미, 돈풀기, 저금리 등등 뭐 다 맞는 말이라고 생각하지만,&lt;/p&gt;
@@ -258,7 +393,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111577</guid><pubDate>Wed, 17 Dec 2025 12:10:18 GMT</pubDate></item><item><title>내가 싫어하는 연예인 가장 크게 엿먹이는 방법[4][7]</title><link>https://www.clien.net/service/board/park/19111573</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111577</guid><pubDate>Wed, 17 Dec 2025 12:10:18 GMT</pubDate></item><item><title>내가 싫어하는 연예인 가장 크게 엿먹이는 방법[4][8]</title><link>https://www.clien.net/service/board/park/19111573</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -290,7 +425,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111561</guid><pubDate>Wed, 17 Dec 2025 11:49:23 GMT</pubDate></item><item><title>이재명 지사의 '서울외곽순환도로' 이름의 이의 제기[7][7]</title><link>https://www.clien.net/service/board/park/19111544</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111561</guid><pubDate>Wed, 17 Dec 2025 11:49:23 GMT</pubDate></item><item><title>이재명 지사의 '서울외곽순환도로' 이름의 이의 제기[7][8]</title><link>https://www.clien.net/service/board/park/19111544</link><description>
  
  
   &lt;p&gt;&lt;span style="font-size: 18px;"&gt;제가 국민학교때에도 친구들끼리 하던 말 중에 깊게 인상이 남은게 있습니다.&lt;/span&gt;&lt;/p&gt;
@@ -339,7 +474,7 @@
   &lt;p&gt;&lt;span style="font-size: 18px;"&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;
   &lt;p&gt;&lt;span style="font-size: 18px;"&gt;&lt;a href="https://www.facebook.com/share/p/1BhVJ6Ebo3/" ori-url="https://www.facebook.com/share/p/1BhVJ6Ebo3/" rel="nofollow noreferrer noopener" target="_blank"&gt;출처보기&lt;/a&gt;&lt;/span&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111544</guid><pubDate>Wed, 17 Dec 2025 11:31:22 GMT</pubDate></item><item><title>캄대남들의 도덕 수준 ㄷㄷㄷ[10][3]</title><link>https://www.clien.net/service/board/park/19111543</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111544</guid><pubDate>Wed, 17 Dec 2025 11:31:22 GMT</pubDate></item><item><title>캄대남들의 도덕 수준 ㄷㄷㄷ[11][4]</title><link>https://www.clien.net/service/board/park/19111543</link><description>
  
  
   &lt;p&gt;&lt;img alt="[PD수첩] 통장팔이 청년들 _ 장집과의 위험한 거래 - 2025년 12월 16일 밤 10시 20분 방송 45-7 screenshot.jpg" class="fr-dib fr-fil full" data-file-sn="15622594" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622594/21f3351881bcfd.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -412,7 +547,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;정말 환율 때문에 위기가 있을 거라 보면 정책당국이 선대응 할테니 걱정 안하셔도 됩니다. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111567</guid><pubDate>Wed, 17 Dec 2025 11:54:41 GMT</pubDate></item><item><title>환율 폭등의 원인을 진짜 모르는건지 모르는척하는건지[68][5]</title><link>https://www.clien.net/service/board/park/19111565</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111567</guid><pubDate>Wed, 17 Dec 2025 11:54:41 GMT</pubDate></item><item><title>환율 폭등의 원인을 진짜 모르는건지 모르는척하는건지[85][7]</title><link>https://www.clien.net/service/board/park/19111565</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -432,7 +567,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111565</guid><pubDate>Wed, 17 Dec 2025 11:52:21 GMT</pubDate></item><item><title>경북) 국힘 57.3% 민주 19.5%[21][1]</title><link>https://www.clien.net/service/board/park/19111558</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111565</guid><pubDate>Wed, 17 Dec 2025 11:52:21 GMT</pubDate></item><item><title>경북) 국힘 57.3% 민주 19.5%[22][1]</title><link>https://www.clien.net/service/board/park/19111558</link><description>
  
  
   &lt;p&gt;   &lt;/p&gt;
@@ -448,7 +583,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;토스였던가 환급금 돌려받기 그거 신청한 이유도 여기에 있었...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111555</guid><pubDate>Wed, 17 Dec 2025 11:36:16 GMT</pubDate></item><item><title>월급 30% 할인중[47][1]</title><link>https://www.clien.net/service/board/park/19111554</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111555</guid><pubDate>Wed, 17 Dec 2025 11:36:16 GMT</pubDate></item><item><title>월급 30% 할인중[51][2]</title><link>https://www.clien.net/service/board/park/19111554</link><description>
  
  
   &lt;p&gt;1100원 1200원대 환율때 월급 받아서 미국 투자 해왔는데&lt;/p&gt;
@@ -483,7 +618,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;일단 저는 다 압니다... (대구)&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111540</guid><pubDate>Wed, 17 Dec 2025 11:18:59 GMT</pubDate></item><item><title>李대통령 '재래식 언론이 왜곡해도 국민은 실시간으로 다 보고 있다'[3][20]</title><link>https://www.clien.net/service/board/park/19111539</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111540</guid><pubDate>Wed, 17 Dec 2025 11:18:59 GMT</pubDate></item><item><title>李대통령 '재래식 언론이 왜곡해도 국민은 실시간으로 다 보고 있다'[3][22]</title><link>https://www.clien.net/service/board/park/19111539</link><description>
  
  
   &lt;p&gt;생중계 업무보고 필요성 언급…"국민은 끊임없이 보고 판단, 불투명 용인 못해"&lt;/p&gt;
@@ -507,7 +642,7 @@
   &lt;p&gt;1480원 방어하는 줄 알았는데... 넘어가는군요.&lt;/p&gt;
   &lt;p&gt;우리랑 같이 나락 가던 엔화는 최근 슬금슬금 오르고있고...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111537</guid><pubDate>Wed, 17 Dec 2025 11:14:42 GMT</pubDate></item><item><title>[속보] 검찰, 경찰 신청한 전광훈·신혜식 구속영장 반려[13][20]</title><link>https://www.clien.net/service/board/park/19111532</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111537</guid><pubDate>Wed, 17 Dec 2025 11:14:42 GMT</pubDate></item><item><title>[속보] 검찰, 경찰 신청한 전광훈·신혜식 구속영장 반려[16][27]</title><link>https://www.clien.net/service/board/park/19111532</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/article/052/0002288406?cds=news_media_pc&amp;amp;type=breakingnews" target="_blank"&gt;https://n.news.naver.com/article/052/0002288406?cds=news_media_pc&amp;amp;type=breakingnews&lt;/a&gt;&lt;/p&gt;
@@ -516,7 +651,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;인 상황입니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111532</guid><pubDate>Wed, 17 Dec 2025 11:06:03 GMT</pubDate></item><item><title>조국 '서울 아파트값, 文정부 때보다 심각…'토지공개념' 도입해야'[20][4]</title><link>https://www.clien.net/service/board/park/19111523</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111532</guid><pubDate>Wed, 17 Dec 2025 11:06:03 GMT</pubDate></item><item><title>조국 '서울 아파트값, 文정부 때보다 심각…'토지공개념' 도입해야'[22][4]</title><link>https://www.clien.net/service/board/park/19111523</link><description>
  
  
   &lt;p&gt;서울의 아파트값 상승률이 19년만에 최고치를 기록한 가운데, 조국 조국혁신당 대표가 이를 두고 “매우 심각하다”며 ‘토지공개념’ 도입을 촉구했다.&lt;/p&gt;
@@ -531,7 +666,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;문재인의 노선을 그대로 타면 저들에게 정권이 또 넘어갑니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111523</guid><pubDate>Wed, 17 Dec 2025 10:56:44 GMT</pubDate></item><item><title>트럼프 17일 밤 9시 대국민연설[14][2]</title><link>https://www.clien.net/service/board/park/19111518</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111523</guid><pubDate>Wed, 17 Dec 2025 10:56:44 GMT</pubDate></item><item><title>트럼프 17일 밤 9시 대국민연설[14][3]</title><link>https://www.clien.net/service/board/park/19111518</link><description>
  
  
   &lt;p&gt;&lt;a href="https://www.yna.co.kr/view/AKR20251217004451071" target="_blank"&gt;https://www.yna.co.kr/view/AKR20251217004451071&lt;/a&gt;&lt;/p&gt;
@@ -615,7 +750,7 @@
   &lt;p&gt;예전에는 국도들이 읍면들을 통과하다보니 각 마을마다 시가지가 형성되고 자영업자들이 좀 있었는데&lt;/p&gt;
   &lt;p&gt;이제 꽤 컸던 동네들도 거의 폐허가 되었더라구요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111497</guid><pubDate>Wed, 17 Dec 2025 10:11:18 GMT</pubDate></item><item><title>이야기 진한 썬팅 야간 운전 어떻게 하는건가요 ㅎㄷㄷㄷ;;;[21][2]</title><link>https://www.clien.net/service/board/cm_car/19111490</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111497</guid><pubDate>Wed, 17 Dec 2025 10:11:18 GMT</pubDate></item><item><title>이야기 진한 썬팅 야간 운전 어떻게 하는건가요 ㅎㄷㄷㄷ;;;[22][2]</title><link>https://www.clien.net/service/board/cm_car/19111490</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -627,7 +762,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111490</guid><pubDate>Wed, 17 Dec 2025 10:08:05 GMT</pubDate></item><item><title>이야기 제 모델3는 올해 충전량 상위 10프로네요 ㅋㅋ[15][1]</title><link>https://www.clien.net/service/board/cm_car/19111459</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111490</guid><pubDate>Wed, 17 Dec 2025 10:08:05 GMT</pubDate></item><item><title>이야기 제 모델3는 올해 충전량 상위 10프로네요 ㅋㅋ[16][1]</title><link>https://www.clien.net/service/board/cm_car/19111459</link><description>
  
  
   &lt;p&gt;앱에 재밌는 기능이 생겨서 보니까&lt;/p&gt;
@@ -636,241 +771,4 @@
   &lt;p&gt;중국산 fsd 언젠간 되길 기원해봅니다ㅠㅠ&lt;/p&gt;
   &lt;p&gt;근데 돌아가는 모양새를 보니까 중국산은 안될 확률이 높나봐요? ㅠ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111459</guid><pubDate>Wed, 17 Dec 2025 09:35:43 GMT</pubDate></item><item><title>이야기 현대자동차, '더 뉴 스타리아' 출시[12][0]</title><link>https://www.clien.net/service/board/cm_car/19111458</link><description>
- 
- 
-  &lt;p&gt;현대자동차, '더 뉴 스타리아' 출시: 디자인과 편의 사양 강화&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;• 현대자동차가 약 4년 8개월 만에 상품 경쟁력을 대폭 강화한 부분변경 모델 '더 뉴 스타리아'를 출시했습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;• 더 뉴 스타리아는 미래지향적인 이미지를 계승하며 심플한 기하학적 패턴 그릴 등 하이테크 감성을 더한 외장 디자인과 12.3인치 대형 디스플레이가 탑재된 수평적 레이아웃의 실내 디자인을 특징으로 합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;• 특히, '인사이드 아웃' 디자인 테마를 확장하고 연속형 주간주행등과 음각형태의 'STARIA' 로고 적용으로 외장 디자인의 완성도를 높였습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;• 실내에는 12.3인치 대형 디스플레이 확대, 물리 버튼으로 변경된 공조 조작계, 추가된 오픈 트레이 수납공간 등으로 공간 경쟁력과 편의성을 강화했습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;• 더 뉴 스타리아는 하이브리드와 LPG 두 가지 파워트레인으로 운영되며, 개선된 전·후륜 서스펜션과 강화된 흡차음재를 통해 주행 안전성과 실내 정숙성을 크게 향상시켰습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;• 차세대 인포테인먼트 시스템(ccNC), 무선 소프트웨어 업데이트(OTA), '워크 어웨이 락' 기능, 디지털 키 2 등 다채로운 인포테인먼트 및 편의 사양을 탑재하여 동급 최고 수준의 편의성을 제공합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;• 가격은 LPG 모델 3,259만 원부터, 하이브리드 모델 3,617만 원부터 시작하며, SK가스와의 협업을 통해 연료비 혜택을 제공하는 '더 뉴 스타리아 OK캐쉬백 멤버십'도 운영합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;3.5 LPI &lt;/p&gt;
-  &lt;p&gt;△3인승 스마트 3259만원 &lt;/p&gt;
-  &lt;p&gt;△3인승 모던 3412만원 &lt;/p&gt;
-  &lt;p&gt;△5인승 스마트 3333만원 &lt;/p&gt;
-  &lt;p&gt;△5인승 모던 3490만원, &lt;/p&gt;
-  &lt;p&gt;1.6 터보 하이브리드&lt;/p&gt;
-  &lt;p&gt;△2인승 스마트 3617만원 &lt;/p&gt;
-  &lt;p&gt;△2인승 모던 3745만원 &lt;/p&gt;
-  &lt;p&gt;△5인승 스마트 3686만원 &lt;/p&gt;
-  &lt;p&gt;△5인승 모던 3820만원이다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;투어러는 3.5 LPI &lt;/p&gt;
-  &lt;p&gt;△11인승 스마트 3502만원 &lt;/p&gt;
-  &lt;p&gt;△11인승 모던 3659만원, &lt;/p&gt;
-  &lt;p&gt;1.6 터보 하이브리드 &lt;/p&gt;
-  &lt;p&gt;△  9인승 스마트 3876만원 &lt;/p&gt;
-  &lt;p&gt;△  9인승 모던 3999만원 &lt;/p&gt;
-  &lt;p&gt;△11인승 스마트 3870만원 &lt;/p&gt;
-  &lt;p&gt;△11인승 모던 3999만원&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;라운지는 3.5 LPI &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;△7인승 인스퍼레이션 4705만원, &lt;/p&gt;
-  &lt;p&gt;1.6 터보 하이브리드 &lt;/p&gt;
-  &lt;p&gt;△7인승 인스퍼레이션 5021만원 &lt;/p&gt;
-  &lt;p&gt;△9인승 프레스티지 4499만원 &lt;/p&gt;
-  &lt;p&gt;△9인승 인스퍼레이션 4876만원&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://www.hyundaimotorgroup.com/ko/news/CONT0000000000196401" target="_blank"&gt;https://www.hyundaimotorgroup.com/ko/news/CONT0000000000196401&lt;/a&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111458</guid><pubDate>Wed, 17 Dec 2025 09:33:26 GMT</pubDate></item><item><title>이야기 포드 LTD 크라운 빅토리아 시승기[4][6]</title><link>https://www.clien.net/service/board/cm_car/19111375</link><description>
- 
- 
-  &lt;p&gt;요즘 테슬라로 과열된(?) 분위기도 한번 환기할 겸, &lt;/p&gt;
-  &lt;p&gt;원래 저의 주종목(?)인 올드카 이야기를 한번 올려봅니다.&lt;/p&gt;
-  &lt;p&gt;-----------------------------------------------------------------------------------&lt;/p&gt;
-  &lt;p&gt;포드 크라운 빅토리아를 아시나요?&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20251216_143416380_09.png" class="fr-dib fr-fil" data-file-sn="15622360" data-gif="false" data-img-height="384" data-img-width="512" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622360/21e1161a49573a.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;네, 90년대부터 지금까지 미국 경찰차의 상징과도 같은 차량인 바로 그 차입니다 ㅎㅎ&lt;/p&gt;
-  &lt;p&gt;아직도 꽤 많은 차량이 현역으로 사용되고 있기도 하고, 영화에서도 심심찮게 볼 수 있는 차량이기도 하죠. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;오늘의 주인공인 LTD(리미티드가 아닌 그냥 엘티디라고 읽습니다) 크라운 빅토리아는 이 크라운 빅토리아의 전신인 차량입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20251216_143416380_08.png" class="fr-dib fr-fil" data-file-sn="15622388" data-gif="false" data-img-height="384" data-img-width="512" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622388/21e135e79572bc.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;역시 많은 영화에서 심심찮게 볼 수 있는 차량이기도 합니다. &lt;/p&gt;
-  &lt;p&gt;LTD 크라운 빅토리아 역시 경찰차로 많이 사용되었던 차량으로 크라운 빅토리아가 90년대부터 경찰차의 상징이라면, LTD 크라운 빅토리아는 80년대 미국 경찰차의 상징과도 같습니다.  &lt;/p&gt;
-  &lt;p&gt;크라운 빅토리아 플릿의 역사를 열었던 차량이라고 할 수 있겠습니다. &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;한국과 일본에서는 주로 독일차 위주로 올드카들을 접했었는데요, 미국에 와서 만나게 된 미국의 올드카들은 또 다른 세상이었습니다. &lt;/p&gt;
-  &lt;p&gt;저는 올드카들을 참 좋아하는데요, 그 이유는 예전의 차들은 각 브랜드별로 특징이 아주 뚜렷해서 그것들을 보고, 느끼는게 아주 재밌기 때문입니다. 지금처럼 서로 비슷비슷해져버린 차량들에서는 느끼기 힘든 독특한 매력들이 있거든요. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20251216_143416380_02.png" class="fr-dib fr-fil" data-file-sn="15622391" data-gif="false" data-img-height="384" data-img-width="512" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622391/21e18404f0bf5a.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;이번에 만나게 된 LTD 크빅은 아주 상태가 잘 보존되어 있었고, 색상도 너무 화사한 푸른색이라 너무 이뻤습니다. &lt;/p&gt;
-  &lt;p&gt;특히 저는 이런 각진 스타일을 아주 좋아하기 때문에 보자마자 탄성이 절로 나오더라구요. &lt;/p&gt;
-  &lt;p&gt;LTD크빅은 1979년부터 1991년까지 생산된 차량으로, 당시 포드의 플래그쉽 세단이라 미국차 답게 상당한 덩치를 자랑합니다. &lt;/p&gt;
-  &lt;p&gt;길이가 무려 5,359mm, 폭은 1,968mm나 됩니다. 같은 시기의 S클래스였던 W126이 길이 5,135(롱베이스기준), 폭 1820이었던 걸 생각하면 진짜 큰 덩치입니다. 그런데 휠베이스는 S클래스보다 10cm 정도 짧아 앞뒤 오버행이 길고, 높이는 S클래스보다 3cm나 낮기 때문에 실제로 보면 굉장히 낮고 길어보이는 자태를 뽑냅니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20251216_143416380.png" class="fr-dib fr-fil" data-file-sn="15622392" data-gif="false" data-img-height="384" data-img-width="512" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622392/21e204d7bb18d5.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;뒷태는 상당히 단정한 편입니다. 트렁크에 굴곡을 넣어 가운데를 돌출시킨게 재미있는 부분입니다.&lt;/p&gt;
-  &lt;p&gt;볼륨감도 살리고, 트렁크 공간도 조금이나마 더 확보할 수 있는?&lt;/p&gt;
-  &lt;p&gt;그리고 당시 미국 고급차답게 링컨이나 (지금은 사라진) 머큐리 등에서 자주 볼 수 있었던 루프 하프 가죽트림이 적용되어 있습니다. &lt;/p&gt;
-  &lt;p&gt;무려 하얀색 가죽으로 덮여있었는데, 색상이 크게 변색되거나 손상된 부분이 크게 보이지 않아 상당히 잘 관리되어 왔다는 걸 알 수 있었네요. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20251216_143416380_04.png" class="fr-dib fr-fil" data-file-sn="15622393" data-gif="false" data-img-height="384" data-img-width="512" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622393/eecbfb7fac5ee.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;저는 올드카들의 이런 디테일을 아주 좋아하는데요, &lt;/p&gt;
-  &lt;p&gt;B필러에는 크라운 빅토리아의 왕관 로고가 무려 프라스틱도 아닌 금패널에 양각으로 들어가 있습니다. 마냥 투박할 것이라고만 생각했던 미국차에서 이런 디테일을 발견하게 되어서 깜짝 놀랐습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20251216_143416380_01.png" class="fr-dib fr-fil" data-file-sn="15622394" data-gif="false" data-img-height="384" data-img-width="512" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622394/21e25e0bc88a7f.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;C필러에도 LTD Crown Victoria의풀네임이 금속 뱃지로 부착되어 있습니다. &lt;/p&gt;
-  &lt;p&gt;정말 멋지지 않나요? ㅎㅎ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20251216_143416380_06.png" class="fr-dib fr-fil" data-file-sn="15622395" data-gif="false" data-img-height="384" data-img-width="512" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622395/eecf54c785dca.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;인테리어는 당시 미국차들의 트렌드를 따라 원목 패널로 되어 있습니다. &lt;/p&gt;
-  &lt;p&gt;토크로 밀어붙이는 미국차답게 RPM계기판 따위는 없고(ㅎㅎ;), 속도계만 있는데, 마치 라디오 주파수 패널을 연상시키는 디자인이 참 재밌습니다. &lt;/p&gt;
-  &lt;p&gt;기어레버는 컬럼식 기어레버가 적용되어 있습니다. 기어 레버는 무려 금속제(!!) 입니다. 이 간지라닛!! (겨울에는 손 많이 시려울 듯 합니다만..ㅋㅋ)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20251216_141948219_05.jpg" class="fr-dib fr-fil full" data-file-sn="15622399" data-gif="false" data-img-height="3024" data-img-width="4032" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622399/21e2ce96300e4e.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;멀티레버도 금속을 깍아서(!) 만들었습니다. 사진에서 잘 보이실지 모르겠는데(요 사진만큼은 꼭 클릭해서 원본으로 보시길 바랍니다), 레버의 기능 표시를 레버 각 면에 음각으로 파서 만들었습니다 ㄷㄷ  &lt;/p&gt;
-  &lt;p&gt;요즘에는 아무리 럭셔리라도 상상조차 할 수 없는 일이죠. &lt;/p&gt;
-  &lt;p&gt;그런데 이런 걸 프리미엄도 아닌 포드차에서 보게 될 줄이야...&lt;/p&gt;
-  &lt;p&gt;마냥 투박하기만 했을거라 생각했던 당시 미국차에서 이런 디테일과 감성이라니...정말 너무 멋졌습니다. &lt;/p&gt;
-  &lt;p&gt;이래서 제가 올드카를 사랑할 수 밖에 없는 것 같습니다 ㅠ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20251216_143416380_03.png" class="fr-dib fr-fil" data-file-sn="15622400" data-gif="false" data-img-height="384" data-img-width="512" data-role="attach-image" src="https://edgio.clien.net/F01/2025/12/15622400/21e3034389a8fb.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;대시보드 상단에는 고급차의 상징(?)이라는 시계가 들어가긴 했는데, 전자시계입니다 ㅎㅎ &lt;/p&gt;
-  &lt;p&gt;지금 보면 좀 짜치는 느낌인데, 당시로서는 전자시계가 더 고급으로 느껴졌을까요?&lt;/p&gt;
-  &lt;p&gt;출고 당시의 순정 오디오도 아주 좋은 상태로 보존되어 있었는데, 이퀄라이저까지 적용이 된걸 보면 출고당시에 상당히 고급사양이었던 듯 합니다. &lt;/p&gt;
-  &lt;p&gt;공조기는 오토 기능(!)이 적용되어 있습니다. 리얼 우드와 리얼 금속의 멋은 정말...+_+&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;LTD 크빅은 4.9 V8 윈저엔진이 적용되었고(경찰차 사양에는 5.8 V8 적용),&lt;/p&gt;
-  &lt;p&gt;무려 150(!!)마력과 353Nm의 토크를 자랑합니다. &lt;/p&gt;
-  &lt;p&gt;LTD크빅이 생산되던 당시는 한창 미국에서 배기가스 규제가 이뤄지던 시기라, 출력이 많이 제한되었습니다. &lt;/p&gt;
-  &lt;p&gt;내구성과 토크에 중점을 맞춘 사양이라고 보시면 될 것 같습니다. &lt;/p&gt;
-  &lt;p&gt;이 엔진은 4단 변속기와 조합되는데, 투툼한 토크 덕분에 기본적인 가속과 주행에는 아무런 불편이 없더군요. &lt;/p&gt;
-  &lt;p&gt; 이 당시 토크 중심의 V8들의 토크로 밀어주는 느낌은, 마치 현재의 CVT차량을 타는 것 같은 느낌을 주기도 합니다. &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;운전석에 앉아보면 앞으로 길게 쭉 뻗은 보닛과 생각보다 낮은 시트 포지션 때문에 마치 보트에 탄 것 같은 느낌이 드는데, 하체도 상당히 출렁출렁하는 셋팅으로 되어있기 때문에 그 보트에 타고 있다는 느낌을 더 강하게 느끼게 해주는 것 같습니다. &lt;/p&gt;
-  &lt;p&gt;BMW E24도 비슷한 느낌을 주긴 하는데, E24는 그래도 조금 더 빠릿한 모터보트 느낌이라면, LTD 크빅은 좀더 크루징 보트에 가까운 느낌이랄까요.. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이렇게 LTD 크라운 빅토리아를 타본 느낌을 간단하게  남겨보았습니다.&lt;/p&gt;
-  &lt;p&gt;미국 올드카, 좀 더 매력적으로 느껴지실지 궁금하네요 ㅎ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;감사합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111375</guid><pubDate>Wed, 17 Dec 2025 09:29:57 GMT</pubDate></item><item><title>sbs 소속 오목교 전자상가에서 트라이폴드 20만 번 접기… 괴롭힘? 발버둥? 왜?[14][2]</title><link>https://www.clien.net/service/board/park/19111511</link><description>
- 
- 
-  &lt;p&gt;IT 정보 유튜브 채널인 오목교 전자상가에서 어제 갑자기 진행자인 비트가 라이브를 켜더니 뜬금없이 트라이폴드 20만 번 접기를 한다는 겁니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;원래 라이브를 하지도 않는 채널인데다가, 사람이 20만 번을 하려면 일주일은 걸릴 것 같았는데 말이죠. ㄷㄷㄷ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;시작할 때 아무도 안 할 것 같은 컨텐츠를 하고 싶었다고 하면서도 비트 자신은 하기 싫었다고 밝히고요. 이런 걸 하면 오랜동안 바이럴을 타서 광고가 들어와 제작비를 메꿀 수 있지 않을까 한다는 말도 하고요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그리고 중간 중간 법카를 잘못 쓰면 이렇게 된다는 둥 (트라이폴드를 법카로 샀다고 합니다), 승인은 누가 했지만 실제로 사온 건 누구다 등등의 책임 드립을 치기도 하고, 도와주러 온 유튜버들이 장갑 등으로 망가지면 어떻게 하지? 하고 물어보니 괜찮다면서, 망가지면 법카로 또 사면 된다고도 하고요. 중간에 당근을 흔들기도 하고요. 다른 팀원이 노동청 드립 (웃으면서)도 치고, 채팅창에 진짜 지옥 같다고도 하고요... 팀원들에게 SOS를 쳐야겠다고도 하고..., 자기(비트 아닌 다른 팀원)는 주말에는 진짜 안 나올 거라고 하고... ㄷㄷㄷ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;개인적으로는 좀 기괴한 분위기였습니다. 뭔가 정말 하기 싫은데 일부러 한다는 티를 내는 것도 이상하고, 할말하않 분위기, 해탈한 것 같은 분위기도 그렇고요. 다들 웃으면서 하지만 사용하는 용어들이 자의가 아니고, 하기 싫고, 억지로 하고 있고...가 너무 드러나고요. 위기 상황이라면 정말 당근을 흔들어야 할 것 같은 분위기... ㄷㄷㄷ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;평상시 이렇게 자학해가면서, 하기 싫은 걸 억지로 하는 듯한, 날 것을 보여주는 그런 분위기의 채널도 아닌데 말이죠. (애초에 라이브를 하지 않습니다. 대본 잘 짜서 진행하고요)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;법카를 잘못 써서 혹은 무슨 치명적인 실수(?)를 해서 상사로부터 벌(?)을 받는 건지 (정말이라면 소름...), 채널 운영비가 모자라 팀이 해체될 위기라 뭐라도 하는 건지... 아뭏튼 저는 다만, 법카를 산 응당의 대가를 치르고 있다는 듯한 말까지 들으니, 혼자 별의별 상상의 나래를 펼치게 됐습니다. 물론 다 본 건 아니라 도대체 무슨 일인지 다 알지는 못합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;암튼 기괴하네요...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/aO7IfOEavAY" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111511</guid><pubDate>Wed, 17 Dec 2025 10:31:33 GMT</pubDate></item><item><title>ai같지 않게 사진을 찍어야겠네요[11][0]</title><link>https://www.clien.net/service/board/park/19111499</link><description>
- 
- 
-  &lt;p&gt;유명인과 사진을 찍어서 지인에게 보여주니 &lt;/p&gt;
-  &lt;p&gt;ai로 한거 아니냐고 하길래 뭔가 타인들이 바라볼때 그럴 수도 있겠다 생각이 들더군요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아직은 제가 바라볼때는 사진이 ai인지 / 아닌지는 확인이 되지만&lt;/p&gt;
-  &lt;p&gt;셀카는 뭔가 ai로 만들기 쉬울 것 같고? 그래서 이제 다른 구도로 사진을 찍어야할 듯 싶습니다 ㅎㅎ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;앞으로는 ai 스럽지 않게 사진을 찍어야겠네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111499</guid><pubDate>Wed, 17 Dec 2025 10:09:34 GMT</pubDate></item><item><title>애연가분들 휴대용 재떨이 들고 다니시나요?[18][7]</title><link>https://www.clien.net/service/board/park/19111495</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;휴대용 재떨이 들고 다니는 매너있는 애연가가 좋습니다.&lt;/p&gt;
-  &lt;p&gt;쓰레기는 눈치보여 안버리면서,&lt;/p&gt;
-  &lt;p&gt;꽁초는 아무렇지 않게 버리는건 이상해요.&lt;/p&gt;
-  &lt;p&gt;휴대용 재떨이 포켓형으로 작은거 휴대성도 좋고, 싸기도 하고, 어떤건 디자인도 이쁩니다.&lt;/p&gt;
-  &lt;p&gt;휴대용 재떨이 휴대 부탁 드립니다.&lt;/p&gt;
-  &lt;p&gt;감사합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그리고 담배 필때&lt;/p&gt;
-  &lt;p&gt;쿠으아으아으크아으아우윽으ㄴ갸아칵악 이런 이상한 소리 처 내면서,&lt;/p&gt;
-  &lt;p&gt;침 뱉는 이상한 개 ㅆ팔 쓰레기 ㅈ같은 것들이 있는데,&lt;/p&gt;
-  &lt;p&gt;혹시 여기에도 있나요?&lt;/p&gt;
-  &lt;p&gt;더러워 죽겠어요.&lt;/p&gt;
-  &lt;p&gt;어우 ㅆ발 진짜 더러워요.&lt;/p&gt;
-  &lt;p&gt;침 뱉지 마세요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111495</guid><pubDate>Wed, 17 Dec 2025 10:06:01 GMT</pubDate></item><item><title>[단독]'김병기 의원이 뭘 보여줬는데'…쿠팡 대표의 녹취록 확보[12][0]</title><link>https://www.clien.net/service/board/park/19111491</link><description>
- 
- 
-  &lt;p&gt;17일 CBS노컷뉴스는 지난달 5일 박대준 당시 쿠팡 대표와 회사 임원 사이에서 이뤄진 통화 녹취록을 확보해 분석했다. 해당 녹취에는 &lt;strong&gt;박 대표가 민주당 김병기 원내대표와의 오찬에서 수상한 청탁을 받았던 정황&lt;/strong&gt;이 비교적 세세하게 드러난다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;박 대표는 김 원내대표와 오찬을 가진 이후 두 달 뒤, 회사 고위 관계자와의 통화에서 "(9월 5일 오찬 자리에서) &lt;strong&gt;김병기 의원이 뭘 보여줬는데, 내가 알아서는 회사에 좋을 게 없는 것 같아서 외면했다. 거절했다&lt;/strong&gt;"고 말했다.&lt;br/&gt;
-    이어 "&lt;strong&gt;나는 이 불편한 진실을 나도 모르고 회사도 모르길 바랐다&lt;/strong&gt;"면서 &lt;strong&gt;"나는 여전히 여기에 하나도 끼고 싶지 않다. 왜냐하면&lt;/strong&gt;&lt;strong&gt; 내 관심이 회사한테 재앙을 불러올 수 있기 때문"&lt;/strong&gt;이라고 말하는 등, 김 원내대표의 제안이 회사에 심각한 부담이 될 수 있다는 인식을 드러냈다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;두 사람의 만남은 국감을 한 달여 앞둔 지난 9월 5일, 서울 여의도 페어몬트 앰배서더 호텔 29층 양식당의 개별 룸에서 이뤄졌다. 오찬에는 국회 대관 담당인 민병기 쿠팡 대외협력총괄 부사장도 함께했다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;
-    CBS 취재결과, 이 자리에서&lt;strong&gt; 김 원내대표는 자신이 준비해온 서류가방을 열어 쿠팡 내부 특정 인물과 관련된 자료를 직접 보여준 것으로 전해진다. &lt;/strong&gt;&lt;strong&gt;해당 인물은 김 원내대표의 전직 보좌진 출신 인사인 것으로 알려졌다.&lt;/strong&gt;&lt;br/&gt;
-    박 대표는 "끼고 싶지 않다", "외면했다"고 말했지만, &lt;strong&gt;공교롭게도 이날 오찬 이후 김 원내대표의 전직 보좌진 출신으로 알려진 쿠팡 임원들이 갑작스레 해외 발령 통보를 받거나 해고 처리되는 등 인사상 불이익을 받은 사실이 확인됐다. 한 임원은 임용된지 한 달이 조금 넘은 시점에서 해고 통지를 받았다. &lt;/strong&gt;&lt;br/&gt;
-     &lt;br/&gt;
-    쿠팡은 이 시기 국회의원들을 상대로 실소유주인&lt;strong&gt; 김범석 쿠팡 Inc 이사회 의장의 국감 증인 채택을 막아달라는 요청을 지속적으로 전달&lt;/strong&gt;한 것으로 전해진다. 당시 쿠팡은 김 의장의 반복된 국감·청문회 불출석 논란과 함께, 노동·공정거래·퇴직금 미지급 문제 등으로 10월 국감에서 국회 차원의 집중 검증이 예고된 상황이었다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;김 원내대표는 '호텔 식당 룸 70만 원 식사'에 대한 CBS노컷뉴스의 단독 기사가 나간 뒤 자신의 페이스북에 "적어도 5명 이상이 식사했다"고 했지만, 결제를 누가 했는지 등은 밝히지 않았다.&lt;br/&gt;
-     &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111491</guid><pubDate>Wed, 17 Dec 2025 10:08:15 GMT</pubDate></item><item><title>DJI 때문에 진짜 속상하네요 고객응대가 기가찹니다[28][0]</title><link>https://www.clien.net/service/board/park/19111486</link><description>
- 
- 
-  &lt;p&gt; 친한 지인 내일 여행가는데 선물하려고 구입했는데 &lt;/p&gt;
-  &lt;p&gt;모서리 눌리고 제품 실링은 일부찢어지고 &lt;/p&gt;
-  &lt;p&gt;제품 테두리만 에어캡으로 저리와서 반품요청했더니 &lt;/p&gt;
-  &lt;p&gt;제품내용물 파손도 아니고 제품을 보호하기위한 포장재 이니&lt;/p&gt;
-  &lt;p&gt;고객의 변심에 가깝다는건데 이게 맞나요....? &lt;/p&gt;
-  &lt;p&gt;선물하려던 일정도 망치도 기분만 나뻐졌네요.&lt;/p&gt;
-  &lt;p&gt;누가 세재품을 저리 받아보고 싶어하나요 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111486</guid><pubDate>Wed, 17 Dec 2025 09:54:01 GMT</pubDate></item><item><title>민주당이 정권을 빼앗길수 있다는 생각마저 듭니다[10][1]</title><link>https://www.clien.net/service/board/park/19111465</link><description>
- 
- 
-  &lt;p&gt;노무현정권 5년 이후, 이명박, 박근혜&lt;/p&gt;
-  &lt;p&gt;문재인정권 5년 이후, 윤석열 그리고 내란&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;노,문이 일을 못했습니까. 너무나 잘했죠. 그러나 &lt;/p&gt;
-  &lt;p&gt;유권자들은 단호합니다. 문정부 이후에 정권 빼앗기고 나니까&lt;/p&gt;
-  &lt;p&gt;내란으로 독재시대를 맞이할 뻔했습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;민주당이 이런식으로 요새 가면, 당장의 지방선거 완승도 장담 못하고요&lt;/p&gt;
-  &lt;p&gt;내란 제대로 정리 하지 못하고, 국힘 정당해산 못하면 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이재명 대통령이 아무리 5년을 완벽하게 하더라도,&lt;/p&gt;
-  &lt;p&gt;개헌도 물 건너가고, 정권도 빼앗길수 있다고 봅니다. &lt;/p&gt;
-  &lt;p&gt;제발 정신좀 차립시다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;김병기 원내는 쿠팡이랑 70만원짜리 식사한거에 대해서&lt;/p&gt;
-  &lt;p&gt;입장발표도 안하고, 민주당 내부에서 쓴소리도 안나옵니까?&lt;/p&gt;
-  &lt;p&gt;내란전담재판부, 위헌시비 무서워서 이딴식으로 가는게 진정 맞습니까?&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19111465</guid><pubDate>Wed, 17 Dec 2025 09:35:53 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19111459</guid><pubDate>Wed, 17 Dec 2025 09:35:43 GMT</pubDate></item></channel></rss>
