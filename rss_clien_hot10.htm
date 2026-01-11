@@ -1,5 +1,259 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sun, 11 Jan 2026 09:00:49 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>서울에 집사서 집값상승 혜택본 사람이 잘못한건 없죠[12][0]</title><link>https://www.clien.net/service/board/park/19123866</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sun, 11 Jan 2026 10:00:51 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>서비스/SW 동행복권 로또 6/45, 연금복권 720 자동구매[6][5]</title><link>https://www.clien.net/service/board/use/19123662</link><description>
+ 
+ 
+  &lt;h1&gt;개요&lt;/h1&gt;
+  &lt;p&gt;이 프로젝트는 동행복권 웹사이트에서의 **로또 및 연금복권 구매 과정을 자동화**하기 위한 Python 기반 시스템입니다.&lt;/p&gt;
+  &lt;p&gt;매주 반복되는 로그인, 잔액 확인, 예치금 충전, 복권 구매 과정을 브라우저 자동화 방식으로 처리하여, 사람이 직접 개입하지 않아도 정해진 시점에 복권 구매가 완료되도록 설계되었습니다.&lt;/p&gt;
+  &lt;p&gt;개인 리눅스 서버, NAS, 또는 GitHub Actions 환경에서 실행할 수 있으며, Systemd 타이머를 활용해 **정기 실행 작업**으로 운영하는 것을 전제로 합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;### 저장소 정보&lt;/p&gt;
+  &lt;p&gt;- GitHub: &lt;a href="https://github.com/yoonbae81/lotto" target="_blank"&gt;https://github.com/yoonbae81/lotto&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h1&gt;주요 기능&lt;/h1&gt;
+  &lt;p&gt;이 시스템은 “번호 추천”이 아닌, **실제 구매 행위 자체를 자동화**하는 데 초점을 맞추고 있습니다.&lt;/p&gt;
+  &lt;p&gt;또한 본 도구는 동행복권이 제공하는 **복권 과몰입 및 중독 예방 제도**의 범위 내에서만 동작하도록 설계되었습니다. 구매 한도, 충전 제한, 이용 시간 제한 등은 모두 동행복권 시스템의 정책을 그대로 따르며, 해당 제도를 우회하거나 무력화하는 기능은 포함하지 않습니다.&lt;/p&gt;
+  &lt;p&gt;즉, 이 도구는 사용자의 반복적인 조작을 줄여줄 뿐, 과도한 구매를 유도하거나 통제 장치를 회피하는 목적을 갖지 않습니다.&lt;/p&gt;
+  &lt;p&gt;- 예치금 잔액 확인 및 조건부 충전  &lt;/p&gt;
+  &lt;p&gt;  - 구매 금액 부족 시 자동 충전&lt;/p&gt;
+  &lt;p&gt;  - 충전 금액은 환경 변수로 제어&lt;/p&gt;
+  &lt;p&gt;- 복권 자동 구매  &lt;/p&gt;
+  &lt;p&gt;  - 로또 6/45 자동 구매(자동/수동 번호 혼합 지원)&lt;/p&gt;
+  &lt;p&gt;  - 연금복권 720 자동 구매&lt;/p&gt;
+  &lt;p&gt;- 실행 자동화  &lt;/p&gt;
+  &lt;p&gt;  - Systemd 타이머 기반 주기 실행&lt;/p&gt;
+  &lt;p&gt;  - GitHub Actions를 이용한 서버리스 실행 가능&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h1&gt;동작 방식&lt;/h1&gt;
+  &lt;p&gt;이 도구는 **API 호출 방식이 아닌 실제 브라우저 조작 방식**을 사용합니다.&lt;/p&gt;
+  &lt;p&gt;1. Playwright를 통해 브라우저 실행&lt;/p&gt;
+  &lt;p&gt;2. 로그인 화면에서 계정 정보 입력&lt;/p&gt;
+  &lt;p&gt;3. 보안 키패드는 OCR(Tesseract)을 이용해 인식&lt;/p&gt;
+  &lt;p&gt;4. 잔액 확인 후 필요 시 자동 충전&lt;/p&gt;
+  &lt;p&gt;5. 설정된 복권 종류 및 수량만큼 구매 진행&lt;/p&gt;
+  &lt;p&gt;6. 구매 결과 확인 후 종료&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h1&gt;설정 예시&lt;/h1&gt;
+  &lt;p&gt;모든 주요 설정은 `.env` 파일을 통해 관리됩니다.  &lt;/p&gt;
+  &lt;p&gt;아이디, 비밀번호, 충전 PIN, 구매 옵션을 코드 수정 없이 변경할 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;pre&gt;USER_ID=your_id
+PASSWD=your_password
+CHARGE_PIN=123456
+AUTO_GAMES=3
+MANUAL_NUMBERS=[[1,2,3,4,5,6], [1,2,3,4,5,6]]&lt;/pre&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 파일에 포함된 정보는 외부로 전송되거나 저장되지 않으며, 스크립트 실행시 로컬 또는 사용자가 지정한 실행 환경(GitHub Actions 등)에서만 사용됩니다. 별도의 서버로 계정 정보나 PIN을 수집하거나 전송하는 기능은 포함되어 있지 않습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h1&gt;실행 방식&lt;/h1&gt;
+  &lt;p&gt;### 수동 실행&lt;/p&gt;
+  &lt;pre&gt;./scripts/purchase.sh&lt;/pre&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;### 자동 실행&lt;/p&gt;
+  &lt;p&gt;- Systemd : 타이머를 이용해 매주 정해진 시간에 자동 실행하도록 구성할 수 있습니다. 이 방식은 개인 서버나 NAS 환경에서 특히 적합합니다.&lt;/p&gt;
+  &lt;p&gt;- GitHub Actions : 별도의 서버를 운영하지 않는 경우, GitHub Actions에 시크릿을 등록하여 동일한 자동 구매 흐름을 실행할 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h1&gt;주의 사항&lt;/h1&gt;
+  &lt;p&gt;이 도구는 구매 자동화를 돕는 도구일 뿐, 당첨을 보장하거나 확률을 높여주지 않습니다.&lt;/p&gt;
+  &lt;p&gt;- 실제 금전 거래가 발생하므로 설정값을 반드시 확인해야 합니다.&lt;/p&gt;
+  &lt;p&gt;- 계정 정보 및 PIN 관리는 전적으로 사용자 책임입니다.&lt;/p&gt;
+  &lt;p&gt;- 웹 UI 변경으로 인해 자동화가 실패할 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;- 동행복권의 과몰입 방지 정책 및 이용 제한을 우회하지 않습니다.&lt;/p&gt;
+  &lt;p&gt;- 본 프로젝트는 개인적 사용을 전제로 하며, 발생하는 모든 책임은 사용자에게 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h1&gt;마치며&lt;/h1&gt;
+  &lt;p&gt;이 프로젝트는 “로또를 잘 맞히기 위한 도구”라기보다는, 반복적인 웹 작업을 자동화하는 하나의 실전 예제에 가깝습니다. &lt;/p&gt;
+  &lt;p&gt;브라우저 자동화, OCR 처리, 스케줄링을 하나의 흐름으로 묶어 실제로 운영 가능한 수준의 자동화 시스템을 구성하는 것이 목표로 개발되었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19123662</guid><pubDate>Sat, 10 Jan 2026 18:31:42 GMT</pubDate></item><item><title>(미국) 불법체류자들을 이해하는 방식에 대해[77][41]</title><link>https://www.clien.net/service/board/park/19123923</link><description>
+ 
+ 
+  &lt;p&gt;불법 체류하면 바로 마음속 깊은 속에서 "공정"이라는 개념이 튀어나와 직관적으로 "세금 하나 안내면서 인프라 빨아서 쓰고 합법적 시민들 직장을 뺏어가는 족속"들이라는 생각이 드시는 분 많을 겁니다. 세계의 많은 (우파)정권이 이걸로 표몰이에 엄청 재미를 보고 있구요. 맥락은 조금 다르지만 얼마전 일본의 참정당이란 정당이 이걸로 엄청 재미를 봤고 "앗뜨거워"를 느낀 영원한 집권당 자민당이 외국인에 대한 제한을 제1 정책으로 밀고 있죠. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이런 전세계적인 외국인 특히 불체자에 대한 반감이 이해가 안가는건 아닙니다. 저도 만일 딱 하나를 고르라면 모든 외국인의 체류는 합법의 테두리 내에서 이루어져야 한다는 쪽에 서 있겠습니다. 근데 세상 문제가 그리 쉽기만 하나요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="roof replacement workers.jpg" class="fr-dib fr-fil full" data-file-sn="15641591" data-gif="false" data-img-height="1100" data-img-width="1500" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15641591/29819784d85966.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 위의 짤은 미국의 교외에서 며칠에 한번은 볼수 있는 흔하디 흔한 단독주택 지붕을 교체하는 사진입니다. 업자(대부분 백인)를 통해 계약을 해서 날짜를 받으면 새벽에 일꾼들이 몰려와서 보통 저녁 해질녁이 되기 전에 일을 마치죠. 요게 요즘 가격이 거의 2배가 뛰어서 3000스퀘어피트 (한 90평) 가정집 지붕하나 고치는데 견적이 2만불 (2천9백만원)정도가 나옵니다. 아주 큰 돈이죠. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;사진에 있는 저 일꾼들 누구일것 같습니까? 대부분 실제일은 멕시칸/히스패닉 일꾼들이 담당하고 제일 돈을 많이 버는건 백인 업체사장이죠. 문제는 저 멕시칸/히스패닉 일꾼들의 상당수가 체류신분이 "안정적"이지 않다는 겁니다. 저중 완전 불체자들도 상당수 섞여 있죠. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;형식논리로 따지면 저들을 하루빨리 몰아내고 건당 3천만원에 달하는 저 일거리를 미국시민이나 합법적으로 거주하는 사람들이 가져가야죠. 맞는 말이에요. 그런데 실제는 그런 일은 "결코" 일어나지 않습니다. 대부분의 선진국에서 자국민들이 저런일에 충분한 노동력을 공급할 수 있는 나라는 결단코 단 하나도 없을테니까요. 지붕교체작업에서 이를 확장시키면, 단독주택을 수리하는 그 모든 일, 농촌에서 일어나는 모든일, 건설현장에서의 모든일, 호텔 객실을 청소하는 모든일, 동네 레스토랑에 식기를 세척하고 서빙을 하고 허드렛일을 하는 모든일에서 자국민들은 노동력을 공급하지 못합니다. 플로디다주의 주지사는 그냥 트럼프의 심복급인데 거기서 불체자를 대거 잡아들인다는 뉴스는 좀처럼 들리지 않습니다.왜냐 플로리다 경제자체가 불체자가 없으면 사실상 멈출수도 있거든요. 올랜도, 마이애미(키웨스트)같은 관광지가 불체자 없이 하루라도 돌아갈것 같습니까?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자, 이러면 의문이 생기죠. 저들없이 각 선진국들은 자급자족이 되는가? 답은 그냥 아니오에요. 유일한 방법은 저런 누구도 하기 싫은 일에 엄청난 돈을 지불하는 건데요. 그러면 어떤 일이 생길까요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;3천만원하던 지붕교체 작업이 5천만원이 되고, 한팩에 5불하던 캘리포니아산 딸기가 8-9달러가 되는거죠. 특히 딸기같은 농산물은 가격이 문제가 아니라 공급자체가 박살날겁니다. 지붕은 안고치고 한철 버티기라도 하지만 먹는거 없으면 바로 헬게이트 열리니까요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;발상의 전환이 필요합니다. 저들이 내가 사는 나라에 와서 인프라를 빨아먹고 애들을 학교에 보내서 내 세금이 달달 녹는게 아니라, 저들의 존재로 인해 내가 자본주의 사회에서 소비하는 거의 모든 부분에서 최저가, 즉 하방을 지탱해주면서 내가 지금 쓰고 있는 돈으로 생존할수 있다는 것을요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;미주 한인들 많이 오는 커뮤니티에서 비슷한 논쟁이 있을때마다 아주 높은 수준의 공정함을 발휘하며 불체자는 개개인 사정 봐줄것 없이 원스트라이크 아웃 외치던 분들에게, "그럼 불체자가 사라진 세상에서 니가 한달에 5천불쓰던게 7천불이 되도 기꺼이 감수할수 있느냐?"라고 반문하면 제대로 답변하는 인간을 본적이 없습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그리고 불체자들이 세금한푼 안내고 인프라 빨아드신다는 것도 무지에서 나온 이야기일 뿐이죠. 자 이런 경우를 생각해보세요. 캘리포니아에서 한 20명을 고용하는 중견업체 사장이 그중 10명을 불체자를 현금박치기로 고용합니다. 이 사장은 연초에 자신의 사업장 소득을 미국 국세청(IRS)에 보고하게 되어 있어요. 그런데 기록에 없는 10명의 불체자에게 지급한 임금을 "비용"에서 누락시킬시 이 사장은 매출-비용=소득에서 소득이 너무 커져서 세금폭탄을 얻어맞게 되죠. 그래서 이들 불체자들이 ITIN이라고 세금보고를 위한 번호를 발급받아 세금을 냅니다. 세금을 내지만 체류가 합법이 아니니 여기에서 오는 사회보장혜택은 전혀 받지 않고 있죠. 그리고 물건살때 부가세 당연히 내는 거구요.  그렇게 2022년에 이들이 낸 세금이 100빌리언인데 이건 한화 146조에 해당하는 돈이죠. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;A new study shows that undocumented immigrants paid nearly &lt;strong&gt;$100 billion in federal, state and local tax revenue&lt;/strong&gt; in 2022 while many are shut out of the programs their taxes fund. The ndings run counter to anti-immigrant rhetoric that undocumented immigrants are “destroying” social programs.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 그럼 불체자들이 강력범죄를 저질러서 자국민과 합법적 거주민들을 불안에 떨게 하는가? 전혀 아니죠. 연구결과는 그 레토릭의 정반대입니다. 자국민의 절반수준의 비율입니다. &lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://docs.house.gov/meetings/JU/JU01/20250122/117827/HHRG-119-JU01-20250122-SD004.pdf" target="_blank"&gt;https://docs.house.gov/meetings/JU/JU01/20250122/117827/HHRG-119-JU01-20250122-SD004.pdf&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;The study found that undocumented immigrants are arrested at less than half the rate of native-born U.S. citizens for violent and drug crimes and a quarter the rate of native-born citizens for property crimes&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;정리하면, 사람의 이동이 자유로운 21세기 자본주의에서 문을 걸어잠그고 살수 있는 나라가 있다면 그리 하면 됩니다. 그런데 그게 안되는데 자국민들이 하기 싫은 일을 대신해주는 사람들에게 체류자격은 주고 싶지 않다면 그 뒤에 오는 후과도 그 나라 거주민들이 감당할 일입니다. 선진국들이 80년대에 신자유주의체제를 만들고 무역장벽 부셔놓고 90년대부터 세계화를 해서 미국같은 경우 말도 안되는 가격에 과분한 소비생활을 누리다가 이제와서 외국인 특히 불체자를 타켓팅해서 "너희들이 우리나라를 망치고 있어"라고 하는 논리가 과연 합당한 건지 생각해봐야죠. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;왜 그렇게 불체자를 잡는게 국내정치 1순위인 현재의 미국정부는 캘리포니아에서 딸기와 포도를 수확하는 수십만에 이르는 불체자들은 그냥 두는 걸까요? (같은 논리로 40만에서 많게는 80만에 이르는 불체자들이 없다면 한국경제가 과연 제대로 돌아갈까 생각해 봐야죠)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그래서 전 저들은 무조건 쫓아내야 한다는 형식논리는 가장 무책임한 방식의 대응이라고 생각합니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123923</guid><pubDate>Sun, 11 Jan 2026 02:33:33 GMT</pubDate></item><item><title>영수증 꼼꼼히 봐야겠네요.[11][2]</title><link>https://www.clien.net/service/board/park/19123870</link><description>
+ 
+ 
+  &lt;p&gt;좀 전에 동네 마트에서 간만에 이것 저것 좀 샀더니 &lt;/p&gt;
+  &lt;p&gt;5만원이 넘었는지 간만에 싸인까지 하고 왔는데요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;집에서 영수증을 한번 쓱~ 훑어 보다가 &lt;/p&gt;
+  &lt;p&gt;구경도 못한 6만원 가까이 하는 쌀 20kg짜리가 포함되어 있는 걸 발견했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;마트에 전화해서 결제 시간 알려주니 그 시각 CCTV 확인해보고 연락준다고 해서 기다리니&lt;/p&gt;
+  &lt;p&gt;잠시 후 품목하나가 다른 걸로 잘못 찍힌 게 맞다고 하네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;까딱했으면 6만원 가까운 돈 그냥 날릴뻔했네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123870</guid><pubDate>Sat, 10 Jan 2026 23:37:21 GMT</pubDate></item><item><title>음..오늘따라 생각의 파도가 밀려오네요......[10][0]</title><link>https://www.clien.net/service/board/park/19123807</link><description>
+ 
+ 
+  &lt;p&gt;하.....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;몇개월째 AI 관련한 분석을 열심히 하면 할수록 어쩔 수 없다라는걸 느껴가고 있어요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이제 그나마 믿고 볼만한 매체는 유선으로 보던 TV방송..요......&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;우리가 나이들어 몸이 피곤해지면 다들 이렇게 피곤하게 명령시키면서 살진 않을것 같고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;경로당에 모여 TV보면서 같이 즐겁게 떠드는 삶이 올거라는 생각에 마음이 어수선하네유&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;산이며 들이며 온동네에 조용히 태양광판만 가득한 ... 그른게 떠오르네요&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="Gemini_Generated_Image_7vnqv47vnqv47vnq.png" class="fr-dib fr-fil full" data-file-sn="15641413" data-gif="false" data-img-height="1536" data-img-width="2816" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15641413/296c6c1ae89d00.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123807</guid><pubDate>Sat, 10 Jan 2026 20:07:57 GMT</pubDate></item><item><title>장예찬 '한동훈, 가발..걸어라. 나는 정치생명 걸겠다'[9][5]</title><link>https://www.clien.net/service/board/park/19123798</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20260110183541235" ori-url="http://v.daum.net/v/20260110183541235" target="_blank"&gt;&lt;strong&gt;장예찬 "한동훈, 가발·키높이구두·어깨뽕 걸어라. 나는 정치생명 걸겠다"&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;a href="https://v.daum.net/channel/12/home" ori-url="https://v.daum.net/channel/12/home" target="_blank"&gt;프레시안&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;19분전&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;a href="http://v.daum.net/v/20260110183541235" ori-url="http://v.daum.net/v/20260110183541235" target="_blank"&gt;다음뉴스&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20260110183541235" ori-url="http://v.daum.net/v/20260110183541235" target="_blank"&gt;&lt;img alt='장예찬 "한동훈, 가발·키높이구두·어깨뽕 걸어라. 나는 정치생명 걸겠다"' class="fr-fic fr-dii" src="https://search3.kakaocdn.net/argon/200x200_85_c/7VYxFA0FDDk0" width="88"/&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한동훈 &lt;/p&gt;
+  &lt;p&gt;전 국민의힘 대표가 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;언론 인터뷰를 통해&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 당원 게시판 논란의&lt;/p&gt;
+  &lt;p&gt; '배후'를 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;윤석열&lt;/p&gt;
+  &lt;p&gt; 전 대통령으로 지목한 것과 관련해 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;'친윤계'인 &lt;/p&gt;
+  &lt;p&gt;장예찬 여의도연구원 부원장이 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;"전혀 사실이 아니다"라고 반박했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;장 부원장은 &lt;/p&gt;
+  &lt;p&gt;10일 자신의 페이스북에 글을 올리고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; "한동훈은&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 중앙일보 인터뷰에서&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 윤석열 대통령이 &lt;/p&gt;
+  &lt;p&gt;당게 사태의 배후라고 말한다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 이는 전혀 사실이 아니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;당게 사태는&lt;/p&gt;
+  &lt;p&gt; 네티즌들의 제보를 바탕으로 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;진상이 규명된 것이고, &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;증거가 수집되는 &lt;/p&gt;
+  &lt;p&gt;모든 과정이&lt;/p&gt;
+  &lt;p&gt; 온라인에 남아 있다"고 반박했다.&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://cp.news.search.daum.net/p/173023537" ori-url="https://cp.news.search.daum.net/p/173023537" target="_blank"&gt;&lt;strong&gt;&lt;strong&gt;한동훈&lt;/strong&gt;, 당게 논란 배후에 尹 지목..."나를 겨냥한 김옥균 프로젝트"&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;&lt;a href="http://www.joseilbo.com/" ori-url="http://www.joseilbo.com/" target="_blank"&gt;조세일보&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;4시간전&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://cp.news.search.daum.net/p/173023537" ori-url="https://cp.news.search.daum.net/p/173023537" target="_blank"&gt;&lt;img alt='한동훈, 당게 논란 배후에 尹 지목..."나를 겨냥한 김옥균 프로젝트"' class="fr-fic fr-dii" src="https://search4.kakaocdn.net/argon/200x200_85_c/KkPQBaHURJm0" width="88"/&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;한동훈&lt;/strong&gt; &lt;/p&gt;
+  &lt;p&gt;전 국민의힘 대표가 최근 불거진&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; '&lt;strong&gt;당원&lt;/strong&gt;&lt;strong&gt;게시판&lt;/strong&gt;(당게) 논란'의 배후에 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;윤석열 &lt;/p&gt;
+  &lt;p&gt;전 대통령이 있다고 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;정면 지목했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 친윤계가 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자신을 실각시키기 위해 &lt;/p&gt;
+  &lt;p&gt;기획한 &lt;/p&gt;
+  &lt;p&gt;이른바 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;'김옥균 프로젝트'의 일환이라는 주장이다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 한 전 대표는&lt;/p&gt;
+  &lt;p&gt; 10일 공개된 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;중앙선데이 인터뷰에서...&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그는 윤 전 대통령과의 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;마지막 독대&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 당시를 언급하며&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; "대통령이&lt;/p&gt;
+  &lt;p&gt; '당게를 너무 험하게 하지 말라고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; (당에)&lt;/p&gt;
+  &lt;p&gt; 이야기했었다'고 &lt;/p&gt;
+  &lt;p&gt;생색을 냈었다"면서&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; "이는 자신이 시켰다는 이야기 아니겠느냐"고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 배후설을 제기했다.&lt;br/&gt;&lt;br/&gt;
+    그간 대응을 자제해온 이유에 대해선&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;국짐당..&lt;/p&gt;
+  &lt;p&gt;당원게시판...이슈는...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한동훈을...&lt;/p&gt;
+  &lt;p&gt;제거하기...위해서....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;짜고치는....&lt;/p&gt;
+  &lt;p&gt;고스톱...작전이라는...요??&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123798</guid><pubDate>Sat, 10 Jan 2026 19:05:00 GMT</pubDate></item><item><title>서울에 집사서 집값상승 혜택본 사람이 잘못한건 없죠[16][0]</title><link>https://www.clien.net/service/board/park/19123866</link><description>
  
  
   &lt;p&gt;본인들이 노력해서 획득한 거니&lt;/p&gt;
@@ -67,7 +321,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;백상예술대상때도 수상 갑시다!&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123877</guid><pubDate>Sat, 10 Jan 2026 23:41:53 GMT</pubDate></item><item><title>롯데리아에서 계엄모의할줄 누가 알았겠습니까 ㅋㅋ[4][5]</title><link>https://www.clien.net/service/board/park/19123868</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123877</guid><pubDate>Sat, 10 Jan 2026 23:41:53 GMT</pubDate></item><item><title>롯데리아에서 계엄모의할줄 누가 알았겠습니까 ㅋㅋ[4][6]</title><link>https://www.clien.net/service/board/park/19123868</link><description>
  
  
   &lt;p&gt;&lt;img alt="gyeuhm.jpg" class="fr-dib fr-fil full" data-file-sn="15641511" data-gif="false" data-img-height="1000" data-img-width="838" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15641511/297854d7335ab4.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -79,7 +333,7 @@
   &lt;p&gt;극본 소재로 써도 얼탱이 없는게 진짜 찐현실이라는게 ㅋㅋㅋㅋㅋㅋㅋㅋㅋ&lt;/p&gt;
   &lt;p&gt;감자튀김 삐리리~삐리리~ 소리 들으면서 계엄 모의한거 생각하면 ㄹㅇ 코미디입니다 ㅋㅋㅋㅋ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123868</guid><pubDate>Sat, 10 Jan 2026 23:19:12 GMT</pubDate></item><item><title>계엄이 내란 기수냐 미수냐...? ......둘 다 맞습니다.[8][6]</title><link>https://www.clien.net/service/board/park/19123776</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123868</guid><pubDate>Sat, 10 Jan 2026 23:19:12 GMT</pubDate></item><item><title>계엄이 내란 기수냐 미수냐...? ......둘 다 맞습니다.[9][6]</title><link>https://www.clien.net/service/board/park/19123776</link><description>
  
  
   &lt;p&gt;&lt;img alt="333b896cd59b50.webp" class="fr-dib fr-fil" data-file-sn="15641372" data-gif="false" data-img-height="415" data-img-width="740" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15641372/2968c819118224.webp?scale=width:740"/&gt;&lt;/p&gt;
@@ -106,7 +360,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123880</guid><pubDate>Sat, 10 Jan 2026 23:40:29 GMT</pubDate></item><item><title>이야기 작은차 타면 듣는말 중 이해안가는것[16][12]</title><link>https://www.clien.net/service/board/cm_car/19123863</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123880</guid><pubDate>Sat, 10 Jan 2026 23:40:29 GMT</pubDate></item><item><title>이야기 작은차 타면 듣는말 중 이해안가는것[18][15]</title><link>https://www.clien.net/service/board/cm_car/19123863</link><description>
  
  
   &lt;p&gt;"작은차를 그 돈 주고 왜사?"&lt;/p&gt;
@@ -190,7 +444,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123881</guid><pubDate>Sat, 10 Jan 2026 23:54:29 GMT</pubDate></item><item><title>저속노화 교수는 곧 재기 가능하겠네요[11][0]</title><link>https://www.clien.net/service/board/park/19123837</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123881</guid><pubDate>Sat, 10 Jan 2026 23:54:29 GMT</pubDate></item><item><title>저속노화 교수는 곧 재기 가능하겠네요[12][0]</title><link>https://www.clien.net/service/board/park/19123837</link><description>
  
  
   &lt;p&gt;보통은 논란 생기면 입 꾹 닫고 꽁꽁 숨어버리거나 종적을 감추는 게 패턴인데,&lt;/p&gt;
@@ -221,25 +475,25 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123822</guid><pubDate>Sat, 10 Jan 2026 21:06:28 GMT</pubDate></item><item><title>모범택시 응원봉 ㅎㅎㅎ[6][10]</title><link>https://www.clien.net/service/board/park/19123860</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123822</guid><pubDate>Sat, 10 Jan 2026 21:06:28 GMT</pubDate></item><item><title>모범택시 응원봉 ㅎㅎㅎ[6][11]</title><link>https://www.clien.net/service/board/park/19123860</link><description>
  
  
   &lt;p&gt;작가가 작정을 했네요 ㅎㅎㅎㅎㅎ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123860</guid><pubDate>Sat, 10 Jan 2026 22:46:05 GMT</pubDate></item><item><title>결국 집값은 못잡는것이고, 순진한 사람들만 벼락거지엔딩인가요[24][1]</title><link>https://www.clien.net/service/board/park/19123859</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123860</guid><pubDate>Sat, 10 Jan 2026 22:46:05 GMT</pubDate></item><item><title>결국 집값은 못잡는것이고, 순진한 사람들만 벼락거지엔딩인가요[26][1]</title><link>https://www.clien.net/service/board/park/19123859</link><description>
  
  
   &lt;p&gt;대출총량 규제한지 반년됐는데 기미가 안보이네요..&lt;br/&gt;&lt;br/&gt;
     각자도생.. 순진한 사람들은 벼락거지 의심한 사람들은 세이브&lt;br/&gt;&lt;br/&gt;
     보유세 한다하더니 기미도 안보이고..&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123859</guid><pubDate>Sat, 10 Jan 2026 22:46:05 GMT</pubDate></item><item><title>모범택시 미쳤나봐요 ㅋㅋㅋㅋㅋ[6][15]</title><link>https://www.clien.net/service/board/park/19123852</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123859</guid><pubDate>Sat, 10 Jan 2026 22:46:05 GMT</pubDate></item><item><title>모범택시 미쳤나봐요 ㅋㅋㅋㅋㅋ[6][18]</title><link>https://www.clien.net/service/board/park/19123852</link><description>
  
  
   &lt;p&gt;노상원에 자폭조끼에&lt;/p&gt;
   &lt;p&gt;지금 햄버거집 까지 나와욬ㅋㅋ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123852</guid><pubDate>Sat, 10 Jan 2026 22:34:31 GMT</pubDate></item><item><title>편의점 건전지 가격 어마어마 하네요.[12][0]</title><link>https://www.clien.net/service/board/park/19123851</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123852</guid><pubDate>Sat, 10 Jan 2026 22:34:31 GMT</pubDate></item><item><title>편의점 건전지 가격 어마어마 하네요.[13][1]</title><link>https://www.clien.net/service/board/park/19123851</link><description>
  
  
   &lt;p&gt;듀라셀 AAA 2알 6,500원 4알 9,600원 하네요. 2알에 3천원 or 좀 넘거나 해도 사야지 하고 갔는데….. 못 사겠더라구요. 이정도면, 전세계 1등 가격일 것 같아요.&lt;/p&gt;
@@ -253,7 +507,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;교도통신의 논평요청을 받은 일본 기업들은 "심사가 강화되어 시간이 오래 걸릴 뿐"이라는 답변을 전했다고 교도통신은 덧붙였습니다. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123782</guid><pubDate>Sat, 10 Jan 2026 18:45:17 GMT</pubDate></item><item><title>모든게 엉망이던 내란죄 구형 재판장[8][10]</title><link>https://www.clien.net/service/board/park/19123844</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123782</guid><pubDate>Sat, 10 Jan 2026 18:45:17 GMT</pubDate></item><item><title>모든게 엉망이던 내란죄 구형 재판장[8][19]</title><link>https://www.clien.net/service/board/park/19123844</link><description>
  
  
   &lt;p&gt;궤변과 조롱을 일삼는 변호인들과 피고인들이나&lt;/p&gt;
@@ -262,7 +516,7 @@
   &lt;p&gt;총체적 난국인데 제발 이 꼴 그만보게 완결 짓고 싶습니다.&lt;/p&gt;
   &lt;p&gt;국민들에게 해피엔딩으로.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123844</guid><pubDate>Sat, 10 Jan 2026 21:51:11 GMT</pubDate></item><item><title>요즘 서울 부동산이 무섭게 오르네요..[47][3]</title><link>https://www.clien.net/service/board/park/19123838</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123844</guid><pubDate>Sat, 10 Jan 2026 21:51:11 GMT</pubDate></item><item><title>요즘 서울 부동산이 무섭게 오르네요..[52][4]</title><link>https://www.clien.net/service/board/park/19123838</link><description>
  
  
   &lt;p&gt;저는 살기 좋은곳이 최고다 라고 생각하고&lt;/p&gt;
@@ -281,7 +535,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;무한반복 생각이 들곤 합니다...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123838</guid><pubDate>Sat, 10 Jan 2026 21:30:52 GMT</pubDate></item><item><title>[속보] 李대통령, 민간 무인기 가능성에 '군경 합수팀 엄정 수사' 지시[18][39]</title><link>https://www.clien.net/service/board/park/19123835</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123838</guid><pubDate>Sat, 10 Jan 2026 21:30:52 GMT</pubDate></item><item><title>[속보] 李대통령, 민간 무인기 가능성에 '군경 합수팀 엄정 수사' 지시[20][51]</title><link>https://www.clien.net/service/board/park/19123835</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/001/0015839629?sid=100" ori-url="https://n.news.naver.com/mnews/article/001/0015839629?sid=100" target="_blank"&gt;[속보] 李대통령 "민간 무인기 운용 가능성 사실이면 중대범죄"&lt;/a&gt;&lt;/p&gt;
@@ -300,7 +554,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;신천지 털이 하는 장면이 떠오르네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123835</guid><pubDate>Sat, 10 Jan 2026 21:19:15 GMT</pubDate></item><item><title>요새 전기차 중고가 엄청나게 저렴하네요?[18][0]</title><link>https://www.clien.net/service/board/park/19123832</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123835</guid><pubDate>Sat, 10 Jan 2026 21:19:15 GMT</pubDate></item><item><title>요새 전기차 중고가 엄청나게 저렴하네요?[20][0]</title><link>https://www.clien.net/service/board/park/19123832</link><description>
  
  
   &lt;p&gt;EV6, 아이오닉5 가 2000만원대 초중반이라니 ㄷ&lt;br/&gt;
@@ -333,7 +587,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123818</guid><pubDate>Sat, 10 Jan 2026 20:28:36 GMT</pubDate></item><item><title>안귀령 총구 실랑이 영상 보면서 비웃는 윤석열[14][11]</title><link>https://www.clien.net/service/board/park/19123815</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123818</guid><pubDate>Sat, 10 Jan 2026 20:28:36 GMT</pubDate></item><item><title>안귀령 총구 실랑이 영상 보면서 비웃는 윤석열[16][28]</title><link>https://www.clien.net/service/board/park/19123815</link><description>
  
  
   &lt;p&gt;&lt;img alt="화면 캡처 2026-01-10 201018.png" class="fr-dib fr-fil full" data-file-sn="15641428" data-gif="false" data-img-height="803" data-img-width="1266" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15641428/296ee34435e39e.png?scale=width:740"/&gt;&lt;/p&gt;
@@ -384,7 +638,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19123732</guid><pubDate>Sat, 10 Jan 2026 16:14:17 GMT</pubDate></item><item><title>사우디아라비아 여행 왔다 오늘 한국으로 들어갑니다.[15][21]</title><link>https://www.clien.net/service/board/park/19123780</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19123732</guid><pubDate>Sat, 10 Jan 2026 16:14:17 GMT</pubDate></item><item><title>사우디아라비아 여행 왔다 오늘 한국으로 들어갑니다.[17][21]</title><link>https://www.clien.net/service/board/park/19123780</link><description>
  
  
   &lt;p&gt;새해를 맞이해서 어디 여행을 나가볼까 지도 펴고 보다가 문득,&lt;/p&gt;
@@ -479,7 +733,7 @@
   &lt;p&gt; &lt;/p&gt;
   &lt;p&gt;그러면 시간이지나면 이젠 예전에 살수도있던아파트는 이제 더이상 살수없는가격대가되고.. .. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123679</guid><pubDate>Sat, 10 Jan 2026 13:16:45 GMT</pubDate></item><item><title>Q/A 세단 -&gt; suv 로 기변하신분께 질문[16][0]</title><link>https://www.clien.net/service/board/cm_car/19123787</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123679</guid><pubDate>Sat, 10 Jan 2026 13:16:45 GMT</pubDate></item><item><title>Q/A 세단 -&gt; suv 로 기변하신분께 질문[17][0]</title><link>https://www.clien.net/service/board/cm_car/19123787</link><description>
  
  
   &lt;p&gt;세단만 10년 끌어서 suv에 대한 환상이 좀 있었습니다. &lt;/p&gt;
@@ -516,7 +770,7 @@
    저번에도 눈 엄청온다고 안왔는데 눈예보는 계속 틀리네요 
   &lt;br/&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123612</guid><pubDate>Sat, 10 Jan 2026 10:37:45 GMT</pubDate></item><item><title>이야기 자동차가 바람에 휘청이는게 정상인가요?[30][0]</title><link>https://www.clien.net/service/board/cm_car/19123806</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123612</guid><pubDate>Sat, 10 Jan 2026 10:37:45 GMT</pubDate></item><item><title>이야기 자동차가 바람에 휘청이는게 정상인가요?[31][0]</title><link>https://www.clien.net/service/board/cm_car/19123806</link><description>
  
  
   &lt;p&gt;안녕하세요.&lt;/p&gt;
@@ -831,7 +1085,7 @@
   &lt;p&gt;대형마트 휴무는 왜 있는 걸까요~~~&lt;/p&gt;
   &lt;p&gt;아~~ 직원들 쉬는 것에 의미가 있긴 하겠네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123717</guid><pubDate>Sat, 10 Jan 2026 15:19:11 GMT</pubDate></item><item><title>이야기 PHEV BEV 논쟁을 끝내려면[31][1]</title><link>https://www.clien.net/service/board/cm_car/19123722</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123717</guid><pubDate>Sat, 10 Jan 2026 15:19:11 GMT</pubDate></item><item><title>이야기 PHEV BEV 논쟁을 끝내려면[32][1]</title><link>https://www.clien.net/service/board/cm_car/19123722</link><description>
  
  
   &lt;p&gt;1. 충전구역 주차시 충전기 체결안하면 국민신문고 신고가능 (차문이 잠겼으면 충전기 분리안되게 바꾸는 작업 필요)&lt;/p&gt;
@@ -878,103 +1132,4 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123729</guid><pubDate>Sat, 10 Jan 2026 15:53:03 GMT</pubDate></item><item><title>식당왔는데 사장님 약력이..[11][0]</title><link>https://www.clien.net/service/board/park/19123674</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;넘어지면 일어나는 스타일이시군요.. &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123674</guid><pubDate>Sat, 10 Jan 2026 12:57:13 GMT</pubDate></item><item><title>머스크, 시가 피우고 버거 먹을 수 있는 테슬라 2나노 ‘더티 팹’ 공장 건설 예정[10][0]</title><link>https://www.clien.net/service/board/news/19123142</link><description>
- 
- 
-  &lt;p&gt;&lt;span class="fr-video fr-fvc fr-dvi fr-draggable" data-file-sn="15640430" data-role="image-mp4"&gt;
-    &lt;video autoplay="" data-file-key="2903de26308be8" id="2903de26308be8" loop="loop" muted="" playsinline="" poster="https://edgio.clien.net/F01/2026/1/15640432/2903de26308be8.gif?scale=width:740" preload="auto" webkit-playsinline=""&gt;
-     &lt;source src="https://edgio.clien.net/F01/2026/1/15640430/2903de26308be8.mp4" type="video/mp4"/&gt;
-    &lt;/video&gt;&lt;button class="search_link" onclick='app.gifDownConfirm("15640432", "2903de26308be8", "150", "143")'&gt;&lt;i class="fa fa-download"&gt;&lt;/i&gt;GIF&lt;/button&gt; &lt;/span&gt;&lt;/p&gt;
-  &lt;div class="editor_video"&gt;
-   &lt;div class="editor_video"&gt;
-    &lt;div class="editor_video"&gt;
-     &lt;br/&gt;
-    &lt;/div&gt;
-   &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="editor_video"&gt;
-   해외 기사를 번역한 것이므로 오역이 있을 수 있습니다.
-  &lt;/div&gt;
-  &lt;div class="editor_video"&gt;
-    
-  &lt;/div&gt;
-  &lt;div class="editor_video"&gt;
-   &lt;a href="https://hothardware.com/news/musk-says-tesla-will-build-a-2nm-dirty-fab-where-he-can-smoke-cigars-and-eat-burgers" target="_blank"&gt;https://hothardware.com/news/musk-says-tesla-will-build-a-2nm-dirty-fab-where-he-can-smoke-cigars-and-eat-burgers&lt;/a&gt;
-  &lt;/div&gt;
-  &lt;div class="editor_video"&gt;
-    
-  &lt;/div&gt;
-  &lt;div class="editor_video"&gt;
-    
-  &lt;/div&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h6 class="editor_title4"&gt;&lt;span style="font-size: 24px;"&gt;머스크, 시가 피우고 버거 먹을 수 있는 테슬라 2나노 ‘더티 팹’ 공장 건설 예정&lt;/span&gt;&lt;/h6&gt;
-  &lt;div class="editor_image"&gt;
-   &lt;br/&gt;
-  &lt;/div&gt;
-  &lt;p&gt;&lt;img alt="comm_31426421_20260109112735_dc5b5f76a1c1e8cb_thumb.jpg" class="fr-dib fr-fil" data-file-sn="15640433" data-gif="false" data-img-height="371" data-img-width="660" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15640433/2903e41592a5d8.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;전 세계 반도체 엔지니어들이 공포에 질려 먼지 하나 없는 방진복을 움켜쥐고 있습니다. 일론 머스크가 시가를 피우고 더블 치즈버거를 먹을 수 있을 만큼 기준이 널널한 칩 연구소인 ‘더티 팹(dirty fab)’이라는 최신 혁신안을 발표했기 때문입니다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;blockquote class="twitter-tweet" data-lang="en"&gt;
-   &lt;a href="https://twitter.com/The_AI_Investor/status/2008660469733880117?s=20" target="_blank"&gt;https://twitter.com/The_AI_Investor/status/2008660469733880117?s=20&lt;/a&gt;
-  &lt;/blockquote&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;TSMC와 인텔 같은 업계 리더들이 머리카락 한 가닥만 떨어져도 수백만 달러 가치의 웨이퍼를 망칠 수 있는 초순수 클린룸에 수십억 달러를 쏟아붓고 있는 상황에서도, 머스크는 실리콘의 미래에 훨씬 더 많은 기름기가 포함될 수 있다고 믿습니다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;최근 ‘문샷(Moonshots)’ 인터뷰에서 테슬라 CEO인 머스크는 기존의 규칙들을 쓰레기통에 던져버리는 2나노미터 테라팹(TeraFab)에 대한 비전을 제시했습니다. 머스크의 제안에 따르면, 현대 칩 제조 공정의 불필요할 정도로 결벽에 가까운 환경은 생산성을 저해하는 ‘과잉 최적화’이며, 무엇보다 노동자들이 자리에서 제대로 된 점심 식사를 즐기지 못하게 만든다는 것입니다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;보통 이러한 시설은 민감한 회로에 먼지가 쌓이는 것을 방지하기 위해 몇 초마다 실내 공기를 교체하는 공기 여과 시스템이 필요합니다. 하지만 머스크는 직원들이 평상복을 입고, 어쩌면 커피 얼룩이 조금 묻은 채로 치즈버거를 먹으며 돌아다닐 수 있는 공장 현장을 상상합니다. 그는 설령 그것이 기술적으로 불법일지라도 시설 내부에서 시가를 피울 가능성에 대해 농담하기까지 했습니다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;&lt;img alt="comm_31426421_20260109113001_580cdf1e418a8bbc_thumb.jpg" class="fr-dib fr-fil" data-file-sn="15640434" data-gif="false" data-img-height="371" data-img-width="660" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15640434/2903e53867b30a.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;머스크는 그 정당성이 기계 자체에 있다고 주장합니다. 건물 전체를 클린룸으로 만드는 대신, ‘클린’한 부분을 장비 수준으로 축소해야 한다는 논리입니다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;비록 황당하게 들릴 수도 있지만, 이 반(反)클린룸 주장은 테슬라가 자동차 조립 공정을 혁신했던 것처럼 칩 제조도 혁신할 수 있다는 더 큰 도박의 일부입니다. 공기 정화에 들어가는 막대한 비용과 방진복을 입는 시간 소모적인 과정을 제거함으로써, 머스크는 칩 생산 비용을 대폭 절감할 수 있다고 믿습니다. 이는 전형적인 머스크식 도박입니다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;그가 다른 이들이 두려워 시도하지 못했던 엄청난 효율성을 찾아낸 것이거나, 아니면 테슬라가 세계에서 가장 비싼 2나노미터짜리 종이 고정용 집게(쓸모없는 물건)들을 생산하게 되거나 둘 중 하나일 것입니다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;그럼에도 불구하고 만약 성공한다면, 테라팹은 차세대 컴퓨팅의 비결이 공기 필터가 아니라 약간의 상상력과 감자튀김이었다는 것을 증명하며 반도체 세상을 뒤집어 놓을 수도 있습니다. 하지만 다시 한번 생각해보면, 머스크도 가끔은 틀리는 것으로 알려져 있긴 합니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/19123142</guid><pubDate>Fri, 09 Jan 2026 11:51:54 GMT</pubDate></item><item><title>현재 스포티지R 타는데 13만을 탔는데 고장 딱 한번 났습니다.[20][1]</title><link>https://www.clien.net/service/board/park/19123713</link><description>
- 
- 
-  &lt;p&gt;2013년식 스알 스포티지R모델 가장 마지막 페리모델 타고 있습니다.&lt;/p&gt;
-  &lt;p&gt;연료필터 관리? 안해준거 때문에 그거 한번 15만원 수리비만 들어갔습니다&lt;/p&gt;
-  &lt;p&gt;타이어 엔진오일 등등은 뭐 수시 관리적인거라 제외하고. &lt;/p&gt;
-  &lt;p&gt;카센타 사장님이 이차는 좋은차라서 잔고장 이렇게 없는차만 있으면 자기들 먹고살기 힘들다고 하더군요,&lt;/p&gt;
-  &lt;p&gt;차는 바꾸고 싶은데. 한 20만 탈거 같네요 요즘 나오는 차들 디자인이나 공간적인게 제 성에 안차는 느낌이라..&lt;/p&gt;
-  &lt;p&gt;앞으로는 현행 차량처럼 디젤 탈 일이 없을거 같아서 그냥 뽕을 계속 뽑아야할듯 싶네요 ㅎㅎ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123713</guid><pubDate>Sat, 10 Jan 2026 15:06:15 GMT</pubDate></item><item><title>몇백원짜리 커피 마시려다 몇십만원 날렸네요[20][0]</title><link>https://www.clien.net/service/board/park/19123711</link><description>
- 
- 
-  &lt;p&gt;키크론 Q1 HE에 커피 한잔을 쏟았더니 키보드가 먹통입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;혹시나 싶어 분해해보니  커피를 다 흡수해서 축축해진 흡음재에 보드 하판 회로들이 맞닿아 쇼트가 난거 같네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;물세척은 부담스러워 물티수/알콜로 보드의 젖은 부분 닦아내긴했는데이거 살릴수 있으려나요?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;하필 300ml 잔을 꽉채워 커피양이 많을때 쏟아지다니..&lt;/p&gt;
-  &lt;p&gt;몇백원짜리 인스턴트 커피 한잔 마시려다 몇십만원 짜리 키보드를 날려먹었네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="IMG_6379.png" class="fr-dib fr-fil full" data-file-sn="15641262" data-gif="false" data-img-height="1280" data-img-width="960" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15641262/295d0f20d9226c.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123711</guid><pubDate>Sat, 10 Jan 2026 14:54:58 GMT</pubDate></item><item><title>7살 소녀가 눈보라를 헤치고 파출소로 온 이유[19][123]</title><link>https://www.clien.net/service/board/park/19123709</link><description>
- 
- 
-  &lt;p&gt;날은 춥지만 마음은 따땃한..&lt;/p&gt;
-  &lt;p&gt;경찰분들도 지역사회도 모두 좋은일하셨고 모녀도 부디 행복하게 살게 많은분들의 온기가 함께하기를.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123709</guid><pubDate>Sat, 10 Jan 2026 15:02:01 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19123729</guid><pubDate>Sat, 10 Jan 2026 15:53:03 GMT</pubDate></item></channel></rss>
