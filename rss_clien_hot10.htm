@@ -1,5 +1,282 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Mon, 26 Jan 2026 12:00:50 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>휴... 이제 진짜 위기가 발생할 시그널이 뜬것 같습니다.[11][0]</title><link>https://www.clien.net/service/board/park/19132303</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Mon, 26 Jan 2026 13:01:02 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>서비스/SW 구형 컴퓨터에 윈도우11 최신 버전 업그레이드 하기..[9][6]</title><link>https://www.clien.net/service/board/use/19132223</link><description>
+ 
+ 
+  &lt;p&gt;요기 아래쪽에 '반도체 고가 시대를 살아가는 방법'에 등장했던 본체에 대한 이야기 입니다.&lt;/p&gt;
+  &lt;p&gt;업무용 컴퓨터가 윈도우10을 메인으로 사용하던 2023년 무렵&lt;/p&gt;
+  &lt;p&gt;제가 윈도우11을 처음 설치한 것은 앞으로 새로운 OS로 바꾸어야 할 것이기에&lt;/p&gt;
+  &lt;p&gt;미리 테스트 차원에서 집 컴퓨터인 인텔 4세대 시스템에 윈도우11 23H2 버전을 설치 했습니다.&lt;/p&gt;
+  &lt;p&gt;(최근 시스템 본체 업그레이드 작업....)&lt;/p&gt;
+  &lt;p&gt;새로 시스템을 정리한 후 기존 SATA SSD(Window11 23H2)를 M.2 SSD에 마이그레이션을 해서 사용하다가&lt;/p&gt;
+  &lt;p&gt;최근 버전인 25H2 버전으로 업데이트를 시도해 보았습니다.&lt;/p&gt;
+  &lt;p&gt;SSD를 포맷한 후 재설치 하는 대신 가급적 기존 설치된 앱과 설정을 유지한 채 &lt;/p&gt;
+  &lt;p&gt;마이크로소프트 사이트에서 다운 받은 25H2 ISO 파일로 설치를 시도하면&lt;/p&gt;
+  &lt;p&gt;꼭 46% 정도에서 멈추거나 더 이상 업그레이드가 진행되지 않는 현상이 있더군요.&lt;/p&gt;
+  &lt;p&gt;TPM2.0 모듈이 없어서 그런 가 하여 몇 가지 우회 방법을 사용했지만 실패 했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그러나 여러 훌륭한 분들이 올려 주신 정보를 통해 방법을 찾았습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;- 윈도우11 25H2 우회 업그레이드 방법(기존 구 버전 윈도우11)&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="8d5eb844492d90851999bf9ed8716d0d.webp" class="fr-dib fr-fil" data-file-sn="15652490" data-gif="false" data-img-height="410" data-img-width="700" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652490/2e375583f64aae.webp?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;
+    1. 준비물 : 윈도우11 25H2 설치 ISO파일(다중버전 ISO)&lt;/p&gt;
+  &lt;p&gt;: 먼저 윈도우11 25H2 최신 버전으로 업그레이드 하기 위해서는 윈도우11 설치파일 중 "다중버전 ISO" 파일을 다운 받으셔야 합니다. ISO 이미지 파일 다운로드는 아래 주소로 들어가셔서 다운 받으실 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.microsoft.com/ko-kr/software-download/windows11" target="_blank"&gt;https://www.microsoft.com/ko-kr/software-download/windows11&lt;/a&gt;&lt;span class="name"&gt;MS스토어&lt;/span&gt;&lt;button class="outlink_info" type="button"&gt;&lt;i class="fa fa-info-circle"&gt;&lt;/i&gt;&lt;/button&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;위의 ISO 다운로드 페이지에서 &lt;/p&gt;
+  &lt;p&gt;'다운로드 선택' --&amp;gt; 'Windows 11(x64 디바이스용 다중 버전 ISO)' &lt;/p&gt;
+  &lt;p&gt;--&amp;gt; '지금 다운로드' 순서로 진행하면 25H2 ISO 이미지 파일을 받을 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;2. 다운로드한 설치파일을 가상드라이브에 마운트 합니다.&lt;/p&gt;
+  &lt;p&gt;: 가상드라이브 마운트 프로그램은 무료로 사용하면서 실제 필요한 기능은 충분히 지원 받을 수 있는 &lt;/p&gt;
+  &lt;p&gt;"DAEMON Tools Lite" 프로그램을 추천합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://www.daemon-tools.cc/kor/products/dtLite" target="_blank"&gt;https://www.daemon-tools.cc/kor/products/dtLite&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;3. 관리자 권한으로 터미널(CMD) 실행&lt;/p&gt;
+  &lt;p&gt;: 윈도우11 의 CMD 터미널을 관리자 모드로 실행합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;4. 가상드라이브(예: F: 드라이브일 때)로 이동&lt;/p&gt;
+  &lt;p&gt;: 윈도우11 25H2 ISO 파일일 마운트 된 드라이브로 프롬프트를 이동합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;5. 명령어 라인에 "setup.exe /product server" 를 입력해주고 엔터키를 눌러 실행하면 업데이트가 시작됩니다.&lt;/p&gt;
+  &lt;p&gt;: F:\&amp;gt; setup.exe /product server  + 엔터&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="20260126_100912.jpg" class="fr-dib fr-fil full" data-file-sn="15652491" data-gif="false" data-img-height="396" data-img-width="750" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652491/2e375b91f71aa3.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;
+    6. 실행 후 화면에는 Windows Server를 설치한다는 메시지가 표시되지만 실제로는 Windows Server가 설치되지 않고, &lt;/p&gt;
+  &lt;p&gt;현재 사용 중인 Windows 에디션으로 업데이트됩니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;(로컬계정으로 설치를 원하실 때...)&lt;/p&gt;
+  &lt;p&gt;- 설치 과정에서 이메일 주소 입력하는 단계에서 랜선을 분리하신 후 &lt;/p&gt;
+  &lt;p&gt;shift+F10 누르고 터미널 창에서&lt;/p&gt;
+  &lt;p&gt;oobe\bypassnro 입력하고 재부팅 후 인터넷 연결 없음으로 계속 진행하면 로컬계정으로 설치하실 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;읽어 주셔서 감사합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19132223</guid><pubDate>Mon, 26 Jan 2026 11:07:58 GMT</pubDate></item><item><title>'쫀득' 발음을 영어로 쓰려면 어떻게 써야 할까요?[11][0]</title><link>https://www.clien.net/service/board/park/19132323</link><description>
+ 
+ 
+  &lt;p&gt;zzondeuk / jjondeuk / zzonduk / jjonduk&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;역시 영어는 어렵네요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132323</guid><pubDate>Mon, 26 Jan 2026 12:30:52 GMT</pubDate></item><item><title>[단독]'민주화 거목' 故이해찬 前총리 5일간 '사회장' 엄수[7][14]</title><link>https://www.clien.net/service/board/park/19132319</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/008/0005309304?sid=100" ori-url="https://n.news.naver.com/mnews/article/008/0005309304?sid=100" target="_blank"&gt;[단독]'민주화 거목' 故이해찬 前총리 5일간 '사회장' 엄수&lt;/a&gt; 머니투데이&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;지난 25일 별세한 '민주화 거목' 고(故) 이해찬 민주평화통일자문회의 수석부의장의 장례가 5일간의 사회장으로 엄수된다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;여권에 따르면 이 수석부의장의 장례는 오는 27~31일 사회장으로 진행된다. 여권 관계자는 "(이 수석부의장의 장례가) 사회장으로 오는 화요일부터 토요일까지 엄수될 것"이라고 했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;(본문 생략, 출처 링크를 참고하세요.)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;오늘 오후 11시50분 대한항공편으로 베트남에서 출발하여&lt;/p&gt;
+  &lt;p&gt;익일 오전 6시45분께 인천공항에 도착할 예정이고 &lt;/p&gt;
+  &lt;p&gt;장례식장은 서울대병원이라고 합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;국가장도 검토 중인 것 같습니다.&lt;/p&gt;
+  &lt;p&gt;예우를 갖추어 보내드리면 좋겠어요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132319</guid><pubDate>Mon, 26 Jan 2026 12:21:37 GMT</pubDate></item><item><title>이란 시위 사망자 3~3.6만 추정[11][1]</title><link>https://www.clien.net/service/board/park/19132317</link><description>
+ 
+ 
+  &lt;p&gt;이란쪽 검시소 기준으로 등록수가 3만이 넘는다는 뉴스입니다 &lt;/p&gt;
+  &lt;p&gt;교차 검증이 필요하지만 현재도 가담자 색출해서 처형하거나 불구로 만든다는 &lt;/p&gt;
+  &lt;p&gt;이야기들이 지속적으로 나오고 있습니다. &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132317</guid><pubDate>Mon, 26 Jan 2026 12:20:02 GMT</pubDate></item><item><title>조국당, 민주당에 격노 ‘흡수합당 아닌 조국당 DNA 지킬것’[13][8]</title><link>https://www.clien.net/service/board/park/19132310</link><description>
+ 
+ 
+  &lt;p&gt;조국민주당으로 당명까지 교체하려나요?&lt;/p&gt;
+  &lt;p&gt;어디까지 당이 망가지나 기대되네요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132310</guid><pubDate>Mon, 26 Jan 2026 12:05:06 GMT</pubDate></item><item><title>[간만에 손뜨개] 손뜨개 가방 3개 떴어요.jpg[2][6]</title><link>https://www.clien.net/service/board/park/19132305</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="1000061003.jpg" class="fr-dib fr-fil full" data-file-sn="15652574" data-gif="false" data-img-height="1080" data-img-width="2640" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652574/2e3c9479591774.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="1000061001.jpg" class="fr-dib fr-fil full" data-file-sn="15652575" data-gif="false" data-img-height="1080" data-img-width="2640" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652575/2e3c9649417d83.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="1000060999.jpg" class="fr-dib fr-fil full" data-file-sn="15652576" data-gif="false" data-img-height="1080" data-img-width="2640" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652576/2e3c96cf23b433.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;(출처: 너튜브 영상 캡쳐)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="1000060899.jpg" class="fr-dib fr-fil full" data-file-sn="15652578" data-gif="false" data-img-height="3354" data-img-width="3000" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652578/2e3ca40477a541.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;너튜브 알고리즘에 뜬 영상에 꽂혀서&lt;/p&gt;
+  &lt;p&gt;샘플로 하나 떠 보았어요. 이건 제가 쓰구요...&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="1000060968.jpg" class="fr-dib fr-fil full" data-file-sn="15652567" data-gif="false" data-img-height="2655" data-img-width="1936" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652567/2e3c31ec223e83.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;샘플 뜬 거 엄마께 보여 드렸더니..&lt;/p&gt;
+  &lt;p&gt;엄마도 하나 떠 달라해서 완성한 가방입니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;엄마 꺼 가방이 완성 될 때 쯤...&lt;/p&gt;
+  &lt;p&gt;신상 가방 튜토리얼이 딱!!&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="1000060896.jpg" class="fr-dib fr-fil full" data-file-sn="15652580" data-gif="false" data-img-height="1080" data-img-width="2640" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652580/2e3cb740f9c8fe.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;(출처: 너튜브 영상 캡쳐)&lt;/p&gt;
+  &lt;p&gt;너무 이뻐서 실 바로 주문해서 &lt;/p&gt;
+  &lt;p&gt;&lt;img alt="1000060966.jpg" class="fr-dib fr-fil full" data-file-sn="15652583" data-gif="false" data-img-height="3069" data-img-width="3000" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652583/2e3cc3be006e11.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;이렇게 완성.. ^^ 했어요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아쉬운 점은 영상 원작자가 쓴 실이 아니라서...&lt;/p&gt;
+  &lt;p&gt;영상 속 가방만큼 퀄리티가 높지 않다는 것!&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;해외직구라도해서 실을 사볼려고 했더니..&lt;/p&gt;
+  &lt;p&gt;브라질 내에서만 판매되고 있더라구요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;기회되면... 원작자가 쓴 실 구해서.. 하나 제대로 뜨고 싶네요. ㅎ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132305</guid><pubDate>Mon, 26 Jan 2026 12:22:17 GMT</pubDate></item><item><title>.전광훈 옥중서신…'.북에서 잡아가려 해'[10][1]</title><link>https://www.clien.net/service/board/park/19132302</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20260125153742704" ori-url="http://v.daum.net/v/20260125153742704" target="_blank"&gt;&lt;strong&gt;구속된 &lt;strong&gt;전광훈&lt;/strong&gt; 옥중서신…"감옥이 '피난처', 북에서 잡아가려 해"&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20260125153742704" ori-url="http://v.daum.net/v/20260125153742704" target="_blank"&gt;&lt;img alt="구속된 전광훈 옥중서신…&amp;quot;감옥이 '피난처', 북에서 잡아가려 해&amp;quot;" class="fr-fic fr-dii" src="https://search2.kakaocdn.net/argon/200x200_85_c/8bkpeTxOLyo0" width="88"/&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://v.daum.net/channel/5/home" ori-url="https://v.daum.net/channel/5/home" target="_blank"&gt;머니투데이&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;20시간전&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20260125153742704" ori-url="http://v.daum.net/v/20260125153742704" target="_blank"&gt;다음뉴스&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;매주 일요일에 진행돼 온 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이른바 '광화문 예배'가 &lt;/p&gt;
+  &lt;p&gt;25일부터 실내로 장소를 옮겼다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;뉴스1에 따르면&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 이날 예배에 참석한 한 목사는 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;특수건조물 침입 교사 등 혐의로 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;지난 22일 구속 송치된 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;전 목사&lt;/p&gt;
+  &lt;p&gt; '옥중서신'을 언급&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그는&lt;/p&gt;
+  &lt;p&gt; "(전 목사의) 옥중서신 &lt;/p&gt;
+  &lt;p&gt;제11호가 제 손에 와있는데 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그것을 보니&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 전 목사가&lt;/p&gt;
+  &lt;p&gt; 옥중에 간 것이 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;다 하나님 섭리가 있었다"며&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; "전 목사&lt;/p&gt;
+  &lt;p&gt; 구속이 문제가 아니라&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; (전 목사의) &lt;/p&gt;
+  &lt;p&gt;목숨을 노리고 있다는 것"이라고 주장했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이어&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; "북한 지령을 받아 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;대한민국 &lt;/p&gt;
+  &lt;p&gt;구석구석에서 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;전 목사 목숨을 노려&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 북한으로 &lt;/p&gt;
+  &lt;p&gt;잡아가려고 (하는 것)"이라며&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; "그래서&lt;/p&gt;
+  &lt;p&gt; 전 목사는&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; '하나님이 &lt;/p&gt;
+  &lt;p&gt;나를&lt;/p&gt;
+  &lt;p&gt; 피난처에, &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;내 생명을 지켜주려고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 나를&lt;/p&gt;
+  &lt;p&gt; 이곳에 보냈다'라는&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 메시지(를 남겼다)"고 했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이른바 &lt;/p&gt;
+  &lt;p&gt;'광화문 예배'는 &lt;/p&gt;
+  &lt;p&gt;이번 &lt;/p&gt;
+  &lt;p&gt;주말부터 실내로 장소를 옮겼다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;.....&lt;/p&gt;
+  &lt;p&gt;......&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20260125140725624" ori-url="http://v.daum.net/v/20260125140725624" target="_blank"&gt;&lt;strong&gt;&lt;strong&gt;전광훈&lt;/strong&gt; 빠진 '광화문 예배'…全 "北에 잡아가려고 해 감옥이 '피난처'&lt;/strong&gt;&lt;/a&gt;&lt;a href="http://v.daum.net/v/20260125140725624" ori-url="http://v.daum.net/v/20260125140725624" target="_blank"&gt;&lt;strong&gt;"&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://v.daum.net/channel/396/home" ori-url="https://v.daum.net/channel/396/home" target="_blank"&gt;뉴스1&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;21시간전&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20260125140725624" ori-url="http://v.daum.net/v/20260125140725624" target="_blank"&gt;다음뉴스&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20260125140725624" ori-url="http://v.daum.net/v/20260125140725624" target="_blank"&gt;전 목사, 옥중서신 통해 주장&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="http://v.daum.net/v/20260125140725624" ori-url="http://v.daum.net/v/20260125140725624" target="_blank"&gt;&lt;img alt="전광훈 빠진 '광화문 예배'…全 &amp;quot;北에 잡아가려고 해 감옥이 '피난처'&amp;quot;" class="fr-fic fr-dii" src="https://search1.kakaocdn.net/argon/200x200_85_c/912CSu0vNf70" width="88"/&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;....&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;전광훈&lt;/strong&gt; 사랑제일교회 목사를 주축으로&lt;/p&gt;
+  &lt;p&gt; 매주 일요일에 진행돼 온 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이른바 '광화문 예배'가&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 25일부터 실내로 장소를...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;남아있는.....&lt;/p&gt;
+  &lt;p&gt;2찍....&lt;/p&gt;
+  &lt;p&gt;태극기...보수들도...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;빨리...깜방에...&lt;/p&gt;
+  &lt;p&gt;들어가서....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;본인들의...생명을....&lt;/p&gt;
+  &lt;p&gt;지키세요.....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;하나님의....섭리를...&lt;/p&gt;
+  &lt;p&gt;거스리지....마세요.......&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;다....하나님이...&lt;/p&gt;
+  &lt;p&gt;2찍들을...지켜주기...위한....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;큰....그림이라는..요??&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;하나님의...뜻을....&lt;/p&gt;
+  &lt;p&gt;거스르며....&lt;/p&gt;
+  &lt;p&gt;밖에서...돌아다니지...말고...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;깜빵....&lt;/p&gt;
+  &lt;p&gt;실내에서....&lt;/p&gt;
+  &lt;p&gt;안전하게....생활하세요...&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132302</guid><pubDate>Mon, 26 Jan 2026 11:47:56 GMT</pubDate></item><item><title>지금이 바로 PC를 구매하기에 최고의 적기.jpg[10][0]</title><link>https://www.clien.net/service/board/park/19132217</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="s0FC49g2umnjcp4om.jpg" class="fr-dib fr-fil full" data-file-sn="15652483" data-gif="false" data-img-height="1420" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652483/2e36c417a00433.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="s0FC83g2umnk2vo8p.jpg" class="fr-dib fr-fil full" data-file-sn="15652484" data-gif="false" data-img-height="1275" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652484/2e36c608527c69.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="s0FC24g2umnkpa26m.jpg" class="fr-dib fr-fil full" data-file-sn="15652486" data-gif="false" data-img-height="1410" data-img-width="1024" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652486/2e36d79186a80e.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;--------&lt;/p&gt;
+  &lt;p&gt;한줄요약 : 불과 한두달전 가격만 생각해도 너무 올라 도저히 엄두가 안나지만 앞으로 오를일만 남았지 &lt;/p&gt;
+  &lt;p&gt;                 떨어질 일이 없으므로 사야 한다면 지금 사셔요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;라는 얘기네요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132217</guid><pubDate>Mon, 26 Jan 2026 10:05:38 GMT</pubDate></item><item><title>[관객수] 영화 만약에 우리 - 200만명 돌파[2][5]</title><link>https://www.clien.net/service/board/park/19132143</link><description>
+ 
+ 
+  &lt;p&gt;일요일 박스오피스도 1위를 지켜낸 영화 만약에 우리가 200만 관객 돌파에 성공했습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;최근 가뭄에 가까웠던 국내 멜로 영화에 단비같은 영화가 된 느낌이네요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132143</guid><pubDate>Mon, 26 Jan 2026 08:31:08 GMT</pubDate></item><item><title>휴... 이제 진짜 위기가 발생할 시그널이 뜬것 같습니다.[17][1]</title><link>https://www.clien.net/service/board/park/19132303</link><description>
  
  
   &lt;p&gt;&lt;a href="https://imnews.imbc.com/replay/2025/nwtoday/article/6703740_36807.html" ori-url="https://imnews.imbc.com/replay/2025/nwtoday/article/6703740_36807.html" target="_blank"&gt;[이 시각 세계] "독일, 미국 보관 금괴 1,200톤 인출 검토"&lt;/a&gt; &lt;/p&gt;
@@ -194,7 +471,7 @@
   &lt;/ol&gt;
   &lt;p&gt;즉, 현재의 금 보유량 랭킹은 **"아직은 미국이 짱"**이라고 말하고 있지만, 수면 아래에서는 **"왕관을 뺏으려는 중국의 매집"**과 **"눈치 보는 유럽의 금 사수 작전"**이 치열하게 벌어지고 있는 상태입니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132303</guid><pubDate>Mon, 26 Jan 2026 11:53:23 GMT</pubDate></item><item><title>[단독]李대통령 '왜 나눈지 모르겠다'던 발전 5개사…감사원 특별감사[4][11]</title><link>https://www.clien.net/service/board/park/19132288</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132303</guid><pubDate>Mon, 26 Jan 2026 11:53:23 GMT</pubDate></item><item><title>[단독]李대통령 '왜 나눈지 모르겠다'던 발전 5개사…감사원 특별감사[5][16]</title><link>https://www.clien.net/service/board/park/19132288</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/277/0005711851?sid=101" ori-url="https://n.news.naver.com/mnews/article/277/0005711851?sid=101" target="_blank"&gt;[단독]李대통령 "왜 나눈지 모르겠다"던 발전 5개사…감사원 특별감사&lt;/a&gt; 아시아경제&lt;/p&gt;
@@ -206,7 +483,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;정상화 가나요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132288</guid><pubDate>Mon, 26 Jan 2026 11:32:20 GMT</pubDate></item><item><title>LS, 대통령 경고에 백기…에식스솔루션즈 상장 신청 철회[1][6]</title><link>https://www.clien.net/service/board/park/19132191</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132288</guid><pubDate>Mon, 26 Jan 2026 11:32:20 GMT</pubDate></item><item><title>LS, 대통령 경고에 백기…에식스솔루션즈 상장 신청 철회[1][8]</title><link>https://www.clien.net/service/board/park/19132191</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/092/0002407572?sid=105" ori-url="https://n.news.naver.com/mnews/article/092/0002407572?sid=105" target="_blank"&gt;LS, 대통령 경고에 백기…에식스솔루션즈 상장 신청 철회&lt;/a&gt; 지디넷코리아&lt;/p&gt;
@@ -261,13 +538,13 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;여하간 양산에 제일 근접한게 삼성입니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19131709</guid><pubDate>Sun, 25 Jan 2026 14:29:18 GMT</pubDate></item><item><title>잡담 토스가 애플페이 도입할거라는 말이나오는데[12][0]</title><link>https://www.clien.net/service/board/cm_iphonien/19132025</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19131709</guid><pubDate>Sun, 25 Jan 2026 14:29:18 GMT</pubDate></item><item><title>잡담 토스가 애플페이 도입할거라는 말이나오는데[13][1]</title><link>https://www.clien.net/service/board/cm_iphonien/19132025</link><description>
  
  
   진짜일까요? 인스타 피드 이리저리 보다가 저 내용이 나왔는데 진짜일까요? 나온다면 대환영인데 신한카드도 지지부진한 마당에 잘나올지 모르겠네요 
   &lt;br/&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19132025</guid><pubDate>Sun, 25 Jan 2026 22:01:43 GMT</pubDate></item><item><title>[속보] 신규 원전 2기·SMR 1기 추진 확정…'11차 전기본 계획대로'[18][2]</title><link>https://www.clien.net/service/board/park/19132237</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19132025</guid><pubDate>Sun, 25 Jan 2026 22:01:43 GMT</pubDate></item><item><title>[속보] 신규 원전 2기·SMR 1기 추진 확정…'11차 전기본 계획대로'[21][2]</title><link>https://www.clien.net/service/board/park/19132237</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/421/0008734078?sid=101" ori-url="https://n.news.naver.com/mnews/article/421/0008734078?sid=101" target="_blank"&gt;[속보] 신규 원전 2기·SMR 1기 추진 확정…"11차 전기본 계획대로"&lt;/a&gt;&lt;/p&gt;
@@ -415,7 +692,7 @@
   &lt;/table&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132237</guid><pubDate>Mon, 26 Jan 2026 10:38:16 GMT</pubDate></item><item><title>정부, 돌연 ‘원전 부활’ 선언…“신규 원전 2기 패스트트랙 가동”[23][2]</title><link>https://www.clien.net/service/board/park/19132227</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132237</guid><pubDate>Mon, 26 Jan 2026 10:38:16 GMT</pubDate></item><item><title>정부, 돌연 ‘원전 부활’ 선언…“신규 원전 2기 패스트트랙 가동”[24][2]</title><link>https://www.clien.net/service/board/park/19132227</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -434,14 +711,14 @@
   &lt;p&gt;희한하네요.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132226</guid><pubDate>Mon, 26 Jan 2026 10:17:32 GMT</pubDate></item><item><title>코스닥 매수 사이드카라니 ㅎㄷㄷ;[12][7]</title><link>https://www.clien.net/service/board/park/19132222</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132226</guid><pubDate>Mon, 26 Jan 2026 10:17:32 GMT</pubDate></item><item><title>코스닥 매수 사이드카라니 ㅎㄷㄷ;[12][8]</title><link>https://www.clien.net/service/board/park/19132222</link><description>
  
  
   &lt;p&gt;매도 사이드카도 아니고 매수사이드카를 보는 날이 오는군요;;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;역시 잼통 크...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132222</guid><pubDate>Mon, 26 Jan 2026 10:11:15 GMT</pubDate></item><item><title>나이 들수록 사람에 대한 기대치가 낮아지나요?[16][0]</title><link>https://www.clien.net/service/board/park/19132221</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132222</guid><pubDate>Mon, 26 Jan 2026 10:11:15 GMT</pubDate></item><item><title>나이 들수록 사람에 대한 기대치가 낮아지나요?[17][1]</title><link>https://www.clien.net/service/board/park/19132221</link><description>
  
  
   &lt;p&gt;20대때도 있었긴 하지만 잘 못봤는데&lt;/p&gt;
@@ -461,7 +738,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132221</guid><pubDate>Mon, 26 Jan 2026 10:09:58 GMT</pubDate></item><item><title>합당 진행.. 진짜 당원 투표만이 장땡인가요[28][5]</title><link>https://www.clien.net/service/board/park/19132215</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132221</guid><pubDate>Mon, 26 Jan 2026 10:09:58 GMT</pubDate></item><item><title>합당 진행.. 진짜 당원 투표만이 장땡인가요[28][6]</title><link>https://www.clien.net/service/board/park/19132215</link><description>
  
  
   &lt;p&gt;지방선거 승리를 위해서 일부 당원들의 반발도 무시하고 합당을 할 수 있는 거라면요.&lt;/p&gt;
@@ -673,7 +950,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;strong&gt;&lt;u&gt;자세한 내용은 출처(기사)를 참고하세요&lt;/u&gt;&lt;/strong&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132079</guid><pubDate>Sun, 25 Jan 2026 23:37:44 GMT</pubDate></item><item><title>전자기기 800MB/s 읽기 속도의 microSD Express 카드 성능 비교[15][0]</title><link>https://www.clien.net/service/board/use/19131923</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132079</guid><pubDate>Sun, 25 Jan 2026 23:37:44 GMT</pubDate></item><item><title>전자기기 800MB/s 읽기 속도의 microSD Express 카드 성능 비교[17][2]</title><link>https://www.clien.net/service/board/use/19131923</link><description>
  
  
   &lt;p&gt;캠코더 사용하는 중에 용량이 커서 PC 옮길때 마다 오래 걸리는걸 해결해 보고자 좀 알아 보던중에 microSD Express 규격을 알게 되었습니다. sdcard도 가격이 많이 올랐기도 하고, 재고가 애매해서 사다 보니 3종류를 사게 되었는데, 사기전에 벤치마크 자료를 찾기 어려웠어서, 구매후 벤치 결과 공유차 올려 봅니다. &lt;/p&gt;
@@ -762,7 +1039,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132207</guid><pubDate>Mon, 26 Jan 2026 09:47:39 GMT</pubDate></item><item><title>[속보]환율, 전일대비 19.7원 내린 1446.1원 출발[2][9]</title><link>https://www.clien.net/service/board/park/19132189</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132207</guid><pubDate>Mon, 26 Jan 2026 09:47:39 GMT</pubDate></item><item><title>[속보]환율, 전일대비 19.7원 내린 1446.1원 출발[3][9]</title><link>https://www.clien.net/service/board/park/19132189</link><description>
  
  
   &lt;p&gt;&lt;a href="https://mobile.newsis.com/view/NISX20260126_0003489561" ori-url="https://mobile.newsis.com/view/NISX20260126_0003489561" target="_blank"&gt;https://mobile.newsis.com/view/NISX20260126_0003489561&lt;/a&gt; &lt;/p&gt;
@@ -951,7 +1228,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132120</guid><pubDate>Mon, 26 Jan 2026 05:44:45 GMT</pubDate></item><item><title>생활문화 학교폭력 그리고 흐른 8년의 시간[18][49]</title><link>https://www.clien.net/service/board/use/19132108</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132120</guid><pubDate>Mon, 26 Jan 2026 05:44:45 GMT</pubDate></item><item><title>생활문화 학교폭력 그리고 흐른 8년의 시간[23][71]</title><link>https://www.clien.net/service/board/use/19132108</link><description>
  
  
   &lt;p&gt;&lt;strong&gt;2018년&lt;/strong&gt;&lt;/p&gt;
@@ -1278,7 +1555,7 @@
   &lt;p&gt;긴 글 읽어주셔서 감사합니다&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19132108</guid><pubDate>Mon, 26 Jan 2026 08:33:27 GMT</pubDate></item><item><title>신천지 총출동[37][90]</title><link>https://www.clien.net/service/board/park/19132140</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19132108</guid><pubDate>Mon, 26 Jan 2026 08:33:27 GMT</pubDate></item><item><title>신천지 총출동[46][105]</title><link>https://www.clien.net/service/board/park/19132140</link><description>
  
  
   &lt;p&gt;언제부터 합당을 당원투표를했다고 득실득실합니까?&lt;/p&gt;
@@ -1904,173 +2181,4 @@
   &lt;p&gt;&lt;img alt="IMG_1025.jpeg" class="fr-dib fr-fil full" data-file-sn="15652211" data-gif="false" data-img-height="2752" data-img-width="2064" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652211/2e0a515173c7b1.jpeg?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;차는 너무 예뻐요..(저는 테슬라가 아른거리지만 ㅎㅎㅎ ㅠ)&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19131966</guid><pubDate>Sun, 25 Jan 2026 20:32:53 GMT</pubDate></item><item><title>네이버 뉴스 보니 인간 이하의 자들이 넘쳐납니다.[12][7]</title><link>https://www.clien.net/service/board/park/19131997</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="Cap 2026-01-25 18-52-20.png" class="fr-dib fr-fil full" data-file-sn="15652231" data-gif="false" data-img-height="1498" data-img-width="1452" data-role="attach-image" src="https://edgio.clien.net/F01/2026/1/15652231/2e0bedecc70288.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;故 이해찬 전 총리의 별세 기사에&lt;/p&gt;
-  &lt;p&gt;인간으로서 차마 할 수 없는 패륜적인&lt;/p&gt;
-  &lt;p&gt;망언을 늘어놓는 자들이 있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;고인이 생전에 뭘 그리 잘못한 게 있다고&lt;/p&gt;
-  &lt;p&gt;그러는지 모르겠는데 무엇이 이들을&lt;/p&gt;
-  &lt;p&gt;인간 이하의 망나니로 만들었는지 모르겠습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지금은 이런 패륜적인 댓글 올리며 집에서&lt;/p&gt;
-  &lt;p&gt;낄낄거리고 있겠지만 이런 행동에 대한&lt;/p&gt;
-  &lt;p&gt;대가를 치러야 할 날이 반드시 올겁니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19131997</guid><pubDate>Sun, 25 Jan 2026 21:06:30 GMT</pubDate></item><item><title>추모의날마저 그렇게 조작자료 올리면서 흡집내기 하고 싶습니까??[8][51]</title><link>https://www.clien.net/service/board/park/19132086</link><description>
- 
- 
-  &lt;p&gt;짜증이 나네요.. &lt;/p&gt;
-  &lt;p&gt;당신들이 인간입니까??&lt;/p&gt;
-  &lt;p&gt;민주당의 거목이 가신 날인데...&lt;/p&gt;
-  &lt;p&gt;악마화할려고 조작자료 가져와서는...&lt;/p&gt;
-  &lt;p&gt;당신들이 인간입니까??&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132086</guid><pubDate>Mon, 26 Jan 2026 00:07:48 GMT</pubDate></item><item><title>Q/A G30 BMW 520i 저단기어에서 RPM 상승현상에 대해 질문드립니다.[21][0]</title><link>https://www.clien.net/service/board/cm_car/19131974</link><description>
- 
- 
-  &lt;p&gt;안녕하세요. 2020년식 (2019년 11월 27일 출고) G30 520i를 신차 출고해서 지금까지 타고 있습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;제가 질문드릴 현상은&lt;br/&gt;
-    1. 과속방지턱 넘은 직후 엑셀을 다시 밟을 때&lt;br/&gt;
-    2. 지하주차장에서 지상으로 올라갈때. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이렇게 두가지 상황에서 기어가 바뀌지 않고 저단기어에서 RPM만 심하게 올라가는 현상이 있습니다. (D상태)&lt;/p&gt;
-  &lt;p&gt;즉, D3로 올라가야 하는 상황에서 D2에서 머물러서 RPM만 많이 올라가는 그런 상황입니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;제가 출고할때부터 계속 이랬는데. 그럴때마다 매뉴얼로 바꾸어서 제가 직접 기어변속 해왔어서 그냥 몇년째 계속 타다가 &lt;/p&gt;
-  &lt;p&gt;요즘들어 이 부분이 차량 결함인가? 아니면 소프트웨어 문제인가? 하는 의문이 많이 들기 시작해서 글을 올리게 됐습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;원래 더 일찍 몇년전에 굴러간당에 글 쓰려 했지만 계속 미루다가 오늘에서야 질문드리게 됐습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;혹시 제 차량의 이런현상을 똑같이 겪고 계시거나 겪으셨던 분들 그리고 이 현상에 대한 해결책 알고 계시는 분들 계시면 조언부탁드립니다.&lt;br/&gt;
-    미리 감사합니다. &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19131974</guid><pubDate>Sun, 25 Jan 2026 20:47:43 GMT</pubDate></item><item><title>한때 같은 신림동 거주자로서 이해찬 님을 추모합니다[5][28]</title><link>https://www.clien.net/service/board/park/19132069</link><description>
- 
- 
-  &lt;p&gt;제가 관악구 신림동에 살며 중·고등학교를 나왔습니다.&lt;/p&gt;
-  &lt;p&gt;1980년대 서울에서 손꼽히는 산동네에 판자집이 있던 동네였습니다.&lt;/p&gt;
-  &lt;p&gt;이해찬 님은 서울대 입구 동네, 동네 사람들이 289 종점이라고 부르는 동네에서 서점을 하셨죠. 제가 대학 갈 때쯤에는 아마 동생분이 하고 있었던가 그랬던 것 같습니다. 서울대 다니신 분들은 잘 아시겠지만, 저는 그저 그 동네 산 너머 사는 사람이어서 잘은 모릅니다.&lt;/p&gt;
-  &lt;p&gt;신림동은 난곡(낙골)이라는 깊숙한 산동네가 있고 그 산동네 뒷산(남강고 옆을 지나는 길)을 넘어가면 서울대와 그 주변 동네가 있었어요. 서울대 앞에 미림여고가 있었는데 저희 누나가 거길 나왔습니다. 저는 그 동네는 아니고 신림사거리 근처에 있는 고등학교를 나왔구요. 중학교도 신림동 주변 학교를 나왔는데, 선생님들이 대부분 서울대를 나온 초임교사들이었어요. 오늘 동생(여동생이 중학교 동창입니다. 남녀공학이어서)과 같이 밥을 먹었는데 중학교 시절 추억을 떠올렸습니다. 나중에 전교조 핵심들이 된 선생님들 덕분에 그 엄혹한 시기에 거의 매를 맞지 않았어요. 그러다 사립고등학교 가서 교사들의 폭력이 얼마나 무서운 시대인지 알게 됐죠. 그때 그 선생님들도 이해찬 님과 이런저런 인연이 다들 있는 분들이었으리라 생각합니다. 선생님들이 이해찬 님 학생운동 후배셨을테니 말이죠.&lt;/p&gt;
-  &lt;p&gt;1987년 저희 반지하집이 물에 잠겨 어쩔 수 없이 양천구 목동으로 이사를 가서 그다음해 총선에서 이해찬 님이 제가 살던 관악을(신림동이 관악을, 봉천동이 관악갑이었더라구요)에서 당선되는 모습을 보지는 못했지만, 동생이 계속 신림동에 있는 고등학교를 다니고 친구들이 신림동에 많이 살아 선거 소식을 접했었습니다. 이해찬 님이 당선돼 무척 기뻤던 기억이 나네요. 물론 대학교 가서 제 정치적 성향은 전혀 달랐지만. 저희 아버지가 김대중 대통령의 열렬한 지지자였기에 특히 기뻐하셨던 기억이 납니다.&lt;/p&gt;
-  &lt;p&gt;청양 출신에 세종시에서 마지막 국회의원을 하셨기에 충청권 의원으로 기억하시는 분들이 많지만 청년, 중년을 모두 관악구에서 지낸 그를 추모합니다. 한동안 이웃 주민으로 살아서 무척 좋았고 든든했다는 말씀 드리고 싶네요.&lt;/p&gt;
-  &lt;p&gt;감사합니다. 진심으로 명복을 빕니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132069</guid><pubDate>Sun, 25 Jan 2026 23:03:16 GMT</pubDate></item><item><title>[기고] 존 케리: 동맹이 사라지고 나면 그 소중함을 깨닫게 될 것이다[8][10]</title><link>https://www.clien.net/service/board/park/19132031</link><description>
- 
- 
-  &lt;h2&gt;[기고] 존 케리: 동맹이 사라지고 나면 그 소중함을 깨닫게 될 것이다&lt;/h2&gt;
-  &lt;p&gt;&lt;a href="https://www.nytimes.com/2026/01/25/opinion/john-kerry-greenland-alliances.html" ori-url="https://www.nytimes.com/2026/01/25/opinion/john-kerry-greenland-alliances.html" target="_blank"&gt;Opinion | John Kerry: Trump Greenland Deal Can’t Undo Damage to NATO - The New York Times&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;2026년 1월 25일&lt;/strong&gt; &lt;strong&gt;글: 존 F. 케리 (2013~2017년 미 국무장관 역임)&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;전적으로 트럼프 대통령이 자초한 그린란드 위기가 표면적으로는 성공적으로 완화된 것처럼 보이자, 전 세계가 안도의 한숨을 내쉬는 것도 무리는 아닙니다. 그러나 지난주 스위스 다보스에서 마크 카니 캐나다 총리가 선언했듯이, 우리는 지금 "파국의 한복판"에 서 있습니다.&lt;/p&gt;
-  &lt;p&gt;이는 그린란드 사태 이전부터 이미 예견된 일이었습니다. 그린란드의 현상을 유지하려는 허울뿐인 체계만으로는, 지난 1년간의 아슬아슬한 위기 상황과 마지막 순간에 이루어진 외교적 협의들로 인해 훼손된 소중한 글로벌 관계를 회복할 수 없습니다. 트럼프 대통령이 관계를 끊어버리는 것만큼이나 이를 다시 재건하는 것은 결코 쉽지 않은 일입니다.&lt;/p&gt;
-  &lt;p&gt;그럼에도 불구하고 우리는 관계를 재건해야만 합니다. 미국인들은 지구상에서 가장 강력한 국가라 할지라도 마음이 맞는 친구들이 많을 때 가장 강력해진다는 사실을 알아야 합니다.&lt;/p&gt;
-  &lt;p&gt;논의의 시작은 트럼프 대통령이 아무런 실익 없이 무엇을 위태롭게 만들고 있는지를 확인하는 것에서 출발합니다. 대통령은 그린란드인들이 결코 판매 대상이 아니라고 분명히 밝힌 북극의 섬을 두고 동맹국들을 위협했으나, 결국 빈손으로 돌아왔습니다.&lt;/p&gt;
-  &lt;p&gt;트럼프 대통령은 광범위하고 규칙에 기반한 국제 질서 속에서 미국의 우호 관계를 유지하는 것이 미국에 불공평한 세금을 지우는 것과 같다고 주장합니다. 그러나 NATO(북대서양조약기구)는 지난 76년 동안 미국의 군수업체들에게 축복과도 같았습니다. 여기에는 약 15개 NATO 회원국이 사용 중이거나 도입 예정인 F-35 전투기를 비롯해 패트리어트 미사일, 드론, 헬리콥터, 레이더 시스템을 제조하는 기업들이 포함됩니다. 유럽 국가들은 미국 전체 군사 수출의 약 35%를 차지하고 있으며, 이는 유럽이 우리 군수 기업들의 최대 지역 고객임을 의미합니다.&lt;/p&gt;
-  &lt;p&gt;트럼프 대통령이 다보스에서 그린란드 프레임워크라는 일종의 '참가상'을 손에 쥐고 떠났을 때 시장은 잠시 안도했지만, 우리는 왜 지난주의 격동이 금융 시장을 요동치게 했는지 기억해야 합니다. 유럽은 미국의 최대 교역 및 투자 파트너로, 연간 약 2조 달러 규모의 무역과 5조 달러 이상의 상호 투자를 담당하며 대서양 양안에 걸쳐 수백만 개의 일자리를 지탱하고 있습니다. 제정신을 가진 사람이라면 우리 나라의 최대 외국인 투자자를 소외시키는 지정학적 치킨 게임에 뛰어들겠습니까?&lt;/p&gt;
-  &lt;p&gt;오랫동안 존중받아온 관계를 말살하고 친구와 적을 혼동하는 행위는 우리의 적이 아닌 바로 우리 스스로를 고립시킬 뿐입니다. 트럼프 대통령이 캐나다를 모욕하고 관세로 뒤덮겠다고 선언한 지 1년 만에, 북쪽의 이웃 나라는 중국 전기차에 시장을 개방하는 계약을 체결했습니다. 이 계약은 디트로이트가 아닌 베이징에 수십억 달러의 가치를 안겨줄 것입니다.&lt;/p&gt;
-  &lt;p&gt;설령 대서양 관계를 보존해야 할 경제적 근거가 이보다 덜 설득력 있다 하더라도, 역사는 우리가 왜 19세기 방식의 세력권 시스템으로 돌아가는 것이 위험한지를 보여줍니다. 제국을 갈망하는 열강들 사이의 영토 분쟁은 제1차 세계대전 당시 약 2,000만 명의 목숨을 앗아갔습니다. 제2차 세계대전에서는 전 세계 인구의 3%에 달하는 6,000만에서 7,000만 명이 희생되었습니다.&lt;/p&gt;
-  &lt;p&gt;그 이후로는 이와 원격으로라도 유사한 비극이 일어나지 않았습니다. 증오, 경쟁, 탐욕, 극단주의가 사라졌기 때문이 아닙니다. 협력적인 국제 질서에 전념한 미국이 주도한 전후 기구들과 동맹들이 그러한 악의적인 본능을 억제했기 때문입니다. 미국은 인류 역사상 가장 위대한 국가 안보 보험을 구축했던 것입니다.&lt;/p&gt;
-  &lt;p&gt;강대국들이 명분 없이 지도를 수정하고 현지 민족을 굴복시키는 세상은 더욱 위험합니다. 미국 대통령이 국경과 주권이 마음대로 지워질 수 있는 낡은 관습인 것처럼 암시할 때마다, 블라디미르 푸틴 러시아 대통령과 시진핑 중국 국가주석은 도덕적 자율성을 얻게 됩니다. 우리는 그들이 우리 대통령의 언어를 빌려 키이우와 타이베이에서 오랫동안 갈구해온 전리품을 챙기려는 행위를 정당화하는 모습을 쉽게 상상할 수 있습니다.&lt;/p&gt;
-  &lt;p&gt;미국은 광범위한 글로벌 이슈를 해결하기 위해서도 관계가 필요합니다. 인공지능은 엄청난 잠재력을 가지고 있지만, 광인들이 악의적인 목적으로 사용하지 못하도록 국제적인 가드레일이 필요합니다. 질병, 기후 변화, 에너지 안보, 핵심 광물 공급, 이주 행렬, 혹은 러시아와 중국의 확장주의와 같은 도전 과제는 개별 국가가 단독으로 해결할 수 없습니다.&lt;/p&gt;
-  &lt;p&gt;제2차 세계대전 이후 수십 년 동안 공화당과 민주당 대통령들은 제국주의 열강이라는 이미지를 벗기 위해 열심히 노력해 왔습니다. 그러나 지금 미국은 그린란드에서 남미에 이르는 21세기 제국을 추구한다는 메시지를 보내고 있습니다.&lt;/p&gt;
-  &lt;p&gt;역대 대통령들이 옳았고, 트럼프 대통령은 틀렸습니다. 동맹과 평화를 소중히 여기는 하원과 상원의 의원들, 그리고 모든 지도자는 이번 그린란드 소동의 교훈을 헛되이 보내서는 안 됩니다. 우리는 다자주의의 모멘텀을 갱신해야 하는 세상을 위해 일어서야 합니다. 그렇지 않으면 우리는 친구들이 우리 없이 각자도생하는 세상을 기본값으로 받아들이게 될 것입니다. &lt;strong&gt;'고립된 미국(America alone)'은 '미국 우선주의(America first)'가 아닙니다.&lt;/strong&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132031</guid><pubDate>Sun, 25 Jan 2026 22:23:40 GMT</pubDate></item><item><title>정보 언제나 찾아오는 명절 기아 장기시승[17][8]</title><link>https://www.clien.net/service/board/cm_car/19132033</link><description>
- 
- 
-  &lt;p&gt;언제나 오는 시승입니다.&lt;/p&gt;
-  &lt;p&gt;매번 실패하지만 역시나 도전해 봅니다....이번엔 되려나..&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://www.kia.com/kr/event/detail?eventId=495&amp;amp;statusCd=PEND" ori-url="https://www.kia.com/kr/event/detail?eventId=495&amp;amp;statusCd=PEND" target="_blank"&gt;https://www.kia.com/kr/event/detail?eventId=495&amp;amp;statusCd=PEND&lt;/a&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19132033</guid><pubDate>Sun, 25 Jan 2026 21:57:11 GMT</pubDate></item><item><title>‘추모 맞아?’ 조국, 막무가내식 고인 기사 업로드 눈길[28][16]</title><link>https://www.clien.net/service/board/park/19132056</link><description>
- 
- 
-  &lt;p&gt;그냥 정상적인 애도만 해주세요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132056</guid><pubDate>Sun, 25 Jan 2026 22:27:29 GMT</pubDate></item><item><title>'조국 sns에 올라온 추모 사진'[46][11]</title><link>https://www.clien.net/service/board/park/19132047</link><description>
- 
- 
-  &lt;p&gt;현재 조국 sns에 올라온 추모 사진입니다&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132047</guid><pubDate>Sun, 25 Jan 2026 22:07:12 GMT</pubDate></item><item><title>클리앙은 다른 커뮤에 비하면 다양성이 존중되는 곳입니다.[5][15]</title><link>https://www.clien.net/service/board/park/19132038</link><description>
- 
- 
-  &lt;p&gt;전 민주진영 커뮤나 채널도 많이 들여다보고, 심지어 해축 좋아해서 펨코 같은 곳도 자주 갈 때가 있었습니다.&lt;/p&gt;
-  &lt;p&gt;그런데 솔직히 클리앙은 그나마 다른 커뮤들에 비하면 양호합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;욕설이 난무하지 않는 다는 점만 해도 전 좋습니다.&lt;/p&gt;
-  &lt;p&gt;기본적으로 말의 인플레가 너무 높은 걸 좋아하지 않다 보니, 성향에 상관없이 분노만 보이는 커뮤니티나 욕설을 쉽게 허용하는 곳은 활동하기는 싫더군요. 그래서 전 커뮤나 여러 채널들도 다양하게 보지만 주로 활동하는 커뮤는 네이버 해축 카페 제외하면 거의 클리앙 밖에 없는 것 같습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;물론 클량도 특정 인사들에 대한 호감도가 상당히 높기는 하죠.&lt;/p&gt;
-  &lt;p&gt;그런데 애초에 정치성향 짙은 커뮤가 다 그렇습니다.&lt;/p&gt;
-  &lt;p&gt;오히려 클량은 좀 덜한 편이죠.&lt;/p&gt;
-  &lt;p&gt;공장장이나 정청래 대표에 대한 비판이 올라오는 것 자체가 다른 곳보다는 그나마 좀 더 자유롭다는 뜻입니다.&lt;/p&gt;
-  &lt;p&gt;물론 반대 의견을 가지신 분들도 계시겠지만 정치 커뮤중에 이런 정도 의견이라도 오가는 곳이 많지 않습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;저처럼 수십 년 민주당 지지해왔지만 계파색 옅은 지지자도 있고&lt;/p&gt;
-  &lt;p&gt;특정 인사들의 강성 지지층 분도 계실테고..&lt;/p&gt;
-  &lt;p&gt;또 저처럼 공장장을 좋아하면서도 부분적으로 경계하는 분이 계실테고,&lt;/p&gt;
-  &lt;p&gt;더 강성으로 지지하시는 분들도 계시겠죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다 나름의 이유가 있으리라 봅니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;클량을 포함해서 4050 분들이 왜 민주진영 인사들에 대한 비판을 쉬이 용인하기 어려운지는 이해합니다.&lt;/p&gt;
-  &lt;p&gt;우리는 한몸이라는 공감대가 있기 때문이죠..노통께서 어떻게 무너지시는지 경험했고, 이후로 민주진영 인사들이 얼마나 고초를 겪었는지 체감했기 때문입니다.&lt;/p&gt;
-  &lt;p&gt;저 역시 똑같습니다. 그랬기 때문에 당대표 선거에서 과도한 비난으로 분열을 더 확산시키는 분들을 경계했고, 이낙연이 민주진영 전체 분위기를 흐릴 때는 그에 맞섰고, 문통 때는 정말 하루 종일 민주진영을 근거 없이 폄하하는 사람들과 싸웠습니다. 언제나 우리를 호시탐탐 노리고 갈라치려는 상대가 있었기 때문에 내부의 문제를 덜 비판하고, 가끔 흐린 눈도 하면서 우리의 문제에 대해서는 슬쩍 모른 척 할 때도 많았습니다. 이건 저 뿐만이 아니라 클량 4050 분들 대부분 그러실 것이라 보지만, 우리 입장에서는 어쩔 수 없는 부분이 있었습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;당시에 조중동은 지금보다 힘이 있었고, 판, 검사들 역시 지금보다 힘이 강했죠.&lt;/p&gt;
-  &lt;p&gt;계엄을 해도 지지해주는 성향을 가진 영남은 난공불락이었습니다.&lt;/p&gt;
-  &lt;p&gt;우리끼리 뭉치지 않고는 이길 방도가 없었죠.&lt;/p&gt;
-  &lt;p&gt;원하는 방향을 위해서는 결국 정권을 가져와야 하는데 뭉치지 않고서는 아예 정권을 가져올 수 없다보니 내부의 문제에 대해서도 일부분 눈을 감았고 정당한 비판에 대해서도 분열을 걱정하면서 모른 척 했습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다만, 문통 거치고 이재명 대표 거쳐서 현 정부까지 오면서 정치를 바라보는 시각, 그리고 정치인들을 바라보는 시각에 대해서 좀 변하기는 했습니다. 특히 이재명 대통령을 보면서 생각이 많이 변한 측면은 있습니다. &lt;/p&gt;
-  &lt;p&gt;제가 이념적, 또는 인간적 관점에서 좋아하다가 정치인으로 실망한 사람은 많았지만, 반대의 경우는 이재명 대통령이 처음입니다. &lt;/p&gt;
-  &lt;p&gt;사람을 보는 관점, 정치인과 대통령을 바라보는 관점을 다르게 해준 분입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지금도 전 민주진영 전체의 이익이 최우선인 사람입니다. &lt;/p&gt;
-  &lt;p&gt;하지만, 과거에는 민주진영 전체의 이익을 이념적 이익으로 주로 봤다면, 지금은 이념적 이익과 정치적 실익으로 좀 나누어서 보려고 노력합니다. 그래서 과거보다는 좀 덜 이념적으로 민주진영 전체의 실익을 냉정하게 보고 싶다는 생각은 듭니다.&lt;/p&gt;
-  &lt;p&gt;또한 현실정치에 대해서 좀 더 심도있게 고민을 하게 되는 측면도 생기더군요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;모든 국민의 마음에 들 수는 없어도 선거는 결국 한표라도 더 많은 마음을 얻어야 하는 일입니다.&lt;/p&gt;
-  &lt;p&gt;과거처럼 이념적인 차원에서 투쟁적인 심정으로 특정 인사들을 더 지키려는 마음은 좀 줄어들었습니다. 그게 국민 다수와 민주진영 전체의 실익이 되는지 여부를 먼저 따지게 되더군요. 과거에는 좀 더 뜨거운 가슴으로 정치를 바라봤다면 요즘은 어떤 선택이 민주정부가 실질적으로  좀 더 많은 국민들에게 사랑받고 연속적으로 정권을 가져올 수 있는지 여부를 좀 더 바라보게 되는 것 같습니다. 시대가 변하고 있으니까요..&lt;/p&gt;
-  &lt;p&gt;제가 심정적으로 답답한 마음 때문에 클리앙에서 이대남 비판을 가끔 하던 사람이지만, 대통령님의 발언에는 또 상당한 공감을 합니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;겸공 박현광 기자가 가짜뉴스와 관련해서 젊은 세대 지지율 저하를 연관지어서 질문한 적이 있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;대통령 답변은&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;"가짜뉴스 때문이라고는 단정짓지 않는다. 기회의 총량이 줄어들었고, 그들에게는 우리도 이제 기득권 처럼 보인다" &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이런 뉘앙스였습니다. 이후로, 이대남 전체를 비난하는 마음은 좀 줄여야겠다는 생각은 듭니다. 그것이 민주진영에 조금 더 실익이 되고, 나라 전체를 위해서도 낫지 않을까 싶은 생각은 듭니다. 비난은 쉽지만, 설득은 어렵죠. 가짜뉴스를 근절하는 방안도 중요하지만, 세대 갈등은 결국 이해하고 설득하려는 노력 역시 같이 병행되어야 하는 것이 아닌가 싶습니다. 물론 우리도 도움이 필요하고, 우리도 지원이 필요하고, 우리도 이해가 필요하죠. 그래도 좀 더 이해받고, 좀 더 사랑받고, 좀 더 도움이 필요한 건 청년세대가 아닐까 싶습니다. 이대남들도 너무 SNS의 정보와 이념에 휘둘리지 말고, 심정적으로 대통령이 싫더라도 그가 하는 말 속에서 최소한 이대남을 이해하고 싶어하는 그 노력은 좀 알아줬으면 합니다. 민주진영만큼 청년세대를 지원하기 위해 노력한 정권도 없습니다. 세상을 너무 이념적으로 바라보거나 불만의 기준으로 바라보고 늘 이념과 불만이 같은 사람들만 만나게 되면 그 속에 너무 빠지게 됩니다. 가끔은 다른 이야기에도 일부러 귀를 좀 기울이면서 자신을 환기해 나가는 것도 필요하죠.  &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;차치하고,&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;전 요즘 너무 정치적인 이익이 노골적으로 보이는 민주진영 인사들을 가장 비판하고 경계합니다.&lt;/p&gt;
-  &lt;p&gt;자신의 정치적 이익을 원하는 정도가 민주진영 전체의 실익을 넘지 않아야 한다고 생각합니다.&lt;/p&gt;
-  &lt;p&gt;정치인이 일정 수준 정치적 욕심을 부리는 건 전 나쁘지 않다고 봅니다.&lt;/p&gt;
-  &lt;p&gt;일정 수준 자기 정치 하는 행위도 전 그러려니 합니다.&lt;/p&gt;
-  &lt;p&gt;그 과정에서 옥석이 가려지기도 하니까요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다만, 본인이 의도했든 아니든간에 그런 행위가 제가 생각하는 기준에서 민주진영 전체의 실익을 해치고 있다면 그에 대해서는 과거처럼 용인이 되지는 않습니다. 시대가 변했고 민주당도 변했고 변해가야 하니까요. 누가 되었든간에 자기 정치를 위해서 지지자들을 곶감처럼 여기는 행위는 지양해야 합니다. 그런 행위를 의도했다면 그건 명백한 잘못이고, 의도하지 않았는데 그런 상황이 발생했다면 그건 실력이 부족했다는 뜻입니다. 전 여전히 민주진영의 분열을 언제나 걱정합니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그럼에도 분열을 걱정하는 지지자들의 마음을 자기 정치에 이용하는 모습을 보이는 정치인에 대해서는 누가 되었든 용인하기 어렵습니다. 제가 좋아하던 정치인이라도 전 이제 단순히 말의 진정성을 보지 않습니다. 누군가의 말처럼 진정성을 우리는 알 수 없으니까요. 사람이 아닌 상황을 보고 판단하려는 노력이 민주 진영 에서도 좀 필요한 것이 아닌가 싶습니다. 그래야 오히려 더한 분열과 분란이 덜 생길 수 있습니다. 누군가를 좋아하더라도 휘둘리는 수준까지 가서는 안됩니다. 우리가 정치인을 곶감처럼 이용해야지, 정치인이 우리를 주머니 속의 곶감처럼 여기게 만들면 안된다는 생각이 듭니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;거듭,  '어차피 자신을 비판하거나 버리지 못할 것' 이라고 생각하듯이 행동하는 정치인을 이제는 잘 가려내야 할 시기입니다.&lt;/p&gt;
-  &lt;p&gt;누구나 진정성을 말하고, 누구나 국민을 말하고, 누구나 당원을 말합니다.&lt;/p&gt;
-  &lt;p&gt;하지만 진정성은 말에 있지 않습니다. 그 순간의 상황에 있죠.&lt;/p&gt;
-  &lt;p&gt;과거에 진정성 있던 사람들도 현재는 지지자들을 주머니속의 곶감처럼 여기는 정치인으로 변했을 수 있습니다.&lt;/p&gt;
-  &lt;p&gt;자기 최면에 빠지지 않도록, 우리들도 이제는 좀 더 냉철한 시선으로 민주진영 인사들을 바라봐야 할 때가 아닌가 싶습니다.  &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19132038</guid><pubDate>Sun, 25 Jan 2026 22:01:48 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19131966</guid><pubDate>Sun, 25 Jan 2026 20:32:53 GMT</pubDate></item></channel></rss>
