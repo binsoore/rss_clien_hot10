@@ -1,5 +1,176 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Fri, 27 Feb 2026 07:00:48 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>김민석총리. 관저에 유튜버들 초대[7][9]</title><link>https://www.clien.net/service/board/park/19150927</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Fri, 27 Feb 2026 08:00:51 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>서비스/SW 제미나이(Gemini) 주식 리포트 자동화의 한계... 할루시네이션과 실행 누락 문제[5][5]</title><link>https://www.clien.net/service/board/use/19150379</link><description>
+ 
+ 
+  &lt;p&gt;안녕하세요.&lt;/p&gt;
+  &lt;p&gt;매일 아침 미국 증시 마감 후 시황을 자동으로 보고받기 위해 제미나이로 자동화 루틴을 짜봤습니다. 지시한 내용은 다음과 같습니다.&lt;/p&gt;
+  &lt;ol start="1"&gt;
+   &lt;li&gt;
+    &lt;p&gt;장 종료 후 시황 분석 보고서 작성&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;구글 캘린더 일정에 요약본 반영&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;구글 킵(Keep)에 전체 내용 저장&lt;/p&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;그런데 며칠 운영해 보니 두 가지 큰 문제점이 발견되어 공유해 봅니다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;1. 간헐적 실행 누락:&lt;/strong&gt; 보고서만 쓰고 캘린더 등록을 빼먹거나, 킵 저장을 안 하는 등 지시사항을 100% 이행하지 않는 경우가 가끔 발생합니다. &lt;strong&gt;2. 심각한 할루시네이션 (숫자 오류):&lt;/strong&gt; 분명히 &lt;strong&gt;구글 파이낸스&lt;/strong&gt; 데이터를 그대로 가져오라고 명시했는데도 숫자를 마음대로 지어냅니다. 특히 수동으로 채팅할 때는 괜찮은데, '예약 자동화' 모드에서 유독 데이터가 꼬이는 현상이 심하네요.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;오늘(2월 26일) 겪은 실제 사례입니다.&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;1차 보고서 (자동 실행본):&lt;/strong&gt; "하락장"으로 보고&lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;p&gt;다우: -0.45% / S&amp;amp;P 500: -0.40% / 나스닥: -0.64%&lt;/p&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;2차 보고서 (정정 지시 후):&lt;/strong&gt; 실제론 "상승장" (수치 대폭 차이)&lt;/p&gt;
+    &lt;ul&gt;
+     &lt;li&gt;
+      &lt;p&gt;다우: +0.65% / S&amp;amp;P 500: +0.86% / 나스닥: +1.00%&lt;/p&gt;&lt;/li&gt;
+    &lt;/ul&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;완전히 반대로 읽어버리는 수준이라 당황스럽네요. 혹시 제미나이나 다른 LLM으로 일정/메모 연동 자동화 하시는 분들 중에 비슷한 경험 있으신가요?&lt;/p&gt;
+  &lt;p&gt;자동 실행 시 데이터 정확도를 높일 수 있는 팁이나, 실행 누락을 방지할 수 있는 노하우가 있다면 공유 부탁드립니다! 아래 제가 사용한 프롬프트 첨부합니다.&lt;/p&gt;
+  &lt;p&gt;[프롬프트]&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;# [V2.0] 미국 증시 마감 시황 리포트 자동화 프롬프트&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;1. 역할 (Persona)&lt;/strong&gt; 너는 월스트리트의 수석 시황 분석가이자, 나의 개인 은퇴 자산 관리 비서야. 한국시간(KST) 매일 아침 6시 10분에 미국 현지 장 마감 상황을 분석하여 '일일 시황 보고서'를 작성한다.&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;2. 시간 및 휴장 로직 (Precision Timing)&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;기준 시간:&lt;/strong&gt; 모든 판단은 미국 동부 표준시(EST)의 장 마감(오후 4:00)을 기준으로 한다.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;휴장일 판단:&lt;/strong&gt; 1. 먼저 미국 현지 날짜 기준 오늘이 주말(토, 일)인지, 미국 법정 공휴일인지 확인한다. 2. 휴장일인 경우: Google Keep 작성을 생략하고, 캘린더에만 오전 6:30~7:00 일정으로 "미국장 휴장(휴장 사유)"를 등록한 후 종료한다. 3. 정상 영업일인 경우: 즉시 아래 보고서 작성을 시작한다.&lt;/p&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;strong&gt;3. 보고서 작성 및 검증 지침&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;데이터 검증:&lt;/strong&gt; 주요 지수는 반드시 Google Finance 실시간 마감 확정치를 사용하며, 수치의 정확성을 위해 내부적으로 한 번 더 검토한다.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;기사 기반 작성:&lt;/strong&gt; 미국 현지 공신력 있는 매체(WSJ, Bloomberg, CNBC, Reuters, Barron's 등) 기사 5개를 검색하여 조합한다.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;출처 표기:&lt;/strong&gt; 본문의 각 문장 끝에 해당 내용을 참고한 자료 번호(예: [1])를 반드시 표시한다.&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;제목 형식:&lt;/strong&gt; &lt;code&gt;[증시 마감일 기준 연도]년 [월]일 [일]일 [요일]요일 장 마감시황 보고서&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;strong&gt;4. 보고서 구성 형식&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;[보고서 헤더]: 작성 시점(KST), 데이터 기준(EST 마감 기준)&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;[1. 시장요약]: 3대 지수 종가/변동률, 10년물 국채 금리, 금, 환율, 등락 원인 요약&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;[2. 오늘의 시장 하이라이트]: 5개 기사 종합 분석&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;[3. 섹터별 이슈]: AI, 반도체, 에너지, 로봇 등 특이 동향 및 전문가 인용구&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;[4. 내일의 일정]: 주요 지표 발표 및 실적 일정&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;[5. 오늘의 투자 인사이트]: 기사별 전략 요약 및 단기 제언&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;[6. 오늘의 한마디]: 멘탈 관리 멘트&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;[7. 참고자료]: 기사 5개의 [매체명, 제목, URL] 리스트&lt;/p&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;strong&gt;5. 저장 및 일정 등록 (Execution Check)&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Step 1:&lt;/strong&gt; 작성된 보고서를 Google Keep에 새 메모로 저장 (제목 형식 엄수)&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Step 2:&lt;/strong&gt; Google 캘린더 오늘 오전 6:30~7:00 일정으로 '시황 보고서 검토' 등록&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Step 3:&lt;/strong&gt; 캘린더 일정 내용(Description)에 주요 지수 및 핵심 요약 5줄 입력&lt;/p&gt;&lt;/li&gt;
+   &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;에러 방지:&lt;/strong&gt; 도구 실행 후 성공 여부를 확인하며, 오류 시 재시도한다.&lt;/p&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19150379</guid><pubDate>Thu, 26 Feb 2026 11:35:41 GMT</pubDate></item><item><title>[속보] 쿠팡, 4분기 영업이익 97% 감소…당기순손실 '적자전환'[8][11]</title><link>https://www.clien.net/service/board/park/19150972</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/015/0005256057?sid=101" ori-url="https://n.news.naver.com/article/015/0005256057?sid=101" target="_blank"&gt;https://n.news.naver.com/article/015/0005256057?sid=101&lt;/a&gt; &lt;/p&gt;
+  &lt;p&gt;외형 성장은 지속됐지만, 수익성 지표는 일제히 하락했다. 4분기 영업이익은 115억원(800만달러)에 그쳐 전년 동기 4353억원(3억1200만달러) 대비 97% 급감했다. 영업이익률은 0.09%까지 떨어졌다. 4분기 당기순손실은 377억원(2600만달러)을 기록했다. 전년 동기 1827억원(1억3100만달러) 대비 적자 전환했다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150972</guid><pubDate>Fri, 27 Feb 2026 07:22:59 GMT</pubDate></item><item><title>42년전 금성사 최고급 탑로딩 VTR 고쳤어요[3][7]</title><link>https://www.clien.net/service/board/park/19150960</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260227_031008483.jpg" class="fr-dib fr-fil full" data-file-sn="15676856" data-gif="false" data-img-height="3024" data-img-width="3024" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676856/37f5d92e0841d8.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260227_031008483_01.jpg" class="fr-dib fr-fil full" data-file-sn="15676857" data-gif="false" data-img-height="3024" data-img-width="4032" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676857/37f5d987e59159.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260227_031008483_02.jpg" class="fr-dib fr-fil full" data-file-sn="15676858" data-gif="false" data-img-height="3024" data-img-width="4032" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676858/37f5da12fbb34b.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260227_031008483_03.jpg" class="fr-dib fr-fil full" data-file-sn="15676859" data-gif="false" data-img-height="3024" data-img-width="4032" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676859/37f5da27a3b54d.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260227_031008483_04.jpg" class="fr-dib fr-fil full" data-file-sn="15676860" data-gif="false" data-img-height="3024" data-img-width="4032" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676860/37f5da7719db9f.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260227_031008483_05.jpg" class="fr-dib fr-fil full" data-file-sn="15676861" data-gif="false" data-img-height="3024" data-img-width="4032" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676861/37f5dab67b6cf7.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260227_031008483_06.jpg" class="fr-dib fr-fil full" data-file-sn="15676862" data-gif="false" data-img-height="3024" data-img-width="4032" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676862/37f5db35a3178e.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260227_031008483_07.jpg" class="fr-dib fr-fil full" data-file-sn="15676863" data-gif="false" data-img-height="3024" data-img-width="4032" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676863/37f5db90376229.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260227_031008483_08.jpg" class="fr-dib fr-fil full" data-file-sn="15676864" data-gif="false" data-img-height="3024" data-img-width="4032" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676864/37f5dbaf8b9148.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260227_031008483_09.jpg" class="fr-dib fr-fil full" data-file-sn="15676865" data-gif="false" data-img-height="3024" data-img-width="4032" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676865/37f5dc1108b706.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260227_031008483_10.jpg" class="fr-dib fr-fil full" data-file-sn="15676866" data-gif="false" data-img-height="2967" data-img-width="3956" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676866/37f5dc54acccdb.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260227_031008483_11.jpg" class="fr-dib fr-fil full" data-file-sn="15676867" data-gif="false" data-img-height="3024" data-img-width="3024" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676867/95a5ba14a3ef8.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260227_031008483_12.jpg" class="fr-dib fr-fil full" data-file-sn="15676868" data-gif="false" data-img-height="3814" data-img-width="2860" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676868/37f5dd1272aee3.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;1984년 금성사에서 출시된 최고급 VTR GHV-20000을 수집했습니다.&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;비디오를 앞이 아닌 위에서 넣는 탑로딩 방식의 비디오 플레이어입니다.&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;작동시켜보니 서보모터는 돌아가는데 테이크업릴이 안돌아가더라구요ㅠ&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;분해해보니 테이크업릴을 돌려주는 고무벨트가 경화되어 끊어져있어서&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;새 고무벨트를 끼워주고 플레이버튼을 눌러보니 다행히 잘 작동해줍니다!&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;(화면이 컬러 출력이 안되는 증상이 있는데 헤드클리너로 세척해보려구요)&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;오랜만에 외할머니 칠순잔치 비디오테이프를 가져와서 투입시켜보았는데&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;저와 누나의 어린시절 모습과 엄마, 아빠의 젊은 시절 모습이 나오더라구요.&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;5살 때였던 것 같은데 벌써 29년이나 훌쩍 흘러버려 34살이 되어버렸네요.&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;외할머니가 살아계셨으면 더 좋았을텐데 아쉽게도 오래전에 돌아가셨어요.&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;곧 외할머니 기일이라 이번 주말에 외가댁인 포항에서 기제사 지내려구요.&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/_i1FYsCClDo" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150960</guid><pubDate>Fri, 27 Feb 2026 04:28:43 GMT</pubDate></item><item><title>공소취소모임 해산 안한다!![2][5]</title><link>https://www.clien.net/service/board/park/19150910</link><description>
+ 
+ 
+  &lt;p&gt;공취모 간사인 &lt;/p&gt;
+  &lt;h1&gt;이건태 의원은&lt;/h1&gt;
+  &lt;p&gt;이날 서울 여의도의 한 식당에서 운영위 회의를 마친 뒤 기자들과 만나&lt;/p&gt;
+  &lt;p&gt;"공취모는 결성 때 목표로 밝힌 바와 같이 이재명 대통령 (사건의) 공소 취소 때까지 (모임을) 유지한다"며&lt;/p&gt;
+  &lt;p&gt; "다만 독자적 활동은 최소화하고 당의 특별위원회 및 국정조사를 총력 지원하겠다"고 했다.&lt;/p&gt;
+  &lt;h2&gt;&lt;br/&gt;&lt;/h2&gt;
+  &lt;p&gt;공취모 상임대표인&lt;/p&gt;
+  &lt;h1&gt;박성준 의원은&lt;/h1&gt;
+  &lt;p&gt; "운영위원 중에는 당 특위가 구성됐기 때문에 '해산' '해체' 의견 내신 분도 계시지만, 공취모 본래 목적에 맞는 유지를 통해 공소 취소하는 것이 마땅하다는 의견이 대부분이었다"고 부연했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;공취모 공동대표인 &lt;/p&gt;
+  &lt;h1&gt;김승원 의원은 &lt;/h1&gt;
+  &lt;p&gt;"국정조사를 야당과 협상함에 있어 어려울 때 저희가 계속 남아 서포트해드리고 힘을 실어드리는 역할을 할 수 있다는 생각이 있다"며 "4월이 넘어가면 지방선거 시즌 아닌가. 당 특위 활동이 소극적으로 될 수 있어서 저희가 공소 취소와 관련된 동력이 사그라지지 않도록 역할을 해야겠다"고 보탰다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;공취모를 두고 계파 모임 논란이 나오는 데 대해선 "공취모가 공천권, 당권과 무슨 상관성이 있나"라며 "(모임의) 목표가 분명한데 계파 모임이 있겠나"라고 거듭 선을 그었다.&lt;/p&gt;
+  &lt;h2&gt;공동대표 윤건영은 공취모 탈퇴&lt;/h2&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h1&gt;대통령님도 1가구 1주택이라고 했는데&lt;/h1&gt;
+  &lt;h1&gt;한 당에서  공취소 2기구가 말이 되나요? &lt;/h1&gt;
+  &lt;h1&gt;당원들을 무시한 계파정치 계속 하겠다는 소리로 들리네요&lt;/h1&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150910</guid><pubDate>Fri, 27 Feb 2026 00:24:13 GMT</pubDate></item><item><title>김민석총리. 관저에 유튜버들 초대[9][11]</title><link>https://www.clien.net/service/board/park/19150927</link><description>
  
  
   &lt;p&gt;&lt;img alt="K-760.jpg" class="fr-dib fr-fil full" data-file-sn="15676828" data-gif="false" data-img-height="601" data-img-width="877" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676828/37e8fe035ad078.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -8,14 +179,14 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;검색해보니, 작년 12월9일 이라네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150927</guid><pubDate>Fri, 27 Feb 2026 00:16:07 GMT</pubDate></item><item><title>내일은 국장 어느정도 조정이 나오겠군요[10][1]</title><link>https://www.clien.net/service/board/park/19150946</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150927</guid><pubDate>Fri, 27 Feb 2026 00:16:07 GMT</pubDate></item><item><title>내일은 국장 어느정도 조정이 나오겠군요[11][1]</title><link>https://www.clien.net/service/board/park/19150946</link><description>
  
  
   &lt;p&gt;나스닥이 뻘껀색이군요 &lt;/p&gt;
   &lt;p&gt;트럼프가 맨날 잘때마다 뭔짓을 할지 모르겠습니다 &lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150946</guid><pubDate>Fri, 27 Feb 2026 01:48:15 GMT</pubDate></item><item><title>김앤장에 대한 이미지가 너무 안좋아졌어요[13][1]</title><link>https://www.clien.net/service/board/park/19150932</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150946</guid><pubDate>Fri, 27 Feb 2026 01:48:15 GMT</pubDate></item><item><title>김앤장에 대한 이미지가 너무 안좋아졌어요[15][1]</title><link>https://www.clien.net/service/board/park/19150932</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -89,7 +260,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;지금 쓰는 S23이 아직 빠르고 현역이긴 한데 뭔가 아쉽군여&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150881</guid><pubDate>Thu, 26 Feb 2026 22:45:32 GMT</pubDate></item><item><title>코스피 6300 펨코 반응......jpg[6][15]</title><link>https://www.clien.net/service/board/park/19150880</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150881</guid><pubDate>Thu, 26 Feb 2026 22:45:32 GMT</pubDate></item><item><title>코스피 6300 펨코 반응......jpg[6][16]</title><link>https://www.clien.net/service/board/park/19150880</link><description>
  
  
   &lt;p&gt;&lt;img alt="1000250479.jpg" class="fr-dib fr-fil full" data-file-sn="15676774" data-gif="false" data-img-height="4206" data-img-width="1438" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676774/37e342113568d5.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -118,7 +289,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;황회장은 GPU랑 CPU 둘다 먹을 셈인가 보네요 ㄷㄷㄷㄷ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150866</guid><pubDate>Thu, 26 Feb 2026 21:53:07 GMT</pubDate></item><item><title>6300이 넘어도 찬양하는 기자는 없나요?[14][3]</title><link>https://www.clien.net/service/board/park/19150859</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150866</guid><pubDate>Thu, 26 Feb 2026 21:53:07 GMT</pubDate></item><item><title>6300이 넘어도 찬양하는 기자는 없나요?[14][4]</title><link>https://www.clien.net/service/board/park/19150859</link><description>
  
  
   &lt;p&gt;부동산 떨어진다는 기사는 본 것 같습니다 &lt;/p&gt;
@@ -172,12 +343,12 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;에라이 인간들아.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19150716</guid><pubDate>Thu, 26 Feb 2026 17:23:08 GMT</pubDate></item><item><title>이잼 트위터 카리스마 작렬[25][73]</title><link>https://www.clien.net/service/board/park/19150928</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19150716</guid><pubDate>Thu, 26 Feb 2026 17:23:08 GMT</pubDate></item><item><title>이잼 트위터 카리스마 작렬[32][94]</title><link>https://www.clien.net/service/board/park/19150928</link><description>
  
  
   &lt;p&gt;이젠 남자인 내가봐도 반하겠네요 ㅎ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150928</guid><pubDate>Fri, 27 Feb 2026 00:11:27 GMT</pubDate></item><item><title>어쩌다보니 국힘끼리 싸움 붙인 한두자니[6][7]</title><link>https://www.clien.net/service/board/park/19150830</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150928</guid><pubDate>Fri, 27 Feb 2026 00:11:27 GMT</pubDate></item><item><title>어쩌다보니 국힘끼리 싸움 붙인 한두자니[6][8]</title><link>https://www.clien.net/service/board/park/19150830</link><description>
  
  
   &lt;p&gt;이분 영상 볼때마다 느끼는건데...멘탈이 장난아니네요.ㅋㅋ&lt;/p&gt;
@@ -328,7 +499,7 @@
   &lt;p&gt;&lt;img alt="스크린샷 2026-02-26 151514.png" class="fr-dib fr-fil full" data-file-sn="15676476" data-gif="false" data-img-height="899" data-img-width="1821" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676476/37cc1e0c524096.png?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19150626</guid><pubDate>Thu, 26 Feb 2026 15:24:06 GMT</pubDate></item><item><title>[단독]대만 정부 “20만 계정 유출 쿠팡에 법적 조치…한국·대만 ‘백업 키’ 동일”[4][16]</title><link>https://www.clien.net/service/board/park/19150909</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19150626</guid><pubDate>Thu, 26 Feb 2026 15:24:06 GMT</pubDate></item><item><title>[단독]대만 정부 “20만 계정 유출 쿠팡에 법적 조치…한국·대만 ‘백업 키’ 동일”[4][18]</title><link>https://www.clien.net/service/board/park/19150909</link><description>
  
  
   &lt;p&gt;대만 정부가 쿠팡의 개인정보 유출 사고와 관련해 개인정보 관리 방식에서 부실 정황을 확인했다며 법적 조치를 예고했습니다.&lt;/p&gt;
@@ -345,7 +516,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;쿠팡은 상폐 해야하는거 아닙니까 ㅋㅋㅋㅋㅋㅋ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150909</guid><pubDate>Thu, 26 Feb 2026 23:30:14 GMT</pubDate></item><item><title>상임위와 법사위에서 통과된 법안 당일 졸속 수정 최악입니다[25][4]</title><link>https://www.clien.net/service/board/park/19150904</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150909</guid><pubDate>Thu, 26 Feb 2026 23:30:14 GMT</pubDate></item><item><title>상임위와 법사위에서 통과된 법안 당일 졸속 수정 최악입니다[26][4]</title><link>https://www.clien.net/service/board/park/19150904</link><description>
  
  
   &lt;p&gt;이미 국회의장님께서도 지적하셨네요........&lt;/p&gt;
@@ -358,7 +529,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150904</guid><pubDate>Thu, 26 Feb 2026 23:28:23 GMT</pubDate></item><item><title>룰라대통령 네손가락 장갑, 브라질에서도 이슈였나봅니다[4][41]</title><link>https://www.clien.net/service/board/park/19150891</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150904</guid><pubDate>Thu, 26 Feb 2026 23:28:23 GMT</pubDate></item><item><title>룰라대통령 네손가락 장갑, 브라질에서도 이슈였나봅니다[4][45]</title><link>https://www.clien.net/service/board/park/19150891</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -383,7 +554,7 @@
    "오늘 서울에서 마치 한국 드라마의 한 장면처럼 잊지 못할 하루를 보냈습니다. 한때 공장 노동자였던 두 사람이 이제 양국 대통령직을 맡고 있습니다. 브라질과 한국의 관계가 더욱 돈독해졌습니다."라고 대통령은 게시글을 올렸습니다.
   &lt;/blockquote&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150891</guid><pubDate>Thu, 26 Feb 2026 23:15:05 GMT</pubDate></item><item><title>요즘 부동산을 보면 정치 효능감을 느낌니다[5][9]</title><link>https://www.clien.net/service/board/park/19150890</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150891</guid><pubDate>Thu, 26 Feb 2026 23:15:05 GMT</pubDate></item><item><title>요즘 부동산을 보면 정치 효능감을 느낌니다[6][9]</title><link>https://www.clien.net/service/board/park/19150890</link><description>
  
  
   &lt;p&gt;반대로 이렇게 간단한걸 도대체 이전 정부들은 뭐했나 싶습니다.&lt;/p&gt;
@@ -391,7 +562,7 @@
   &lt;p&gt;이재명대통령이 그토록 견고했던 기득권들의 벽을 한장한장 무너뜨리는 걸보고 항상 감사한 마음입니다&lt;/p&gt;
   &lt;p&gt;앞으로 표로 응원하겠습니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150890</guid><pubDate>Thu, 26 Feb 2026 22:46:02 GMT</pubDate></item><item><title>대단히 흥미로운 여론조사 결과[14][16]</title><link>https://www.clien.net/service/board/park/19150888</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150890</guid><pubDate>Thu, 26 Feb 2026 22:46:02 GMT</pubDate></item><item><title>대단히 흥미로운 여론조사 결과[17][18]</title><link>https://www.clien.net/service/board/park/19150888</link><description>
  
  
   &lt;p&gt;클리앙의 지난 한달의 난리는 뭐였던걸까요..&lt;/p&gt;
@@ -560,7 +731,7 @@
   &lt;p&gt;와이프님께서 사주신거라 더 애착이가는데 오래오래 잘 써야겠습니다.ㅎㅎ&lt;/p&gt;
   &lt;p&gt;﻿ &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19150617</guid><pubDate>Thu, 26 Feb 2026 15:17:30 GMT</pubDate></item><item><title>역사적인 불장에도 웃지 못하는 대기업[18][6]</title><link>https://www.clien.net/service/board/park/19150883</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19150617</guid><pubDate>Thu, 26 Feb 2026 15:17:30 GMT</pubDate></item><item><title>역사적인 불장에도 웃지 못하는 대기업[20][7]</title><link>https://www.clien.net/service/board/park/19150883</link><description>
  
  
   &lt;p&gt;&lt;img alt="Screenshot 2026-02-26 at 22.15.00.JPG" class="fr-dib fr-fil" data-file-sn="15676767" data-gif="false" data-img-height="363" data-img-width="444" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676767/9477d8db2d44f.JPG?scale=width:740"/&gt;&lt;/p&gt;
@@ -608,7 +779,7 @@
   &lt;p&gt;그래도 기분이 좋아 인증해봅니다. &lt;/p&gt;
   &lt;p&gt;감사합니다. (__)&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150809</guid><pubDate>Thu, 26 Feb 2026 19:57:57 GMT</pubDate></item><item><title>이재명은 참 권한, 힘을 잘쓴다는 생각이 들어요,[4][26]</title><link>https://www.clien.net/service/board/park/19150828</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150809</guid><pubDate>Thu, 26 Feb 2026 19:57:57 GMT</pubDate></item><item><title>이재명은 참 권한, 힘을 잘쓴다는 생각이 들어요,[4][27]</title><link>https://www.clien.net/service/board/park/19150828</link><description>
  
  
   &lt;p&gt;민주진영 정권은 이런부분이 아쉬운게 있었는데.&lt;/p&gt;
@@ -957,298 +1128,4 @@
   &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/FopWTBLLIZg" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
   &lt;p&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150744</guid><pubDate>Thu, 26 Feb 2026 17:46:42 GMT</pubDate></item><item><title>기레기들이 아무런 힘이 없네요 ㅋㅋ[9][19]</title><link>https://www.clien.net/service/board/park/19150741</link><description>
- 
- 
-  &lt;p&gt;지금 통과되는 굵직한 개혁 입법안들과 부동산정책이&lt;/p&gt;
-  &lt;p&gt;예전같으면 국힘과 기레기가 총력으로 막고 언론선동에&lt;/p&gt;
-  &lt;p&gt;난장부리고 악을 써야하는데 &lt;/p&gt;
-  &lt;p&gt;소리내도 한쪽귀로 통과되는 상황같습니다 ㅋㅋ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150741</guid><pubDate>Thu, 26 Feb 2026 17:43:46 GMT</pubDate></item><item><title>[단독]신한카드, 3월 애플페이 출격[14][1]</title><link>https://www.clien.net/service/board/news/19150583</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://www.etnews.com/20260226000266" ori-url="https://www.etnews.com/20260226000266" target="_blank"&gt;[단독]신한카드, 3월 애플페이 출격 - 전자신문&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;신한카드가 애플페이 연동 시점을 3월로 확정했다. 애플과 계약 만료 시한을 앞두고 서비스 개시를 결정하면서, 국내 간편결제 시장 판도의 분기점이 될 전망이다.&lt;br/&gt;&lt;br/&gt;
-    26일 본지 취재를 종합하면 신한카드는 다음달 7일 월간 회의에서 애플페이 서비스 개시 일정을 최종 확정할 예정이다. 3월 내 도입은 이미 결정했으며, 이날 회의에서 출시일이 정해질 것으로 전해졌다.&lt;br/&gt;&lt;br/&gt;
-    현재 신한카드 직원 일부는 베타테스트 형태로 애플페이를 사용 중이다. 결제 안정성과 사용자 흐름을 점검하는 등 상용화를 위한 최종 검증 단계다.&lt;br/&gt;&lt;br/&gt;
-    이번 결정은 애플 계약 조건과 맞물려 있다. 양측의 애플페이 연동 계약은 3월까지로, 기한 내 서비스를 시작하지 않으면 계약이 종료된다. 이후에는 재계약을 체결하거나 연동 계획을 철회해야 한다.  &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/19150583</guid><pubDate>Thu, 26 Feb 2026 14:24:10 GMT</pubDate></item><item><title>쿠팡㈜의 대규모유통업법 위반행위 제재[2][10]</title><link>https://www.clien.net/service/board/news/19150494</link><description>
- 
- 
-  &lt;p&gt;쿠팡㈜의 대규모유통업법 위반행위 제재&lt;br/&gt;
-    -목표 마진 달성을 위해 납품업자에게 납품단가 인하 및 광고비 등 부담을 요구한 행위 등에 대해 시정명령, 과징금 총 2,185백만원 부과-&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt; 공정거래위원회(위원장 주병기, 이하 ‘공정위’)는 쿠팡㈜(이하 ‘쿠팡’)가 목표 마진 달성을 위해 ❶납품단가 인하 및 ❷광고비 등 부담을 요구한 행위, ❸상품대금 지연지급 및 지연이자 미지급 행위, ❹쿠팡체험단 프로그램 미소진 상품 미반환 행위에 대해 시정명령(행위금지명령, 통지명령, 지급명령 및 교육실시명령)과 함께 21억 8천 5백만 원의 과징금을 부과하기로 결정하였다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;[행위의 내용] &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;  (제①행위) 쿠팡은 2020년 1월경부터 2022년 10월경까지 납품업자가 자신에게 보장하여야 하는 PPM* 목표치를 납품업자와 협의하여 정하고, 이를 준수하도록 하기 위해 PPM 목표치와 실적치를 수시로 점검하여 목표치에 미달하는 경우, 납품업자와 납품가격 인하를 협의하거나 납품가격을 인하하도록 요구하였으며, 쿠팡은 이러한 납품업자와의 PPM 목표 및 납품단가 인하 협의 과정에서 상품 발주를 중단 또는 축소하거나 이를 암시․예고하여 납품업자를 압박하기도 하였다. &lt;/p&gt;
-  &lt;p&gt; * PPM(Pure Product Margin, 순수상품판매이익률): [(매출액-매출원가)/매출액] × 100(%)&lt;br/&gt;
-     &lt;br/&gt;
-      (제②행위) 쿠팡은 2020년 1월경부터 2022년 10월경까지 납품업자와의 거래에서 확보하고자 하는 자신의 GM* 목표를 정하고, 이를 달성하기 위해 GM 목표치와 실적치를 수시로 점검하여 목표치에 미달하는 경우, 납품업자에게 광고비, 쿠팡체험단 프로그램수수료, 프리미엄 데이터 수수료 등(이하 ‘광고비 등)을 부담하도록 요구하였으며, 이 과정에서 상품 발주를 중단 또는 축소하거나 이를 암시․예고하여 납품업자를 압박하기도 하였다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;  (제③행위) 쿠팡은 2021. 10. 21.부터 2024. 6. 30.까지의 기간 동안 25,715개 납품업자와의 508,752건의 직매입거래에 따른 상품대금 280,934,871,045원을 상품수령일*부터 60일이 되는 날(이하 ‘법정지급기한’)을 최소 1일부터 최대 233일까지 초과하여 지급하였으며, 또한 법정지급기한을 초과한 기간에 대한 지연이자(연리 15.5%) 853,285,820원을 지급하지 않았다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt; * 상품수령일은 납품업자가 쿠팡에 상품을 인도한 날(상품하차일)을 의미&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;  (제④행위) 쿠팡은 2020년 9월경부터 2024년 6월까지 총 6,743개의 납품업자와 34,514건의 쿠팡체험단 프로그램(이하 ‘쿠팡체험단’)*을 진행하면서 이 중 2,970개의 납품업자가 진행한 8,899건의 쿠팡체험단에서 고객체험단으로 선정된 고객이 실제로 체험에 참여하지 않아 소진되지 않은 상품이 발생하였음에도 소진되지 않은 상품 24,986개에 해당하는 상품비용 536,793,079원을 납품업자에게 반환하지 않았다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt; * 쿠팡이 과거 상품평 작성 활동을 기반으로 선정된 고객체험단에게 무료체험 쿠폰을 제공한 후 상품 사용경험을 바탕으로 상품평을 작성하도록 하는 것으로, 납품업자는 단위상품당 서비스 이용료(1백만 원), 체험단 지급상품 공급금액(최근 매입가 기준 상품 10개 공급가격)을 부담함&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;[위법성 판단 및 적용 법조]&lt;/p&gt;
-  &lt;p&gt;   &lt;/p&gt;
-  &lt;p&gt;  공정위는 PPM 목표 합의 및 목표 달성을 위한 납품단가 인하 요구행위와 쿠팡체험단 미소진 상품비용 미반환 행위는 「대규모유통업에서의 거래 공정화에 관한 법률」(이하 ‘법’) 제17조 제10호(불이익 제공 금지) 위반에 해당하고, GM 목표 달성을 위한 광고비 등 요구행위는 법 제15조(경제적 이익 제공 요구 금지) 위반에 해당하며, 상품대금 지연지급 및 지연이자 미지급 행위는 법 제8조(상품판매대금 등의 지급) 제2항 및 제3항 위반에 해당한다고 판단하였다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;[의의 및 향후 계획]&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;  이번 조치는 유통업자가 상품 소유권을 자신에게 이전시켜 판매가격 결정권과 높은 이익을 취하는 대가로 가격 하락에 따른 손실과 재고 위험을 감수하는 것이 직매입거래의 본질임에도, 쿠팡이 최저가 매칭에 따른 마진 감소 위험을 납품단가 인하나 광고비 등 요구를 통해 납품업자에게 전가한 행위가 직매입거래의 본질을 훼손하는 위법한 행위임을 분명히 한 점에 의의가 있다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;  특히 온라인쇼핑 시장의 압도적인 1위 사업자인 쿠팡이 자신의 이익률 유지를 위해 납품업자의 희생을 강요하고 납품업자가 거부하거나 비협조적인 경우 발주 중단․축소 등 보복성 수단을 동원해 납품업자를 압박하는 마진 관리방식 등 핵심사업 모델을 시정하도록 하여 향후 재발 방지와 온라인쇼핑 시장의 유사 불공정거래 관행 개선에 기여할 수 있을 것으로 기대된다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;  또한 이번 조치는 2021년 4월 직매입 상품대금 법정지급기한 조항(법 제8조 제2항)이 법에 도입*된 이후 법정지급기한 위반을 이유로 첫 번째로 제재한 사례로서, 법정지급기한의 기점이 되는 법상 ‘상품수령일’**의 의미가 ‘상품 인도일’이라는 점을 분명히 하여 법령해석의 기준을 제시하고 유통업자의 자의적인 검사 지연 등에 따른 대금지급 지연을 방지하고자 하였다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt; * 직매입 상품대금 지급기한 조항: 2021. 4. 20. 신설(시행: ‘21. 10. 20.)&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;** 쿠팡은 상품수령일을 검수‧검품을 마친 후 입고한 날로 해석하여야 한다고 주장&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;  나아가 공정위는 2만 5천여 납품업자와의 직매입거래에서 발생한 지연이자 미지급액 약 8억 5천만 원과 2천 9백여 납품업자에게 반환하지 않은 미소진 쿠팡체험단 상품 비용 약 5억 3천만 원에 대해서도 해당 납품업자에게 지체없이 지급‧반환하도록 하여 불공정행위로 인해 손해를 입은 납품업자에게 실질적인 피해구제가 될 수 있도록 하였다.&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;  공정위는 앞으로도 대규모유통업자가 자신의 거래상 우월적 지위를 이용하여 직매입거래에 따른 위험과 비용을 납품업자에게 전가하고 자신의 이익 유지를 위해 납품업자의 정당한 이익을 침해하는 행위와 같은 불공정행위에 대해 면밀히 감시하고 법 위반이 확인될 경우 엄정 조치할 계획이다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="260227(조간) 쿠팡(주)의 대규모유통업법 위반행위 제재 image001.png" class="fr-dib fr-fil full" data-file-sn="15676301" data-gif="false" data-img-height="3508" data-img-width="2480" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676301/37c35b9c9fdb09.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="260227(조간) 쿠팡(주)의 대규모유통업법 위반행위 제재 image002.png" class="fr-dib fr-fil full" data-file-sn="15676302" data-gif="false" data-img-height="3508" data-img-width="2480" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676302/37c35bc19195aa.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;나. 위법성 판단 및 적용 법조&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 쿠팡의 위 ①행위는 자신의 목표 이익률을 정해두고 최저가 경쟁에 따른 손실을 납품업자에게 납품가격 인하를 통해 보전하도록 요구한 것으로, 자신이 부담해야 할 경영 리스크와 영업비용을 납품업자에게 전가하여 납품업자의 이익을 침해한 것이므로 불이익을 제공한 행위에 해당한다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 또한 직매입거래에서 가격 하락과 재고에 따른 위험은 대규모유통업자 스스로 부담해야 함에도 오로지 이익률 목표 달성을 위해 자신의 영업전략에 따른 판매 손실 위험을 납품업자에게 전가하였으므로, 정상적인 거래 관행에 반하며 이에 정당한 사유도 인정되지 않는다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 결국 쿠팡의 위 ①행위는 쿠팡이 자신의 거래상 우월적 지위를 이용하여 법 제17조 제2호에 준하는 것으로서, 납품업자에게 불이익을 준 행위에 해당하고 정당한 사유도 없으므로 법 제17조 제10호 위반에 해당한다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;2. GM 목표 달성을 위한 광고비 등 부담 요구 행위(제②행위)&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;가. 행위 사실&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 피심인은 2020년 1월경부터 2022년 10월경까지 납품업자와의 거래에서 확보하고자 하는 자신의 GM 목표를 정하고, 이를 달성하기 위해 GM 목표치와 실적치를 수시로 점검하여 목표치에 미달하는 경우, 납품업자에게 광고비, 쿠팡체험단 프로그램수수료, 프리미엄 데이터 수수료 등을 부담하도록 요구하였다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;ㅇ 쿠팡은 최저가 매칭 정책으로 인해 경쟁 온라인몰 등이 판매가격을 낮추면 자신의 판매가격도 최저가에 맞추어 판매하여야 하였고, 판매가격이 하락하는 경우 마진율이 감소하여 납품업자와 PPM 목표를 합의하더라도 이를 실제 달성하기 어려운 상황이 자주 발생하게 된다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;ㅇ 쿠팡은 내부 GM 목표를 기준으로 삼아 실제 GM이 목표 GM에 미달하는 경우 이로 인한 손실을 보전하기 위해 납품업자와 협의하여 납품업자에게 추가 광고비 등을 부담하도록 하였다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="260227(조간) 쿠팡(주)의 대규모유통업법 위반행위 제재 image004.png" class="fr-dib fr-fil full" data-file-sn="15676304" data-gif="false" data-img-height="3508" data-img-width="2480" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676304/37c361a34d56de.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;나. 위법성 판단 및 적용 법조&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;□ 쿠팡의 위 ②행위는 자신이 설정한 마진 목표 달성을 위해 납품업자에게 광고비 등을 부담하도록 요구한 행위로서 이는 납품업자의 출연을 통해 쿠팡이 자신의 비용을 절감하거나 수익을 증대시키는 재산상 가치가 있는 경제적 이익을 제공하도록 요구한 행위에 해당한다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 또한 동 행위는 판매 이후에 이익률을 근거로 비용을 환수하여 직매입을 수수료 방식(위탁매매)으로 변질시키는 변칙적 거래행위로서 정상적인 거래관행에 부합하지 않을뿐더러, 광고비 등 부담이 납품업자의 경영상 필요에 의한 것이 아니라 오로지 쿠팡의 이익률 목표 달성을 위한 것으로 납품업자의 사업 경영상 필요 및 상품 판매와의 관련성이 결여되었으므로 정당한 사유도 인정되지 않는다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 결국 쿠팡의 위 ②행위는 자신의 거래상 우월적 지위를 이용하여 납품업자에게 경제적 이익을 제공하도록 한 행위에 해당하고, 정당한 사유도 없으므로 법 제15조 제1항 위반에 해당한다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;3. 직매입 상품대금 지연지급 및 지연이자 미지급 행위(제③행위)&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;가. 행위 사실&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 쿠팡은 2021. 10. 21.부터 2024. 6. 30.까지의 기간 동안, 25,715개 납품업자와의 508,752건의 직매입거래에 따른 상품대금 280,934,871,045원을 상품수령일(상품 인도일)부터 60일이 되는 날(법정지급기한)을 최소 1일부터 최대 233일까지 초과하여 지급하였고, 법정지급기한을 초과한 기간에 대한 지연이자(연리 15.5%) 853,285,820원을 지급하지 아니하였다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&amp;lt; &lt;u&gt;상품대금 지연지급 및 지연이자 미지급 현황&lt;/u&gt; &amp;gt;&lt;/p&gt;
-  &lt;p&gt;[단위: 개, 건, 일, 원(부가가치세 포함)]&lt;/p&gt;
-  &lt;table&gt;
-   &lt;tbody&gt;
-    &lt;tr&gt;
-     &lt;td rowspan="2" valign="middle"&gt;
-      &lt;p&gt;납품&lt;/p&gt;
-      &lt;p&gt;업자수&lt;/p&gt;&lt;/td&gt;
-     &lt;td rowspan="2" valign="middle"&gt;
-      &lt;p&gt;거래건수&lt;/p&gt;&lt;/td&gt;
-     &lt;td colspan="2" valign="middle"&gt;
-      &lt;p&gt;상품대금&lt;/p&gt;&lt;/td&gt;
-     &lt;td colspan="3" valign="middle"&gt;
-      &lt;p&gt;지연이자&lt;/p&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;지연지급액&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;지연일수&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;지연이자액&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;지급액&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;미지급액&lt;/p&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;25,715&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;508,752&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;280,934,871,045&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;1～233&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;908,892,108&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;55,606,288&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;853,285,820&lt;/p&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-   &lt;/tbody&gt;
-  &lt;/table&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;나. 위법성 판단 및 적용 법조&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 쿠팡의 위 ③행위는 직매입거래 상품대금을 법정지급기한을 초과하여 납품업자에게 지급하고, 그 초과 기간에 대한 지연이자도 지급하지 아니한 행위로서 법 제8조 제2항 및 제3항 위반에 해당한다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;4. 쿠팡체험단 프로그램 미소진 상품 비용 미반환 행위(제④행위)&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;가. 행위 사실&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 쿠팡은 쿠팡체험단을 실시하면서 고객체험단 참여 소비자에게 제공하는 최대 10개의 상품을 쿠팡체험단 계약기간 내에 모두 전달하지 못하여 대상 제품이 모두 소진되지 않는다고 하더라도 납품업자가 부담한 비용이 안분 할당되거나 반환되지 않는다는 내용으로 납품업자와 쿠팡체험단 계약을 체결하였다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 실제로 쿠팡은 2020년 9월경부터 2024년 6월까지 6,743개의 납품업자와 34,514건의 쿠팡체험단을 진행하면서 이 중 2,970개의 업체가 진행한 8,899건의 쿠팡체험단에서 고객체험단으로 선정된 고객이 실제 체험에 참여하지 않아 소진되지 않은 상품이 발생하였음에도 소진되지 않은 상품 24,986개에 해당하는 상품비용 536,793,079원을 납품업자에게 반환하지 않았다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&amp;lt; &lt;u&gt;쿠팡체험단 프로그램 미소진 상품비용 미반환 내역&lt;/u&gt; &amp;gt;&lt;/p&gt;
-  &lt;p&gt;[단위: 개, 건, 원(부가가치세 제외)]&lt;/p&gt;
-  &lt;table&gt;
-   &lt;tbody&gt;
-    &lt;tr&gt;
-     &lt;td rowspan="2" valign="middle"&gt;
-      &lt;p&gt;납품&lt;/p&gt;
-      &lt;p&gt;업자수&lt;/p&gt;&lt;/td&gt;
-     &lt;td rowspan="2" valign="middle"&gt;
-      &lt;p&gt;체험단수&lt;/p&gt;&lt;/td&gt;
-     &lt;td colspan="4" valign="middle"&gt;
-      &lt;p&gt;미소진 상품이 발생한 쿠팡체험단 프로그램&lt;/p&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;납품업자수&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;체험단수&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;미소진 상품수&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;미반환 상품 금액&lt;/p&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;6,743&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;34,515&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;2,970&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;8,899&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;24,986&lt;/p&gt;&lt;/td&gt;
-     &lt;td valign="middle"&gt;
-      &lt;p&gt;536,793,079&lt;/p&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-   &lt;/tbody&gt;
-  &lt;/table&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;ㅇ 쿠팡체험단 상품비용은 해당 상품이 고객체험단에 전달되는 것을 전제로 납품업자가 예탁한 목적적 비용이므로, 쿠팡은 고객이 해당 체험단에 참여하지 않아 해당 비용의 집행 원인이 소멸하였음에도 미소진 상품비용을 납품업자에게 반환하지 않은 것이다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;나. 위법성 판단 및 적용 법조&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 쿠팡의 위 ④행위는 고객의 미참여로 인해 서비스가 제공되지 않았음에도 비용을 반환하지 않은 것이므로, 납품업자 입장에서는 아무런 반대급부 없이 자산만 상실하는 것이고, 이러한 행위는 납품업자의 재산권을 직접적으로 침해하여 경영상 손실을 야기하는 불이익 제공 행위에 해당한다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 또한 쿠팡체험단 고객 미참여라는 운영상의 리스크를 납품업자에게 전가하여 해당 비용을 수취하는 행위는 실제 제공된 서비스 범위 내에서만 대가를 정산하는 통상적인 거래 관행에 반하며, 미소진 상품의 경우 상품평이 작성되지 않아 납품업자는 아무런 서비스를 받지 못하였음에도 대가만 수취하였으므로 정당한 사유가 인정되지 않는다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 쿠팡의 위 ④행위는 자신의 거래상 우월적 지위를 이용하여 법 제17조 제4호 내지 제6호에 준하는 것으로서 납품업자에게 불이익을 준 행위에 해당하고 정당한 사유도 없으므로 법 제17조 제10호 위반에 해당한다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;2 조치 내용&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□【시정명령】공정위는 쿠팡의 위 4개 법 위반행위에 대해 향후 이러한 불공정 행위가 재발되지 않도록 시정명령(행위 금지명령, 납품업자에 대한 통지명령)을 부과하였다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt; ㅇ 아울러 ①, ② 행위의 경우 실제 목표치를 관리한 BM과 그 상급자 등에 대한 교육실시명령을 부과하였다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt; ㅇ 또한 ③, ④ 행위의 경우 미지급 지연이자 및 미소진 상품비용에 대한 지급(반환)명령을 부과하였다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt; □【과징금】공정위는 위 4개 법 위반행위에 대해 총 21억 8,500만 원의 과징금 납부명령을 부과하였다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;3 의의 및 향후 계획&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;  이번 조치는 유통업자가 상품 소유권을 가져와 판매가격 결정권과 높은 이익을 취하는 대가로 가격 하락에 따른 손실과 재고 위험을 감수하는 것이 직매입거래의 본질임에도, 쿠팡이 최저가 매칭에 따른 마진 감소 위험을 납품단가 인하나 광고비 등 요구를 통해 납품업자에게 전가한 행위가 직매입거래의 본질을 훼손하는 위법한 행위임을 분명히 한 점에 의의가 있다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;  특히 온라인쇼핑 시장의 압도적인 1위 사업자인 쿠팡이 자신의 이익률 유지를 위해 납품업자의 희생을 강요하고 납품업자가 거부하거나 비협조적인 경우 발주 중단․축소 등 보복성 수단을 동원해 납품업자를 압박하는 마진 관리방식 등 핵심사업 모델을 시정하도록 하여 향후 재발 방지와 온라인쇼핑 시장의 유사 불공정거래 관행 개선에 기여할 수 있을 것으로 기대된다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;  또한 이번 조치는 2021년 4월 직매입 상품대금 법정지급기한 조항(법 제8조 제2항)이 법에 도입된 이후 법정지급기한 위반을 이유로 첫 번째로 제재한 사례로서, 법정지급기한의 기점이 되는 법상 ‘상품수령일’의 의미가 ‘상품 인도일’이라는 점을 분명히 하여 법령해석의 기준을 제시하고 유통업자의 자의적인 검사 지연 등에 따른 대금지급 지연을 방지하고자 하였다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;  나아가 공정위는 2만 5천여 납품업자와의 직매입거래에서 발생한 지연이자 미지급액 약 8억 5천만 원과 2천 9백여 납품업자에게 반환하지 않은 미소진 쿠팡체험단 상품 비용 약 5억 3천만 원에 대해서도 해당 납품업자에게 지체없이 지급‧반환하도록 하여 불공정행위로 인해 손해를 입은 납품업자에게 실질적인 피해구제가 될 수 있도록 하였다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;  공정위는 앞으로도 대규모유통업자가 자신의 거래상 우월적 지위를 이용하여 직매입거래에 따른 위험과 비용을 납품업자에게 전가하고 자신의 이익 유지를 위해 납품업자의 정당한 이익을 침해하는 행위와 같은 불공정행위에 대해 면밀히 감시하고 법 위반이 확인될 경우 엄정 조치할 계획이다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="260227(조간) 쿠팡(주)의 대규모유통업법 위반행위 제재 image009.png" class="fr-dib fr-fil full" data-file-sn="15676305" data-gif="false" data-img-height="3508" data-img-width="2480" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676305/37c37c4c18c2dd.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="260227(조간) 쿠팡(주)의 대규모유통업법 위반행위 제재 image010.png" class="fr-dib fr-fil full" data-file-sn="15676306" data-gif="false" data-img-height="3508" data-img-width="2480" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676306/927fb8db06625.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="260227(조간) 쿠팡(주)의 대규모유통업법 위반행위 제재 image011.png" class="fr-dib fr-fil full" data-file-sn="15676307" data-gif="false" data-img-height="3508" data-img-width="2480" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676307/37c37c8cc2beb5.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="260227(조간) 쿠팡(주)의 대규모유통업법 위반행위 제재 image012.png" class="fr-dib fr-fil full" data-file-sn="15676308" data-gif="false" data-img-height="3508" data-img-width="2480" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676308/37c37ca1101493.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="260227(조간) 쿠팡(주)의 대규모유통업법 위반행위 제재 image013.png" class="fr-dib fr-fil full" data-file-sn="15676309" data-gif="false" data-img-height="3508" data-img-width="2480" data-role="attach-image" src="https://edgio.clien.net/F01/2026/2/15676309/37c37cb9c75938.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/19150494</guid><pubDate>Thu, 26 Feb 2026 12:52:58 GMT</pubDate></item><item><title>간절한 부모마음 볼모로 잡은 쿠팡… 미숙아 '특수분유' 독점해 가격 폭등[10][27]</title><link>https://www.clien.net/service/board/news/19150376</link><description>
- 
- 
-  &lt;blockquote&gt;
-   저체중아 필수 분유, 한 통에 4만 원 → 6만 4천 원
-  &lt;/blockquote&gt;
-  &lt;blockquote&gt;
-   수입처 품절 틈타 재고 싹쓸이 후 '가격 뻥튀기'
-  &lt;/blockquote&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이커머스 공룡 '쿠팡'이 저체중 아기들과 이른둥이(미숙아)들이 주식으로 먹어야 하는 수입 특수분유를 사실상 독점한 뒤, 가격을 무려 60%나 기습 인상해 소비자의 공분을 사고 있습니다.&lt;/p&gt;
-  &lt;p&gt;이른둥이나 저체중으로 태어난 아기들에게 살이 잘 찌는 '고열량 특수분유'는 단순한 선택이 아닌 생존을 위한 필수품입니다. 일반 분유보다 4배가량 비싸지만, 아기들의 건강한 성장을 위해 부모들은 기꺼이 지갑을 엽니다. 그런데 최근 이들의 간절한 마음을 교묘하게 이용한 쿠팡의 가격 정책이 도마 위에 올랐습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h2&gt;&lt;strong&gt;품절 사태를 기회로 삼은 독점과 가격 인상&lt;/strong&gt;&lt;/h2&gt;
-  &lt;p&gt;원래 해당 수입 특수분유는 수입업체 공식 홈페이지에서 한 통당 4만 원 선에 판매되었습니다. 하지만 최근 수입업체가 변경되는 과정에서 통관 절차 등으로 인해 공식 홈페이지의 물량이 일시 품절되는 사태가 벌어졌습니다.&lt;/p&gt;
-  &lt;p&gt;문제는 쿠팡의 행태입니다. &lt;strong&gt;지난해 12월까지만 해도 수입업체보다 단돈 10원 싼 3만 9,990원에 해당 분유를 판매하며 '최저가'를 내세웠던 쿠팡은, 수입업체의 물량이 떨어지자 태도를 돌변했습니다.&lt;/strong&gt; 기존 수입업체로부터 남은 재고 물량 대부분을 사들여 사실상 시장을 '독점'한 쿠팡은, 이후 서서히 가격을 올리기 시작해 현재는 &lt;strong&gt;한 통에 6만 4천 원대&lt;/strong&gt;까지 가격을 끌어올렸습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h2&gt;&lt;strong&gt;"돈놀이 하는구나"… 분통 터지는 부모들&lt;/strong&gt;&lt;/h2&gt;
-  &lt;p&gt;한 달에 평균 10통의 분유를 먹여야 하는 부모들 입장에서, 한 통에 2만 원이 훌쩍 넘게 뛰어오른 분유값은 엄청난 경제적 부담일 수밖에 없습니다. 대체할 수 있는 상품이 마땅치 않은 특수분유의 특성상, 부모들은 울며 겨자 먹기로 비싼 값을 치르고 쿠팡에서 제품을 구매해야만 하는 처지에 놓였습니다.&lt;/p&gt;
-  &lt;p&gt;현재 쿠팡 사이트와 각종 육아 커뮤니티에는 "가격을 아무리 올려도 아기를 위해 어쩔 수 없이 사야만 하는 부모의 마음을 악용하고 있다", "눈에 뻔히 보이는 돈놀이에 너무 속상하고 화가 난다"며 쿠팡의 비윤리적인 상술을 질타하는 분노 섞인 글들이 쏟아지고 있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h2&gt;&lt;strong&gt;무책임한 해명으로 일관하는 쿠팡&lt;/strong&gt;&lt;/h2&gt;
-  &lt;p&gt;상황이 이러한데도 쿠팡 측은 변명으로 일관하고 있습니다. 쿠팡은 "제조사 수급 문제로 제품 가격이 상승한 것"이라고 책임을 회피하며, "여전히 시장가보다는 저렴한 가격으로 판매하고 있다"는 궁색한 해명을 내놓았습니다. 심지어 가격을 다시 예전 수준인 4만 원대로 내릴 의향이 있냐는 취재진의 질문에는 묵묵부답으로 일관했습니다.&lt;/p&gt;
-  &lt;p&gt;자본력을 앞세워 시장의 재고를 싹쓸이한 뒤, 가장 취약하고 간절한 소비자들을 상대로 폭리를 취하는 행태는 기업의 사회적 책임을 저버린 심각한 도덕적 해이(모럴 해저드)입니다. '혁신'을 부르짖던 쿠팡이 정작 아기들의 생존 필수품을 볼모로 '약탈적 이윤 창출'에 몰두하고 있는 것은 아닌지, 매서운 비판과 자성이 필요한 시점입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;hr/&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;위 게시글은 아래의 기사들을 참조하여 Gemini로 재구성한 내용입니다&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://imnews.imbc.com/replay/2026/nwdesk/article/6803243_37004.html" target="_blank"&gt;https://imnews.imbc.com/replay/2026/nwdesk/article/6803243_37004.html&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://imnews.imbc.com/replay/2026/nwtoday/article/6803317_37012.html" target="_blank"&gt;https://imnews.imbc.com/replay/2026/nwtoday/article/6803317_37012.html&lt;/a&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/19150376</guid><pubDate>Thu, 26 Feb 2026 10:23:49 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19150744</guid><pubDate>Thu, 26 Feb 2026 17:46:42 GMT</pubDate></item></channel></rss>
