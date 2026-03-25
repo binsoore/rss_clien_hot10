@@ -1,5 +1,311 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Wed, 25 Mar 2026 23:00:57 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이동형이나 김용민씨 등은 왜 문재인 대통령에 대한 증오가 대단한 걸까요?[22][5]</title><link>https://www.clien.net/service/board/park/19167945</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Thu, 26 Mar 2026 00:00:53 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 FSD 지역 언락이 가능한 원리[10][6]</title><link>https://www.clien.net/service/board/cm_car/19167912</link><description>
+ 
+ 
+  &lt;p&gt;언락 툴이 Enhance S3XY 커맨더와 같은 배선을 공유하는걸 보니, Vehicle CAN채널에 간단한 플래그값 정도만 Injection 하는 원리 같아 제 경험과 상상력을 더해 원리를 쉽게 설명해 보겠습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자동차의 각 기능 모듈들은 독립된 엣지 컴퓨터들입니다.&lt;/p&gt;
+  &lt;p&gt;테슬라가 중앙집중식이라 알려져 있지만, 기능들이 더 많은 단위로 합쳐져 있을 뿐 근본적인 구조는 크게 다르지 않습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 중 자율주행 또는 주행보조에 기여하는 핵심 부품들은&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;카메라 모듈.&lt;/p&gt;
+  &lt;p&gt;브레이크 제어 모듈.&lt;/p&gt;
+  &lt;p&gt;모터 제어 모듈.&lt;/p&gt;
+  &lt;p&gt;스티어링휠 제어모듈.&lt;/p&gt;
+  &lt;p&gt;FSD컴퓨터(HW3, HW4. APU라고 부릅니다.) 등이 있겠지요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그리고 테슬라의 운영체제가 구동된다 할 수 있는 MCU (터치스크린 인터페이스, 진단기, OTA 설치를 위한 게이트웨이 역할 등등) 컴퓨터가 있습니다. 이 녀석이 아톰이냐 라이젠이냐 하는 놈입니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;MCU를 중앙제어 컴퓨터라 생각하기 쉽지만 사실 이 녀석이 꺼져 있어도 자동차가 굴러가는데 문제가 없습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;MCU가 중앙집중형으로 모든 데이터를 받고 다시 뿌려주며 기능을 제어하는 구조가 아니라, 각 모듈들은 서로 브로드캐스팅 (방송하듯 떠 듣고 모두가 들을 수 있는 구조)하는 통신을 하고 있거든요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;예를 들어 휠스피드 센서가 "나 지금 초당 10바퀴 돌고 있어"라고 CAN 통신망에 외치면 그걸 MCU가 읽어 로그도 남기고 속도를 띄우고, FSD컴퓨터도 정보를 받고, 에어백 모듈도 받고, 등등..&lt;/p&gt;
+  &lt;p&gt;차의 모든 정보가 수ms에서 수백ms마다 한번씩 외치듯 통신망을 떠돕니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;오토파일럿 체결을 위해 스토크를 두번 또는 핸들 터치버튼을 누르게 되면, "오토파일럿 실행"을 의미하는 패킷이 통신망을 타고 퍼집니다. 그러면 이 명령은 MCU가 검증 후 APU에게 보내는게 아니라, APU가 즉시 듣고 동작합니다. 그래서 MCU 재부팅 중에도 오토파일럿은 동작합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 명령은 다른 장치로 에뮬레이션 해서 대신 보낼 수도 있습니다. 이게 S3XY 버튼과 커맨더가 하는 일입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;반대로 APU가 오토파일럿 또는 FSD 제어를 할 때도 마찬가지입니다. APU는 판단을 위해 카메라를 비롯해 여러 정보를 듣고 있으면서 동시에 스티어링휠, 모터, 브레이크 등에 명령을 보냅니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;APU의 명령도 누군가 대체해서 보낼 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;누군가 APU인 척 휠, 모터, 브레이크에게  같은 명령을 보내면 되죠. 이게 콤마 오픈파일럿이 테슬라도 제어할 수 있는 원리입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;물론 이런 제어가 임의의 노이즈에 의해 꼬이면 안되니 약간의 체계는 있습니다. 신호 순서를 알려주고 메아리치듯 계속 흘러다니는 패킷이 동작을 여러번 반복시키지 않게 하는 카운터 정보가 있고, 에러 검출을 위한 CRC 체크섬 로직도 있습니다. 이런 로직은 리버스엔지니어링으로 모사할 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자 이제, 배경 설명은 됐고 그래서 FSD 언락을 어떻게 하는거냐?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;APU는 차가 깨어날 때 MCU에게 기본적인 정보를 받습니다.&lt;/p&gt;
+  &lt;p&gt;"이 차는 더블 스토크 동작이 들어오면 오토파일럿 동작을 해"&lt;/p&gt;
+  &lt;p&gt;"이 차는 지역이 미국/유럽/한국 이니까 어떤 기능은 활성화/비활성화 해"&lt;/p&gt;
+  &lt;p&gt;사실 한번 받는게 아니라 계속 반복 세뇌교육 하듯 패킷이 보내집니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 정보를 다른 모듈이 끼어들어&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;"사실 너는 지금 미국에 있어" 를 포함한 규제를 뚫을 수 있는 몇가지 정보를 APU에게 쏴준다면 APU는 스토크나 버튼 조작 시 MCU에게 되묻지 않고 FSD 주행을 시작할 수 있습니다. 네비 정보는 이미 전달 되고 있을거에요. 최대속도 제어 등에 일부만 쓰일 뿐..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;만약 FSD를 위한 인공신경망 모델 파일(가중치 덩어리)이 포함되어 있지 않다면 무용지물이지만 최근 배포판에는 모델 파일이 이미 심어져 나오는 모양입니다. 모델 파일이 없다면 속인다고 동작할 수 없을거거든요. 아무래도 쉐도우 학습을 위해 배포되어 있는 상태로 생각 됩니다. 또는 펌웨어 파일 파편화를 막기 위한 버전관리 편의 때문일 수 있겠죠.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;여기서 의문이 들 수 있는 부분이&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;"어? MCU가 계속 여기는 한국이라고 외칠텐데? 한국/미국/한국/미국 반복되면 꼬이는거 아냐?"&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;사실 실제 MCU가 보내는 메시지가 100ms마다 한번이라 하면.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;0.0초 한국/0&lt;/p&gt;
+  &lt;p&gt;0.1초 한국/1&lt;/p&gt;
+  &lt;p&gt;0.2초 한국/2&lt;/p&gt;
+  &lt;p&gt;0.3초 한국/3 ....&lt;/p&gt;
+  &lt;p&gt;...&lt;/p&gt;
+  &lt;p&gt;25.5초 한국/255&lt;/p&gt;
+  &lt;p&gt;25.6초 한국/0&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;과 같은 카운터 값이 붙어 나갑니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;만악 0.2초에 한국/2 메시지가 나간 직후에, 변조 모듈이&lt;/p&gt;
+  &lt;p&gt;0.2초와 0.3초 사이에  미국/3을 선점 해버리면 이후에 MCU가 보내는 한국/3 정보는 무시 됩니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;기존 카운터 다음 번호를 가진 정보만 유효하게 받아들이거든요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;제가 이 원리를 알고 있는 이유는 관련 직종에 있어서가 아니라, 1~2년 전 즈음 ChatGPT의 자문을 받아가며 CAN Injection 하는 장치를 만들어 봤기 때문입니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;S3XY 커맨더가 내보내는 신호를 덤프할 수도 있었어서 커맨더도 다음 카운터에 해당하는 명령을 보낸다는 것을 알 수 있었고요. 몇가지 기능은 쉽게 카피할 수 있었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;사실 예전에 공개되어 있던 DBC파일 (패킷 주소가 어떤 의미인지를 담는 사전)에 지역 코드라거나, FSD가 활성화 되어 있는지 여부 등을 담는 정보값이 있었어요. 다만 그 정보가 담긴 번지수가 달라져서 읽거나 변조시킬 수 없었을 뿐이죠. (그리고 변조시켰다 하더라도 FSD 모델 파일이 배포되어 있지 않은 상태라면 무용지물입니다) 개발자는 국가별 달라지는 정보를 찾아냈고 어떤 주소의 어떤 비트가 어떤 정보를 담는지를 리버스엔지니어링 해서 찾아냈을겁니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아마 이번 언락 툴도 구매자 중 저처럼 패킷 덤프 해서 분석하는 걸 해 본 사람이 나서면 금방 복제 될겁니다.  Enhance측에서 유료 기능으로 제공할 수도 있고, 중국산 TSL 모듈 등에 탑재될 수도 있겠죠. 테슬라가 막을 수 있을 것인가? 아마도 MCU에서 APU로의 모델 배포를 막아버린다면 모를까, 활성화에 기여하는 플래그 위치를 바꾼다 해도 금방 다시 찾아낼겁니다. 모델 배포를 막는다는건 모델 검증을 못한다는 이야기이니 그런 선택을 하지 않을 가능성이 높구요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이게 보안에 취약해 보일 수 있지만 사실 많은 차들이 마찬가지에요. 오픈파일럿 구동 되는 차는 다 이런 식으로 동작하는거니까요. 그저 보안 게이트웨이 너머 어딘가의 배선에 연결해야 된다 정도의 차이일 뿐..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;저는 미국산 HW3이라 조만간 FSD Lite가 뜰거 같아서 호기심에 구입하는걸 참으려고 합니다. 규제 개정까지 한참 걸릴 HW4 중국산 오너분들은 엄청 탐나실거 같은데, 급한거 아니니 한 두달 정도는 기다려보세요.  누군가 카피해서 나오는지 지켜보자구요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;원리만 파악 되면 제작배선 + ESP32 기반 단일기능 칩 하면 원가 2만원 안쪽에 구현 가능해질겁니다. 그걸 10만원에 팔지 20만원에 팔지는 모르겠지만요. (유럽에서 만드니 수십만원짜리인 S3XY 커맨더도 본체는 ESP32입니다. 순전히 소프트웨어 값..)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19167912</guid><pubDate>Wed, 25 Mar 2026 21:55:49 GMT</pubDate></item><item><title>이야기 출근길 눈부신 일출을 봤습니다[11][2]</title><link>https://www.clien.net/service/board/cm_car/19167507</link><description>
+ 
+ 
+  &lt;p&gt;오늘 출근길 일출이 멋있어서 사진을 찍었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="sss20260324_073105.jpg" class="fr-dib fr-fil full" data-file-sn="15697301" data-gif="false" data-img-height="644" data-img-width="998" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697301/40038bf2b81715.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;눈부신 일출 광경이었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그런데, 눈이 좀 많이 부셨습니다.  아래 사진에서 전방에 차가 몇 대 있는지, 신호등이 가까운 것 말고 저 앞에 어디 있는지 보이시나요?  안 보입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="s20260324_073105.jpg" class="fr-dib fr-fil full" data-file-sn="15697302" data-gif="false" data-img-height="760" data-img-width="1000" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697302/1168144a2919ae.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;그 상태로 5km정도 주행하는데, 저 말고 다른 차들도 속력을 내지 못하더군요.  다행히 저는 출근하는 경로라서 신호등 위치까지 잘 알고 있었지만요.&lt;/p&gt;
+  &lt;p&gt;일출, 일몰때라도 해가 좌, 우로 치우쳐 있다면 해가리개를 내려도 가려지는 높이가 부족하면 한 손바닥으로 해를 가리면서 주행할 있는데, 이 경우는 손바닥으로 가리면 길이 보이지 않아서 다른 곳 보면서 눈을 쉬고 다시 잠깐 앞을 봐서 확인하는 것을 반복하며 주행했습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 길은 (미국의 많은 길이 그렇듯) 정확하게 동쪽 직선 방향을 향하고 있습니다.  해가 뜨는 위치는 일년 중 동남↔동북 방향 사이에서 왔다 갔다 하기 때문에 해가 길 정중앙 지점에서 뜨는 날은 일년에 오늘 하루뿐입니다.  그런 날 일몰 광경을 찍었으니 행운이긴 한데, 앞을 보지 못하면서 운전하는 것은 고역이었습니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19167507</guid><pubDate>Wed, 25 Mar 2026 10:18:03 GMT</pubDate></item><item><title>감정형 인간들은 정치, 평론 접어야죠[11][13]</title><link>https://www.clien.net/service/board/park/19167955</link><description>
+ 
+ 
+  &lt;p&gt;김어준 유시민 지들이 먼저 쳐놓고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;반발 돌아오니까 멘탈 나가서 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;결국 막장까지 가네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;반발 돌아올 것 각오도 않고 치는거면&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;수가 많이 낮은 거고,&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;알고 때렸는데 못버티는 거면 멘탈이 많이 약한 거고.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이동형, 한준호 같은 감정덩어리는 정치 근처에 얼씬하면 안됩니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;진중권, 이낙연이 먼저 맛탱이 간 감정형 인간들이고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이동형, 한준호도 여기서 멈출 줄 모르면 같은 길 갈듯.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167955</guid><pubDate>Wed, 25 Mar 2026 22:52:01 GMT</pubDate></item><item><title>이재명 대통령, 진주중앙시장 민심 청취 (분위기 좋아요~)[3][5]</title><link>https://www.clien.net/service/board/park/19167944</link><description>
+ 
+ 
+  &lt;p&gt;강훈식 비서실장:&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;지역에서 일정이 끝나면 꼭 시장을 들르시는 통님. 오늘은 에너지 위기와 관련한 민심을 듣고자 다녀왔습니다. 꼭 이렇게 힘을 얻으시더랍니다. ^^ &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://pbs.twimg.com/media/HEQKQVpacAAOv7W?format=jpg&amp;amp;name=large"/&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;blockquote class="twitter-tweet" data-lang="en"&gt;
+   &lt;a href="https://twitter.com/kanghunsik_/status/2036764222303228076" target="_blank"&gt;https://twitter.com/kanghunsik_/status/2036764222303228076&lt;/a&gt;
+  &lt;/blockquote&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/u32zzygcO8M" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/A4H1fWyRwHA" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이재명 대통령, 진주중앙시장 방문 관련 안귀령 부대변인 서면 브리핑&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;2026.03.25&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이재명 대통령은 오늘 오후 한국항공우주산업(KAI)에서 열린 KF-21 양산 1호기 출고식에 참석한 뒤 경남 진주시에 위치한 진주중앙시장을 깜짝 방문해 민심을 청취했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;진주중앙시장은 1884년 개장한 유서 깊은 전통시장으로, 진주 지역의 대표 상업 거점으로 자리하고 있습니다. 이재명 대통령은 후보 시절이던 지난해 5월에도 이곳을 방문한 바 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;img class="fr-fic fr-dib" src="https://www.president.go.kr/images/2026/03/thqHhHsnnm9469c3b5016027b5.66832140.jpg"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/OI2pL1IVr-0" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;상인들과 주민들은 예고 없이 깜짝 등장한 이재명 대통령을 환호와 박수로 맞이했습니다. 현장에서는 “이재명 대통령 최고!”, “사랑합니다”, "감사합니다", “멋있어요”, “고생 많으십니다” 등 다양한 응원의 목소리가 이어졌습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/1wlF2f2Qxrk" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/4md33q9of80" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://www.president.go.kr/images/2026/03/P5tqjcgtXHDl69c3b4ff0735a7.40423044.jpg"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/GESUq3VO_mw" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;span class="out_img"&gt;&lt;img alt="https://instagram.ficn4-1.fna.fbcdn.net/v/t51.82787-15/657279196_18571794997002695_4945903465171451618_n.jpg?stp=dst-jpg_e35_tt6&amp;amp;_nc_cat=102&amp;amp;ig_cache_key=Mzg2MDY0NjI5Mzg2OTI4ODQ0OQ%3D%3D.3-ccb7-5&amp;amp;ccb=7-5&amp;amp;_nc_sid=58cdad&amp;amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4OTYwLnNkci5DMyJ9&amp;amp;_nc_ohc=aYCuwOKsuBQQ7kNvwH4KysY&amp;amp;_nc_oc=AdonrDMKot2hLFwDBhzZE3DPaBBAwgIbvAuRHh3aHcPW-Q_xuqG3Ml6Er0FNDWfDRWk&amp;amp;_nc_ad=z-m&amp;amp;_nc_cid=0&amp;amp;_nc_zt=23&amp;amp;_nc_ht=instagram.ficn4-1.fna&amp;amp;_nc_gid=mKedygqs1SXuv3K-hpOh3A&amp;amp;_nc_ss=7a32e&amp;amp;oh=00_Afwo1iTnbF7Ivr-aLNiQI6K89OzvIDvEF3jK6Uhz_SRPSQ&amp;amp;oe=69C9A535" class="outimg fr-fic fr-dii" src="https://instagram.ficn4-1.fna.fbcdn.net/v/t51.82787-15/657279196_18571794997002695_4945903465171451618_n.jpg?stp=dst-jpg_e35_tt6&amp;amp;_nc_cat=102&amp;amp;ig_cache_key=Mzg2MDY0NjI5Mzg2OTI4ODQ0OQ%3D%3D.3-ccb7-5&amp;amp;ccb=7-5&amp;amp;_nc_sid=58cdad&amp;amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4OTYwLnNkci5DMyJ9&amp;amp;_nc_ohc=aYCuwOKsuBQQ7kNvwH4KysY&amp;amp;_nc_oc=AdonrDMKot2hLFwDBhzZE3DPaBBAwgIbvAuRHh3aHcPW-Q_xuqG3Ml6Er0FNDWfDRWk&amp;amp;_nc_ad=z-m&amp;amp;_nc_cid=0&amp;amp;_nc_zt=23&amp;amp;_nc_ht=instagram.ficn4-1.fna&amp;amp;_nc_gid=mKedygqs1SXuv3K-hpOh3A&amp;amp;_nc_ss=7a32e&amp;amp;oh=00_Afwo1iTnbF7Ivr-aLNiQI6K89OzvIDvEF3jK6Uhz_SRPSQ&amp;amp;oe=69C9A535"/&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이재명 대통령은 시민들과 일일이 눈을 맞추며 인사했고, 셀카 촬영에 응했습니다. 특히 아이들을 지나치지 않고 몇 살인지 묻는 등 세심하게 소통하며 함께 사진을 찍었습니다.&lt;/p&gt;
+  &lt;p&gt; &lt;img class="fr-fic fr-dib" src="https://www.president.go.kr/images/2026/03/HdkW08kJxdhw69c3b50035f671.45929935.jpg"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이재명 대통령은 시장 곳곳을 둘러보고, 상인들에게 장사가 잘되는지 묻는 등 현장의 목소리를 청취했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/PJADHssa1uU" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/QnTV7bOkbH4" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://www.president.go.kr/images/2026/03/RHSCmcADV0aR69c3b4ff9a9589.73504689.jpg"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/IpPuKVy2jjI" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이재명 대통령은 상추와 애호박 등을 현금과 온누리상품권으로 구입했고, 귤과 꼬치전, 호떡, 엿, 딸기 등을 즉석에서 맛본 뒤 구입했습니다. 이 대통령은 참모들에게 호떡을 권하며 “빈말이 아니고 진짜로 맛있다”고 여러 차례 말해 현장에 웃음을 자아냈습니다. 이 대통령은 “안 먹은 사람 없냐”며 주변을 챙겨 다 함께 호떡을 나눠 먹기도 했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/eQOfKd__MJQ" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한 상인은 이재명 대통령의 방문이 진주에 활력이 될 것이라고 감사를 표하고, “10월 진주남강유등축제가 열릴 때 꼭 다시 방문해 달라”고 요청했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;또 다른 상인은 “잘하고 계시는 거 다 압니다”라고 응원했고, 이재명 대통령은 “열심히 할 테니 많이 도와주세요”라고 답했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이재명 대통령은 “건강하세요”라고 하는 한 시민에게는 “나는 멀쩡한데 우리 국민들이 건강하셔야죠”라고 인사했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한 부부는 이 대통령과 사진을 찍은 뒤 “딸이 셋인데 다자녀 가구를 위한 정책을 잘 마련해 달라”고 요청했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/_kz_pSdABtw" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/ZvWAUwfXOsQ" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이재명 대통령은 시민들과 악수를 나누고 사진을 찍으며 한동안 시간을 보냈습니다. 시민들은 “멀리 진주까지 와주셔서 감사하다", "늘 건강하시라"며 이재명 대통령을 배웅했습니다. &lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/6Aq2jSqtUpg" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;2026년 3월 25일&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;청와대 부대변인 안귀령&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167944</guid><pubDate>Wed, 25 Mar 2026 22:29:46 GMT</pubDate></item><item><title>KF-21 보라매 양산 15호기 까꿍[4][7]</title><link>https://www.clien.net/service/board/park/19167921</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;조립 라인 구석에 양산 15호기가 보이네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_684840c.png" class="fr-dib fr-fil full" data-file-sn="15697814" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697814/402a3b7a2edf98.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한국항공우주산업은 올해 KF-21 8대와 FA-50 19대 등 총 27대를 납품할 예정이며, 내년과 내후년에는 각각 31대와 47대를 납품할 계획입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;번외 자료:&lt;/p&gt;
+  &lt;p&gt;101 !!!&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_627478.png" class="fr-dib fr-fil full" data-file-sn="15697817" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697817/402a48727bfe3d.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;FA-50M &lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_657924.png" class="fr-fic fr-dii full" data-file-sn="15697821" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697821/402a5893e60c37.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;NACS 와 KF-21 EJ, KF-21 EX 5G&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_739112.png" class="fr-dib fr-fil full" data-file-sn="15697822" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697822/118eeb21bac053.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_779265.png" class="fr-dib fr-fil full" data-file-sn="15697823" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697823/402a6c8873b880.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1436965.png" class="fr-dib fr-fil full" data-file-sn="15697832" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697832/402aceecca9675.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1441585.png" class="fr-dib fr-fil full" data-file-sn="15697833" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697833/118f4e2df5c8af.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1451095.png" class="fr-dib fr-fil full" data-file-sn="15697834" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697834/402acf41adaefe.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1453228.png" class="fr-dib fr-fil full" data-file-sn="15697835" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697835/402acfad769728.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1462741.png" class="fr-dib fr-fil full" data-file-sn="15697836" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697836/118f4eb2042d52.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1469776.png" class="fr-dib fr-fil full" data-file-sn="15697837" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697837/402acfbd139acf.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1480869.png" class="fr-dib fr-fil full" data-file-sn="15697838" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697838/402acfd84971be.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1485479.png" class="fr-dib fr-fil full" data-file-sn="15697839" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697839/402acffa0098be.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1488234.png" class="fr-dib fr-fil full" data-file-sn="15697840" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697840/402ad019680e3d.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1489879.png" class="fr-dib fr-fil full" data-file-sn="15697841" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697841/402ad072bb9acf.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1496802.png" class="fr-dib fr-fil full" data-file-sn="15697842" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697842/402ad0520f6bf5.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1499629.png" class="fr-dib fr-fil full" data-file-sn="15697843" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697843/402ad06f93edee.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1505540.png" class="fr-dib fr-fil full" data-file-sn="15697844" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697844/118f4fab6f2f99.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1511977.png" class="fr-dib fr-fil full" data-file-sn="15697845" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697845/402ad0b6f556a2.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_1517764.png" class="fr-dib fr-fil full" data-file-sn="15697846" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697846/118f4fe8d48545.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://www.president.go.kr/images/2026/03/fJwcjTbhH4vC69c3b47be224d5.92684058.jpg"/&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://www.president.go.kr/images/2026/03/qe6084Xxf21869c3b47f5d2835.92523578.jpg"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://www.president.go.kr/images/2026/03/GYnNMJbhnL4F69c3b47c779444.01290803.jpg"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img class="fr-fic fr-dib" src="https://www.president.go.kr/images/2026/03/F18qRJqKXyfK69c3b47b4dcb10.19970143.jpg"/&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/iO_bcWRA3Eo" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/PCRzf202lgo" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167921</guid><pubDate>Wed, 25 Mar 2026 21:43:27 GMT</pubDate></item><item><title>이동형이나 김용민씨 등은 왜 문재인 대통령에 대한 증오가 대단한 걸까요?[38][16]</title><link>https://www.clien.net/service/board/park/19167945</link><description>
  
  
   &lt;p&gt;거의 나라를 작살낸 매국노 급으로 묘사하는 것 같던데 이유를 알고 싶습니다.&lt;/p&gt;
@@ -20,7 +326,7 @@
   &lt;p&gt;그저 내란 돼지놈이 0.7% 차이로 당선되어서? 문파가 안 도와줘서? 그건 최민희 의원님이 해명해주셨습니다. 문파라고 하지말고 낙파라고 하라구요. 그리고, 낙파는 또 많은 수를 민주당 당원들께서 날려주셨습니다.&lt;/p&gt;
   &lt;p&gt;내란 돼지놈 정권은 우리도 같이 겪고 같이 힘들어했습니다. 그런데 꼭 지들만 겪은 것처럼 그 증오가 온전히 자기들 것인마냥 쥐고 흔들며 그걸 문재인 대통령에게 투사하는 꼬라지 보면 참... 못 배웠다 싶습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167945</guid><pubDate>Wed, 25 Mar 2026 22:26:02 GMT</pubDate></item><item><title>중국 문화에 대해[12][1]</title><link>https://www.clien.net/service/board/park/19167936</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167945</guid><pubDate>Wed, 25 Mar 2026 22:26:02 GMT</pubDate></item><item><title>중국 문화에 대해[13][1]</title><link>https://www.clien.net/service/board/park/19167936</link><description>
  
  
   &lt;p&gt;중국의 젊은 층은 무차별적인 정보의 노출로,&lt;/p&gt;
@@ -70,14 +376,14 @@
   &lt;p&gt;암튼, 중국의 과거 문화는 그 깊이와 방대함이...사실 전 세계를 통틀어서도... 대단했었는데, &lt;/p&gt;
   &lt;p&gt;지금은.... 과거형이 되어 그랬었구나...가 되어 그 안에 갇혀 버렸네요. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167936</guid><pubDate>Wed, 25 Mar 2026 22:09:24 GMT</pubDate></item><item><title>정원오 경선통과 어려울듯[24][1]</title><link>https://www.clien.net/service/board/park/19167935</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167936</guid><pubDate>Wed, 25 Mar 2026 22:09:24 GMT</pubDate></item><item><title>정원오 경선통과 어려울듯[27][2]</title><link>https://www.clien.net/service/board/park/19167935</link><description>
  
  
   &lt;p&gt;딴지 뽐뿌등에서 찍혔네요&lt;/p&gt;
   &lt;p&gt;그러게 김어준한테 사과요구는 왜해서 안타깝네요&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167935</guid><pubDate>Wed, 25 Mar 2026 22:01:05 GMT</pubDate></item><item><title>[단독] '그알 조폭연루설' 정면으로 뒤집는 법정 증언 있었다[4][8]</title><link>https://www.clien.net/service/board/park/19167931</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167935</guid><pubDate>Wed, 25 Mar 2026 22:01:05 GMT</pubDate></item><item><title>[단독] '그알 조폭연루설' 정면으로 뒤집는 법정 증언 있었다[4][9]</title><link>https://www.clien.net/service/board/park/19167931</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/047/0002509453?sid=102" ori-url="https://n.news.naver.com/mnews/article/047/0002509453?sid=102" target="_blank"&gt;[단독] '그알 조폭연루설' 정면으로 뒤집는 법정 증언 있었다&lt;/a&gt; | 오마이뉴스&lt;/p&gt;
@@ -89,13 +395,13 @@
   &lt;p&gt;그알은 자신들이 방송한 내용을 정정하는 방송을 해야합니다.&lt;/p&gt;
   &lt;p&gt;그리고 관련자는 처벌도 받아야죠.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167931</guid><pubDate>Wed, 25 Mar 2026 21:57:53 GMT</pubDate></item><item><title>유시민 영향력이 이정도는 아니였던거 같은데...[12][0]</title><link>https://www.clien.net/service/board/park/19167930</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167931</guid><pubDate>Wed, 25 Mar 2026 21:57:53 GMT</pubDate></item><item><title>유시민 영향력이 이정도는 아니였던거 같은데...[14][0]</title><link>https://www.clien.net/service/board/park/19167930</link><description>
  
  
   &lt;p&gt;일주일 전부터 자금까지 방송 유튜브 라디오  재래식 푸세식 언론 기레기 할꺼 없이&lt;/p&gt;
   &lt;p&gt;다 ABC 이야기만 하는데...예전에는 이정도 영향력은 이니였지 않나요??&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167930</guid><pubDate>Wed, 25 Mar 2026 21:58:15 GMT</pubDate></item><item><title>유시민 불쌍하네요ㅋㅋ[14][8]</title><link>https://www.clien.net/service/board/park/19167925</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167930</guid><pubDate>Wed, 25 Mar 2026 21:58:15 GMT</pubDate></item><item><title>유시민 불쌍하네요ㅋㅋ[15][9]</title><link>https://www.clien.net/service/board/park/19167925</link><description>
  
  
   &lt;p&gt;Abc는 갈라치기용이 아니라는데&lt;/p&gt;
@@ -124,7 +430,7 @@
  
   &lt;p&gt;제가 아이폰을 쓰면서 오타가 나는 구간이 ㅏ 와 ㅣ , ㅐ와ㅔ , ㅜ와ㅡ 등 오른쪽 엄지가 주로 맡는 모음 부분인데 26.4로 올리고 글을 쓰며 테스트를 해보니 확실히 오타가 줄어들긴하네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19167745</guid><pubDate>Wed, 25 Mar 2026 17:03:54 GMT</pubDate></item><item><title>흑화의 끝 B동형 ㅋㅋ 오늘의 몇가지 포인트[37][23]</title><link>https://www.clien.net/service/board/park/19167916</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19167745</guid><pubDate>Wed, 25 Mar 2026 17:03:54 GMT</pubDate></item><item><title>흑화의 끝 B동형 ㅋㅋ 오늘의 몇가지 포인트[39][29]</title><link>https://www.clien.net/service/board/park/19167916</link><description>
  
  
   &lt;p&gt;오늘 나온거 10분 정도 보면서 너무 웃기네요. 몇개 포인트가 있는데.&lt;/p&gt;
@@ -151,7 +457,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167916</guid><pubDate>Wed, 25 Mar 2026 21:28:28 GMT</pubDate></item><item><title>오늘 이이제이 한준호 멋있네요[47][17]</title><link>https://www.clien.net/service/board/park/19167909</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167916</guid><pubDate>Wed, 25 Mar 2026 21:28:28 GMT</pubDate></item><item><title>오늘 이이제이 한준호 멋있네요[53][19]</title><link>https://www.clien.net/service/board/park/19167909</link><description>
  
  
   &lt;p&gt;이런 준비된 피끓는 인재가 경기도지사를 당연히 하는게 경기도민들에게 진짜 이익이 되지 않을까 싶네요. 네임드가 밥먹여 주는거 아닙니다&lt;/p&gt;
@@ -199,13 +505,13 @@
   &lt;p&gt;&lt;span class="out_img"&gt;&lt;img alt="https://instagram.ficn4-1.fna.fbcdn.net/v/t39.30808-6/657540883_4106354532996931_3260138330400722326_n.jpg?stp=cp6_dst-jpegr_e35_tt6&amp;amp;_nc_cat=102&amp;amp;ig_cache_key=Mzg2MDU4MDMzMjE0ODE4MTIyNQ%3D%3D.3-ccb7-5&amp;amp;ccb=7-5&amp;amp;_nc_sid=58cdad&amp;amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE1MzZ4MjA0OC5oZHIuQzMifQ%3D%3D&amp;amp;_nc_ohc=TxinIqHtFGoQ7kNvwHgP4tF&amp;amp;_nc_oc=AdrFwRicvd9X5TRbsPGoJZ7M-EJHEVIIyduREISYArTQefM71Q-MPjM2v27Orj6fp2E&amp;amp;_nc_ad=z-m&amp;amp;_nc_cid=0&amp;amp;_nc_zt=23&amp;amp;_nc_ht=instagram.ficn4-1.fna&amp;amp;_nc_gid=3od9uKQ1WbWGU8X9LxSdNg&amp;amp;_nc_ss=7a32e&amp;amp;oh=00_AfwgrggITKtA3BvCCY-BLBsFdiq-hOtIo8cWhIV8zdrD_w&amp;amp;oe=69C9ADAE" class="outimg fr-fic fr-dii" src="https://instagram.ficn4-1.fna.fbcdn.net/v/t39.30808-6/657540883_4106354532996931_3260138330400722326_n.jpg?stp=cp6_dst-jpegr_e35_tt6&amp;amp;_nc_cat=102&amp;amp;ig_cache_key=Mzg2MDU4MDMzMjE0ODE4MTIyNQ%3D%3D.3-ccb7-5&amp;amp;ccb=7-5&amp;amp;_nc_sid=58cdad&amp;amp;efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE1MzZ4MjA0OC5oZHIuQzMifQ%3D%3D&amp;amp;_nc_ohc=TxinIqHtFGoQ7kNvwHgP4tF&amp;amp;_nc_oc=AdrFwRicvd9X5TRbsPGoJZ7M-EJHEVIIyduREISYArTQefM71Q-MPjM2v27Orj6fp2E&amp;amp;_nc_ad=z-m&amp;amp;_nc_cid=0&amp;amp;_nc_zt=23&amp;amp;_nc_ht=instagram.ficn4-1.fna&amp;amp;_nc_gid=3od9uKQ1WbWGU8X9LxSdNg&amp;amp;_nc_ss=7a32e&amp;amp;oh=00_AfwgrggITKtA3BvCCY-BLBsFdiq-hOtIo8cWhIV8zdrD_w&amp;amp;oe=69C9ADAE"/&gt;&lt;/span&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167908</guid><pubDate>Wed, 25 Mar 2026 21:31:02 GMT</pubDate></item><item><title>질문들]임은정검사 이야기를 들어보니 검찰개혁은 이제 시작이라네요[12][4]</title><link>https://www.clien.net/service/board/park/19167907</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167908</guid><pubDate>Wed, 25 Mar 2026 21:31:02 GMT</pubDate></item><item><title>질문들]임은정검사 이야기를 들어보니 검찰개혁은 이제 시작이라네요[12][5]</title><link>https://www.clien.net/service/board/park/19167907</link><description>
  
  
   &lt;p&gt;보완수사권과 전건송치를 주면 지금이랑 다를바가 없다고 하네요&lt;/p&gt;
   &lt;p&gt;그런데도 검찰개혁한다면서 보완수사권을 줘야 된다는 사람이 아직도 있군요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167907</guid><pubDate>Wed, 25 Mar 2026 21:19:15 GMT</pubDate></item><item><title>드디어 부동산 보유세 1% 적용할것 같네요[21][0]</title><link>https://www.clien.net/service/board/park/19167905</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167907</guid><pubDate>Wed, 25 Mar 2026 21:19:15 GMT</pubDate></item><item><title>드디어 부동산 보유세 1% 적용할것 같네요[23][0]</title><link>https://www.clien.net/service/board/park/19167905</link><description>
  
  
   &lt;p style="user-select: auto*;"&gt;이재명 대통령이&lt;/p&gt;
@@ -231,7 +537,7 @@
   &lt;p style="user-select: auto*;"&gt;기다림은 이제 끝난것 같네요&lt;/p&gt;
   &lt;p style="user-select: auto*;"&gt;잘가세요 ㅋㅋㅋ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167905</guid><pubDate>Wed, 25 Mar 2026 21:18:53 GMT</pubDate></item><item><title>이동형 작가, 보완수사권 지지하면서, 괴상한 예시를 드네요[8][11]</title><link>https://www.clien.net/service/board/park/19167898</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167905</guid><pubDate>Wed, 25 Mar 2026 21:18:53 GMT</pubDate></item><item><title>이동형 작가, 보완수사권 지지하면서, 괴상한 예시를 드네요[8][16]</title><link>https://www.clien.net/service/board/park/19167898</link><description>
  
  
   &lt;p&gt;혜경궁 김씨사건은&lt;/p&gt;
@@ -256,7 +562,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167898</guid><pubDate>Wed, 25 Mar 2026 21:02:09 GMT</pubDate></item><item><title>오늘 사무실에서 민원인과 한바탕 다퉜습니다.[18][25]</title><link>https://www.clien.net/service/board/park/19167897</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167898</guid><pubDate>Wed, 25 Mar 2026 21:02:09 GMT</pubDate></item><item><title>오늘 사무실에서 민원인과 한바탕 다퉜습니다.[19][26]</title><link>https://www.clien.net/service/board/park/19167897</link><description>
  
  
   &lt;p&gt;면사무소로 오전에 어떤 나이 많은 남자가&lt;/p&gt;
@@ -340,7 +646,7 @@
   &lt;p&gt;폰 충전시 발열 적절하고 괜찮은데, 에어팟 프로1 충전 중 주황불이 계속 깜빡거리길래 만져봤더니 정말 너무 뜨거워서 손이 데일 정도여서 놓쳐버렸습니다.&lt;/p&gt;
   &lt;p&gt;특히 경첩 있는 쪽이 엄청 뜨겁더군요... 무서워서 유선 충전만 하고 있는데, 어떤 상황이었을지 조언 좀 구해봅니다...(코일 맞물림이 잘못 됐다든가 하는 등의...)&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19167724</guid><pubDate>Wed, 25 Mar 2026 15:57:47 GMT</pubDate></item><item><title>유 작가 매불쇼 2차를 보고[19][32]</title><link>https://www.clien.net/service/board/park/19167885</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19167724</guid><pubDate>Wed, 25 Mar 2026 15:57:47 GMT</pubDate></item><item><title>유 작가 매불쇼 2차를 보고[22][40]</title><link>https://www.clien.net/service/board/park/19167885</link><description>
  
  
   &lt;p&gt;'역사를 잊은 민족에게는 미래가 없다'&lt;/p&gt;
@@ -429,7 +735,7 @@
  
   &lt;p&gt;장동민 정영진 헬마 진중권(?!)&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167871</guid><pubDate>Wed, 25 Mar 2026 20:24:32 GMT</pubDate></item><item><title>이분의 혜안은 알면 알수록 놀라울 따름입니다.[9][28]</title><link>https://www.clien.net/service/board/park/19167864</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167871</guid><pubDate>Wed, 25 Mar 2026 20:24:32 GMT</pubDate></item><item><title>이분의 혜안은 알면 알수록 놀라울 따름입니다.[10][31]</title><link>https://www.clien.net/service/board/park/19167864</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -453,7 +759,7 @@
   &lt;p&gt;&lt;img alt="2026-03-25 20_09_00.jpg" class="fr-fic fr-dii full" data-file-sn="15697771" data-gif="false" data-img-height="1586" data-img-width="2943" data-role="attach-image" src="https://edgio.clien.net/F01/2026/3/15697771/4025ab789114c8.jpg?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167864</guid><pubDate>Wed, 25 Mar 2026 20:12:20 GMT</pubDate></item><item><title>“권위 잃은” 재래식언론은 “유시민과 김어준”을 공격하면…[1][8]</title><link>https://www.clien.net/service/board/park/19167863</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167864</guid><pubDate>Wed, 25 Mar 2026 20:12:20 GMT</pubDate></item><item><title>“권위 잃은” 재래식언론은 “유시민과 김어준”을 공격하면…[1][9]</title><link>https://www.clien.net/service/board/park/19167863</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -521,7 +827,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167863</guid><pubDate>Wed, 25 Mar 2026 20:48:40 GMT</pubDate></item><item><title>유시민 작가의 설명을 잘 들었으면 안 긁혔을텐데[15][7]</title><link>https://www.clien.net/service/board/park/19167859</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167863</guid><pubDate>Wed, 25 Mar 2026 20:48:40 GMT</pubDate></item><item><title>유시민 작가의 설명을 잘 들었으면 안 긁혔을텐데[15][8]</title><link>https://www.clien.net/service/board/park/19167859</link><description>
  
  
   &lt;p&gt;국힘지지자들도 A인데  왜  본인을 B라고 생각했을까요?&lt;/p&gt;
@@ -546,7 +852,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167853</guid><pubDate>Wed, 25 Mar 2026 20:01:42 GMT</pubDate></item><item><title>오늘 매불쇼 좋았습니다.[2][23]</title><link>https://www.clien.net/service/board/park/19167852</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167853</guid><pubDate>Wed, 25 Mar 2026 20:01:42 GMT</pubDate></item><item><title>오늘 매불쇼 좋았습니다.[2][26]</title><link>https://www.clien.net/service/board/park/19167852</link><description>
  
  
   &lt;p&gt;집권하면, 자기계파에서 정권을 이어가려고 해봐야, &lt;/p&gt;
@@ -600,7 +906,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;h1&gt;유시민의 경고 “재래 언론이 보호해 주는 정치인은 위험해”&lt;/h1&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167841</guid><pubDate>Wed, 25 Mar 2026 19:43:05 GMT</pubDate></item><item><title>문형배 전 헌법재판소장님 강연 들으러 왔습니다.[1][6]</title><link>https://www.clien.net/service/board/park/19167815</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167841</guid><pubDate>Wed, 25 Mar 2026 19:43:05 GMT</pubDate></item><item><title>문형배 전 헌법재판소장님 강연 들으러 왔습니다.[1][7]</title><link>https://www.clien.net/service/board/park/19167815</link><description>
  
  
   &lt;p&gt;평소 멀리서나마 존경과 응원을 보내왔던 문형배 전 헌법재판소장님의 강연을 현장에서 직접 경청하게 되어 참으로 감개무량합니다. 평소 소장님께서 보여주신 철학과 신념을 직접 들을 수 있는 이 자리가 제게는 더할 나위 없는 영광입니다. 한 말씀 한 말씀 놓치지 않고 가슴에 새겨, 제가 서 있는 자리에서 올바른 가치관을 실천하는 밑거름으로 삼겠습니다.&lt;/p&gt;
@@ -628,7 +934,7 @@
     이제 한국 감옥에서 평생 썩게하고 진짜 감옥생활이 무엇인지 제대로 느끼게 해줬으면 해요.&lt;br/&gt;
     3년전에 접촉했었던 jtbc 기자에게는 넌 남자도 아냐 이러고 말하고 째려보더만ㅉㅉ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167823</guid><pubDate>Wed, 25 Mar 2026 18:56:28 GMT</pubDate></item><item><title>유시민 작가를 욕하는 이유[22][28]</title><link>https://www.clien.net/service/board/park/19167820</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167823</guid><pubDate>Wed, 25 Mar 2026 18:56:28 GMT</pubDate></item><item><title>유시민 작가를 욕하는 이유[22][29]</title><link>https://www.clien.net/service/board/park/19167820</link><description>
  
  
   &lt;p&gt;공격하고 싶은데&lt;/p&gt;
@@ -789,7 +1095,7 @@
   &lt;p&gt;다음에 나오시면 꼭 답해주세요&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167816</guid><pubDate>Wed, 25 Mar 2026 18:39:48 GMT</pubDate></item><item><title>현 국제정서를보면 이준석은 잡아 죽여야합니다.[7][15]</title><link>https://www.clien.net/service/board/park/19167810</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167816</guid><pubDate>Wed, 25 Mar 2026 18:39:48 GMT</pubDate></item><item><title>현 국제정서를보면 이준석은 잡아 죽여야합니다.[7][16]</title><link>https://www.clien.net/service/board/park/19167810</link><description>
  
  
   &lt;p&gt;농담이 아니라 얘는  진짜로 위험인물이예요.&lt;/p&gt;
@@ -817,7 +1123,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;만약 되면 진짜 전쟁일으킬넘이 이준석입니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167810</guid><pubDate>Wed, 25 Mar 2026 18:26:37 GMT</pubDate></item><item><title>이란 “한국 선박 통항 가능”…대사 국회 방문....[16][17]</title><link>https://www.clien.net/service/board/park/19167802</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167810</guid><pubDate>Wed, 25 Mar 2026 18:26:37 GMT</pubDate></item><item><title>이란 “한국 선박 통항 가능”…대사 국회 방문....[18][17]</title><link>https://www.clien.net/service/board/park/19167802</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -958,7 +1264,7 @@
   &lt;p&gt;안전을...지켜줄거라는요..?&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167802</guid><pubDate>Wed, 25 Mar 2026 18:07:38 GMT</pubDate></item><item><title>손가혁들 B종자로 개명하고 향후 계획이야 뻔하죠. 김민석 당대표.[36][1]</title><link>https://www.clien.net/service/board/park/19167798</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167802</guid><pubDate>Wed, 25 Mar 2026 18:07:38 GMT</pubDate></item><item><title>손가혁들 B종자로 개명하고 향후 계획이야 뻔하죠. 김민석 당대표.[36][2]</title><link>https://www.clien.net/service/board/park/19167798</link><description>
  
  
   &lt;p&gt;과거 손가혁들 B종자로 최근에 개명했던데 향후 계획이야 뻔하죠.&lt;/p&gt;
@@ -986,126 +1292,4 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;   &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167798</guid><pubDate>Wed, 25 Mar 2026 18:00:22 GMT</pubDate></item><item><title>한준호의 목표는 우선 “체급키우기”겠죠…[12][1]</title><link>https://www.clien.net/service/board/park/19167797</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;걍 좋게말하면 naive guy 입니다 ㅎㅎ&lt;/p&gt;
-  &lt;p&gt;뉴이재명은 “신상”이 아니죠…&lt;/p&gt;
-  &lt;p&gt;면면을 살펴보세요…제품명만 new구요…&lt;/p&gt;
-  &lt;p&gt;완전 구닥다리 정치상품이죠…&lt;/p&gt;
-  &lt;p&gt;근데 그 뉴이재명에 &lt;/p&gt;
-  &lt;p&gt;국회의원이 편승 하다니요…&lt;/p&gt;
-  &lt;p&gt;순진합니다…&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;안좋게말하면 “정알못 정치인”입니다 ㅎㅎ&lt;/p&gt;
-  &lt;p&gt;그런 구태의연한 뉴~~~팔이에 줄을 서는것 보면&lt;/p&gt;
-  &lt;p&gt;모순적이게도 ”정알못 정치인“입니다…&lt;/p&gt;
-  &lt;p&gt;정치를 모르는 정치인이라니…&lt;/p&gt;
-  &lt;p&gt;수학을 모르는 수학샘이고…&lt;/p&gt;
-  &lt;p&gt;한자를 모르는 한학자인셈이죠…&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;한준호가 경기지사 나온건…&lt;/p&gt;
-  &lt;p&gt;단기간내에 ”체급 키우기“가 목적인것 같구요…&lt;/p&gt;
-  &lt;p&gt;“명팔이 효능”을 테스트 하는것 처럼 보여요…&lt;/p&gt;
-  &lt;p&gt;실지로 명팔이 하니까 &lt;/p&gt;
-  &lt;p&gt;손가혁한텐 반응이 오는것 같구요…&lt;/p&gt;
-  &lt;p&gt;앞으로 상당기간내 명팔이로&lt;/p&gt;
-  &lt;p&gt;손가혁애들을 본인의 “기본 자산”으로 &lt;/p&gt;
-  &lt;p&gt;구축할것 같네요…&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;걍 사람은 악하게 보이진 않아요 ㅎㅎㅎ &lt;/p&gt;
-  &lt;p&gt;정치인으로선 약간 부족해보이구요 ㅎㅎㅎ&lt;/p&gt;
-  &lt;p&gt;걍 mbc에 남아서 &lt;/p&gt;
-  &lt;p&gt;야구중계나 하셨으면 더 좋았을텐데요…&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167797</guid><pubDate>Wed, 25 Mar 2026 17:56:13 GMT</pubDate></item><item><title>'혼자 휴전 협상하냐' 말한 이란군…'트럼프, 당신 해고다'[3][5]</title><link>https://www.clien.net/service/board/park/19167793</link><description>
- 
- 
-  &lt;p&gt;이란군은 도널드 트럼프 미국 행정부가 이란에 15개 협의안을 제시하며 휴전 협상을 추진하고 있다는 외신 보도에 대해 "혼자 협상하는 것이냐"며 조롱했습니다.&lt;/p&gt;
-  &lt;p&gt;에브라힘 졸파가리 이란 합동군사령부 대변인은 사전 녹화 영상에서 미국과 협상이 진행되지 않으며, 내부 갈등이 심화되어 스스로와도 협상할 수 없는 상황이라고 밝혔습니다.&lt;/p&gt;
-  &lt;p&gt;그는 트럼프 대통령을 향해 "당신의 전략적 힘은 실패로 바뀌었다", "공허한 약속으로 가득했던 시대는 끝났다"며 비판했고, 초강대국이라 주장하는 자가 혼란에서 벗어날 수 있다면 이미 이길 수 있었을 것이라며 패배를 합의로 포장하지 말 것을 강조했습니다.&lt;/p&gt;
-  &lt;p&gt;또한 자신의 입장을 변함없이 유지하며 트럼프 대통령과의 타협을 절대 하지 않겠다고 분명히 했습니다.&lt;/p&gt;
-  &lt;p&gt;앞서 그는 지난 23일 공개한 영상 메시지에서 "도널드 트럼프, 당신은 해고됐다(Donald Trump, You're fired.)"라고 말해 강경 대응 의지를 드러낸 바 있습니다.&lt;/p&gt;
-  &lt;hr/&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;협상하는게 아니라 입으로 돈 버는 중이죠(주가조작)&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167793</guid><pubDate>Wed, 25 Mar 2026 17:51:19 GMT</pubDate></item><item><title>OpenAI가 Sora 서비스를 종료했네요[10][1]</title><link>https://www.clien.net/service/board/park/19167785</link><description>
- 
- 
-  &lt;p&gt;오픈AI가 생성형 비디오 서비스인 소라의 종료를 발표했네요. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;blockquote class="twitter-tweet" data-lang="en"&gt;
-   &lt;a href="https://twitter.com/soraofficialapp/status/2036546752535470382?s=20" target="_blank"&gt;https://twitter.com/soraofficialapp/status/2036546752535470382?s=20&lt;/a&gt;
-  &lt;/blockquote&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그와 더불어 디즈니가 오픈AI에 소라 기술과 관련하여 $1B 투자하려고 했던 계획을 철회했다고 합니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://variety.com/2026/digital/news/openai-shutting-down-sora-video-disney-1236698277/" ori-url="https://variety.com/2026/digital/news/openai-shutting-down-sora-video-disney-1236698277/" target="_blank"&gt;https://variety.com/2026/digital/news/openai-shutting-down-sora-video-disney-1236698277/&lt;/a&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167785</guid><pubDate>Wed, 25 Mar 2026 17:31:36 GMT</pubDate></item><item><title>감기약 먹으면서 제일 불편한 점은....[10][0]</title><link>https://www.clien.net/service/board/park/19167755</link><description>
- 
- 
-  &lt;p&gt;환절기 비염(?) 으로, &lt;/p&gt;
-  &lt;p&gt;코가 막힌지 2주가 넘어갑니다.....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;약국 일반약을 먹었고, &lt;/p&gt;
-  &lt;p&gt;의원 2곳을 다녀왔는데, &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아직 그대로입니다.....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그런데 제일 곤혹스러운 것은, &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;낮에 오는 졸음 입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;전에는, &lt;/p&gt;
-  &lt;p&gt;아침에 메가커피 아메리카노 1잔을 조금씩 마시면 &lt;/p&gt;
-  &lt;p&gt;오후 2시 까지는 마셨는데, &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;여기에 부족하면, &lt;/p&gt;
-  &lt;p&gt;믹스커피 1잔을 마시고요...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;커피를 먹을 수 없으니, &lt;/p&gt;
-  &lt;p&gt;매우 졸립네요....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;여기에 입도 심심하구요.....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;코맹맹 상태가 지속되고, &lt;/p&gt;
-  &lt;p&gt;기침도 약간씩 하느라, &lt;/p&gt;
-  &lt;p&gt;감기약을 끊을 상태가 아닌 것 같은데, &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;너무 곤혹스럽네요.....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167755</guid><pubDate>Wed, 25 Mar 2026 16:38:45 GMT</pubDate></item><item><title>이야기 미쉐린 프라이머시 투어 AS는 금강불괴 네요[12][0]</title><link>https://www.clien.net/service/board/cm_car/19167739</link><description>
- 
- 
-  &lt;p&gt;와이프차 GV60 AWD 20인치 구요&lt;/p&gt;
-  &lt;p&gt;출고일이 22년 12월 입니다&lt;/p&gt;
-  &lt;p&gt;현재 70000키로 타고 있구요&lt;/p&gt;
-  &lt;p&gt;제가 타다가 작년 12월에 i5 출고하면서 와이프가 타고 있습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지난 주 토욜날 와이프차 세차를 하고 갑자기 별 이유없이 타이어를 바꾸고 싶다는 생각이 들어서&lt;/p&gt;
-  &lt;p&gt;자주 가는 타이어 샵을 갔습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;리프트에 올리고 보시더니&lt;/p&gt;
-  &lt;p&gt;'이래서 미쉐린... 미쉐린 하는거죠. 전기차라서 무게도 내연기관 대비 무겁고 순간 출력이나 토크도 좋아서&lt;/p&gt;
-  &lt;p&gt;타이어에 부담이 많이 갈텐데.... 아직 쌩쌩하네요. 흡음제도 그대로 붙어있고&lt;/p&gt;
-  &lt;p&gt;10만 채우고 오셔도 될 것 같아요....'&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;근데 여기저기 검색을 해보니 마일리지 상관없이 6년정도되면 교체를 해주는게 좋다고 하는데.. &lt;/p&gt;
-  &lt;p&gt;원래 미쉐린 올시즌 타이어가 수명이 이렇게 긴가요??&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19167739</guid><pubDate>Wed, 25 Mar 2026 16:26:42 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19167798</guid><pubDate>Wed, 25 Mar 2026 18:00:22 GMT</pubDate></item></channel></rss>
