@@ -1,5 +1,237 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Mon, 13 Apr 2026 21:01:02 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 국토부 욕하시기 전에[10][1]</title><link>https://www.clien.net/service/board/cm_car/19177045</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Mon, 13 Apr 2026 22:00:54 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>기타 AI로 기업 사업보고서 쉽게 이해하는 팁[2][5]</title><link>https://www.clien.net/service/board/lecture/19176120</link><description>
+ 
+ 
+  &lt;p&gt;안녕하세요. 간장국수입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;기업 사업보고서를 쉽게 이해할 수 있는 프롬프트입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;국내주식에 투자할 때, 특정 기업의 사업을 이해하기 어려울 때가 종종 있습니다. 아무래도 해외 주식에 비해 자료도 적고, 유명하지 않은 기업인 경우 특히 검색해도 자료가 잘 나오지 않는 경우가 많습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;하지만 상장 회사들은 사업보고서에 사업에 대한 내용이 다 적혀있어서, 사업보고서를 잘 읽어보면 이해할 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;하지만, 사업보고서는 읽기가 어렵습니다. 그래서 전 아래처럼 프롬프트를 만들어서 보는데, 이해하기도 쉽고 도움이 많이 됩니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;프롬프트는, 사업보고서를 기업의 인수자 관점에서 분석해서 고등학생 정도로 쉽게 설명해달라는 것이 핵심입니다.&lt;/p&gt;
+  &lt;p&gt;전 발표자료 형식이 이해하기 편해서 이렇게 만들었는데, 결과가 아주 만족스럽습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아래처럼 사용하시면 됩니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;1. 사업보고서 PDF 받기&lt;/p&gt;
+  &lt;p&gt;- 구글에서 '[기업명] 사업보고서 pdf' 라고 검색하시면 됩니다.&lt;/p&gt;
+  &lt;p&gt;- 또는, 다트(DART, 전자공시시스템)에서 사업보고서를 직접 다운로드 받으셔도 됩니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;2. PDF 파일과 아래 프롬프트를 입력하고 질문&lt;/p&gt;
+  &lt;p&gt;- GPT 나 Gemini, Claude 에 아래 프롬프트와 PDF 파일을 넣고 질문하면 됩니다.&lt;/p&gt;
+  &lt;p&gt;- 저는 Gemini 에 Gems 로 만들어서 쓰고 있습니다. 각 서비스의 비슷한 기능(프로젝트 등)을 활용하시면 편합니다.&lt;/p&gt;
+  &lt;p&gt;- 3가지 서비스를 전부 쓰고 있어서 돌려봤는데, 전 제미나이가 제일 마음에 들긴 합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;=========================================&lt;/p&gt;
+  &lt;p&gt;[프롬프트] 아래 프롬프트를 복사해서 붙여넣으시면 됩니다.&lt;/p&gt;
+  &lt;p&gt;=========================================&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;당신은 다음 역할을 동시에 수행합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;1. 상장기업 인수(M&amp;amp;A)를 검토하는 전문 투자자&lt;/p&gt;
+  &lt;p&gt;2. 이사회에 보고하는 전략 컨설턴트&lt;/p&gt;
+  &lt;p&gt;3. 복잡한 사업을 고등학생도 이해할 수 있게 설명하는 비서&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;내가 업로드한 사업보고서를 기반으로,&lt;/p&gt;
+  &lt;p&gt;아래의 요구사항을 반드시 충족하는 발표 자료를 만들어 주세요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;[전체 목표]&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;- 이 회사를 “내가 인수할 수도 있다”는 관점에서 이해한다&lt;/p&gt;
+  &lt;p&gt;- 사업의 본질, 돈 버는 구조, 경쟁력, 성장성을 파악한다&lt;/p&gt;
+  &lt;p&gt;- 이 사업의 핵심과 상황을 완전히 이해해서, 일반 대중 투자자(고등학생 수준)에게 설명할 수 있을 수준으로 정리한다&lt;/p&gt;
+  &lt;p&gt;- 결과물은 발표 슬라이드 + 발표 대본으로 구성한다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;[주의사항]&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;- '인수자'는 자료를 이해하기 제공하기 위한 역할 관점임&lt;/p&gt;
+  &lt;p&gt;- 따라서 발표 자료에는 '인수를 한다' 또는 '인수자' 같은 용어가 사용되어서는 안됨&lt;/p&gt;
+  &lt;p&gt;- 발표 자료는 '누군가에게 사업을 설명하고 이해시킨다'는 목적임&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;[결과물 형식]&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;1. 발표 슬라이드 구성안 (슬라이드 제목 + 핵심 bullet)&lt;/p&gt;
+  &lt;p&gt;2. 각 슬라이드별 발표 대본 (구어체, 설명하듯)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;※ 슬라이드의 길이는 20장 내외&lt;/p&gt;
+  &lt;p&gt;※ 각 슬라이드의는 3~4개 항목으로 구성 (설명이 필요할 경우 대본에 추가)&lt;/p&gt;
+  &lt;p&gt;※ 쉽고 완전하게 이해시키는데 중심을 둘 것&lt;/p&gt;
+  &lt;p&gt;※ 전문 용어는 반드시 쉬운 말로 풀어서 설명&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;[분석 관점 - 이 개념은 꼭 있어야 함]&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;### 이 회사는 무엇을 하는 회사인가&lt;/p&gt;
+  &lt;p&gt;- 이 회사를 한 문장으로 정의&lt;/p&gt;
+  &lt;p&gt;- "누구의 또는 어떤 문제를 해결해주는 회사인가"&lt;/p&gt;
+  &lt;p&gt;- '역할' 중심으로 설명&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;### 이 회사는 어떻게 돈을 버는가&lt;/p&gt;
+  &lt;p&gt;- 주요 사업부문을 '돈 버는 역할' 기준으로 재정리&lt;/p&gt;
+  &lt;p&gt;- 실제로 매출과 이익을 책임지는 핵심 사업이 무엇인지 강조&lt;/p&gt;
+  &lt;p&gt;- 겉보기 사업과 실제 돈 버는 사업이 다르면 반드시 지적&lt;/p&gt;
+  &lt;p&gt;- 원가는 어느 정도이고, 매출을 얼마나 되며, 여기서 얻는 이익은 얼마나 되는지&lt;/p&gt;
+  &lt;p&gt;- 매출과 이익의 방향은 어떻게 되고 있는지&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;### 이 회사가 잘하는 ‘단 한 가지’ 또는 최대 강점&lt;/p&gt;
+  &lt;p&gt;- 기술, 브랜드, 규제, 네트워크, 규모 중 무엇이 핵심 경쟁력인지&lt;/p&gt;
+  &lt;p&gt;- “이 회사가 없으면 곤란해지는 이유”로 설명&lt;/p&gt;
+  &lt;p&gt;- 경쟁사가 쉽게 따라올 수 있는지 여부 판단&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;### 시장은 커지고 있는가 (성장성)&lt;/p&gt;
+  &lt;p&gt;- 산업 자체가 커지는지, 아니면 점유율 싸움인지&lt;/p&gt;
+  &lt;p&gt;- 회사가 시장 성장의 수혜자인지, 방어적인 위치인지&lt;/p&gt;
+  &lt;p&gt;- 회사 스스로 성장 전략을 가지고 있는지&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;### 경영진은 믿을 만한가&lt;/p&gt;
+  &lt;p&gt;- 경영진은 누구인지, 믿을만한 대상인지&lt;/p&gt;
+  &lt;p&gt;- 사업보고서의 문체, 리스크 설명 방식 분석&lt;/p&gt;
+  &lt;p&gt;- 좋은 이야기만 하는지, 불리한 이야기까지 하는지&lt;/p&gt;
+  &lt;p&gt;- CEO의 관점이 ‘주주·사업 중심’인지 평가&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;### 재무는 “결과”로만 해석&lt;/p&gt;
+  &lt;p&gt;- 매출/이익/현금흐름을 ‘경영 판단의 결과’로 설명&lt;/p&gt;
+  &lt;p&gt;- 숫자를 통해 드러나는 사업의 성격 요약&lt;/p&gt;
+  &lt;p&gt;- 복잡한 재무 용어 대신 이해할 수 있는 용어로 설명&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;### 이 회사의 핵심 리스크&lt;/p&gt;
+  &lt;p&gt;- 사업 구조상 피할 수 없는 리스크&lt;/p&gt;
+  &lt;p&gt;- 산업, 규제, 기술, 고객 의존도 중 핵심만&lt;/p&gt;
+  &lt;p&gt;- “성장이 멈출 수 있는 지점” 중심&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;────────────────────&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;### 인수자 관점 최종 평가&lt;/p&gt;
+  &lt;p&gt;- 내가 이 회사를 사는 것은 좋은 선택일까?&lt;/p&gt;
+  &lt;p&gt;- 이 회사를 인수했다면,&lt;/p&gt;
+  &lt;p&gt;  - 계속 키울 것인가?&lt;/p&gt;
+  &lt;p&gt;  - 현금 창출용인가?&lt;/p&gt;
+  &lt;p&gt;  - 구조조정 대상인가?&lt;/p&gt;
+  &lt;p&gt;  - 또는?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19176120</guid><pubDate>Sat, 11 Apr 2026 17:01:22 GMT</pubDate></item><item><title>위고비 마운자로로 공짜로 살 빼면 안 된다고 하시는 분들 많네요.[14][2]</title><link>https://www.clien.net/service/board/park/19177203</link><description>
+ 
+ 
+  &lt;p&gt;마운자로 가격이 얼만데...공짜로 살 뺀다니 의아스럽네요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177203</guid><pubDate>Mon, 13 Apr 2026 21:38:26 GMT</pubDate></item><item><title>영포티 밈때문에 옷도 못입겠어요[15][0]</title><link>https://www.clien.net/service/board/park/19177197</link><description>
+ 
+ 
+  &lt;p&gt;원레 좀 원색계열 옷을 즐겨입습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;빨간색 후드티를 꽤 오래 입고다녔는에, 와이프가 꼴보기 싫다고 해서 버렸더니....요즘같은때 입고 다닐 옷이 마땅치 않더라고요.... (회사 단체구매 코오롱 자켓...정도???)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그래서 후드 집업을 하나 사야겠다 하고 알아보다가 요걸 보게 되었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="1000041241.jpg" class="fr-dib fr-fil full" data-file-sn="15710918" data-gif="false" data-img-height="1442" data-img-width="957" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710918/45fe92acd910e1.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;자라에서 어딘가와 협업하여 판매한다는 후드 집업인데, 품절되었다가 리스탁 되었다고 하더라고요.&lt;/p&gt;
+  &lt;p&gt;뭔가 안사면 손해(?) 인것 같아 구매해서 오늘 열흘만에 받았는데.....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="1000041236.jpg" class="fr-dib fr-fil full" data-file-sn="15710919" data-gif="false" data-img-height="1754" data-img-width="1438" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710919/99e1f5441177.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;(사진은 퍼옴)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;....좀 그럴것 같기는 했는데 M사이즈여도 오버핏이라 이게 좀 영해보이는 옷이더라고요....&lt;/p&gt;
+  &lt;p&gt;마님이 보시더니 '너님이 입으시면 영포티 확정이심'하고 일침을 놓으셨습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;예전같으면 나이랑 안어울린다...정도 코멘트로 끝났을텐데, 이젠 영포티라는 밈이 확고해지면서 뭔가 좀 나이에 안맞는 (?) 옷을 입으면 저 스스로도 '내가 영포티스러운건가?' 하고 자가 검열을 하게되네욥...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;흠.... 옷 자체는 괜찮은것 같은데 고민 좀 해보고 반품 여부를 결정해야겠습니다.... -0-&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;(근데 이거 기모라 가을에나 입을 수 있을것 같아요.... 원래 4월엔 입을 수 있어야 할듯 한데;;)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177197</guid><pubDate>Mon, 13 Apr 2026 21:27:04 GMT</pubDate></item><item><title>우유를 먹다가… 플라스틱 우유통 생산 못하면,,, 젖소는 어떻게 되나..라는 생각이 들[12][0]</title><link>https://www.clien.net/service/board/park/19177187</link><description>
+ 
+ 
+  &lt;p&gt;종이팩에도 플라스틱 코팅이 되고, 플라스틱 병에 포장하는 우유도 있는데… 플라스틱 생산을 못하면, 젖소는…. 분유 만들고, 버려도 한계가 있을 것 같은…요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177187</guid><pubDate>Mon, 13 Apr 2026 20:57:48 GMT</pubDate></item><item><title>곽튜브에 대한 악플이 심하네요[13][2]</title><link>https://www.clien.net/service/board/park/19177173</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://ppomppu.co.kr/zboard/view.php?id=freeboard&amp;amp;no=9907349" target="_blank"&gt;https://ppomppu.co.kr/zboard/view.php?id=freeboard&amp;amp;no=9907349&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;애초에 그냥 한번 걸려봐라 하는거 아닌가 싶을 정도네요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177173</guid><pubDate>Mon, 13 Apr 2026 20:21:46 GMT</pubDate></item><item><title>[예고편] 영화 기동전사 건담 섬광의 하사웨이 : 키르케의 마녀 - 예고편, 포스터[12][0]</title><link>https://www.clien.net/service/board/park/19177155</link><description>
+ 
+ 
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/vg7D-iIGtX4" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/lG5GgtI31n8" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/NvkbK8jiBGM" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;국내 4월 22일 수요일 개봉입니다. 1편은 넷플릭스 직행이었는데 중사웨이는 다행히 극장 개봉합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;오늘 나온 4DX 예고편을 포함하여 메인 예고편, 아이맥스 예고편도 한꺼번에 올립니다. 키르케의 마녀 개봉에 맞춰 상영관 수는 적지만 샤아의 역습과 섬광의 하사웨이도 개봉하니 참고하시면 될거 같습니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177155</guid><pubDate>Mon, 13 Apr 2026 19:52:16 GMT</pubDate></item><item><title>머스크가 새로 만드는 채팅 앱[10][0]</title><link>https://www.clien.net/service/board/park/19177154</link><description>
+ 
+ 
+  &lt;p&gt;x의 성격을 생각한다면..온갖 나쁜짓들이 범람할것 같다는 생각이드네요..텔레그램보다 더 차단 가능한 기능들이 있네요.&lt;/p&gt;
+  &lt;p&gt;추적 불가와 스샷 차단은 ㄷ ㄷ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;카톡의 대체품이 될수도 있겠지만 남녀노소 모두 고루고루 가입해서 써야하고 전화번호 연동도 쉬워야하고 공공기관 인증형식이나 기업들도 상업적 이용가능해야 할텐데 과연.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177154</guid><pubDate>Mon, 13 Apr 2026 19:54:05 GMT</pubDate></item><item><title>지금 PC 오래 쓰겠다고 맘 먹었습니다.[10][1]</title><link>https://www.clien.net/service/board/park/19177131</link><description>
+ 
+ 
+  &lt;p&gt;아주 어릴 때부터 PC를 조립으로 맞췄습니다.&lt;/p&gt;
+  &lt;p&gt;부품 사다가 조립 한지 30년 가까이 되었네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이번엔 다 처음입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이번부터 조립도 귀찮아져서 처음으로 조립도 맡겼고,&lt;/p&gt;
+  &lt;p&gt;처음으로 4090으로 플래그쉽도 사보고...&lt;/p&gt;
+  &lt;p&gt;5년 정도면 3번은 바꾸던 사람인데.... 벌써 몇년 째 그대로네요. ㅎㅎ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;13700K + 64GB RAM + RX 9070... 오래 갈 생각 입니다. ㅋㅋㅋ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;중간에 4090을 산 가격 보다 + 10 해서 팔고..그 뒤로 중고가가 100이 더 오르던...ㄷㄷ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;암튼...요즘 PC가격 생각하면...오래 오래 써야겠습니다. ㄷㄷㄷ&lt;/p&gt;
+  &lt;p&gt;앞으로 못해도 5년 더 쓸 듯...&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177131</guid><pubDate>Mon, 13 Apr 2026 19:03:37 GMT</pubDate></item><item><title>이야기 국토부 욕하시기 전에[10][1]</title><link>https://www.clien.net/service/board/cm_car/19177045</link><description>
  
  
   &lt;p&gt;테코에서 fsd 국내 승인 관련 문의부터 해보세요!&lt;/p&gt;
@@ -17,7 +249,7 @@
   &lt;p&gt;현기차하고 같은 잣대로 보세요.&lt;/p&gt;
   &lt;p&gt;현기차보다 100배 악날한 기업입니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19177045</guid><pubDate>Mon, 13 Apr 2026 16:07:03 GMT</pubDate></item><item><title>[속보]“나는 트럼프.두렵지 않다” 레오 14세 교황[1][6]</title><link>https://www.clien.net/service/board/park/19177180</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19177045</guid><pubDate>Mon, 13 Apr 2026 16:07:03 GMT</pubDate></item><item><title>[속보]“나는 트럼프.두렵지 않다” 레오 14세 교황[2][11]</title><link>https://www.clien.net/service/board/park/19177180</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -109,7 +341,7 @@
   &lt;p&gt;두렵지...않고...&lt;/p&gt;
   &lt;p&gt;맞서...싸울거라는요..??&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177180</guid><pubDate>Mon, 13 Apr 2026 20:47:30 GMT</pubDate></item><item><title>제대로 미쳤네요.[6][7]</title><link>https://www.clien.net/service/board/park/19177171</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177180</guid><pubDate>Mon, 13 Apr 2026 20:47:30 GMT</pubDate></item><item><title>제대로 미쳤네요.[9][8]</title><link>https://www.clien.net/service/board/park/19177171</link><description>
  
  
   &lt;p&gt;미친 수준이 생각보다 쎈대요.&lt;/p&gt;
@@ -138,7 +370,7 @@
     &lt;/video&gt;&lt;button class="search_link" onclick='app.gifDownConfirm("15710893", "963500cc085f", "360", "360")'&gt;&lt;i class="fa fa-download"&gt;&lt;/i&gt;GIF&lt;/button&gt; &lt;/span&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177168</guid><pubDate>Mon, 13 Apr 2026 20:17:04 GMT</pubDate></item><item><title>[단독] 尹이 받은 '英 국왕 한정판 위스키' 어디로…대통령기록관엔 '없다'[11][2]</title><link>https://www.clien.net/service/board/park/19177166</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177168</guid><pubDate>Mon, 13 Apr 2026 20:17:04 GMT</pubDate></item><item><title>[단독] 尹이 받은 '英 국왕 한정판 위스키' 어디로…대통령기록관엔 '없다'[13][2]</title><link>https://www.clien.net/service/board/park/19177166</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/030/0003417292?sid=100" ori-url="https://n.news.naver.com/mnews/article/030/0003417292?sid=100" target="_blank"&gt;[단독] 尹이 받은 '英 국왕 한정판 위스키' 어디로…대통령기록관엔 '없다'&lt;/a&gt; | 전자신문&lt;/p&gt;
@@ -154,7 +386,7 @@
   &lt;p&gt;이관은 배때기 속으로 꺼억~ 했겠죠.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177166</guid><pubDate>Mon, 13 Apr 2026 20:06:28 GMT</pubDate></item><item><title>AI와 기본소득, 두번째 글[25][9]</title><link>https://www.clien.net/service/board/park/19177159</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177166</guid><pubDate>Mon, 13 Apr 2026 20:06:28 GMT</pubDate></item><item><title>AI와 기본소득, 두번째 글[50][9]</title><link>https://www.clien.net/service/board/park/19177159</link><description>
  
  
   &lt;h1&gt;AGI 이후의 세계 — 만드는 사람들은 뭐라고 하는가&lt;/h1&gt;
@@ -393,7 +625,7 @@
   &lt;p&gt;이었다는....요...&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177151</guid><pubDate>Mon, 13 Apr 2026 19:37:43 GMT</pubDate></item><item><title>곽튜브 권익위 검토[43][5]</title><link>https://www.clien.net/service/board/park/19177148</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177151</guid><pubDate>Mon, 13 Apr 2026 19:37:43 GMT</pubDate></item><item><title>곽튜브 권익위 검토[57][8]</title><link>https://www.clien.net/service/board/park/19177148</link><description>
  
  
   &lt;p&gt;&lt;img alt="000000218.webp" class="fr-dib fr-fil" data-file-sn="15710817" data-gif="false" data-img-height="318" data-img-width="675" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710817/175ca0f80bace8.webp?scale=width:740"/&gt;&lt;/p&gt;
@@ -409,14 +641,14 @@
   &lt;p&gt;심도있게 조사하고 논의해야 할 필요가 있어보입니다.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177148</guid><pubDate>Mon, 13 Apr 2026 19:26:16 GMT</pubDate></item><item><title>1인가구와 유자녀가구의 소득세율 비교[11][1]</title><link>https://www.clien.net/service/board/park/19177143</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177148</guid><pubDate>Mon, 13 Apr 2026 19:26:16 GMT</pubDate></item><item><title>1인가구와 유자녀가구의 소득세율 비교[16][1]</title><link>https://www.clien.net/service/board/park/19177143</link><description>
  
  
   &lt;p&gt;&lt;img alt="9063e4598bdc689a49c7ca0e8a669b38.jpg" class="fr-dib fr-fil" data-file-sn="15710809" data-gif="false" data-img-height="757" data-img-width="700" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710809/92ec2ce15131.jpg?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;우리도 차이를 확대하는 방향으로 가야죠&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177143</guid><pubDate>Mon, 13 Apr 2026 19:19:34 GMT</pubDate></item><item><title>장모님의 육아가 불편합니다...[34][3]</title><link>https://www.clien.net/service/board/park/19177139</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177143</guid><pubDate>Mon, 13 Apr 2026 19:19:34 GMT</pubDate></item><item><title>장모님의 육아가 불편합니다...[39][3]</title><link>https://www.clien.net/service/board/park/19177139</link><description>
  
  
   &lt;p&gt;전부터 느꼈던 건데요. &lt;/p&gt;
@@ -435,7 +667,7 @@
   &lt;p&gt;상생협력 차원에서 협약에 참여한 인테크, 동성 등 재생원료 사용 우수업체는 종량제봉투 제작업계에 기술 자문·지원을 제공한다. 한국환경공단은 재생원료 생산정보를 종량제봉투 제작업체에 제공하는 등 수요와 공급이 원활히 연계되도록 관리체계를 구축 및 운영할 계획이다.&lt;/p&gt;
   &lt;p&gt;김성환 기후부 장관은 "국내 폐자원으로 만든 재생원료는 우리 자원 공급망의 든든한 기초"라며 "업계와 협력해 종량제봉투부터 재생원료 사용을 늘려가며, 이를 통해 중동 전쟁 같은 외부 충격에도 흔들리지 않는 순환경제의 모범사례로 만들겠다"고 밝혔다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177135</guid><pubDate>Mon, 13 Apr 2026 19:22:33 GMT</pubDate></item><item><title>‘위안부 피해자 모욕’ 김병헌 구속기소[2][11]</title><link>https://www.clien.net/service/board/park/19177128</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177135</guid><pubDate>Mon, 13 Apr 2026 19:22:33 GMT</pubDate></item><item><title>‘위안부 피해자 모욕’ 김병헌 구속기소[2][12]</title><link>https://www.clien.net/service/board/park/19177128</link><description>
  
  
   &lt;p&gt;&lt;a href="https://v.daum.net/v/20260413155704859" ori-url="https://v.daum.net/v/20260413155704859" target="_blank"&gt;‘위안부 피해자 모욕’ 김병헌 구속기소…“일본 지지자에게 후원금 받아 범행”&lt;/a&gt; &lt;/p&gt;
@@ -475,7 +707,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;간단한 설정만으로 끌수있다는 게 반갑긴하네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177127</guid><pubDate>Mon, 13 Apr 2026 18:53:43 GMT</pubDate></item><item><title>가끔 네이버부동산 들어가보면요..[18][1]</title><link>https://www.clien.net/service/board/park/19177125</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177127</guid><pubDate>Mon, 13 Apr 2026 18:53:43 GMT</pubDate></item><item><title>가끔 네이버부동산 들어가보면요..[19][1]</title><link>https://www.clien.net/service/board/park/19177125</link><description>
  
  
   &lt;p&gt;시세조작이 목적인지 뜬금없는 금액에 매물 올리는 사람이 간혹 보이네요.. 호가를 엄청 높게 적어놓거든요..&lt;/p&gt;
@@ -490,12 +722,12 @@
   &lt;p&gt;이게 바로 그... 말로만 듣던 적그리스도 아닙니까?&lt;/p&gt;
   &lt;p&gt;진짜 미친것 같아요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177123</guid><pubDate>Mon, 13 Apr 2026 18:38:42 GMT</pubDate></item><item><title>스핑크스의 새로운 문제[5][8]</title><link>https://www.clien.net/service/board/park/19177112</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177123</guid><pubDate>Mon, 13 Apr 2026 18:38:42 GMT</pubDate></item><item><title>스핑크스의 새로운 문제[5][9]</title><link>https://www.clien.net/service/board/park/19177112</link><description>
  
  
   &lt;p&gt;누구나 쉽게 맞출 수 있어서 난이도가 낮아요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177112</guid><pubDate>Mon, 13 Apr 2026 18:21:23 GMT</pubDate></item><item><title>[속보] 靑, '군대판 이근안' 보국훈장에 '서훈 취소 등 후속조치 살필 것'[2][13]</title><link>https://www.clien.net/service/board/park/19177108</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177112</guid><pubDate>Mon, 13 Apr 2026 18:21:23 GMT</pubDate></item><item><title>[속보] 靑, '군대판 이근안' 보국훈장에 '서훈 취소 등 후속조치 살필 것'[2][14]</title><link>https://www.clien.net/service/board/park/19177108</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/421/0008886942?sid=100" ori-url="https://n.news.naver.com/mnews/article/421/0008886942?sid=100" target="_blank"&gt;[속보] 靑, '군대판 이근안' 보국훈장에 "서훈 취소 등 후속조치 살필 것"&lt;/a&gt;&lt;/p&gt;
@@ -525,7 +757,7 @@
   &lt;p&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177108</guid><pubDate>Mon, 13 Apr 2026 18:14:00 GMT</pubDate></item><item><title>전해철, 안산갑 보궐선거 출마선언...'통합의 정치 필요'[18][0]</title><link>https://www.clien.net/service/board/park/19177105</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177108</guid><pubDate>Mon, 13 Apr 2026 18:14:00 GMT</pubDate></item><item><title>전해철, 안산갑 보궐선거 출마선언...'통합의 정치 필요'[19][0]</title><link>https://www.clien.net/service/board/park/19177105</link><description>
  
  
   &lt;p&gt;&lt;a href="https://m.ytn.co.kr/news_view.php?s_mcd=0101&amp;amp;key=202604131509262473&amp;amp;pos=#return" target="_blank"&gt;https://m.ytn.co.kr/news_view.php?s_mcd=0101&amp;amp;key=202604131509262473&amp;amp;pos=#return&lt;/a&gt;&lt;/p&gt;
@@ -540,7 +772,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177105</guid><pubDate>Mon, 13 Apr 2026 18:07:58 GMT</pubDate></item><item><title>폴란드 총리 만난 김민석 총리[1][11]</title><link>https://www.clien.net/service/board/park/19177102</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177105</guid><pubDate>Mon, 13 Apr 2026 18:07:58 GMT</pubDate></item><item><title>폴란드 총리 만난 김민석 총리[1][12]</title><link>https://www.clien.net/service/board/park/19177102</link><description>
  
  
   &lt;h1&gt;金총리 "계엄때 제거 리스트 올라"…폴란드 총리 "비슷한 경험"(종합)&lt;/h1&gt;
@@ -679,7 +911,7 @@
   &lt;p&gt;&lt;br/&gt;
     미리 감사드립니다.^^&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19177079</guid><pubDate>Mon, 13 Apr 2026 17:13:42 GMT</pubDate></item><item><title>이야기 신형 iX3는 22인치에 588km네요[19][0]</title><link>https://www.clien.net/service/board/cm_car/19177075</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19177079</guid><pubDate>Mon, 13 Apr 2026 17:13:42 GMT</pubDate></item><item><title>이야기 신형 iX3는 22인치에 588km네요[20][0]</title><link>https://www.clien.net/service/board/cm_car/19177075</link><description>
  
  
   &lt;p&gt;22인치에 588km ㄷㄷ하네요&lt;/p&gt;
@@ -754,7 +986,7 @@
   &lt;p&gt;결국 자신을 위한 제품을 사는거고 도움요청한 사람에게 신세지는건데&lt;/p&gt;
   &lt;p&gt;최소한의 의욕은 보여주는게 순서라 생각합니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177088</guid><pubDate>Mon, 13 Apr 2026 17:26:48 GMT</pubDate></item><item><title>“아내 공유하라” 목사 가르침.난교·성착취.교회[30][14]</title><link>https://www.clien.net/service/board/park/19177086</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177088</guid><pubDate>Mon, 13 Apr 2026 17:26:48 GMT</pubDate></item><item><title>“아내 공유하라” 목사 가르침.난교·성착취.교회[31][14]</title><link>https://www.clien.net/service/board/park/19177086</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -927,7 +1159,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177086</guid><pubDate>Mon, 13 Apr 2026 17:22:43 GMT</pubDate></item><item><title>삼성, 주주환원? 직원성과급? 뭔가 먼저일까요[35][2]</title><link>https://www.clien.net/service/board/park/19177084</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177086</guid><pubDate>Mon, 13 Apr 2026 17:22:43 GMT</pubDate></item><item><title>삼성, 주주환원? 직원성과급? 뭔가 먼저일까요[37][2]</title><link>https://www.clien.net/service/board/park/19177084</link><description>
  
  
   &lt;p&gt;개인적으로는 주주환원이 먼저라고 봅니다만...&lt;/p&gt;
@@ -1201,250 +1433,4 @@
   &lt;/blockquote&gt;
   &lt;p&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177064</guid><pubDate>Mon, 13 Apr 2026 16:35:41 GMT</pubDate></item><item><title>이제 열흘후면 액상형 전자담배도 망하겠네요...[20][0]</title><link>https://www.clien.net/service/board/park/19177059</link><description>
- 
- 
-  &lt;p&gt;본격적으로 전자담배 액상에도 세금을 붙이는데....이게 엄청납니다. 당장 4월 24일부터...&lt;/p&gt;
-  &lt;p&gt;기존 30ml 기준으로 2~3만원했던 액상이 한병에 9만원 정도까지 뛰게됩니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;저는 50mg 의 고농도 액상을 연초대용으로 베이핑하고 있었는데....&lt;/p&gt;
-  &lt;p&gt;일단은 네병정도 미리 구입은 해놓고.....그 후에는 정말 금연해야겠네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;9만원은 감히 손댈 수 없는 가격입니다. 액상형 전자담배는 아주 좋은 그나마 주변에 피해 덜 가게 흡연하는 좋은 방안이라고 생각했는데 이것조차도 사치가 되어버렸습니다...ㅜㅜ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;금연 할게요...&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177059</guid><pubDate>Mon, 13 Apr 2026 16:29:02 GMT</pubDate></item><item><title>정청래가 잘 하니 죽이려 든다?[18][1]</title><link>https://www.clien.net/service/board/park/19177054</link><description>
- 
- 
-  &lt;p&gt;그럴 수 있습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그런데 여기에는 한 가지 전제가 필요합니다&lt;/p&gt;
-  &lt;p&gt;정청래가 대체 불가능한 인재라는 겁니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정청래가 못하는지 잘하는지는 생각이 다를 수 있으니 왈가왈부하지 않겠습니다&lt;/p&gt;
-  &lt;p&gt;중요한 건 정청래가 잘 하고 있더라도 문제는 남는다는 겁니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정청래 끌어내리기로 끝나면 뭐합니까&lt;/p&gt;
-  &lt;p&gt;다른 사람이 하면 그만인 걸요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;당이 추진하는 국정조사나 특검을 견제하는 세력이야 있겠죠&lt;/p&gt;
-  &lt;p&gt;그런데 정청래 말고 다른 사람으로 바뀌면 그거 안 합니까?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정청래가 일을 잘 하고 있다는 것과&lt;/p&gt;
-  &lt;p&gt;오직 정청래만 그 일을 할 수 있다는 건 다릅니다&lt;/p&gt;
-  &lt;p&gt;당에 그만큼 인재가 없습니까?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이건 딱히 정청래 대표를 깎아내리려고 하는 말이 아닙니다&lt;/p&gt;
-  &lt;p&gt;지금까지 정청래의 당에 대한 헌신과 공로를 인정하면 그가 당대표를 맡는 데 아무런 무리가 없습니다&lt;/p&gt;
-  &lt;p&gt;저는 대부분의 지지자들도 그런 생각이리라 봅니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;오직 정청래만이 성공할 수 있고, 다른 모든 사람들은 실패할 거라고 생각해서 정청래를 당대표로 밀어준 겁니까?&lt;/p&gt;
-  &lt;p&gt;지지자들이 그런 생각을 안 한다면&lt;/p&gt;
-  &lt;p&gt;반대자들도 그런 생각을 안 할 겁니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그래서 저는 정청래 죽이기라는 건 논리적으로 과장된 주장이라고 생각합니다&lt;/p&gt;
-  &lt;p&gt;그건 정청래가 원 앤 온리, 대체 불가능한 존재라는 걸 전제합니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;외부 세력에 의한 소위 죽이기가 없는 건 아닙니다&lt;/p&gt;
-  &lt;p&gt;대체로 그런 공격은 대권 주자 같은 인물들이 표적이 됐죠&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다시 말하지만 정청래 대표에 대한 공격과 견제가 없다는 게 아닙니다&lt;/p&gt;
-  &lt;p&gt;외부 세력에 의한 작전설을 말하려면&lt;/p&gt;
-  &lt;p&gt;논리적으로, 오직 정청래만 죽이면 대체가 불가능하다는 게 전제되어야 한다는 것입니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177054</guid><pubDate>Mon, 13 Apr 2026 16:23:42 GMT</pubDate></item><item><title>'??:우리가 남이가~^^' 공무원 비리 의혹 소송기(3화)[12][8]</title><link>https://www.clien.net/service/board/park/19177039</link><description>
- 
- 
-  &lt;h3 data-role="cut-string"&gt;&lt;a href="https://www.clien.net/service/board/park/19163176" ori-url="https://www.clien.net/service/board/park/19163176" rel="noopener noreferrer" target="_blank"&gt;참교육 당한 공무원 후기(2화)&lt;/a&gt;&lt;/h3&gt;
-  &lt;h3 data-role="cut-string"&gt;&lt;a href="https://www.clien.net/service/board/park/19157224" ori-url="https://www.clien.net/service/board/park/19157224" rel="noopener noreferrer" target="_blank"&gt;아들에게 ‘이재명의 효능감’을 물려주고 싶은 부산 아빠의 소송기(1화)&lt;/a&gt;&lt;/h3&gt;
-  &lt;p&gt;----------------------------------------------------&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;처음엔 설마 싶었는데.. 점점 느낌이 쎄하네요.&lt;/p&gt;
-  &lt;p&gt;이 비리의 끝은 과연 어디일까요??&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;첫째. 감만시민부두 예산은 조작되었습니다.&lt;/h1&gt;
-  &lt;p&gt;부산남구청이 하도 감만시민부두 개방 민원에 시달리니 부산항만공사에 개방요청을 했는데,&lt;/p&gt;
-  &lt;p&gt;이를 이틀만에 거절한 이유가 도대체 뭘까요??&lt;/p&gt;
-  &lt;p&gt;애초에 지자체의 요청이 없었다는 것도 거짓말로 들통났기에, 남구청을 통해 직접 입수한 요청문을 보여드리겠습니다.&lt;/p&gt;
-  &lt;p&gt;(진짜 살다살다 지자체가 이렇게 빠른 업무처리는 처음봅니다,. 남구청이 거의 바로 당일 서류를 줍니다 어지간히 억울한가봅니다)&lt;/p&gt;
-  &lt;p&gt;서류를 봅시다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-04-13 150704.png" class="fr-dib fr-fil full" data-file-sn="15710668" data-gif="false" data-img-height="717" data-img-width="1053" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710668/8578a6367454.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h2&gt;진짜 요청을 했군요.. 도대체 부산항만공사는 왜 없다고했을까요??&lt;/h2&gt;
-  &lt;h2&gt;그 이유가 답변서에서 드러납니다..&lt;/h2&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-04-13 150904.png" class="fr-dib fr-fil full" data-file-sn="15710670" data-gif="false" data-img-height="875" data-img-width="1070" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710670/45ea5662cfe7c9.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;봐야할건 딱 3가지입니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;1.연간 5.3억의 예산을 투입하고있다.&lt;/p&gt;
-  &lt;p&gt;2.운영비용이 더 필요하다. 지자체에서 돈을 더 달라. &lt;/p&gt;
-  &lt;p&gt;3.위험하다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그런데 이것마저도 전부 거짓말이라면 어떨까요?ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;둘째. 아 ㅈㅅㅈㅅ 제가 잘못계산함..&lt;/h1&gt;
-  &lt;p&gt;저는 지난 예산에서 분명 세부내역을 전부다 받아내겠다고 말씀드렸습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h2&gt;처음 준 예산&lt;/h2&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-04-13 151218.png" class="fr-dib fr-fil full" data-file-sn="15710671" data-gif="false" data-img-height="167" data-img-width="758" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710671/45ea885863f8b7.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;이예산만보면 정말로 남구청에 답변한대로 1년에 5.3억이나드네 와 했습니다.&lt;/p&gt;
-  &lt;p&gt;그런데 제가 이곳만 정말 30번넘게 방문해본 사람으로서 이상함을 느낍니다.&lt;/p&gt;
-  &lt;p&gt;가로등몇개밖에 없는 여기가 진짜 저렇게 돈이많이든다고??&lt;/p&gt;
-  &lt;p&gt;행정심판과 동시에 세부내역을 다시 신청해봅니다.&lt;/p&gt;
-  &lt;p&gt;그러자 예산이 잘못되었다며 다시주네요?ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h2&gt;행정심판을 청구하자 잘못되었다며 다시 준 예산&lt;/h2&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-04-13 151238.png" class="fr-dib fr-fil full" data-file-sn="15710672" data-gif="false" data-img-height="551" data-img-width="1487" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710672/45ea8dfb9ca450.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;여기서 그 비밀이드러납니다.&lt;/p&gt;
-  &lt;p&gt;5.3억원은 개뿔, 이건 부산항 전~~~~~~~~체 전기료, 환경정화비를다 포함한겁니다^^&lt;br/&gt;
-    그럼 여기서 감만시민부두가 전체에서 몇퍼센트 차지하는지 감이 안오실겁니다.&lt;/p&gt;
-  &lt;p&gt;지도를 보시죠.&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-04-13 151710.png" class="fr-dib fr-fil full" data-file-sn="15710673" data-gif="false" data-img-height="1204" data-img-width="1420" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710673/45eac3dabb6f5b.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;예산에 포함된 모든 항중에 감만시민부두는 저기 빨간점보다 작습니다..ㅎㅎ..&lt;/p&gt;
-  &lt;p&gt;전형적인 예산부풀리기에 남구청도, 시민들도 당한겁니다.&lt;/p&gt;
-  &lt;p&gt;2018년에는 감만시민부두에 온전히 쓰인 예산은 1년동안 700만원인적도 있으니까 이제 이해가 됩니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;셋째. 아니 위험하다니까요??^^&lt;/h1&gt;
-  &lt;p&gt;감만시민부두를 한번이라도 가본사람이면 이런이야기를 못합니다. 왜냐하면 말이 바다지&lt;/p&gt;
-  &lt;p&gt;내항에 위치하고 있기 때문에 배가 지나가는 파도말고는 거의 호수와도 같이 잔잔합니다.&lt;/p&gt;
-  &lt;h2&gt;감만시민부두는 밖에 외부 오륙도방파제와, 조도방파제가 확실하게 막고있는 내항에 위치하고 있으며 심지어 내륙을 바라보고 있기 때문에 높은 파도따위는 없습니다.&lt;/h2&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-04-13 152943.png" class="fr-dib fr-fil full" data-file-sn="15710679" data-gif="false" data-img-height="862" data-img-width="1206" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710679/86b631b4444c.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;백번양보해서 진짜인지 한번 봅시다.&lt;/p&gt;
-  &lt;h2&gt;2006년부터 2026년 현재(최근 20년)까지 감만시민부두 안벽 및 인근 수역 내에서 발생한 인명사고의 연도별 통계와 구체적인 사고 원인 분류 자료를 부산해양경찰에 요구합니다.&lt;/h2&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="2-2 비선박사고 (1).jpg" class="fr-dib fr-fil full" data-file-sn="15710676" data-gif="false" data-img-height="521" data-img-width="1853" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710676/45eb0fc3aeeba4.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이게 전부 감만시민부두가 실족 위치인지는 알 수 없습니다.&lt;/p&gt;
-  &lt;p&gt;그 해안을 전부 감만시민부두 인근 해상이라고 치고 받은 자료입니다.&lt;/p&gt;
-  &lt;p&gt;요약하자면 2019년부터 2026년까지 안전미준수로 총 6명이 물에 빠졌고 그중 5명이 모두 구조되었으며&lt;/p&gt;
-  &lt;p&gt;1명이 구조되지 못했습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이에 찝찝한 마음에 다시 해당 사건만 구체적으로 정보공개를 청구했습니다.&lt;/p&gt;
-  &lt;p&gt;그런데 담당자에게 전화가 오더니 계속 뭔가 말을 아끼고 끊임없이 이유를 물어보시더군요.&lt;/p&gt;
-  &lt;p&gt;저는 그냥 자료만 주면 된다고 했으나 좀 곤란한부분이있다기에 일단 알겠다고하고 통화를 마쳤습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-04-13 152631.png" class="fr-dib fr-fil full" data-file-sn="15710677" data-gif="false" data-img-height="246" data-img-width="783" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710677/45eb48be2beccc.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;답변을 받아보니 이유를 알았습니다.&lt;/p&gt;
-  &lt;p&gt;일단 감만시민부두에서 빠진게 아니기 때문에 관련이 없다,&lt;/p&gt;
-  &lt;p&gt;그리고 마지막 문장인 악용사례, 염려되는상황&amp;lt;- 이게 구체적으로 어떤건지 감이 오실꺼라 생각합니다..&lt;/p&gt;
-  &lt;p&gt;안전부주의라면 악용(?)되진 않겠죠. 고인의 명복을 빕니다..&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;넷째. 혹시.. 진짜 돈이 없나?&lt;/h1&gt;
-  &lt;p&gt;진짜 부산항만공사가 적자에 시달리고 있는 것일수도 있다는 생각에&lt;/p&gt;
-  &lt;p&gt;나라장터에서 주로 부산항만공사가 어디에 돈을 쓰는지 봤습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h2&gt;4000만원짜리 귀여운 캐릭터&lt;/h2&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-04-13 153348.png" class="fr-dib fr-fil full" data-file-sn="15710686" data-gif="false" data-img-height="519" data-img-width="790" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710686/45ebd61d3b4e62.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-04-13 153635.png" class="fr-dib fr-fil full" data-file-sn="15710687" data-gif="false" data-img-height="402" data-img-width="2229" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710687/45ebdaf9ba0fef.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;h2&gt;&lt;br/&gt;&lt;/h2&gt;
-  &lt;h2&gt;유튜버가 꿈인 부산항만공사의 1억3천짜리 SNS비용&lt;/h2&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-04-13 153437.png" class="fr-dib fr-fil full" data-file-sn="15710691" data-gif="false" data-img-height="442" data-img-width="2241" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710691/45ec0e48c30d0e.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h2&gt;8000만원짜리 활동복&lt;/h2&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-04-13 153516.png" class="fr-dib fr-fil full" data-file-sn="15710689" data-gif="false" data-img-height="411" data-img-width="2236" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710689/45ebf44ec30814.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h2&gt;비전을 꼭 선포해야만 잘되는 부산항만공사의 8000만원짜리 비전선포식&lt;/h2&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-04-13 153606.png" class="fr-dib fr-fil full" data-file-sn="15710690" data-gif="false" data-img-height="430" data-img-width="2239" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710690/45ec05bbbf239e.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그만 알아보기로합니다..ㅎ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;다섯째. 담당자님 그만 전화하십시오,.&lt;/h1&gt;
-  &lt;p&gt;이 글을 읽고 계신지 아닌지 모르겠는데 행정심판 취하를 종용하는 전화가 끊임없이 옵니다.ㅎㅎ&lt;/p&gt;
-  &lt;p&gt;전화를 안받으니 전화번호를 바꾸면서 훼이크까지 주는건지&lt;/p&gt;
-  &lt;p&gt;저는 이미 취하할 생각이 싹 사라졌습니다.&lt;/p&gt;
-  &lt;p&gt;전화 그만하셔도 됩니다.. 그냥 서면으로 해주세요ㅠ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;여섯째.윗물이 맑아야 아랫물이 맑다&lt;/h1&gt;
-  &lt;p&gt;부산항만공사 사장님의 이력서가 독특하기로 유명하시더군요.&lt;/p&gt;
-  &lt;p&gt;선거철이니 말은 아끼겠습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://v.daum.net/v/U77402g230?f=p" ori-url="https://v.daum.net/v/U77402g230?f=p" rel="noopener noreferrer" target="_blank"&gt;(기사보기)&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-04-13 154421.png" class="fr-dib fr-fil full" data-file-sn="15710692" data-gif="false" data-img-height="975" data-img-width="1108" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15710692/1750be6665a510.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;결국 부산항만공사는 남구청의 답변서에 적혀있듯이,&lt;/p&gt;
-  &lt;p&gt;지자체에 돈을 더 뜯어내기위해서 국민 재산을 가지고 협박하고 있던거나 다름없습니다.&lt;/p&gt;
-  &lt;p&gt;아직도 행정심판은 현재 진행형입니다.&lt;/p&gt;
-  &lt;p&gt;끝까지 가보겠습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177039</guid><pubDate>Mon, 13 Apr 2026 15:54:08 GMT</pubDate></item><item><title>정부, 이스라엘에 '인권 침해' 책임 묻는 유엔 결의안엔 기권[22][0]</title><link>https://www.clien.net/service/board/park/19177037</link><description>
- 
- 
-  &lt;p&gt;대통령이 말은 거하게 해놓고 이게 뭔가요? 찬성한다고 소위 서방 '자유' 진영보다 중국, 파키스탄, 쿠바 같은 나라들에 더 가까워진 것으로 오인이라도 받아 무슨 불이익이라도 생길 것 같았을까요? 어느 당쪽이든 미국 주류 세력이 싫어하겠지만 한국은 이미 UN에서 미국 눈치 안 보고 규범적 원칙과 도리에 맞춰 투표할 할 수 있어야 할 정도로 큰 나라입니다. 정말이지, 이스라엘은 진작에 미국이나 서방 나라들에 의해 제제를 받은 그 어느 나라보다도 더 심한 제제를 받았어야 했습니다. 그리고 '자유'와 '인권'을 손오공이 여의봉 휘두르듯이 휘두르는 바로 그 나라들이 그 제재에 앞장서야 했었습니다. 그러나 그 나라들은 그러기는커녕 말로만 약간의 우려를 표현하는데 그쳤습니다. 물론 미국은 우려조차 표현한 적이 없습니다.  이스라엘을 더는 이렇게 난폭한 사이코패스처럼 계속 행동하게 놓아두어서는 안 됩니다. 뜻을 같이 하는 나라들끼리라도 단합해서 이스라엘을 상대로 실효성 있는 제재를 가해야 합니다. &lt;/p&gt;
-  &lt;p&gt;--   &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정부, 이스라엘에 '인권 침해' 책임 묻는 유엔 결의안엔 기권&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://www.chosun.com/international/us/2026/04/13/57NVWK4LBVAPVNFDX2RCAVQ5QQ/" target="_blank"&gt;https://www.chosun.com/international/us/2026/04/13/57NVWK4LBVAPVNFDX2RCAVQ5QQ/&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이재명 대통령이 X(옛 트위터)에서 팔레스타인을 상대로 한 이스라엘의 ‘국제법 위반’ 행위를 비판한 뒤 이 문제가 양국 간 외교 문제로 비화한 가운데, 우리 정부가 정작 이스라엘의 정책 및 군사 행동이 국제법에 위배될 가능성을 지적하고 팔레스타인에 대한 인도적 지원 확대를 촉구하는 유엔인권이사회(UNHRC) 결의안에는 기권(abstain)표를 던진 것으로 나타났다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;[...]&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;중국, 파키스탄, 쿠바 등이 결의안에 찬성한 반면 국제 사회에서 자유·민주 진영에 속하고 한국의 유사 입장국으로 분류되는 프랑스, 일본, 이탈리아, 네덜란드, 영국 등 19국은 기권을 했다. 한국 역시 기권을 했는데 이사회의 이·팔 문제 관련 결의안이 지나치게 일방적이고 10·7 테러를 저지른 팔레스타인 무장 정파 하마스에 의한 인권 침해는 충분히 반영하지 못하고 있다는 미국 측 문제의식을 고려한 조치로 풀이된다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;[...]&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177037</guid><pubDate>Mon, 13 Apr 2026 15:42:31 GMT</pubDate></item><item><title>국내 선박이 호르무즈 통과했다는 뉴스가 나왔네요[12][0]</title><link>https://www.clien.net/service/board/park/19177034</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://www.mk.co.kr/news/economy/12015424" ori-url="https://www.mk.co.kr/news/economy/12015424" target="_blank"&gt;[단독] 한국 실소유선박, 호르무즈 통과…이란 지정루트로 첫 진입 - 매일경제&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;갑자기 통과되네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이스라엘을 비판한 효과일까요?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;여튼 갇혀있는 배 엄청 많다는데 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;언제 해결될까요 ㅠ.ㅠ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177034</guid><pubDate>Mon, 13 Apr 2026 15:27:21 GMT</pubDate></item><item><title>[단독] 한국 실소유선박, 호르무즈 통과…이란 지정루트로 첫 진입[14][8]</title><link>https://www.clien.net/service/board/park/19177031</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://v.daum.net/v/20260413150905136" target="_blank"&gt;https://v.daum.net/v/20260413150905136&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;국내 선사 장금마리타임이 실소유한 선박이 이란이 지정한 길목으로 호르무즈 해협을 통과, 페르시아만 진입에 성공한 것으로 확인됐다. 중동의 지정학적 리스크가 고조된 상황에서 국내 선사 실소유한 선박이 이란 혁명수비대의 통항 루트를 이용하면서 통항 조건과 진입 목적에 해운업계의 이목이 쏠리고 있다.... [매일경제]&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;사실일까요?&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177031</guid><pubDate>Mon, 13 Apr 2026 15:24:24 GMT</pubDate></item><item><title>북경에 출장다녀왔습니다.[13][1]</title><link>https://www.clien.net/service/board/park/19177029</link><description>
- 
- 
-  &lt;p&gt;일 다 마치고 자유시간이 반나절 생겼는데요.&lt;/p&gt;
-  &lt;p&gt;천안문광장, 자금성은 거의 언감생심이더군요.&lt;/p&gt;
-  &lt;p&gt;오래 전에 예약하고 하루정도 시간을 확보해야 하는 일정이 되었습니다.&lt;/p&gt;
-  &lt;p&gt;보안이 빡세지기도 하고 중국인들의 엄청난 인파와 줄서기 경쟁해야합니다.ㅎㄷㄷ&lt;/p&gt;
-  &lt;p&gt;천안문광장은 이제 미러리스나 DSLR로 찍지 못한대요.ㅎㄷㄷ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177029</guid><pubDate>Mon, 13 Apr 2026 15:13:37 GMT</pubDate></item><item><title>AI 의 도입으로 앞으로 우리 사회는 어떻게 될까요. (feat.자본소득 빨대꼽기)[17][1]</title><link>https://www.clien.net/service/board/park/19177028</link><description>
- 
- 
-  &lt;p&gt;이전 글들에서도 AI 도입으로 인한 일자리 문제에 대해 많은 의견 교환이 있었습니다.&lt;/p&gt;
-  &lt;p&gt;개인적으로 AI도입의 전환기 과정이라는 아슬아슬한 시점을 살아가는 입장에서는 이런 고민이 있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;1. AI도입으로 인한 일자리 감소와 근로 소득의 배신&lt;/p&gt;
-  &lt;p&gt;지금도 회계사, 변호사 등 일부 전문직과 인간만의 영역이라고 생각되었던 창의력을 기반으로 한 영상, 예술, 디자인은 AI로 빠르게 대체되고 있습니다. 근래에 회계사 관련 뉴스는 핫한 영역이었어요. 그리고 '아틀라스'로 대변되는 로봇으로 인해 머지않아 육체노동까지 곧 대체될 것이라고 봅니다. 중요한 것은 우리 생각보다 정말 엇! 하는 사이에 순식간에 대체되고 있다는 점입니다. 커즈와일이 '특이점이 온다' 를 처음 썻을 때는 다들 SF 소설이라고 했던 내용들이 지금은 대부분 이루어졌습니다. 일자리는 더욱 감소할 것이고, 근로로 소득을 얻는 것 또한 먼 옛날 일이 되지 않을까 걱정되기도 합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;2. 기본 '자본 소득&amp;gt;근로 소득' 패러다임의 기하급수적 차이 발생&lt;/p&gt;
-  &lt;p&gt;이로 인해 근로 소득으로 살아가던 사람과 자본 소득으로 살아가는 사람 간의 차이가 지금도 대단한데... 이보다 더 가파르게 그 차이가 증가할 것이라 생각됩니다. 글로벌 AI기업에 빨대를 꽂은 사람과 그렇지 않은 사람 간의 차이가 점점 늘어난다는 이야기 입니다. 카이스트 김대식 교수님도 비슷한 말을 했었는데, 제가 몇 년 전부터 걱정하던 일을 딱 말씀해 주셔서 공감이 가기도 했습니다. 즉 얼마 남지 않은 대AI 패러다임 변화가 정착되기 전에, 그리고 AI관련 기업, 산업이 모든 것을 대체하기 전에, AI관련 기업들에 주식, 배당, 금융 등의 빨대를 꽂아서 이제 곧 사라지거나 대체되는 근로 소득으로부터 벗어나야 한다는 뜻이지요. 그래서 저는 근로 소득을 열심히 관련 주식들로 전환 중입니다.... 그러나 수익 인증 하는 고수님들 보면 항상 눈물만 ㅠㅠ 부럽....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;3. 기본 소득이 답이다?&lt;/p&gt;
-  &lt;p&gt;이런 이유로 정부는 사회 유지를 위해 기본 소득을 무조건 할 것이라 봅니다. 다만, 정말... 기본소득인것이지요. 2026년의 입장에서 보면 10년 20년 후의 기본 소득이 너무 좋아 보일지도 모르지만, 미래의 기본 소득을 받는 입장에서 보면 정말 기초 수급의 생활이라고 생각할지 모릅니다. 앞서 말했 듯이 기본 소득과 자본 소득가의 차이는 이미 우리가 현재 알고 있는 수준의 차이가 아닐 것이기 때문이에요. 마치 조선 시대 사람이 현재의 우리를 보고 흰쌀밥을 먹으면 호사를 누리는데 왜 가난하다고 하지? 라고 생각하는 것처럼... 일론 머스크가 모두가 풍족한 생활을 할 것이다 라고 했지만, 특별한 누구들은 더욱 특별하고 풍족한 생활을 할 것이다.는 빠져있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;결론 : &lt;/p&gt;
-  &lt;p&gt;1. 이제 진짜 몇 년 안남았다. 근로 소득을 자본 소득으로, AI 수혜자들에게 빨대를 꼽는 것이 필요하다.&lt;/p&gt;
-  &lt;p&gt;2. 트럼프가 호르무즈 봉쇄를 봉쇄. 메타 봉쇄 당한 주식창이 파래서 심란한 1인의 주저리 주저리 였습니다...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177028</guid><pubDate>Mon, 13 Apr 2026 15:13:55 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19177064</guid><pubDate>Mon, 13 Apr 2026 16:35:41 GMT</pubDate></item></channel></rss>
