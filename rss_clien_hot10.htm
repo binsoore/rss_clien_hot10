@@ -1,5 +1,164 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sun, 19 Apr 2026 22:00:56 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>AI 전환을 바라보는 제 입장[12][0]</title><link>https://www.clien.net/service/board/park/19179885</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sun, 19 Apr 2026 23:00:55 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>경찰, 내일부터 '우회전' 집중단속…[16][0]</title><link>https://www.clien.net/service/board/park/19179904</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/079/0004138262?sid=102" target="_blank"&gt;https://n.news.naver.com/article/079/0004138262?sid=102&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;경찰청은 20일부터 6월 19일까지 2개월간 우회전 통행방법 위반에 대해 집중단속을 실시한다고 밝혔다.&lt;br/&gt;&lt;br/&gt;
+    경찰은 이번 단속은 지난 2023년 도입된 우회전 일시정지 제도를 현장에 안착시켜 우회전 사고에 취약한 보행자 안전을 확보하기 위한 조치라고 설명했다. 일시정지 법규를 지키는 앞 차량을 향해 경적을 울리는 등 현장에선 운전자간 마찰 사례가 자주 발생하고 있다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;span&gt;위반 시 승용차 기준 범칙금 6만원과 벌점 &lt;/span&gt;&lt;span&gt;15&lt;/span&gt;&lt;span&gt;점이 부과된다. 또 우회전 후 만나는 횡단보도에서 보행자가 건너고 있거나 건너려고 하는 경우에도 일시정지해야 한다. 이를 위반하면 범칙금 6만원과 벌점 &lt;/span&gt;&lt;span&gt;10&lt;/span&gt;&lt;span&gt;점이 부과된다&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;잘 지키면서 운행 하고 있지만&lt;/p&gt;
+  &lt;p&gt;그래도 혹시 실수 해서 단속 되지 않도록 해야 겠네요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179904</guid><pubDate>Sun, 19 Apr 2026 22:42:58 GMT</pubDate></item><item><title>RAG 삽질중...[12][0]</title><link>https://www.clien.net/service/board/park/19179893</link><description>
+ 
+ 
+  &lt;p&gt;RAG라는 것을 알게 되었습니다. &lt;/p&gt;
+  &lt;p&gt;RAG라는 것은 결국 노트북LM이라고 이해하고 있습니다. &lt;/p&gt;
+  &lt;p&gt;LLM이 내가 올려준 문서에 근거해서 답변하고 문서에 없는 내용은 모른다고 답하는.... 그런 거죠...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그래서 교과서와 기술문서들을 올려놓고 LLM이 그것을 근거로 답변을 해주면.... 내가 책을 뒤적거리는 수고를 덜 수 있겠다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;라는 것이 삽질의 동기였습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;사용된 서버는 오라클 프리티어.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;구성은  VM.Standard.A1.Flex&lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;OCPU 개수&lt;/strong&gt; 는 2개 &lt;/p&gt;
+  &lt;p&gt;램은 6기가  &lt;/p&gt;
+  &lt;p&gt;RAG에 사용된 플랫폼은 n8n &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자료를 올려서 저장하는 것 까지는 어찌어찌되더군요...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이제 저장된 자료를 LLM이 참조해서 답변을 반환하면 되는 단계.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;로컬 LLM을 사용해야겠다. &lt;/p&gt;
+  &lt;p&gt;마침 구글에서 gemma4라고 핸드폰에서도 돌아가는 로컬LLM이 나왔다고 해서  설치....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;어라??&lt;/p&gt;
+  &lt;p&gt;서버사양이 너무 딸리나????(예전에 마인크래프트 서버정도로만 사용할 생각에..저렇게 사용했더니...)&lt;/p&gt;
+  &lt;p&gt;올려보자....&lt;/p&gt;
+  &lt;p&gt;약 일주일에 걸친 무한 시도 끝에 OCPU 4개 램은 23기가로 올리고.(역시나 무료티어)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;gemma4설치후 실행....&lt;/p&gt;
+  &lt;p&gt;터미널에서 그냥 일상대화시도 -&amp;gt; 되기는 함...CPU점유율은 100%로 유지되면서 답변나오는데...5분이상은 걸리는 듯....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;n8n의 chat AI로 연결했더니...쓸 수가 없을 정도로 느림.....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;핸드폰에서도 돌아간다며!!!!&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;최대한 가벼운 LLM모델(gemma도 아닌...그 어떤 것..)을 선택했으나... 속도는 개선되었으나...&lt;/p&gt;
+  &lt;p&gt;과연 답변이 자료를 참조한 것이 맞는지 의심되는 정도로 저질 답변이 나옴....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;며칠은 이것저것 해보았으나... 저질 답변 혹은 답변시간이 너무 오래 걸리는 주제에 답변은 저질...&lt;/p&gt;
+  &lt;p&gt;그래서 &lt;/p&gt;
+  &lt;p&gt;로컬 LLM 사용포기...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아무거나 질문란에 질문을 올려서 다른 분이 가르쳐주신 openrouter.ai에 가입...&lt;/p&gt;
+  &lt;p&gt;크레딧을 10달러 충전하기 위해 10.8달러 결제( 어라? 수수료가 5.5% 라고 들은 듯 한데.... 왜 8%이지?? 라고 생각함)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;결제 후 가장 가성비 있다는 deepseek 3.2 모델을 사용해 봤더니...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;같은 자료를 참조한 것이 맞나 싶은 수준의 답변이 나옴...&lt;/p&gt;
+  &lt;p&gt;' 이 정도면 겨우 쓸만하다.'정도의 답변이지만 감격스러움!!!&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;하지만..역시나 무서운 종량제...&lt;/p&gt;
+  &lt;p&gt;간단한 질문의 답변 하나 만드는데....토큰을 많이씀...  원화로 계산하니 대략 16원..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;가장 가성비 좋다는 모델인데도 &lt;/p&gt;
+  &lt;p&gt;복잡한 질문을 하면 답하나 보는데 돈이 얼마나 들지...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;하루에  질문을 꽤 많이 할꺼 같은데....라는 생각이 드니...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;정말 맥미니를 하나 구해야 하나? 맥미니 가격이면 한 3년은 맘껏 사용하는 금액과 비슷한 거 아닌가? 3년이면 뭔가 또 획기적인 것이 나오지 않을까?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그런 생각이 들었습니다. &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179893</guid><pubDate>Sun, 19 Apr 2026 21:57:36 GMT</pubDate></item><item><title>아침형 인간 그거 어떻게 하는겁니까...[12][2]</title><link>https://www.clien.net/service/board/park/19179891</link><description>
+ 
+ 
+  &lt;p style="text-align: center;"&gt;&lt;img alt="아침형인간_15386335285bb5af383b6bc.jpg" class="fr-dib fr-fil" data-file-sn="15714716" data-gif="false" data-img-height="600" data-img-width="600" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15714716/47d77c97607975.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="아침형인간_1b26dc4334948e.jpg" class="fr-dib fr-fil" data-file-sn="15714715" data-gif="false" data-img-height="745" data-img-width="673" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15714715/272b97295d6b4.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="text-align: center;"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;div style="text-align: left;"&gt;
+   &lt;span style="font-family: sans-serif; font-size: 14px;"&gt;먹고살자니 아침에 일찍 일어나고는 있습니다만....&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;p style="text-align: left;"&gt;&lt;span style="font-size: 14px;"&gt;졸려죽겠네요...&lt;/span&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179891</guid><pubDate>Sun, 19 Apr 2026 21:49:20 GMT</pubDate></item><item><title>[단독] 전세대출 이어 전세보증 문 더 좁아진다[13][4]</title><link>https://www.clien.net/service/board/park/19179889</link><description>
+ 
+ 
+  &lt;p style='margin-top: 30px; margin-bottom: 28px; padding: 0px; color: rgb(0, 0, 0); font-family: "SF Pro Display", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", 돋움, dotum, sans-serif; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;당정이 전세대출 규제에 이어 전세보증금 반환 보증까지 추가로 조이는 방안을 검토 중인 것으로 알려졌다. 핵심은 현행 최대 90% 수준인 전세가율을 70%까지 낮추는 것인데, 수십조 원 규모의 주택시장이 영향권에 놓이는 점을 고려해 '단계적 인하' 카드를 검토하고 있는 것으로 알려졌다. 다만 여당에서는 전세가율 하향 시 '주거 사다리'인 빌라시장과 전세난에 악영향을 미칠 수 있다는 우려가 제기되고 있는 것으로 전해졌다.&lt;/p&gt;
+  &lt;p style='margin-top: -6px; margin-bottom: 28px; padding: 0px; color: rgb(0, 0, 0); font-family: "SF Pro Display", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", 돋움, dotum, sans-serif; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;19일 문진석 더불어민주당 의원이 확보한 자료에 따르면 올해 3월 말 잔액 기준 주택도시보증공사(HUG)가 발급한 전세보증금 반환보증(전세보증) 가운데 담보인정비율이 70% 초과~90% 이하에 해당하는 건수는 12만161건으로 집계됐다. 이는 전체 전세보증(16만2433건)의 73.98%에 달하는 비중이다. 주택 유형별로 보면 비아파트(빌라)가 10만7846건, 아파트가 1만2315건이다.&lt;/p&gt;
+  &lt;p style='margin-top: -6px; margin-bottom: 28px; padding: 0px; color: rgb(0, 0, 0); font-family: "SF Pro Display", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", 돋움, dotum, sans-serif; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style='margin-top: -6px; margin-bottom: 28px; padding: 0px; color: rgb(0, 0, 0); font-family: "SF Pro Display", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", 돋움, dotum, sans-serif; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;(중략)&lt;/p&gt;
+  &lt;p style='margin-top: -6px; margin-bottom: 28px; padding: 0px; color: rgb(0, 0, 0); font-family: "SF Pro Display", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", 돋움, dotum, sans-serif; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style='margin-top: -6px; margin-bottom: 28px; padding: 0px; color: rgb(0, 0, 0); font-family: "SF Pro Display", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", 돋움, dotum, sans-serif; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;최근 정부와 국회에서는 전세보증 가입 문턱을 높이는 방안이 거론되고 있다. 국회 국토교통위원회는 최근 추가경정예산을 심사하면서 "전세반환보증금 가입 요건을 전세가율 70%로 낮춰 연내 시행하는 방안을 검토하라"며 부대의견을 달았다. 다만 이 같은 상황에서 전세가율을 낮추면 전세난 등 시장에 영향이 불가피하다. 국토교통부는 전세가율 조정이 기존 보증 가입을 일괄 제한하는 방식이라기보다 후속 임차인과 체결하는 계약에서 인정 가능한 전세금 수준을 낮추는 효과를 낼 것으로 보고 있다.&lt;/p&gt;
+  &lt;p style='margin-top: -6px; margin-bottom: 28px; padding: 0px; color: rgb(0, 0, 0); font-family: "SF Pro Display", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", 돋움, dotum, sans-serif; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;이 과정에서 임대인의 보증금 반환 부담이 커질 수 있다. 후속 전세금으로 기존 보증금을 모두 충당하지 못하면 부족분을 자체 자금으로 메워야 하기 때문이다. 국토부도 이를 고려해 즉각적인 하향보다는 단계적 조정이 필요하다는 입장이다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179889</guid><pubDate>Sun, 19 Apr 2026 21:50:28 GMT</pubDate></item><item><title>AI기본소득하려면 인구가 많이 줄어야할거에요[11][1]</title><link>https://www.clien.net/service/board/park/19179887</link><description>
+ 
+ 
+  &lt;p&gt;AI기본소득이요 &lt;/p&gt;
+  &lt;p&gt;지금처럼 용돈 보조금 찔끔이아니라요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;말 그대로 인간이 노동을 안하고 풍족하게 사는걸 의미한다면&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;70억 기본소득은 어려울겁니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;AI를 소유한 국가와 기업이&lt;/p&gt;
+  &lt;p&gt;지구반대편의 실업자를 위해 그걸 해줄리가 없잖아요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;최근 일론머스크나 알렉스카프스 부류가 이야기하는&lt;/p&gt;
+  &lt;p&gt;AI에 의한 공산주의 이상향 스러운 주장은&lt;/p&gt;
+  &lt;p&gt;충분히 가능은 하다고 봅니다&lt;/p&gt;
+  &lt;p&gt;단, 거기맞춰 인구가 줄어드는 과정이 생략되어있습니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그들이 생각하 인류가 오로지 소비만하는세상은&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;대충 지구인구 1% 의 사람들만 누리는 세상&lt;/p&gt;
+  &lt;p&gt;선착순 천만 단위 정도로 끊길것 같아요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;나머지는 그 세상에는 필요가 없을듯요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그래서 요즘 보면&lt;/p&gt;
+  &lt;p&gt;오히려 기존에 기본소득 이야기하던 &lt;/p&gt;
+  &lt;p&gt;이재명 같은 사람들은 AI장미빛 미래이야기 안합니다&lt;/p&gt;
+  &lt;p&gt;그냥 재난 대비하는 느낌으로 일하는 중이지요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;반대로 일론이나 카프스 처럼 &lt;/p&gt;
+  &lt;p&gt;목적을 위해 뭐든 할것 같은 인간들만 &lt;/p&gt;
+  &lt;p&gt;장미빛 미래 이야기하면서 각종 규제 없애려고 하지요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179887</guid><pubDate>Sun, 19 Apr 2026 21:44:11 GMT</pubDate></item><item><title>AI로 전환되면 다 망할것 같이 이야기하는 의견이 있는데[8][5]</title><link>https://www.clien.net/service/board/park/19179860</link><description>
+ 
+ 
+  &lt;p&gt;산업혁명때도 이랬을까? 싶긴합니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;걱정되는건 알겠는데&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;윤석열 정부때처럼 손놓고 남의나라에 의해서 속국마냥 따라갈 생각하는게 아니라&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자주 국방 하듯이 우리나라 AI 발전 시키고 자국 제조 산업 밀어주고 하면서 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;기본소득 이야기 까지 하고 최저 생계비 까지 신경쓰는 대통령 있을때 더 적극적으로 지지하고 의견 보내는게 낫지 않을까요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;결론. 투표를 잘해야 합니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179860</guid><pubDate>Sun, 19 Apr 2026 20:12:04 GMT</pubDate></item><item><title>AI 전환을 바라보는 제 입장[15][0]</title><link>https://www.clien.net/service/board/park/19179885</link><description>
  
  
   &lt;p&gt;안녕하세요, &lt;/p&gt;
@@ -23,7 +182,7 @@
   &lt;p&gt;제 개인적인 결론:&lt;/p&gt;
   &lt;p&gt;창업이 더 쉬워지는 상황이 앞으로 1~2년 정도는 올것 같습니다. 계속 발전하는 AI를 바탕으로 빠르게 적응한 회사나 개인들은 돈을 벌거고, 그 전환을 못한 업체들은 많이 어려운 상황이 오지 않을까.. 뭐 그런생각이 듭니다. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179885</guid><pubDate>Sun, 19 Apr 2026 21:28:44 GMT</pubDate></item><item><title>당근하는 한동훈 JPG[15][2]</title><link>https://www.clien.net/service/board/park/19179875</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179885</guid><pubDate>Sun, 19 Apr 2026 21:28:44 GMT</pubDate></item><item><title>당근하는 한동훈 JPG[18][2]</title><link>https://www.clien.net/service/board/park/19179875</link><description>
  
  
   &lt;p&gt;     &lt;/p&gt;
@@ -146,7 +305,7 @@
   &lt;p&gt;16분만에 53.7kW 먹였습니다.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19179737</guid><pubDate>Sun, 19 Apr 2026 12:40:36 GMT</pubDate></item><item><title>한국 부동산을 투기라고 말하는 외국 부동산 전문가[11][5]</title><link>https://www.clien.net/service/board/park/19179858</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19179737</guid><pubDate>Sun, 19 Apr 2026 12:40:36 GMT</pubDate></item><item><title>한국 부동산을 투기라고 말하는 외국 부동산 전문가[12][5]</title><link>https://www.clien.net/service/board/park/19179858</link><description>
  
  
   &lt;p&gt;한국 부동산을 투기라고 말하고 있네요.&lt;/p&gt;
@@ -174,7 +333,7 @@
   &lt;p&gt;자세한 건 출처 참고하세요.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179858</guid><pubDate>Sun, 19 Apr 2026 20:06:00 GMT</pubDate></item><item><title>연구원에 연구 안 하는 직원이 30%? - 열린 공공기관 및 유관기관 업무보고[21][1]</title><link>https://www.clien.net/service/board/park/19179856</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179858</guid><pubDate>Sun, 19 Apr 2026 20:06:00 GMT</pubDate></item><item><title>연구원에 연구 안 하는 직원이 30%? - 열린 공공기관 및 유관기관 업무보고[22][1]</title><link>https://www.clien.net/service/board/park/19179856</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -244,7 +403,7 @@
     주주들의 반발 가능성도 변수다. 성과급이 현금배당이나 자사주 소각 등 주주환원 정책보다 우선될 경우 자본 배분 원칙을 둘러싼 논란으로 확산될 수 있기 때문이다.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/19179754</guid><pubDate>Sun, 19 Apr 2026 14:27:42 GMT</pubDate></item><item><title>앞으로 조금 걱정이네요[22][2]</title><link>https://www.clien.net/service/board/park/19179852</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/news/19179754</guid><pubDate>Sun, 19 Apr 2026 14:27:42 GMT</pubDate></item><item><title>앞으로 조금 걱정이네요[24][2]</title><link>https://www.clien.net/service/board/park/19179852</link><description>
  
  
   &lt;p&gt;삼성전자도&lt;/p&gt;
@@ -388,12 +547,12 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19179101</guid><pubDate>Fri, 17 Apr 2026 22:40:25 GMT</pubDate></item><item><title>슬슬 지방선거 시즌인가봅니다. 부동산 벌레충들이 바글바글한 거 보니깐요.[6][18]</title><link>https://www.clien.net/service/board/park/19179841</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19179101</guid><pubDate>Fri, 17 Apr 2026 22:40:25 GMT</pubDate></item><item><title>슬슬 지방선거 시즌인가봅니다. 부동산 벌레충들이 바글바글한 거 보니깐요.[6][19]</title><link>https://www.clien.net/service/board/park/19179841</link><description>
  
  
   &lt;p&gt;정말 투명해서 웃음만 나와요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179841</guid><pubDate>Sun, 19 Apr 2026 18:57:47 GMT</pubDate></item><item><title>앞으로 부동산 몰빵이 위험한 이유[46][7]</title><link>https://www.clien.net/service/board/park/19179837</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179841</guid><pubDate>Sun, 19 Apr 2026 18:57:47 GMT</pubDate></item><item><title>앞으로 부동산 몰빵이 위험한 이유[51][9]</title><link>https://www.clien.net/service/board/park/19179837</link><description>
  
  
   &lt;p&gt;왼쪽이 출생자수 오른쪽이 사망자수입니다.&lt;/p&gt;
@@ -521,7 +680,7 @@
   &lt;p&gt;지슈스에 비하면 신기술이 적용된 것도 아닌데 이 가격이 맞나 하는 평이 있던데요, 개인적으로도 어느정도는 동의합니다. 그래도 사악한 가격만 아니면 나름 만족스럽고요, 스위치만 안나가면 뭐 계속 쓸 수 있을테니 모쪼록 안망가지고 오래 썼으면 합니다.ㅎㅎ&lt;/p&gt;
   &lt;p&gt;﻿ &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19179572</guid><pubDate>Sun, 19 Apr 2026 06:59:18 GMT</pubDate></item><item><title>서울의 10~15억대(중위~평균) 구간 아파트들이 엄청 오르네요 이게 뭔지...[164][2]</title><link>https://www.clien.net/service/board/park/19179827</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19179572</guid><pubDate>Sun, 19 Apr 2026 06:59:18 GMT</pubDate></item><item><title>서울의 10~15억대(중위~평균) 구간 아파트들이 엄청 오르네요 이게 뭔지...[164][3]</title><link>https://www.clien.net/service/board/park/19179827</link><description>
  
  
   &lt;p style="user-select: auto*;"&gt;이젠 양극화가 더 심해질 것 같습니다&lt;/p&gt;
@@ -793,7 +952,7 @@
   &lt;p style='margin-top: -6px; margin-bottom: 28px; padding: 0px; color: rgb(0, 0, 0); font-family: "SF Pro Display", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", 돋움, dotum, sans-serif; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;우리는 그동안 자본시장의 미비로 신생기업이 잘 생겨나지도 않았고 성장도 약했죠.또한 기존 기업도 안주해있었죠. 자본 흐름도 부동산에 집중했고요&lt;/p&gt;
   &lt;p style='margin-top: -6px; margin-bottom: 28px; padding: 0px; color: rgb(0, 0, 0); font-family: "SF Pro Display", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", 돋움, dotum, sans-serif; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;이번 정부 부터 자본시장을 개혁하고 생산적 금융으로 바꾸고 있으니 다시 따라갈거라고 생각합니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179779</guid><pubDate>Sun, 19 Apr 2026 15:02:40 GMT</pubDate></item><item><title>[루머]'시리 그 이상' 예고한 애플 iOS 27… AI 기반 편의 기능 대거 확충[22][0]</title><link>https://www.clien.net/service/board/news/19179711</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179779</guid><pubDate>Sun, 19 Apr 2026 15:02:40 GMT</pubDate></item><item><title>[루머]'시리 그 이상' 예고한 애플 iOS 27… AI 기반 편의 기능 대거 확충[23][0]</title><link>https://www.clien.net/service/board/news/19179711</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/138/0002224956?sid=105" ori-url="https://n.news.naver.com/mnews/article/138/0002224956?sid=105" target="_blank"&gt;'시리 그 이상' 예고한 애플 iOS 27… AI 기반 편의 기능 대거 확충&lt;/a&gt; | 디지털데일리&lt;/p&gt;
@@ -887,14 +1046,14 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179768</guid><pubDate>Sun, 19 Apr 2026 14:11:33 GMT</pubDate></item><item><title>회사애서 밥주는 복지가 무시 못하는거 같아요[16][5]</title><link>https://www.clien.net/service/board/park/19179766</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179768</guid><pubDate>Sun, 19 Apr 2026 14:11:33 GMT</pubDate></item><item><title>회사애서 밥주는 복지가 무시 못하는거 같아요[16][6]</title><link>https://www.clien.net/service/board/park/19179766</link><description>
  
  
   &lt;p&gt;요즘 생활물가가 많이 오르다 보니&lt;/p&gt;
   &lt;p&gt;사내에서 아침 점심 저녁 제공하는게 굉장한 복지가 된거 같아요.&lt;/p&gt;
   &lt;p&gt;아침-점심만 먹어도 한달에 거의 50만원 차이니까요. ㄷㄷ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179766</guid><pubDate>Sun, 19 Apr 2026 14:01:49 GMT</pubDate></item><item><title>미국, 대북정보 공유 중단…하루 50~100쪽 수준[28][0]</title><link>https://www.clien.net/service/board/park/19179756</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179766</guid><pubDate>Sun, 19 Apr 2026 14:01:49 GMT</pubDate></item><item><title>미국, 대북정보 공유 중단…하루 50~100쪽 수준[29][0]</title><link>https://www.clien.net/service/board/park/19179756</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/article/028/0002801379" target="_blank"&gt;https://n.news.naver.com/article/028/0002801379&lt;/a&gt;&lt;/p&gt;
@@ -932,7 +1091,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;기계적으로 물어봤을 수도 있을 거 같습니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179716</guid><pubDate>Sun, 19 Apr 2026 11:42:12 GMT</pubDate></item><item><title>이야기 별 사람이 다 있군요.[14][1]</title><link>https://www.clien.net/service/board/cm_car/19179517</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179716</guid><pubDate>Sun, 19 Apr 2026 11:42:12 GMT</pubDate></item><item><title>이야기 별 사람이 다 있군요.[15][1]</title><link>https://www.clien.net/service/board/cm_car/19179517</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -943,77 +1102,4 @@
   &lt;p&gt;저런 언행을 편집안하고 그냥 올리는게 신기하네요.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19179517</guid><pubDate>Sat, 18 Apr 2026 19:48:31 GMT</pubDate></item><item><title>“보수유권자들은 이런걸 읽고 교육 받는다“[11][0]</title><link>https://www.clien.net/service/board/park/19179748</link><description>
- 
- 
-  &lt;p&gt;보수유권자 교육용 읽기자료죠…ㅎㅎㅎ&lt;/p&gt;
-  &lt;p&gt;이런걸 읽고 현시국과 이대통령에&lt;/p&gt;
-  &lt;p&gt;대해 편견을&lt;/p&gt;
-  &lt;p&gt;강화시키죠 ㅎㅎㅎ &lt;/p&gt;
-  &lt;p&gt;이런 자들과는 통합은 피히고&lt;/p&gt;
-  &lt;p&gt;조화만 가능하죠…&lt;/p&gt;
-  &lt;p&gt;화이부동!!!&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179748</guid><pubDate>Sun, 19 Apr 2026 13:14:54 GMT</pubDate></item><item><title>오즈모 포켓 4 뽐뿌가 죽었습니다.[20][2]</title><link>https://www.clien.net/service/board/park/19179742</link><description>
- 
- 
-  &lt;p&gt;예약 구매 결제까지 했다가..&lt;/p&gt;
-  &lt;p&gt;유툽에 이 댓글 보고 취소했습니다… &lt;/p&gt;
-  &lt;p&gt;^^;; 나중에 진짜필요하면 그때 사겠죠…&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179742</guid><pubDate>Sun, 19 Apr 2026 12:41:23 GMT</pubDate></item><item><title>아주 낙관적인 사람들이 많더군요[20][7]</title><link>https://www.clien.net/service/board/park/19179735</link><description>
- 
- 
-  &lt;p&gt;AI, 로봇, 중국저가 공세 를 보면&lt;/p&gt;
-  &lt;p&gt;새롭게 사회에 진입하는 젊은 세대이 불쌍하다 싶을 정도 인데&lt;/p&gt;
-  &lt;p&gt;빨리 AI도 다양하게 적용되고 로봇이 여기저기 깔려서 일상생활을 편하게 해주고&lt;/p&gt;
-  &lt;p&gt;중국의 저가 제품이 많이 수입되어서 싸게 구입할 수 있었으면 좋겠다 이야기 하는 사람들이 &lt;/p&gt;
-  &lt;p&gt;많더군요&lt;/p&gt;
-  &lt;p&gt;참 낙관 적이구나 싶기도 하더군요&lt;/p&gt;
-  &lt;p&gt;이 문제가 그사람들에게는 다 피해 가는 모양이구나 싶더군요&lt;/p&gt;
-  &lt;p&gt;저는 제 아들 앞으로 먹고 살기 어렵겠다 생각 부터 들었는데 입니다. &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179735</guid><pubDate>Sun, 19 Apr 2026 12:34:57 GMT</pubDate></item><item><title>[속보] 李대통령, 인도·베트남 국빈순방 돌입…뉴델리 향발 출국[4][8]</title><link>https://www.clien.net/service/board/park/19179733</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/421/0008897982?sid=100" ori-url="https://n.news.naver.com/mnews/article/421/0008897982?sid=100" target="_blank"&gt;[속보] 李대통령, 인도·베트남 국빈순방 돌입…뉴델리 향발 출국&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;공군1호기가 이륙 완료 후 순항 중 입니다.&lt;/p&gt;
-  &lt;p&gt;중국 영공을 관통하는 경로로 보입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/mgI16jcLbMc" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="videoframe_8511.png" class="fr-dib fr-fil full" data-file-sn="15714488" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15714488/253fbf9833714.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="videoframe_75863.png" class="fr-dib fr-fil full" data-file-sn="15714489" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15714489/191d3865229169.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="videoframe_113482.png" class="fr-dib fr-fil full" data-file-sn="15714487" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15714487/191d0dd0a9528f.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;악수 장면 잡는다고 카메라 이동하다가 휘청 하네요. 고생하십니다..&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="videoframe_157102.png" class="fr-dib fr-fil full" data-file-sn="15714490" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15714490/191d3da027e9ca.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="videoframe_158255.png" class="fr-dib fr-fil full" data-file-sn="15714491" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15714491/254018c567773.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="videoframe_160294.png" class="fr-dib fr-fil full" data-file-sn="15714492" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/4/15714492/25401b1375fcf.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179733</guid><pubDate>Sun, 19 Apr 2026 13:00:35 GMT</pubDate></item><item><title>정식으로 연예인과 계약하고 인터넷 강의에 페이스 스왑 써보면 어떨까요[13][0]</title><link>https://www.clien.net/service/board/park/19179727</link><description>
- 
- 
-  &lt;p&gt;연예인과 정식 계약 맺고 장원영 안유진 강해린 고윤정 등으로 강사 얼굴 바꾸고 덤으로 목소리도 바꾸면 대박나지 않을지...&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179727</guid><pubDate>Sun, 19 Apr 2026 11:56:52 GMT</pubDate></item><item><title>잡담) 주성치 사형장 짤[13][0]</title><link>https://www.clien.net/service/board/park/19179721</link><description>
- 
- 
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/eQR4Z0F7f7A" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;이 분야의 고트신거 같아요.&lt;/p&gt;
-  &lt;p&gt;신작 안내시려나 우울할땐 한편 찾아봐도 좋을 듯요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19179721</guid><pubDate>Sun, 19 Apr 2026 12:04:05 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19179517</guid><pubDate>Sat, 18 Apr 2026 19:48:31 GMT</pubDate></item></channel></rss>
