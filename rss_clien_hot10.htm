@@ -1,5 +1,97 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sat, 02 May 2026 23:00:54 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 플레오스는 안전합니다?[11][3]</title><link>https://www.clien.net/service/board/cm_car/19185449</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sun, 03 May 2026 00:00:55 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>LLM도 이제 한계효용 체감 구간을 앞두고 있는 것이 아닐까 싶습니다[4][6]</title><link>https://www.clien.net/service/board/park/19185485</link><description>
+ 
+ 
+  &lt;p&gt;요즘 오픈웨이트 LLM들을 보면서 드는 생각이 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;의외로 로컬LLM이 성능이 별로라는 이야기가 나오길래 저도 떠올려보니 지금의 프론티어가 성능이 좋아지면서 그런게 아닐까 생각이 들어 자료를 조사해봤습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;글요약: 출시된 오픈웨이트모델, 그러니까 로컬LLM으로 돌릴 수 있는 모델이 그 직전세대(여기서는 6개월전의 프론티어모델)대비 얼마나 좋은 성능을 내는가의 정확한 자료를 찾아보고 싶었고, 그 결과 어렴풋이 생각했던 한계효용법칙의 시점이 다가오는게 아닐까 생각하던 것을 정리해보았습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;프론티어 모델이 더 이상 발전하지 않는다는 뜻은 아닙니다. GPT, Claude, Gemini 같은 최상위 모델들은 계속 좋아지고 있고, 아마 앞으로도 좋아질 겁니다. 다만 일반 사용자가 체감하는 효용 기준으로 보면, 이제 “더 좋아지는 것”의 가치가 예전만큼 크지 않아지는 구간에 들어가는 것 아닌가 싶습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;제가 흥미롭게 본 건 오픈웨이트 모델의 따라잡는 속도입니다.&lt;/p&gt;
+  &lt;p&gt;예전에는 로컬 LLM이나 오픈웨이트 모델이라고 하면 “재미는 있는데 실사용은 좀…”에 가까웠습니다. 그런데 요즘은 Qwen, DeepSeek, Kimi, GLM, Gemma, Llama 쪽 모델들을 보면 분위기가 꽤 달라졌습니다. 단순히 파라미터 수가 커져서가 아니라, 더 작은 모델이 이전 세대의 훨씬 큰 모델이나 당시 프론티어 모델에 근접하거나 일부 영역에서는 넘어서는 일이 반복되고 있습니다.&lt;/p&gt;
+  &lt;p&gt;그래서 제가 대략 정리해본 방식은 이렇습니다.&lt;/p&gt;
+  &lt;p&gt;“오픈웨이트 모델이 출시된 시점에서 6개월 전 프론티어 모델과 비교하면 얼마나 차이가 나는가?”&lt;/p&gt;
+  &lt;p&gt;이 기준으로 보면 재미있는 그림이 나옵니다. 몇몇 오픈웨이트 모델은 이미 6개월 전 프론티어 모델과 거의 동급이거나, 벤치마크상으로는 넘어서는 경우도 있습니다. 물론 벤치마크마다 편차가 크고, 모델카드 수치를 재조합한 것이니 정밀한 순위표로 보면 안 됩니다. 하지만 방향성은 꽤 뚜렷해 보입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="화면 캡처 2026-05-02 231032.png" class="fr-dib fr-fil full" data-file-sn="15722727" data-gif="false" data-img-height="823" data-img-width="1303" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722727/1d3e26df762c84.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;코딩 영역만 보면 특히 그렇습니다. DeepSeek R1, Qwen, Kimi, GLM 같은 모델들이 6개월 전 프론티어와의 격차를 상당히 줄였습니다. 최근 Qwen 3.6 27B 같은 모델은 크기만 보면 “이게 되나?” 싶은데, 여러 공개 지표에서는 현재 프론티어급과도 꽤 가까운 위치까지 올라왔습니다.&lt;/p&gt;
+  &lt;p&gt;물론 코딩만 보면 편향이 있을 수 있어서, 글쓰기, 툴콜/에이전트, 번역도 따로 봤습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="화면 캡처 2026-05-02 231102.png" class="fr-dib fr-fil full" data-file-sn="15722729" data-gif="false" data-img-height="1459" data-img-width="1291" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722729/393db52822601.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;여기서는 영역별 차이가 보입니다. 글쓰기는 이미 오픈웨이트 상위권이 상당히 강합니다. 툴콜이나 에이전트 계열은 벤치마크마다 편차가 크지만, 일부 모델은 충분히 경쟁권에 들어와 있습니다. 번역은 아직 GPT-4.1 대비 뒤지는 구간이 보여서, “모든 영역에서 다 따라잡았다”고 말하기는 어렵습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그래서 제 결론은 이쪽입니다.&lt;/p&gt;
+  &lt;p&gt;프론티어 모델은 계속 좋아질 것이다.&lt;br/&gt;
+    하지만 일반 사용자가 느끼는 만족도는 점점 포화될 가능성이 크다.&lt;/p&gt;
+  &lt;p&gt;메일 쓰기, 문서 요약, 간단한 코딩 보조, 번역 초안, 자료 정리, 블로그 글 다듬기, 간단한 에이전트 작업 정도에서는 이미 지금도 “충분히 좋다”고 느끼는 사람이 많습니다. 여기서 프론티어 모델이 10% 더 좋아진다고 해서, 사용자가 매달 비싼 클라우드 구독을 계속 유지할 이유가 예전만큼 강할까요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;반대로 오픈웨이트 모델은 점점 더 매력적인 선택지가 됩니다.&lt;/p&gt;
+  &lt;p&gt;로컬에서 돌릴 수 있고, 프라이버시 부담이 적고, API 비용이 없거나 낮고, 마음대로 튜닝하거나 붙일 수 있습니다. 성능이 프론티어보다 약간 낮더라도 체감상 충분하다면, 많은 사용자는 “이 정도면 됐다” 쪽으로 갈 수 있습니다. LLM에서도 일종의 한계효용 체감이 오는 셈입니다.&lt;/p&gt;
+  &lt;p&gt;물론 클라우드 대형 LLM이 바로 위태롭다는 뜻은 아닙니다. 프론티어 모델은 여전히 최신 성능, 멀티모달, 긴 컨텍스트, 안정적인 에이전트 실행, 기업용 관리, 서비스 통합에서 강점이 큽니다. 또 일반 사용자가 로컬 모델을 직접 설치하고 관리하는 것도 아직은 꽤 번거롭습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;다만 모델 성능만 놓고 보면, “프론티어만 가능한 일”의 영역이 줄어드는 건 맞아 보입니다. 특히 올해 말쯤이면 지금의 프론티어 모델에 꽤 근접한 오픈웨이트 모델이 나올 가능성이 높다고 봅니다. 그때가 되면 많은 사용자는 최고 성능보다 충분한 성능, 낮은 비용, 로컬 실행, 프라이버시를 더 중요하게 볼 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;결국 시장이 완전히 로컬로 넘어간다기보다는, 이렇게 나뉘지 않을까 싶습니다.&lt;/p&gt;
+  &lt;p&gt;최고 성능과 제품 완성도가 필요한 사람은 프론티어 클라우드를 계속 쓸 것이고,&lt;br/&gt;
+    대부분의 일상적 작업은 오픈웨이트/로컬/저비용 모델로 충분하다고 느끼는 층이 커질 것 같습니다.&lt;/p&gt;
+  &lt;p&gt;요약하면, LLM의 발전이 멈춘다는 이야기가 아니라, 사용자의 체감 효용이 먼저 포화될 수 있다는 이야기입니다.&lt;/p&gt;
+  &lt;p&gt;스마트폰 카메라가 계속 좋아져도 어느 순간부터는 “이 정도면 충분하다”고 느끼는 사람이 많아진 것처럼, LLM도 그런 구간에 들어가고 있는 것 아닐까 싶습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;PS. 저는 이 속도면 연말에는 지금의 프론티어급 오픈웨이트가 128G안쪽에서 구동될거 같고, 그러면 상당수의 유저가 한계효용체감의 법칙의 영향을 받지 않을까 생각이 됩니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185485</guid><pubDate>Sat, 02 May 2026 23:27:30 GMT</pubDate></item><item><title>악마는 프라다를 입는다 2 할말이 없군요[12][0]</title><link>https://www.clien.net/service/board/park/19185480</link><description>
+ 
+ 
+  &lt;p&gt;제목을 악마는 프라다를 입는다 1.5로 하든지, 악마는 프라다를 입는다 1 에필로그로 해야될것 같습니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;편집도 이상하고 뭔 내용이...팬서비스 영화같아요;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;스페셜 클립같기도 하고, 에필로그 2시간짜리 같기도 하고. 10분마다 시계 봤어요. 1이랑 비교불가 입니다. 배우가 아깝네요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185480</guid><pubDate>Sat, 02 May 2026 23:04:00 GMT</pubDate></item><item><title>'미국인이 왜 '英語' 쓰냐'…건국 250년 맞아 '미국어' 개명론[12][1]</title><link>https://www.clien.net/service/board/park/19185473</link><description>
+ 
+ 
+  &lt;p&gt;건국 250주년을 맞는 미국에서 '영국의 언어'라는 의미인 '영어'(English)를 '미국어'(American)로 바꾸자는 의견이 나오고 있다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;공화당 소통 전략가, 더그 버검 내무장관 보좌관 등을 역임한 롭 록우드는 지난 23일(현지시간) 워싱턴포스트(WP) 칼럼에서 "건국 250주년을 앞두고 도널드 트럼프 대통령과 의회는 '미국어'를 미국의 공식 언어로 지정함으로써 역사에 의미 있는 발자취를 남길 수 있다"고 주장했다.&lt;/p&gt;
+  &lt;p&gt;(....)&lt;/p&gt;
+  &lt;p&gt;'미국어' 지정 주장과 '미국식 영어'라는 개념은 미국 건국으로부터 13년이 지난 1789년으로 거슬러 올라간다. 미국 사전의 대부로 여겨지는 사전 편찬자 노아 웹스터는 당시 논문에서 "독립 국가로서 우리의 명예는 정부뿐만 아니라 언어에서도 우리만의 체계를 갖출 것을 요구한다"며 "영국은 더 이상 우리의 기준이 되어서는 안 된다"고 주장했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;수필가 H.L 멘켄도 지난 1919년 '미국어'(The American Language)라는 저서에서 미국만의 영어가 "끊임없는 실험을 통해 그 특성을 드러내는" 독창적인 언어로 성숙했다고 설파했다.&lt;/p&gt;
+  &lt;p&gt;(....)&lt;/p&gt;
+  &lt;p&gt;그는 "이 아무런 조건 없는 기념적 제안은 무해한 것이며, 미준수 시 처벌을 부과할 필요도 없다"며 "언어적 독립을 선언하는 것은 이 기념비적인 생일을 맞이한 국가가 스스로에게 줄 수 있는 역사적으로 상징적인 선물이 될 것"이라고 적었다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그러면서 "공식적으로 '미국어'를 사용하는 것은 250년이나 늦어진 일"이라고 강조했다.&lt;/p&gt;
+  &lt;p&gt;------------------------------------------------------------------------------------------------&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;영국인들은 완전히 멘탈이 나가버렸습니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185473</guid><pubDate>Sat, 02 May 2026 22:33:13 GMT</pubDate></item><item><title>[부동산] “조선일보 해도해도 넘하네…”[11][3]</title><link>https://www.clien.net/service/board/park/19185467</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;사다리 걷어차기…&lt;/p&gt;
+  &lt;p&gt;벼락거지…&lt;/p&gt;
+  &lt;p&gt;영끌…&lt;/p&gt;
+  &lt;p&gt;로또분양…&lt;/p&gt;
+  &lt;p&gt;이젠 온갖 이야기로 자극하다가 안되니…&lt;/p&gt;
+  &lt;p&gt;이제 “체중”으로 자극하는건가요?? &lt;/p&gt;
+  &lt;p&gt;왜 남의 “체중”갖고 뭐라하냐요…&lt;/p&gt;
+  &lt;p&gt;물론 기사내용은 “지역별 건강관리 필요성“ &lt;/p&gt;
+  &lt;p&gt;운운하지만…ㅎ&lt;/p&gt;
+  &lt;p&gt;“뚱뚱함”(기사제목 인용)이&lt;/p&gt;
+  &lt;p&gt;이제 계급의 척도가 되는건가요??&lt;/p&gt;
+  &lt;p&gt;(물론 날씬함이 척도가 되겠죠..)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;참고로 기사제목은 &lt;/p&gt;
+  &lt;p&gt;아마 “편집부(편집국이 아니라!)“기자가 달았을겁니다..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185467</guid><pubDate>Sat, 02 May 2026 22:17:15 GMT</pubDate></item><item><title>이야기 플레오스는 안전합니다?[11][3]</title><link>https://www.clien.net/service/board/cm_car/19185449</link><description>
  
  
   &lt;p&gt;(글솜씨가 미천하여 본문 내용을 아래쪽에 AI굴려서 정리된 버전도 있으니 편하신쪽으로 읽어주세요)&lt;/p&gt;
@@ -83,7 +175,7 @@
   &lt;p&gt;결국 이 모든 의구심을 잠재우고 증명해야 할 책임은 소비자가 아닌 &lt;strong&gt;현대기아&lt;/strong&gt;에 있습니다. &lt;/p&gt;
   &lt;p&gt;제대로 된 결과를 내놓기 전까지, 겪어본 사람들이 내는 목소리는 비난이 아니라 &lt;strong&gt;정당한 요구&lt;/strong&gt;로 받아들여져야 합니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185449</guid><pubDate>Sat, 02 May 2026 21:05:40 GMT</pubDate></item><item><title>의사놈들 때문에 사람이 죽어 나갑니다.[16][0]</title><link>https://www.clien.net/service/board/park/19185472</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185449</guid><pubDate>Sat, 02 May 2026 21:05:40 GMT</pubDate></item><item><title>의사놈들 때문에 사람이 죽어 나갑니다.[38][3]</title><link>https://www.clien.net/service/board/park/19185472</link><description>
  
  
   &lt;p&gt;그 놈들 이기주의 때문에&lt;/p&gt;
@@ -130,7 +222,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;런처를.찾아봐야하나 싶네요..&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185400</guid><pubDate>Sat, 02 May 2026 17:14:35 GMT</pubDate></item><item><title>올해는 벌써 여러모로 힘드네요[9][29]</title><link>https://www.clien.net/service/board/park/19185455</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185400</guid><pubDate>Sat, 02 May 2026 17:14:35 GMT</pubDate></item><item><title>올해는 벌써 여러모로 힘드네요[14][34]</title><link>https://www.clien.net/service/board/park/19185455</link><description>
  
  
   &lt;p&gt;얼마전 십여년 같이살던 고양이양반이 암으로 일찍 떠났는데 한 3주전쯤 아버지께서 위암 진단을 받았다고 연락을 받았습니다&lt;/p&gt;
@@ -140,7 +232,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185455</guid><pubDate>Sat, 02 May 2026 21:18:40 GMT</pubDate></item><item><title>방시혁은 깜빵 근처도 안가 겠네요.[20][0]</title><link>https://www.clien.net/service/board/park/19185453</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185455</guid><pubDate>Sat, 02 May 2026 21:18:40 GMT</pubDate></item><item><title>방시혁은 깜빵 근처도 안가 겠네요.[21][0]</title><link>https://www.clien.net/service/board/park/19185453</link><description>
  
  
   &lt;p&gt;방시혁 사건에 관심 없는데...&lt;/p&gt;
@@ -174,7 +266,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185453</guid><pubDate>Sat, 02 May 2026 21:06:29 GMT</pubDate></item><item><title>대학병원 6곳 '전원 불가'‥제주에서도 산모 헬기 이송[32][1]</title><link>https://www.clien.net/service/board/park/19185451</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185453</guid><pubDate>Sat, 02 May 2026 21:06:29 GMT</pubDate></item><item><title>대학병원 6곳 '전원 불가'‥제주에서도 산모 헬기 이송[41][2]</title><link>https://www.clien.net/service/board/park/19185451</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/article/214/0001496534" target="_blank"&gt;https://n.news.naver.com/article/214/0001496534&lt;/a&gt;&lt;/p&gt;
@@ -182,7 +274,7 @@
   &lt;p&gt;응급 의료현장은 여전히 인력과 인프라 부족이 심각하군요..파업이 끝났어도 이런상태이니ㅠ&lt;/p&gt;
   &lt;p&gt;특히나 산모들의 위급한 상황 발생시에 안타까운 현실입니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185451</guid><pubDate>Sat, 02 May 2026 21:06:21 GMT</pubDate></item><item><title>국힘, '계곡살인' 이은해 변호사 홍덕희 공천 확정[17][0]</title><link>https://www.clien.net/service/board/park/19185441</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185451</guid><pubDate>Sat, 02 May 2026 21:06:21 GMT</pubDate></item><item><title>국힘, '계곡살인' 이은해 변호사 홍덕희 공천 확정[18][0]</title><link>https://www.clien.net/service/board/park/19185441</link><description>
  
  
   &lt;p&gt;25개 자치구 가운데 22곳의 여야 대진표가 완성된 가운데, 동작·영등포·강동구 등 이른바 한강벨트가 최대 승부처로 꼽힌다. 국민의힘 서울시당 공천관리위원회는 27일 홍 예비후보 공천을 유지하기로 결정했다고 밝혔다. 앞서 단수 공천 이후 후보 자격 적절성을 재검토했지만 기존 결정을 바꾸지 않았다. 이로써 홍 후보는 지난해 4월 재보궐선거에서 당선된 민주당 소속 장인홍 구청장과 맞대결을 펼친다.&lt;/p&gt;
@@ -214,7 +306,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;이 그룹이 이렇게 잘될지 누가 알았을까요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185355</guid><pubDate>Sat, 02 May 2026 14:15:00 GMT</pubDate></item><item><title>TK 여성들 사이에 퍼지고 있다는 챌린지[8][33]</title><link>https://www.clien.net/service/board/park/19185447</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185355</guid><pubDate>Sat, 02 May 2026 14:15:00 GMT</pubDate></item><item><title>TK 여성들 사이에 퍼지고 있다는 챌린지[8][36]</title><link>https://www.clien.net/service/board/park/19185447</link><description>
  
  
   &lt;p&gt;&lt;img alt="tk_01.jpg" class="fr-dib fr-fil full" data-file-sn="15722621" data-gif="false" data-img-height="970" data-img-width="1010" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722621/38baf3639306c.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -228,7 +320,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;대구 경북의 민주당 지지자분들 응원합니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185447</guid><pubDate>Sat, 02 May 2026 20:53:05 GMT</pubDate></item><item><title>공중목욕탕에 폰을 왜가지고 들어올까요[35][5]</title><link>https://www.clien.net/service/board/park/19185437</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185447</guid><pubDate>Sat, 02 May 2026 20:53:05 GMT</pubDate></item><item><title>공중목욕탕에 폰을 왜가지고 들어올까요[41][5]</title><link>https://www.clien.net/service/board/park/19185437</link><description>
  
  
   &lt;p&gt;요즘 공중목욕탕에 폰가지고 들어오는 사람들을 갈때마다 한두명씩 봅니다.&lt;/p&gt;
@@ -238,7 +330,7 @@
   &lt;p&gt;폰질을 목욕탕 안에서까지 해야하는지 그것자체도 이해가 안되고..&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185437</guid><pubDate>Sat, 02 May 2026 20:03:18 GMT</pubDate></item><item><title>장동혁..“우리가 왜 움츠러들어야 하나”..avi[10][0]</title><link>https://www.clien.net/service/board/park/19185345</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185437</guid><pubDate>Sat, 02 May 2026 20:03:18 GMT</pubDate></item><item><title>장동혁..“우리가 왜 움츠러들어야 하나”..avi[11][0]</title><link>https://www.clien.net/service/board/park/19185345</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -300,7 +392,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;제발 좀 터치위주로 가는거 좀 안했으면 하는 맘에 적어봅니다. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185396</guid><pubDate>Sat, 02 May 2026 17:09:07 GMT</pubDate></item><item><title>생활상식 슬기로운 마음생활 - 12. 왜 나이가 들수록 게임이 재미없어지는걸까?[11][2]</title><link>https://www.clien.net/service/board/lecture/19185309</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185396</guid><pubDate>Sat, 02 May 2026 17:09:07 GMT</pubDate></item><item><title>생활상식 슬기로운 마음생활 - 12. 왜 나이가 들수록 게임이 재미없어지는걸까?[11][3]</title><link>https://www.clien.net/service/board/lecture/19185309</link><description>
  
  
   &lt;p&gt;&lt;img alt="260502_2.png" class="fr-dib fr-fil" data-file-sn="15722418" data-gif="false" data-img-height="338" data-img-width="600" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722418/2f61bad36bc8.png?scale=width:740"/&gt;&lt;/p&gt;
@@ -427,7 +519,7 @@
   &lt;p&gt;  - 이런 것들을 생각하면서 클리어하는 의무감이 아니라&lt;/p&gt;
   &lt;p&gt;  - 게임 자체를 더 짧게 가볍게 즐기는 방법으로 바꾸는 중입니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19185309</guid><pubDate>Sat, 02 May 2026 12:05:46 GMT</pubDate></item><item><title>기타 [개발]AI 코딩이 빠른 데도 안 빠른 이유[10][3]</title><link>https://www.clien.net/service/board/lecture/19185030</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19185309</guid><pubDate>Sat, 02 May 2026 12:05:46 GMT</pubDate></item><item><title>기타 [개발]AI 코딩이 빠른 데도 안 빠른 이유[10][4]</title><link>https://www.clien.net/service/board/lecture/19185030</link><description>
  
  
   &lt;p&gt;대략 20년차 개발자입니다. 지난 8개월간 AI로 코딩해 보고 나름 느낀 부분을 공유하고자 글을 씁니다.&lt;/p&gt;
@@ -522,14 +614,14 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185426</guid><pubDate>Sat, 02 May 2026 19:05:47 GMT</pubDate></item><item><title>“하이닉스 영업이익률 뺨치는 우동 한그릇”[30][1]</title><link>https://www.clien.net/service/board/park/19185424</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185426</guid><pubDate>Sat, 02 May 2026 19:05:47 GMT</pubDate></item><item><title>“하이닉스 영업이익률 뺨치는 우동 한그릇”[32][1]</title><link>https://www.clien.net/service/board/park/19185424</link><description>
  
  
   &lt;p&gt;ㅎㅎㅎㅎ&lt;/p&gt;
   &lt;p&gt;기자들 이런것좀&lt;/p&gt;
   &lt;p&gt;잘 파헤쳐주세요~&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185424</guid><pubDate>Sat, 02 May 2026 19:03:51 GMT</pubDate></item><item><title>프래그마타를 할까 말까 갈등중입니다… 으흐[10][1]</title><link>https://www.clien.net/service/board/park/19185410</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185424</guid><pubDate>Sat, 02 May 2026 19:03:51 GMT</pubDate></item><item><title>프래그마타를 할까 말까 갈등중입니다… 으흐[13][1]</title><link>https://www.clien.net/service/board/park/19185410</link><description>
  
  
   &lt;p&gt;요즘 프래그마타 좋은 평가들이 많아서 &lt;/p&gt;
@@ -687,7 +779,7 @@
   &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/V09jw1sFjoA" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt; 구동영상 쇼츠입니다
   &lt;p&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185409</guid><pubDate>Sat, 02 May 2026 17:49:47 GMT</pubDate></item><item><title>우리 병실 간호사들이 고생이 많아[7][16]</title><link>https://www.clien.net/service/board/park/19185407</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185409</guid><pubDate>Sat, 02 May 2026 17:49:47 GMT</pubDate></item><item><title>우리 병실 간호사들이 고생이 많아[7][17]</title><link>https://www.clien.net/service/board/park/19185407</link><description>
  
  
   &lt;p&gt;&lt;img alt="KakaoTalk_20260502_140956145.jpg" class="fr-dib fr-fil" data-file-sn="15722570" data-gif="false" data-img-height="2358" data-img-width="660" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722570/1d2b2288cf8375.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -779,7 +871,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;최초에 비정규직 전환(기간제법)이 그랬고 민식이법도 그랬고. 중대재해처벌법이 그랬고 이젠 노란봉투법이 그럴 거 같단 생각이 드네요&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185395</guid><pubDate>Sat, 02 May 2026 16:52:07 GMT</pubDate></item><item><title>쿠팡이 국가안보를 위협하는 존재였군요.[10][16]</title><link>https://www.clien.net/service/board/park/19185392</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185395</guid><pubDate>Sat, 02 May 2026 16:52:07 GMT</pubDate></item><item><title>쿠팡이 국가안보를 위협하는 존재였군요.[10][18]</title><link>https://www.clien.net/service/board/park/19185392</link><description>
  
  
   &lt;p&gt;미국에 돈주고 로비를해서  국가 안보를 위협하는 기업이라니. &lt;/p&gt;
@@ -801,7 +893,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;워우.. 할 말이 없네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185300</guid><pubDate>Sat, 02 May 2026 11:39:25 GMT</pubDate></item><item><title>어떻게든 갈라치기 하고 싶어하는 인간들이랑 싸우다보면[6][12]</title><link>https://www.clien.net/service/board/park/19185385</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185300</guid><pubDate>Sat, 02 May 2026 11:39:25 GMT</pubDate></item><item><title>어떻게든 갈라치기 하고 싶어하는 인간들이랑 싸우다보면[6][13]</title><link>https://www.clien.net/service/board/park/19185385</link><description>
  
  
   &lt;p&gt;반박하며 공격하고 싶은 마음이 들끓습니다 &lt;/p&gt;
@@ -870,7 +962,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185380</guid><pubDate>Sat, 02 May 2026 15:35:42 GMT</pubDate></item><item><title>중국이 VPN 완전 차단한다고 합니다.[45][5]</title><link>https://www.clien.net/service/board/park/19185377</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185380</guid><pubDate>Sat, 02 May 2026 15:35:42 GMT</pubDate></item><item><title>중국이 VPN 완전 차단한다고 합니다.[47][5]</title><link>https://www.clien.net/service/board/park/19185377</link><description>
  
  
   &lt;p&gt;이제 쟤들 해외 컨텐츠 불법 도둑시청 못하려나요?&lt;/p&gt;
@@ -914,7 +1006,7 @@
   &lt;p&gt;담엔 또 어떤 트럼프 윤석열 같은 놈을 내어서&lt;/p&gt;
   &lt;p&gt;이 나라를 전쟁에 빠뜨릴지 걱정이 됩니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185349</guid><pubDate>Sat, 02 May 2026 13:44:34 GMT</pubDate></item><item><title>조국대표가 당선되려면 민주당 표를 가져와야합니다.[61][1]</title><link>https://www.clien.net/service/board/park/19185356</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185349</guid><pubDate>Sat, 02 May 2026 13:44:34 GMT</pubDate></item><item><title>조국대표가 당선되려면 민주당 표를 가져와야합니다.[62][1]</title><link>https://www.clien.net/service/board/park/19185356</link><description>
  
  
   &lt;p&gt;평택을 후보자 스펙트럼을 보면 왼쪽부터 &lt;/p&gt;
@@ -931,7 +1023,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;그나저나 2014년에 손학규 응원하러 수원 간게 엊그제 같은데 용남이가 민주당에서 선거나오다니 신기히네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185356</guid><pubDate>Sat, 02 May 2026 14:18:51 GMT</pubDate></item><item><title>잡담) 늦게본 헤일메리 추천합니다.[15][4]</title><link>https://www.clien.net/service/board/park/19185344</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185356</guid><pubDate>Sat, 02 May 2026 14:18:51 GMT</pubDate></item><item><title>잡담) 늦게본 헤일메리 추천합니다.[15][5]</title><link>https://www.clien.net/service/board/park/19185344</link><description>
  
  
   &lt;p&gt;이야... 인간의 소통과 공감 능력은 우주적입니다.&lt;/p&gt;
@@ -968,74 +1060,4 @@
   &lt;p&gt;속도 빠르고 광고도 없고 쾌적하네요 ㅋㅋ&lt;/p&gt;
   &lt;p&gt;여기 홈페이지 가보니 무료 영상 플레이어도 있고  뷰어/ 캡쳐툴 등 무료 공개 예정이라는데 광고 없으니 일단 기대 중입니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185346</guid><pubDate>Sat, 02 May 2026 13:42:07 GMT</pubDate></item><item><title>대구시민 : 김부겸은 공약을 지킬 수 있는가?[27][6]</title><link>https://www.clien.net/service/board/park/19185343</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="sm_1.jpg" class="fr-dib fr-fil full" data-file-sn="15722466" data-gif="false" data-img-height="1002" data-img-width="872" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722466/654ef566a6f9c.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="sm_2.jpg" class="fr-dib fr-fil full" data-file-sn="15722467" data-gif="false" data-img-height="537" data-img-width="867" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722467/654f090d65c3f.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;----------&lt;/p&gt;
-  &lt;p&gt;참.. 민주당을 지지하는 많은 대구시민분들 응원하고 싶으나 이런 사람들은 참... &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아이.. 참.. 싶네요. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185343</guid><pubDate>Sat, 02 May 2026 13:26:26 GMT</pubDate></item><item><title>이 대통령과 조국이 대표적인 검사 판사 피해자인데[45][16]</title><link>https://www.clien.net/service/board/park/19185342</link><description>
- 
- 
-  &lt;p&gt;두 분 다 윤석열 사단과 정치판사 피해자인데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;어느 쪽은 괜찮고&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;어느 쪽은 잘못됐다고 하니 논리가 꼬이죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;위선이니 정무감각이니 까는 건 개인적인 견해라 치고,&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;법원 판단이 났다 어쩐다 하면서 조국 깔아뭉개는 건&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;조국에다 이 대통령까지 공격하고 싶은 국힘 쪽의 논리이지&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;절대 이 대통령 지지자들이 꺼내면 안되는 논리지요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185342</guid><pubDate>Sat, 02 May 2026 13:29:19 GMT</pubDate></item><item><title>논란) 대표메뉴가 없는 롯데리아[40][0]</title><link>https://www.clien.net/service/board/park/19185339</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;롯리는 데리버거지요 ㅇㅇ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185339</guid><pubDate>Sat, 02 May 2026 13:16:49 GMT</pubDate></item><item><title>민주당 탈퇴하고 조혁당 가서 응원하세요.[50][53]</title><link>https://www.clien.net/service/board/park/19185336</link><description>
- 
- 
-  &lt;p&gt;더불어민주당 당헌 당규&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;제6조 권리와 의무&lt;/p&gt;
-  &lt;p&gt;3. 당이 추천하는 공직선거 후보자를 지원할 의무&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;제14조(포상과 징계) &lt;/p&gt;
-  &lt;p&gt;②당원의 의무를 다하지 아니하거나 당의 명예를 훼손한 당원에 대하여는 당규로 정한 바에 따라 징계한다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;출처: 민주당 당헌당규&lt;a href="https://theminjoo.kr/uploads_file/party_member_rule_file/%E2%98%852026.02.23.%20%EB%8D%94%EB%B6%88%EC%96%B4%EB%AF%BC%EC%A3%BC%EB%8B%B9%20%EA%B0%95%EB%A0%B9%EB%8B%B9%ED%97%8C%EB%8B%B9%EA%B7%9C.pdf" target="_blank"&gt;https://theminjoo.kr/uploads_file/party_member_rule_file/%E2%98%852026.02.23.%20%EB%8D%94%EB%B6%88%EC%96%B4%EB%AF%BC%EC%A3%BC%EB%8B%B9%20%EA%B0%95%EB%A0%B9%EB%8B%B9%ED%97%8C%EB%8B%B9%EA%B7%9C.pdf&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;조국혁신당원이면서 조국대표 응원한다 = 정상&lt;/p&gt;
-  &lt;p&gt;조국혁신당원이면서 조국대표를 비판한다 =정상&lt;/p&gt;
-  &lt;p&gt;민주당원인데 김용남의원 응원한다 = 정상&lt;/p&gt;
-  &lt;p&gt;민주당원인데 김용남의원을 비판한다 = 정상&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;민주당원인데 김용남의원을 비판하면서 조국대표를 응원한다 = 비정상&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;조국당원인데 조국대표를 비판하면서 김용남의원을 응원한다 = 비정상 &lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;자기 당의 후보라고 무조건 응원할 필요도 없고 비판할 수도 있다고 생각합니다.&lt;/p&gt;
-  &lt;p&gt;그런데 자당 후보는 비판하면서 동시에 타당 후보를 지지하고 응원한다? 그럼 그냥 탈퇴하고 타당가세요.&lt;/p&gt;
-  &lt;p&gt;그렇게 응원하고 지지하고 미안하고 빚진 거 갚고 싶으면 그 당에 가입해서 당비 내면서 하시면 되지 &lt;/p&gt;
-  &lt;p&gt;왜 자꾸 다른 민주당 당원들한테 빚 갚으라고 그러면서 밭갈이 하시는지 모르겠네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185336</guid><pubDate>Sat, 02 May 2026 13:08:43 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185346</guid><pubDate>Sat, 02 May 2026 13:42:07 GMT</pubDate></item></channel></rss>
