@@ -1,5 +1,105 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sat, 02 May 2026 18:00:53 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 공항 단기주차장에 주차하는게 굉장히 편하네요[13][0]</title><link>https://www.clien.net/service/board/cm_car/19185347</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sat, 02 May 2026 19:00:53 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Q/A 경미한 사고 피해 처리 어떻게들 하시나요?[15][0]</title><link>https://www.clien.net/service/board/cm_car/19185390</link><description>
+ 
+ 
+  &lt;p&gt;주차된 제 차가 피해를 입었는데 경미합니다..&lt;/p&gt;
+  &lt;p&gt;가니쉬 흠집입니다. 어쨌든 가만히 있다 난 피해라 씁쓸하네요 ㅠ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;솔직히 현금 처리 받고 끝내도 될 것 같은데&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;사고 즉시 현장에 갈 수 없는 상황이라 일단 보험 접수는 받아 놨습니다.&lt;/p&gt;
+  &lt;p&gt;이정도 피해인 경우 굴당분들은 정석으로 보험처리 하시는 편인가요? 미수선으로 했을 시 손해가 큰가요?&lt;/p&gt;
+  &lt;p&gt;보험처리 하면 시간을 내서 정비소 가야 하는 게 좀 귀찮긴 하네요..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185390</guid><pubDate>Sat, 02 May 2026 16:37:02 GMT</pubDate></item><item><title>LLM삽질기: 150GB크기 DeepSeek V4 Flash Q4를 M1 Max 64GB에서 실행하기[10][5]</title><link>https://www.clien.net/service/board/park/19185409</link><description>
+ 
+ 
+  &lt;p&gt;안녕하세요.&lt;/p&gt;
+  &lt;p&gt;최근에 개인적으로 재미있는 실험을 하나 해서 공유해봅니다.&lt;/p&gt;
+  &lt;p&gt;요지는 이겁니다.&lt;/p&gt;
+  &lt;p&gt;284B 파라미터짜리 MoE 모델인 DeepSeek V4 Flash를&lt;br/&gt;
+    64GB 메모리의 M1 Max 맥에서 한번 돌려보고,&lt;br/&gt;
+    그 과정에서 병목을 조금 줄여본 프로젝트입니다.&lt;/p&gt;
+  &lt;p&gt;깃허브는 여기입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://github.com/daystar7777/MoE-MADV" ori-url="https://github.com/daystar7777/MoE-MADV" rel="noopener noreferrer" target="_blank"&gt;https://github.com/daystar7777/MoE-MADV&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;사용한 모델은 GGUF 기준 약 150GB짜리 모델입니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;모델: DeepSeek V4 Flash GGUF&lt;/li&gt;
+   &lt;li&gt;파일 크기: 약 150GB&lt;/li&gt;
+   &lt;li&gt;테스트 머신: Apple Silicon / M1 Max / 64GB unified memory&lt;/li&gt;
+   &lt;li&gt;방식: mmap 기반 실행&lt;/li&gt;
+   &lt;li&gt;핵심 실험: MoE expert가 필요해지는 시점에 MADV_WILLNEED 힌트 주기&lt;/li&gt;
+   &lt;li&gt;&lt;br/&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;처음에는 “150GB 모델을 64GB 메모리에서 돌리는 게 되나?” 쪽이 관심사였는데, 막상 해보니 더 재미있는 병목은 따로 있었습니다.&lt;/p&gt;
+  &lt;p&gt;일반적인 dense LLM은 대체로 같은 가중치를 계속 재사용하는 성격이 강한데, MoE 모델은 토큰마다 선택되는 expert가 바뀔 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;그래서 모델 전체를 메모리에 올릴 수 없는 환경에서는 계산 자체보다도,&lt;/p&gt;
+  &lt;p&gt;“다음에 필요한 expert 가중치 페이지를 얼마나 빨리 불러오느냐”&lt;/p&gt;
+  &lt;p&gt;가 꽤 중요한 병목이 되더군요.&lt;/p&gt;
+  &lt;p&gt;이번 프로젝트에서는 MoE 라우팅 결과로 active expert가 정해진 뒤, 해당 expert의 파일 페이지 범위에 MADV_WILLNEED를 호출하도록 patched llama.cpp 런타임을 구성해봤습니다.&lt;/p&gt;
+  &lt;p&gt;결과는 아래 정도였습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="화면 캡처 2026-05-02 173454.png" class="fr-dib fr-fil full" data-file-sn="15722571" data-gif="false" data-img-height="438" data-img-width="853" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722571/3817ee8f2d02e.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;code&gt;기본 실행: - expert 페이지 힌트 없음 - 디코드 속도: 0.98 tok/s - 걸린 시간: 115.5초 최적화 실행: - MADV_WILLNEED 사용 - 디코드 속도: 1.23 tok/s - 걸린 시간: 103.1초 &lt;/code&gt;&lt;/p&gt;
+  &lt;p&gt;정리하면 모델 자체를 바꾸지 않고도,&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;디코드 생성 처리량 약 25.4% 증가&lt;/li&gt;
+   &lt;li&gt;디코드 전체 시간 약 10.7% 감소&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;정도의 개선이 있었습니다.&lt;/p&gt;
+  &lt;p&gt;물론 이게 “64GB 맥에서 284B 모델을 실사용 속도로 쾌적하게 돌린다”는 뜻은 아닙니다.&lt;br/&gt;
+    그보다는 메모리보다 큰 MoE 모델을 로컬에서 실행할 때, 병목을 단순히 연산량으로만 보면 안 되고 expert page loading 자체도 최적화 대상으로 봐야 한다는 쪽에 가깝습니다.&lt;/p&gt;
+  &lt;p&gt;개인적으로 흥미로웠던 관찰은 이렇습니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;초기 trace에서는 page-in/disk-read proxy 기준으로 I/O-active 비중이 매우 컸습니다.&lt;/li&gt;
+   &lt;li&gt;prefill과 decode는 둘 다 I/O 영향을 받지만 병목 양상이 달랐습니다.&lt;/li&gt;
+   &lt;li&gt;prefill은 넓은 범위의 layer/page를 한꺼번에 읽는 느낌이 강했습니다.&lt;/li&gt;
+   &lt;li&gt;decode는 토큰마다 expert 선택이 달라지면서 생기는 지연이 더 중요했습니다.&lt;/li&gt;
+   &lt;li&gt;static top-k expert prewarm은 cold start에는 도움이 되지만, steady-state에서는 꼭 최선은 아니었습니다.&lt;/li&gt;
+   &lt;li&gt;가장 명확한 개선은 MADV_WILLNEED 쪽이었습니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;저장소에는 다음 내용을 정리해두었습니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;실행 스크립트&lt;/li&gt;
+   &lt;li&gt;모델 다운로드 스크립트&lt;/li&gt;
+   &lt;li&gt;patched llama.cpp 런타임 준비 방법&lt;/li&gt;
+   &lt;li&gt;성능 비교 스크립트&lt;/li&gt;
+   &lt;li&gt;5시간 장기 벤치마크 결과&lt;/li&gt;
+   &lt;li&gt;사용한 모델 출처와 재현 방법&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;재현하려면 디스크 공간은 꽤 필요합니다.&lt;br/&gt;
+    최종 GGUF 모델만 받아도 약 150GB가 필요하고, 여유 공간은 200GB 이상 잡는 게 낫습니다.&lt;/p&gt;
+  &lt;p&gt;프로젝트 이름은 MoE-MADV입니다.&lt;/p&gt;
+  &lt;p&gt;MoE, 즉 Mixture-of-Experts와&lt;br/&gt;
+    MADV_WILLNEED의 MADV를 합친 이름입니다.&lt;/p&gt;
+  &lt;p&gt;혹시 로컬 LLM, Apple Silicon, GGUF, MoE 모델 쪽에 관심 있으신 분들께 참고가 되었으면 합니다.&lt;/p&gt;
+  &lt;p&gt;깃허브 링크입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://github.com/daystar7777/MoE-MADV" ori-url="https://github.com/daystar7777/MoE-MADV" rel="noopener noreferrer" target="_blank"&gt;https://github.com/daystar7777/MoE-MADV&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;README 한국어 버전도 따로 적어두었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://github.com/daystar7777/MoE-MADV/blob/main/README.ko.md" ori-url="https://github.com/daystar7777/MoE-MADV/blob/main/README.ko.md" rel="noopener noreferrer" target="_blank"&gt;https://github.com/daystar7777/MoE-MADV/blob/main/README.ko.md&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;
+    한줄요약: 141G모델도 64G에서 돌릴 수는 있다. 쓸만하지는 않지만 시도는 해봄.&lt;/p&gt;
+  &lt;p&gt;부록:&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/V09jw1sFjoA" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt; 구동영상 쇼츠입니다
+  &lt;p&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185409</guid><pubDate>Sat, 02 May 2026 17:49:47 GMT</pubDate></item><item><title>우리 병실 간호사들이 고생이 많아[3][12]</title><link>https://www.clien.net/service/board/park/19185407</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260502_140956145.jpg" class="fr-dib fr-fil" data-file-sn="15722570" data-gif="false" data-img-height="2358" data-img-width="660" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722570/1d2b2288cf8375.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;ㅋㅋㅋ 재밌어서 퍼와봅니다. &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185407</guid><pubDate>Sat, 02 May 2026 17:31:52 GMT</pubDate></item><item><title>한동훈 출마 붓싼아지매 아재들[1][5]</title><link>https://www.clien.net/service/board/park/19185406</link><description>
+ 
+ 
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/iKTz3hELRuw" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;아따 아지매 인상이나 말투나 ㄷㄷㄷ&lt;/p&gt;
+  &lt;p&gt;아재들 팩폭&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185406</guid><pubDate>Sat, 02 May 2026 18:07:53 GMT</pubDate></item><item><title>이야기 공항 단기주차장에 주차하는게 굉장히 편하네요[13][0]</title><link>https://www.clien.net/service/board/cm_car/19185347</link><description>
  
  
   원래 항상 공식주차대행을 이용하던 사람입니다. 
@@ -33,7 +133,7 @@
    잘 놀다 가겠습니다. 
   &lt;br/&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185347</guid><pubDate>Sat, 02 May 2026 14:42:24 GMT</pubDate></item><item><title>모교에서 게임 기획 특강을 하게 되었습니다..........[6][6]</title><link>https://www.clien.net/service/board/park/19185399</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185347</guid><pubDate>Sat, 02 May 2026 14:42:24 GMT</pubDate></item><item><title>모교에서 게임 기획 특강을 하게 되었습니다..........[7][7]</title><link>https://www.clien.net/service/board/park/19185399</link><description>
  
  
   &lt;p&gt;국문과 학생들도 요새&lt;/p&gt;
@@ -61,7 +161,7 @@
   &lt;p&gt;&lt;img alt="1_bx0WISQZc75K_qLg9XoKEQ.jpg" class="fr-dib fr-fil full" data-file-sn="15722565" data-gif="false" data-img-height="780" data-img-width="1000" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722565/1d29ff2d15631d.jpg?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185399</guid><pubDate>Sat, 02 May 2026 17:09:19 GMT</pubDate></item><item><title>중대재해처벌법으로 큰 이득을 본 곳[18][3]</title><link>https://www.clien.net/service/board/park/19185395</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185399</guid><pubDate>Sat, 02 May 2026 17:09:19 GMT</pubDate></item><item><title>중대재해처벌법으로 큰 이득을 본 곳[25][4]</title><link>https://www.clien.net/service/board/park/19185395</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -75,7 +175,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;최초에 비정규직 전환(기간제법)이 그랬고 민식이법도 그랬고. 중대재해처벌법이 그랬고 이젠 노란봉투법이 그럴 거 같단 생각이 드네요&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185395</guid><pubDate>Sat, 02 May 2026 16:52:07 GMT</pubDate></item><item><title>쿠팡이 국가안보를 위협하는 존재였군요.[10][11]</title><link>https://www.clien.net/service/board/park/19185392</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185395</guid><pubDate>Sat, 02 May 2026 16:52:07 GMT</pubDate></item><item><title>쿠팡이 국가안보를 위협하는 존재였군요.[9][14]</title><link>https://www.clien.net/service/board/park/19185392</link><description>
  
  
   &lt;p&gt;미국에 돈주고 로비를해서  국가 안보를 위협하는 기업이라니. &lt;/p&gt;
@@ -111,7 +211,7 @@
   &lt;p&gt;티 안난다고 생각하며 갈라치기 하는데 &lt;/p&gt;
   &lt;p&gt;다 티 나요 &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185385</guid><pubDate>Sat, 02 May 2026 16:06:58 GMT</pubDate></item><item><title>뉴재명의 아픔이자 한계[13][2]</title><link>https://www.clien.net/service/board/park/19185376</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185385</guid><pubDate>Sat, 02 May 2026 16:06:58 GMT</pubDate></item><item><title>뉴재명의 아픔이자 한계[14][2]</title><link>https://www.clien.net/service/board/park/19185376</link><description>
  
  
   &lt;p&gt;뉴재명이라는 세력의 크기가&lt;/p&gt;
@@ -127,7 +227,7 @@
   &lt;p&gt;대통령께서도 합당에 찬성하는 입장이라 하셨고, &lt;/p&gt;
   &lt;p&gt;근일 합당건이 잘 처리되었으면 좋겠ㄴ요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185376</guid><pubDate>Sat, 02 May 2026 15:13:40 GMT</pubDate></item><item><title>차돌박이 먹고 눈물흘리는 일본인[12][0]</title><link>https://www.clien.net/service/board/park/19185362</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185376</guid><pubDate>Sat, 02 May 2026 15:13:40 GMT</pubDate></item><item><title>차돌박이 먹고 눈물흘리는 일본인[13][0]</title><link>https://www.clien.net/service/board/park/19185362</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -144,7 +244,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185362</guid><pubDate>Sat, 02 May 2026 14:35:12 GMT</pubDate></item><item><title>'아니, 문재인 때는 뭐 했어요?'[32][26]</title><link>https://www.clien.net/service/board/park/19185381</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185362</guid><pubDate>Sat, 02 May 2026 14:35:12 GMT</pubDate></item><item><title>'아니, 문재인 때는 뭐 했어요?'[47][29]</title><link>https://www.clien.net/service/board/park/19185381</link><description>
  
  
   &lt;p&gt;&lt;img alt="문재인 때는 뭐 했음(1).jpg" class="fr-dib fr-fil full" data-file-sn="15722520" data-gif="false" data-img-height="679" data-img-width="1080" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722520/1d2486418cdd22.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -155,7 +255,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;그냥 각자가 사정이 있었고, 그 속에서 할 수 있는 최선을 다한 것이라고 봐요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185381</guid><pubDate>Sat, 02 May 2026 15:32:20 GMT</pubDate></item><item><title>중국인의 눈에 비친 영국의 음식[13][10]</title><link>https://www.clien.net/service/board/park/19185380</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185381</guid><pubDate>Sat, 02 May 2026 15:32:20 GMT</pubDate></item><item><title>중국인의 눈에 비친 영국의 음식[15][10]</title><link>https://www.clien.net/service/board/park/19185380</link><description>
  
  
   &lt;p&gt;&lt;img alt="sm_1.webp" class="fr-dib fr-fil full" data-file-sn="15722522" data-gif="false" data-img-height="3709" data-img-width="800" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722522/1d24a603feb89c.webp?scale=width:740"/&gt;&lt;/p&gt;
@@ -166,7 +266,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185380</guid><pubDate>Sat, 02 May 2026 15:35:42 GMT</pubDate></item><item><title>중국이 VPN 완전 차단한다고 합니다.[32][3]</title><link>https://www.clien.net/service/board/park/19185377</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185380</guid><pubDate>Sat, 02 May 2026 15:35:42 GMT</pubDate></item><item><title>중국이 VPN 완전 차단한다고 합니다.[36][3]</title><link>https://www.clien.net/service/board/park/19185377</link><description>
  
  
   &lt;p&gt;이제 쟤들 해외 컨텐츠 불법 도둑시청 못하려나요?&lt;/p&gt;
@@ -174,14 +274,14 @@
   &lt;p&gt;(동남아로 옮기는것도 문제구요.)&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185377</guid><pubDate>Sat, 02 May 2026 15:23:13 GMT</pubDate></item><item><title>하정우 후보는 비거주 1주택자를 선택하려나보네요[43][0]</title><link>https://www.clien.net/service/board/park/19185374</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185377</guid><pubDate>Sat, 02 May 2026 15:23:13 GMT</pubDate></item><item><title>하정우 후보는 비거주 1주택자를 선택하려나보네요[47][0]</title><link>https://www.clien.net/service/board/park/19185374</link><description>
  
  
   &lt;p&gt;정부시책을 이야기하시는걸 보니 다주택자에 대한 정부 기조를 의식하신걸로 보이네요 뉘앙스상 분당집은 그대로 두고 부산에 전세로 들어갈것 같다 하시는 것 같은데 이번에 시도해서 되면 임기한번 반짝하고 안되면 바로 분당으로 복귀할 생각인건가요?&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;분당집 팔고 북구에 자리잡은다음 전재수 의원 조직 물려받으면서 길게보고 기반다지기는게 정치적으로도 나을 것 같은데 아쉽네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185374</guid><pubDate>Sat, 02 May 2026 15:13:19 GMT</pubDate></item><item><title>조국혁신당과 민주당의 합당.[18][2]</title><link>https://www.clien.net/service/board/park/19185369</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185374</guid><pubDate>Sat, 02 May 2026 15:13:19 GMT</pubDate></item><item><title>조국혁신당과 민주당의 합당.[19][2]</title><link>https://www.clien.net/service/board/park/19185369</link><description>
  
  
   &lt;p&gt;최적의 합당 타이밍은 사면 직후였다고 생각하는데.&lt;/p&gt;
@@ -197,7 +297,7 @@
   &lt;p&gt;선거 후 당연히 합당 흐름으로 가겠지만 정작 혁신당과 조국대표님은 합당에 대해 강하게 요구한 적이 없는데 &lt;/p&gt;
   &lt;p&gt;민주당내부에서만 매달리는 듯한 모습이라 아이러니네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185369</guid><pubDate>Sat, 02 May 2026 14:55:56 GMT</pubDate></item><item><title>대선토론의 품격 노무현 vs 이회창[9][5]</title><link>https://www.clien.net/service/board/park/19185349</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185369</guid><pubDate>Sat, 02 May 2026 14:55:56 GMT</pubDate></item><item><title>대선토론의 품격 노무현 vs 이회창[10][6]</title><link>https://www.clien.net/service/board/park/19185349</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -255,7 +355,7 @@
   &lt;p&gt;태블릿 피시를 세운듯한 , 또는 대형모니터를 거치한 형태가 대부분인데 웬지 차안이 정돈되지 못하고 어수선한  느낌이 듭니다.&lt;/p&gt;
   &lt;p&gt;그렇다보니 차량선택 1순위는 빌트인 디스플레이 입니다. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185110</guid><pubDate>Fri, 01 May 2026 19:43:54 GMT</pubDate></item><item><title>압축 프로그램 갈아탔네요[30][6]</title><link>https://www.clien.net/service/board/park/19185346</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185110</guid><pubDate>Fri, 01 May 2026 19:43:54 GMT</pubDate></item><item><title>압축 프로그램 갈아탔네요[31][6]</title><link>https://www.clien.net/service/board/park/19185346</link><description>
  
  
   &lt;p&gt;&lt;img alt="king.jpg" class="fr-dib fr-fil full" data-file-sn="15722469" data-gif="false" data-img-height="691" data-img-width="961" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722469/3505bb63298a.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -299,14 +399,14 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185342</guid><pubDate>Sat, 02 May 2026 13:29:19 GMT</pubDate></item><item><title>논란) 대표메뉴가 없는 롯데리아[36][0]</title><link>https://www.clien.net/service/board/park/19185339</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185342</guid><pubDate>Sat, 02 May 2026 13:29:19 GMT</pubDate></item><item><title>논란) 대표메뉴가 없는 롯데리아[39][0]</title><link>https://www.clien.net/service/board/park/19185339</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;롯리는 데리버거지요 ㅇㅇ&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185339</guid><pubDate>Sat, 02 May 2026 13:16:49 GMT</pubDate></item><item><title>민주당 탈퇴하고 조혁당 가서 응원하세요.[48][42]</title><link>https://www.clien.net/service/board/park/19185336</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185339</guid><pubDate>Sat, 02 May 2026 13:16:49 GMT</pubDate></item><item><title>민주당 탈퇴하고 조혁당 가서 응원하세요.[49][45]</title><link>https://www.clien.net/service/board/park/19185336</link><description>
  
  
   &lt;p&gt;더불어민주당 당헌 당규&lt;/p&gt;
@@ -568,7 +668,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185295</guid><pubDate>Sat, 02 May 2026 11:11:19 GMT</pubDate></item><item><title>조국 대표는 그냥 무능한 사람 아닌가요?[73][11]</title><link>https://www.clien.net/service/board/park/19185292</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185295</guid><pubDate>Sat, 02 May 2026 11:11:19 GMT</pubDate></item><item><title>조국 대표는 그냥 무능한 사람 아닌가요?[74][14]</title><link>https://www.clien.net/service/board/park/19185292</link><description>
  
  
   &lt;p&gt;가족과 자신이 검찰 개혁의 희생양이 됐다는 건 인정할 수 있는 일입니다.&lt;/p&gt;
@@ -725,74 +825,4 @@
   &lt;p&gt;국립대병원, 지역의료원에 환자 강제수용하도록 법안 만들고&lt;/p&gt;
   &lt;p&gt;신속하게 대처해야지 않겠습니까?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185285</guid><pubDate>Sat, 02 May 2026 10:37:39 GMT</pubDate></item><item><title>뭐만 하면 이재명, 이재명. 호가호위밖에 할게 없는 인간들.[16][5]</title><link>https://www.clien.net/service/board/park/19185280</link><description>
- 
- 
-  &lt;p&gt;적어도 주장에 대한 반대를 하려면 반대 논리를 나름대로 논리적으로 설파하는게 배운 사람입니다.&lt;/p&gt;
-  &lt;p&gt;근데 지금 여기서 테라포밍하려고 작업질 하는 인간들 보면 전부 이재명 대통령님이 그랬다. 이재명 대통령님 거역하냐? 그냥 이 논리 뿐입니다. 자기 주장은 없고 그냥 이재명 대통령님 뒤에 숨어서 이재명, 이재명 거리는 전형적인 호가호위꾼들이죠.&lt;/p&gt;
-  &lt;p&gt;과연 이재명 대통령님을 좋아하기는 하는지도 의문이죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;한 예를 들어볼까요?&lt;/p&gt;
-  &lt;p&gt;이재명 대통령님 너무 잘 하신다고 연임시키자고 한창 난리였죠.&lt;/p&gt;
-  &lt;p&gt;하지만 대한민국은 대통령 위에 헌법이 있고, 헌법에서 엄연히 대통령의 연임을 금지한다는 조항이 있습니다.&lt;/p&gt;
-  &lt;p&gt;헌법을 개정해서 연임이 가능하게 된다고 하더라도 그 대상은 헌법 개정 당시 대통령은 해당되지 않고 다음 대통령부터 해당된다는 조항까지 엄정히 박혀있습니다.&lt;/p&gt;
-  &lt;p&gt;그런데도 그깟 헌법 고치면 된다. 이재명이 잘하는데 더 밀어줘야지. 등등.&lt;/p&gt;
-  &lt;p&gt;이게 도대체 빠인지 까인지도 모를 주장만 해댑니다.&lt;/p&gt;
-  &lt;p&gt;과연 이것들이 모르고 그랬을까요?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;오윤혜님 같은 분들은 이해라도 합니다. 원래 정치에 관심이 없다가 이재명 대통령님에 반해서 그런 주장을 펼쳤다는 것.&lt;/p&gt;
-  &lt;p&gt;헌법에 대해 제대로 몰랐을수도 있다 생각하고 백분 이해합니다.&lt;/p&gt;
-  &lt;p&gt;그런데, 과연 여기서 글을 쓰는 인간들은 그런 정치를 모르는 사람일까요?&lt;/p&gt;
-  &lt;p&gt;진짜 그렇다면 정치를, 헌법을 좀 더 공부해야 하는걸 추천드립니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;하지만 다 알면서도 그딴 소리를 해대는 인간들은?&lt;/p&gt;
-  &lt;p&gt;그냥 이재명 망하라고 고사지내는 인간들이죠. 아무리 인기 좋은 대통령이라 할지라도 자신의 임기나 권력과 관련된 헌법 조문을 자기 맘대로 고치는 순간 국민들은 박정희, 전두환을 떠올리게 됩니다.&lt;/p&gt;
-  &lt;p&gt;그걸 뻔히 알면서도 이재명이 잘 하는데 뭔 말이 많냐? 너 이재명 반대하냐? 이딴 소리 하고 있습니다.&lt;/p&gt;
-  &lt;p&gt;진짜 학교에서 사람 야비하게 괴롭히는 양아치 놈들의 전형입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이런 사람들이 계속 뭐만 얘기하면 이재명 반대하냐? 이재명이 그랬는데? 이러는거 진짜 역겹습니다.&lt;/p&gt;
-  &lt;p&gt;전형적인 호가호위형 양아치 놈들.ㅡㅡ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185280</guid><pubDate>Sat, 02 May 2026 10:28:37 GMT</pubDate></item><item><title>일단 김용남은 보완수사권에 관한 자신의 입장부터 확실히 합시다.[21][9]</title><link>https://www.clien.net/service/board/park/19185274</link><description>
- 
- 
-  &lt;p&gt;지금까지 여러 유튜브와 방송에서 한결같이 보완수사권에 대해서 검찰의 편에서 찬성 입장을 내왔습니다.&lt;/p&gt;
-  &lt;p&gt;민주당 당론이 보완수사권 완전 철폐라는 걸 뻔히 알고 있으면서도요.&lt;/p&gt;
-  &lt;p&gt;그럼 과연 이 사람이 뺏지를 달았을 때도 이 주장을 계속 한다면?&lt;/p&gt;
-  &lt;p&gt;우린 제 2의 이언주를 우리 손으로 만드는 겁니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;중수청, 공소청 법안 만으로도 2개월동안 머리 싸매고 매일 잠 못 이루던 게 불과 한달전 입니다.&lt;/p&gt;
-  &lt;p&gt;이제 지선, 보궐 끝나고 나면 본격적으로 보완수사권 논의 들어갈건데 김용남이 의원 입장으로 보완수사권 옹호 논리 펼치면 어떻게 할겁니까?&lt;/p&gt;
-  &lt;p&gt;또 이 사람이 검사 경력을 앞세워 국회 법사위에 들어간다면요? 거기서 이 주장을 그대로 펼친다면요?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;유시민 작가님이 말씀하셨죠. 재래식 언론들은 민주당에 해가 되는 사람들은 기가 막히게 찾는 능력이 있다고.&lt;/p&gt;
-  &lt;p&gt;이제 김용남이 일개 유튜버가 아니라 국회의원으로서 보완수사권 옹호에 힘을 실어주게 되고, 재래식 언론들은 그 파워를 10배, 100배 강화시켜줄 겁니다.&lt;/p&gt;
-  &lt;p&gt;그럼 또 보완수사권 논의는 한동안 지지부진 하게 되고 그러다 8월 전당대회 되면 또 한참 멈추고... 그러다 10월 검찰청 완전 폐지도 미뤄지게 될지도 모릅니다.&lt;/p&gt;
-  &lt;p&gt;그 고구마를 또 겪자구요?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;김용남 국회의원 되는거 안 막습니다.&lt;/p&gt;
-  &lt;p&gt;대신 김용남은 보완수사권에 대한 자신의 입장을 확실히 밝히고, 국회의원이 되어서도 보완수사권 완전 철폐라는 민주당 당론을 확실히 따르겠다는 약속을 국민들 앞에서 해야 합니다.&lt;/p&gt;
-  &lt;p&gt;민주당 당론을 따르지 않는 사람이 어떻게 민주당 국회의원입니까?&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185274</guid><pubDate>Sat, 02 May 2026 10:12:25 GMT</pubDate></item><item><title>“김용남은 법제처장이 딱이죠…행정직이 어울려..”[21][0]</title><link>https://www.clien.net/service/board/park/19185272</link><description>
- 
- 
-  &lt;p&gt;김용남은 전형적인 테크노크라트죠…&lt;/p&gt;
-  &lt;p&gt;이념과는 다소 무관한&lt;/p&gt;
-  &lt;p&gt;전문지식을 갖춘 관료로서&lt;/p&gt;
-  &lt;p&gt;역량과 기질이 다분합니다…&lt;/p&gt;
-  &lt;p&gt;걍 행정직으로 국가에 봉사하시는게 좋죠!!!&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;“김용남은 나쁘지 않고 조국은 좋다”는게 &lt;/p&gt;
-  &lt;p&gt;현재 진보 민심으로 보입니다…&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185272</guid><pubDate>Sat, 02 May 2026 10:07:41 GMT</pubDate></item><item><title>김용남 공천[22][3]</title><link>https://www.clien.net/service/board/park/19185269</link><description>
- 
- 
-  &lt;p&gt;민주당이지만 표 주지 말자는 뉘앙스글이 많네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;왜 일가요..&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185269</guid><pubDate>Sat, 02 May 2026 10:01:39 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185285</guid><pubDate>Sat, 02 May 2026 10:37:39 GMT</pubDate></item></channel></rss>
