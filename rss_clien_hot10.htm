@@ -1,5 +1,220 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sun, 03 May 2026 12:00:50 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>유명인들에 대한 너무 엄격한 기준은 별로라고 생각합니다.[14][1]</title><link>https://www.clien.net/service/board/park/19185575</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Sun, 03 May 2026 13:00:53 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>PC/모바일 통신사 셋톱박스를 HTPC로 활용하는 법[11][2]</title><link>https://www.clien.net/service/board/lecture/19185470</link><description>
+ 
+ 
+  &lt;p&gt;일전에 소개 드렸던 영화/드라마 스트리밍 앱 Flix1의 안드로이드 TV 버전을 이용해서 통신사 셋톱박스를 HTPC처럼 활용하는 법 설명드립니다. 이전 글 못 보신 분 위해서 앱에 대해 간단히 설명 드리자면, Flix1은 외부 API 연동으로 영화/드라마 등 컨텐츠 정보를 불러오는 앱이며 추가하는 API에 따라 즐길 수 있는 컨텐츠의 종류가 다양합니다. 대략 KODI같은 앱으로 생각하시면 이해가 빠르실 것 같습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이번에 Flix1의 TV 버전이 출시되면서 픽팍으로 스트리밍 하는 기능이 추가되었는데 이걸 셋톱박스에 설치하면 HTPC처럼 사용 가능합니다. 물론 통신사 셋톱박스는 HTPC에 비하면 무척 저사양 기기라서 애초에 하드웨어로는 비교대상이 아니지만 넷플릭스, 티빙에서 찾기 힘든 컨텐츠를 손쉽게 시청할 수 있다는 점에서 상당히 매력적입니다. 참고로 저는 LG U+ 셋톱박스 UHD4T 모델에 설치해서 사용 중인데 아직까지 느려지거나 버벅거리는 증상 없이 잘 사용 중입니다. 아래는 LG U+ 셋톱박스의 구형과 신형 셋톱박스 비교사양입니다. (SKB, KT 셋톱박스도 안드로이드 기반이므로 설치에 문제 없는 것으로 알고 있습니다.)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;table&gt;
+   &lt;thead&gt;
+    &lt;tr&gt;
+     &lt;td&gt;&lt;strong&gt;구분&lt;/strong&gt;&lt;/td&gt;
+     &lt;td&gt;&lt;strong&gt;UHD3&lt;/strong&gt;&lt;/td&gt;
+     &lt;td&gt;&lt;strong&gt;UHD4 (UHD4T/K)&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+   &lt;/thead&gt;
+   &lt;tbody&gt;
+    &lt;tr&gt;
+     &lt;td&gt;&lt;strong&gt;CPU 모델&lt;/strong&gt;&lt;/td&gt;
+     &lt;td&gt;Synaptics BG5CT&lt;/td&gt;
+     &lt;td&gt;&lt;strong&gt;Synaptics VS680&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;&lt;strong&gt;코어 구성&lt;/strong&gt;&lt;/td&gt;
+     &lt;td&gt;ARM Cortex-A53 (1.6GHz)&lt;/td&gt;
+     &lt;td&gt;&lt;strong&gt;ARM Cortex-A73 (2.3GHz)&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;&lt;strong&gt;연산 능력&lt;/strong&gt;&lt;/td&gt;
+     &lt;td&gt;15,000 DMIPS&lt;/td&gt;
+     &lt;td&gt;&lt;strong&gt;35,000 DMIPS (약 2.3배)&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;&lt;strong&gt;GPU&lt;/strong&gt;&lt;/td&gt;
+     &lt;td&gt;PowerVR GE8310&lt;/td&gt;
+     &lt;td&gt;&lt;strong&gt;PowerVR GE9920 (약 1.9배)&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+     &lt;td&gt;&lt;strong&gt;RAM&lt;/strong&gt;&lt;/td&gt;
+     &lt;td&gt;3GB (2,400MHz)&lt;/td&gt;
+     &lt;td&gt;&lt;strong&gt;3GB (3,733MHz)&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+   &lt;/tbody&gt;
+  &lt;/table&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;앱 설치 방법은 &lt;a href="https://apiplayer.app" ori-url="https://apiplayer.app" rel="noopener noreferrer" target="_blank"&gt;&lt;span style="color: rgb(41, 105, 176);"&gt;개발사 홈페이지&lt;/span&gt;&lt;/a&gt;의 앱 다운로드 버튼 위에 링크가 있으므로 따로 설명 드리진 않겠습니다. 다만, 와이파이로 무선전송 하실 분은 휴대폰에 앱을 다운 받고 USB로 전송하실 분은 PC에 앱을 다운 받으시라고 미리 안내 드립니다. 그럼 이미 앱을 설치하셨다고 가정하고 사용법을 설명 드리겠습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;앱이 설치되고 나면 전체 앱 리스트에서 앱을 실행합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175205954_06.png" class="fr-dib fr-fil full" data-file-sn="15722607" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722607/66b46a573f3e3.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;영화/드라마 리스트가 로딩되면 원하는 작품을 선택한 후 [PikPak으로 시청]을 클릭합니다. &lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175205954_04.png" class="fr-dib fr-fil full" data-file-sn="15722618" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722618/4bec4c73209a.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;하지만 픽팍에 로그인되어 있지 않은 경우 픽팍 로그인 페이지가 나옵니다. &lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260502_204301906_01.png" class="fr-dib fr-fil full" data-file-sn="15722632" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722632/1d377a1d26ecdc.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;픽팍은 사용자가 붙여넣은 HTTP/토렌트 링크를 클라우드 스토리지에 대신 다운로드 받아주는 서비스로서 월 6,900원(또는 연간 69,000원)의 유료 서비스이지만 무료로 주어지는 6GB 저장공간을 이용하여 스트리밍 목적으로만 파일을 다운/삭제하고 홈페이지에 3일 연속 로그인 하면 주어지는 프리미엄 일수를 활용하면 굳이 유료 플랜을 이용하지 않아도 됩니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그럼 픽팍에 로그인 한 후 다시  [PikPak으로 시청] 버튼을 누르면 영상이 재생됩니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175223047_11.png" class="fr-dib fr-fil full" data-file-sn="15722633" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722633/1d37b9ce2d5479.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;앞서 말씀 드렸듯이 Flix1의 장점은 넷플릭스 등 OTT로 보기 힘든 영상을 찾을 수 있다는 점인데 국내 웹하드에서도 찾기 힘든 희귀한 작품이나 오래된 한국영화를 찾을 때 정말 좋습니다. 아래 작품은 얼마 전에 유튜브 쇼츠로 보고 관심이 생겨서 찾은 영화입니다. (원체 공포영화를 좋아하기도 하지만 가정부 역으로 출연한 이기선님 목욕씬을 보니 꼭 봐야겠더라는... -.-+ 누가 이렇게 &lt;a href="https://www.fmkorea.com/best/1403204151" ori-url="https://www.fmkorea.com/best/1403204151" rel="noopener noreferrer" target="_blank"&gt;&lt;span style="color: rgb(41, 105, 176);"&gt;요약&lt;/span&gt;&lt;/a&gt;도 잘 해 놓으셨네요)&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175205954_16.png" class="fr-dib fr-fil full" data-file-sn="15722634" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722634/4e4b0804628e.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;볼 땐 예쁜 얼굴이었는데 리모컨으로 스샷 찍을 때는 딜레이가 심해서 약간 굴욕샷처럼 나왔습니다. -.-+&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175205954_12.png" class="fr-dib fr-fil full" data-file-sn="15722636" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722636/38e28b3d6318f.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이제는 고인이 되신 김영애 배우님. 남편에 대한 의심과 괴기스러운 목각인형에 대한 집착으로 미쳐가는 모습입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175205954_26.png" class="fr-dib fr-fil full" data-file-sn="15722638" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722638/38e450c1913cf.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;어렸을 때 봐서 내용이 잘 기억나지 않던 영웅본색도 다시 찾아 봤습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175223047_01.png" class="fr-dib fr-fil full" data-file-sn="15722641" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722641/1d38e4ced6a360.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자막이 살짝 안 맞는 부분은 자막 싱크 기능으로 조정해 주고... &lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175223047.png" class="fr-dib fr-fil full" data-file-sn="15722643" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722643/1d38fcf1090205.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;오랫만에 다시 보는 장국영 형님 얼굴. &lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175223047_05.png" class="fr-dib fr-fil full" data-file-sn="15722644" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722644/38ebb71cf9a5a.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그리고 눈빛으로 말하는 적룡 아저씨.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175223047_04.png" class="fr-dib fr-fil full" data-file-sn="15722672" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722672/390257c6586f7.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;오늘 다시 보면서 느낀 건데 영웅본색의 배경음악은 잊고 지냈던 80년대의 추억을 되살아 나게 하는 것 같습니다. (비록 저 시대 홍콩에서 젊은 날을 보내진 않았지만 존재하지 않았던 추억마저도 소환하는 그런 느낌의 음악입니다.)&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175205954_29.png" class="fr-dib fr-fil full" data-file-sn="15722679" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722679/671531a45847e.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이번엔 최신 영국 드라마 Young Sherlock입니다. "에피소드 목록" 클릭 후&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175205954_08.png" class="fr-dib fr-fil full" data-file-sn="15722649" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722649/67069afc5a748.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;시즌 1 에피소드 1을 선택&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175205954_09.png" class="fr-dib fr-fil full" data-file-sn="15722653" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722653/1d39bd6c1984b6.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;토렌트 리스트에서 원하는 파일을 선택하면 됩니다. 무료 6GB 저장공간 이용 중이라면 드라마 볼 때는 x265로 인코딩한 MeGusta 릴을 선택하는 게 좋습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175205954_10.png" class="fr-dib fr-fil full" data-file-sn="15722654" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722654/1d39ceb6b3e650.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;635MB 짜리 x265 파일이지만 화질은 그리 나쁘지 않습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175205954_11.png" class="fr-dib fr-fil full" data-file-sn="15722668" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722668/506789f7d21c.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;더 낮은 화질이라도 상관 없다면 원본 비디오 스위치를 꺼도 되지만 휴대폰이 아닌 TV에서 볼 때는 원본으로 보는 게 좋습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260502_202354859_01.jpg" class="fr-dib fr-fil full" data-file-sn="15722665" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722665/38fb4dced5a62.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;즐겨찾기 리스트입니다. 리모컨 키패드로 검색하는 것은 상당히 불편하기 때문에 휴대폰 앱에서 검색한 작품을 즐겨찾기에 추가한 후에 TV 앱에서 플레이 하는 방식이 좋습니다. 처음엔 좀 어색하지만 익숙해지면 괜찮습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20260501_175205954_20.png" class="fr-dib fr-fil full" data-file-sn="15722669" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722669/50887365d4d8.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이상 여기까지 셋톱박스를 HTPC로 활용하는 법 알아봤습니다. 오늘은 TV 앱만 소개 드리긴 했지만 데스크탑 앱, 모바일앱도 동일한 기능을 제공하기 때문에 어떤 플랫폼에서든 사용 가능합니다. 참고로 모바일앱은 픽팍 계정 가입 없이도 시청 가능한 버튼이 있습니다. 보시고 궁금하신 점 있으시면 질문 주세요. &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19185470</guid><pubDate>Sun, 03 May 2026 00:45:14 GMT</pubDate></item><item><title>민주 쪽이 20대 남성 지지를 받는 방법 자체는 아주 간단한데....[28][0]</title><link>https://www.clien.net/service/board/park/19185610</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;여성들 군대 보내면 됩니다.&lt;/p&gt;
+  &lt;p&gt;그럼 20대 남성의 80%는 민주쪽에 몰표 줄것이고 &lt;/p&gt;
+  &lt;p&gt;대재명 대통님이라고 부를거에요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아시다시피 방법 자체는 간단 하지만 실행은 아무나 할수 없고&lt;/p&gt;
+  &lt;p&gt;우리나라 정치인이라면 지금 특성상 누구도 하기 힘든 일입니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그래서...&lt;/p&gt;
+  &lt;p&gt;방법이 없다가 결론이네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185610</guid><pubDate>Sun, 03 May 2026 12:15:15 GMT</pubDate></item><item><title>신석기시대부터 시작된 농경문화가 남성의 유전자풀을 극도로 붕괴시켰다는군요 ㄷㄷㄷ[10][0]</title><link>https://www.clien.net/service/board/park/19185597</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;어제 우연히 이런 내용의 유튜브를 보게 됐습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/NmDXkN3wGMg" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;똑같은 유튜브는 아니지만 내용은 대동소이합니다. 즉 농경이 시작되고 농지를 남성 중심의 씨족이 독점하고 아버지에게서 주로 장자로 상속이 이루어지면서 이 체제에서 밀려난 남성들의 유전자는 후손을 남길 기회를 얻지 못해 무려 95%의 남성 유전자가 도태됐다고 합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;정말인가 싶어 클로드한테 물어보니 정말이라고 하네요. 2015년도에 스탠퍼드 대학에서 발표한 어떤 연구 논문에 근거한 사실이었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="1000005833.jpg" class="fr-dib fr-fil full" data-file-sn="15722909" data-gif="false" data-img-height="1939" data-img-width="1080" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722909/3bc2522bb4678.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;얼마나 심각했냐면&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="1000005839.jpg" class="fr-dib fr-fil full" data-file-sn="15722910" data-gif="false" data-img-height="1705" data-img-width="1072" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722910/69d608788bb3f.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;번식에 성공한 남성 한명이 여성 17명을 독점하는 상황까지 갔었다고 하는군요. 수렵채집시대에 남성과 여성의 짝짓기 비율이 1:1이었다고 가정하면 남성 1명이 번식을 독점할 때 나머지 16명은 유전적으로 그냥 도태된 것이죠.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;하지만 기쁜 소식이 있습니다!&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="1000005843.jpg" class="fr-dib fr-fil" data-file-sn="15722911" data-gif="false" data-img-height="547" data-img-width="546" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722911/69da33de8e21e.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;산업혁명이후 핵가족화와 개인의 자유, 1:1 부부제 등 남녀평등 사상과 제도에 힘입어 점차 남성 유전자풀의 다양성이 회복중이라고 하네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185597</guid><pubDate>Sun, 03 May 2026 11:41:40 GMT</pubDate></item><item><title>국힘에서 이번 재보궐 8석을 목표로 하네요.[10][0]</title><link>https://www.clien.net/service/board/park/19185594</link><description>
+ 
+ 
+  &lt;p&gt;이번 재보선이 14개 지역구던데&lt;/p&gt;
+  &lt;p&gt;이 중 7~8석 목표로 하더군요.&lt;/p&gt;
+  &lt;p&gt;부산북갑, 울산남구갑, 대구달서,&lt;/p&gt;
+  &lt;p&gt;인천연수갑, 안산을, 하남갑, 평택을&lt;/p&gt;
+  &lt;p&gt;청양공주부여&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 중 1곳 제외하고&lt;/p&gt;
+  &lt;p&gt;울산  김상욱 의원 지역구를 포함해서&lt;/p&gt;
+  &lt;p&gt;모두다 원래 민주당 의석이었던 곳이라&lt;/p&gt;
+  &lt;p&gt;몇 석만 뺏겨도 선거 패배로 해석할 수도 있을 것 같습니다.&lt;/p&gt;
+  &lt;p&gt;국힘은 밑져야 본전인 선거인 것 같은데..&lt;/p&gt;
+  &lt;p&gt;보궐에서 국힘 2~3개로 묶고&lt;/p&gt;
+  &lt;p&gt;지자체장에서 대구와 부산을 가져오는게&lt;/p&gt;
+  &lt;p&gt;국힘의 정신승리에 이은 정국 깽판을 막을 &lt;/p&gt;
+  &lt;p&gt;기준선이 되지 않을까 합니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185594</guid><pubDate>Sun, 03 May 2026 11:33:10 GMT</pubDate></item><item><title>옆동네 정치글 우연히 클릭하다가 20대 민주당 밈[12][0]</title><link>https://www.clien.net/service/board/park/19185593</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://dvdprime.com/g2/bbs/board.php?bo_table=sisa&amp;amp;wr_id=3677892" target="_blank"&gt;https://dvdprime.com/g2/bbs/board.php?bo_table=sisa&amp;amp;wr_id=3677892&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;------------------‐---------&lt;/p&gt;
+  &lt;p style='margin-bottom: 0px; line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;20대 청년 둘이 있었는데 &lt;/p&gt;
+  &lt;p style='margin-bottom: 0px; line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;그중 하나가 "기본소득당은 뭐야?" 이런 이야기를 하더군요.&lt;/p&gt;
+  &lt;p style='margin-bottom: 0px; line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;그러니 다른 20대 청년이 "뭐 민주당만 아니라면 어딘들 뭐.. " 이런 소리를 하더군요.&lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;사람이 많은 곳에서 그런 이야기를 당당히 하는 걸 보면 그 세대는 민주당 혐오...&lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;---------------------------&lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;우연히 옆동네 글을 봤습니다.&lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;20대 주 관심사는 문화 스포츠가 크겠죠. &lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;이런게 만연되있다는건 다들 공공연히 다 아실겁니다만&lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;(20대는 거의 커뮤질도 안할텐데 말이죠)&lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;펨x 영향이 큰건지&lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;인스타등 SNS를 안해서 모르겠지만&lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;아침의 이런글을 보니 씁슬하더군요.&lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style='line-height: 2; color: rgb(41, 41, 41); font-family: emoji, "Noto Sans KR", "malgun gothic", 굴림, "Apple SD Gothic Neo", AppleGothic; font-size: 17px; text-align: justify; background-color: rgb(255, 255, 255);'&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185593</guid><pubDate>Sun, 03 May 2026 11:33:41 GMT</pubDate></item><item><title>슈퍼 마리오 갤럭시 영화는 많이 실망스럽네요.[11][1]</title><link>https://www.clien.net/service/board/park/19185585</link><description>
+ 
+ 
+  &lt;p&gt;아이들과 보고 왔는데 애들은 나름 즐거워해서 돈이 아깝지는 않았지만,&lt;/p&gt;
+  &lt;p&gt;개인적으로는 근 5년간 봤던 모든 영화 중에 최악이였습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;애초에 마리오 IP 영화에 크게 기대도 안했는데, 그 기대를 밑도는 수준입니다.&lt;/p&gt;
+  &lt;p&gt;진짜 내용이랄게 없어요. 등장인물들의 감정선은 널뛰기 하고, (특히 쿠파와 그 아들..)&lt;/p&gt;
+  &lt;p&gt;뜬금없는 닌텐도 까메오가 나오는데 쓸데없이 비중 잡아먹고, 재미도 없습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;영화라기 보다는 1시간 30분짜리 게임 트레일러 모음집 같았어요.&lt;/p&gt;
+  &lt;p&gt;게임 IP라고 꼭 이렇게 보여주기 식으로만 만들 필요가 있을까 싶네요...&lt;/p&gt;
+  &lt;p&gt;그것도 마리오 시리즈 최고 명작이고 스토리도 괜찮았던 '마리오 갤럭시' 타이틀 달고 말이죠..&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185585</guid><pubDate>Sun, 03 May 2026 11:01:12 GMT</pubDate></item><item><title>유튜브로 클래식 들을때 오케스트라는 확실히 볼맛이 나네요[5][5]</title><link>https://www.clien.net/service/board/park/19185534</link><description>
+ 
+ 
+  &lt;p&gt;언제부터인지 클래식을 종종 찾아듣게 됐는데 클래식 중에서도 특히 오케스트라는 영상 보는 맛이 있는거 같습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;가지각색의 다양한 악기들이 나와서(현악기, 관악기, 타악기) 그것을 연주하는 모습 보는것도 재밌고, 지휘자가 열정적으로 지휘하는 모습 보는것도 재밌고.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;특히 저는 전자가 좋네요. 각종 악기들이 총출동해서 저건 무슨 악기인가 악기 구경도 하고, 연주자가 그걸 집중해서 연주하는 모습도 멋있고, 그게 10명~20명 단위도 아니라 수십명 군단으로 나오다보니 대단하기도 하고.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;클래식 하면 주로 귀로만 들었는데(클래식 들을때 가벼운 잡무 하는 경우가 많아서) 가만히 앉아서 멍때리며 듣다가 우연히 오케스트라 영상을 주의깊게 보게 되고, 저런 매력에 빠져서 영상도 자주 보게 됐습니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185534</guid><pubDate>Sun, 03 May 2026 07:48:35 GMT</pubDate></item><item><title>유명인들에 대한 너무 엄격한 기준은 별로라고 생각합니다.[17][1]</title><link>https://www.clien.net/service/board/park/19185575</link><description>
  
  
   &lt;p&gt;최근 신정환이 엑셀 방송 mc를 하는 걸 비난하는 기사를 봤습니다.&lt;/p&gt;
@@ -28,12 +243,12 @@
   &lt;p&gt;막상 저나 여러분도 아무 실수하지 않고 사는 건 아니잖아요.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185575</guid><pubDate>Sun, 03 May 2026 10:25:38 GMT</pubDate></item><item><title>아직 소비여력들은 상당한 것 같습니다.[20][0]</title><link>https://www.clien.net/service/board/park/19185578</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185575</guid><pubDate>Sun, 03 May 2026 10:25:38 GMT</pubDate></item><item><title>아직 소비여력들은 상당한 것 같습니다.[22][0]</title><link>https://www.clien.net/service/board/park/19185578</link><description>
  
  
   &lt;p&gt;극장왔는데 팝콘과 콜라 엄청 먹네요. 저희 가족만 맨손으로 있습니다. 부럽습니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185578</guid><pubDate>Sun, 03 May 2026 10:38:07 GMT</pubDate></item><item><title>일본 청년층이 우경화한 까닭[26][0]</title><link>https://www.clien.net/service/board/park/19185576</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185578</guid><pubDate>Sun, 03 May 2026 10:38:07 GMT</pubDate></item><item><title>일본 청년층이 우경화한 까닭[30][0]</title><link>https://www.clien.net/service/board/park/19185576</link><description>
  
  
   &lt;p&gt;이게 사실 우리와 상당히 비슷한 부분이 있네요.&lt;/p&gt;
@@ -64,7 +279,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;와...........&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185574</guid><pubDate>Sun, 03 May 2026 10:16:05 GMT</pubDate></item><item><title>기계공학출신이 바라보는 이사..[18][5]</title><link>https://www.clien.net/service/board/park/19185573</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185574</guid><pubDate>Sun, 03 May 2026 10:16:05 GMT</pubDate></item><item><title>기계공학출신이 바라보는 이사..[19][5]</title><link>https://www.clien.net/service/board/park/19185573</link><description>
  
  
   &lt;p&gt;옮겨지는 과정을 유심히보면..&lt;/p&gt;
@@ -94,7 +309,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;다른 나라도 이렇게 스피디한걸까요?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185573</guid><pubDate>Sun, 03 May 2026 10:14:06 GMT</pubDate></item><item><title>조국 혁신당의 모순[27][5]</title><link>https://www.clien.net/service/board/park/19185572</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185573</guid><pubDate>Sun, 03 May 2026 10:14:06 GMT</pubDate></item><item><title>조국 혁신당의 모순[32][7]</title><link>https://www.clien.net/service/board/park/19185572</link><description>
  
  
   &lt;p&gt;호남 선거를 뛰는 후보들은 우리가 남이가를 주장하며 언젠가는 합쳐질 당이니 자신을 찍어달라고 하는 한 편,&lt;/p&gt;
@@ -121,7 +336,7 @@
   &lt;p&gt;하지만 전편, 전전편에는 그래도 내용 전개에 신경을 좀 쓴 것 같은데 이번은 그런거 없이 시각적 효과에만 치중한 것 같아서 그건 좀 아쉽습니다.&lt;/p&gt;
   &lt;p&gt;뭐... 애초에 애기들 타겟으로 만든 영화를 슈퍼 마리오 향수에 빠져서 보러 간 저도 할 말은 없겠습니다만...ㅋ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185559</guid><pubDate>Sun, 03 May 2026 09:32:50 GMT</pubDate></item><item><title>브런치 식당에서 얘들 유튜브 스피커로 보는 건 왜 일까요?[21][5]</title><link>https://www.clien.net/service/board/park/19185556</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185559</guid><pubDate>Sun, 03 May 2026 09:32:50 GMT</pubDate></item><item><title>브런치 식당에서 얘들 유튜브 스피커로 보는 건 왜 일까요?[24][6]</title><link>https://www.clien.net/service/board/park/19185556</link><description>
  
  
   &lt;p&gt;브런치 식당에 얘데리고와서 신발벗고 쇼파위에 올라가서 큰 소리로 유튜브 보는건 왜 일까요?&lt;/p&gt;
@@ -207,7 +422,7 @@
   &lt;p&gt;이런 차량이 헤이딜러 매입가가 200만원대..&lt;/p&gt;
   &lt;p&gt;판매 저는 안하고싶네요.....&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185499</guid><pubDate>Sun, 03 May 2026 00:36:33 GMT</pubDate></item><item><title>2찍이들의 정신상태[17][16]</title><link>https://www.clien.net/service/board/park/19185551</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185499</guid><pubDate>Sun, 03 May 2026 00:36:33 GMT</pubDate></item><item><title>2찍이들의 정신상태[17][17]</title><link>https://www.clien.net/service/board/park/19185551</link><description>
  
  
   &lt;p&gt;&lt;img alt="da.jpg" class="fr-dib fr-fil" data-file-sn="15722831" data-gif="false" data-img-height="720" data-img-width="637" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722831/6950aad5b5ad7.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -227,7 +442,7 @@
   &lt;p&gt;이런자들과 같은 한표를 가지고 있다는게 민주주의의 비극이라고 생각 합니다.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185551</guid><pubDate>Sun, 03 May 2026 09:08:04 GMT</pubDate></item><item><title>문체부 장관 '한예종 광주 이전 생각해 본 적 없다'[30][0]</title><link>https://www.clien.net/service/board/park/19185541</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185551</guid><pubDate>Sun, 03 May 2026 09:08:04 GMT</pubDate></item><item><title>문체부 장관 '한예종 광주 이전 생각해 본 적 없다'[32][0]</title><link>https://www.clien.net/service/board/park/19185541</link><description>
  
  
   &lt;p&gt;최 장관은 오늘(2일) 자신의 SNS를 통해 "특정 지역 일부 국회의원이 관련 법안을 발의하면서 촉발된 논란인데, 문체부는 전혀 검토한 바 없음을 이미 알려드렸음에도 지방선거와 맞물려 논쟁이 계속되고 있다"고 말했습니다.&lt;/p&gt;
@@ -307,7 +522,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185542</guid><pubDate>Sun, 03 May 2026 08:28:18 GMT</pubDate></item><item><title>안녕하세요 이기적인 의사놈입니다 ㅋㅋ[20][16]</title><link>https://www.clien.net/service/board/park/19185529</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185542</guid><pubDate>Sun, 03 May 2026 08:28:18 GMT</pubDate></item><item><title>안녕하세요 이기적인 의사놈입니다 ㅋㅋ[20][17]</title><link>https://www.clien.net/service/board/park/19185529</link><description>
  
  
   &lt;p&gt;아휴… &lt;/p&gt;
@@ -366,7 +581,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185520</guid><pubDate>Sun, 03 May 2026 06:03:11 GMT</pubDate></item><item><title>위고비보다 효과 좋은 한국산[7][7]</title><link>https://www.clien.net/service/board/park/19185476</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185520</guid><pubDate>Sun, 03 May 2026 06:03:11 GMT</pubDate></item><item><title>위고비보다 효과 좋은 한국산[7][8]</title><link>https://www.clien.net/service/board/park/19185476</link><description>
  
  
   &lt;p&gt;북한산으로 오해받기도 함.&lt;/p&gt;
@@ -448,7 +663,7 @@
   &lt;p&gt;이번 민주당의 김용남 공천은 조국을 도와주는것일까요 아니면 없애버리겠다는 것일까요?&lt;/p&gt;
   &lt;p&gt;ㄷㄷㄷㄷㄷ &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185530</guid><pubDate>Sun, 03 May 2026 07:34:13 GMT</pubDate></item><item><title>'김건희 주가조작' 15년 만에 단죄…'무혐의' 검찰도 수사 대상[6][11]</title><link>https://www.clien.net/service/board/park/19185527</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185530</guid><pubDate>Sun, 03 May 2026 07:34:13 GMT</pubDate></item><item><title>'김건희 주가조작' 15년 만에 단죄…'무혐의' 검찰도 수사 대상[7][11]</title><link>https://www.clien.net/service/board/park/19185527</link><description>
  
  
   &lt;p&gt;&lt;a href="https://news.nate.com/view/20260502n10503?mid=n0103" ori-url="https://news.nate.com/view/20260502n10503?mid=n0103" target="_blank"&gt;'김건희 주가조작' 15년 만에 단죄…'무혐의' 검찰도 수사 대상 : 네이트 뉴스&lt;/a&gt; &lt;/p&gt;
@@ -461,7 +676,7 @@
      이제 관심은 검찰의 봐주기 수사 의혹을 들여다보고 있는 종합특검이 어떤 결론을 내릴 지입니다.&lt;br/&gt;&lt;br/&gt;
      앞서 종합특검은 심우정 전 검찰총장의 업무용 PC를 압수수색하고, 당시 서울중앙지검 지휘부였던 이창수 서울중앙지검장과 조상원 전 4차장을 출국금지했습니다. &lt;/strong&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185527</guid><pubDate>Sun, 03 May 2026 07:46:24 GMT</pubDate></item><item><title>Ai등이 발전하면서 로봇세라는 개념이 나온지 한참된거 같은데요[40][0]</title><link>https://www.clien.net/service/board/park/19185524</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185527</guid><pubDate>Sun, 03 May 2026 07:46:24 GMT</pubDate></item><item><title>Ai등이 발전하면서 로봇세라는 개념이 나온지 한참된거 같은데요[43][0]</title><link>https://www.clien.net/service/board/park/19185524</link><description>
  
  
   &lt;p&gt;저만 이게 이상하게 들리는지....&lt;/p&gt;
@@ -525,7 +740,7 @@
   &lt;p&gt;그래도, 플레오스로 끝입니다, 고정입니다 이렇게 말하는건 확정해서 말하는건 잘못되지 않았나 싶습니다.&lt;/p&gt;
   &lt;p&gt;명칭이야 바꾸면 그만이니까요..&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185468</guid><pubDate>Sat, 02 May 2026 22:18:54 GMT</pubDate></item><item><title>네이버가 미친것 같습니다.[31][4]</title><link>https://www.clien.net/service/board/park/19185508</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185468</guid><pubDate>Sat, 02 May 2026 22:18:54 GMT</pubDate></item><item><title>네이버가 미친것 같습니다.[32][4]</title><link>https://www.clien.net/service/board/park/19185508</link><description>
  
  
   &lt;p&gt;검색엔진이길 포기한 것 같습니다.&lt;/p&gt;
@@ -655,7 +870,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;PS. 저는 이 속도면 연말에는 지금의 프론티어급 오픈웨이트가 128G안쪽에서 구동될거 같고, 그러면 상당수의 유저가 한계효용체감의 법칙의 영향을 받지 않을까 생각이 됩니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185485</guid><pubDate>Sat, 02 May 2026 23:27:30 GMT</pubDate></item><item><title>악마는 프라다를 입는다 2 할말이 없군요[21][0]</title><link>https://www.clien.net/service/board/park/19185480</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185485</guid><pubDate>Sat, 02 May 2026 23:27:30 GMT</pubDate></item><item><title>악마는 프라다를 입는다 2 할말이 없군요[22][0]</title><link>https://www.clien.net/service/board/park/19185480</link><description>
  
  
   &lt;p&gt;제목을 악마는 프라다를 입는다 1.5로 하든지, 악마는 프라다를 입는다 1 에필로그로 해야될것 같습니다&lt;/p&gt;
@@ -920,7 +1135,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;이 그룹이 이렇게 잘될지 누가 알았을까요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185355</guid><pubDate>Sat, 02 May 2026 14:15:00 GMT</pubDate></item><item><title>TK 여성들 사이에 퍼지고 있다는 챌린지[8][48]</title><link>https://www.clien.net/service/board/park/19185447</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185355</guid><pubDate>Sat, 02 May 2026 14:15:00 GMT</pubDate></item><item><title>TK 여성들 사이에 퍼지고 있다는 챌린지[8][51]</title><link>https://www.clien.net/service/board/park/19185447</link><description>
  
  
   &lt;p&gt;&lt;img alt="tk_01.jpg" class="fr-dib fr-fil full" data-file-sn="15722621" data-gif="false" data-img-height="970" data-img-width="1010" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722621/38baf3639306c.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -934,7 +1149,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;대구 경북의 민주당 지지자분들 응원합니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185447</guid><pubDate>Sat, 02 May 2026 20:53:05 GMT</pubDate></item><item><title>공중목욕탕에 폰을 왜가지고 들어올까요[49][6]</title><link>https://www.clien.net/service/board/park/19185437</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185447</guid><pubDate>Sat, 02 May 2026 20:53:05 GMT</pubDate></item><item><title>공중목욕탕에 폰을 왜가지고 들어올까요[49][7]</title><link>https://www.clien.net/service/board/park/19185437</link><description>
  
  
   &lt;p&gt;요즘 공중목욕탕에 폰가지고 들어오는 사람들을 갈때마다 한두명씩 봅니다.&lt;/p&gt;
@@ -944,295 +1159,4 @@
   &lt;p&gt;폰질을 목욕탕 안에서까지 해야하는지 그것자체도 이해가 안되고..&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185437</guid><pubDate>Sat, 02 May 2026 20:03:18 GMT</pubDate></item><item><title>장동혁..“우리가 왜 움츠러들어야 하나”..avi[11][0]</title><link>https://www.clien.net/service/board/park/19185345</link><description>
- 
- 
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/EkcL70n2Oz8" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20260502120106237" ori-url="http://v.daum.net/v/20260502120106237" target="_blank"&gt;&lt;strong&gt;&lt;strong&gt;장동혁&lt;/strong&gt;, 박형준 개소식 찾아 “우리가 왜 움츠러들어야 하나” [현장영싱]&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;&lt;a href="https://v.daum.net/channel/317/home" ori-url="https://v.daum.net/channel/317/home" target="_blank"&gt;채널A&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;1시간 전&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;&lt;a href="http://v.daum.net/v/20260502120106237" ori-url="http://v.daum.net/v/20260502120106237" target="_blank"&gt;다음뉴스&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="http://v.daum.net/v/20260502120106237" ori-url="http://v.daum.net/v/20260502120106237" target="_blank"&gt;&lt;img alt="장동혁, 박형준 개소식 찾아 “우리가 왜 움츠러들어야 하나” [현장영싱]" class="fr-fic fr-dii" src="https://search4.kakaocdn.net/argon/200x200_85_c/KW3EdAnIIUd0" width="88"/&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;장동혁&lt;/strong&gt; 국민의힘 대표가&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt; 오늘(2일) 오전 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;박형준 부산시장 후보 선거사무소 개소식에 참석했습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt; 장 대표는 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;"부산이 지켜온 것은 대한민국 그 자체였다"며&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt; "이재명 정권이 &lt;/p&gt;
-  &lt;p&gt;헌법질서를 무너뜨리고 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;자유민주주의를 짓밟으려 하는 상황에서&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt; 부산이 &lt;/p&gt;
-  &lt;p&gt;다시 일어서야 한다...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;....&lt;/p&gt;
-  &lt;p&gt;....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;국짐당이....&lt;/p&gt;
-  &lt;p&gt;선거에서....승리..한다면...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;대구와....&lt;/p&gt;
-  &lt;p&gt;부산에.....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;윤석열.....동상도...세우고...&lt;/p&gt;
-  &lt;p&gt;김거니.....동상도...세울....기세입니다..??&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185345</guid><pubDate>Sat, 02 May 2026 13:38:40 GMT</pubDate></item><item><title>이야기 터치의 불편한 이유는 포르쉐의 보면 확연하죠[17][3]</title><link>https://www.clien.net/service/board/cm_car/19185396</link><description>
- 
- 
-  &lt;p&gt;이번에 포르쉐 보면 굽어진 밑부분에 조작부를 두고 그 앞에 손목받침이 있어서 손을 고정할수 있게 되어있어서 터치의 불편함이 꽤 줄어든 것 같습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이것처럼 근본적으로 터치스크린이 불편한 건 손이 고정할수 없어서 정확도가 떨어지기 때문이죠. &lt;/p&gt;
-  &lt;p&gt;손이 좀 흔들려도 문제없도록 키오스크처럼 버튼이나 조작부를 크게 하면 되겠지만 그것도 무리가 있고 특히 주행중이라면 더 말할 필요가 없습니다. &lt;/p&gt;
-  &lt;p&gt;이건 테슬라가 원가절감때문에 안좋은 선례를 남긴거라 생각합니다. 독을 풀었어요….&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;게다가 운전중 조작하는건 직시하지 않아도 되는 물리버튼이 최고죠. 촌시러울지는 몰라도…할아재라서 그런걸까요?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;제발 좀 터치위주로 가는거 좀 안했으면 하는 맘에 적어봅니다. &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19185396</guid><pubDate>Sat, 02 May 2026 17:09:07 GMT</pubDate></item><item><title>생활상식 슬기로운 마음생활 - 12. 왜 나이가 들수록 게임이 재미없어지는걸까?[13][4]</title><link>https://www.clien.net/service/board/lecture/19185309</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="260502_2.png" class="fr-dib fr-fil" data-file-sn="15722418" data-gif="false" data-img-height="338" data-img-width="600" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722418/2f61bad36bc8.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;&amp;lt;들어가면서&amp;gt;&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;안녕하세요.&lt;br/&gt;
-    최근 책을 읽으면서 이것저것 정리해보면서 글을 써보고 있습니다.&lt;br/&gt;
-    글을 쓰다보니 항상 주장이라는 것은 반대의견이 충분히 있을 수 있다는 생각이 듭니다.&lt;br/&gt;
-    절대적인 정답이 있는 이야기는 아니니 가볍게 읽어주시면 감사하겠습니다.&lt;/p&gt;
-  &lt;hr/&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 예전에는 바쁜 와중에도 틈틈히 게임을 했었습니다.&lt;/p&gt;
-  &lt;p&gt;  - 어렸을 때부터 게임기를 갖는 것이 로망이었기 때문에&lt;/p&gt;
-  &lt;p&gt;  - 스위치, PS4 같은 콘솔을 사서 늦은 밤 조금씩 게임을 했었지요.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 그런데 나이를 먹으면서&lt;/p&gt;
-  &lt;p&gt;  - 이제는 AAA급 게임도&lt;/p&gt;
-  &lt;p&gt;  - 재미를 느끼기 전에&lt;/p&gt;
-  &lt;p&gt;  - “아, 이걸 언제 다하지?”&lt;/p&gt;
-  &lt;p&gt;  - “튜토리얼부터 또 익혀야 하나?”&lt;/p&gt;
-  &lt;p&gt;  - “이 반복 작업을 왜 하고 있지?”&lt;/p&gt;
-  &lt;p&gt;  - 라는 생각이 먼저 들 때가 많아졌습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="260502_1.jpg" class="fr-dib fr-fil" data-file-sn="15722415" data-gif="false" data-img-height="353" data-img-width="616" data-role="attach-image" src="https://edgio.clien.net/F01/2026/5/15722415/36e6f3afd4b6f.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p style="text-align: center;"&gt;정말 감동적이었는데 지금 다시 하라면? 못 할지도요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 예전에는 게임을 켜는 것만으로도 설렜는데&lt;/p&gt;
-  &lt;p&gt;  - 이제는 게임을 켜기 전부터 조금 귀찮습니다.&lt;/p&gt;
-  &lt;p&gt;  - 그래서 왜 나이를 먹고 나면&lt;/p&gt;
-  &lt;p&gt;  - 예전과는 다르게 게임이 재미없어지는지 생각해봤습니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;1. 효율성에 대한 생각&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;  - 게임은 기본적으로 반복을 통해 재미를 만듭니다.&lt;/p&gt;
-  &lt;p&gt;  - 같은 몬스터를 여러 번 잡고&lt;/p&gt;
-  &lt;p&gt;  - 같은 맵을 반복해서 돌고&lt;/p&gt;
-  &lt;p&gt;  - 장비를 강화하고&lt;/p&gt;
-  &lt;p&gt;  - 레벨을 올리고&lt;/p&gt;
-  &lt;p&gt;  - 실패하면서 패턴을 익힙니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 어렸을 때는 이 과정 자체가 재미였습니다.&lt;/p&gt;
-  &lt;p&gt;  - 현실보다 쉽고&lt;/p&gt;
-  &lt;p&gt;  - 조금씩 강해지는 느낌이 들고&lt;/p&gt;
-  &lt;p&gt;  - 어려운 보스를 반복 끝에 잡는 느낌이&lt;/p&gt;
-  &lt;p&gt;  - 게임의 핵심 재미였습니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 그런데 일을 오래하다보니&lt;/p&gt;
-  &lt;p&gt;  - 점점 효율을 따지게 됩니다.&lt;/p&gt;
-  &lt;p&gt;  - 시간을 어떻게 줄일지&lt;/p&gt;
-  &lt;p&gt;  - 반복 업무를 어떻게 자동화할지&lt;/p&gt;
-  &lt;p&gt;  - 같은 결과를 더 적은 에너지로 얻을 방법은 없는지&lt;/p&gt;
-  &lt;p&gt;  - 이런 생각을 계속하게 됩니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 저도 초급 개발자 수준이라 그런지&lt;/p&gt;
-  &lt;p&gt;  - 게임을 하면서도 단축키나 스크립트를 떠올릴 떄가 있습니다.&lt;/p&gt;
-  &lt;p&gt;  - “이건만 좀 자동화되면 편할 텐데.”&lt;/p&gt;
-  &lt;p&gt;  - “이 반복 수집은 코드로 처리하고 싶다.”&lt;/p&gt;
-  &lt;p&gt;  - 이런 생각이 들죠.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 어쩌면 이것은 직업병 같습니다.&lt;/p&gt;
-  &lt;p&gt;  - 예전에는 게임 속 반복이 성장처럼 느껴졌는데&lt;/p&gt;
-  &lt;p&gt;  - 이제는 업무 속 반복처럼 느껴집니다.&lt;/p&gt;
-  &lt;p&gt;  - 예전에는 노가다가 재미였는데&lt;/p&gt;
-  &lt;p&gt;  - 이제는 노가다가 말 그대로 노가다로 느껴집니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;2. 정신력의 고갈&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;  - 30대도 바빴습니다.&lt;/p&gt;
-  &lt;p&gt;  - 40대도 바쁩니다.     &lt;/p&gt;
-  &lt;p&gt;  - 그런데 차이가 있습니다.&lt;/p&gt;
-  &lt;p&gt;  - 30대는 바빠도 게임을 할 수 있었습니다.&lt;/p&gt;
-  &lt;p&gt;  - 피곤해도 밤에 게임을 켰습니다.     &lt;/p&gt;
-  &lt;p&gt;  - 그런데 40대가 되면&lt;/p&gt;
-  &lt;p&gt;  - 게임을 하고 싶다는 마음은 있어도&lt;/p&gt;
-  &lt;p&gt;  - 막상 켜기가 어렵습니다.&lt;/p&gt;
-  &lt;p&gt;  - 게임을 켜도 30분 이내로 끄게 됩니다.&lt;/p&gt;
-  &lt;p&gt;  - 심지어 재미없는 것도 아닙니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 이건 단순히 체력 문제가 아니라&lt;/p&gt;
-  &lt;p&gt;  - 정신력의 문제에 가깝다고 생각합니다.&lt;/p&gt;
-  &lt;p&gt;  - 게임도 에너지가 필요합니다.&lt;/p&gt;
-  &lt;p&gt;  - 조작법을 익히고, 스토리를 따라가고, 아이템을 관리하고, 맵을 기억해야 하고,&lt;/p&gt;
-  &lt;p&gt;  - 전투 시스템을 이해해야 하고 다음 목표를 계속 판단해야 합니다.&lt;/p&gt;
-  &lt;p&gt;  - 30대에는 이것이 부담은 아니었고 할만했습니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 그런데 나이가 들수록&lt;/p&gt;
-  &lt;p&gt;  - 하루 동안 이미 너무 많은 결정을 합니다.&lt;/p&gt;
-  &lt;p&gt;  - 업무에서 판단하고, 사람을 상대하고, 돈 문제를 생각하고, 앞으로의 리스크를 고민합니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 그러고 나면 밤에는&lt;/p&gt;
-  &lt;p&gt;  - 무언가를 새로 익히고 싶지 않습니다.&lt;/p&gt;
-  &lt;p&gt;  - 선택지를 고르고 싶지 않습니다.&lt;/p&gt;
-  &lt;p&gt;  - 머리를 쓰고 싶지 않습니다.&lt;/p&gt;
-  &lt;p&gt;  - 게임은 쉬려고 하는 것인데&lt;/p&gt;
-  &lt;p&gt;  - 어느 순간 게임도 하나의 과제처럼 느껴집니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;3. 숏폼의 대두&lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;  - 예전에는 여가 생활의 호흡이 길었습니다.&lt;/p&gt;
-  &lt;p&gt;  - 영화를 봐도 2시간&lt;/p&gt;
-  &lt;p&gt;  - 드라마는 10시간 이상입니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 그런데 지금은 여가의 호흡이 너무 짧아졌습니다.&lt;/p&gt;
-  &lt;p&gt;  - 유튜브 영상은 10분에서 20분이고&lt;/p&gt;
-  &lt;p&gt;  - 숏폼은 30초 안에도 웃음과 자극을 줍니다.&lt;/p&gt;
-  &lt;p&gt;  - 궁금한 것이 바로 해결됩니다.&lt;/p&gt;
-  &lt;p&gt;  - 남이 정리한 스토리도 바로 볼 수 있습니다.&lt;/p&gt;
-  &lt;p&gt;  - 게임의 엔딩도 직접 하지 않고 볼 수 있습니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 게다가 숏폼은 너무 쉽습니다.&lt;/p&gt;
-  &lt;p&gt;  - 누우면 됩니다.&lt;/p&gt;
-  &lt;p&gt;  - 손가락만 움직이면 됩니다.&lt;/p&gt;
-  &lt;p&gt;  - 싫으면 바로 넘기면 됩니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 나이가 들수록 귀차니즘이 더 강해져서 직접 경험보다 간접 경험을 선호하게 되는 것 같습니다.          &lt;/p&gt;
-  &lt;p&gt;이제는 게임을 좀 다른 시선으로 보기 시작했습니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 새로운 시대상을 반영했는지&lt;/p&gt;
-  &lt;p&gt;  - 콘솔도 절전모드가 아주 잘 되어 있어서&lt;/p&gt;
-  &lt;p&gt;  - 하다가 절전모드로 해놓으면&lt;/p&gt;
-  &lt;p&gt;  - 다음날 바로 그 위치에서 다시 시작할 수 있습니다.     &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;□ 그냥 가볍게 쉬는 겸 겸사겸사&lt;/p&gt;
-  &lt;p&gt;  - 깨는데 집중하지 않고&lt;/p&gt;
-  &lt;p&gt;  - 이 게임은 무슨 목적으로 어떤 목표를 위해 왜 만들었나&lt;/p&gt;
-  &lt;p&gt;  - 유저의 편의성을 위해 무엇을 고민했는가&lt;/p&gt;
-  &lt;p&gt;  - 이런 것들을 생각하면서 클리어하는 의무감이 아니라&lt;/p&gt;
-  &lt;p&gt;  - 게임 자체를 더 짧게 가볍게 즐기는 방법으로 바꾸는 중입니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19185309</guid><pubDate>Sat, 02 May 2026 12:05:46 GMT</pubDate></item><item><title>기타 [개발]AI 코딩이 빠른 데도 안 빠른 이유[10][5]</title><link>https://www.clien.net/service/board/lecture/19185030</link><description>
- 
- 
-  &lt;p&gt;대략 20년차 개발자입니다. 지난 8개월간 AI로 코딩해 보고 나름 느낀 부분을 공유하고자 글을 씁니다.&lt;/p&gt;
-  &lt;p&gt;개인의 경험을 나누어 다른 분들이 AI 사용에 도움이 되고자 하는 부분이며, 내용이 지금 시점에 맞지 않거나 혹은 제가 잘 알지 못해서 부정확한 부분이 있을수 있습니다.&lt;/p&gt;
-  &lt;p&gt;상세한 글은 아래 github에 달아두었으며, 여기 글은 요약본입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://github.com/daypekr/ai-coding-fast-but-not-fast/blob/main/why-ai-coding-is-fast-yet-not-fast-presentation.md" target="_blank"&gt;https://github.com/daypekr/ai-coding-fast-but-not-fast/blob/main/why-ai-coding-is-fast-yet-not-fast-presentation.md&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;---&lt;/p&gt;
-  &lt;blockquote&gt;
-   &lt;p&gt;&lt;strong&gt;한 줄&lt;/strong&gt; — 동작하는 코드는 순식간에 나온다. 그런데 그 코드의 &lt;strong&gt;품질·일관성·정합성&lt;/strong&gt;을 사람이 다시 잡아주는 시간이 만만치 않다. "빠른데, 빠른 만큼 새로운 피로가 생긴다."&lt;/p&gt;
-   &lt;p&gt;깊이 보려면 → &lt;a href="https://github.com/daypekr/ai-coding-fast-but-not-fast/blob/main/why-ai-coding-is-fast-yet-not-fast-presentation.md" ori-url="https://github.com/daypekr/ai-coding-fast-but-not-fast/blob/main/why-ai-coding-is-fast-yet-not-fast-presentation.md" target="_blank"&gt;&lt;code&gt;why-ai-coding-is-fast-yet-not-fast-presentation.md&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;/blockquote&gt;
-  &lt;hr/&gt;
-  &lt;h2&gt;무엇이 문제인가 (10가지 핵심)&lt;/h2&gt;
-  &lt;p&gt;&lt;a href="https://github.com/daypekr/ai-coding-fast-but-not-fast/blob/main/why-ai-coding-is-fast-yet-not-fast-TLDR.md#%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%AC%B8%EC%A0%9C%EC%9D%B8%EA%B0%80-10%EA%B0%80%EC%A7%80-%ED%95%B5%EC%8B%AC" ori-url="https://github.com/daypekr/ai-coding-fast-but-not-fast/blob/main/why-ai-coding-is-fast-yet-not-fast-TLDR.md#%EB%AC%B4%EC%97%87%EC%9D%B4-%EB%AC%B8%EC%A0%9C%EC%9D%B8%EA%B0%80-10%EA%B0%80%EC%A7%80-%ED%95%B5%EC%8B%AC" target="_blank"&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;ol&gt;
-   &lt;li&gt;&lt;strong&gt;데모 ↔ 프로덕션 갭&lt;/strong&gt; — "동작하는 코드"와 "운영 가능한 코드"는 다르다. SQL Injection, 환경변수 미사용, 로그 없음등 의 문제점들이 있어도 데모는 문제없다.&lt;/li&gt;
-   &lt;li&gt;&lt;strong&gt;머릿속 시뮬레이션을 못 한다&lt;/strong&gt; — race condition, 타임존, 캐시처럼 코드에 안 적힌 동적 동작은 AI가 못 잡는다. 패턴은 보지만 시간축은 못 돌린다.&lt;/li&gt;
-   &lt;li&gt;&lt;strong&gt;물어보면 아는데, 짜라고 하면 엉뚱하게 짠다&lt;/strong&gt; — "UTC→KST 변환은 &lt;code&gt;Intl.DateTimeFormat&lt;/code&gt;을 써야 한다"고 답할 줄은 안다. 그런데 실제 코드를 짤 땐 또 &lt;code&gt;toDate()&lt;/code&gt;로 돌아간다.&lt;/li&gt;
-   &lt;li&gt;&lt;strong&gt;일관성 부재&lt;/strong&gt; — 같은 개념을 세션마다 &lt;code&gt;money&lt;/code&gt; / &lt;code&gt;cash&lt;/code&gt; / &lt;code&gt;price&lt;/code&gt;로 짠다. 6개월 후 누구도 셋이 같은 건지 모른다.&lt;/li&gt;
-   &lt;li&gt;&lt;strong&gt;DRY 위반과 누적 부채&lt;/strong&gt; — 이미 있는 함수를 또 만든다. 방향 전환 후의 잔재 코드를 못 걷어낸다. 안 쓴다고 지웠는데 string 참조로 살아있어서 새벽 배치가 죽는다.&lt;/li&gt;
-   &lt;li&gt;&lt;strong&gt;요구사항 충돌 시 회귀&lt;/strong&gt; — 두 번째 요구를 짜다가 첫 번째 기능을 깬다. AI는 프로젝트 전체 그림을 보지 않고 시킨 일만 글자 그대로 처리한다.&lt;/li&gt;
-   &lt;li&gt;&lt;strong&gt;Lost in the Middle / Context Rot&lt;/strong&gt; — 시스템 프롬프트의 중간 규칙이 누락된다. 컨텍스트가 길수록 앞에서 한 결정과 모순되고, 폐기한 패턴을 재도입한다.&lt;/li&gt;
-   &lt;li&gt;&lt;strong&gt;자동화·사이드킥의 환상 (5분 OK, 5시간 NG)&lt;/strong&gt; — 5분짜리는 잘하는데 몇 시간 돌리면 자기 작업을 자기가 되돌린다. 자율 에이전트의 시스템 디폴트 자체가 5분(300초)인 게 우연이 아니다.&lt;/li&gt;
-   &lt;li&gt;&lt;strong&gt;테스트의 거짓 안전감&lt;/strong&gt; — Mock이 Mock을 검증하는 테스트, "테스트 통과"를 목표로 reward hacking, 심지어 테스트 자체를 지워서 그린을 만든다.&lt;/li&gt;
-   &lt;li&gt;&lt;strong&gt;보안·환각 의존성&lt;/strong&gt; — 환각된 패키지명을 공격자가 선점하는 slopsquatting, PR description에 숨긴 prompt injection으로 RCE까지.&lt;/li&gt;
-  &lt;/ol&gt;
-  &lt;hr/&gt;
-  &lt;h2&gt;그래서 어떻게 써야 하나 (실용 처방)&lt;/h2&gt;
-  &lt;p&gt;&lt;a href="https://github.com/daypekr/ai-coding-fast-but-not-fast/blob/main/why-ai-coding-is-fast-yet-not-fast-TLDR.md#%EA%B7%B8%EB%9E%98%EC%84%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%8D%A8%EC%95%BC-%ED%95%98%EB%82%98-%EC%8B%A4%EC%9A%A9-%EC%B2%98%EB%B0%A9" ori-url="https://github.com/daypekr/ai-coding-fast-but-not-fast/blob/main/why-ai-coding-is-fast-yet-not-fast-TLDR.md#%EA%B7%B8%EB%9E%98%EC%84%9C-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%8D%A8%EC%95%BC-%ED%95%98%EB%82%98-%EC%8B%A4%EC%9A%A9-%EC%B2%98%EB%B0%A9" target="_blank"&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;1) 좁히고 — 쪼개고 — 격리하라&lt;/strong&gt;&lt;/p&gt;
-  &lt;ul&gt;
-   &lt;li&gt;"너는 20년차 Angular 전문가다"처럼 &lt;strong&gt;페르소나를 좁힌다.&lt;/strong&gt;&lt;/li&gt;
-   &lt;li&gt;한 번에 하나만 시킨다 (&lt;strong&gt;마이크로태스킹&lt;/strong&gt;).&lt;/li&gt;
-   &lt;li&gt;세션·서브에이전트·fresh context로 &lt;strong&gt;맥락을 격리&lt;/strong&gt;한다.&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;p&gt;&lt;strong&gt;2) 반복은 시키지 말고 "스크립트를 짜라"고 시켜라&lt;/strong&gt;&lt;/p&gt;
-  &lt;ul&gt;
-   &lt;li&gt;같은 변환을 N번 시키지 말고, 그 변환을 수행하는 스크립트를 한 번 짜게 하고 실행한다.&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;p&gt;&lt;strong&gt;3) 사람이 오케스트레이터가 된다&lt;/strong&gt;&lt;/p&gt;
-  &lt;ul&gt;
-   &lt;li&gt;5~10분 단위로 끊고, 단위마다 빌드/테스트 그린 확인, 결과를 정리해 다음 단위 입력으로 준다.&lt;/li&gt;
-   &lt;li&gt;"버그 조사 세션"과 "구현 세션"을 분리한다. Plan mode 결과를 &lt;strong&gt;새 세션&lt;/strong&gt;에 붙여 시작한다.&lt;/li&gt;
-   &lt;li&gt;한 단락 끝나면 &lt;code&gt;/clear&lt;/code&gt;. 결론만 &lt;code&gt;CLAUDE.md&lt;/code&gt;나 메모로 옮긴다.&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;p&gt;&lt;strong&gt;4) 디버깅은 5단계 이정표&lt;/strong&gt;&lt;/p&gt;
-  &lt;ol&gt;
-   &lt;li&gt;문제 한 문장으로 정의 → 2. Given-When-Then으로 올바른 동작 정의 → 3. 최소 재현 환경 → 4. 원인 가설 나열 → 5. 가설 하나씩 검증.&lt;/li&gt;
-  &lt;/ol&gt;
-  &lt;ul&gt;
-   &lt;li&gt;1~3번이 명확하면 AI가 표면적 패치로 도망갈 수 없다.&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;p&gt;&lt;strong&gt;5) 잘 짠 테스트 = AI를 가두는 램프 (Kent Beck)&lt;/strong&gt;&lt;/p&gt;
-  &lt;ul&gt;
-   &lt;li&gt;AI가 어떻게 고치든 "만족시켜야 할 조건"은 사람이 정해서 보존.&lt;/li&gt;
-   &lt;li&gt;단, &lt;strong&gt;AI가 테스트를 지워서 그린을 만드는 함정&lt;/strong&gt; 주의 → 테스트 변경은 별도 PR/권한, mutation testing, 테스트 개수 감소 PR 자동 차단.&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;p&gt;&lt;strong&gt;6) 비용 통제&lt;/strong&gt;&lt;/p&gt;
-  &lt;ul&gt;
-   &lt;li&gt;모델 라우팅(Haiku/Sonnet/Opus 분리), prompt cache, 세션당 토큰 예산.&lt;/li&gt;
-   &lt;li&gt;MCP는 미니멀하게. 안 쓰는 서버는 끈다.&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;p&gt;&lt;strong&gt;7) 데모 ↔ 프로덕션을 spec으로 메운다&lt;/strong&gt;&lt;/p&gt;
-  &lt;ul&gt;
-   &lt;li&gt;"observability 없이는 done이 아니다"를 spec 단계에서 강제.&lt;/li&gt;
-   &lt;li&gt;AI 생성 PR은 &lt;strong&gt;SAST + Secret scan + 회귀 테스트&lt;/strong&gt;가 머지 게이트.&lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;hr/&gt;
-  &lt;h2&gt;결론 — 한 줄&lt;/h2&gt;
-  &lt;p&gt;&lt;a href="https://github.com/daypekr/ai-coding-fast-but-not-fast/blob/main/why-ai-coding-is-fast-yet-not-fast-TLDR.md#%EA%B2%B0%EB%A1%A0--%ED%95%9C-%EC%A4%84" ori-url="https://github.com/daypekr/ai-coding-fast-but-not-fast/blob/main/why-ai-coding-is-fast-yet-not-fast-TLDR.md#%EA%B2%B0%EB%A1%A0--%ED%95%9C-%EC%A4%84" target="_blank"&gt;&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;strong&gt;동작은 5분, 정합성은 5시간.&lt;/strong&gt; 첫 구현은 빨라졌지만 &lt;em&gt;"이 코드가 실제로 돌 때 무슨 일이 벌어질지"&lt;/em&gt; 머릿속에서 돌려보는 일은 여전히 사람이 한다. AI 시대의 진짜 생산성은 모델이 아니라 &lt;strong&gt;워크플로우&lt;/strong&gt;가 만든다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19185030</guid><pubDate>Fri, 01 May 2026 16:35:58 GMT</pubDate></item><item><title>배달의 민족, 한집배달이 한집배달이 아니네요..[23][0]</title><link>https://www.clien.net/service/board/park/19185427</link><description>
- 
- 
-  &lt;p&gt;치킨 한집배달(비대면)으로 시켰는데,&lt;/p&gt;
-  &lt;p&gt;주문완료라고 해서 나가보니 다른 가게 음식이 놓여 있었습니다.&lt;/p&gt;
-  &lt;p&gt;그래서 다른 사람이 주소를 잘못 적었나 해서 배민 고객센터에 연락해 보니,&lt;/p&gt;
-  &lt;p&gt;제 치킨을 배달하던 라이더가 착각을 했다 하더군요.&lt;/p&gt;
-  &lt;p&gt;그런데 저는 한집배달로 시켰단 말이죠&lt;/p&gt;
-  &lt;p&gt;.......생각하기를 그만해야 겠습니다 =_=&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185427</guid><pubDate>Sat, 02 May 2026 19:07:28 GMT</pubDate></item><item><title>고윤정 미모 이제서야 인정합니다[25][2]</title><link>https://www.clien.net/service/board/park/19185426</link><description>
- 
- 
-  &lt;p&gt;물론 이쁘지만 제 취향이 아닌 코끼리상 인물로, 정말 이쁘다고 생각하진 않았었는데&lt;/p&gt;
-  &lt;p&gt;이번 모자무싸 카메라에 잡히는 인물은 정말 이쁘네요.&lt;/p&gt;
-  &lt;p&gt;특히 얼굴을 위에서 아래로 살짝 비스듬히 잡는 구도가 많은데, 카메라감독님이 고윤정 얼굴 포인트를 제대로 아시는 듯. 다른 작품들에선 카메라가 좀 체스트샷을 마구잡이로 썼었어요.&lt;/p&gt;
-  &lt;p&gt;그리고 고윤정 마스크와 목소리는 발랄까불새침보다는 이런 좀 사연있는 듯 처연한 연기에서 최적으로 빛나는 것 같네요.&lt;/p&gt;
-  &lt;p&gt;와 저 눈 저 얼굴 좀 실물로 봤으면..구교환 부럽&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185426</guid><pubDate>Sat, 02 May 2026 19:05:47 GMT</pubDate></item><item><title>“하이닉스 영업이익률 뺨치는 우동 한그릇”[35][1]</title><link>https://www.clien.net/service/board/park/19185424</link><description>
- 
- 
-  &lt;p&gt;ㅎㅎㅎㅎ&lt;/p&gt;
-  &lt;p&gt;기자들 이런것좀&lt;/p&gt;
-  &lt;p&gt;잘 파헤쳐주세요~&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185424</guid><pubDate>Sat, 02 May 2026 19:03:51 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19185437</guid><pubDate>Sat, 02 May 2026 20:03:18 GMT</pubDate></item></channel></rss>
