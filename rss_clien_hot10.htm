@@ -1,5 +1,160 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Fri, 19 Jun 2026 10:00:59 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 술마시고 택시를 탔는데...[14][0]</title><link>https://www.clien.net/service/board/cm_car/19211671</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Fri, 19 Jun 2026 11:01:00 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 현대차 주행 시각화[16][3]</title><link>https://www.clien.net/service/board/cm_car/19211778</link><description>
+ 
+ 
+  &lt;p&gt;그냥 인식하드웨어 자체가 달라서 그래요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;HDA2는 전방카메라 전방레이더 코너레이더4개가 달려요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;전방카메라는 1개라 거리 측정이 안되죠.&lt;/p&gt;
+  &lt;p&gt;그래서 전방레이더랑 센서퓨전해서 인식합니다.&lt;/p&gt;
+  &lt;p&gt;그니까 인식 객체가 전방레이더 조사각안에 걸리는거에요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그래서 앞앞차 앞앞앞차가 카메라에 보이더라도 확실하게 표현하기가 힘들죠. (레이더가 앞앞차는 못보니까요.)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;코너레이더는 카메라로 같이 센서 퓨전 해서 인식하는게 아니라 단독으로 인식해요. &lt;/p&gt;
+  &lt;p&gt;거리정보 자체는 정확하지만 해상도가 낮은 정보만으로 객체를 인식할수밖에 없으니까 당연히 전방카메라 시야각 밖 후방 측방은 차량 인식 능력이 상대적으로 더 떨어지죠&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그리고 당연히 클러스터 안에 보이는 객체만 인식 하는건 아니에요&lt;/p&gt;
+  &lt;p&gt;클러스터에 표시되는 차량은 운전자가 보고 운행에 참고할 수 있으니 정말 확실한 객체만 클러스터에 우선적으로 표시하는거에요.&lt;/p&gt;
+  &lt;p&gt;실제로 차 내부적으로는 더 멀리 더 많은 객체를 인식하고 있어요.&lt;/p&gt;
+  &lt;p&gt;정말 클러스터에 보이는 정보만 인식하고 있으면 교차차량 충돌방지, 추월시 대향차 충돌방지, 측방 접근차 충돌방지 기능이 어떻게 되겠어요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;반대로 테슬라는 카메라가 차량 곳곳에 약 10개정도 들어가요. &lt;/p&gt;
+  &lt;p&gt;차량에 달린 모든 카메라 2D영상를 조합해서 원근을 이용해서 3D로 데이터로 바꾼다음에 ADAS에 사용해요.&lt;/p&gt;
+  &lt;p&gt;그래서 360도에 카메라가 보는 만큼 표현할수 있죠. 상대적으로 부정확한 거리측정은 그동안 쌓아온 데이터랑 FSD칩이 보정하는거에요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;카메라로 바뀌지 않는 한 아무리 칩 성능이 좋아져도 객체인식능력 자체는 한계가 있고 현대기아차는 2년뒤부터 엔비디아 카메라 시스템으로 바뀌는걸로 알아요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;현대기아차가 인식을 더 못한다고 해서 욕할건 아니라고 생각하는게&lt;/p&gt;
+  &lt;p&gt;차량에 광고하는 FCA(충돌방지), HDA2(차선변경) 구현에는 그 정도 객체 인식 능력이면 충분해요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;대부분의 자동차들이 옵션을 넣지 않으면 전방 카메라 전방레이더 하나로만 인식하고 자율 주행 구현이 불가능한거지 차는 충분히 인식하고 있는거에요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19211778</guid><pubDate>Fri, 19 Jun 2026 09:47:00 GMT</pubDate></item><item><title>전반은 나름 운영 잘했네요[1][5]</title><link>https://www.clien.net/service/board/park/19211832</link><description>
+ 
+ 
+  &lt;p&gt;서로 힘을 아끼는 것 같기도 하고..&lt;/p&gt;
+  &lt;p&gt;후반 중반부터 큰 변화가 있기를 기대해봅니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211832</guid><pubDate>Fri, 19 Jun 2026 10:54:37 GMT</pubDate></item><item><title>한국 겁나 잘하네요[14][2]</title><link>https://www.clien.net/service/board/park/19211828</link><description>
+ 
+ 
+  &lt;p&gt;경기 운영 엄청 좋네요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211828</guid><pubDate>Fri, 19 Jun 2026 10:46:03 GMT</pubDate></item><item><title>겸공 인터뷰를 보니 추미애 지사는 다음을 보시는 것 같네요.[5][18]</title><link>https://www.clien.net/service/board/park/19211824</link><description>
+ 
+ 
+  &lt;p&gt;민주진영의 가치와 철학에 걸맞은 리더십을 보여주고 계신 것 같습니다.&lt;/p&gt;
+  &lt;p&gt;대권 도전 여부와는 별개로,&lt;/p&gt;
+  &lt;p&gt;앞으로 민주당의 중심을 잡아주는 큰 어른이 되어 후배 정치인들에게 길을 제시해 주실 것이라 기대합니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211824</guid><pubDate>Fri, 19 Jun 2026 10:43:57 GMT</pubDate></item><item><title>홍감독 옷이….[17][0]</title><link>https://www.clien.net/service/board/park/19211809</link><description>
+ 
+ 
+  &lt;p&gt;논란을 일으킨 관계로 삭제하겠습니다.&lt;/p&gt;
+  &lt;p&gt;코리아팀 화이팅!!!&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;=================&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;캐주얼 정장 컨셉인가요?&lt;/p&gt;
+  &lt;p&gt;상대방도 정장입었는데&lt;/p&gt;
+  &lt;p&gt;자켓이라도 입는게 정서상 맞을 것 같은데요.&lt;/p&gt;
+  &lt;p&gt;개인적으로 남의 결혼식에 노타이도 예의가ㅜ아니라는 꼰대라서…&lt;/p&gt;
+  &lt;p&gt;임하는 자세가 나타난달까요?! &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211809</guid><pubDate>Fri, 19 Jun 2026 10:06:08 GMT</pubDate></item><item><title>G7에서 이재명 대통령의 적극적인 정상간 대화 상황, 트윗이 많이 보이네요[5][9]</title><link>https://www.clien.net/service/board/park/19211803</link><description>
+ 
+ 
+  &lt;blockquote class="twitter-tweet" data-lang="en"&gt;
+   &lt;a href="https://twitter.com/bsm2tc2coikwrlm/status/2067548350849929480?s=46" target="_blank"&gt;https://twitter.com/bsm2tc2coikwrlm/status/2067548350849929480?s=46&lt;/a&gt;
+  &lt;/blockquote&gt;
+  &lt;br/&gt;
+     
+  &lt;br/&gt;
+   G7에서 이재명 대통령의 적극적 친교 외교 자세에 대해서 일본과 비교하는.. 일본인 트윗이 많이 보이네요 
+  &lt;br/&gt;
+     
+  &lt;br/&gt;
+   영어 구사 실력이 문제가 아니라 통역사 통해서 적극적으로 정상간 대화하는 이재명 대통령과 혼자 앉아서 멀뚱히 있는 자기네 총리와 비교하고 있네요 
+  &lt;br/&gt;
+     
+  &lt;br/&gt;
+   굿굿~~ 
+  &lt;br/&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211803</guid><pubDate>Fri, 19 Jun 2026 10:00:54 GMT</pubDate></item><item><title>주식 오르는거랑은 별개로 잘 팔아야하는데[11][2]</title><link>https://www.clien.net/service/board/park/19211801</link><description>
+ 
+ 
+  &lt;p&gt;하닉 재미좀 많이 보고 있긴한데 도대체 언제 팔아야하나 감이 안 잡히네요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그리고 사람 욕심이란게 여기 끝나고나면 과연 다른 데에 또 손을 안댈지…&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;모든 주식투자자의 수익은 장기적으로 0에 수렴한다던데 오늘 프장에 또 하닉에 불타고 보니 저도 문득 그렇게 되지 않을까 싶기도 하네요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211801</guid><pubDate>Fri, 19 Jun 2026 10:00:54 GMT</pubDate></item><item><title>김어준에 대한 두 번 째 비판 (정신차려 김어준!)[26][4]</title><link>https://www.clien.net/service/board/park/19211799</link><description>
+ 
+ 
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/dj81uE1oB3U" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;어제였던가, 이런 말을 하더군요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;유럽인들 중 미국을 동맹국이라고 생각하는 사람들 비율이 11퍼센트인데 경쟁국이나 적성국으로 생각하는 사람들 비율은 그 두 배가 넘는다고요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;ECFR 여론조사를 보도한 로이터 기사를 인용했는데 문제는 다음에 이어진 김씨 발언이었습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;‘유럽이나 미국이나 같은 백인 나라인데 백인 나라 미국을 지지하지 않는다고’&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;백인은 무조건 미국사람으로 알고 있던 60년대 산골소년도 아니고, 대한민국 제1 스피커 국제감각 치곤 너무 시대착오적이라는 느낌이 확 들었습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;국제정치를 인종적 소속감으로 해석하는 촌스러움은 도대체 어디서 나온 발상인지도 의문이고요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한국이나 일본이나 같은 아시아 인종인데 왜 동맹으로 생각하지 않느냐는 말보다 더 잘못된 말 입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;미국 국가정체성은 명백한 다문화국가입니다. &lt;/p&gt;
+  &lt;p&gt;모자이크 타입 캐나다와는 좀 다른 멜팅팟 타입으로 분류합니다. &lt;/p&gt;
+  &lt;p&gt;인종구성비는 백인이 56 퍼센트로 여전히 다수이긴 하지만 수 년안에 인종구성비는 역전될 전망입니다. &lt;/p&gt;
+  &lt;p&gt;두 나라 모두 혈연이나 인종에 기반한 민족국가가 아니라 헌법과 기본룰을 공유하며 결속하는 시민공동체입니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;김어준 씨에게 발견한 감각부재에 대한 비판이 이번이 두 번 째 입니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;딱 1 년 전이군요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이재명 대통령이 캘거리 국제공항에 도착했을때 영접인사들 중 First Nations 대표가 나온 것에 대해 시비를 거는 사람들이 있었던 모양이죠. &lt;/p&gt;
+  &lt;p&gt;그 사람들이 (김어준 씨 표현에 의하면 극우) “캐나다측이 인디언 추장을 내보낸 것은 한국 대통령을 모욕하고 홀대한 것”이라는 주장을 했다고 합니다. &lt;/p&gt;
+  &lt;p&gt;내가 세상 온갖 바보들이 지껄이는 상상을 초월한 헛소리에 일일이 상대할 여유가 없지만, 이 기사를 다루는 앵커 김어준 씨의 태도에서 그 바보들과 별다를 바 없는 문제를 발견했었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;당시 김 씨는 ‘극우들의 주장’에 대한 문제의 본질부터 잘못 짚었습니다. &lt;/p&gt;
+  &lt;p&gt;제작진에게 “인디언 추장 사진 있어요?”라고 물어보며 혹시 가짜뉴스가 아닌지 확인을 하더니 소위 “인디언 추장” 사진이 나오자 “그렇구나”라고 응답했습니다. &lt;/p&gt;
+  &lt;p&gt;파트너가 국빈행사에 원주민 대표가 나온 의미를 잠깐이라도 설명하지 않았다면 국내 청취율 1 위라는 이 방송에 지울 수 없는 오점을 남겼을 것 입니다. &lt;/p&gt;
+  &lt;p&gt;실은 그 파트너의 설명도 정확하지는 않았지만 그건 제가 따로 언급하지 않고 그냥 넘어갔습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;김어준 씨는 우선 용어부터 잘못 사용했습니다. &lt;/p&gt;
+  &lt;p&gt;인디언이라는 말 자체가 모욕적이고 시대착오적인 말입니다. &lt;/p&gt;
+  &lt;p&gt;요즘 아무도 그런 용어를 사용하지 않습니다. &lt;/p&gt;
+  &lt;p&gt;공식명칭은 First Nations 또는 Indigenous Peoples라고 부릅니다.&lt;/p&gt;
+  &lt;p&gt;(당시 제 글을 본 어느분이 People에 복수s를 붙였다고 시비를 걸더군요 ㅎㅎ)&lt;/p&gt;
+  &lt;p&gt;식민주의 청산과 인종간 화해의 의미를 담고 있습니다. &lt;/p&gt;
+  &lt;p&gt;보통은 그냥 natives(원주민)이라고 부르니까 그렇게 부르면 됩니다.  &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;First Nations 는 이 땅에 최초로 정착한 주민이라는 의미를 담고 있습니다. &lt;/p&gt;
+  &lt;p&gt;역사적인 주권공동체이자 연방정부를 외교적으로 대표하는 국가의 한 축 입니다. &lt;/p&gt;
+  &lt;p&gt;당시 한국 대통령 뿐 아니라 트럼프 등 다른 14 개국 정상들과, 과거 찰스 영국국왕, 고 프란체스코 교황 방문때도 같은 First Nations 영접의전이 진행됐었죠.  &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;외국정상이 공식방문했을 때 퍼스트네이션 대표가 나와 영접하는 것은 캐나다 고유의 격조높은 최고의 의전인데, 김어준 씨가 그런 식으로 방송을 진행하는 걸 보고 좀 놀랐던 기억이 있어서 어제 더 놀란 사건 글 쓰면서 다시 가져왔습니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한국에서 자상파 공중파를 모두 압도하며 청취율이 가장 높은 방송으로 알고 있는데, &lt;/p&gt;
+  &lt;p&gt;격에 맞는 시대감각을 바탕으로 좀 더 정교하게 방송을 운영하길..   &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;(이 글 진보진영내 권력투쟁하고는 아무 상관없으니까 다른 해석하지 마세요) &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211799</guid><pubDate>Fri, 19 Jun 2026 09:54:57 GMT</pubDate></item><item><title>이야기 술마시고 택시를 탔는데...[14][0]</title><link>https://www.clien.net/service/board/cm_car/19211671</link><description>
  
  
   &lt;p&gt;아5 신차를 그지같이 운전합니다. ㅠㅠ 도대체 왜?!?! 의문이 머리를 떠나질 않네요. 입이 근질근질한데 어차피 취객 술주정이라 생각할테니 꾹 참으면서 굴당에 하소연합니다.&lt;/p&gt;
@@ -16,7 +171,7 @@
   &lt;p&gt;오밤중에 한 번 더 뛰겠다고 조지다가 승차감 개떡이면 차라리 인정! 근데 나름대로 속도나 차선변경이 준법운전에 가까우니 더 답답하네요. 승객들이 전기차 붕끽운전 극혐하는 걸 모르는걸까요?&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19211671</guid><pubDate>Fri, 19 Jun 2026 06:26:25 GMT</pubDate></item><item><title>[단독] 하정우, 국가AI전략위로…李정부 AI 삼각축 재편 마무리[11][7]</title><link>https://www.clien.net/service/board/park/19211789</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19211671</guid><pubDate>Fri, 19 Jun 2026 06:26:25 GMT</pubDate></item><item><title>[단독] 하정우, 국가AI전략위로…李정부 AI 삼각축 재편 마무리[25][8]</title><link>https://www.clien.net/service/board/park/19211789</link><description>
  
  
   &lt;p&gt;중기부장관 후보자라는 소문이 바뀌었나봐요&lt;/p&gt;
@@ -32,14 +187,14 @@
   &lt;p&gt;하정우 전 청와대 인공지능(AI)미래기획수석이 임문영 전 국가AI전략위원회 상근 부위원장 후임으로 내정된 것으로 알려졌다. 이기혁 아마존웹서비스(AWS) 한국 스타트업 생태계 총괄이 청와대 AI미래기획수석에 내정된 데 이어 하 전 수석까지 전략위로 복귀하면서 이재명 정부의 AI 3강(G3) 전략은 배경훈 과학기술정보통신부 부총리 겸 장관, 이기혁 AI수석, 하정우 전략위 상근 부위원장 3각축으로 재편되는 분위기다.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211789</guid><pubDate>Fri, 19 Jun 2026 09:40:35 GMT</pubDate></item><item><title>이번 상승세로 상당히 많은 국민들이 부유해졌을 것 같습니다.[47][0]</title><link>https://www.clien.net/service/board/park/19211787</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211789</guid><pubDate>Fri, 19 Jun 2026 09:40:35 GMT</pubDate></item><item><title>이번 상승세로 상당히 많은 국민들이 부유해졌을 것 같습니다.[55][0]</title><link>https://www.clien.net/service/board/park/19211787</link><description>
  
  
   &lt;p&gt;저만 해도 6배 벌었고.. (인버스 같은 매국 베팅만 계좌 깡통 찼겠죠)&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;대통령 하나 바뀌었는데 대박이네여..&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211787</guid><pubDate>Fri, 19 Jun 2026 09:37:54 GMT</pubDate></item><item><title>정승기 작가[5][7]</title><link>https://www.clien.net/service/board/park/19211783</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211787</guid><pubDate>Fri, 19 Jun 2026 09:37:54 GMT</pubDate></item><item><title>정승기 작가[9][8]</title><link>https://www.clien.net/service/board/park/19211783</link><description>
  
  
   &lt;p&gt;작가 끼리 잘 지내세요..&lt;/p&gt;
@@ -50,7 +205,7 @@
   &lt;p&gt;사실상 삼전 하이닉스가 오르냐 마느냐네요.&lt;/p&gt;
   &lt;p&gt;아주 일부 종목 빼고는 나머지 종목들은 크게 상관도 없고, 오히려 더 빠진 상황 ㅜ ㅜ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211773</guid><pubDate>Fri, 19 Jun 2026 09:23:24 GMT</pubDate></item><item><title>충격적인 말을 들었습니다...[11][1]</title><link>https://www.clien.net/service/board/park/19211766</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211773</guid><pubDate>Fri, 19 Jun 2026 09:23:24 GMT</pubDate></item><item><title>충격적인 말을 들었습니다...[12][1]</title><link>https://www.clien.net/service/board/park/19211766</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -75,7 +230,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211760</guid><pubDate>Fri, 19 Jun 2026 08:54:25 GMT</pubDate></item><item><title>이야 정유사들 담합이였군요?[21][22]</title><link>https://www.clien.net/service/board/park/19211762</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211760</guid><pubDate>Fri, 19 Jun 2026 08:54:25 GMT</pubDate></item><item><title>이야 정유사들 담합이였군요?[21][23]</title><link>https://www.clien.net/service/board/park/19211762</link><description>
  
  
   &lt;p&gt;몇달전 제가 정유사들 악랄하다고 글올렸는데&lt;/p&gt;
@@ -84,7 +239,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;네 결국 정유사들 담합입니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211762</guid><pubDate>Fri, 19 Jun 2026 08:56:08 GMT</pubDate></item><item><title>당권경쟁에는 관심없다[92][12]</title><link>https://www.clien.net/service/board/park/19211752</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211762</guid><pubDate>Fri, 19 Jun 2026 08:56:08 GMT</pubDate></item><item><title>당권경쟁에는 관심없다[95][14]</title><link>https://www.clien.net/service/board/park/19211752</link><description>
  
  
   &lt;p&gt;오늘 총수가 본인은 당권경쟁에는 관심없고 검찰개혁에만 관심있다고 합니다&lt;/p&gt;
@@ -97,12 +252,12 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211752</guid><pubDate>Fri, 19 Jun 2026 08:37:23 GMT</pubDate></item><item><title>김어준은 장인수 또 불렀네요[22][13]</title><link>https://www.clien.net/service/board/park/19211749</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211752</guid><pubDate>Fri, 19 Jun 2026 08:37:23 GMT</pubDate></item><item><title>김어준은 장인수 또 불렀네요[22][15]</title><link>https://www.clien.net/service/board/park/19211749</link><description>
  
  
   &lt;p&gt;투명하네요 진짜&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211749</guid><pubDate>Fri, 19 Jun 2026 08:32:44 GMT</pubDate></item><item><title>이번 월드컵 흥미진진하네요..[11][0]</title><link>https://www.clien.net/service/board/park/19211744</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211749</guid><pubDate>Fri, 19 Jun 2026 08:32:44 GMT</pubDate></item><item><title>이번 월드컵 흥미진진하네요..[12][0]</title><link>https://www.clien.net/service/board/park/19211744</link><description>
  
  
   &lt;p&gt;일어나보니 체코 남아공 비겨서 우리나라는 멕시코와 비기기만 해도 조 1위네요&lt;/p&gt;
@@ -110,7 +265,7 @@
   &lt;p&gt;32강에서 일본 만나서 이기고 16강애서 잉글 만나서 이겨서 8강진출 하겠네요&lt;/p&gt;
   &lt;p&gt;요월드컵 그거 뭐 별거 없네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211744</guid><pubDate>Fri, 19 Jun 2026 08:10:49 GMT</pubDate></item><item><title>'기업 해결사' 자처한 李대통령, 8박10일 유럽 순방이 남긴 것[12][17]</title><link>https://www.clien.net/service/board/park/19211736</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211744</guid><pubDate>Fri, 19 Jun 2026 08:10:49 GMT</pubDate></item><item><title>'기업 해결사' 자처한 李대통령, 8박10일 유럽 순방이 남긴 것[12][19]</title><link>https://www.clien.net/service/board/park/19211736</link><description>
  
  
   &lt;p&gt;기업 민원 해결사 역할도 자처했다. EU가 다음달부터 철강 무관세 수입쿼터(TRQ) 제도 시행을 앞둔 가운데 이 대통령은 FTA(자유무역협정) 체결국이자 전략적 파트너국인 한국에 대한 우호적 고려를 강력히 요청했다. &lt;/p&gt;
@@ -195,7 +350,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;온 우주가 돕는 건지 진짜 우리나라 이길 환경은 충분히 만들어졌고, 이제 선수들 마음가짐만 달려있습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211734</guid><pubDate>Fri, 19 Jun 2026 07:19:57 GMT</pubDate></item><item><title>이재명 대통령의 대체불가 대한민국, 유럽·G7 순방 자료[11][30]</title><link>https://www.clien.net/service/board/park/19211732</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211734</guid><pubDate>Fri, 19 Jun 2026 07:19:57 GMT</pubDate></item><item><title>이재명 대통령의 대체불가 대한민국, 유럽·G7 순방 자료[11][31]</title><link>https://www.clien.net/service/board/park/19211732</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -593,7 +748,7 @@
   &lt;p&gt;문재인 정부 치매? 발언을 했군요.&lt;/p&gt;
   &lt;p&gt;문조털래유와 방향성이 같은 인사 였던것 같군요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211706</guid><pubDate>Fri, 19 Jun 2026 00:53:32 GMT</pubDate></item><item><title>신부가 둘인 결혼식.jpg[7][5]</title><link>https://www.clien.net/service/board/park/19211666</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211706</guid><pubDate>Fri, 19 Jun 2026 00:53:32 GMT</pubDate></item><item><title>신부가 둘인 결혼식.jpg[8][5]</title><link>https://www.clien.net/service/board/park/19211666</link><description>
  
  
   &lt;p&gt;&lt;img alt="20260618104051_63cc5e11d34fe73de4d668ebdca564c4_icib.jpg" class="fr-dib fr-fil full" data-file-sn="15756467" data-gif="false" data-img-height="249" data-img-width="800" data-role="attach-image" src="https://edgio.clien.net/F01/2026/6/15756467/14e191b0443ca0.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -698,7 +853,7 @@
   &lt;/blockquote&gt;
   &lt;p&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211722</guid><pubDate>Fri, 19 Jun 2026 04:59:02 GMT</pubDate></item><item><title>어서 금리인상을 팍팍 해야 할 텐데...[20][5]</title><link>https://www.clien.net/service/board/park/19211721</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211722</guid><pubDate>Fri, 19 Jun 2026 04:59:02 GMT</pubDate></item><item><title>어서 금리인상을 팍팍 해야 할 텐데...[20][6]</title><link>https://www.clien.net/service/board/park/19211721</link><description>
  
  
   &lt;p&gt;달러가 이제 내리나 싶더니 1500원도 못깨고 다시 상승 추세로 돌아섰네요 (현재 1542)&lt;/p&gt;
@@ -868,7 +1023,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;..라고 하시는 분들이 계실만도 한 것 같습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19211021</guid><pubDate>Wed, 17 Jun 2026 17:18:17 GMT</pubDate></item><item><title>지금 반도체는 보유자의 영역같아요...[16][1]</title><link>https://www.clien.net/service/board/park/19211675</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19211021</guid><pubDate>Wed, 17 Jun 2026 17:18:17 GMT</pubDate></item><item><title>지금 반도체는 보유자의 영역같아요...[17][1]</title><link>https://www.clien.net/service/board/park/19211675</link><description>
  
  
   &lt;p&gt;들어가고 싶은데 무서워서 못 들어가겠네요....ㅜㅜ&lt;/p&gt;
@@ -934,7 +1089,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;스팸은 돼지의 하위호환 아닙니까?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211662</guid><pubDate>Thu, 18 Jun 2026 22:54:56 GMT</pubDate></item><item><title>뉴동형들도 부정못하는 사실[83][33]</title><link>https://www.clien.net/service/board/park/19211661</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211662</guid><pubDate>Thu, 18 Jun 2026 22:54:56 GMT</pubDate></item><item><title>뉴동형들도 부정못하는 사실[83][34]</title><link>https://www.clien.net/service/board/park/19211661</link><description>
  
  
   &lt;p&gt;뉴동형들은 허구헌날 겸공 매불쇼 욕하기 바쁘죠&lt;/p&gt;
@@ -1146,126 +1301,4 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;보지도 말고 댓글도 말고요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211642</guid><pubDate>Thu, 18 Jun 2026 21:53:18 GMT</pubDate></item><item><title>충격파랑 도수치료 필요하신 분들은 빨리 받으세요[12][1]</title><link>https://www.clien.net/service/board/park/19211637</link><description>
- 
- 
-  &lt;p&gt;7월 1일부터 제한이 상당히 심해집니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;도수는 관리 급여로 들어가서 횟수 제한 생긴거는 전부터 이야기 나왔으니까 그런가보다하는데 갑자기 충격파 치료도 실비 제한이 생기네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;도수 치료는 년간 횟수 제한이 있고 받으려고 해도 2주동안 물리치료 4회 이상을 해야지 그 이후에 받을 수 있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;충격파는 일주일에 한번. 일년에 한부위 6회, 전체 15회 까지만 실비가 가능하고 그 이후에는 실비가 안될수 있다고 가이드 라인 나왔습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;7월 1일부터 시작이니까 그 사이에 실손보험으로 치료받으시려는 분들은 빨리 치료받으세요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211637</guid><pubDate>Thu, 18 Jun 2026 21:32:03 GMT</pubDate></item><item><title>달팽이 먹인거 왜 신고했냐면서 2차 가해에 등교 포기한 학폭 피해자[7][5]</title><link>https://www.clien.net/service/board/park/19211634</link><description>
- 
- 
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/CBxtSwDxOkg" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;요즘 애들은 취재가 시작되자도 안통하네요.&lt;/p&gt;
-  &lt;p&gt;교권국처럼 신상 박제와 미래 취업도 못하게 해놔야 할까요?ㅡㅡ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211634</guid><pubDate>Thu, 18 Jun 2026 21:17:09 GMT</pubDate></item><item><title>이언주 의원 이 인터뷰는 사전투표 폐지 주장일까요[13][2]</title><link>https://www.clien.net/service/board/park/19211632</link><description>
- 
- 
-  &lt;p style="user-select: auto*;"&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;&lt;br style="user-select: auto*;"/&gt;&lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;▲ 김능구&amp;gt; 부정 선거는 계속 사전 투표를 문제 삼고 있다. &lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;△ 이언주&amp;gt; 그렇다. 이건 제 생각이다. 저는 '본 선거를 이틀 하면 안 되나?' &lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;▲ 김능구&amp;gt; 그런 주장도 있더라. &lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;△ 이언주&amp;gt; '그러면 되잖아. 그러면 직장인들이 어려워? 그러면 본 선거 이틀 하면서 이틀 할 때 첫날에 밤늦게까지 해. 밤늦게 한 10시, 12시까지 하면 되잖아. 그 대신에 선관위 직원들 밤늦게까지 왜 못해, 야근하면 되지. 남들 다 하는데. &lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;▲ 김능구&amp;gt; 본 선거 이틀이면 이틀 다 쉬는 건가? 지금은 전체가 쉰다. &lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;△ 이언주&amp;gt; 하루만 쉬어야 될 거다. 그렇지만 예를 들면 밤늦게까지 하면  야근을 선관위 직원들이 하면 직장 끝나고 밤에 투표하면 된다, 직장인들은. 그래서 12시까지 하면 되는 거다. &lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;▲ 김능구&amp;gt; 지금 민주당도 송파에 나가야 되는 거 아닌가? &lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;△ 이언주&amp;gt; 전 나가야 된다고 생각한다. &lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;▲ 김능구&amp;gt; 국힘만 나가고 있는 것 같다. &lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;△ 이언주&amp;gt; 저 이번 주말에 나가보려 한다. &lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;&lt;br style="user-select: auto*;"/&gt;&lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;---&lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;&lt;br style="user-select: auto*;"/&gt;&lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;맥락상 사전투표를 본투표 이틀제로 대체하자는 주장으로 읽히네요...&lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;&lt;br style="user-select: auto*;"/&gt;&lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;보니까 단순히 직장인 퇴근 후 투표 편의만 해결하면 된다는 듯이 말씀하시는데, 타지역 체류하는 분들에 대한 대안은 무엇일까요.&lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;&lt;br style="user-select: auto*;"/&gt;&lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;아까 보니까 국민의힘 일부 의원들이 부재자투표를 대안으로 제시하고 있던데... &lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;사전투표의 보관, 이송, 관리 과정이 불안해서 없애자는 논리라면, 부재자투표도 같은 문제에서 자유롭지 않을텐데... 국민의힘은 그걸 왜 대안으로 제시하는지 모르겠습니다. 뭐 이것저것 떠나서 어차피 부정선거론자들이 부재자투표도 똑같이 계속 반대할테고 말입니다. 별 의미가 없지요.&lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;&lt;br style="user-select: auto*;"/&gt;&lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt;그리고 무엇보다도 부정선거론자들이 사전투표를 공격한다고 해서, 그 불신에 끌려가듯 제도를 후퇴시키는 게 과연 맞는지도 모르겠습니다.&lt;/p&gt;
-  &lt;p style="user-select: auto*;"&gt; &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211632</guid><pubDate>Thu, 18 Jun 2026 21:12:12 GMT</pubDate></item><item><title>여름 등산 복장은 긴팔 긴바지 필수 인가봐요. 조국 전대표가 무등산 노무현 길 갔다는[12][0]</title><link>https://www.clien.net/service/board/park/19211622</link><description>
- 
- 
-  &lt;p&gt;사진에 조국이 긴팔 셔츠, 긴바지 입고 있길래… 오늘 같은 날씨에도… 역시 보통 사람 아니구나 했는데, 같이 사진 찍은 시민분들..  등산준비 해 오신 분들인데, 대부분 긴옷에 잠바까지 입은 분도 있네요…  평지에서 조금만 움직여도 땀 흠뻑인데… 오르막을 긴옷과 함께… &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211622</guid><pubDate>Thu, 18 Jun 2026 20:55:03 GMT</pubDate></item><item><title>입당 이제 일본도 FSD 구독제로 전환[10][1]</title><link>https://www.clien.net/service/board/cm_car/19211414</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="IMG＿3692.jpg" class="fr-dib fr-fil full" data-file-sn="15756040" data-gif="false" data-img-height="2048" data-img-width="945" data-role="attach-image" src="https://edgio.clien.net/F01/2026/6/15756040/14c10747be8268.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="IMG＿3693.jpg" class="fr-dib fr-fil full" data-file-sn="15756041" data-gif="false" data-img-height="2048" data-img-width="945" data-role="attach-image" src="https://edgio.clien.net/F01/2026/6/15756041/14c10765df4f78.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;이제 일본도 7월부터 FSD 정식 서비스되나봅니다.&lt;/p&gt;
-  &lt;p&gt;이대로 가면 아시아에서 북한하고 우리나라만 자율주행 안될 수도 있겠네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19211414</guid><pubDate>Thu, 18 Jun 2026 13:13:04 GMT</pubDate></item><item><title>일본인들한테 이재명 대통령 G7 영상이 화제군요[15][27]</title><link>https://www.clien.net/service/board/park/19211639</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="SCR-20260618-ssqo.png" class="fr-dib fr-fil full" data-file-sn="15756425" data-gif="false" data-img-height="1016" data-img-width="1258" data-role="attach-image" src="https://edgio.clien.net/F01/2026/6/15756425/11fc00cc295c1d.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;조회수도 굉장히 높고, 비교가 되나봅니다.ㅎㅎ&lt;/p&gt;
-  &lt;p&gt;근데 우리도 윤씨가 있던 때엔....................ㅠ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211639</guid><pubDate>Thu, 18 Jun 2026 21:41:17 GMT</pubDate></item><item><title>이동형이 완전히 맛탱이 간 증거[75][93]</title><link>https://www.clien.net/service/board/park/19211635</link><description>
- 
- 
-  &lt;p&gt;이동형이 완전히 맛탱이 간 증거&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-    김어준, 최욱, 유시민 때려잡고 싶어서&lt;br/&gt;&lt;br/&gt;
-    윤석열 계엄 때도 안하던 짓을 한다는 거.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-    1. '건물 올려서 방송국 만들겠다'&lt;br/&gt;&lt;br/&gt;
-    2. 'YTN 힘 끌어다가 본격적으로 이겨 먹어보겠다'&lt;br/&gt;&lt;br/&gt;
-    3. '최욱은 앞으로 게스트 섭외 어려울 거다'라며&lt;br/&gt;
-    악덕 연예기획사 사장마냥 협박&lt;br/&gt;&lt;br/&gt;
-    4. 본인 발언력 높이고 싶어서 '나는 대통령과 친구사이다' 라며 천공스승, 건진법사 같은 정신나간 소리&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-    이명박 박근혜 때도 안하던 짓이고&lt;br/&gt;&lt;br/&gt;
-    심지어 윤석열 계엄 때도 안하던 짓을&lt;br/&gt;&lt;br/&gt;
-    같은 진영 김어준, 최욱, 유시민 때려잡으려고&lt;br/&gt;&lt;br/&gt;
-    하겠다는게 어이없어서 웃음만 나네요.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-    완전히 열등감 질투에 사로잡혀&lt;br/&gt;&lt;br/&gt;
-    과거에 자기가 쌓은 유산을 다 허무는 중.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-    심지어 본인 감정에 눈이 돌아서&lt;br/&gt;&lt;br/&gt;
-    자기랑 의리로 묶여서&lt;br/&gt;&lt;br/&gt;
-    편들어줄 수밖에 없는&lt;br/&gt;&lt;br/&gt;
-    동생들, 패널들 인생까지 다 조지는 중.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-    그 기력을 윤석열 잡는데 쏟았으면&lt;br/&gt;&lt;br/&gt;
-    벌써 사형당했을듯&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-    김어준 유시민 때려 잡아보려고&lt;br/&gt;&lt;br/&gt;
-    재래 언론이랑 손잡았다 실패한 대표인물이 진중권.&lt;br/&gt;&lt;br/&gt;&lt;br/&gt;
-    이동형도 곧 진 선배님 코스 밟을 거라 예상되네요.&lt;br/&gt;&lt;br/&gt;
-    최욱, 김어준 죽이고 싶어하는 재래언론이&lt;br/&gt;&lt;br/&gt;
-    이동형 발언 하나하나 펌핑해주고&lt;br/&gt;&lt;br/&gt;
-    동형이는 거기에 신나서 매일매일 중권화되겠죠.&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211635</guid><pubDate>Thu, 18 Jun 2026 21:18:30 GMT</pubDate></item><item><title>이동형이 말한 전 작가가 누군지 괜히 궁금해지네요[19][2]</title><link>https://www.clien.net/service/board/park/19211633</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="Screenshot 2026-06-18 at 9.08.48 PM.png" class="fr-dib fr-fil" data-file-sn="15756420" data-gif="false" data-img-height="395" data-img-width="448" data-role="attach-image" src="https://edgio.clien.net/F01/2026/6/15756420/11fa7be7b5ff54.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="Screenshot 2026-06-18 at 9.08.53 PM.png" class="fr-dib fr-fil" data-file-sn="15756421" data-gif="false" data-img-height="387" data-img-width="443" data-role="attach-image" src="https://edgio.clien.net/F01/2026/6/15756421/14db9216107169.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/OMXzAswIB_8?start=961" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;이동형이 말하길&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;매불쇼 전 작가가 본인 방송에서 &lt;/p&gt;
-  &lt;p&gt;이동형이 매불쇼 작가들을 다 땡겨가서&lt;/p&gt;
-  &lt;p&gt;휴방했다고 하는데.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그 매불쇼 전 작가란 분이 누군지랑 해당 방송이 궁금해지네요 ㅎㅎㅎ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211633</guid><pubDate>Thu, 18 Jun 2026 21:17:30 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19211642</guid><pubDate>Thu, 18 Jun 2026 21:53:18 GMT</pubDate></item></channel></rss>
