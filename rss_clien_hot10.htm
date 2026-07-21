@@ -1,5 +1,447 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Tue, 21 Jul 2026 15:01:11 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>입당 FSD HW3, HW4 램차이.[10][1]</title><link>https://www.clien.net/service/board/cm_car/19231160</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Tue, 21 Jul 2026 16:01:17 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>지름 회사 차량 입고[10][2]</title><link>https://www.clien.net/service/board/cm_car/19231684</link><description>
+ 
+ 
+  &lt;p&gt;역시 슈퍼카는 마린블루죠! &lt;/p&gt;
+  &lt;p&gt;2대나 뽑아봤습니다 &lt;/p&gt;
+  &lt;p&gt;얘네도 20만 넘게 타야죠 ㅎㅎ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19231684</guid><pubDate>Tue, 21 Jul 2026 10:56:29 GMT</pubDate></item><item><title>PC/모바일 개발자가 아니어도 개발하는 시대 3 - 10분만에 PDF 분할 프로그램 만들기[10][1]</title><link>https://www.clien.net/service/board/lecture/19230587</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="260719_5.png" class="fr-dib fr-fil" data-file-sn="15780632" data-gif="false" data-img-height="337" data-img-width="600" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15780632/1b7e80bb10ce2b.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;☐ 지난 글에서 AI로 개발하는 시대가 왔다는 이야기를 드렸는데,&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;이번에는 실제 사례를 하나 보여드리려고 합니다.&lt;/li&gt;
+   &lt;li&gt;제가 평소에 필요했던 프로그램을 codex에게 시켜서 직접 만들어본 과정입니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;왜 PDF 분할 프로그램이 필요했나&lt;/h2&gt;
+  &lt;p&gt;☐ 저는 PDF 분할 프로그램이 필요했습니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;100페이지짜리 문서에서 1-10페이지만 뽑아내서 쓰고 싶을 때가 종종 있거든요.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;☐ 지금까지는 ilovepdf 같은 웹사이트를 이용해왔습니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;그런데 내 문서를 외부 서버에 올려야 하니 개인정보 문제도 있고,&lt;/li&gt;
+   &lt;li&gt;쓸 때마다 조금은 찝찝하더군요.&lt;/li&gt;
+   &lt;li&gt;이 정도 간단한 프로그램이라면 AI에게 시켜서 내 컴퓨터에서만 돌아가는 걸 하나 만들면 되겠다 싶었습니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;시작 전 세팅&lt;/h2&gt;
+  &lt;p&gt;☐ 아주 어려운 일을 시킬 건 아니라서 모델은 5.6 sol, 중간 단계로 설정했습니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;그리고 작업할 기본 프로젝트 폴더가 하나 설정되어 있어야 하는 것 같습니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;☐ 한 가지 참고하실 점은, codex는 윈도우 앱으로 설치해야&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;로컬 파일을 건드릴 수 있는 권한이 생기는 것 같다는 점입니다.&lt;/li&gt;
+   &lt;li&gt;codex를 세팅하는 방법까지는 이 글에서는 생략하겠습니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;첫 번째 프롬프트 - 2분 30초 만에 완성&lt;/h2&gt;
+  &lt;p&gt;☐ 첫 프롬프트는 이렇게 던졌습니다.&lt;/p&gt;
+  &lt;blockquote&gt;
+   &lt;p&gt;pdf 페이지 분할해주는 프로그램 파이썬 GUI로 만들 수 있니?&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;☐ 2분 30초 만에 만들어줬습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="260719_3.png" class="fr-dib fr-fil full" data-file-sn="15780635" data-gif="false" data-img-height="551" data-img-width="875" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15780635/1b7e945e143588.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;☐ 그냥 만들라고 했을 뿐인데 sampdf 같은 프로그램과 비슷한 모양새로 벌써 다 뽑아주네요.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;대단합니다. 다만 써보니 기능 개선이 좀 필요했습니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;두 번째 프롬프트 - 기능 개선 요청&lt;/h2&gt;
+  &lt;p&gt;☐ 이번에는 고치고 싶은 것들을 한꺼번에 적어서 시켰습니다.&lt;/p&gt;
+  &lt;blockquote&gt;
+   &lt;p&gt;기본저장폴더를 만들게 ini 파일을 만들어줘. ini 에 c:\users\user\Documents\ 이걸로 기본저장 폴더했으면 좋겠어. 페이지 범위로 나누기에서 기본값음 비워줘. PDF 파일은 드래그앤드롭이 가능하게 해줘.&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;☐ 1분 40초 동안 작업을 하더니, 와, 벌써 끝나버렸습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;☐ 이걸 파이썬으로 직접 짜려고 했다면 GUI까지 붙여서 몇 시간은 걸릴 일입니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;그런데 프롬프트 두 번, 10분이면 끝나는군요.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="260719_4.png" class="fr-dib fr-fil full" data-file-sn="15780634" data-gif="false" data-img-height="633" data-img-width="760" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15780634/183f2b99f5e075.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;완성된 프로그램의 모습입니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h2&gt;개인 유틸리티 정도는 PLUS로도 충분합니다&lt;/h2&gt;
+  &lt;p&gt;☐ codex도 사용량 제한이 있기는 합니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;하지만 이렇게 개인적으로 쓸 유틸리티 정도를 만드는 데는&lt;/li&gt;
+   &lt;li&gt;PLUS 요금제로도 충분한 것 같습니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;☐ 필요한 게 생기면 그 자리에서 직접 만들어 쓰는 것.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;예전 같으면 개발자에게 부탁하거나 유료 프로그램을 찾아다녀야 했던 일이&lt;/li&gt;
+   &lt;li&gt;이제는 프롬프트 몇 줄이면 됩니다.&lt;/li&gt;
+   &lt;li&gt;정말 좋은 세상이네요.&lt;/li&gt;
+  &lt;/ul&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19230587</guid><pubDate>Sun, 19 Jul 2026 23:14:24 GMT</pubDate></item><item><title>보완수사권도 싫고, 정청래도 별로고, 김민석도 별로인데요....[16][2]</title><link>https://www.clien.net/service/board/park/19231916</link><description>
+ 
+ 
+  &lt;p&gt;어째든...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;보완수사권만 폐지해주면 누구라도 차선으로 좋다고 생각하는데...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;인물들이 마땅하지가 않다는 생각이 드는 건 저뿐인가요....&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231916</guid><pubDate>Tue, 21 Jul 2026 15:45:16 GMT</pubDate></item><item><title>아이고야 정민철 신세대네요 테슬라도 타고 다니고[26][6]</title><link>https://www.clien.net/service/board/park/19231915</link><description>
+ 
+ 
+  &lt;p&gt;정민철 최고위원 후보 &lt;/p&gt;
+  &lt;p&gt;능력자네요 주식 투자도 하고&lt;/p&gt;
+  &lt;p&gt;이런 청년이 &lt;/p&gt;
+  &lt;p&gt;최고위원 기탁금 2천만원은 없었나 보내요&lt;/p&gt;
+  &lt;p&gt;최고위원에 정 나가고 싶었으면 &lt;/p&gt;
+  &lt;p&gt;테슬라 팔았으면 됐을텐데,,&lt;/p&gt;
+  &lt;p&gt;그건 너무 야비하긴 하네요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그 친구 방송사 출연, 유튜브 출연하려면&lt;/p&gt;
+  &lt;p&gt;차는 하나 있어야 하니 말이죠,&lt;/p&gt;
+  &lt;p&gt;대통령님이 제기하셔서 민주당에서 기탁금 &lt;/p&gt;
+  &lt;p&gt;내렸다고 하니,,걱정은 덜었내요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그나저나 8위 안에는 들어야&lt;/p&gt;
+  &lt;p&gt;멋진 정민철 후보 연설을 들을 수 있을텐데,,&lt;/p&gt;
+  &lt;p&gt;선전을 기원합니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/rA1uuslh31w?start=23" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231915</guid><pubDate>Tue, 21 Jul 2026 15:42:22 GMT</pubDate></item><item><title>정청래가 선을 넘긴 하네요.[19][14]</title><link>https://www.clien.net/service/board/park/19231911</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;전당대회에서 고소고발 드립이라뇨. 이건 정말 어디까지 망가질 셈인지 가늠하기가 어려운 수준이로군요. &lt;/p&gt;
+  &lt;p&gt;이사람 방금 또 반명사이트에다 글 썼던데 이재명 지킨다는 양반이 그게 할 짓은 아니죠&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231911</guid><pubDate>Tue, 21 Jul 2026 15:25:28 GMT</pubDate></item><item><title>[속보] '종합특검 연장법' 與 주도 의결…8월 23일까지 수사 연장[8][14]</title><link>https://www.clien.net/service/board/park/19231910</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/421/0009070867?sid=100" ori-url="https://n.news.naver.com/mnews/article/421/0009070867?sid=100" target="_blank"&gt;[속보] '종합특검 연장법' 與 주도 의결…8월 23일까지 수사 연장&lt;/a&gt;  | 뉴스1&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_8906057.png" class="fr-dib fr-fil full" data-file-sn="15782171" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15782171/1c08a821b2e841.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="videoframe_8928836.png" class="fr-dib fr-fil full" data-file-sn="15782172" data-gif="false" data-img-height="1080" data-img-width="1920" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15782172/18c94308037a24.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/032/0003459393?sid=102" ori-url="https://n.news.naver.com/mnews/article/032/0003459393?sid=102" target="_blank"&gt;[단독]유병호, 윤석열을 ‘두목’이라 부른 메모 포착···“반대파 청소하려면 권한 필요” 승진 청탁 정황&lt;/a&gt; | 경향신문&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/437/0000502227?sid=102" ori-url="https://n.news.naver.com/mnews/article/437/0000502227?sid=102" target="_blank"&gt;[단독] "자료 요청 공문 보내지 마라"…특검, 대통령실이 유병호에 청탁 정황 포착&lt;/a&gt; | JTBC&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231910</guid><pubDate>Tue, 21 Jul 2026 15:23:15 GMT</pubDate></item><item><title>[속보] '고문 기술자' 이근안 포상 취소‥부적절 서훈 198점 취소안 의결[2][14]</title><link>https://www.clien.net/service/board/park/19231908</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/214/0001512919?sid=102" ori-url="https://n.news.naver.com/mnews/article/214/0001512919?sid=102" target="_blank"&gt;[속보] '고문 기술자' 이근안 포상 취소‥부적절 서훈 198점 취소안 의결&lt;/a&gt;  | MBC&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;포상 취소 대상에는 군사 정권 시절 강압 수사를 주도해 '고문 기술자'로 악명을 떨친 이근안을 비롯해 박처원과 백남은, 김수현 등이 포함된 것으로 확인됐습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/KmoyVc6s5DI" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/032/0003459435?sid=100" ori-url="https://n.news.naver.com/mnews/article/032/0003459435?sid=100" target="_blank"&gt;[속보] 5·18 진압, 12·12 반란 가담자 등 167명 정부포상 취소…‘고문 경찰’ 박처원·이근안 포함&lt;/a&gt; | 경향신문&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;h4&gt;반헌법적 행위, 간첩조작사건 관련자 등 부적절한 정부포상 대대적 취소&lt;/h4&gt;
+  &lt;p&gt;&lt;strong&gt;- 12.12, 5.18 및 계엄업무(1980~1981년) 관련자 76명의 정부포상 76점,간첩조작사건 등 관련자 91명의 정부포상 122점 등 총 198점 취소&lt;/strong&gt;&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;정부는 &lt;span lang="EN-US"&gt;12.12, 5.18 &lt;/span&gt;및 계엄업무&lt;span lang="EN-US"&gt;(&lt;/span&gt;&lt;span lang="EN-US"&gt;1980~1981&lt;/span&gt;년&lt;span lang="EN-US"&gt;)&lt;/span&gt;&lt;span lang="EN-US"&gt; &lt;/span&gt;관련자와 간첩조작사건 관련자 등에게 수여되었던 부적절한 정부포상을 대대적으로 취소한다&lt;span lang="EN-US"&gt;.&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p&gt;행정안전부는 &lt;span lang="EN-US"&gt;21&lt;/span&gt;일 개최된 제&lt;span lang="EN-US"&gt;31&lt;/span&gt;회 국무회의에서 이러한 내용을 담은 서훈&lt;span lang="EN-US"&gt; &lt;/span&gt;취소&lt;span lang="EN-US"&gt;(&lt;/span&gt;안&lt;span lang="EN-US"&gt;)&lt;/span&gt;이 심의&lt;span lang="EN-US"&gt;·&lt;/span&gt;의결되었다고 밝혔다&lt;span lang="EN-US"&gt;.&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p&gt;이번에 취소되는 정부포상은 총 &lt;span lang="EN-US"&gt;167&lt;/span&gt;명 &lt;span lang="EN-US"&gt;198&lt;/span&gt;점으로 ①&lt;span lang="EN-US"&gt;12.12, 5.18 &lt;/span&gt;및 계엄업무 관련자가 &lt;span lang="EN-US"&gt;1980~1981&lt;/span&gt;년에 수여 받았던 무공훈&lt;span lang="EN-US"&gt;·&lt;/span&gt;포장 &lt;span lang="EN-US"&gt;76&lt;/span&gt;명 &lt;span lang="EN-US"&gt;76&lt;/span&gt;점&lt;span lang="EN-US"&gt;(&lt;/span&gt;국방부&lt;span lang="EN-US"&gt; &lt;/span&gt;소관&lt;span lang="EN-US"&gt;)&lt;/span&gt;&lt;span lang="EN-US"&gt;, &lt;/span&gt;②&lt;span lang="EN-US"&gt;1960~1990&lt;/span&gt;년대 발생했던 간첩조작사건 등 관련자가 수여 받았던 훈&lt;span lang="EN-US"&gt;·&lt;/span&gt;포장과 대통령표창&lt;span lang="EN-US"&gt;·&lt;/span&gt;국무총리표창 &lt;span lang="EN-US"&gt;20&lt;/span&gt;명 &lt;span lang="EN-US"&gt;36&lt;/span&gt;점&lt;span lang="EN-US"&gt;(&lt;/span&gt;경찰청 소관&lt;span lang="EN-US"&gt;), &lt;/span&gt;&lt;span lang="EN-US"&gt;71&lt;/span&gt;명 &lt;span lang="EN-US"&gt;86&lt;/span&gt;점&lt;span lang="EN-US"&gt;(&lt;/span&gt;국정원&lt;span lang="EN-US"&gt; &lt;/span&gt;소관&lt;span lang="EN-US"&gt;) &lt;/span&gt;이다&lt;span lang="EN-US"&gt;.&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;&lt;span lang="EN-US"&gt;&amp;gt;&amp;gt; &lt;/span&gt;국민적 상식과 헌법 가치에 부합하는 철저한 다부처 검증체계 가동&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p&gt;그간 상훈 총괄부처인 행정안전부는 각 관계기관과 함께 국민 눈높이에 맞지 않는 반헌법적 행위와 간첩조작사건 등 관련자의 부적절한 정부포상 취소를 위해 긴밀하게 협업을 추진해 왔다&lt;span lang="EN-US"&gt;. &lt;/span&gt;행정안전부는 상훈 기록&lt;span lang="EN-US"&gt;, &lt;/span&gt;국무회의 기록 등 각종 자료를 관계기관에 수시로 제공했다&lt;span lang="EN-US"&gt;. &lt;/span&gt;아울러&lt;span lang="EN-US"&gt;, &lt;/span&gt;정기적으로&lt;span lang="EN-US"&gt; &lt;/span&gt;회의를 개최하여 이행상황을 점검했으며&lt;span lang="EN-US"&gt;, &lt;/span&gt;관계기관&lt;span lang="EN-US"&gt;(&lt;/span&gt;국방부&lt;span lang="EN-US"&gt;, &lt;/span&gt;경찰청&lt;span lang="EN-US"&gt;, &lt;/span&gt;국정원&lt;span lang="EN-US"&gt;)&lt;/span&gt;은 관련자의 거짓공적 등 취소사유에 대한 상세한 검토&lt;span lang="EN-US"&gt;, &lt;/span&gt;당사자 사전통지&lt;span lang="EN-US"&gt;, &lt;/span&gt;공적심사위원회 개최 등 취소 관련 행정절차를 진행해 왔다&lt;span lang="EN-US"&gt;.&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;&lt;span lang="EN-US"&gt;&amp;gt;&amp;gt; &lt;/span&gt;인권침해와 위법 행위로 인한 과거 잘못된 포상의 전면 박탈&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p&gt;구체적으로 살펴보면 &lt;span lang="EN-US"&gt;12.12, 5.18 &lt;/span&gt;및 계엄업무 관련자의 경우&lt;span lang="EN-US"&gt;, &lt;/span&gt;무공훈‧포장&lt;span lang="EN-US"&gt; &lt;/span&gt;수여요건을 갖추지 못하였음에도 부당하게 수여된 정부포상을 취소하는 것이다&lt;span lang="EN-US"&gt;. ‘&lt;/span&gt;국가안전보장 유공&lt;span lang="EN-US"&gt;’&lt;/span&gt;으로 서훈받은 &lt;span lang="EN-US"&gt;42&lt;/span&gt;명은 이들의 근무경력과 당시&lt;span lang="EN-US"&gt; &lt;/span&gt;대간첩작전기록 등을 검증한 결과&lt;span lang="EN-US"&gt;, ‘&lt;/span&gt;전투에 준하는 직무수행&lt;span lang="EN-US"&gt;(&lt;/span&gt;무공훈장&lt;span lang="EN-US"&gt;)’ &lt;/span&gt;및 &lt;span lang="EN-US"&gt;‘&lt;/span&gt;국토방위에 헌신ㆍ노력&lt;span lang="EN-US"&gt;(&lt;/span&gt;무공포장&lt;span lang="EN-US"&gt;)’&lt;/span&gt;한 공적이 없음이 확인되었고&lt;span lang="EN-US"&gt;, ‘&lt;/span&gt;계엄업무 유공&lt;span lang="EN-US"&gt;’&lt;/span&gt;으로 서훈받은 &lt;span lang="EN-US"&gt;34&lt;/span&gt;명은 해당 계엄업무가 이미 &lt;span lang="EN-US"&gt;‘&lt;/span&gt;국헌문란 및 내란행위&lt;span lang="EN-US"&gt;’&lt;/span&gt;로&lt;span lang="EN-US"&gt; &lt;/span&gt;사법적 평가가 확정되었기 때문에 국방부에서 해당 정부포상을 거짓공적으로 검토했다&lt;span lang="EN-US"&gt;.&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p&gt;다음으로 간첩조작사건 등 관련자의 경우&lt;span lang="EN-US"&gt;, &lt;/span&gt;법원에서 해당 사건에 대한 재심&lt;span lang="EN-US"&gt; &lt;/span&gt;무죄 확정 등에 따라 간첩조작 등 위법 사실이 확인되어 이와 관련된 정부포상을 거짓공적으로 취소하는 것이다&lt;span lang="EN-US"&gt;. &lt;/span&gt;경찰청은 불법체포&lt;span lang="EN-US"&gt;, &lt;/span&gt;구금 및 가혹행위가 확인된 일명 &lt;span lang="EN-US"&gt;‘&lt;/span&gt;남민전 사건&lt;span lang="EN-US"&gt;’&lt;/span&gt;&lt;span lang="EN-US"&gt;(&lt;/span&gt;남조선민족해방전선 준비위원회 검거사건&lt;span lang="EN-US"&gt;)&lt;/span&gt;&lt;span lang="EN-US"&gt; &lt;/span&gt;등 &lt;span lang="EN-US"&gt;5&lt;/span&gt;개 사건을 대상으로 &lt;span lang="EN-US"&gt;20&lt;/span&gt;명 &lt;span lang="EN-US"&gt;36&lt;/span&gt;점의 부적절한 정부포상을 확인했다&lt;span lang="EN-US"&gt;. &lt;/span&gt;국가정보원은 역시 수사절차 위반&lt;span lang="EN-US"&gt;, &lt;/span&gt;인권침해와 같은 위법사실이 확인된 재일동포&lt;span lang="EN-US"&gt; &lt;/span&gt;간첩사건&lt;span lang="EN-US"&gt;, &lt;/span&gt;보성 가족 간첩단 사건&lt;span lang="EN-US"&gt;, &lt;/span&gt;제주 모녀 간첩 사건 등 &lt;span lang="EN-US"&gt;19&lt;/span&gt;개 사건을 대상으로 &lt;span lang="EN-US"&gt;71&lt;/span&gt;명 &lt;span lang="EN-US"&gt;86&lt;/span&gt;점의 부적절한 정부포상을 확인했다&lt;span lang="EN-US"&gt;.&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p&gt;한편 이번 정부포상 취소는 올해 &lt;span lang="EN-US"&gt;1&lt;/span&gt;월 구미유학생 간첩단 사건&lt;span lang="EN-US"&gt;, &lt;/span&gt;인천 미법도&lt;span lang="EN-US"&gt; &lt;/span&gt;간첩 사건&lt;span lang="EN-US"&gt;, &lt;/span&gt;구로농지 소송사기사건 등 관련자의 보국훈장 등 &lt;span lang="EN-US"&gt;11&lt;/span&gt;점 취소&lt;span lang="EN-US"&gt;(&lt;/span&gt;국정원 소관&lt;span lang="EN-US"&gt;) &lt;/span&gt;및 &lt;span lang="EN-US"&gt;3&lt;/span&gt;월 &lt;span lang="EN-US"&gt;12.12 &lt;/span&gt;군사반란 가담자의 무공훈장 &lt;span lang="EN-US"&gt;10&lt;/span&gt;점 취소&lt;span lang="EN-US"&gt;(&lt;/span&gt;국방부 소관&lt;span lang="EN-US"&gt;)&lt;/span&gt;에 이어 세 번째로 이루어지는 것으로서&lt;span lang="EN-US"&gt;, &lt;/span&gt;정부는 앞으로도 정부포상의 영예성을 위해 반헌법적 행위 및 간첩조작사건 등과 관련된 부적절한 정부포상에 대해 적극 발굴하고 지속적으로 취소해 나갈 계획이다&lt;span lang="EN-US"&gt;.&lt;/span&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231908</guid><pubDate>Tue, 21 Jul 2026 15:21:25 GMT</pubDate></item><item><title>정청래 찍으신분들 모여봐요~[27][45]</title><link>https://www.clien.net/service/board/park/19231907</link><description>
+ 
+ 
+  &lt;p&gt;저요!!!&lt;/p&gt;
+  &lt;p&gt;정청래  최민희  이성윤 찍었어요 &lt;/p&gt;
+  &lt;p&gt;화이팅!!!&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231907</guid><pubDate>Tue, 21 Jul 2026 15:19:14 GMT</pubDate></item><item><title>가짜뉴스 뿌리다가. 민증에 빨간줄 갈 수 있습니다.(feat. 인생실전)[7][7]</title><link>https://www.clien.net/service/board/park/19231906</link><description>
+ 
+ 
+  &lt;p style="user-select: auto*;"&gt;공직선거법과 가짜뉴스에 대한 처벌이 강화되고 있습니다.&lt;/p&gt;
+  &lt;p style="user-select: auto*;"&gt;장난질 치다가 골로가요. 요새 법 무섭습니다.&lt;/p&gt;
+  &lt;p style="user-select: auto*;"&gt;적당히 하세요. 경험해보고 하는 말입니다.&lt;/p&gt;
+  &lt;p style="user-select: auto*;"&gt;&lt;br style="user-select: auto*;"/&gt;&lt;/p&gt;
+  &lt;p style="user-select: auto*;"&gt;내일부터 신고할께요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231906</guid><pubDate>Tue, 21 Jul 2026 15:18:56 GMT</pubDate></item><item><title>갤럭시 폴더블 시리즈 가격 나왔나보네요.[23][0]</title><link>https://www.clien.net/service/board/park/19231902</link><description>
+ 
+ 
+  &lt;p style="margin-bottom: 0px; padding: 0px; line-height: 28.424px; color: rgb(51, 51, 51); font-family: sans-serif; font-size: 16.72px; background-color: rgb(255, 255, 255);"&gt;&lt;strong&gt;Z Flip8 (핑크, 그라파이트, 크림)&lt;/strong&gt;&lt;br/&gt;
+    - 256GB 1,683,000&lt;br/&gt;
+    - 512GB 1,936,000&lt;/p&gt;
+  &lt;p style="margin-bottom: 0px; padding: 0px; line-height: 28.424px; color: rgb(51, 51, 51); font-family: sans-serif; font-size: 16.72px; background-color: rgb(255, 255, 255);"&gt; &lt;/p&gt;
+  &lt;p style="margin-bottom: 0px; padding: 0px; line-height: 28.424px; color: rgb(51, 51, 51); font-family: sans-serif; font-size: 16.72px; background-color: rgb(255, 255, 255);"&gt;&lt;strong&gt;Z Fold8 (라벤더, 그라파이트, 크림)&lt;/strong&gt;&lt;br/&gt;
+    - 256GB 2,278,100&lt;br/&gt;
+    - 512GB 2,531,100&lt;br/&gt;
+    - 1TB 3,152,600&lt;/p&gt;
+  &lt;p style="margin-bottom: 0px; padding: 0px; line-height: 28.424px; color: rgb(51, 51, 51); font-family: sans-serif; font-size: 16.72px; background-color: rgb(255, 255, 255);"&gt; &lt;/p&gt;
+  &lt;p style="margin-bottom: 0px; padding: 0px; line-height: 28.424px; color: rgb(51, 51, 51); font-family: sans-serif; font-size: 16.72px; background-color: rgb(255, 255, 255);"&gt;&lt;strong&gt;Z Fold8 Ultra (그라파이트, 테크노바이올렛, 크림)&lt;/strong&gt;&lt;br/&gt;
+    - 256GB 2,577,300&lt;br/&gt;
+    - 512GB 2,830,300&lt;br/&gt;
+    - 1TB 3,451,800&lt;/p&gt;
+  &lt;p style="margin-bottom: 0px; padding: 0px; line-height: 28.424px; color: rgb(51, 51, 51); font-family: sans-serif; font-size: 16.72px; background-color: rgb(255, 255, 255);"&gt; &lt;/p&gt;
+  &lt;p style="margin-bottom: 0px; padding: 0px; line-height: 28.424px; color: rgb(51, 51, 51); font-family: sans-serif; font-size: 16.72px; background-color: rgb(255, 255, 255);"&gt;※ 1TB 구매 시 512GB와의 출고가 차액의 50% 부담&lt;/p&gt;
+  &lt;p style="padding: 0px; line-height: 28.424px; color: rgb(51, 51, 51); font-family: sans-serif; font-size: 16.72px; background-color: rgb(255, 255, 255);"&gt;※ 512GB 구매 시 256GB 출고가로 구매 가능&lt;/p&gt;
+  &lt;p style="padding: 0px; line-height: 28.424px; color: rgb(51, 51, 51); font-family: sans-serif; font-size: 16.72px; background-color: rgb(255, 255, 255);"&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p style="padding: 0px; line-height: 28.424px; color: rgb(51, 51, 51); font-family: sans-serif; font-size: 16.72px; background-color: rgb(255, 255, 255);"&gt;울트라가 기존 폴드 모델입니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231902</guid><pubDate>Tue, 21 Jul 2026 15:07:49 GMT</pubDate></item><item><title>김총리님은 어서 신천지, 이중당적 수사의뢰를 해주세요[29][25]</title><link>https://www.clien.net/service/board/park/19231901</link><description>
+ 
+ 
+  &lt;p&gt;당대표 선거가 중요합니까.&lt;/p&gt;
+  &lt;p&gt;민주당이 중요한 겁니까. 왜 민주당을 신천지당으로 만들려합니까.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;민주당을 진짜 위한다면, 무슨 신천지가 비밀 암약하고 있다고 이상한 소리하지말고, 바로 수사의뢰하세요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;저도 신천지가 민주당에 있으면 짜증날거 같으니까요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;윤석열 정부때야 행정부가 우리가 아니니 수사도 진척이 없을텐데&lt;/p&gt;
+  &lt;p&gt;지금이야 이재명 정부인데 신천지 조사, 수사도 못할까봐요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;뭐 아는 거 있으면 지금 바로 신천지 좀 없애주세요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;저는 정청래 찍긴 했지만, 신천지는 싫거든요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231901</guid><pubDate>Tue, 21 Jul 2026 15:06:43 GMT</pubDate></item><item><title>임기초 지지율이 빠르게 내려간 대통령[10][0]</title><link>https://www.clien.net/service/board/park/19231900</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;원인은 다르지만&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;지지율만 보면 임기초에 지지율이 빠르게 내려간 대통령&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이명박&lt;/p&gt;
+  &lt;p&gt;노무현&lt;/p&gt;
+  &lt;p&gt;윤석열&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이렇게 3명이 최고죠?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이재명 대통령은 아직 절대값이 높으니 저정돈 아닌것 같고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;앞으로가 어떻게 될지 모르겠네요......&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;클량 분위기가 바뀌고 있는게 분탕유저들 때문인지&lt;/p&gt;
+  &lt;p&gt;실제로 지지율이 낮아지는것을 보여주는 단면인지&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;약간 헷갈리긴 하네요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231900</guid><pubDate>Tue, 21 Jul 2026 15:06:26 GMT</pubDate></item><item><title>중국 AI들의 약진을 보면서 느끼는 점...[22][4]</title><link>https://www.clien.net/service/board/park/19231899</link><description>
+ 
+ 
+  &lt;p&gt;제가 사용하는 AI는 다음과 같습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;클로드 맥스 20x - $200 (약 29만원)/월 &lt;/p&gt;
+  &lt;p&gt;ChatGPT Pro - 299,000원/월&lt;/p&gt;
+  &lt;p&gt;Kimi Vivace - $200 (약 29만원)/월 &lt;/p&gt;
+  &lt;p&gt;GLM Coding Plan - $384 (약 56만원)/3개월&lt;/p&gt;
+  &lt;p&gt;Alibaba Cloud Token Plan Pro - $770 (약 116만원)/년&lt;br/&gt;
+    &amp;gt; Qwen/GLM/DeepSeek 포함&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;다합치면 월 120만원 정도 쓰네요. 물론 이건 현재 테스트용으로 토큰 맥싱하고 있어서 쓰는거긴합니다. 이번달/다음달 쯔음에 몇몇은 해지할 예정입니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;소위 말하는 프론티어 모델들 (클로드/코덱스)을 써보면 너무 좋은데, 가끔 제 생각대로 따라주지 못하는 느낌이 있습니다. 생각이 엉뚱한곳으로 넘어간달까요. &lt;/p&gt;
+  &lt;p&gt;중국 모델들은 소위 증류했다고들 하는데, 아예 증류를 안했다 이건아니지만, UI에 대한 이해도 같은게 프론티어 모델들보다 뛰어납니다. 특히 kimi k3는... 대박이라는 소리가 나와요. UI 구성이 오... &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;특히나 이것들을 다 개별로 쓰는게 아니라, 특정 하네스로 다 묶어서 업무별로 분배해서 테스트해보고 그러니 잘하는것들이 따로 있더라구요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="Screenshot 2026-07-21 at 12.58.56 PM.png" class="fr-dib fr-fil full" data-file-sn="15782152" data-gif="false" data-img-height="512" data-img-width="2306" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15782152/35b1b648659f6c.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="Screenshot 2026-07-21 at 12.59.24 PM.png" class="fr-dib fr-fil full" data-file-sn="15782154" data-gif="false" data-img-height="632" data-img-width="1618" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15782154/35b1bca7ff4c11.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="Screenshot 2026-07-21 at 12.59.39 PM.png" class="fr-dib fr-fil full" data-file-sn="15782155" data-gif="false" data-img-height="828" data-img-width="2896" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15782155/35b1c03636eb9b.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;다만 씁쓸한 점은 결국에 승자는 중국이 될것 같다는것입니다. 뭐랄까... 자동차 같은 느낌이에요. BYD 욕하고 후지다고 했지만 막상 해외진출해보니 가성비로 괜찮은 평을 받는? AI도 비슷한듯요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아참, 알리바바 클라우드 770달러짜리에 glm이 있는데 왜 glm 코딩플랜이 있으면서도 이걸 결제했는지 궁금하신 분들이 있을텐데요, Kimi의 운영사인 문샷의 최대 투자처 중 한곳이 알리바바라는것만 말씀드립니다 ㅎㅎㅎ 조만간 저 플랜 안에 kimi가 포함될 가능성이 있어서, 저 가격에 glm+deepseek+qwen에 키미까지 들어가면 진짜 갓갓갓성비이지 싶어요. &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231899</guid><pubDate>Tue, 21 Jul 2026 15:06:45 GMT</pubDate></item><item><title>종교행사장에서 만세하는 정청래 당대표 후보[33][7]</title><link>https://www.clien.net/service/board/park/19231894</link><description>
+ 
+ 
+  &lt;p&gt;대한민국 만세?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231894</guid><pubDate>Tue, 21 Jul 2026 15:03:03 GMT</pubDate></item><item><title>무당층이 김민석을 싫어하는 이유,[22][10]</title><link>https://www.clien.net/service/board/park/19231893</link><description>
+ 
+ 
+  &lt;p&gt;평상시는 민주당 당대표 관심 없어요.&lt;/p&gt;
+  &lt;p&gt;이왕이면 대선 때, 기분 좋게 표 줄 사람이길 바랄뿐.&lt;/p&gt;
+  &lt;p&gt;가령, 이낙연보다는 이재명 이런거겠죠.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그런데,&lt;/p&gt;
+  &lt;p&gt;이번 전당대회는 총선도 멀고 대선은 더 멀고 그럼에도&lt;/p&gt;
+  &lt;p&gt;관심이 갑니다. 김민석이 안 되길 바라는 마음으로요.&lt;/p&gt;
+  &lt;p&gt;김민석 싫어하는 이유는 저마다 각양각색이지만,&lt;/p&gt;
+  &lt;p&gt;나는 김민석 주변에 붙어있는 스피커들이 &lt;/p&gt;
+  &lt;p&gt;하나같이 맘에 안 들고 짜치고 혐오스러워서 &lt;/p&gt;
+  &lt;p&gt;김민석이 떨어지길 진정 바랍니다. &lt;/p&gt;
+  &lt;p&gt;특히 김두일같은 사람이 무지성 지지하는 &lt;/p&gt;
+  &lt;p&gt;이유만으로도요.&lt;/p&gt;
+  &lt;p&gt;뭐 당적없는 내 견해야 콧방귀 낄테지만&lt;/p&gt;
+  &lt;p&gt;지지한답시고 둘러싼 그들 면면이 참 그럴 듯하여,&lt;/p&gt;
+  &lt;p&gt;유심히 지켜보는 바입니다요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231893</guid><pubDate>Tue, 21 Jul 2026 15:01:05 GMT</pubDate></item><item><title>K-축구 혁신위 3차 회의 후 해버지 인터뷰[2][5]</title><link>https://www.clien.net/service/board/park/19231883</link><description>
+ 
+ 
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/2XlSrnAUgik" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;축구팬들의 지지를 바탕으로 강하게 개혁을 하길 바랍니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231883</guid><pubDate>Tue, 21 Jul 2026 14:47:03 GMT</pubDate></item><item><title>뉴재명들이 다까끼마사오 스마트독재 좋아하는 이유[6][8]</title><link>https://www.clien.net/service/board/park/19231871</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="화면 캡처 2026-07-21 142039.jpg" class="fr-dib fr-fil full" data-file-sn="15782131" data-gif="false" data-img-height="1040" data-img-width="1182" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15782131/1c055c8f3aa392.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://www.inews24.com/view/1987191" target="_blank"&gt;https://www.inews24.com/view/1987191&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;70년대 다까끼마사오 시절에는&lt;/p&gt;
+  &lt;p&gt;저정도는 테러도 아니고 그냥 일상이었으니까요&lt;/p&gt;
+  &lt;p&gt;김대중 대통령은 납치돼서 바다에 던져질뻔 했었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231871</guid><pubDate>Tue, 21 Jul 2026 14:30:57 GMT</pubDate></item><item><title>신천지랑 종북NL 보이면 무조건 박제할겁니다[13][0]</title><link>https://www.clien.net/service/board/park/19231808</link><description>
+ 
+ 
+  &lt;p&gt;신천지는 스멀스멀 지하에서 모략질인거같은데 보이면 무조건 박제구요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;대진연은 클리앙에서 한번 숙청되서 또 기회를 엿보고있겠지만 다른곳은 지들 후원계좌 올리고 똥인지 된장인지 구분못하는 이용자들이 후원인증하고있는걸 보면 이미 어느정도 잠식된거같은데 클리앙에서는 보이면 무조건 박제갈겁니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231808</guid><pubDate>Tue, 21 Jul 2026 12:53:23 GMT</pubDate></item><item><title>뉴명들이 웃긴 이유.[11][6]</title><link>https://www.clien.net/service/board/park/19231807</link><description>
+ 
+ 
+  &lt;p&gt;안 멀쩡한 당대표 몰아내고,&lt;/p&gt;
+  &lt;p&gt;입맛에 맞는 당대표 내새워서,&lt;/p&gt;
+  &lt;p&gt;당을 온통 친윤으로 도배하고,&lt;/p&gt;
+  &lt;p&gt;친윤이 벼슬인,&lt;/p&gt;
+  &lt;p&gt;집권당을 대통령 개인 사당화했던 &lt;/p&gt;
+  &lt;p&gt;윤석열의 길을 가는데,&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;왜 노무현을 팝니까?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231807</guid><pubDate>Tue, 21 Jul 2026 12:52:29 GMT</pubDate></item><item><title>송영길 '정청래, 솔직하지 않다…李 불편함 표시했는데 출마'[20][7]</title><link>https://www.clien.net/service/board/park/19231806</link><description>
+ 
+ 
+  &lt;p&gt;송영길 전 더불어민주당 대표가 8·17 전당대회에 출마한 정청래 전 대표를 향해 "솔직하지 않다"고 비판했다. 이재명 대통령이 정 전 대표에게 불편함을 여러 차례 드러냈음에도 이를 무시하고 출마한 것은 진정성이 없다는 취지다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;송 전 대표는 21일 YTN 라디오 '장성철의 뉴스명당'에 출연해 "직간접적으로 모든 언론에 대통령이 정 대표가 불편하다는 것을 수차례 표시했는데 마치 아무것도 없는 것처럼, 명청대전은 언론이 만든 허구 프레임이라고 한다"며 "내가 이재명을 지킬 거야 이렇게 떠드는 것은 솔직하지 않다"고 지적했다.&lt;/p&gt;
+  &lt;p&gt;이어 "국민한테 정치인들이 솔직해야 한다"며 "친구와의 관계도 싫은데 밖에 가서 '나는 쟤를 사랑해, 지킬 거야' 떠들고 다니면 그 사람이 기분이 좋을까"라고 반문했다. 그러면서 "냉각기가 필요한 것"이라고 덧붙였다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;후략&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 사람은 하는 말마다 대통령 입장만 이상하게 만드네요.&lt;/p&gt;
+  &lt;p&gt;청와대에서 한마디 해야지 싶은데요&lt;/p&gt;
+  &lt;p&gt;너무 막 나갑니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231806</guid><pubDate>Tue, 21 Jul 2026 12:51:40 GMT</pubDate></item><item><title>김민석 : '지방선거 패배는 이재명 책임'[15][11]</title><link>https://www.clien.net/service/board/park/19231803</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="1164b042fc2210b220a0e2af1183c996.png" class="fr-dib fr-fil" data-file-sn="15782037" data-gif="false" data-img-height="863" data-img-width="412" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15782037/18c0cdc5ab7522.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://www.news1.kr/politics/assembly/4745923#_enliple" target="_blank"&gt;https://www.news1.kr/politics/assembly/4745923#_enliple&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;정몽준한테 붙었다가&lt;/p&gt;
+  &lt;p&gt;정몽준 힘 빠지니까 통수쳤던 분이라...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;4년전, 이재명이 힘없고 만만했을 때는&lt;/p&gt;
+  &lt;p&gt;김민석씨가 반명이었네요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231803</guid><pubDate>Tue, 21 Jul 2026 12:50:23 GMT</pubDate></item><item><title>매도인대출과 근저당설정은 동일하지 않습니다.[43][2]</title><link>https://www.clien.net/service/board/park/19231802</link><description>
+ 
+ 
+  &lt;p&gt;통상적인 부동산계약에선 이사날짜에 맞춰서 잔금을 치릅니다. 현재 살고 있는 집을 팔고 나온다면 당연히 그 집의 매도대금으로 잔금을 치를 것입니다. 3개월 후에 전세계약이 만료되니 매수자도 현재 살고있는 집의 매매계약과 이사날짜를 그 날짜에 맞췄을 것으로 추정할 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;조합원 권리 양도라는 특수한 상황이 결합하면서, 계약을 성사하기 위해 조합 설립 인가 이전에 소유권 이전이라는 필요조건이 생겨납니다. 공인중개사의 중개하에 잔금일에 계약이행이 무리없이 완료될 것으로 믿고 먼저 소유권을 이전하는 대신 잔금액만큼의 근저당을 안전장치로 설정했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;매도인대출, 레버리지, 사금융이라는 논리가 성립하는 건 최소한 이사날에 치러야 하는 잔금의 지급을 유예해줬을 때입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;국민눈높이를 말할 수 있고, 심기의 불편함을 말할 수 있습니다. 대통령이 재건축이 예정된 주택의 미래가치를 기대하여 실거주 매수하려는 1주택자의 그릇된 욕망을 채우는데 협조하였다-정도가 비판할 수 있는 최대치라고 생각합니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231802</guid><pubDate>Tue, 21 Jul 2026 12:53:13 GMT</pubDate></item><item><title>“김건희 여사, 블핑 제니 닮았죠?” 용산 홍보팀 기겁한 그 요청.NEWS[10][1]</title><link>https://www.clien.net/service/board/park/19231798</link><description>
+ 
+ 
+  &lt;p&gt;" 여사 쪽에서 자꾸 이상한 걸 홍보용으로 만들라고 했어요. "&lt;br/&gt;
+    그가 먼저 떠올린 사례는 축구 국가대표팀 초청 행사였다. 윤석열 대통령 내외는 카타르 월드컵 16강 진출을 이뤄낸 대표팀을 2022년 12월 8일 청와대 영빈관에 초청했다. 2시간여의 만찬은 화기애애했다. 주장 손흥민 선수가 대통령에게 주장 완장을 채워주면서 그를 웃음 짓게 했고, 나머지 선수들도 대통령 내외에게 사인볼과 유니폼을 선물했다.&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="2022년 12월 8일 청와대 영빈관에서 열린 축구 국가대표팀 환영 만찬에서 윤석열 대통령과 김건희 여사가 손흥민, 이강인 선수로부터 사인 축구공과 유니폼을 선물받고 있다. 중앙포토" class="fr-fic fr-dii" src="https://img1.daumcdn.net/thumb/R658x0.q70/?fname=https://t1.daumcdn.net/news/202607/21/joongang/20260721113813082mrug.jpg" width="658"/&gt;&lt;/p&gt;
+  &lt;figcaption&gt;
+   2022년 12월 8일 청와대 영빈관에서 열린 축구 국가대표팀 환영 만찬에서 윤석열 대통령과 김건희 여사가 손흥민, 이강인 선수로부터 사인 축구공과 유니폼을 선물받고 있다. 중앙포토
+  &lt;/figcaption&gt;
+  &lt;p&gt;&lt;br/&gt;
+    문제는 연회가 끝난 이후 벌어졌다. A의 말이다.&lt;/p&gt;
+  &lt;p&gt;" 대표팀 초청 연회를 홍보영상물로 만들라는 지시가 내려왔어요. 그런데 대표팀이 아니라 김 여사가 영상물의 중심이 되도록 하라는 거예요. "&lt;br/&gt;
+    A가 허탈하게 말을 이었다.&lt;/p&gt;
+  &lt;p&gt;" 설상가상으로 위에서 내려준 자료의 분량이 어마어마했어요. 영상 만드는 직원이 거의 울먹이더라고요. 양도 너무 많았고, 영상물의 주제도 말이 안 되는 거잖아요. 그 친구가 결국 ‘못 하겠다’고 하더라고요. "&lt;br/&gt;
+    이후에도 무리한 ‘여사 중심 홍보’ 요구는 계속 이어졌다고 한다. 그러다가 그 사건이 터졌다.&lt;/p&gt;
+  &lt;p&gt;이른바 ‘여사 라인’으로 분류되던 용산 참모 B가 A에게 넌지시 말을 건넸다.&lt;/p&gt;
+  &lt;p&gt;" 여사, 그 사람 닮지 않았어요? "&lt;br/&gt;
+    A가 반문했다.&lt;/p&gt;
+  &lt;p&gt;" 누구요? "&lt;br/&gt;
+    이어진 B의 말에 A는 경악했다.&lt;/p&gt;
+  &lt;p&gt;“김건희 여사, 블핑 제니 닮았죠?” 용산 홍보팀 기겁한 그 요청&lt;/p&gt;
+  &lt;p&gt;-------------------------------------------------------------------------------------------------------------------&lt;/p&gt;
+  &lt;p&gt;내란수괴 윤석열-김건희 시절 비화인데..&lt;/p&gt;
+  &lt;p&gt;영상 담당자, 극한 직업이었네요.&lt;/p&gt;
+  &lt;p&gt;두 분 모두 좋은 곳에서 평생 지냈으면 합니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231798</guid><pubDate>Tue, 21 Jul 2026 12:46:59 GMT</pubDate></item><item><title>매수 사이드카 발동 되었네요...[11][0]</title><link>https://www.clien.net/service/board/park/19231797</link><description>
+ 
+ 
+  &lt;p&gt;코스피 미춋다...yo ㄷㄷ &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231797</guid><pubDate>Tue, 21 Jul 2026 12:46:53 GMT</pubDate></item><item><title>입당 FSD HW3, HW4 램차이.[10][1]</title><link>https://www.clien.net/service/board/cm_car/19231160</link><description>
  
  
   &lt;p&gt;FSD는 LLM 비슷하게 온디바이스로 돌아가죠. &lt;/p&gt;
@@ -28,14 +470,14 @@
   &lt;p&gt;기본 FSD(감독형)은 무료, 비감독,로보택시는 유료 이런식으로요.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19231160</guid><pubDate>Mon, 20 Jul 2026 16:44:44 GMT</pubDate></item><item><title>이성윤이가 신천지 색출에 발끈하네요.[7][5]</title><link>https://www.clien.net/service/board/park/19231891</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19231160</guid><pubDate>Mon, 20 Jul 2026 16:44:44 GMT</pubDate></item><item><title>이성윤이가 신천지 색출에 발끈하네요.[47][14]</title><link>https://www.clien.net/service/board/park/19231891</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;발끈할 이유가 없는데 발끈하시는군요. 신천지가 국힘 쪽만 건드리고 민주당은 냅뒀을까요?&lt;/p&gt;
   &lt;p&gt;모두가 설마할 때 계엄을 예고했던 김민석입니다. 뭔가 있으니까 저렇게 공개적으로 얘기 한다고 보는 게 맞겠죠. 신천지는 발본색원이 답입니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231891</guid><pubDate>Tue, 21 Jul 2026 14:58:36 GMT</pubDate></item><item><title>잘못 들어온줄 알았습니다.[20][7]</title><link>https://www.clien.net/service/board/park/19231885</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231891</guid><pubDate>Tue, 21 Jul 2026 14:58:36 GMT</pubDate></item><item><title>잘못 들어온줄 알았습니다.[55][17]</title><link>https://www.clien.net/service/board/park/19231885</link><description>
  
  
   &lt;p&gt;정부비판 민주당비판 대통령비판&lt;/p&gt;
@@ -45,13 +487,13 @@
   &lt;p&gt;몇달전엔 10~20%였는데 지금은 대충봐도 80%는 넘어 보이네요..&lt;/p&gt;
   &lt;p&gt;확실히 부동산 주식은 무섭군요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231885</guid><pubDate>Tue, 21 Jul 2026 14:51:54 GMT</pubDate></item><item><title>코스닥은 취임 지수보다 낮아졌네요[11][6]</title><link>https://www.clien.net/service/board/park/19231877</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231885</guid><pubDate>Tue, 21 Jul 2026 14:51:54 GMT</pubDate></item><item><title>코스닥은 취임 지수보다 낮아졌네요[16][8]</title><link>https://www.clien.net/service/board/park/19231877</link><description>
  
  
   &lt;p&gt;코스피도 반도체 관련 주식 아니면 취임 전이랑 비슷한게 이거 정부가 잘해서 주가 오른 게 맞나요?&lt;/p&gt;
   &lt;p&gt;상법개정으로 올랐으면 왜 반도체 없는 분야는 그전이랑 똑같은지 궁금하네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231877</guid><pubDate>Tue, 21 Jul 2026 14:38:29 GMT</pubDate></item><item><title>李대통령, 삼성 노조 겨냥 '노란봉투법 쟁의 범위 끝없이 확대…기준 정해야'[25][5]</title><link>https://www.clien.net/service/board/park/19231874</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231877</guid><pubDate>Tue, 21 Jul 2026 14:38:29 GMT</pubDate></item><item><title>李대통령, 삼성 노조 겨냥 '노란봉투법 쟁의 범위 끝없이 확대…기준 정해야'[32][8]</title><link>https://www.clien.net/service/board/park/19231874</link><description>
  
  
   &lt;p&gt;이걸 고려못하고 노봉법을 추진시행한건가요?&lt;/p&gt;
@@ -71,7 +513,7 @@
     그러면서 "근로조건 관계가 있는 경영상의 결정이 있을 수 있는데 한계가 조금 모호하다"며 "필요하면 시행규칙에 해당하는 지침이든지 고시든지 정리를 해달라. 그래야 사회적 분쟁이 줄어든다"고 당부했다.&lt;br/&gt;
     출처 : 연합인포맥스(&lt;a href="https://news.einfomax.co.kr" target="_blank"&gt;https://news.einfomax.co.kr&lt;/a&gt;)&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231874</guid><pubDate>Tue, 21 Jul 2026 14:31:33 GMT</pubDate></item><item><title>요즘 게임 업계는 뭐랄까.. 뭔가 업계의 종말을 보는 듯합니다..[18][0]</title><link>https://www.clien.net/service/board/park/19231872</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231874</guid><pubDate>Tue, 21 Jul 2026 14:31:33 GMT</pubDate></item><item><title>요즘 게임 업계는 뭐랄까.. 뭔가 업계의 종말을 보는 듯합니다..[20][0]</title><link>https://www.clien.net/service/board/park/19231872</link><description>
  
  
   &lt;p&gt;MS는 천문학적 돈을 들여 인수한 게임 스튜디오들이 거의 놀다시피해서 제대로 게임이 안나와서 대대적 구조조정에 들어갔고.. 소니는 소니 나름대로 역시 투자한 게임이 쪽박을 치고..  게대가  PS6에서는 실물 디스크를 없앨 예정이여서 게이머들의 엄청난 반감을 사고 있습니다..  하드웨어 가격은 램 부족으로 계속 오르고 있어서 차세대 콘솔을 얼마에 나올까 엄청난 우려가 깊고..&lt;/p&gt;
@@ -80,7 +522,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231872</guid><pubDate>Tue, 21 Jul 2026 14:26:50 GMT</pubDate></item><item><title>거래 끊긴 코스닥[15][3]</title><link>https://www.clien.net/service/board/park/19231869</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231872</guid><pubDate>Tue, 21 Jul 2026 14:26:50 GMT</pubDate></item><item><title>거래 끊긴 코스닥[18][6]</title><link>https://www.clien.net/service/board/park/19231869</link><description>
  
  
   &lt;p&gt;&lt;strong&gt;두 달 새 거래대금 68% 증발…가격보다 유동성이 먼저 무너졌다&lt;br/&gt;
@@ -98,7 +540,7 @@
   &lt;p&gt;&lt;strong&gt;투자는 어디까지나 개인의 선택이지만, 시장 자체에 뭔가를 던져놓은 정부의 책임도 마냥 무시할 건 절대 &lt;/strong&gt;&lt;/p&gt;
   &lt;p&gt;&lt;strong&gt;아니라 생각합니다.&lt;/strong&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231869</guid><pubDate>Tue, 21 Jul 2026 14:24:33 GMT</pubDate></item><item><title>결국 투자책임은 본인이 지는걸 다 아시지않나요?[36][2]</title><link>https://www.clien.net/service/board/park/19231867</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231869</guid><pubDate>Tue, 21 Jul 2026 14:24:33 GMT</pubDate></item><item><title>결국 투자책임은 본인이 지는걸 다 아시지않나요?[41][3]</title><link>https://www.clien.net/service/board/park/19231867</link><description>
  
  
   &lt;p&gt;처음 단일종목 레버리지 상품 출시할때는 클리앙에서도 크게 반발이 없었던 걸로 기억합니다.&lt;/p&gt;
@@ -111,12 +553,12 @@
   &lt;p&gt;어떻게 보면 부동산이든 주식이든 물질만능주의적인 분위기가 점점 커져가는게 원인인 것 같기도 하구요.&lt;/p&gt;
   &lt;p&gt;답답합니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231867</guid><pubDate>Tue, 21 Jul 2026 14:23:29 GMT</pubDate></item><item><title>이중당적은 명백한 불법입니다[15][25]</title><link>https://www.clien.net/service/board/park/19231866</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231867</guid><pubDate>Tue, 21 Jul 2026 14:23:29 GMT</pubDate></item><item><title>이중당적은 명백한 불법입니다[17][29]</title><link>https://www.clien.net/service/board/park/19231866</link><description>
  
  
   &lt;p&gt;또한 신천지 종교가 정당을 어지럽히는거 막아야합니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231866</guid><pubDate>Tue, 21 Jul 2026 14:21:12 GMT</pubDate></item><item><title>이재명 분당 아파트 매도 관련...[26][9]</title><link>https://www.clien.net/service/board/park/19231863</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231866</guid><pubDate>Tue, 21 Jul 2026 14:21:12 GMT</pubDate></item><item><title>이재명 분당 아파트 매도 관련...[26][12]</title><link>https://www.clien.net/service/board/park/19231863</link><description>
  
  
   &lt;p&gt;&lt;img alt="1000289409.jpg" class="fr-dib fr-fil full" data-file-sn="15782119" data-gif="false" data-img-height="1241" data-img-width="1440" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15782119/18c53e0238cf6c.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -138,7 +580,7 @@
   &lt;p&gt;1년의 성과가 너무 실망스럽습니다.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231863</guid><pubDate>Tue, 21 Jul 2026 14:18:41 GMT</pubDate></item><item><title>중국에서 음식배달부인 왕지빙(56)이라는 분이 루쉰문학상을 탔습니다. BBC[8][16]</title><link>https://www.clien.net/service/board/park/19231856</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231863</guid><pubDate>Tue, 21 Jul 2026 14:18:41 GMT</pubDate></item><item><title>중국에서 음식배달부인 왕지빙(56)이라는 분이 루쉰문학상을 탔습니다. BBC[10][19]</title><link>https://www.clien.net/service/board/park/19231856</link><description>
  
  
   &lt;p&gt;재능이 있으면 어디서든 빛이 나는군요.&lt;/p&gt;
@@ -201,7 +643,7 @@
   &lt;p&gt;다음은 방송중에 한 말이랍니다. 삶이 시인 자체군요.&lt;br/&gt;
     사회자가 왕지빙의 시 "서툴게 이 세상을 사랑한다"를 언급하자, 그는 "이 세상은 너무나 아름답다고 생각합니다. 삶은 우리를 사랑하기 위해 이곳에 데려왔습니다. 삶이 내게 더 많은 눈을 내릴수록, 나는 더 많은 봄을 맞이할 것입니다."라고 답했다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231856</guid><pubDate>Tue, 21 Jul 2026 14:16:29 GMT</pubDate></item><item><title>남자 몸무게 기준표랍니다.[48][0]</title><link>https://www.clien.net/service/board/park/19231853</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231856</guid><pubDate>Tue, 21 Jul 2026 14:16:29 GMT</pubDate></item><item><title>남자 몸무게 기준표랍니다.[52][0]</title><link>https://www.clien.net/service/board/park/19231853</link><description>
  
  
   &lt;p&gt;저는 저번에 10키로 빼고나서 정상으로 돌아왔어요.&lt;/p&gt;
@@ -210,7 +652,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;건강 챙기십시다~&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231853</guid><pubDate>Tue, 21 Jul 2026 14:09:03 GMT</pubDate></item><item><title>백제 금동 대향로.JPG[23][6]</title><link>https://www.clien.net/service/board/park/19231852</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231853</guid><pubDate>Tue, 21 Jul 2026 14:09:03 GMT</pubDate></item><item><title>백제 금동 대향로.JPG[24][8]</title><link>https://www.clien.net/service/board/park/19231852</link><description>
  
  
   &lt;p style='max-height: 999999px; margin-bottom: 0px; color: rgb(0, 0, 0); font-family: "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);'&gt;백제금동 대향로&lt;/p&gt;
@@ -230,7 +672,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p style='max-height: 999999px; color: rgb(0, 0, 0); font-family: "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", arial, sans-serif; font-size: 14px; background-color: rgb(255, 255, 255);'&gt;부여오시면 꼭 와보셔요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231852</guid><pubDate>Tue, 21 Jul 2026 14:08:20 GMT</pubDate></item><item><title>정청래든 김민석이든 국민피해입던말던 검찰만 때려부숴야한다는 집단은 선거를 못이깁[13][0]</title><link>https://www.clien.net/service/board/park/19231849</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231852</guid><pubDate>Tue, 21 Jul 2026 14:08:20 GMT</pubDate></item><item><title>정청래든 김민석이든 국민피해입던말던 검찰만 때려부숴야한다는 집단은 선거를 못이깁[15][0]</title><link>https://www.clien.net/service/board/park/19231849</link><description>
  
  
   &lt;p&gt;제가 이재명 김민석에 마음을 비운것도 고작 전당대회 이겨먹겠다고&lt;/p&gt;
@@ -260,7 +702,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;결국 국민을 위한 정치인은 없습니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231849</guid><pubDate>Tue, 21 Jul 2026 14:06:16 GMT</pubDate></item><item><title>당투표 와이프랑 나눠 찍었네요.[5][7]</title><link>https://www.clien.net/service/board/park/19231848</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231849</guid><pubDate>Tue, 21 Jul 2026 14:06:16 GMT</pubDate></item><item><title>당투표 와이프랑 나눠 찍었네요.[5][8]</title><link>https://www.clien.net/service/board/park/19231848</link><description>
  
  
   &lt;p&gt;김병기 에게 낚여 투표한  아픔이 있기는 하지만..&lt;/p&gt;
@@ -306,7 +748,7 @@
  
   &lt;p&gt;뉴스공장이나 매불쇼 안나올꺼처럼 그러더니 뉴공 매불 둘다 나오네요 오늘 뭔 모지리 발언 그리고 후보자격 유지에 대하여 이야기할지 기대가 되네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231846</guid><pubDate>Tue, 21 Jul 2026 14:06:12 GMT</pubDate></item><item><title>4년 전 사적욕심으로 이재명 의원 지선 패배 책임, 공격한 김민석 후보[11][4]</title><link>https://www.clien.net/service/board/park/19231844</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231846</guid><pubDate>Tue, 21 Jul 2026 14:06:12 GMT</pubDate></item><item><title>4년 전 사적욕심으로 이재명 의원 지선 패배 책임, 공격한 김민석 후보[11][5]</title><link>https://www.clien.net/service/board/park/19231844</link><description>
  
  
   &lt;p&gt;민주당 전당대회가 본격적인 레이스에 들어갔습니다.&lt;/p&gt;
@@ -339,14 +781,14 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231840</guid><pubDate>Tue, 21 Jul 2026 13:48:06 GMT</pubDate></item><item><title>이번 부동산 매매 건 자세한 설명입니다[22][0]</title><link>https://www.clien.net/service/board/park/19231835</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231840</guid><pubDate>Tue, 21 Jul 2026 13:48:06 GMT</pubDate></item><item><title>이번 부동산 매매 건 자세한 설명입니다[23][2]</title><link>https://www.clien.net/service/board/park/19231835</link><description>
  
  
   &lt;p&gt;이 정도 설명이면 다들 아시겠죠?&lt;/p&gt;
   &lt;p&gt;&lt;img alt="분당.webp" class="fr-dib fr-fil full" data-file-sn="15782081" data-gif="false" data-img-height="4529" data-img-width="1200" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15782081/1c02e3da8751ae.webp?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231835</guid><pubDate>Tue, 21 Jul 2026 13:39:01 GMT</pubDate></item><item><title>이야기 (현대차) ADAS 버젼에 따른 HDA 사용시 거동차이[24][0]</title><link>https://www.clien.net/service/board/cm_car/19231698</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231835</guid><pubDate>Tue, 21 Jul 2026 13:39:01 GMT</pubDate></item><item><title>이야기 (현대차) ADAS 버젼에 따른 HDA 사용시 거동차이[28][0]</title><link>https://www.clien.net/service/board/cm_car/19231698</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -421,7 +863,7 @@
   &lt;p&gt;암튼 기다리기에 길다면 길고,&lt;/p&gt;
   &lt;p&gt;개발하는 입장에서는 빠르다면 빠른 진행인 것 같네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19231223</guid><pubDate>Mon, 20 Jul 2026 17:55:38 GMT</pubDate></item><item><title>노트북을 몇인치 사야하나 고민했는데요.[19][0]</title><link>https://www.clien.net/service/board/park/19231841</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19231223</guid><pubDate>Mon, 20 Jul 2026 17:55:38 GMT</pubDate></item><item><title>노트북을 몇인치 사야하나 고민했는데요.[20][0]</title><link>https://www.clien.net/service/board/park/19231841</link><description>
  
  
   &lt;p&gt;14인치는 너무 작고&lt;/p&gt;
@@ -480,7 +922,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231838</guid><pubDate>Tue, 21 Jul 2026 13:43:09 GMT</pubDate></item><item><title>오늘은 레버리지 변동성으로 욕하는분 없군요. ㅋㅋ[50][6]</title><link>https://www.clien.net/service/board/park/19231837</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231838</guid><pubDate>Tue, 21 Jul 2026 13:43:09 GMT</pubDate></item><item><title>오늘은 레버리지 변동성으로 욕하는분 없군요. ㅋㅋ[52][6]</title><link>https://www.clien.net/service/board/park/19231837</link><description>
  
  
   &lt;p&gt;어제는 난리더니, 오늘은 조용~~ 허네요. ㅋㅋ&lt;/p&gt;
@@ -489,357 +931,10 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;어제 국장 정리 하신다는 분들은 잘 정리가 되셨나 모르겠네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231837</guid><pubDate>Tue, 21 Jul 2026 13:41:28 GMT</pubDate></item><item><title>'이 방법 나쁘지 않아'...강남에 '집주인 대출 6억' 매물 등장[12][7]</title><link>https://www.clien.net/service/board/park/19231832</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231837</guid><pubDate>Tue, 21 Jul 2026 13:41:28 GMT</pubDate></item><item><title>'이 방법 나쁘지 않아'...강남에 '집주인 대출 6억' 매물 등장[13][7]</title><link>https://www.clien.net/service/board/park/19231832</link><description>
  
  
   &lt;p&gt;&lt;a href="https://www.fnnews.com/news/202607211058035345" target="_blank"&gt;https://www.fnnews.com/news/202607211058035345&lt;/a&gt;&lt;/p&gt;
   &lt;p&gt;예전부터 있던 방법이지만..... 이제는 대놓고 네이버에 올려놓는군요.... &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231832</guid><pubDate>Tue, 21 Jul 2026 13:50:53 GMT</pubDate></item><item><title>김용민 의원 징계 청원 올린 잼마을[8][7]</title><link>https://www.clien.net/service/board/park/19231831</link><description>
- 
- 
-  &lt;p&gt;주최자로서 증언 드립니다.&lt;/p&gt;
-  &lt;p&gt;기자회견 내용 사전에 의원실에 공유 하지 않았습니다&lt;/p&gt;
-  &lt;p&gt;(끝나고 원망 들었습니다... 사퇴 이런 거 얘기할거면 미리 알려줘야 맘의 준비라도 했을 거 아니냐고 원망은 들었습니다)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;국민주권정부가 성역인가요? &lt;/p&gt;
-  &lt;p&gt;당원단체들이 정부 비판하는 거 회견장 예약해주면 징계 받아야 하나요? &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;왜 이렇게 열심히 갈라치기를 할까 이해가 안됩니다.&lt;/p&gt;
-  &lt;p&gt;혹시 기득권의 가장 든든한 무기 검찰 수사권 지키고 싶은 쪽에서 사주 한 거는 아니길...&lt;/p&gt;
-  &lt;p&gt;그냥 진짜 순수하게 오직 이재명 대통령님만을 모든이들이 존경하고 사랑해야 하고 비판은 절대 허용 않는 파시스트이길...&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231831</guid><pubDate>Tue, 21 Jul 2026 13:38:30 GMT</pubDate></item><item><title>투기수요는 막는다면서, 왜 대통령의 매수자에게는 재건축 권리를 보장했나[26][7]</title><link>https://www.clien.net/service/board/park/19231829</link><description>
- 
- 
-  &lt;p&gt;&lt;strong&gt;정부는 재건축 권리의 투자상품화를 막겠다며 국민의 거래와 대출을 제한했지만, 대통령은 자신의 집을 제값에 매각하기 위해 매수자가 잔금을 늦게 내면서도 재건축 권리는 먼저 확보할 수 있는 거래를 선택했다는 것이 비판의 핵심이다. &lt;/strong&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이재명 대통령의 분당 아파트 매각은 현재까지 알려진 내용만 보면 법적으로 가능한 거래다. 그러나 적법성과 정책적 일관성은 별개의 문제다.&lt;/p&gt;
-  &lt;p&gt;현 정부는 분당을 토지거래허가구역과 투기과열지구로 묶고, 25억원 초과 주택의 주택담보대출 한도를 2억원으로 줄였다. 고가주택에 대한 과도한 자금 유입과 재건축 투자수요를 억제하겠다는 취지다. 투기과열지구에서 사업이 일정 단계에 이르면 조합원 지위 승계를 제한하는 것도 재건축 입주권이 투자상품처럼 거래되는 것을 막기 위한 제도다.&lt;/p&gt;
-  &lt;p&gt;그런데 대통령의 아파트 매각에서는 매수자가 잔금을 모두 준비하지 못했는데도 소유권부터 이전했다. 미지급 잔금은 대통령 부부가 17억7천만원의 근저당권을 설정해 담보했고, 잔금은 수개월 뒤 받기로 했다. 마침 재건축 사업시행자 지정이 임박한 시점이었기 때문에, 소유권 이전이 늦어지면 매수자가 조합원 지위를 승계하지 못하고 현금청산 대상이 될 가능성이 있었다. 결국 등기를 먼저 넘긴 것은 매수자가 재건축 권리를 잃지 않도록 하기 위한 거래였다는 해석이 가능하다.&lt;/p&gt;
-  &lt;p&gt;매수자가 실수요자인지 투기수요인지는 확인되지 않았다. 하지만 결과적으로 대통령은 매수자가 당장 매매대금을 모두 마련하지 못한 상황에서도 재건축 입주권의 기대가치를 온전히 확보할 수 있도록 자금조달 시간과 권리 승계 시점을 모두 보장해줬다. 재건축 권리가 보장되지 않았다면 매수자가 29억원에 거래하지 않았거나, 거래가격을 대폭 낮추려고 했을 가능성이 크다. 대통령 본인의 원활한 매각을 위해서는 매수자의 재건축 권리를 보전할 필요가 있었던 셈이다.&lt;/p&gt;
-  &lt;p&gt;국민에게는 대출한도와 토허제, 조합원 지위 제한을 통해 부동산 투자수요를 억제하겠다고 하면서, 대통령 개인의 거래에서는 잔금 유예와 매도인 근저당이라는 방식으로 매수자의 자금 부족을 보완하고 재건축 권리까지 지켜줬다. 불법이라고 단정할 사안은 아니지만, 현 정부 부동산정책의 방향과 대통령 개인의 경제적 선택 사이에 뚜렷한 간극이 있다는 비판은 피하기 어렵다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231829</guid><pubDate>Tue, 21 Jul 2026 13:30:50 GMT</pubDate></item><item><title>김민석이 된다면 이재명 미래가 어두운게 퇴임후 지켜줄 세력 안남습니다[60][2]</title><link>https://www.clien.net/service/board/park/19231827</link><description>
- 
- 
-  &lt;p&gt;제 말이 뭔 정청래지지자들이 말하는거처럼 정청래가 이재명을&lt;/p&gt;
-  &lt;p&gt;지켜준다는 유치원생도 안믿을만한 헛소리가 아니고요&lt;/p&gt;
-  &lt;p&gt;어짜피 둘중 누가되든 이미 민주진보진영은 2030대가 보수화된&lt;/p&gt;
-  &lt;p&gt;순간 끝장났습니다&lt;/p&gt;
-  &lt;p&gt;2030여자들도 도망가는 와중에 집토끼 산토끼타령 백날 많이하십시오ㅎㅎ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그러면 김민석이 되어서 김민석 이재명 둘다 수장되느냐&lt;/p&gt;
-  &lt;p&gt;정청래가 되어서 4년내내 정청래랑 이재명싸우다가&lt;/p&gt;
-  &lt;p&gt;명어게인 청어게인 세력으로 나눠서 퇴임후에도 유지하느냐&lt;/p&gt;
-  &lt;p&gt;둘중 하나일뿐입니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;윤석열을 예로들면 그나마 윤어게인 세력때문에 이때까지 버틴거죠&lt;/p&gt;
-  &lt;p&gt;그리고 실제 정권바뀌면 윤석열은 석방될겁니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;김민석이 당대표된다면 당정일체로 가다가 이제 총선지고 실패책임을 이재명이 다 뒤집어쓰고 진보스피커들도 이재명을 잔인하게 버리고 새로운 대선주자를 찾겠죠&lt;/p&gt;
-  &lt;p&gt;그리고 대선지고 그 책임은 다 이재명 몫이기때문에 &lt;/p&gt;
-  &lt;p&gt;쓸쓸한 최후를 맞이할수밖에없습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정청래가 당대표되면 정청래 이재명 하루종일 싸우다가 총선지고&lt;/p&gt;
-  &lt;p&gt;이제 총선 진 책임이 누구냐고 정청래 책임이다 이재명책임이다&lt;/p&gt;
-  &lt;p&gt;싸우고 지지층도 반갈려싸우겠죠&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;대선 지고나서도 이제 이재명책임이다 정청래책임이다&lt;/p&gt;
-  &lt;p&gt;여기서부터 진짜 선동 능력인것이 선동잘하는 쪽이 이깁니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;명어게인 세력이 어느정도 살아남는다면 이재명은 감방을 가더라도&lt;/p&gt;
-  &lt;p&gt;국힘이 분명 또 몇년후에 똥을 쌀거니깐요 이재명은 석방됩니다&lt;/p&gt;
-  &lt;p&gt;쟤들도 윤석열만 석방은 역풍때문에 못하죠&lt;/p&gt;
-  &lt;p&gt;윤석열 이재명 둘다 석방할겁니다 &lt;/p&gt;
-  &lt;p&gt;이재명을 지키는 명어게인 세력이 그때까지 유지되어야합니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이제 이해되셨나요?&lt;/p&gt;
-  &lt;p&gt;이재명은 정청래가 당대표되는것이 살아남는 길입니다&lt;/p&gt;
-  &lt;p&gt;정치는 세력화가 전부이고 피해자 서사가 중요하죠&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;김민석이 된다면 누가봐도 이재명이 왕이지만 정청래가 된다면&lt;/p&gt;
-  &lt;p&gt;벌써 여의도 대통령이니 별소리가 다나오죠&lt;/p&gt;
-  &lt;p&gt;이재명이 약자가 된순간 역설적으로 이재명이 살아남습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231827</guid><pubDate>Tue, 21 Jul 2026 13:17:55 GMT</pubDate></item><item><title>이번 투표시 저의 고려사항[1][6]</title><link>https://www.clien.net/service/board/park/19231826</link><description>
- 
- 
-  &lt;p&gt;반명 친명이런것 보다 어느사람이 저의 생각을 대신해서 해줄까를 생각해서 찍었습니다&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231826</guid><pubDate>Tue, 21 Jul 2026 13:25:18 GMT</pubDate></item><item><title>오늘은 숨 좀 쉴수 있겠습니다.[11][6]</title><link>https://www.clien.net/service/board/park/19231825</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;오늘은 숨 좀 쉴수 있겠습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;계속 내려가는 지수에 너무 힘들었는데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그래도 숨구멍을 만들어줘서 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;희망을 불어 넣어주었습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지난달 좋아서 조금 흥청망청 사용한 비용이&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;고스란히 청구서 날라왔습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;추가로 각종 세금은 덤입니다. T.T&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이제 좀 올라갔으면 좋겠습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;삼성전기, LG이노텍, 한화오션 다들 힘좀 내었으면 좋겠습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;PCB 좋다고 했는데... T.T&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231825</guid><pubDate>Tue, 21 Jul 2026 13:14:08 GMT</pubDate></item><item><title>신천지로 군불 때는거 보니[39][29]</title><link>https://www.clien.net/service/board/park/19231824</link><description>
- 
- 
-  &lt;p&gt;김민석 후보가 많이 조급 하긴 한 가 봅니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;연일 네거티브 하는것도 그렇고 압도적 1위 후보가 굳이? 도저히 내뱉을 수 없는 전략인데 선거 참 신기하게 하네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;언제부턴가 친석 뉴재명 유튜브 댓글에서 정청래 얘기나오면 신천지로 도배가 됩니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그런데 오늘 아침 김종배와 인터뷰에서 김민석이 신천지를 대놓고 언급 하네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그래서 정청래가 신천지와 연관성이 있다는건지 언급은 안하고 조만간 어쩌구 한다는데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;뭐가 근거가 있으면 수사기관에 요청을 하시지 선거용으로 쓰려다 되레 역풍 맞기 좋은 소재일 텐데요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;당원들을 등신으로 아는 건지 참.. 누구 기획인지 한심하네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231824</guid><pubDate>Tue, 21 Jul 2026 13:11:29 GMT</pubDate></item><item><title>한국의 대표적인 빈말[28][4]</title><link>https://www.clien.net/service/board/park/19231823</link><description>
- 
- 
-  &lt;p&gt;"언제 밥 한번 먹자."&lt;/p&gt;
-  &lt;p&gt;틱톡에서 이 빈말을 다룬 영상 하나를 봤습니다.&lt;br/&gt;
-    한국에서 활동 중인 외국인 아이돌이 이 말을 듣고 진짜 날짜를 기다렸다 합니다.&lt;br/&gt;
-    인사치레였음은 나중에 알았다 합니다.&lt;br/&gt;&lt;br/&gt;
-    "밥 먹었냐"는 인사도 마찬가지였습니다. 화자를 의심스러운 눈으로 보게 된다 합니다.&lt;br/&gt;
-     왜 남이 밥 먹을 걸 궁금해하지, 라는 반응이었습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;
-    외국인에게는 문화 차이가 만든 웃긴 해프닝일 겁니다.&lt;br/&gt;
-    그런데 영상 말미, 젊은 한국 연예인들이 실제로 같은 말을 던지는 장면이 이어졌습니다.&lt;br/&gt;
-     풍자로 넣은 장면인지, 젊은 세대도 여전히 쓰는 말인지 궁금해졌습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;
-    찾아보니 관련 조사가 있었습니다.&lt;br/&gt;
-    젊은 세대가 꼽는 대표적 거짓말 중 하나로 이 말이 꾸준히 등장합니다.&lt;br/&gt;
-    결론은 세대를 가리지 않고 여전히 널리 쓰인다는 쪽입니다. 다만 물가 부담 탓인지,&lt;br/&gt;
-    요즘 세대는 실제 약속으로 이어지는 경우가 오히려 줄고 있다네요.&lt;br/&gt;
-    고의적 빈말보다 경제적 이유로 양산되는 빈말, 이게 시대의 변화로 보입니다.&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;저는 이 말이 어릴 때부터 싫었습니다.&lt;br/&gt;
-    그래서 빈말로 쓴 적이 없습니다. 누가 "밥 한번 먹자" 하고 그 대상이 괜찮은 사람이거나 친구면 바로 날짜를 잡았습니다.&lt;br/&gt;
-    던진 말에 그대로 달라붙어 진행하는 성격이라 상대는 난감했을지 모르나, 대신 밥은 늘 제가 샀습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;
-    사실 밥보다 커피를 좋아했습니다. 커피 한잔 하자는 말을 하거나 받으면 기억해 두었다&lt;br/&gt;
-    반드시 연락하고 제가 샀습니다. 지금은 친구도 없고 외부 미팅이 필요 없는 일을 하고 있어 아주 가끔 그럽니다.&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;밥 먹는 일은 실제로 중요하긴 한 것 같습니다.&lt;/p&gt;
-  &lt;p&gt;미국 회사에서 일하며 한국 업체들을 관리할 때,  식사비 지원을 요청한 적이 있습니다.&lt;br/&gt;
-    미국인 오너는 이해하지 못했습니다. 왜 업체와 밥을 먹느냐 물었습니다.&lt;br/&gt;
-    시간이 지나서야 그 의미를 이해했고, 지원도 더 잘해주었습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;
-    어느 한국 회사 재직시절은 고객사 관리와 식사가 KPI에 포함되어 있었습니다.&lt;br/&gt;
-    술이 아니라 고급 레스토랑에서 정기적으로 식사하라는 지시였습니다.&lt;br/&gt;
-    흥미로운 회사였습니다. 그 회사 오너는 지금 강남과 명동 일대 빌딩 부자가 되었습니다.&lt;br/&gt;
-    밥을 진짜로 잘 먹는 것도 도움이 되는 모양입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;
-    어찌 되었건 대한민국에서 밥은 중요합니다.&lt;br/&gt;
-    그래서 오히려 바랍니다. 빈말뿐인 "밥 한번 먹자"는 이제 없어지면 좋겠습니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231823</guid><pubDate>Tue, 21 Jul 2026 13:11:58 GMT</pubDate></item><item><title>이재명 생각하기조차 싫다. 그냥 싫다.[37][10]</title><link>https://www.clien.net/service/board/park/19231822</link><description>
- 
- 
-  &lt;p&gt;네.... 그런데 대체 어떻게 지켜주겠다는건지 모르겠네요 ..^^&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="20260721_125332.png" class="fr-dib fr-fil" data-file-sn="15782067" data-gif="false" data-img-height="748" data-img-width="658" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15782067/35ab99bcf76472.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231822</guid><pubDate>Tue, 21 Jul 2026 13:07:42 GMT</pubDate></item><item><title>김민석씨 4년전에는 반명으로 당대표 출마했네요[25][30]</title><link>https://www.clien.net/service/board/park/19231820</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-07-21 125836.jpg" class="fr-dib fr-fil full" data-file-sn="15782063" data-gif="false" data-img-height="682" data-img-width="996" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15782063/1c00ef59c3f1dd.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="화면 캡처 2026-07-21 125942.jpg" class="fr-dib fr-fil full" data-file-sn="15782062" data-gif="false" data-img-height="1232" data-img-width="1021" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15782062/35ab3b1fd1972c.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://www.news1.kr/politics/assembly/4745923#_enliple" target="_blank"&gt;https://www.news1.kr/politics/assembly/4745923#_enliple&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;4년전, 이재명이 힘 없었을때는&lt;/p&gt;
-  &lt;p&gt;어떻게든 밟아보려고 했었네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231820</guid><pubDate>Tue, 21 Jul 2026 13:05:26 GMT</pubDate></item><item><title>환율하락 요인은 정부정책이 아니라 하이닉스[13][4]</title><link>https://www.clien.net/service/board/park/19231817</link><description>
- 
- 
-  &lt;p&gt;하이닉스 ADR로&lt;/p&gt;
-  &lt;p&gt;40조-50조가 환전하여 유입되는 것이&lt;/p&gt;
-  &lt;p&gt;1560원에서 1470원으로 하락한 원인&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;김용범이나 이억원이 말하는 &lt;/p&gt;
-  &lt;p&gt;레버리지효과는 하나도 없음&lt;/p&gt;
-  &lt;p&gt;결국 레버리지는 취지와 다르게 실패한 정책&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;빠르게 개선해야합니다 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;기사를 공유합니다: - &lt;a href="https://kr.investing.com/news/stock-market-news/article-2021901" target="_blank"&gt;https://kr.investing.com/news/stock-market-news/article-2021901&lt;/a&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231817</guid><pubDate>Tue, 21 Jul 2026 13:03:36 GMT</pubDate></item><item><title>주식 하면서 신용 미수 털려나가는거는 기본이라[4][7]</title><link>https://www.clien.net/service/board/park/19231815</link><description>
- 
- 
-  &lt;p&gt;절대 대출 하지 말라 배웠습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;감당할만한 그릇만큼만 본주 태워서 하라고&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그리고 L자 들어간건 절대 사지 말라 들었습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;제 말이 무조건 맞습니다!! :) &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231815</guid><pubDate>Tue, 21 Jul 2026 13:02:39 GMT</pubDate></item><item><title>분명히 한 달 전 120% 수익이었는데..[22][0]</title><link>https://www.clien.net/service/board/park/19231814</link><description>
- 
- 
-  &lt;p&gt;오늘 오랜만에 올라도 아직 10% 수익 밖에 안 되네요. &lt;/p&gt;
-  &lt;p&gt;그래도 올라서 좋긴 한데 너무 큰 수익구간을 봤던 터라 어찌 대응할까 싶습니다. &lt;/p&gt;
-  &lt;p&gt;시장 전고점이 다시 올까요? 다들 어떻게 대응하세요?&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231814</guid><pubDate>Tue, 21 Jul 2026 13:00:18 GMT</pubDate></item><item><title>홍콩레버, 매도인대출.. 신박한게 많군요.[8][5]</title><link>https://www.clien.net/service/board/park/19231777</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;역시 사람은 알아야 되죠&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정책실장이 삼닉 레버만들겠다고&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;1월에 갑자기 홍콩레버리지를 예로 들고 와서 처음 듣는 사람이 많았을텐데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그당시 다들 그냥 토스에 상장된 나스닥 반도체 레버 상품만 썼지&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;고위층은 다 홍콩레버로 직투했나보네요.  그때 처음 들었고&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;부동산 거래시 매도인 대출이라...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이미 일반적인 거래라는것도 이번에 처음 알았네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;금융지식이 많아야 살아남는 시대가 맞습니다. &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231777</guid><pubDate>Tue, 21 Jul 2026 12:26:23 GMT</pubDate></item><item><title>조만간 신천지때문에 피바람이 불겠네요[22][7]</title><link>https://www.clien.net/service/board/park/19231792</link><description>
- 
- 
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/oJKUkweTb1k" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;확실한 근거를 가지고 진행중이라 하니 &lt;/p&gt;
-  &lt;p&gt;조만간 법적으로 책임질 분들 많겠네요. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;'지휘부-중간-바닥일선이든 한걸음도 움직이지 않는게 좋다' &lt;/p&gt;
-  &lt;p&gt;뭔가 잡은게 있다는 소리네요. &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231792</guid><pubDate>Tue, 21 Jul 2026 12:44:12 GMT</pubDate></item><item><title>오늘 유치원에서 저희 딸 처음 재롱잔치를 직관했습니다 ㅠㅠ[6][8]</title><link>https://www.clien.net/service/board/park/19231791</link><description>
- 
- 
-  &lt;p&gt;올해 유치원 입학해서 처음 겪는건데&lt;/p&gt;
-  &lt;p&gt;오늘 연차내고 재롱잔치 참석을 했습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;어설프지만 율동하면서 동요부르는데 왜이렇게 뭉쿨한지..&lt;/p&gt;
-  &lt;p&gt;(나이가 들면서 눈물만 많이지네요 )&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;근데 주변 부모님들보니까 다들 훌쩍훌쩍 ㅋㅋㅋㅋ 저만 그런게 아니더라고요 ㅎㅎㅎㅎ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아무튼 진짜 몇일전만해도 유모차에 누워있던 아이같은데 언제 저렇게 커서 동요부르면서 율동까지하나... 기특하기도하고....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;ps.애들 공연하는 곳 앞에서 율동을 열심히 하시던 유치원선생님이 제일 힘드셨을듯... &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231791</guid><pubDate>Tue, 21 Jul 2026 12:42:09 GMT</pubDate></item><item><title>성치훈 더불어민주당 부대변인.. 보완수사권 폐지 법안 올리면 거부권행사해야 한다네[15][6]</title><link>https://www.clien.net/service/board/park/19231787</link><description>
- 
- 
-  &lt;p&gt;누구 닮아 가라고 그러는지&lt;/p&gt;
-  &lt;p&gt;이게 진짜 대통령을 위한 일인가요?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231787</guid><pubDate>Tue, 21 Jul 2026 12:38:59 GMT</pubDate></item><item><title>정청래 페이스북 &lt;이런 황당한 네거티브가 먹힐거라 생각하는가?&gt;[11][5]</title><link>https://www.clien.net/service/board/park/19231785</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="98e04f901553f0d95ef181adf845978d.jpg" class="fr-dib fr-fil full" data-file-sn="15782027" data-gif="false" data-img-height="1172" data-img-width="850" data-role="attach-image" src="https://edgio.clien.net/F01/2026/7/15782027/1bff702d4e18db.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;방금 올라온 글 공유드려 봅니다. &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231785</guid><pubDate>Tue, 21 Jul 2026 12:37:53 GMT</pubDate></item><item><title>진보커뮤니티에 신천지,2찍,종북NL 전부 다 있겠죠[16][4]</title><link>https://www.clien.net/service/board/park/19231783</link><description>
- 
- 
-  &lt;p&gt;대놓고 티내는것들은 2찍이나 종북NL들인거같고 신천지는 특성상 교묘하게 침투해서 암약하겠죠.. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;2찍들이야 말안해도 아실거고 종북NL들은 대진연만 봐도 머.. 다모앙같은데는 대놓고 대진연 후원계좌 올리고 돈쏘고 댓글로 응원인증까지 하고앉았고..&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;근데 신천지는 정말 교묘한게 맞을겁니다.. 찾기 무쟈게 힘들듯&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231783</guid><pubDate>Tue, 21 Jul 2026 12:30:07 GMT</pubDate></item><item><title>투표했습니다.[1][5]</title><link>https://www.clien.net/service/board/park/19231782</link><description>
- 
- 
-  &lt;p&gt;제발 제발&lt;/p&gt;
-  &lt;p&gt;계파정치, 귀족정치에 경종을 울리는 결과가 나면 좋겠습니다!&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231782</guid><pubDate>Tue, 21 Jul 2026 12:30:09 GMT</pubDate></item><item><title>'매도인 대출'이 막힌 거래의 새로운 돌파구가 될 수 있을 것 같습니다.[18][6]</title><link>https://www.clien.net/service/board/park/19231781</link><description>
- 
- 
-  &lt;p&gt;현재 팔고 싶은 분들도 많고, 사고 싶은 분들도 많은데 은행에서 대출이 안나와서 거래가 어려운 분들이 많은 것 같습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정부는 은행대출이 원금 상환을 걱정해야 할 한계 상황이라고 보는 것 같습니다. &lt;/p&gt;
-  &lt;p&gt;돈은 현금으로 갚아야 하는데, 우량 자산이라고는 하지만 담보가 현금이 아닌 주택 현물이기 때문입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이런 상황에서 팔고 싶은 분들이 "매도인 대출"을 하면 본인의 자산 가치를 지키면서 거래를 빠르게 진행할 수 있습니다.&lt;/p&gt;
-  &lt;p&gt;더욱이 은행 등 금융권의 부실 위험도 없습니다. 사인간의 거래이기 때문입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;"매도인 대출"이 팔고 싶은 분들과 사고 싶은 분들에게 모두 윈윈이 되지 않을까 생각합니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231781</guid><pubDate>Tue, 21 Jul 2026 12:27:25 GMT</pubDate></item><item><title>암스테르담의 자전거 통근 러시아워[22][2]</title><link>https://www.clien.net/service/board/park/19231776</link><description>
- 
- 
-  &lt;p&gt;상상이상으로 자전거를 정말 많이 타네요. &lt;/p&gt;
-  &lt;p&gt;암스테르담 시의 면적이 작고 구릉없는 평지인데다&lt;/p&gt;
-  &lt;p&gt;차도와 자전거 도로가 뒤섞이지 않은 덕택에&lt;/p&gt;
-  &lt;p&gt;2차대전 시기부터 자연스럽게 자전거를 많이 탔다고 합니다.&lt;/p&gt;
-  &lt;p&gt;여러 아시아 나라들 처럼 굳이 오토바이를 선택하지 않은 걸 보면&lt;/p&gt;
-  &lt;p&gt;환경보호에 대한 인식이 기본적으로 깔려있는 탓도 있는 것 같습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/UTx6B0Q-VRw" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231776</guid><pubDate>Tue, 21 Jul 2026 12:26:52 GMT</pubDate></item><item><title>신기합니다. 투표인증 글에는 메모하신분들이 없네요.[8][10]</title><link>https://www.clien.net/service/board/park/19231775</link><description>
- 
- 
-  &lt;p&gt;그렇게나 민주당을  걱정하시는 분들이었는데, &lt;/p&gt;
-  &lt;p&gt;투표인증글이 하나도 없네요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231775</guid><pubDate>Tue, 21 Jul 2026 12:24:54 GMT</pubDate></item><item><title>서울의 소리 초심, 유시민을 향한 고언[3][5]</title><link>https://www.clien.net/service/board/park/19231774</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/sli6blBsNxU" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231774</guid><pubDate>Tue, 21 Jul 2026 12:20:53 GMT</pubDate></item><item><title>저렇게 할 수 있는것도 대통령이 비거주 1주택에 급전 필요한게 아니라 가능한거죠[17][4]</title><link>https://www.clien.net/service/board/park/19231772</link><description>
- 
- 
-  &lt;p&gt;1주택 실거주면 잔금 바로 받아서 그걸로 갈아타기 아파트 잔금처리 하거나 전세, 월세 들어갈 돈에 필요해서 17억이라는 거금을 3개월 유예해주는건 못하니까요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;대통령님이 지금 다른거주지가 있고 당장 17억이 없어도 별 문제가 안되니 저렇게 할 수 있는거지 평범한 사람은 꿈도 못꾸는 방법입니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;한마디로 다주택 마귀거나 비거주 1주택이거나 부자들만 할 수 있는 거래방식이라는거죠&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231772</guid><pubDate>Tue, 21 Jul 2026 12:15:57 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19231832</guid><pubDate>Tue, 21 Jul 2026 13:50:53 GMT</pubDate></item></channel></rss>
