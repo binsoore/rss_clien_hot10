@@ -1,5 +1,93 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Wed, 30 Sep 2026 07:00:53 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>저는 이스라엘이 부럽네요[11][2]</title><link>https://www.clien.net/service/board/park/19271527</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Wed, 30 Sep 2026 08:00:52 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>정보 앱스토어에서 내려간 아차키 iOS판 다운로드 및 설치법[10][2]</title><link>https://www.clien.net/service/board/cm_car/19271331</link><description>
+ 
+ 
+  &lt;p&gt;(업데이트)&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://apps.apple.com/kr/app/%EC%95%84%EC%B0%A8%ED%82%A4/id1457930033" ori-url="https://apps.apple.com/kr/app/%EC%95%84%EC%B0%A8%ED%82%A4/id1457930033" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://apps.apple.com/kr/app/%EC%95%84%EC%B0%A8%ED%82%A4/id1457930033&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;천만다행으로 아차키가 앱스토어에 다시 돌아왔나봅니다 (ㅠㅠ)&lt;/p&gt;
+  &lt;p&gt;아래 내용은 정보글 개념으로 남겨두겠습니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;---&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;얼마전에 새 아이폰으로 기변했는데 굴당에서 &lt;a href="https://www.clien.net/service/board/cm_car/19270937" ori-url="https://www.clien.net/service/board/cm_car/19270937" rel="noopener noreferrer" target="_blank"&gt;저와 비슷한 경우인 분을 발견&lt;/a&gt;해서 제가 해결했던 경험담을 공유해봅니다&lt;/p&gt;
+  &lt;p&gt;아직까지 아차키 자체 서버는 정상적으로 작동하지만, 애플 개발자 연회비를 내지 못해 앱이 내려간 것으로 추정됩니다&lt;/p&gt;
+  &lt;p&gt;터미널 사용에 익숙하지 않으시다면 쓰고 계시는 에이전트에게 이 글을 공유해서 함께 진행해보는 것도 좋아보입니다 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;준비물&lt;/p&gt;
+  &lt;p&gt;- 아차키 다운로드 이력이 남아있는 애플 ID (이후 편의상 user@example.com로 표기)&lt;/p&gt;
+  &lt;p&gt;- 새 아이폰에서 개발자 모드 활성화 후 USB 연결&lt;/p&gt;
+  &lt;p&gt;- 홈브류가 설치되어있는 맥 혹은 Scoop + winget이 설치되어있는 윈도우 컴퓨터&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;맥&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;터미널 실행&lt;br/&gt;&lt;br/&gt;
+     brew install ipatool&lt;br/&gt;
+     ipatool auth login -e user@example.com&lt;br/&gt;
+     ipatool download -b io.tuneit.achakey --external-version-id 890471493 -o achakey.ipa&lt;br/&gt;
+     brew install libimobiledevice ideviceinstaller&lt;br/&gt;&lt;br/&gt;&lt;/li&gt;
+   &lt;li&gt;아차키를 설치하고자 하는 아이폰을 USB로 연결하고 ‘이 컴퓨터를 신뢰’와 개발자 모드를 활성화&lt;/li&gt;
+   &lt;li&gt;idevice_id -l 실행 시 조회되는 iOS 기기가 하나여야 합니다&lt;br/&gt;&lt;br/&gt;
+     idevice_id -l&lt;br/&gt;&lt;code&gt;ideviceinstaller install &lt;/code&gt;achakey.ipa&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;윈도우&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;PowerShell에서 `scoop install ipatool` 실행하여 ipatool 설치&lt;/li&gt;
+   &lt;li&gt;`ipatool`을 실행할 수 있는 PowerShell에서 다운로드 폴더로 이동한 뒤 로그인 + ipa 다운로드:&lt;br/&gt;&lt;br/&gt;
+     Set-Location "$env:USERPROFILE\Downloads"&lt;br/&gt;
+     ipatool auth login -e "user@example.com"&lt;br/&gt;
+     ipatool list-versions -b io.tuneit.achakey&lt;br/&gt;
+     ipatool download -b io.tuneit.achakey --external-version-id 890471493 -o achakey.ipa&lt;br/&gt;
+        &lt;/li&gt;
+   &lt;li&gt;아차키를 설치하고자 하는 아이폰을 USB로 연결하고 ‘이 컴퓨터를 신뢰’와 개발자 모드를 활성화&lt;/li&gt;
+   &lt;li&gt;&lt;a href="https://www.msys2.org" ori-url="https://www.msys2.org" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;MSYS2 공식 사이트&lt;/a&gt;에서 Windows 설치 파일을 받아 설치&lt;/li&gt;
+   &lt;li&gt;MSYS2 설치가 끝나면 PowerShell에서 UCRT64 명령창을 열기&lt;br/&gt;&lt;br/&gt;
+     Start-Process 'C:\msys64\ucrt64.exe'&lt;br/&gt;
+     pacman -Syu&lt;br/&gt;
+     pacman -S --needed mingw-w64-ucrt-x86_64-ideviceinstaller&lt;br/&gt;
+     cd "$(cygpath -u "$USERPROFILE")/Downloads"&lt;br/&gt;&lt;br/&gt;&lt;/li&gt;
+   &lt;li&gt;idevice_id -l 실행 시 조회되는 iOS 기기가 하나여야 합니다&lt;br/&gt;&lt;br/&gt;
+     idevice_id -l&lt;br/&gt;
+     ideviceinstaller -i achakey.ipa&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;여기까지 다 하셨으면 설치가 완료됩니다&lt;/p&gt;
+  &lt;p&gt;참고로 ipatool로 다운로드 되는 ipa는 인증했던 애플 계정에 귀속되어 있는 파일이라 본인만 사용하실 수 있습니다&lt;/p&gt;
+  &lt;p&gt;아무 계정에 귀속되지 않은 복호화된 ipa 파일은 보존을 위해 &lt;a href="https://archive.org/details/io.tuneit.achakey_2.2.25101003_decrypted" ori-url="https://archive.org/details/io.tuneit.achakey_2.2.25101003_decrypted" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;Internet Archive에 업로드&lt;/a&gt;해뒀습니다.&lt;/p&gt;
+  &lt;p&gt;이후에 이 방법으로도 설치가 불가능해진다면 SideStore 같은 어플을 통해서 사이드로딩해서 사용할 수 있겠죠&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19271331</guid><pubDate>Tue, 29 Sep 2026 18:10:40 GMT</pubDate></item><item><title>암살자들 반응이 격한 이유[15][2]</title><link>https://www.clien.net/service/board/park/19271536</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;박정희야 호불호가 갈릴수 있으나&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;육영수 여사는 역대 영부인중 부동의 1위죠&lt;/p&gt;
+  &lt;p&gt;그런 연유가 아닌가 봐요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;박정희야 그동안 나쁘게 그려온 영화가 많으니 …&lt;/p&gt;
+  &lt;p&gt;별 생각 없지만 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;가족사를 왜곡 하게끔  연출이 되어 있다는 점&lt;/p&gt;
+  &lt;p&gt;그 유족이 아직 살아 있다는 점&lt;/p&gt;
+  &lt;p&gt;(보통 이럴경우 가족에서 먼처 양해를 구하고 제작하죠)&lt;/p&gt;
+  &lt;p&gt;그리고 부동의 영부인 1위인 육영수 여사를 건드렸다는 점&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271536</guid><pubDate>Wed, 30 Sep 2026 07:51:41 GMT</pubDate></item><item><title>염창 20억, 녹번 15억 거의 근접했네요 ㄷㄷㄷ[22][2]</title><link>https://www.clien.net/service/board/park/19271531</link><description>
+ 
+ 
+  &lt;p&gt;부동산은 여름이 비수인데도 이렇게 상승세를 유지하다니 ..&lt;/p&gt;
+  &lt;p&gt;서울아파트는 그자체로 트로피에셋화가 된듯 하군요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271531</guid><pubDate>Wed, 30 Sep 2026 07:21:37 GMT</pubDate></item><item><title>자동차 마감이 좀 이상하네요.[10][0]</title><link>https://www.clien.net/service/board/park/19271434</link><description>
+ 
+ 
+  &lt;p&gt;테슬라 모델 Y 스탠다드 베를린 공장산인데요. &lt;/p&gt;
+  &lt;p&gt;다른 차는 유심히 본 적이 없어서 잘 모르겠네요  &lt;/p&gt;
+  &lt;p&gt;너무 허접해 보여서 ㅋㅋㅋ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271434</guid><pubDate>Tue, 29 Sep 2026 21:44:46 GMT</pubDate></item><item><title>저는 이스라엘이 부럽네요[29][2]</title><link>https://www.clien.net/service/board/park/19271527</link><description>
  
  
   &lt;p&gt;국제정세, 국가간에는 도덕도 의리도 없다고 생각합니다.&lt;/p&gt;
@@ -10,7 +98,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;강력한 힘과 실행력이 평화를 유지시키죠. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271527</guid><pubDate>Wed, 30 Sep 2026 06:42:33 GMT</pubDate></item><item><title>ChatGPT 가성비는 사실상 끝났네요[11][0]</title><link>https://www.clien.net/service/board/park/19271518</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271527</guid><pubDate>Wed, 30 Sep 2026 06:42:33 GMT</pubDate></item><item><title>ChatGPT 가성비는 사실상 끝났네요[13][0]</title><link>https://www.clien.net/service/board/park/19271518</link><description>
  
  
   &lt;p&gt;구독제 Pro로 상당한 작업들이 가능했는데, 이번 개악 이후로 상당히 빡빡해지고 Claude나 Gemini 같은 타 모델 대비 이점이 사실상 사라진 듯합니다.&lt;/p&gt;
@@ -19,7 +107,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;클로드 사용자들은 기존 GPT 구독제 사용량 한도로 쓰다가 클로드로 물밀듯이 들어오는 이주민들 때문에 조만간 사용량 너프나 제한 등 불똥을 맞을 가능성도 높아 보입니다. ㅠㅠ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271518</guid><pubDate>Wed, 30 Sep 2026 05:05:36 GMT</pubDate></item><item><title>선' 넘은 북한‥'지뢰매설' 요새화 작업 어디까지?[13][0]</title><link>https://www.clien.net/service/board/park/19271510</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271518</guid><pubDate>Wed, 30 Sep 2026 05:05:36 GMT</pubDate></item><item><title>선' 넘은 북한‥'지뢰매설' 요새화 작업 어디까지?[14][0]</title><link>https://www.clien.net/service/board/park/19271510</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/214/0001526413?sid1=001" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://n.news.naver.com/mnews/article/214/0001526413?sid1=001&lt;/a&gt;&lt;/p&gt;
@@ -58,7 +146,7 @@
   &lt;p&gt;김주애에게 후계를 공식화하고 있는 과정속에 세습의 명분을 강력하게 주기위한 큰 대남 도발을 안하면 다행일테니까요 &lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271510</guid><pubDate>Wed, 30 Sep 2026 04:36:01 GMT</pubDate></item><item><title>스포있음)암살자(들) 보고왔습니다[10][1]</title><link>https://www.clien.net/service/board/park/19271503</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271510</guid><pubDate>Wed, 30 Sep 2026 04:36:01 GMT</pubDate></item><item><title>스포있음)암살자(들) 보고왔습니다[13][1]</title><link>https://www.clien.net/service/board/park/19271503</link><description>
  
  
   &lt;p&gt;2시간,넘게 긴장감 있게 재미있게 보고왔습니다&lt;/p&gt;
@@ -71,7 +159,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;별4개요-!&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271503</guid><pubDate>Wed, 30 Sep 2026 01:28:00 GMT</pubDate></item><item><title>나이 먹으니까 근육이 문제가 아니네요[11][1]</title><link>https://www.clien.net/service/board/park/19271500</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271503</guid><pubDate>Wed, 30 Sep 2026 01:28:00 GMT</pubDate></item><item><title>나이 먹으니까 근육이 문제가 아니네요[12][1]</title><link>https://www.clien.net/service/board/park/19271500</link><description>
  
  
   &lt;p&gt;어쩌다보니 오십킬로 짜리 옮기게 됐는데 목장갑 끼니 대충 하겠는데 ;&lt;/p&gt;
@@ -80,7 +168,7 @@
   &lt;p&gt;이사짐 나르는 50대 아저씨는 그걸 번쩍 번쩍 들고 가시네요 &lt;/p&gt;
   &lt;p&gt;존경보다 저분 관절은 멀쩡한가 싶네요 &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271500</guid><pubDate>Wed, 30 Sep 2026 01:07:59 GMT</pubDate></item><item><title>도쿄 키보드 엑스포 다녀왔습니다.[7][5]</title><link>https://www.clien.net/service/board/park/19271449</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271500</guid><pubDate>Wed, 30 Sep 2026 01:07:59 GMT</pubDate></item><item><title>도쿄 키보드 엑스포 다녀왔습니다.[11][5]</title><link>https://www.clien.net/service/board/park/19271449</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -123,7 +211,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271449</guid><pubDate>Tue, 29 Sep 2026 22:20:39 GMT</pubDate></item><item><title>GOP / GP 군생활 하신 분들...[10][1]</title><link>https://www.clien.net/service/board/park/19271354</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271449</guid><pubDate>Tue, 29 Sep 2026 22:20:39 GMT</pubDate></item><item><title>GOP / GP 군생활 하신 분들...[11][1]</title><link>https://www.clien.net/service/board/park/19271354</link><description>
  
  
   &lt;p&gt;20여년 전 15사 대성산 GOP 군생활 했습니다..&lt;/p&gt;
@@ -170,7 +258,7 @@
   &lt;p&gt;요즘은 진짜 퇴보입니다..&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271445</guid><pubDate>Tue, 29 Sep 2026 22:11:52 GMT</pubDate></item><item><title>생활용품 문짝 경첩 교체기[13][0]</title><link>https://www.clien.net/service/board/use/19271176</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271445</guid><pubDate>Tue, 29 Sep 2026 22:11:52 GMT</pubDate></item><item><title>생활용품 문짝 경첩 교체기[14][0]</title><link>https://www.clien.net/service/board/use/19271176</link><description>
  
  
   &lt;p&gt;대부분의 사용자들은 &lt;/p&gt;
@@ -261,7 +349,7 @@
   &lt;p&gt;이지경첩 안에서 튀어나온 윤활제 및&lt;/p&gt;
   &lt;p&gt;정상적인 경첩의 상태&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19271176</guid><pubDate>Tue, 29 Sep 2026 12:53:48 GMT</pubDate></item><item><title>인생에서 가장 어려운게 자기 객관화인 것 같습니다.[12][5]</title><link>https://www.clien.net/service/board/park/19271502</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19271176</guid><pubDate>Tue, 29 Sep 2026 12:53:48 GMT</pubDate></item><item><title>인생에서 가장 어려운게 자기 객관화인 것 같습니다.[13][6]</title><link>https://www.clien.net/service/board/park/19271502</link><description>
  
  
   &lt;p&gt;잘되면 내 탓 못되면 네 탓&lt;/p&gt;
@@ -282,7 +370,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;좋은밤 되세요 선배님들&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271502</guid><pubDate>Wed, 30 Sep 2026 01:12:55 GMT</pubDate></item><item><title>암살자(들)' 논란 물어보니‥허진호 감독 '박정희 배후라 생각한 적 없다'[32][0]</title><link>https://www.clien.net/service/board/park/19271489</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271502</guid><pubDate>Wed, 30 Sep 2026 01:12:55 GMT</pubDate></item><item><title>암살자(들)' 논란 물어보니‥허진호 감독 '박정희 배후라 생각한 적 없다'[33][0]</title><link>https://www.clien.net/service/board/park/19271489</link><description>
  
  
   &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/214/0001526423?sid1=001" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://n.news.naver.com/mnews/article/214/0001526423?sid1=001&lt;/a&gt;&lt;/p&gt;
@@ -332,7 +420,7 @@
   &lt;p&gt;마지막으로 박정희의 가족들이 영화에 대해서 어떻게 반응하고 있을까 궁금하지만 다른 대응을 하면 더 진흙탕될것 같군요.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271489</guid><pubDate>Wed, 30 Sep 2026 00:22:10 GMT</pubDate></item><item><title>이야기 연식 대비 키로수 적은 중고차 7개월간 수리 내역[12][1]</title><link>https://www.clien.net/service/board/cm_car/19271444</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271489</guid><pubDate>Wed, 30 Sep 2026 00:22:10 GMT</pubDate></item><item><title>이야기 연식 대비 키로수 적은 중고차 7개월간 수리 내역[13][1]</title><link>https://www.clien.net/service/board/cm_car/19271444</link><description>
  
  
   &lt;p&gt;20대 때부터 꼭 타고 싶었던 G80(DH)을 중고로 구입한 지도 7개월이 다 되어 가네요.&lt;/p&gt;
@@ -365,7 +453,7 @@
     이런거보면 목소리 큰 사람이 이기는 세상인가 싶기도 합니다&lt;br/&gt;&lt;br/&gt;
     ps. 그렇다고 국힘을 찍을 일은 없습니다 에휴....&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271485</guid><pubDate>Wed, 30 Sep 2026 00:01:34 GMT</pubDate></item><item><title>이재명 대통령이 말하는 논에 태양광 한다는건 이거 말하는 걸거에요.[19][1]</title><link>https://www.clien.net/service/board/park/19271476</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271485</guid><pubDate>Wed, 30 Sep 2026 00:01:34 GMT</pubDate></item><item><title>이재명 대통령이 말하는 논에 태양광 한다는건 이거 말하는 걸거에요.[20][1]</title><link>https://www.clien.net/service/board/park/19271476</link><description>
  
  
   &lt;p&gt;&lt;img alt="203620_203280_4933.jpg" class="fr-dib fr-fil" data-file-sn="15831652" data-gif="false" data-img-height="330" data-img-width="600" data-role="attach-image" src="https://edgio.clien.net/F01/2026/9/15831652/8b3d85853e584.jpg?scale=width:740"/&gt;&lt;/p&gt;
@@ -417,7 +505,7 @@
   &lt;p&gt;&lt;a href="https://link.fmkorea.org/link.php?url=https%3A%2F%2Fwww.reuters.com%2Fbusiness%2Fautos-transportation%2Fus-finalizes-new-lower-fuel-economy-standards-2026-09-28%2F%3Futm_source&amp;amp;lnu=4213840295&amp;amp;mykey=MDAwMTExNTY3OTg5MjI=" ori-url="https://link.fmkorea.org/link.php?url=https%3A%2F%2Fwww.reuters.com%2Fbusiness%2Fautos-transportation%2Fus-finalizes-new-lower-fuel-economy-standards-2026-09-28%2F%3Futm_source&amp;amp;lnu=4213840295&amp;amp;mykey=MDAwMTExNTY3OTg5MjI=" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://www.reuters.com/business/autos-transportation/us-finalizes-new-lower-fuel-economy-standards-2026-09-28/?utm_source&lt;/a&gt;&lt;/p&gt;
   &lt;p&gt;전기차 업계도 악재군요. 유가 잡아야하는데 무슨_-_-;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19271314</guid><pubDate>Tue, 29 Sep 2026 17:36:32 GMT</pubDate></item><item><title>이재명이 윤석열보다는 낫겠죠[35][4]</title><link>https://www.clien.net/service/board/park/19271471</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19271314</guid><pubDate>Tue, 29 Sep 2026 17:36:32 GMT</pubDate></item><item><title>이재명이 윤석열보다는 낫겠죠[37][4]</title><link>https://www.clien.net/service/board/park/19271471</link><description>
  
  
   &lt;p&gt;그리 맘먹으니 좀 편하네요&lt;/p&gt;
@@ -425,7 +513,7 @@
   &lt;p&gt;제가 틀려서 사과하고 싶습니다.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271471</guid><pubDate>Tue, 29 Sep 2026 23:34:04 GMT</pubDate></item><item><title>젤렌스키 하는 짓이 심각하네요. 노골적으로 한국 vs 북한 구도 만들겠다로 덤벼드는군[20][11]</title><link>https://www.clien.net/service/board/park/19271469</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271471</guid><pubDate>Tue, 29 Sep 2026 23:34:04 GMT</pubDate></item><item><title>젤렌스키 하는 짓이 심각하네요. 노골적으로 한국 vs 북한 구도 만들겠다로 덤벼드는군[21][11]</title><link>https://www.clien.net/service/board/park/19271469</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -628,7 +716,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;매매 고민이신 분들은 내년 임사자 물건들 눈여겨보시는건 괜찮을듯하네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271453</guid><pubDate>Tue, 29 Sep 2026 22:40:45 GMT</pubDate></item><item><title>김민석이는 '암살자(들)' 단체 관람 추진 안하나요??[18][2]</title><link>https://www.clien.net/service/board/park/19271448</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271453</guid><pubDate>Tue, 29 Sep 2026 22:40:45 GMT</pubDate></item><item><title>김민석이는 '암살자(들)' 단체 관람 추진 안하나요??[19][2]</title><link>https://www.clien.net/service/board/park/19271448</link><description>
  
  
   &lt;p&gt;김민석이는 '암살자(들)' 단체 관람 추진 안하나요??&lt;/p&gt;
@@ -649,7 +737,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;저도 빨갛게 달아오른 피부 보려고 하니 피부과 미용시술하는 사람들한테 새치기 당하고 뒷전으로 밀려난 적 있는데 이건 진짜 역대급 개선 정책인 것 같습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271447</guid><pubDate>Tue, 29 Sep 2026 22:05:43 GMT</pubDate></item><item><title>(펌)삼성이 애플이 할줄 알고 선수친 증거 발견.jpg[15][3]</title><link>https://www.clien.net/service/board/park/19271446</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271447</guid><pubDate>Tue, 29 Sep 2026 22:05:43 GMT</pubDate></item><item><title>(펌)삼성이 애플이 할줄 알고 선수친 증거 발견.jpg[16][3]</title><link>https://www.clien.net/service/board/park/19271446</link><description>
  
  
   &lt;p&gt;4년후의 애플이 색상 이렇게 출시할거      &lt;/p&gt;
@@ -706,7 +794,7 @@
   &lt;p&gt;지금 와서 진천의 우리 땅에 태양광 깔기는 늦었지만 &lt;/p&gt;
   &lt;p&gt;장기적으로 농민, 국가 둘다 도움이 되는 방향으로 가고 있네요 &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271436</guid><pubDate>Tue, 29 Sep 2026 21:39:04 GMT</pubDate></item><item><title>머드 게임 개발 3년 하나만 파기.[17][6]</title><link>https://www.clien.net/service/board/park/19271412</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271436</guid><pubDate>Tue, 29 Sep 2026 21:39:04 GMT</pubDate></item><item><title>머드 게임 개발 3년 하나만 파기.[19][7]</title><link>https://www.clien.net/service/board/park/19271412</link><description>
  
  
   &lt;p&gt;머드 게임 개발 기록 입니다.&lt;/p&gt;
@@ -769,7 +857,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271412</guid><pubDate>Tue, 29 Sep 2026 20:10:10 GMT</pubDate></item><item><title>우리 클리앙이 전체적으로 보수화되어 가는 거 같네요 거기에 빈댓글도 ...[101][3]</title><link>https://www.clien.net/service/board/park/19271423</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271412</guid><pubDate>Tue, 29 Sep 2026 20:10:10 GMT</pubDate></item><item><title>우리 클리앙이 전체적으로 보수화되어 가는 거 같네요 거기에 빈댓글도 ...[103][3]</title><link>https://www.clien.net/service/board/park/19271423</link><description>
  
  
   &lt;p&gt;저는 민주진영 지지자이긴 하지만 &lt;/p&gt;
@@ -861,13 +949,13 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;정신들차리세요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271363</guid><pubDate>Tue, 29 Sep 2026 18:40:31 GMT</pubDate></item><item><title>꽤 혁신적인 아이디어 같습니다[31][7]</title><link>https://www.clien.net/service/board/park/19271419</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271363</guid><pubDate>Tue, 29 Sep 2026 18:40:31 GMT</pubDate></item><item><title>꽤 혁신적인 아이디어 같습니다[32][7]</title><link>https://www.clien.net/service/board/park/19271419</link><description>
  
  
   &lt;p&gt;&lt;a href="https://www.yna.co.kr/view/AKR20260929087051001" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://www.yna.co.kr/view/AKR20260929087051001&lt;/a&gt;&lt;/p&gt;
   &lt;p&gt;농지 조사가 의외의 재생에너지 신바람 일으키겠어요 &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271419</guid><pubDate>Tue, 29 Sep 2026 20:33:24 GMT</pubDate></item><item><title>오 정석대로 펜 잡으니까 좋긴 좋네요[11][1]</title><link>https://www.clien.net/service/board/park/19271406</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271419</guid><pubDate>Tue, 29 Sep 2026 20:33:24 GMT</pubDate></item><item><title>오 정석대로 펜 잡으니까 좋긴 좋네요[12][2]</title><link>https://www.clien.net/service/board/park/19271406</link><description>
  
  
   &lt;p&gt;처음에 한 두시간은 펜 파지법 바꾸면서 글씨가 너무 안 써져서 스트레스 받았거든요&lt;/p&gt;
@@ -1093,7 +1181,7 @@
   &lt;p&gt;내란범도 모자라&lt;/p&gt;
   &lt;p&gt;도둑놈들도 키우는 곳인가요..&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271389</guid><pubDate>Tue, 29 Sep 2026 19:27:59 GMT</pubDate></item><item><title>김어준씨의 대통령이 알고리즘 감옥에 갇혔다라는 발언…[53][21]</title><link>https://www.clien.net/service/board/park/19271387</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271389</guid><pubDate>Tue, 29 Sep 2026 19:27:59 GMT</pubDate></item><item><title>김어준씨의 대통령이 알고리즘 감옥에 갇혔다라는 발언…[55][21]</title><link>https://www.clien.net/service/board/park/19271387</link><description>
  
  
   &lt;p&gt;이 발언을 듣고 많은 생각을 하게 됩니다.&lt;/p&gt;
@@ -1111,63 +1199,4 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;대통령의 공과 과에 대해 판단을 하기에는 1년 조금 넘는 시간밖에 지나지 않았는데 너무 섣부른 것은 아닐까요?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271387</guid><pubDate>Tue, 29 Sep 2026 19:31:33 GMT</pubDate></item><item><title>민주당 지지층 64% '유시민 비판은 근거 없는 李대통령 흔들기'[38][22]</title><link>https://www.clien.net/service/board/park/19271386</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://naver.me/G2YwhYhV" ori-url="https://naver.me/G2YwhYhV" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://naver.me/G2YwhYhV&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이게 현실이네요. 역시 커뮤니티에선 시끄러운 소수의 의견이 여론인마냥 움직이지만, 국민은 다르네요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271386</guid><pubDate>Tue, 29 Sep 2026 19:22:00 GMT</pubDate></item><item><title>북한의 도발은 일종의 가불기죠[26][5]</title><link>https://www.clien.net/service/board/park/19271385</link><description>
- 
- 
-  &lt;p&gt;기본적으로 북한은 체제에 심각한 모순을 가진 국가입니다. 사실 국가라고도 할 수 없죠. 우리 국토를 강제로 점령한 후 지배하고 있는 김씨 일가의 사병 집단이자 세계적 규모로 해악을 퍼트리는 무장 테러 집단이라 할 수 있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이들은 표면적으로는 민주주의를 표방하면서도 정작 김씨 일가가 영속적 지배를 하고 있고, 시장 경제의 활성화 없이는 국민을 잘 살게 할 수 없는데 국가를 장악하기 위해 반시장주의적 행보를 밟아오고 있죠. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이런 이들이 어떻게 국민을 잘 살게 할 수 있을까요? 불가능합니다. 절대로요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이들이 품은 가장 큰 모순이 그것이고, 김씨 일가와 그 졸개들은 그 모순의 창이 자기들에게 향하는 걸 막기 위해 적을 만들었습니다. 미국과 한국이라는 적을요. 적을 만드는 것이야말로 내부의 모순이 만드는 분노를 독재자가 원하는 방향으로 배출하는 방법이거든요. 그런 이유로 우리에게 끊임없이 도발을 해왔습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이런 상황에서 우리는 두 가지 방안이 있습니다.&lt;/p&gt;
-  &lt;p&gt;하나는 맞대응이고 하나는 무대응이죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;맞대응을 하면 저쪽은 좋아합니다. 내부의 모순을 더 많이 배출할 구석이 생기니까요. 자기네 군사 한둘이 죽건 말건 그게 무슨 의미가 있을까요? 군대를 우러 전쟁에 용병으로 팔아먹는 김정은 입장에서 그렇게 죽는 북한군이 귀한 것도 아닐 텐데 말이죠.&lt;/p&gt;
-  &lt;p&gt;우리 속은 살짝 통쾌해지지만 현실적으로 크게 달라지는 건 없습니다. 군사적 위기로 인한 경제적 손실은 덤이고요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그럼 무대응이 정답이냐? 그것도 아닙니다. 저쪽은 이미 도발로 내부의 모순을 배출했습니다. 맞을 일 없이 패면 신이 나죠. "저 봐라, 미국 없이는 아무것도 못하는 미제의 졸개들을." 이러면서 비웃습니다.&lt;/p&gt;
-  &lt;p&gt;화가 많이 나고 비통하고 속이 뜨거운데 국가 지도자가 참으세요 참으세요 하고 있습니다. 미친 거죠. 니가 뒤지고 싶어 환장했구나 하면서 정권을 교체시킵니다. 그럼 다시 맞대응하는 정권이 됩니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;북한은 이 가불기를 계속해서 걸어오고 있습니다. 맞대응을 해도 무대응을 해도 아무 의미가 없습니다. 그나마 가장 긁히던 대응은 군사 훈련의 강도를 높이는 것과 대북 확성기로 김정은 너희 엄마 첩년이라는 패륜적인 드립을 치는 거 정도인데, 이게 저들 내부의 모순을 폭발시켜 김씨 강점기를 무너뜨릴 방법까진 되지 않는다고 생각합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다만 그럼에도 전 강경하게 대응해야 한다고 봅니다. 둘 다 의미가 없잖아요? 그럼 속이라도 시원해져야죠. 그게 그나마 낫습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;혹시 압니까? 이렇게 강경 대응을 하다 보면 딸에게 권좌를 물려줘야 하니 승계 작업을 위해 당장은 좀 참아보자 할 지도 모르죠. 그러면 우리는 그만큼 거지들하고 엮여서 피곤해질 일이 없고요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271385</guid><pubDate>Tue, 29 Sep 2026 19:21:56 GMT</pubDate></item><item><title>이번 북한 지뢰 사고도 윤석열 정부 때문에 발생했네요.[18][3]</title><link>https://www.clien.net/service/board/park/19271378</link><description>
- 
- 
-  &lt;p&gt;북한의 적대적 두 국가론 언급도 생각해보니 윤석열 정부 때 있지 않았나요? &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;대체 윤석열이 어디까지 나라를 추락시킨 건가요.. 와..&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271378</guid><pubDate>Tue, 29 Sep 2026 19:13:50 GMT</pubDate></item><item><title>김민석은 왜 이러는 거죠??[37][26]</title><link>https://www.clien.net/service/board/park/19271369</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="스크린샷 2026-09-29 183823.png" class="fr-dib fr-fil full" data-file-sn="15831415" data-gif="false" data-img-height="1731" data-img-width="1366" data-role="attach-image" src="https://edgio.clien.net/F01/2026/9/15831415/7fdc6635311d7.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다 갈라쳐서 오로지 나만 후보 되겠다는 행보로 밖에 안보이네요 &lt;/p&gt;
-  &lt;p&gt;저번에는 자체 광역자치단체장 평가 순위를 매겨 모욕을 주더니 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정작 바로 잡아야할 사법쿠데타 수괴놈 위헌적 행위에 대해선 앵무새 마냥 입으로만 말하니 &lt;/p&gt;
-  &lt;p&gt;수괴놈이 온갖 난동을 부리는 거 아닌가요??&lt;/p&gt;
-  &lt;p&gt;오석준 800원 횡령 해고 정당판결에 따르면 &lt;/p&gt;
-  &lt;p&gt;지들이야 말로 파면감 아닌가요??&lt;/p&gt;
-  &lt;p&gt;단순 실수였다면서 우롱하는 게 킹받더라고요 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정부랑 발 맞춰서 더 잘하겠지 싶었는데 &lt;/p&gt;
-  &lt;p&gt;점점 점입가경이네요 &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271369</guid><pubDate>Tue, 29 Sep 2026 18:51:15 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19271387</guid><pubDate>Tue, 29 Sep 2026 19:31:33 GMT</pubDate></item></channel></rss>
