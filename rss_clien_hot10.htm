@@ -1,5 +1,282 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Tue, 20 Oct 2026 16:00:52 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>수만옹의 A2O 출신 새 아이돌들을 극찬하기에 이제야 봤네요.[16][1]</title><link>https://www.clien.net/service/board/park/19280262</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Tue, 20 Oct 2026 17:00:56 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 KNCAP의 테슬라 안전등급[11][3]</title><link>https://www.clien.net/service/board/cm_car/19280268</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="paste-1792478454291.png" class="fr-dib fr-fil full" data-file-sn="15845385" data-gif="false" data-img-height="822" data-img-width="1503" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845385/e6642645363e1.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;HDA 사고 언론에 보도가 많이 돼서 생각나서 찾아보니, 여전히 4등급이네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;감히 곡선 도로에서 속도를 줄이다니.. 안되겠다 테슬라 너는 4등급 받아라 떼잉&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아, 이것도 '국익' 때문일까요 ㅎ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19280268</guid><pubDate>Tue, 20 Oct 2026 15:47:42 GMT</pubDate></item><item><title>AI 로 클리앙 인프라 관리하기 2탄.[8][12]</title><link>https://www.clien.net/service/board/park/19280308</link><description>
+ 
+ 
+  &lt;p&gt;지난번 보안에 이어, 이번에는 클리앙 자바 시스템을 도메인별로 나눠 AI와 같이 관리하는 이야기입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;1탄  링크 : &lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/park/19279786" target="_blank"&gt;https://www.clien.net/service/board/park/19279786&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;클리앙 시스템은 웹 화면 서버, API 서버, 관리자 서버, 그리고 올해 나온 앱으로 되어 있습니다. 서버 코드는 2016년부터 이어져 와서 자바 파일만 1,300개쯤, 화면 템플릿이 500개쯤 됩니다.&lt;/p&gt;
+  &lt;p&gt;이걸 AI에게 맡기면 컨텍스트가 부족해서 엉뚱한 결과를 냅니다.  매번 처음부터 읽고, 읽다가 기억할 수 있는 양을 넘기고, 세션이 끝나면 다 잊습니다.  &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그래서 전체 지도부터 그리기로 합니다..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;문서만 담는 저장소를 따로 두고, 원칙은 한 줄로 정했습니다. "전체 코드를 매번 다시 분석하지 않고, 지도를 보고 이어서 개발한다." 지도는 세 층입니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;도메인 15개: 게시판, 댓글, 로그인, 마이페이지, 검색, 쪽지, 알림, 신고, 소모임, 장터 등&lt;/li&gt;
+   &lt;li&gt;시나리오 카드 57장: 기능 하나가 지금 어떻게 동작하는지. 어디로 들어와 어떤 조건에서 갈리고, 무엇을 바꾸고, 다른 기능에 무슨 영향을 주는지까지. PC·모바일 화면과 앱 경로도 같이 봅니다&lt;/li&gt;
+   &lt;li&gt;계약 문서 13개: 여러 화면과 앱이 같이 지켜야 하는 약속&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;AI는 일할 때 카드 한 장과 그 카드가 가리키는 파일만 엽니다. 카드의 문장에는 코드로 확인한 것, 실제로 돌려 본 것, 추정한 것을 구분하는 표시를 붙입니다. AI가 "확인했다"고 말하는 것과 실제로 확인한 것을 구분하려고요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;지키는 규칙도 몇 가지 있습니다.&lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;작업 크기만큼만 읽고, 그만큼만 남깁니다. 문구나 색 바꾸는 일이면 문서를 남기지 않고, 여러 저장소를 같이 바꾸는 큰 일이면 따로 프로젝트 문서를 만듭니다.&lt;/li&gt;
+   &lt;li&gt;카드에는 지금 실제로 동작하는 것만 두고, 진행 중인 설계와 결정은 프로젝트 문서에 뒀다가 배포가 끝나 안정되면 확정된 내용만 카드로 옮깁니다. 결정 기록에는 채택하지 않은 안과 그 이유, 이 결정이 깨지는 조건까지 적습니다. 지금까지 프로젝트 40여 개, 결정 기록 110여 건이 쌓였습니다.&lt;/li&gt;
+   &lt;li&gt;문서에 없던 동작을 찾으면 코드보다 카드에 먼저 적습니다. 오래된 시스템에는 코드 어디에도 '규칙'으로 적혀 있지 않은 동작이 꼭 있습니다. 머릿속에만 있던 규칙 하나가 문서가 되면, 다음 사람도 다음 AI 세션도 같은 자리에서 헤매지 않습니다.&lt;/li&gt;
+   &lt;li&gt;문서에 클래스 이름이나 파일 경로를 적으려면 그 파일을 먼저 엽니다. "검토만 해 줘" 같은 요청도 예외가 아닙니다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;최근에 다크 모드에서 글쓴이가 고른 글자색과 배경색이 잘 보이도록 맞춰 주는 보정을 넣었는데, 이것도 같은 순서였습니다. 지금 다크 모드가 본문을 어떻게 그리는지부터 카드에 적고, 공개 글 표본을 실제로 렌더링해서 보정 대상을 셌습니다. 저장된 글은 건드리지 않고 화면에 그릴 때 밝기만 옮기기로 정한 뒤, 배포하고 나서 공개 글 87개를 PC와 모바일 다크 모드로 다시 열어 대비가 부족한 본문 글자가 남지 않은 걸 확인했습니다. 앱에도 최신 버전부터 같은 보정이 들어 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;전환한지 석 달, 문서 저장소에 커밋이 400개 넘게 쌓였고 대부분 AI와 같이 썼습니다. 내부 개발자가 같은 지도를 보고 일하고, 새 작업을 어디서부터 봐야하는지도 잘 합니다. 다만 주기적으로 문서를 검증하고 낡은 문서를 찾아 업데이트해줘야 합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;사실 지금의 클리앙 시스템을 설계했던 10년 전에는 원대한 꿈을 꾸고 설계에만 2년 가까이 들였고, 앞으로 이것저것 붙일 걸 염두에 두고 확장을 넉넉하게 잡았습니다. 게시판으로 쓰기에는 상당히 오버스펙인 시스템이었죠. 그때만 해도 하고 싶은 것들이 많았지만, 현실적인 문제들 때문에 하지 못하고 넘어간 것들이 많았습니다. 지도가 생기고 AI와 같이 일할 수 있게 되면서, 그때 미뤄 뒀던 것들을 이제 하나씩 할 수 있게 되었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;다음 편은 인프라 운영을 AI 중심으로 옮긴 이야기입니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280308</guid><pubDate>Tue, 20 Oct 2026 16:43:03 GMT</pubDate></item><item><title>(기사)강남 아파트 매수 실종…급매도 안 팔린다[21][2]</title><link>https://www.clien.net/service/board/park/19280305</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://www.newstomato.com/readnews.aspx?no=1316313" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://www.newstomato.com/readnews.aspx?no=1316313&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;일주일전 10월 13일 기사입니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;실제로  매수 문의 자체가 확 준것 같습니다.&lt;/p&gt;
+  &lt;p&gt;급매도 안팔린다니..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한국은행 금리 또 한번  인상하면&lt;/p&gt;
+  &lt;p&gt;더 영향이 갈듯 합니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280305</guid><pubDate>Tue, 20 Oct 2026 16:39:59 GMT</pubDate></item><item><title>금리로 인한 부동산 하락을 말씀하시는 분들이 많네요[12][1]</title><link>https://www.clien.net/service/board/park/19280303</link><description>
+ 
+ 
+  &lt;p&gt;&lt;span style='font-family: 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", sans-serif;'&gt;2024부터 창구에 많이 머리를 들이밀었는데요&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;span style='font-family: 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", sans-serif;'&gt;제 개인적인 경험상&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;span style='font-family: 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", sans-serif;'&gt;2024후 부터 시작된 가산 금리 장난질로&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;span style='font-family: 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", sans-serif;'&gt;제가 체감하는 실제 승인 주담대 금리는 앞자리가 다르진 않았습니다. 제 경험으로는 다 4대 였습니다.&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;span style='font-family: 나눔고딕, "Malgun Gothic", 맑은고딕, 굴림, 돋움, Helvetica, "Apple SD Gothic Neo", sans-serif;'&gt;개인의 신용도에 따라 예전에는 4였다면 지금은 5일 수도 있겠네요&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;최근들어 클리앙에 금리로 인해&lt;/p&gt;
+  &lt;p&gt;적극적으로 보면 부동산 버블 붕괴와 안정화&lt;/p&gt;
+  &lt;p&gt;소극적으로 보면 부동산 하락전환을 점치시는 분들이 많습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;개인적인 취미로;; &lt;/p&gt;
+  &lt;p&gt;주위 사람들 매매 도와주고 치킨 정도 얻어먹는 경우가 많은데요,&lt;/p&gt;
+  &lt;p&gt;필드에서는 90년대생의 매수 수요가 상당히(굉장히) 큰 편입니다&lt;/p&gt;
+  &lt;p&gt;이 매수 수요에는 재개발 몸테크 메타도 다들 학습이 된건지, 빌라까지 포함됩니다.&lt;/p&gt;
+  &lt;p&gt;당장 장위 14 15 구역 복덕방을 가보시면 아실 겁니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;기준 금리가 계속 올라서 이전 고점을 넘는다해도 제 눈에는&lt;/p&gt;
+  &lt;p&gt;1. 토허제를 통한 실거주 위주 재편&lt;/p&gt;
+  &lt;p&gt;2. 대출을 받고 싶어도 대출 규제 때문에 못 받음&lt;/p&gt;
+  &lt;p&gt;으로 매수가 이루어진지가 꽤 되었기 때문에,&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;기준금리가 다시 3.5가 되어도, 설사 넘어도 추세가 바뀌진 않을 것 같습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;정말 만약 금리로 인해 주택 시장 추세가 바뀐다면,,,&lt;/p&gt;
+  &lt;p&gt;그 시점에는 비단 주택시장만 추세가 바뀐 상태는 아닐 것이라고 생각합니다.&lt;/p&gt;
+  &lt;p&gt;2022말 2023 하락장을 복기해본다면 알 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;정부에서 집사라고 난리를 쳐도&lt;/p&gt;
+  &lt;p&gt;하락장엔 아무도 주택에 관심이 없습니다 ㅎㅎ,,,,,&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;제 개인적으로는 클리앙에서 조차 버블 어쩌고 얘기가 안나올 때&lt;/p&gt;
+  &lt;p&gt;여러 레파토리의 “현 상황은 말이 안된다,지속가능하지 않다” 가 조차 나오지 않을 때&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;+ 거래량이 없고 호가만 고가인 추세가 3-4개월 이상 갈 때&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;+ 복덕방 사장님들 앓는 소리가 나다가 이조차 잦아들었을 때&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;가 하락 추세 변곡점이라고 생각합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280303</guid><pubDate>Tue, 20 Oct 2026 16:41:30 GMT</pubDate></item><item><title>대통령 X(트위터) 꼭 해야하나요?[12][3]</title><link>https://www.clien.net/service/board/park/19280299</link><description>
+ 
+ 
+  &lt;p&gt;오늘도 저 글 올렸던데, 지금 반도체 관련된 사람들 말고는 거의 다 체감경기 안좋게 느끼고 있는데, 삼성 하이닉스가 벌어온 돈으로 경제성장한걸 꼭 본인 치적처럼 트위터에 쓰셨어야 할까요? 댓글 들어가봐도 거의 다 욕밖에 없어요. 아예 하지 말라는게 아니라 분위기 보면서 꼭 필요한 글들만 쓰시면 좋겠어요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280299</guid><pubDate>Tue, 20 Oct 2026 16:32:11 GMT</pubDate></item><item><title>은마아파트 폭락 이야기가 나오는 군요[21][1]</title><link>https://www.clien.net/service/board/park/19280297</link><description>
+ 
+ 
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/sjT9o0DWbCY" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;은마아파트&lt;/p&gt;
+  &lt;p&gt;1년새 7.6억 내렸네요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;은마 지금이.바닥일까요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280297</guid><pubDate>Tue, 20 Oct 2026 16:28:49 GMT</pubDate></item><item><title>부동산 그냥 세금만 제대로 납부하면 됩니다.[16][2]</title><link>https://www.clien.net/service/board/park/19280292</link><description>
+ 
+ 
+  &lt;p&gt;이런말 하시는 분이 은근히 많은데 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이분들은 부동산 보유세를 탈세할수 있다고 생각해서 하는 소리일까요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아니면 조롱하시는건지 궁금해지네요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280292</guid><pubDate>Tue, 20 Oct 2026 16:23:20 GMT</pubDate></item><item><title>장애인들의 식사장면를 보고 결제한 사람[14][12]</title><link>https://www.clien.net/service/board/park/19280285</link><description>
+ 
+ 
+  &lt;p&gt;19일 제물포구한마음종합복지관 자원봉사자 김관택씨(52)에 따르면 지난 15일 복지관 이용 장애인과 관계자 등 27명은 인천시티투어 청라투어 프로그램에 참여했다.&lt;br/&gt;&lt;br/&gt;
+    이들은 수도권매립지 드림파크 야생화단지와 청라호수공원 등을 둘러보며 가을 나들이를 즐긴 뒤 인천 서해구 한 대형 고깃집을 찾아 점심 식사를 했다.&lt;br/&gt;&lt;br/&gt;
+    이날 자원봉사자로 동행한 김씨는 식사 도중 뜻밖의 이야기를 전해 들었다. 일행이 식사하는 모습을 지켜본 한 손님이 이들의 음식값을 모두 계산하고 식당을 떠났다는 것이다.&lt;br/&gt;&lt;br/&gt;
+    김씨는 “사회복지사들과 함께 장애인들의 식사를 챙기느라 분주했는데 식당 직원이 다가와 조금 전 떠난 손님이 음식값을 전부 결제하고 갔다고 알려줬다”며 “처음에는 믿기 어려울 정도로 놀랐다”고 당시 상황을 전했다.&lt;br/&gt;&lt;br/&gt;
+    익명의 손님이 결제한 금액은 당초 식사비 41만원에 추가 주문한 육회 7그릇 19만원을 더한 총 60만원가량이다. 이 손님은 복지관 일행을 위해 육회까지 추가로 주문한 뒤 아무런 대가나 인사도 바라지 않고 자리를 떠난 것으로 전해졌다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;------&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;세상은 아직 훈훈하고 살만합니다. :)&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280285</guid><pubDate>Tue, 20 Oct 2026 16:17:18 GMT</pubDate></item><item><title>으악 아이폰 27.2로 올렸더니…[11][0]</title><link>https://www.clien.net/service/board/park/19280282</link><description>
+ 
+ 
+  &lt;p&gt;이런 어글리한 애플뮤직 아이콘이 생겼네요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이건 무슨 슈퍼닌텐도 시절 마리오에 나오던 음표블록같이 생겼군요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이것도 뇌이징 될려나요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280282</guid><pubDate>Tue, 20 Oct 2026 16:09:53 GMT</pubDate></item><item><title>이건 또 뭐하는 외교방식이예요?[63][2]</title><link>https://www.clien.net/service/board/park/19280279</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="스크린샷 2026-10-20 155927.png" class="fr-dib fr-fil" data-file-sn="15845395" data-gif="false" data-img-height="792" data-img-width="686" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845395/ec114fa7ffb59.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이는 국교 단절 직전에 해당하는 고강도 조치로, 주우크라이나 대사 소환에도 불구하고 사과하지 않는 현지 당국의 완강한 태도가 조치의 배경인 것으로 해석된다. 러시아·북한과의 관계 복원을 위한 포석으로도 풀이된다. &lt;/p&gt;
+  &lt;p&gt;전쟁 발발 이후 공관을 철수한 나라로는 러시아와 세르비아 등이 있다 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;우리 도발한 북한이랑 관계 개선을 위해서 단교수순의 조치를 취한다니요?&lt;/p&gt;
+  &lt;p&gt;외교는 잘 한다면서요??? 뉴재명님들&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280279</guid><pubDate>Tue, 20 Oct 2026 16:04:50 GMT</pubDate></item><item><title>서울시 부동산 현황을 살펴봤습니다.[14][0]</title><link>https://www.clien.net/service/board/park/19280276</link><description>
+ 
+ 
+  &lt;p&gt;우선, 거래량 부터 확인해봅니다.&lt;/p&gt;
+  &lt;p&gt;아래 그래프는 서울시 부동산 정보 광장입니다. &lt;/p&gt;
+  &lt;p&gt;※ 출처 : &lt;a href="https://land.seoul.go.kr/land/rtms/aptTrend.do" ori-url="https://land.seoul.go.kr/land/rtms/aptTrend.do" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;부동산거래정보 &amp;gt; 부동산거래현황 &amp;gt; 아파트 동향&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;오늘 월세 데이터 소스로 여러 얘기가 나온 곳이죠.&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="거래량.png" class="fr-dib fr-fil full" data-file-sn="15845365" data-gif="false" data-img-height="880" data-img-width="973" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845365/e6307a7e4ae9f.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;26년 5월을 기점으로 거래량이 내려오고 있습니다. 10월은 집계중이니 제외하구요.&lt;/p&gt;
+  &lt;p&gt;가계부채관리를 위해 전방위적 대출 규제를 시행한 시점입니다.&lt;/p&gt;
+  &lt;p&gt;이사 성수기가 보통 가을철(9,10월)인데 확연히 감소한 모습을 확인할 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;전년과 비교해도 9,10월 8천건 이상인만큼 활황이었지만 올해는 연속적인 흐름상 거래량이 줄고 있습니다.&lt;/p&gt;
+  &lt;p&gt;전반적인 추이로 보면 5개월째 거래량이 감소하고 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="아파트매물.png" class="fr-dib fr-fil" data-file-sn="15845370" data-gif="false" data-img-height="510" data-img-width="374" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845370/ebd8f34511f74.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아실 매물창입니다.&lt;/p&gt;
+  &lt;p&gt;서울지역 아파트 매물 추이를 살펴봤는데요.&lt;/p&gt;
+  &lt;p&gt;쉽게 말해서 활황기에는 매물이 나오는 족족 거래가 되니 없습니다.&lt;/p&gt;
+  &lt;p&gt;이 시기를 거치고 잠잠해지면 매물이 하나둘씩 나오게 되죠.&lt;/p&gt;
+  &lt;p&gt;통상 비수기 매물이 증가하는 걸 제외하면,&lt;/p&gt;
+  &lt;p&gt;상단 거래량과 유사하게 매물 흐름이 이어지고 있는걸 확인할 수 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;최근 1개년만 보고 얘기드리지만&lt;/p&gt;
+  &lt;p&gt;아시다시피 22년 말부터 24년 초까지는 부동산 냉각기였어요. &lt;/p&gt;
+  &lt;p&gt;코로나 변수로 인한 초저금리의 유동성 파티를 즐기고 청구서를 받았던 시기죠.&lt;/p&gt;
+  &lt;p&gt;고금리보다 경기침체로 인한 여파였어요. 지금은 상황이 다르죠. &lt;/p&gt;
+  &lt;p&gt;대출규제와 고금리로 인한 유동성 축소가 본격적으로 와닿는 상황입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;25년 6월부터 거래량은 폭증하고 매물이 잠기며 서울 각지에서 신고가가 터졌습니다.&lt;/p&gt;
+  &lt;p&gt;민주당 정부가 들어서면 오를거란 기대심리와 더불어 AI 인프라 폭발에 따른 경기 활황이 원인이었고&lt;/p&gt;
+  &lt;p&gt;일부 정책의 우왕좌왕한 부분도 한 몫을 했죠.&lt;/p&gt;
+  &lt;p&gt;한국부동산원에서 발표하는 매매가격지수는 역대 최장 89주 연속 상승을 했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그런데, 끝없이 오르던 강남,서초는 반대로 10주째 하락하고 있습니다.&lt;/p&gt;
+  &lt;p&gt;강남,서초 등락이 뭔 상관이냐 하시겠지만 저긴 선행지표거든요.&lt;/p&gt;
+  &lt;p&gt;상급지가 매수세가 끊기면 외곽 지역이 갭 메우기를 합니다. 지금 딱 그 시기죠.&lt;/p&gt;
+  &lt;p&gt;얼추 마무리되면, 유동성 소진에 따른 하락 반전이 시작되는 시기가 도래합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;주식도 가파르게 오르면 떨어지듯 부동산도 마찬가지입니다.&lt;/p&gt;
+  &lt;p&gt;서울 주요 지역의 우상향은 이견 없습니다만 사이클이 있는거에요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;거래량이 급감하는데 상승폭은 둔화(0.09% - 서울 9월 4째주 주간상승률. 전월 4째주 0.29%) 되는건 신호입니다.&lt;/p&gt;
+  &lt;p&gt;거래가 줄어든 상태에서 실제로 거래된 1,2건의 최고가는 착시를 낳는거죠.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아직 국회를 통과하지 않았지만, 장특공제 한도(28년 20억, 29년 10억)가 논의되고 있어요.&lt;/p&gt;
+  &lt;p&gt;장기 거주 1주택자분들은 고민이 되는 시점이죠.&lt;/p&gt;
+  &lt;p&gt;물론, 서울에 공급되는 향후 3개년 공급량은 턱없이 부족합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;28년도에 금리+제도가 공급량을 극복할 수 있을지, &lt;/p&gt;
+  &lt;p&gt;상관없이 가즈아를 외칠지는 그때가서 봐야합니다. 지금은 각자 자기가 원하는 말만 할테니까요.&lt;/p&gt;
+  &lt;p&gt;정부는 공급량이 부족한걸 알기에 계속해서 메시지를 내고 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;본인의 자산과 미래 가치를 잘 계산해보셔서 매매를 하시는겁니다.&lt;/p&gt;
+  &lt;p&gt;등 떠밀려 사게 되는 상황이 꼭지에서 잡는 상황은 되지 않기를 바라는 마음에서 써봤습니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280276</guid><pubDate>Tue, 20 Oct 2026 16:02:52 GMT</pubDate></item><item><title>전세가 월세보다 좋다고 볼 수 없습니다[22][1]</title><link>https://www.clien.net/service/board/park/19280274</link><description>
+ 
+ 
+  &lt;p&gt;요즘 실거주 의무와 다주택자 규제 때문에 전세가 사라지고 월세만 오른다는 얘기가 많은데&lt;/p&gt;
+  &lt;p&gt;틀린 말은 아니지만 데이터를 보니 다르게 볼 부분도 있습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;서울 아파트 월세 비중은 2012년 17%에서 2025년 44.5%까지 꾸준히 올랐습니다. &lt;/p&gt;
+  &lt;p&gt;지금의 규제가 나오기 한참 전부터였죠. &lt;/p&gt;
+  &lt;p&gt;저금리와 전세사기 여파 그리고 최근 입주물량 감소까지 여러 요인이 겹친 결과라고 봐요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;실거주 의무로 산 사람이 직접 들어가거나 다주택자가 판 집을 실수요자가 사면 전세 놓을 집이 줄지만 &lt;/p&gt;
+  &lt;p&gt;전세 구하던 수요도 같이 빠집니다. &lt;/p&gt;
+  &lt;p&gt;다주택자 규제가 가장 강했던 2018~20년에 월세 비중이 오히려 주춤했었기도 했었고요. &lt;/p&gt;
+  &lt;p&gt;게다가 다주택자 전세 상당수는 갭투자 물건이었고 역전세 때 위험이 몰렸던 곳도 거기였습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;지금 월세가 많이 오르다 보니 전세가 좋아 보이는 건 당연하죠. 최근 몇년간 전세가율이 낮은채로 유지하고 있었고요&lt;/p&gt;
+  &lt;p&gt;하지만 전세도 시차를 두고 따라 오를 수 밖에 없습니다. 수도권 전세가는 이미 30개월 넘게 오르는 중이거든요. &lt;/p&gt;
+  &lt;p&gt;또 전세가율이 높아지면 갭투자가 늘어 몇 년 뒤 집값을 밀어 올리고 보증금 위험도 커집니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;월세 부담이 커진 건 분명 가볍게 볼 문제는 아니지만 전세가 그 답은 아닙니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;# 이미지는 클로드를 통해 만들었습니다&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="서울_매매상승률_전세가율_월세비중_기준금리_추이_2026.png" class="fr-dib fr-fil full" data-file-sn="15845387" data-gif="false" data-img-height="1360" data-img-width="2520" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845387/fa91b35bbb4f2.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280274</guid><pubDate>Tue, 20 Oct 2026 15:58:37 GMT</pubDate></item><item><title>미국 주담대 난리네요. (feat. 금리상승)[20][0]</title><link>https://www.clien.net/service/board/park/19280273</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/009/0005743481?sid=101" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://n.news.naver.com/article/009/0005743481?sid=101&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;글로벌 금리 대세상승기가 도래한 것 같은데&lt;/p&gt;
+  &lt;p&gt;상승하는 금리 앞에서는 보통 모든 자산이 '겸손' 해지죠.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;물론, '부동산' 도 예외는 아닙니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280273</guid><pubDate>Tue, 20 Oct 2026 15:58:37 GMT</pubDate></item><item><title>올해 4월에 반도체 성과금이 집값 상승으로 이어질 가능성이 높다고 했다가[10][3]</title><link>https://www.clien.net/service/board/park/19280241</link><description>
+ 
+ 
+  &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/park/19176733" target="_blank"&gt;https://www.clien.net/service/board/park/19176733&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;말도 안되는 소릴 한다고 빈댓글 폭탄에 쌍욕을 먹었는데&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;정확하게 경험해보지 못한 성과금이 쏟아지고 양적완화 충격을 일으킬 수준이니 그게 가시화되는 시점부터 기대감으로 치솟을거라 했는데&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;상식적인 이야기를 한건데 너무 무시하셔서 황당했네요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280241</guid><pubDate>Tue, 20 Oct 2026 14:38:22 GMT</pubDate></item><item><title>수만옹의 A2O 출신 새 아이돌들을 극찬하기에 이제야 봤네요.[17][1]</title><link>https://www.clien.net/service/board/park/19280262</link><description>
  
  
   &lt;p&gt;1) LITE&lt;/p&gt;
@@ -33,7 +310,7 @@
     이렇게 까지 바이럴될 정도인가 싶긴 하네요. &lt;/p&gt;
   &lt;p&gt;일단 두 그룹 모두 의상이 너무 제 취향이 아니네요. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280262</guid><pubDate>Tue, 20 Oct 2026 15:17:31 GMT</pubDate></item><item><title>부동산 때문에 FOMO가 오십니까?[21][4]</title><link>https://www.clien.net/service/board/park/19280259</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280262</guid><pubDate>Tue, 20 Oct 2026 15:17:31 GMT</pubDate></item><item><title>부동산 때문에 FOMO가 오십니까?[24][4]</title><link>https://www.clien.net/service/board/park/19280259</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -51,7 +328,7 @@
   &lt;p&gt;소액이라도 투자할 수 있습니다.&lt;/p&gt;
   &lt;p&gt;현정부를 믿고 한국증시에 투자하고 전폭적인 지지를 해주세요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280259</guid><pubDate>Tue, 20 Oct 2026 15:12:04 GMT</pubDate></item><item><title>JMS 정명석 징역 33년 댔네요...[13][3]</title><link>https://www.clien.net/service/board/park/19280255</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280259</guid><pubDate>Tue, 20 Oct 2026 15:12:04 GMT</pubDate></item><item><title>JMS 정명석 징역 33년 댔네요...[14][3]</title><link>https://www.clien.net/service/board/park/19280255</link><description>
  
  
   &lt;p&gt;이미 보신 분들도 있겠지만. .. &lt;/p&gt;
@@ -75,7 +352,7 @@
   &lt;p&gt;&lt;img alt="스크린샷 2026-10-20 14.57.56.png" class="fr-dib fr-fil full" data-file-sn="15845372" data-gif="false" data-img-height="1074" data-img-width="1292" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845372/ebdb3ada21fcc.png?scale=width:740"/&gt;&lt;/p&gt;
   &lt;p&gt;ㅁㅔ시아라니....&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280255</guid><pubDate>Tue, 20 Oct 2026 14:59:07 GMT</pubDate></item><item><title>만약 삼전하닉 단일 레버리지가 없었더라면 어떻게 됐을까?[32][3]</title><link>https://www.clien.net/service/board/park/19280254</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280255</guid><pubDate>Tue, 20 Oct 2026 14:59:07 GMT</pubDate></item><item><title>만약 삼전하닉 단일 레버리지가 없었더라면 어떻게 됐을까?[35][3]</title><link>https://www.clien.net/service/board/park/19280254</link><description>
  
  
   &lt;p&gt;&lt;img alt="77.png" class="fr-dib fr-fil full" data-file-sn="15845367" data-gif="false" data-img-height="887" data-img-width="1774" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845367/f08ec5b9f5088.png?scale=width:740"/&gt;&lt;/p&gt;
@@ -95,7 +372,7 @@
   &lt;p&gt;누군가 레버리지 허가를 하지 않았더라면 코스피 그래프도 지금의 롤러코스터가 아닌 &lt;/p&gt;
   &lt;p&gt;일본과 대만지수처럼 원만한 곡선이 아니었을까요?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280254</guid><pubDate>Tue, 20 Oct 2026 14:57:47 GMT</pubDate></item><item><title>서울 아파트가 오르다가 언젠가 떨어질 것이라고 하는데요[17][3]</title><link>https://www.clien.net/service/board/park/19280253</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280254</guid><pubDate>Tue, 20 Oct 2026 14:57:47 GMT</pubDate></item><item><title>서울 아파트가 오르다가 언젠가 떨어질 것이라고 하는데요[19][4]</title><link>https://www.clien.net/service/board/park/19280253</link><description>
  
  
   &lt;p&gt;서울 아파트가 오르다가 언젠가 떨어질 것이라고 하는데요&lt;/p&gt;
@@ -165,7 +442,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280251</guid><pubDate>Tue, 20 Oct 2026 14:55:38 GMT</pubDate></item><item><title>올해 초에 코스피 상승이 정책보다 반도체 이익상승에 의한 영향이 크다고 했다가[4][5]</title><link>https://www.clien.net/service/board/park/19280245</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280251</guid><pubDate>Tue, 20 Oct 2026 14:55:38 GMT</pubDate></item><item><title>올해 초에 코스피 상승이 정책보다 반도체 이익상승에 의한 영향이 크다고 했다가[4][6]</title><link>https://www.clien.net/service/board/park/19280245</link><description>
  
  
   &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/park/19122947" target="_blank"&gt;https://www.clien.net/service/board/park/19122947&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
@@ -175,14 +452,14 @@
   &lt;p&gt;&lt;span class="outlink"&gt;&lt;a class="url" href="https://www.clien.net/service/board/park/19187140" target="_blank"&gt;https://www.clien.net/service/board/park/19187140&lt;/a&gt;&lt;span class="name"&gt;CLIEN&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280245</guid><pubDate>Tue, 20 Oct 2026 14:43:19 GMT</pubDate></item><item><title>오늘도 개인은 1조를 사네요.[10][1]</title><link>https://www.clien.net/service/board/park/19280229</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280245</guid><pubDate>Tue, 20 Oct 2026 14:43:19 GMT</pubDate></item><item><title>오늘도 개인은 1조를 사네요.[11][1]</title><link>https://www.clien.net/service/board/park/19280229</link><description>
  
  
   &lt;p&gt;도대체 그 많은 돈은 어디서 나오는것일까요.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280229</guid><pubDate>Tue, 20 Oct 2026 14:14:26 GMT</pubDate></item><item><title>이야기 테슬라 운전자, FSD 사용 중 잠든 상태로 경찰차와 충돌… 경찰관 2명 부상[21][0]</title><link>https://www.clien.net/service/board/cm_car/19280211</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280229</guid><pubDate>Tue, 20 Oct 2026 14:14:26 GMT</pubDate></item><item><title>이야기 테슬라 운전자, FSD 사용 중 잠든 상태로 경찰차와 충돌… 경찰관 2명 부상[24][0]</title><link>https://www.clien.net/service/board/cm_car/19280211</link><description>
  
  
   &lt;p&gt;테슬라 측에서 뭔가 발표가 있지 않을까 했는데 아직 반응이 없는 듯 하네요&lt;/p&gt;
@@ -216,7 +493,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;다행히 사고에 연관된 모든 사람은 부상에서 회복할 것으로 보입니다. 언젠가는 차에 올라타 잠든 채로 목적지에 안전하게 도착할 수 있는 날이 올지도 모르겠지만, 2026년인 지금은 아직 그런 시대가 아닙니다. (개인적인 의견을 덧붙이자면, 이번 사건을 고려할 때 테슬라는 하늘을 나는 자동차를 개발하기 전에 지상 주행 기술부터 완벽하게 다듬어야 할 것 같습니다.)&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19280211</guid><pubDate>Tue, 20 Oct 2026 13:57:16 GMT</pubDate></item><item><title>부동산 불패론은 허상입니다.[36][8]</title><link>https://www.clien.net/service/board/park/19280252</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19280211</guid><pubDate>Tue, 20 Oct 2026 13:57:16 GMT</pubDate></item><item><title>부동산 불패론은 허상입니다.[39][9]</title><link>https://www.clien.net/service/board/park/19280252</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -237,7 +514,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;세상이 어떻게 흘러가는지를 보는게 아니라 지금 내 상황에 맞는 대책을 고민해야 한다는거지요. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280252</guid><pubDate>Tue, 20 Oct 2026 14:52:53 GMT</pubDate></item><item><title>부동산 시세에 지극히 관심 많고 비싸다 잘못됐다 하는 사람들일수록 대개는 집을 사본[40][5]</title><link>https://www.clien.net/service/board/park/19280248</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280252</guid><pubDate>Tue, 20 Oct 2026 14:52:53 GMT</pubDate></item><item><title>부동산 시세에 지극히 관심 많고 비싸다 잘못됐다 하는 사람들일수록 대개는 집을 사본[44][8]</title><link>https://www.clien.net/service/board/park/19280248</link><description>
  
  
   &lt;p&gt;저도 그랬습니다&lt;/p&gt;
@@ -282,7 +559,7 @@
   &lt;p&gt;썩열이 때 뭐하고 이제와서 착공률 어쩌고 저쩌고 하나요? ㅜㅜ&lt;/p&gt;
   &lt;p&gt;토지 보상부터 계획부터 몇 년은 잡아 먹는데 보수 정권 때 뭐 하고 왜 매번 공급 부족이다 현 정권 탓 하는지 노이해네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280243</guid><pubDate>Tue, 20 Oct 2026 14:39:54 GMT</pubDate></item><item><title>대한민국은 부동산에 미친 나라죠[36][5]</title><link>https://www.clien.net/service/board/park/19280240</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280243</guid><pubDate>Tue, 20 Oct 2026 14:39:54 GMT</pubDate></item><item><title>대한민국은 부동산에 미친 나라죠[40][6]</title><link>https://www.clien.net/service/board/park/19280240</link><description>
  
  
   &lt;p&gt;집값이 올라 문제라며 재건축재개발 규제완화하자는 사람들이 있어서 깜짝 놀랍니다.&lt;/p&gt;
@@ -291,7 +568,7 @@
   &lt;p&gt;&lt;br/&gt;
     민주당이 규제로 집값 올려서 문제라느니 이런 소리 하는 분들은 진짜 뭐 하나도 모르는 말하는건지, 알고 말하는건지 모르겠어요.  &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280240</guid><pubDate>Tue, 20 Oct 2026 14:34:01 GMT</pubDate></item><item><title>종로성지에서 마운자로 구입후기[15][3]</title><link>https://www.clien.net/service/board/park/19280239</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280240</guid><pubDate>Tue, 20 Oct 2026 14:34:01 GMT</pubDate></item><item><title>종로성지에서 마운자로 구입후기[17][4]</title><link>https://www.clien.net/service/board/park/19280239</link><description>
  
  
   &lt;p&gt;여사친 땜시&lt;/p&gt;
@@ -409,7 +686,7 @@
   &lt;p&gt;&lt;strong&gt;&lt;br/&gt;&lt;/strong&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280239</guid><pubDate>Tue, 20 Oct 2026 14:33:55 GMT</pubDate></item><item><title>서울아파트는 원래 못사는거라 생각하세요[27][3]</title><link>https://www.clien.net/service/board/park/19280236</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280239</guid><pubDate>Tue, 20 Oct 2026 14:33:55 GMT</pubDate></item><item><title>서울아파트는 원래 못사는거라 생각하세요[28][3]</title><link>https://www.clien.net/service/board/park/19280236</link><description>
  
  
   &lt;p&gt;서울살아야하는데 내집마련 못해서 시장진입 못한분들&lt;/p&gt;
@@ -424,17 +701,17 @@
     이제 우리나라도 감히 서울아파트를 살 생각 못하는 나라가 되었어요&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280236</guid><pubDate>Tue, 20 Oct 2026 14:29:16 GMT</pubDate></item><item><title>李대통령 '아…정말…국회 갑갑하다'…느린 입법 속도에 한숨[21][13]</title><link>https://www.clien.net/service/board/park/19280235</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280236</guid><pubDate>Tue, 20 Oct 2026 14:29:16 GMT</pubDate></item><item><title>李대통령 '아…정말…국회 갑갑하다'…느린 입법 속도에 한숨[22][13]</title><link>https://www.clien.net/service/board/park/19280235</link><description>
  
  
   &lt;p&gt;?????? 그래서 김민석 뽑으라던거 아닌가요???  어찌된거죠????&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280235</guid><pubDate>Tue, 20 Oct 2026 14:28:20 GMT</pubDate></item><item><title>부동산도 지금 큰일난거 아닌가요?[28][3]</title><link>https://www.clien.net/service/board/park/19280232</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280235</guid><pubDate>Tue, 20 Oct 2026 14:28:20 GMT</pubDate></item><item><title>부동산도 지금 큰일난거 아닌가요?[29][3]</title><link>https://www.clien.net/service/board/park/19280232</link><description>
  
  
   &lt;p&gt;이미 서울 부동산 폭등에 월세 폭등인데, 여기다가 내년 삼성전자 하이닉스 몇십만명 성과급 풀리면 한번 더 폭등하지 않나요? 이번 정부는 주식이랑 부동산 어떻게 하려고 이렇게 일을 벌여놨을까요...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280232</guid><pubDate>Tue, 20 Oct 2026 14:20:01 GMT</pubDate></item><item><title>현기의 눈물의 N꼬쇼[12][0]</title><link>https://www.clien.net/service/board/park/19280230</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280232</guid><pubDate>Tue, 20 Oct 2026 14:20:01 GMT</pubDate></item><item><title>현기의 눈물의 N꼬쇼[13][0]</title><link>https://www.clien.net/service/board/park/19280230</link><description>
  
  
   &lt;p&gt;&lt;a href="https://www.hyundai.com/kr/ko/event/event-hmc-n-finance-easy-terms-2610?utm_source=naver&amp;amp;utm_medium=gfa&amp;amp;utm_campaign=ioniq&amp;amp;utm_content=nfinance_naver_gfa_ioniq_ioniq6n_opt1_car" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://www.hyundai.com/kr/ko/event/event-hmc-n-finance-easy-terms-2610?utm_source=naver&amp;amp;utm_medium=gfa&amp;amp;utm_campaign=ioniq&amp;amp;utm_content=nfinance_naver_gfa_ioniq_ioniq6n_opt1_car&lt;/a&gt;&lt;/p&gt;
@@ -457,7 +734,7 @@
   &lt;p&gt;곧 수도권에 임대가 쏟아져 나오겠군요.&lt;/p&gt;
   &lt;p&gt;이번에는 공급 지시하셨네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280223</guid><pubDate>Tue, 20 Oct 2026 14:08:16 GMT</pubDate></item><item><title>1시간 줄서서 먹는 식당중에 와 했던곳 있나요?????[41][2]</title><link>https://www.clien.net/service/board/park/19280222</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280223</guid><pubDate>Tue, 20 Oct 2026 14:08:16 GMT</pubDate></item><item><title>1시간 줄서서 먹는 식당중에 와 했던곳 있나요?????[43][2]</title><link>https://www.clien.net/service/board/park/19280222</link><description>
  
  
   &lt;p&gt;1시간 가까이 웨이팅 했는데&lt;/p&gt;
@@ -497,7 +774,7 @@
   &lt;p&gt;그런데 그 가격대를 감당할 수 있는 대기업 맞벌이 가정은 이미 수도권 매수로 밀려났습니다 &lt;/p&gt;
   &lt;p&gt;밑에서 누가 받쳐줘야 우상향 할텐데요 &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280221</guid><pubDate>Tue, 20 Oct 2026 14:06:45 GMT</pubDate></item><item><title>지금이라도 영끌족 아저씨가 돼야 할까요[58][0]</title><link>https://www.clien.net/service/board/park/19280216</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280221</guid><pubDate>Tue, 20 Oct 2026 14:06:45 GMT</pubDate></item><item><title>지금이라도 영끌족 아저씨가 돼야 할까요[59][0]</title><link>https://www.clien.net/service/board/park/19280216</link><description>
  
  
   &lt;p&gt;개인적으로는 집으로 시세차익 보는 문화가 마음에 안 듭니다만&lt;/p&gt;
@@ -532,7 +809,7 @@
   &lt;p&gt;그래서&lt;/p&gt;
   &lt;p&gt;이재명은 합니다!!&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280206</guid><pubDate>Tue, 20 Oct 2026 13:48:19 GMT</pubDate></item><item><title>잡담 [iOS] 노노그램 네모로직 퍼즐 - Mellow Isle Pro 1.1 리딤코드 (30개)[19][0]</title><link>https://www.clien.net/service/board/cm_iphonien/19280178</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280206</guid><pubDate>Tue, 20 Oct 2026 13:48:19 GMT</pubDate></item><item><title>잡담 [iOS] 노노그램 네모로직 퍼즐 - Mellow Isle Pro 1.1 리딤코드 (30개)[20][0]</title><link>https://www.clien.net/service/board/cm_iphonien/19280178</link><description>
  
  
   &lt;p&gt;안녕하세요.&lt;/p&gt;
@@ -589,7 +866,7 @@
   &lt;p&gt;30.6ATAHREA84H6MW6JYF,&lt;a href="https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6797111939&amp;amp;code=6ATAHREA84H6MW6JYF" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://apps.apple.com/redeem?ctx=offercodes&amp;amp;id=6797111939&amp;amp;code=6ATAHREA84H6MW6JYF&lt;/a&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19280178</guid><pubDate>Tue, 20 Oct 2026 12:54:33 GMT</pubDate></item><item><title>기타 실제 영상 촬영 유튜버의 AI 영상 전환은 1일이면 충분했다.[6][5]</title><link>https://www.clien.net/service/board/lecture/19279952</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_iphonien/19280178</guid><pubDate>Tue, 20 Oct 2026 12:54:33 GMT</pubDate></item><item><title>기타 실제 영상 촬영 유튜버의 AI 영상 전환은 1일이면 충분했다.[7][5]</title><link>https://www.clien.net/service/board/lecture/19279952</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -662,7 +939,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;여러분들도 ChatGPT 면 Codex 로 개발만 하지 마시고, 다른 것도 한번 시켜보셔요~ ㅎㅎ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19279952</guid><pubDate>Tue, 20 Oct 2026 01:54:33 GMT</pubDate></item><item><title>한국 월세가 싸네 비싸네 이야기를 하기 전에..[19][12]</title><link>https://www.clien.net/service/board/park/19280209</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19279952</guid><pubDate>Tue, 20 Oct 2026 01:54:33 GMT</pubDate></item><item><title>한국 월세가 싸네 비싸네 이야기를 하기 전에..[21][12]</title><link>https://www.clien.net/service/board/park/19280209</link><description>
  
  
   &lt;p&gt;애초에 정부의 역할에 대해서 생각해봐야 합니다.&lt;/p&gt;
@@ -679,7 +956,7 @@
   &lt;p&gt;이번정부 들어서 정상화나 뉴노멀이라는 단어 자체가&lt;/p&gt;
   &lt;p&gt;굉장히 부정적인 단어가 된 느낌이네요. (실제 웹에서도 부정이나 조롱의 뜻으로 쓰이는 중)&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280209</guid><pubDate>Tue, 20 Oct 2026 13:52:41 GMT</pubDate></item><item><title>대통령이 주식시장 저평가라고 하자마자[15][3]</title><link>https://www.clien.net/service/board/park/19280200</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280209</guid><pubDate>Tue, 20 Oct 2026 13:52:41 GMT</pubDate></item><item><title>대통령이 주식시장 저평가라고 하자마자[16][3]</title><link>https://www.clien.net/service/board/park/19280200</link><description>
  
  
   &lt;p&gt;신기하게 모든 종목 꼬라박고 있네요. 억까긴 하지만 폭락하니까 저런 발언도 거슬려요.&lt;/p&gt;
@@ -751,7 +1028,7 @@
   &lt;p&gt;유족분들이 진짜 원통하실것 같습니다.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280194</guid><pubDate>Tue, 20 Oct 2026 13:23:22 GMT</pubDate></item><item><title>저는 부동산이 언제까지 버틸지 그게 궁금합니다.[16][2]</title><link>https://www.clien.net/service/board/park/19280191</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280194</guid><pubDate>Tue, 20 Oct 2026 13:23:22 GMT</pubDate></item><item><title>저는 부동산이 언제까지 버틸지 그게 궁금합니다.[18][2]</title><link>https://www.clien.net/service/board/park/19280191</link><description>
  
  
   &lt;p&gt;제가 이번에 한 물건을 12월 연내 기표 조건으로 5.5에 따왔는데,&lt;/p&gt;
@@ -785,7 +1062,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280191</guid><pubDate>Tue, 20 Oct 2026 13:21:56 GMT</pubDate></item><item><title>촌천살인의 댓글입니다.[13][1]</title><link>https://www.clien.net/service/board/park/19280189</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280191</guid><pubDate>Tue, 20 Oct 2026 13:21:56 GMT</pubDate></item><item><title>촌천살인의 댓글입니다.[14][1]</title><link>https://www.clien.net/service/board/park/19280189</link><description>
  
  
   &lt;p&gt;출처 : 쓰레드 @choisu_choice님&lt;/p&gt;
@@ -826,7 +1103,7 @@
   &lt;p&gt;기묘한 부동산 정책을 하고 있는거군요?&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280187</guid><pubDate>Tue, 20 Oct 2026 13:19:13 GMT</pubDate></item><item><title>월세 높아진다고 무서워 하지 마세요.[29][0]</title><link>https://www.clien.net/service/board/park/19280185</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280187</guid><pubDate>Tue, 20 Oct 2026 13:19:13 GMT</pubDate></item><item><title>월세 높아진다고 무서워 하지 마세요.[30][0]</title><link>https://www.clien.net/service/board/park/19280185</link><description>
  
  
   &lt;p&gt;외국에서 월세가 높은 이유는&lt;/p&gt;
@@ -889,264 +1166,4 @@
   &lt;p&gt;그 사례....&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280180</guid><pubDate>Tue, 20 Oct 2026 12:58:43 GMT</pubDate></item><item><title>본가가 고흥인 친구가 평생 민주당 뽑았는데[35][2]</title><link>https://www.clien.net/service/board/park/19280179</link><description>
- 
- 
-  &lt;p&gt;이번에 처음 후회중이라고 하네요.&lt;/p&gt;
-  &lt;p&gt;예전같으면 이런 얘기가 나오는걸 상상도 못했는데 가끔 제가 민주당 인사들 욕해도 절대&lt;/p&gt;
-  &lt;p&gt;안하던 강성 중 강성인데..&lt;/p&gt;
-  &lt;p&gt;그 정도로 민심이 돌아섰어요. 지금은 전북 소도시에서 가정꾸리고 살고 있는 친구인데 통화하다 좀 충격 먹었습니다.&lt;/p&gt;
-  &lt;p&gt;주변 50대 형님들도 죄다 욕한다고 합니다.&lt;/p&gt;
-  &lt;p&gt;친구가 오세훈은 어떤 사람이냐고 물어볼 정도로 돌아선 건 맞는거 같은데 진짜 이런 조국당 민주당 콘크리트도 돌아설 정도로 요즘 살벌합니다.&lt;/p&gt;
-  &lt;p&gt;제 친구들 다 민주 조혁 강성이라면 강성인데&lt;/p&gt;
-  &lt;p&gt;다 화가 많이 나 있어요.저도 그렇고요.&lt;/p&gt;
-  &lt;p&gt;심각합니다. 민주당 관계자들 모니터링 중이시면 좀 알아주시고 반영 좀 해주세요. 텃밭도 갈려 나가는데..&lt;/p&gt;
-  &lt;p&gt; &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280179</guid><pubDate>Tue, 20 Oct 2026 12:57:46 GMT</pubDate></item><item><title>어제 주식 상승은 데드캣바운스 이었나요 ㄷㄷㄷ[14][0]</title><link>https://www.clien.net/service/board/park/19280176</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;금요일 미장 2%가량 하락이어서, 다들 하락 시작일걸로 봤으나 외인과 특히 기관이 매수들어오면서&lt;/p&gt;
-  &lt;p&gt;1%좀 넘게 상승 마감했죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;오늘 좀 보합 가주나 했는데, 외인 기관 둘다 같은 비중으로 엄청 팔아재끼고;;;&lt;/p&gt;
-  &lt;p&gt;개인만 열심히 사고 있네요 ㄷㄷㄷㄷ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이거 개미 마지막 털어먹기였나요 ㄷㄷ...ㅠㅠㅠ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280176</guid><pubDate>Tue, 20 Oct 2026 12:52:19 GMT</pubDate></item><item><title>서울 월세는 싼 편이라고 생각됩니다.[16][0]</title><link>https://www.clien.net/service/board/park/19280169</link><description>
- 
- 
-  &lt;p&gt;서울 역세권 아파트 월세? 비싸죠,&lt;/p&gt;
-  &lt;p&gt;근데 아직 1000에 100정도하는 3룸 빌라도 많습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;직장인 평균소득이 우리나라보다 못한 일본도 도쿄 역세권? 월세 200이상은 줘야 한가족이 살수 있죠&lt;/p&gt;
-  &lt;p&gt;물론 일본은 보증금을 월세 3달치 정도로 내고 살긴 하지만 ㅎㅎ&lt;/p&gt;
-  &lt;p&gt;베이징, 상하이, 홍콩, 뉴욕, 워싱턴 등등 월세 우리나라보다 훨씬 비싸죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다들 서울에서 좋은동네의 아파트 월세만 보고 그런거 같아 아쉬워요.&lt;/p&gt;
-  &lt;p&gt;제가 사는 동대문구만해도 구축 아파트들 20평대 월세 100 수준이고,&lt;/p&gt;
-  &lt;p&gt;빌라같은경우는 룸3, 화장실2 경우 월세로가면 더 저렴하고요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;어디까지 월세가 빠져야 교통좋은 서울에서 맞는 가격이라고 할까요? 1000에 50?&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280169</guid><pubDate>Tue, 20 Oct 2026 12:38:06 GMT</pubDate></item><item><title>지구 상에 내 이상형이 몇 명 있는지 알려주는 사이트[15][0]</title><link>https://www.clien.net/service/board/park/19280161</link><description>
- 
- 
-  &lt;p&gt;특별한 개인정보 요청은 없어보여서 &lt;/p&gt;
-  &lt;p&gt;한번 올려봐요. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;문제시 말씀해주시면 삭제 하겠습니다. ㅎ&lt;/p&gt;
-  &lt;p&gt;재미 삼아 해볼만하네요.&lt;/p&gt;
-  &lt;p&gt;통계 기반인듯 하고 캐릭터 아이콘 보면 대부분 중국국적이긴 하네요. 국적불문 했더니 ㅎ &lt;/p&gt;
-  &lt;p&gt;제 이상형은 11.7만명 있다고 합니다. &lt;/p&gt;
-  &lt;p&gt;그 이상형이 절 좋아할 리는 없지만서요 ㅎ &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;제 조건은 그냥  어리고 몸매 좋고 얼굴 이쁘고, 이성적이고.., 아이 없고,&lt;/p&gt;
-  &lt;p&gt;그래도 현실파라고 하네요.&lt;/p&gt;
-  &lt;p&gt;현실적인 조건이라고 합니다. &lt;/p&gt;
-  &lt;p&gt;오늘도 하루를 살아갈 힘을 얻네요. ㅎㅎ;;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://findluv.net" ori-url="https://findluv.net" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://findluv.net&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="20261020_120021.png" class="fr-dib fr-fil full" data-file-sn="15845254" data-gif="false" data-img-height="759" data-img-width="1001" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845254/f00e110efd655.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="20261020_120813.png" class="fr-dib fr-fil" data-file-sn="15845255" data-gif="false" data-img-height="776" data-img-width="614" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845255/f9d7076d04bf4.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280161</guid><pubDate>Tue, 20 Oct 2026 12:26:04 GMT</pubDate></item><item><title>부동산은 이렇게 하면 쉽습니다[10][4]</title><link>https://www.clien.net/service/board/park/19280133</link><description>
- 
- 
-  &lt;p&gt;국가보증대출 풀고요&lt;/p&gt;
-  &lt;p&gt;재건축/재개발 풀어서 서울 갈아 엎고요&lt;/p&gt;
-  &lt;p&gt;양도세, 보유세 낮추고 종부세 없에면 됩니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;진짜 쉽잖아요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이거 원하는거 아니었어요?&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280133</guid><pubDate>Tue, 20 Oct 2026 11:46:46 GMT</pubDate></item><item><title>후기 폴스타4 렌트한 김에 주니퍼 비교[12][2]</title><link>https://www.clien.net/service/board/cm_car/19280044</link><description>
- 
- 
-  &lt;p&gt;주니퍼 롱 타고 있습니다.&lt;/p&gt;
-  &lt;p&gt;며칠 전 직원이 가만히 서있는 차를 들이받아주셔서 ㅜㅜ&lt;/p&gt;
-  &lt;p&gt;범퍼 교환 판정 받고 공인바디샵에 들어가시고, (이제 딱 출고한지 1년 무사고였는데... ;;)&lt;/p&gt;
-  &lt;p&gt;렌터카 폴스타4로 하고 3일째 타보고 있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;다행이 공인바디샵이 회사 및 집 근처에 있어서 처리는 어렵지 않았고,&lt;/p&gt;
-  &lt;p&gt;수리건 너무 많아 무조건 2주 이상은 봐야 한다고 하네요. (사고차량 정말 겁나 많습니다)&lt;/p&gt;
-  &lt;p&gt;범퍼 변형이 좀 있다고 교체 판정 받았고,  금액은 ㅎㄷㄷ 하네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20261019_094219694.jpg" class="fr-dib fr-fil full" data-file-sn="15845115" data-gif="false" data-img-height="1512" data-img-width="2016" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845115/e50eeb83cf0f6.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;일단 좀 비교 좀 해보자면&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;- 승차감은 폴스타 압승 (시트 개부럽)&lt;/p&gt;
-  &lt;p&gt;- 일부 편의성은 무려 기어레버, 와이퍼+라이트 레버도 있고, 무려 계기판, hud도 있고, 티맵, 무선카플레이 지원하는 폴스타 압승&lt;/p&gt;
-  &lt;p&gt;- 오디오는 주니퍼가 더 나은 듯. (하만카돈도 나쁘지 않다고 들었는데..;;)&lt;/p&gt;
-  &lt;p&gt;- adas는 폴스타 승. (주니퍼가 칼같긴 한데, 차전변경하면 오토파일럿 꺼지는 거에서 뭐랑 붙어도 이길 수 없음)&lt;/p&gt;
-  &lt;p&gt;- 전비는 주니퍼 압승 (2-30% 정도 차이 나는 듯)&lt;/p&gt;
-  &lt;p&gt;- 그 외 편의성 등등 테슬라 압승까지는 아니고 승&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다행히 폴스타4 받은지 4일차 인데 기변욕이 올라오지는 않네요.&lt;/p&gt;
-  &lt;p&gt;듀얼모터 기준 둘 중 하나를 선택하라면...&lt;/p&gt;
-  &lt;p&gt;볼보는 가죽시트+플러스 팩은 꼭 넣어야 하니... 얼추 1,200~1,300만원 차이가 나는데...&lt;/p&gt;
-  &lt;p&gt;그냥 주니퍼 프리미엄 롱레인지로 뽑고 남는 돈으로 주식이나 몇 주 사는게 낫겠다 싶네요.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;날 좋을 때 85kwh 배터리 주니퍼가 600km 가볍게 넘으니&lt;/p&gt;
-  &lt;p&gt;무조건 롱레인지가 답이긴 한데.. 이게 또 rwd랑 1,700정도 차이니 참...&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;결론&lt;/p&gt;
-  &lt;p&gt;- 가격대비 이래 저래 따져보면 테슬라가 짱 먹는 건 맞긴 하다.&lt;/p&gt;
-  &lt;p&gt;- 폴스타도 전기차 잘 만든다.&lt;/p&gt;
-  &lt;p&gt;- 테슬라 수리센터 헬인 거 사실이다.&lt;/p&gt;
-  &lt;p&gt;- 테슬라 전비는 짱이다.&lt;/p&gt;
-  &lt;p&gt;- 테슬라 순정 오디오 괜찮다.&lt;/p&gt;
-  &lt;p&gt;- 계기판 없고, 기어레버 없고 다 좋다. 승차감 어케 좀 개선 좀 해봐라. 폴스타 맛보니 현타 온다.&lt;/p&gt;
-  &lt;p&gt;- 중국산 fsd 기약없는데 오토파일럿 차선 변경해도 안꺼지는 거 좀 넣어라. 향상된 오토파일럿으로 5백이나 받아 먹지 말고...&lt;/p&gt;
-  &lt;p&gt;- 솔직히 폴스타4 말고 3 함 타고 싶긴 하다.&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;근데 주니퍼 1년 타면서 적응했는지, 폴스타4 운전 좀 힘드네요.&lt;/p&gt;
-  &lt;p&gt;전장, 적폭 조금씩 큰데 가끔씩 버벅거리고 난리네요 ㅋㅋㅋ&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아. 진짜 결론&lt;/p&gt;
-  &lt;p&gt;이제 선팅한 차 못타겠습니다.&lt;/p&gt;
-  &lt;p&gt;지난 주말 비오는 저녁, 예전에는 선팅한 차 어뜨케 타고 다녔나 싶을정도로 가끔 식겁할 때가....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="KakaoTalk_20251114_151439422.jpg" class="fr-dib fr-fil full" data-file-sn="15845116" data-gif="false" data-img-height="821" data-img-width="1344" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845116/ef6b608a53645.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;승차감 좀 거지 같아도 어항처럼 밝디밝은 녀석이 그립네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다들 안전운전하십쇼!&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19280044</guid><pubDate>Tue, 20 Oct 2026 09:21:22 GMT</pubDate></item><item><title>월세 어마어마합니다...[29][0]</title><link>https://www.clien.net/service/board/park/19280174</link><description>
- 
- 
-  &lt;p&gt;전세는 없어져야 한다 월세가 답이다...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이상적인 상태가 실현되서 집값은 오르지 않고 전세는 없어졌고(이건 이상적인지 모르겠군요) 월세로 전환되었다 가정할때,&lt;/p&gt;
-  &lt;p&gt;집주인이 전세를 집값보다 많이 싸게 줄 요인은 많지 않습니다.&lt;/p&gt;
-  &lt;p&gt;전세든 환산한 월세든 말이죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지금은 전세가 집값의 3-50% 정도 되는 곳들도 많지만 집이 더 이상 오르지 않을거라 예상되면 &lt;/p&gt;
-  &lt;p&gt;8-90% 아래로 환산해서 월세를 주는 사람은 바보죠. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;8-90%도 손실이라 볼수 있지만, 환산비율이 이자보다 높다면 감수할수 있을겁니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;15억 집의 경우 1억 보증금을 하고 14억에 대해 80%를 월세 6%로 환산해보면&lt;/p&gt;
-  &lt;p&gt;1억에 670짜리 월세가 나옵니다. 뭐, 좀 깎아서 1억에 600짜리라고 해보죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;서울 어지간한 집이 15억이라면 이게 앞으로 닥칠 현실인거죠.&lt;/p&gt;
-  &lt;p&gt;잠실 35억짜리 집은 얼마가 될까요?&lt;/p&gt;
-  &lt;p&gt;지금은 전세 13억이면 들어갈수나 있지, 월세로 저렇게 되면 1500-1600만원 되겠군요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;게시판에서 많이 보던 능력에 안되면 외곽으로 나가라 하던 그 일이 현실로 다가오겠네요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280174</guid><pubDate>Tue, 20 Oct 2026 12:43:40 GMT</pubDate></item><item><title>추미애 이분은 이제 경기도에 공항 짓자고 하네요[30][3]</title><link>https://www.clien.net/service/board/park/19280173</link><description>
- 
- 
-  &lt;p&gt;경기도 재정이 어렵다면서&lt;/p&gt;
-  &lt;p&gt;서민 복지 예산은 칼질해서 삭감 하더니&lt;/p&gt;
-  &lt;p&gt;본인 관사는 12억 들여서 새로 마련하지를 않나&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이제는 재정 어렵다면서 경기도에 공항을 짓자고 하는데&lt;/p&gt;
-  &lt;p&gt;이분은 대체 무슨 생각인 건가요?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아주 좌충우돌, 중구난방 인데&lt;/p&gt;
-  &lt;p&gt;점입가경 이네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280173</guid><pubDate>Tue, 20 Oct 2026 12:42:19 GMT</pubDate></item><item><title>퇴임하고 어쩔려고 이렇게 부동산을 박살내놓는거죠?[19][4]</title><link>https://www.clien.net/service/board/park/19280171</link><description>
- 
- 
-  &lt;p&gt;이런 고금리 시기에 전월세, 집값 트리플상승이라는 역대급 재앙을 만들어놨는데 이거 어쩔려고 이러는거죠?&lt;/p&gt;
-  &lt;p&gt;심지어 공급부족때문에 내년에 전월세 만기되면 또 한번 점프할것 같은데 뭘 위해 이러는겁니까? &lt;/p&gt;
-  &lt;p&gt;심지어 정책의 의도도 모르겠네요. 보유세도 올려 양도세도 올려.&lt;/p&gt;
-  &lt;p&gt;부동산 오르는거는 못 막으니 이건 뭐 가두리 양식장에 가둬놓고 세금만 패겠다는건가 ㅋㅋ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280171</guid><pubDate>Tue, 20 Oct 2026 12:40:15 GMT</pubDate></item><item><title>mz가 민주당을 등진 이유는 정책의 결과가 나빠서죠[17][3]</title><link>https://www.clien.net/service/board/park/19280166</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="5671.jpeg" class="fr-dib fr-fil full" data-file-sn="15845257" data-gif="false" data-img-height="1263" data-img-width="1080" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845257/f9db346b311ac.jpeg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;리박스쿨, 일베 얘기하는데&lt;br/&gt;
-    문정부 당선되고 초기에 2030 지지율 높았습니다.&lt;br/&gt;
-    2018년 지방선거에서도 2030이 민주당 몰표줬구요&lt;br/&gt;
-    그때는 리박스쿨, 일베 없었나요? 정부에 기대가 있었다는 얘기입니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;부동산은 글로벌 영향도 있고 어쩔수 없는 부분도 있죠&lt;/p&gt;
-  &lt;p&gt;대통령이 직접 나서서 부동산 집값 잡겠다, 집 팔 기회 주겠다 해서 180석 몰아줬더니 결과는 대폭등했습니다&lt;/p&gt;
-  &lt;p&gt;집값이 오른 것만 문제가 아니라 정부를 믿고 기다린 사람들에게 처참한 결과를 안긴 거에요&lt;/p&gt;
-  &lt;p&gt;유럽은 월세 폭등해서 젊은이들 시위에 나섰습니다&lt;/p&gt;
-  &lt;p&gt;무주택자가 이 상황에서도 지지를 철회하지 않는게 더 희한하다고 생각합니다 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;mz한텐 민주당 = 부동산 폭등이라는 결과로 인식됩니다 그걸 방관했건 의도했건요&lt;/p&gt;
-  &lt;p&gt;민주당 부동산 정책의 결과가 좋았으면 2030도 등돌리지 않았고 정권도 안바뀌었습니다&lt;/p&gt;
-  &lt;p&gt;부동산 정상화, 계곡정비보다 쉽다고 했죠?&lt;/p&gt;
-  &lt;p&gt;지금도 시즌2 진행중입니다&lt;/p&gt;
-  &lt;p&gt;mz가 돌아오길 바란다면 정책의 의도가 아니라 결과로 말해야합니다&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280166</guid><pubDate>Tue, 20 Oct 2026 12:32:27 GMT</pubDate></item><item><title>李대통령, 주택 공급 ‘전면전’ 선포…부동산 민심 달래기 총력[17][0]</title><link>https://www.clien.net/service/board/park/19280164</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="paste-1792466618186.png" class="fr-dib fr-fil" data-file-sn="15845258" data-gif="false" data-img-height="886" data-img-width="692" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845258/f9db45092364a.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://www.dnews.co.kr/uhtml/view.jsp?idxno=202608131633528480995" ori-url="https://www.dnews.co.kr/uhtml/view.jsp?idxno=202608131633528480995" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;李대통령, 주택 공급 ‘전면전’ 선포…부동산 민심 달래기 총력 - 대한경제&lt;/a&gt; &lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://www.edaily.co.kr/News/Read?newsId=05129926645546992&amp;amp;mediaCodeNo=257&amp;amp;OutLnkChk=Y" ori-url="https://www.edaily.co.kr/News/Read?newsId=05129926645546992&amp;amp;mediaCodeNo=257&amp;amp;OutLnkChk=Y" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;“법 고쳐서라도 택지 확보”…李대통령, 부동산 공급전 전면전&lt;/a&gt; &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이런 2개월 전 기사네요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280164</guid><pubDate>Tue, 20 Oct 2026 12:25:34 GMT</pubDate></item><item><title>인스타 요리 레시피 보고 따라해봤는데[13][0]</title><link>https://www.clien.net/service/board/park/19280162</link><description>
- 
- 
-  &lt;p&gt;&lt;img alt="제목 dddd없음.jpg" class="fr-dib fr-fil full" data-file-sn="15845256" data-gif="false" data-img-height="833" data-img-width="1905" data-role="attach-image" src="https://edgio.clien.net/F01/2026/10/15845256/eb5079755be26.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;인스타 쇼츠 레시피에 우삽겹 파스타 떠서&lt;/p&gt;
-  &lt;p&gt;마늘, 대파, 간장, 굴소스 이렇게 해봐야&lt;/p&gt;
-  &lt;p&gt;맛이날리가 있어??&lt;/p&gt;
-  &lt;p&gt;맛이난다고??&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;우삼겹 파스타 만들어봤는데&lt;/p&gt;
-  &lt;p&gt;정말 맛없네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;진짜 인스타보고 머 따라하면 뭐하나 좋은게 없었어요 ㅋㅋ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280162</guid><pubDate>Tue, 20 Oct 2026 12:23:06 GMT</pubDate></item><item><title>망국적 투기꾼들과 부동산무새들 이제 끝났네요[22][0]</title><link>https://www.clien.net/service/board/park/19280160</link><description>
- 
- 
-  &lt;p&gt;수도권 공급 폭탄 시동걸었습니다&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280160</guid><pubDate>Tue, 20 Oct 2026 12:21:17 GMT</pubDate></item><item><title>인구감소로 집값은 하락하지않습니다[33][6]</title><link>https://www.clien.net/service/board/park/19280158</link><description>
- 
- 
-  &lt;p&gt;정확히 말하면 서울경기는 아예 천정부지로 치솟겠죠&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지금 서울경기를 제외한 모든광역시는 사실상 소멸위험지구가 되어있습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;물고기들도 물이마르면 가장 수심이 깊은곳으로 몰립니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;십수년이 더지나서 인구감소가 시작을 하면 어디부터 사라질꺼 같습니까&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이때부턴 좋든 싫든 다 짐싸들고 올라가야합니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;내자식새끼들 좋은거 입히고 좋은거 맥여 공부시켜서 쇠락해가는 고향에 남으라고 하실수 있는분들 몇이나 계실까요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;부동산은 국가전쟁이나 국가의존망이 걸린 순간이 아니면 언제나 우상항입니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정부에서 할일은 그 지표를 최대한 완만한 곡선을 그리게 만드는것입니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;집을 매입을 하실수 있는 상황이 생기시면 최대한 매입을 하는게 맞습니다&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280158</guid><pubDate>Tue, 20 Oct 2026 12:17:01 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19280180</guid><pubDate>Tue, 20 Oct 2026 12:58:43 GMT</pubDate></item></channel></rss>
