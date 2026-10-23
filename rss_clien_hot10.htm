@@ -1,5 +1,313 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Fri, 23 Oct 2026 17:00:57 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>외국인들의 댓글이 울나라 유저들의 댓글 보다 좀 더 순한 거 같지 않나요?[12][0]</title><link>https://www.clien.net/service/board/park/19281721</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Fri, 23 Oct 2026 18:01:00 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>이야기 고급유 가격 좀 내려주면 안될까요..?[12][0]</title><link>https://www.clien.net/service/board/cm_car/19281686</link><description>
+ 
+ 
+  &lt;p&gt;일반유 경유만 내려주고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;고급유는 2300이 기본이네요 ㅜ &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19281686</guid><pubDate>Fri, 23 Oct 2026 15:59:08 GMT</pubDate></item><item><title>전자기기 서류와 메신저에 치여 살던 컨설팅 부서 아저씨의 AX(AI 전환) 생존기 - 인박스의 배신[8][5]</title><link>https://www.clien.net/service/board/use/19277873</link><description>
+ 
+ 
+  &lt;p&gt;안녕하세요. &lt;/p&gt;
+  &lt;p&gt;평범하게 B2B 자문·컨설팅 부서에서 일하고 있는 직장인입니다. &lt;/p&gt;
+  &lt;p&gt;클리앙에 종종 올라오는 로컬 AI나 업무 자동화 후기들을 재미있게 읽다가, 지난 수개월 동안 편해보겠다고 부서 전용 AI 업무 시스템을 직접 바닥부터 깎으며 겪었던 피땀 눈물 나는 삽질기를 한 번 정리해 보면 재밌겠다 싶어 써봅니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;사실 이 글도 제 실제 작업 디렉토리를 읽어서 분량과 내용을 정리해달라고 AI한테 시켜서 쓴 글을 토대로 합니다.   &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;글이 꽤 길어질 것 같아 총 3편으로 나누어 올려봅니다.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;strong&gt;1편: 흩어진 메일·슬랙·캘린더를 하나로 모으려다 겪은 AI의 기상천외한 배신들 (이번 글)&lt;/strong&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;2편: 계약서·기안문·견적서 자동화와 돈(재무/정산) 앞에서 벌어진 대참사&lt;/strong&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;3편: 클라우드비 아끼려다 서버가 잠든 사연, 그리고 폭주하는 AI 코딩 에이전트에게 '헌법'을 씌우기까지&lt;/strong&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;h3&gt;&lt;strong&gt;1. 왜 멀쩡한 현업 부서에서 직접 시스템을 깎기 시작했나&lt;/strong&gt;&lt;/h3&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;겉으로 보기에 컨설팅이나 전문 자문 부서라고 하면 그럴싸한 기획서 쓰고 고객사 미팅하는 스마트한 모습을 상상하시겠지만, 실상을 까보면 &lt;strong&gt;거대한 수작업 행정 노가다 집합소&lt;/strong&gt;에 가깝습니다.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;하루 일과를 돌아보면 기가 막힙니다. 아침에 출근하면 지메일로 고객사 문의와 첨부파일이 쏟아지고, 슬랙에서는 수십 개 채널과 개인 DM으로 실무 논의가 오가며, 공용 구글 캘린더에는 미팅 일정이 제각각 올라옵니다. 문제는 이 정보들이 전부 파편화되어 있다는 겁니다.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;em&gt;"어제 A 고객사 담당자가 메일로 보낸 수정 요청 사항 어디 갔지?"  &lt;/em&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;em&gt;"지난주 슬랙에서 이야기했던 외주 단가 합의 내용이 어느 채널에 있더라?"  &lt;/em&gt;&lt;/li&gt;
+   &lt;li&gt;&lt;em&gt;"사내 웹메일 대용량 첨부파일 링크가 30일 지나서 만료됐네? 누가 백업 안 해뒀어?"&lt;/em&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;본업인 자문과 기획에 써야 할 에너지를 이메일 뒤적거리고, 엑셀 칸 맞추고, 그룹웨어 기안문 복붙하는 데 다 쓰고 있더라고요. &lt;/p&gt;
+  &lt;p&gt;&lt;strong&gt;"이러다간 서류 더미에 깔려 죽겠다&lt;/strong&gt;"는 위기감이 들어서, 결국 AI 코딩 에이전트를 붙잡고 우리 부서에서만 사용하는 부서 전용 통합 시스템을 직접 만들기 시작했습니다.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;처음엔 참 순진했습니다. &lt;em&gt;"요즘 LLM 성능이 저렇게 좋은데, 메일이랑 슬랙 다 긁어와서 AI한테 던져주면 알아서 프로젝트별로 예쁘게 정리해 주겠지?"&lt;/em&gt; 라고 생각했거든요. 그리고 가동 첫 주부터 온갖 기상천외한 일들이 터지기 시작합니다.&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;h3&gt;&lt;strong&gt;2. "네, 감사합니다" 한 줄에도 꼬박꼬박 과금되던 토큰 먹는 하마&lt;/strong&gt;&lt;/h3&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;제일 먼저 만든 건 지메일, 슬랙, 공용 캘린더를 한곳으로 모으는 **[통합 인박스]**였습니다. 메시지가 들어오면 AI가 본문을 읽고 &lt;code&gt;[배경 - 핵심내용 - 후속조치]&lt;/code&gt; 3단으로 깔끔하게 요약한 뒤, 이게 현재 진행 중인 &lt;strong&gt;'프로젝트'&lt;/strong&gt; 건인지, 신규 &lt;strong&gt;'영업 리드(CRM)'&lt;/strong&gt; 건인지, 아니면 &lt;strong&gt;'부서 내부 이슈'&lt;/strong&gt;인지 분류해 주는 파이프라인이었죠.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;그런데 며칠 돌려보고 API 사용량 로그를 까봤다가 뒷목을 잡았습니다. 슬랙이나 업무 메일 특성상 전체 메시지의 절반 이상이 &lt;em&gt;"네, 확인했습니다"&lt;/em&gt;, &lt;em&gt;"감사합니다. 수고하세요!"&lt;/em&gt;, &lt;em&gt;"넵"&lt;/em&gt; 같은 단답형 인사말이잖아요? 초기 코드는 아무 생각 없이 이런 한 줄짜리 인사말까지 전부 꼬박꼬박 프롬프트 수천 자를 붙여서 LLM API로 날리고 있었던 겁니다. 심지어 이메일 본문에 달린 길고 긴 과거 회신 내역(RE: RE: FW:)까지 통째로 다 넣고 있었으니 토큰이 녹아내릴 수밖에요.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;결국 AI를 부르기 전에 &lt;strong&gt;앞단에서 돈을 아끼는 거름망&lt;/strong&gt;부터 짰습니다.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;ol&gt;
+   &lt;li&gt;단순 인사말이나 단답, 기호만 있는 메시지는 정규식과 길이 체크로 걸러서 &lt;strong&gt;AI 호출 0건으로 즉시 스킵&lt;/strong&gt;.&lt;/li&gt;
+   &lt;li&gt;수만 자짜리 긴 이메일이나 문서는 통째로 넣지 않고, 핵심 맥락이 담긴 &lt;strong&gt;서두(60%)와 결론(40%)만 스마트하게 발췌&lt;/strong&gt;해서 인풋 토큰을 75% 이상 다이어트.&lt;/li&gt;
+   &lt;li&gt;사내 웹메일에 걸려오는 '30일 시한부 대용량 첨부파일 링크'는 HTML 태그를 벗기기 전에 정규식으로 낚아채서, 백그라운드 스레드가 조용히 구글 드라이브에 영구 백업해 두도록 처리.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;이렇게 하고 나니 그제야 API 비용이 정상 궤도로 들어오더군요.&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;h3&gt;&lt;strong&gt;3. 슬랙에 '핀' 하나 꽂았더니 며칠 전 남의 대화를 납치해 오다&lt;/strong&gt;&lt;/h3&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;슬랙의 모든 대화를 다 인박스로 가져오면 쓰레기장이 되니까, 실무자가 중요하다고 판단한 메시지에 **'핀(고정)'**을 꽂거나 특정 리액션을 달면 그때만 인박스로 수집되게 설계했습니다. 그런데 메신저 대화라는 게 한 문장으로 끝나는 법이 없잖아요? 엔터를 탁탁 치면서 서너 줄에 걸쳐 이야기하는 경우가 많으니, 핀이 꽂힌 메시지 앞뒤 맥락을 같이 묶어서 가져오게 짰습니다.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;그랬더니 어떤 참사가 벌어졌냐면... 조용한 채널에서 며칠 전에 끝난 &lt;strong&gt;'갑 프로젝트'&lt;/strong&gt; 대화가 위에 있었고, 오늘 새로 &lt;strong&gt;'을 프로젝트'&lt;/strong&gt; 이야기를 짧게 한 뒤 핀을 꽂았는데, 수집기가 기계적으로 직전 N개 대화를 한 묶음으로 긁어오면서 며칠 전 갑 프로젝트 이야기까지 같이 납치해 온 겁니다. AI는 또 시키는 대로 그걸 다 읽더니, 오늘의 을 프로젝트 메시지에다가 며칠 전 갑 프로젝트 제목을 떡하니 붙여서 요약해 버렸습니다. 실무자는 &lt;em&gt;"어? 이거 옛날에 등록한 건데 왜 또 중복으로 들어왔지?"&lt;/em&gt; 하고 지워버리는 바람에 정작 중요한 오늘 대화가 증발할 뻔했죠.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;고민 끝에 **'스마트 버스트 윈도잉(Smart Burst Windowing)'**이라는 4단계 룰을 만들었습니다.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;ul&gt;
+   &lt;li&gt;&lt;strong&gt;1원칙 (앵커 중심)&lt;/strong&gt;: 무조건 핀이 꽂힌 바로 그 메시지를 절대 기준으로 삼는다.  &lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;2원칙 (완결형 문서 격리)&lt;/strong&gt;: 만약 핀 꽂힌 메시지 자체에 글머리 기호나 줄바꿈이 충분히 있고 글자 수가 80자 이상이거나 첨부파일이 있으면, 그 자체로 완결된 보고서이므로 이전 대화는 아예 쳐다보지도 않는다.  &lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;3원칙 (3분 룰)&lt;/strong&gt;: 짧은 단문일 때만 이전 대화를 거슬러 올라가되, **'시간차 3분(180초) 이내 + 동일한 발화자'**가 연속으로 친 메시지만 합친다. 중간에 다른 사람이 끼어들거나 3분이 넘어가면 칼같이 자른다.&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;이 룰을 적용하고 나서야 메신저 특유의 '엔터 쪼개 치기'와 '옛날 대화 섞임' 문제가 동시에 거짓말처럼 사라졌습니다.&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;h3&gt;&lt;strong&gt;4. "고객사 추천 1위: 우리 회사" 사건과 자가 진화 메모리&lt;/strong&gt;&lt;/h3&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;제일 크게 웃었던(그리고 속이 쓰렸던) 사건은 인박스 &lt;strong&gt;AI 자동 매칭 추천 엔진&lt;/strong&gt;을 붙였을 때였습니다.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;수집된 이메일이나 일정을 보고 &lt;em&gt;"이 건은 현재 돌아가고 있는 OO 프로젝트로 넘기시겠습니까?"&lt;/em&gt; 하고 드롭다운 최상단에 추천해 주는 기능인데, 매번 LLM을 부르면 느리고 비싸니까 **과거에 사람이 승인했던 이력(발신자 도메인, 키워드, 고객사명)을 점수화해서 스스로 학습하는 메모리(BPE 방식)**를 구축했습니다. 자주 매칭된 고객사에는 &lt;code&gt;누적 사용 횟수(usage_count)&lt;/code&gt; 가산점도 조금씩 주도록 설계했죠.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;그런데 어느 날 인박스를 열어보니, 외부에서 들어온 온갖 이메일 상단에 보라색 추천 뱃지로 **'저희 회사(조직) 이름'**이 당당하게 1순위로 떠 있는 겁니다. 심지어 전혀 무관한 외부 거래처 메일인데도요.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;"아니, 왜 우리 회사가 가망 고객사 1등으로 뜨는 거야?!"&lt;/em&gt; 하고 DB를 까봤더니 원인이 기가 막혔습니다. &lt;/p&gt;
+  &lt;p&gt;초기에 사내 행정 메일들을 이관할 때 수행 주체였던 우리 회사 이름이 고객사 칸에 몇 번 들어간 적이 있었는데, 이게 누적되다보니 다른 후보들을 다 제치고 1등을 먹고 있었던 겁니다.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;결국 두 가지를 뜯어고쳤습니다.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;ol&gt;
+   &lt;li&gt;&lt;strong&gt;내용 일치(Relevance) 필수 가드&lt;/strong&gt;: 발신자나 고객사명, 본문 키워드 중 실제 내용 일치가 0점이면, 과거 누적 사용 횟수가 천 번이든 만 번이든 가산점은 무조건 &lt;strong&gt;0점&lt;/strong&gt;으로 강제 초기화.&lt;/li&gt;
+   &lt;li&gt;&lt;strong&gt;자사명 영구 블랙리스트&lt;/strong&gt;: 우리 회사 정식 명칭, 약칭, 부서명은 코드 레벨에서 고객사 후보로 절대 올라오지 못하게 영구 배제하고, 기존에 오염됐던 과거 레코드도 전수 정제.&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;이 과정을 거쳐 초기에는 37% 수준이던 자동 분류 정확도가 최근 3개월 실데이터 330여 건 검증 기준 &lt;strong&gt;83% 이상&lt;/strong&gt;으로 껑충 뛰었습니다. 고객사 이름이 없는 일반 일정('디자인 미팅', '구독 갱신' 등)을 억지로 프로젝트에 쑤셔 넣지 않고 '부서 운영 이슈' 쪽으로 똑똑하게 빼주는 건 덤이고요.&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;h3&gt;&lt;strong&gt;[1편을 마치며]&lt;/strong&gt;&lt;/h3&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;처음에는 그저 "이메일이랑 슬랙 좀 한곳에서 편하게 보자"고 시작한 일이었는데, 실제 현업의 지저분한 데이터(인사말, 단문 쪼개 치기, 전달된 메일의 꺾쇠괄호 &lt;code&gt;&amp;lt; &amp;gt;&lt;/code&gt;가 HTML 태그로 오인돼서 이메일 주소가 화면에서 증발하던 버그 등)와 부딪히다 보니 프롬프트 한 줄보다 &lt;strong&gt;데이터 전처리와 구조적 가드레일&lt;/strong&gt;이 열 배는 더 중요하다는 걸 뼈저리게 배웠습니다.&lt;/p&gt;
+  &lt;p&gt;  &lt;/p&gt;
+  &lt;p&gt;다음 편에서는 현업의 진짜 보스 몬스터였던 &lt;strong&gt;'계약서 법률 검토 &amp;amp; 사내 기안문 마법사'&lt;/strong&gt;(도장 찍힌 스캔본 PDF를 넣었더니 AI가 5,000만 원짜리 소설을 쓴 사건)와, 매출이 1억 배로 뻥튀기될 뻔했던 &lt;strong&gt;'ERP 전표 및 외주 정산 자동화'&lt;/strong&gt; 이야기를 풀어보겠습니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19277873</guid><pubDate>Thu, 15 Oct 2026 16:31:05 GMT</pubDate></item><item><title>이재명 대통령, 흉악범 '가석방 없는 무기형' 도입 추진[33][5]</title><link>https://www.clien.net/service/board/park/19281751</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/088/0001036197?sid=100" ori-url="https://n.news.naver.com/article/088/0001036197?sid=100" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://n.news.naver.com/article/088/0001036197?sid=100&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;빨리 도입됐으면 좋겠네요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281751</guid><pubDate>Fri, 23 Oct 2026 17:35:10 GMT</pubDate></item><item><title>이재명 대통령 오늘 X ㅠㅠ[18][3]</title><link>https://www.clien.net/service/board/park/19281747</link><description>
+ 
+ 
+  &lt;p&gt;&lt;/p&gt;
+  &lt;blockquote class="twitter-tweet" data-lang="en"&gt;
+   &lt;a href="https://twitter.com/Jaemyung_Lee/status/2113522766276432136" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://twitter.com/Jaemyung_Lee/status/2113522766276432136&lt;/a&gt;
+  &lt;/blockquote&gt;
+  &lt;p&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&amp;lt;시도 때도 없이 저려오는 왼팔은 그때마다 저의 신념과 삶의 지향을 되새기게 합니다. '함께 사는 세상'을 향해 열심히 달려가겠습니다. 환기해 주셔서 감사합니다.&amp;gt; &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;문조털래유 하는 계정 글 리트윗 까지 하 ㅠㅠ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;오늘 오세훈 판결 난 시점에 이런 sns를 ? 별로 정치에 관심이 없으신가&lt;/p&gt;
+  &lt;p&gt;아니면 난 타격 일도 없다고 알리고 싶은건가&lt;/p&gt;
+  &lt;p&gt;게다가 시도 때도 없이 저려오는 팔로 골프는 시도 때도 없이 치셨다니 상식적으로 이해가 안가네요&lt;/p&gt;
+  &lt;p&gt;그때 그때 하고 싶은 '아무 말' 안하면 큰 일 나는 병이 있는 게 아니고서야&lt;/p&gt;
+  &lt;p&gt;앞뒤 아무것도 생각을 안하네요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281747</guid><pubDate>Fri, 23 Oct 2026 17:23:39 GMT</pubDate></item><item><title>다음대선 민주당내 가장 경쟁력 있는 대권후보[17][0]</title><link>https://www.clien.net/service/board/park/19281746</link><description>
+ 
+ 
+  &lt;p&gt;누구라고 보시나요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;김민석, 정청래, 추미애?&lt;/p&gt;
+  &lt;p&gt;민주당 지지층 내에서 조차도 호불호가 너무 강합니다&lt;/p&gt;
+  &lt;p&gt;그리고 결정적으로 세분 모두 중도확장성이 너무 부족합니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그럼 누가 당내 분열을 통합하고 대외적으로는 중도확장성을 가질수 있을까요?&lt;/p&gt;
+  &lt;p&gt;전 김부겸 전총리가 가장 적합한 인물이라고 생각합니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;계파색이 가장적고 훌륭한 인품으로 여야를 넘어 정치권에서 고루 존경을 받고 있는 분입니다&lt;/p&gt;
+  &lt;p&gt;과거 노무현과 같이 힘들고 척박한 곳에서 끊임없이 도전했던 비슷한 서사를 가지고 있기도 합니다&lt;/p&gt;
+  &lt;p&gt;그리고 무엇보다 중도확장성은 물론이고, 보수표마저 가져올수 있는 유일한 후보입니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;하지만 아시다시피 당내 지지기반이 약합니다&lt;/p&gt;
+  &lt;p&gt;아이러니 하지만 이는 오늘부로 야당 대권후보로 떠오른 오세훈도 마찬가지입니다&lt;/p&gt;
+  &lt;p&gt;최종후보로는 경쟁력이 있지만, 당내 경선통과가 수월할까가 우려되는 후보들 이기도 합니다&lt;/p&gt;
+  &lt;p&gt;둘 다 경선만 통과한다면 재밌는 승부가 될겁니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이재명 정부가 남은임기동안 일을 잘해서 3년후 지지율을 올해초 정도로 회복한다면 김민석으로 대선을 치룰 만도 하겠죠&lt;/p&gt;
+  &lt;p&gt;하지만 그렇지 못한다면 중도확장성이 없는 후보로는 누가 나와도 필패할 수 밖에 없습니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;참고로 다음달 추경호 내란 1심선고가 있는 걸로 알고 있습니다&lt;/p&gt;
+  &lt;p&gt;판결이 어떻게 될지, 대구시장 보궐이 열리게 될지 어떨지,&lt;/p&gt;
+  &lt;p&gt;보궐이 열리더라도 다시 재도전 하실지 아닐지도 모르지만,&lt;/p&gt;
+  &lt;p&gt;김부겸이라는 소중한 자산이 있다는 걸 당원들, 지지자분들 잊지 않으셨으면 좋겠습니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;저 포함 민주당 지지자분들 떨어진 대통령 지지율에 다음 총선, 대선 걱정 많으시겠지만 낙담하지 마시길 바랍니다&lt;/p&gt;
+  &lt;p&gt;정치는 생물입니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281746</guid><pubDate>Fri, 23 Oct 2026 17:18:40 GMT</pubDate></item><item><title>코로나 백신을 안 맞던 어르신이 있었습니다[11][0]</title><link>https://www.clien.net/service/board/park/19281739</link><description>
+ 
+ 
+  &lt;p&gt;자기는 코로나도 무섭고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;백신도 무섭다며&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;백신 접종도 거부하시고, 외출도 3년을 안하시더라고요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그렇게 3년간 자가격리 하며 지내시다가, 코로나가 종식되었을 때 여기저기 돌아다니셨는데&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;코로나 말고 그냥 계절독감에 걸리셔서 바로 돌아가셨어요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;당시에 그게 좀 충격이었고, 독감이란게 가볍게 볼 병이 아니구나 경각심을 갖게 되더라고요..&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281739</guid><pubDate>Fri, 23 Oct 2026 17:11:10 GMT</pubDate></item><item><title>주변에만 교회 7개... 콜택시의 승차 거부... 속-상[14][0]</title><link>https://www.clien.net/service/board/park/19281738</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt; 어머니의 인지능력 테스트를 위해 보건소를 들리고&lt;/p&gt;
+  &lt;p&gt;테스트 후 집에가려 카카오 택시를 불렀습니다.&lt;/p&gt;
+  &lt;p&gt;택시가 도착했다며 전화로 저보고 어디 계시냐며 물어봐&lt;/p&gt;
+  &lt;p&gt;"여기 ㅇㅇ교회 앞인데요. 오디계세요?" 하니&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;"거기가 어딘진 모르겠고, 사거리 앞 횡단보도 보고오라"랍니다.&lt;/p&gt;
+  &lt;p&gt;저는 제가"사거리 앞인데 교회가 안 보이시냐고" 물었고&lt;/p&gt;
+  &lt;p&gt;기사님은 "여기 교회가 너무많은데 어디 앞이시냐"고&lt;/p&gt;
+  &lt;p&gt;"감빡이 켜둔 택시 안 보이시냐고" 해서&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;1분을 둘러본 후에야 어딘지 확인 했습니다.&lt;/p&gt;
+  &lt;p&gt;근데 사거리라 택시 기사님이 계신 곳 까지 가기엔&lt;/p&gt;
+  &lt;p&gt;신호가 걸려 너무 오래걸렸고 결국 승차 거부 하시고&lt;/p&gt;
+  &lt;p&gt;부아아아앙 가셨습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;어쩔수 없었겠지요...&lt;/p&gt;
+  &lt;p&gt;"에혀," 하고 하늘을 봤는데 눈앞에 교회 두 개 &lt;/p&gt;
+  &lt;p&gt;그 옆에 교회 한 개 또 그옆에 교회 한 개..&lt;/p&gt;
+  &lt;p&gt;대충 주변에만 교회가 100미터 안으로 7개가 있었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;속이타서 " 아주 그냥 하나님의 나라야. &lt;/p&gt;
+  &lt;p&gt;이 쫍은 지역에 뭐 기도인 쟁탈전 하는 것도 아니고,&lt;/p&gt;
+  &lt;p&gt;왜 7채씩이나 필요한 거지?"하고 혀를 차고 왔습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;근데 제일 잘못한 건 저죠.&lt;/p&gt;
+  &lt;p&gt;어딘지 분명한 장소에서 타겠다 알려드려야 하는데...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;뭐 그런 하루였습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281738</guid><pubDate>Fri, 23 Oct 2026 17:09:26 GMT</pubDate></item><item><title>'주담대 7%라 집값 내려도 안 팔려요'[23][0]</title><link>https://www.clien.net/service/board/park/19281735</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/011/0004674514?sid=104" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://n.news.naver.com/article/011/0004674514?sid=104&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;예전 미국에서 2007년 부터 저러다가 &lt;/p&gt;
+  &lt;p&gt;부동산 시장 얼어 붙으면서, 1년 뒤인&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;2008년에 서브프라임 모기지 사태 - 리먼 브라더스 파산 (08년 9월) - 글로벌 금융위기 온적 있지 않나요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;현재 미국, 일본, EU등 선진국 각국에서 금리 올리는 중인데&lt;/p&gt;
+  &lt;p&gt;글로벌 금리가 대세상승기 인 것은 맞죠.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281735</guid><pubDate>Fri, 23 Oct 2026 17:07:59 GMT</pubDate></item><item><title>아이폰 듀오 열풍(?) 정말 대단하긴 하네요.[16][0]</title><link>https://www.clien.net/service/board/park/19281734</link><description>
+ 
+ 
+  &lt;p&gt;솔직히 비율도 폴드8 보다 별로고&lt;/p&gt;
+  &lt;p&gt;비대칭 디자인의 심미적인 문제, &lt;/p&gt;
+  &lt;p&gt;250g이 넘는 무게,&lt;/p&gt;
+  &lt;p&gt;오른손 잡이를 강제한 디자인 &lt;/p&gt;
+  &lt;p&gt;나노 텍스쳐 디스플레이 등 (이건 호불호 갈릴 텐데 전 불호입니다) &lt;/p&gt;
+  &lt;p&gt;상당히 뚜렷한 단점들이 있는데도&lt;/p&gt;
+  &lt;p&gt;애플은 애플인 듯요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;제가 오른손잡이이다 보니&lt;/p&gt;
+  &lt;p&gt;보통 폰을 왼손으로 파지하는데...&lt;/p&gt;
+  &lt;p&gt;듀오가 현 디자인을 고수하는한 전 듀오로는 못갈 거 같아요.  &lt;/p&gt;
+  &lt;p&gt;항상 폰을 왼손으로 조작하면서 오른손으론 무언갈 하고 있는 경우가 많거든요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;1년 지난 후 갤럭시 폴드 시리즈와의 판매량 비교가 궁금해지는군요. &lt;/p&gt;
+  &lt;p&gt;폴드9이 내부 카메라를 UDC로 바꾸고, 스피커 위치 교정하고, 맥세이프만 내장해서 나와도 엄청날 듯 싶네요. &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281734</guid><pubDate>Fri, 23 Oct 2026 17:01:17 GMT</pubDate></item><item><title>정청래 “소방 인건비 국가가 책임져야”…李대통령은 “지방사무”[14][1]</title><link>https://www.clien.net/service/board/park/19281730</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://v.daum.net/v/20261022190145242" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://v.daum.net/v/20261022190145242&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;.&lt;/p&gt;
+  &lt;p&gt;.&lt;/p&gt;
+  &lt;p&gt;정부는 지원은 하되 업무는 지방사무라고 구분하네요.&lt;/p&gt;
+  &lt;p&gt;일단 추지사 발언 이슈는 언행의 문제니까 둘째치고 진짜 핵심은 &lt;/p&gt;
+  &lt;p&gt;국가직 전환했으니 국가가 많은 부분 책임져야 한다는것입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;소방관들의 처우개선 말만 하지말고 국가가 제대로 해주세요.&lt;/p&gt;
+  &lt;p&gt;다음달 소방의 날때도 어떤 메시지는 나올텐데 말입니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281730</guid><pubDate>Fri, 23 Oct 2026 16:56:11 GMT</pubDate></item><item><title>검찰개혁론자분들 말대로면 민주당이 영구집권해야 검찰개혁 롤백안되네요?[11][2]</title><link>https://www.clien.net/service/board/park/19281728</link><description>
+ 
+ 
+  &lt;p&gt;수사 기소 분리해서 공소청, 중수청이 나오는 등 시스템 구축해도 만족못하시죠.&lt;/p&gt;
+  &lt;p&gt;김지용 등 인사에 불만이십니다.&lt;/p&gt;
+  &lt;p&gt;그렇다면 민주당이 영구집권해야 검찰개혁이 유지되는거 아닌가요?&lt;/p&gt;
+  &lt;p&gt;어차피 국힘이 집권하면 자기들 입맛에 맞는 인사 쓸테니까요.&lt;/p&gt;
+  &lt;p&gt;그럼 검찰개혁은 평생 외칠수밖에 없을겁니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281728</guid><pubDate>Fri, 23 Oct 2026 16:55:20 GMT</pubDate></item><item><title>전 오세훈 무죄 좋다고 생각해요(미래를 생각하면)[13][2]</title><link>https://www.clien.net/service/board/park/19281725</link><description>
+ 
+ 
+  &lt;p&gt;솔직히 일년후 재보궐하면 무조건 질텐데 지면 또 조국 털보 시민청래 합쳐가지고 당권 내놔라 하고 난리법석 피울꺼잖아요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;어휴 그거 일년후에 보는것보단 이게 낫죠&lt;/p&gt;
+  &lt;p&gt;감도 없고 깜도 안되는 애들 넷이서 민주당 망치려고 난리법석 피우는거 보는건 참을수가 없어요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281725</guid><pubDate>Fri, 23 Oct 2026 16:47:41 GMT</pubDate></item><item><title>선출되지 않은 권력의 지배를 받아야 하는게 안타까울 뿐입니다[10][0]</title><link>https://www.clien.net/service/board/park/19281723</link><description>
+ 
+ 
+  &lt;p&gt;이제 선출 권력이&lt;/p&gt;
+  &lt;p&gt;선출되지 않은 권력의 눈치를 보게 되겠군요&lt;/p&gt;
+  &lt;p&gt;뭐 지금까지 그래오긴 했습니다만...&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;서울역 회군이 생각납니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281723</guid><pubDate>Fri, 23 Oct 2026 16:40:20 GMT</pubDate></item><item><title>차기 대선 1위 오세훈이라 봅니다[13][2]</title><link>https://www.clien.net/service/board/park/19281717</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;편향적일수 밖에 없는 mbc나 조선일보 유튜브 빼고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;YTN유튜브 댓글 보면서 느꼈습니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;다음 차기대선 후보지지율 오세훈이 한동훈이길거 같네요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이와중에 오세훈 단체장 순위도 높군요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;여당은 김민석 말고는 지지율 10프로대 받을 사람이 아무도 없습니다. 이 10프로대도 엄청 초라하지만요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;핵심은 중도는 민주당에 표 안줄겁니다. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281717</guid><pubDate>Fri, 23 Oct 2026 16:32:58 GMT</pubDate></item><item><title>와 이렇게 면죄부를 주네요.[13][0]</title><link>https://www.clien.net/service/board/park/19281685</link><description>
+ 
+ 
+  &lt;p&gt;참.. 사법부..거지같네요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281685</guid><pubDate>Fri, 23 Oct 2026 15:54:58 GMT</pubDate></item><item><title>외국인들의 댓글이 울나라 유저들의 댓글 보다 좀 더 순한 거 같지 않나요?[16][0]</title><link>https://www.clien.net/service/board/park/19281721</link><description>
  
  
   &lt;p&gt;최근엔 유튜브, X,인스타 등 모든 것이 인터내셔널한 유저들이 이용하다 보니&lt;/p&gt;
@@ -13,7 +321,7 @@
   &lt;p&gt;혹은 울나라의 언어적 표현이 훨씬 풍부해서 그런걸까요? &lt;/p&gt;
   &lt;p&gt;근데 매번 느낀단 말이죠. 흠...&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281721</guid><pubDate>Fri, 23 Oct 2026 16:36:25 GMT</pubDate></item><item><title>중고차 사왔습니다[14][8]</title><link>https://www.clien.net/service/board/park/19281715</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281721</guid><pubDate>Fri, 23 Oct 2026 16:36:25 GMT</pubDate></item><item><title>중고차 사왔습니다[17][8]</title><link>https://www.clien.net/service/board/park/19281715</link><description>
  
  
   &lt;p&gt;여차자차헤서 10년타던 스포티지 깡통옵을 뒤로하고..&lt;/p&gt;
@@ -21,7 +329,7 @@
   &lt;p&gt;통풍시트 짱입니다&lt;/p&gt;
   &lt;p&gt;몇가지빼고 거의 풀옵인데 좋네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281715</guid><pubDate>Fri, 23 Oct 2026 16:28:54 GMT</pubDate></item><item><title>이러다가 대선에 또 정권연장 못하고 뺏지면.. 무능인정 수준인데.[12][0]</title><link>https://www.clien.net/service/board/park/19281712</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281715</guid><pubDate>Fri, 23 Oct 2026 16:28:54 GMT</pubDate></item><item><title>이러다가 대선에 또 정권연장 못하고 뺏지면.. 무능인정 수준인데.[25][0]</title><link>https://www.clien.net/service/board/park/19281712</link><description>
  
  
   &lt;p&gt;제발 지금이라도 잘 하시길 바랍니다  ㅠㅠ&lt;/p&gt;
@@ -29,12 +337,12 @@
   &lt;p&gt;최악의 상황에 한동훈같은 인간이 대통령 되면.. 워낙 저쪽당 대통령은 상상불허의 인간폐급들이 대통령된 사례가 많아서.,&lt;/p&gt;
   &lt;p&gt;걱정입니다.  장동혁 대통령, 오세훈 대통령,  한동훈 대통령...  진짜 가능한 시나리오라  더 두렵네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281712</guid><pubDate>Fri, 23 Oct 2026 16:26:08 GMT</pubDate></item><item><title>오세훈 무죄 왜들 그리 걱정하나요?[10][2]</title><link>https://www.clien.net/service/board/park/19281710</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281712</guid><pubDate>Fri, 23 Oct 2026 16:26:08 GMT</pubDate></item><item><title>오세훈 무죄 왜들 그리 걱정하나요?[12][3]</title><link>https://www.clien.net/service/board/park/19281710</link><description>
  
  
   &lt;p&gt;어차피 이재명 대통령이 임기내에 부동산 잡으면 정권 유지, 못잡으면 정권 교체에요. 부동산, 주식 지금 상태로 계속 가면 장동혁 나와도 어차피 져요. 그냥 이대통령 하기에 달린거라고 봅니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281710</guid><pubDate>Fri, 23 Oct 2026 16:24:51 GMT</pubDate></item><item><title>국토부장관 '집값 폭락·폭등 다양한 변화에 대응책 마련'[12][0]</title><link>https://www.clien.net/service/board/park/19281709</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281710</guid><pubDate>Fri, 23 Oct 2026 16:24:51 GMT</pubDate></item><item><title>국토부장관 '집값 폭락·폭등 다양한 변화에 대응책 마련'[14][0]</title><link>https://www.clien.net/service/board/park/19281709</link><description>
  
  
   &lt;p&gt;홍지선 국토교통부 장관은 23일 주택 가격과 관련해 "폭락이라든지 폭등이라든지 다양한 변화에 대해 대응책을 마련하고 있다"고 밝혔다.&lt;br/&gt;&lt;br/&gt;
@@ -48,7 +356,7 @@
   &lt;p&gt;믿고 있었습니다.&lt;/p&gt;
   &lt;p&gt;착착 대응 준비중이였네요.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281709</guid><pubDate>Fri, 23 Oct 2026 16:23:38 GMT</pubDate></item><item><title>레임덕의 시작이라고 했었죠.[9][9]</title><link>https://www.clien.net/service/board/park/19281701</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281709</guid><pubDate>Fri, 23 Oct 2026 16:23:38 GMT</pubDate></item><item><title>레임덕의 시작이라고 했었죠.[9][11]</title><link>https://www.clien.net/service/board/park/19281701</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -62,7 +370,7 @@
   &lt;p&gt;극우정치를 극복해내야할 미래는 다 시궁창에 박아놓은 셈이네요.&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281701</guid><pubDate>Fri, 23 Oct 2026 16:12:00 GMT</pubDate></item><item><title>민주당 잠정 대선후보들보면 진짜 처참하네요[15][7]</title><link>https://www.clien.net/service/board/park/19281700</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281701</guid><pubDate>Fri, 23 Oct 2026 16:12:00 GMT</pubDate></item><item><title>민주당 잠정 대선후보들보면 진짜 처참하네요[17][7]</title><link>https://www.clien.net/service/board/park/19281700</link><description>
  
  
   &lt;p&gt;김민석 추미애 정청래??? 꼽사리로 조국?&lt;/p&gt;
@@ -77,12 +385,12 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;60이상은 다 용퇴하고 새인물이 절실해보이네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281700</guid><pubDate>Fri, 23 Oct 2026 16:11:06 GMT</pubDate></item><item><title>사법부 개혁이 필요한 시점이라 생각합니다[11][0]</title><link>https://www.clien.net/service/board/park/19281696</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281700</guid><pubDate>Fri, 23 Oct 2026 16:11:06 GMT</pubDate></item><item><title>사법부 개혁이 필요한 시점이라 생각합니다[12][0]</title><link>https://www.clien.net/service/board/park/19281696</link><description>
  
  
   &lt;p&gt;검찰개혁하면 뭐하나요 사법부가 저모양인데.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281696</guid><pubDate>Fri, 23 Oct 2026 16:06:30 GMT</pubDate></item><item><title>이미 차기 대선이 국짐에 넘어갔다는 말을 들었는데.. 오바겠죠??[12][2]</title><link>https://www.clien.net/service/board/park/19281694</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281696</guid><pubDate>Fri, 23 Oct 2026 16:06:30 GMT</pubDate></item><item><title>이미 차기 대선이 국짐에 넘어갔다는 말을 들었는데.. 오바겠죠??[14][2]</title><link>https://www.clien.net/service/board/park/19281694</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -94,7 +402,7 @@
   &lt;p&gt;민주당도 차기 후보를 잘 키웠으면 좋겠네요&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281694</guid><pubDate>Fri, 23 Oct 2026 16:03:47 GMT</pubDate></item><item><title>코스피 힘겹게 양전으로 마감했네요.[10][1]</title><link>https://www.clien.net/service/board/park/19281691</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281694</guid><pubDate>Fri, 23 Oct 2026 16:03:47 GMT</pubDate></item><item><title>코스피 힘겹게 양전으로 마감했네요.[11][1]</title><link>https://www.clien.net/service/board/park/19281691</link><description>
  
  
   &lt;p&gt;결국 코스피 힘겹게 양전으로 마감했네요.&lt;/p&gt;
@@ -114,7 +422,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281691</guid><pubDate>Fri, 23 Oct 2026 16:00:56 GMT</pubDate></item><item><title>보수는 오세훈 한동훈중에 저는 한동훈 밀거 같네요[17][0]</title><link>https://www.clien.net/service/board/park/19281690</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281691</guid><pubDate>Fri, 23 Oct 2026 16:00:56 GMT</pubDate></item><item><title>보수는 오세훈 한동훈중에 저는 한동훈 밀거 같네요[18][0]</title><link>https://www.clien.net/service/board/park/19281690</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -279,7 +587,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;﻿&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19281269</guid><pubDate>Fri, 23 Oct 2026 00:54:07 GMT</pubDate></item><item><title>가발거치대랑 5세훈이랑 굳이 고른다면?[12][0]</title><link>https://www.clien.net/service/board/park/19281682</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/use/19281269</guid><pubDate>Fri, 23 Oct 2026 00:54:07 GMT</pubDate></item><item><title>가발거치대랑 5세훈이랑 굳이 고른다면?[13][0]</title><link>https://www.clien.net/service/board/park/19281682</link><description>
  
  
   &lt;p&gt;생각하고 싶지도 않은 상황이겠지만&lt;/p&gt;
@@ -485,7 +793,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;이젠 장사정포도 배치하는군요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281648</guid><pubDate>Fri, 23 Oct 2026 15:14:40 GMT</pubDate></item><item><title>남양주도 15억 코앞이네요[17][1]</title><link>https://www.clien.net/service/board/park/19281645</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281648</guid><pubDate>Fri, 23 Oct 2026 15:14:40 GMT</pubDate></item><item><title>남양주도 15억 코앞이네요[18][1]</title><link>https://www.clien.net/service/board/park/19281645</link><description>
  
  
   &lt;p&gt;남양주 다산인데 대장아파트 국평은 15억 코앞이고&lt;/p&gt;
@@ -512,13 +820,13 @@
   &lt;p&gt;조희대 탄핵으로 사법개혁하면됩니다&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281642</guid><pubDate>Fri, 23 Oct 2026 15:06:18 GMT</pubDate></item><item><title>민주당은 민생 그만 챙겨야 할 것 같네요[27][7]</title><link>https://www.clien.net/service/board/park/19281641</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281642</guid><pubDate>Fri, 23 Oct 2026 15:06:18 GMT</pubDate></item><item><title>민주당은 민생 그만 챙겨야 할 것 같네요[28][7]</title><link>https://www.clien.net/service/board/park/19281641</link><description>
  
  
   &lt;p&gt;민생 챙긴다고 부동산 게섯거라한 결과를 지금 모두가 보고 계시죠?&lt;/p&gt;
   &lt;p&gt;민생 한 번만 더 챙기면 국평 80억 되겠어요. 하던 대로 내란청산에 공무원 잡도리나 하는 게 딱인 것 같습니다.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281641</guid><pubDate>Fri, 23 Oct 2026 15:03:54 GMT</pubDate></item><item><title>민주당은 민생 안챙겨요?[23][7]</title><link>https://www.clien.net/service/board/park/19281634</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281641</guid><pubDate>Fri, 23 Oct 2026 15:03:54 GMT</pubDate></item><item><title>민주당은 민생 안챙겨요?[26][7]</title><link>https://www.clien.net/service/board/park/19281634</link><description>
  
  
   &lt;p&gt;국민의힘이야 야당이고 민주당은 집권여당인데&lt;/p&gt;
@@ -534,7 +842,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;개인적으로 제가 사는 옆 지역구인 김승원 의원 지역구는 아웃입니다. 수원과 용인은 민주당 텃밭인데 더 이상 텃밭은 안될거 같습니다ㅎㅎ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281634</guid><pubDate>Fri, 23 Oct 2026 14:57:03 GMT</pubDate></item><item><title>오세훈 무죄로 김민석도 이득보겠네요[21][8]</title><link>https://www.clien.net/service/board/park/19281630</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281634</guid><pubDate>Fri, 23 Oct 2026 14:57:03 GMT</pubDate></item><item><title>오세훈 무죄로 김민석도 이득보겠네요[21][9]</title><link>https://www.clien.net/service/board/park/19281630</link><description>
  
  
   &lt;p&gt;지금 서울 민심으로 보궐치르면 &lt;/p&gt;
@@ -555,7 +863,7 @@
   &lt;p&gt;1심 2심 간 간극이 이렇게 큰 걸 국민들이 납득을 할 수가 있을까요?&lt;/p&gt;
   &lt;p&gt;대한민국 사법부 개혁이 필요합니다. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281619</guid><pubDate>Fri, 23 Oct 2026 14:46:18 GMT</pubDate></item><item><title>제가 무죄 맞다 했잖아요.[10][5]</title><link>https://www.clien.net/service/board/park/19281614</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281619</guid><pubDate>Fri, 23 Oct 2026 14:46:18 GMT</pubDate></item><item><title>제가 무죄 맞다 했잖아요.[11][5]</title><link>https://www.clien.net/service/board/park/19281614</link><description>
  
  
   &lt;p&gt;증거 없이 억지 부려봤자 정의. 공정에서 탈락됩니다&lt;/p&gt;
@@ -563,183 +871,4 @@
   &lt;p&gt;민의로 재판하는 순간 사법은 끝이고, 그 민의 조차도&lt;/p&gt;
   &lt;p&gt;서울 시민 민의는 오세훈시장편이 과반입니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281614</guid><pubDate>Fri, 23 Oct 2026 14:44:20 GMT</pubDate></item><item><title>'한없이 투명에 가까운 블루' 의 작가 무라카미 류가 별세했습니다.[13][0]</title><link>https://www.clien.net/service/board/park/19281608</link><description>
- 
- 
-  &lt;p&gt;"한없이 투명에 가까운 블루" 의 작가 무라카미 류가 별세했습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;무라카미 하루키와 무라카미 류의 모든 책을 모으는게 20~30대때 취미였는데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;안타깝고 아쉽습니다. RIP&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;참고로 한없이 투명에 가까운 블루라는 아름다운 제목은 원제가 아니고&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;원제를 제출했을때 허걱을 한 다른 사람이 붙여준 이름인데 참 아름다운 청춘의 이름으로 남습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;원제는 누가 들어도 기함하는 제목입니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://www.nocutnews.co.kr/news/6596178?utm_source=naver&amp;amp;utm_medium=navernewsstand&amp;amp;utm_campaign=20261023022301" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://www.nocutnews.co.kr/news/6596178?utm_source=naver&amp;amp;utm_medium=navernewsstand&amp;amp;utm_campaign=20261023022301&lt;/a&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281608</guid><pubDate>Fri, 23 Oct 2026 14:42:48 GMT</pubDate></item><item><title>오세훈 무죄가 정의고 올바른 사법부입니다[1][7]</title><link>https://www.clien.net/service/board/park/19281604</link><description>
- 
- 
-  &lt;p&gt;이번 사건은 여론조사  “대납” 사건입니다 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;오세훈이 직접 여론조사하면 문제가 아닌데&lt;/p&gt;
-  &lt;p&gt;누군가에게 돈을 주고 맡기면 문제입입니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;명태균은 김한정이 오세훈의 돈을 받아서 여론조사를 시켰다고 주장합니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그런데 오세훈이 김한정에게 일을 맡긴 증거가 하나도 없습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;1심에서는 명태균의 증언이 핵심 증거였는데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이번에 새로운 녹음이 증거로 채택됐죠&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;김한정: 오세훈 시장은 몰라요 제가 그냥 돕고 싶어서 혼자 하는거에요&lt;br/&gt;
-    명태균: 오세훈은 몰라&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이 녹음이 채택됐는데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;명태균이 이건 여론조사 관련이 아니라 단일화 관련 대화라고 해명했습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그런데 여기서 판사가&lt;/p&gt;
-  &lt;p&gt;”단일화 관련 대화면 김한정이 오세훈은 모른다 그냥 돕고 싶어서 혼자하는거다 이건 무슨 뜻인가?“ 라고 물었는데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;맹태균이 재판장에서 아예 대답을 못했습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;상식적으로 명태균 해명이 말이 되나요?&lt;/p&gt;
-  &lt;p&gt;단일화가 후보 몰래 그냥 지지자들이 알아서 하는겁니까?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;결국 증거는 하나 없이&lt;/p&gt;
-  &lt;p&gt;명태균의 왔다리갔다리 리플리 증후군 증언으로만 재판을 하는건데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이게 유죄가 나오면 그게 개혁대상입니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281604</guid><pubDate>Fri, 23 Oct 2026 14:45:50 GMT</pubDate></item><item><title>[1보] 오세훈 '정치자금법' 사건 2심 무죄…1심 뒤집혀[10][1]</title><link>https://www.clien.net/service/board/park/19281563</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/001/0016396783?sid=102" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://n.news.naver.com/article/001/0016396783?sid=102&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;보궐은 없네요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281563</guid><pubDate>Fri, 23 Oct 2026 14:18:31 GMT</pubDate></item><item><title>이야기 헐 투싼 고급유 권장[36][0]</title><link>https://www.clien.net/service/board/cm_car/19281515</link><description>
- 
- 
-  &lt;p&gt;럴수럴수&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19281515</guid><pubDate>Fri, 23 Oct 2026 13:31:04 GMT</pubDate></item><item><title>Q/A 중고차 매물 실내 향수 냄새[13][0]</title><link>https://www.clien.net/service/board/cm_car/19281450</link><description>
- 
- 
-  &lt;p&gt;중고차 한 대 사려고 몇 주 동안 계속 주시하고 있다가 가격과 상태가 맘에 쏙 드는 게 올라와서 집사람과 매장에 방문했습니다.&lt;/p&gt;
-  &lt;p&gt;저는 처음 접해보는 고급차라 옵션과 신차급 차상태에 때문에 정신 없이 보고 있었는데 집사람은 차를 제대로 보지도 않고 잠깐 뒷자석에 갔다가 차 색이 맘에 안 든다고 다른 차들만 보더라고요.&lt;/p&gt;
-  &lt;p&gt;반응도 뜨뜻 미지근해서 일단 매장에서 나왔는데, 차에서 나는 냄새 때문에 머리가 아파서 보고 싶지도 않았다고 하더라고요. 거의 찌린내에 가까운 향수 냄새라고ㅠㅠ. 혹시나 해서 같은 종류의 다른 차들 냄새를 맡아봤는데 아예 안 나거나 같은 향수 냄새가 약하게 나는 차들이 있다고 하는 거 봐서는 중고차매장에서 뿌린 거 같긴 합니다.&lt;/p&gt;
-  &lt;p&gt;생각해보니 제가 맡기에도 좀 진한 향수 냄새가 나긴 했었는데 남자가 탔던거라 그러려니 했었던 건데 이상하고 찝찝해서 원래 큰 하자만 없으면 온라인으로 바로 주문하려던 건데 보류하기로 했습니다.&lt;/p&gt;
-  &lt;p&gt;연식과 주행거리기 얼마 안 된 거라 다른 걸 가리려고 뿌린 거 같진 않고 담배 냄새 때문일 가능성이 제일 커보이는데&lt;/p&gt;
-  &lt;p&gt;에어컨은 최대로 틀어봤었는데 공조기 쪽에선 냄새가 없었어요.&lt;/p&gt;
-  &lt;p&gt;전 향수랑도 담배랑도 거리가 먼 편이라 과연 그 향수 냄새가 빠질 지, 그 이후에는 또 다시 담배 냄새나 다른 냄새가 다시 올라올지, 실내 세차 맡기면 그런 냄새들도 어느 정도 제거할 수 있을지 혹시 비슷한 경험이 있거나 잘 아시는 분 계시면 조언 부탁드립니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19281450</guid><pubDate>Fri, 23 Oct 2026 11:23:25 GMT</pubDate></item><item><title>한동훈 vs 이준석 개인 호감도 어느 쪽이 더 높으세요[28][0]</title><link>https://www.clien.net/service/board/park/19281636</link><description>
- 
- 
-  &lt;p&gt;굳이 고르자면요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281636</guid><pubDate>Fri, 23 Oct 2026 14:54:29 GMT</pubDate></item><item><title>근데 오세훈 대권후보라고 하지만[18][1]</title><link>https://www.clien.net/service/board/park/19281632</link><description>
- 
- 
-  &lt;p&gt;솔직히 별게 있나요? 한강버스도 말아먹고 좀 지저분해 보이고&lt;/p&gt;
-  &lt;p&gt;솔직히 시장은 이명박때보다도 못한것 같은데&lt;/p&gt;
-  &lt;p&gt;(청계천 복개, 환승)&lt;/p&gt;
-  &lt;p&gt;참 보수도 인물 없네요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281632</guid><pubDate>Fri, 23 Oct 2026 14:52:42 GMT</pubDate></item><item><title>한동훈 의원은 사실상 다음 대통령 확정입니다.[25][0]</title><link>https://www.clien.net/service/board/park/19281626</link><description>
- 
- 
-  &lt;p&gt;저 사람 설계자입니다&lt;/p&gt;
-  &lt;p&gt;검사 출신이 무죄 뜰 거라 모를까요? 저조차도 알고 있었는데요&lt;/p&gt;
-  &lt;p&gt;기분파도 아니고 , 모든 걸 설계하고 움직입니다.&lt;/p&gt;
-  &lt;p&gt;미친 듯이 꼼꼼합니다&lt;/p&gt;
-  &lt;p&gt;제가 계산하는 대로 가는 거 보면 다음 대통령 한동훈이네요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281626</guid><pubDate>Fri, 23 Oct 2026 14:48:05 GMT</pubDate></item><item><title>차기대선 오세훈 vs 연임개헌후 이재명 이면 승산있을까요?[12][2]</title><link>https://www.clien.net/service/board/park/19281601</link><description>
- 
- 
-  &lt;p&gt;개헌에 힘써야겠군요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281601</guid><pubDate>Fri, 23 Oct 2026 14:37:42 GMT</pubDate></item><item><title>개혁을 안하니 이리되는거죠[6][6]</title><link>https://www.clien.net/service/board/park/19281599</link><description>
- 
- 
-  &lt;p&gt;검찰개혁도 대충 넘어가고&lt;/p&gt;
-  &lt;p&gt;사법개혁 한다는 건 민주당이 나서서 막고 있고&lt;/p&gt;
-  &lt;p&gt;조희대 탄핵도 못하는 데 사법부가 이렇게 하는거죠&lt;/p&gt;
-  &lt;p&gt;역사에 남을 정권이네요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281599</guid><pubDate>Fri, 23 Oct 2026 14:36:46 GMT</pubDate></item><item><title>뉴 이재명 세력이 알아서 잘하겠죠[10][14]</title><link>https://www.clien.net/service/board/park/19281597</link><description>
- 
- 
-  &lt;p&gt;하나로 똘똘 뭉쳐도 시원찮을판에 &lt;/p&gt;
-  &lt;p&gt;지지자 다 떠나도 자기들끼리 알아서 잘한다고 했으니까&lt;/p&gt;
-  &lt;p&gt;뉴 이재명 세력들이 알아서 잘하겠죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;오세훈이 살아오고&lt;/p&gt;
-  &lt;p&gt;한동훈이 조롱하고&lt;/p&gt;
-  &lt;p&gt;장예찬이랑 꿍짝을 맞추고&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;민주당정권에서 유시민 처벌을 원하지 않는다. &lt;/p&gt;
-  &lt;p&gt;캬 이런 드립을 들을줄은 상상도 못했습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이 꼴을 보자고 지인들을 그렇게 열심히 설득하고 다닌&lt;/p&gt;
-  &lt;p&gt;제 꼴이 한심하네요 &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281597</guid><pubDate>Fri, 23 Oct 2026 14:35:40 GMT</pubDate></item><item><title>진짜 어물전 썩은내 납니다[4][8]</title><link>https://www.clien.net/service/board/park/19281595</link><description>
- 
- 
-  &lt;h1&gt;&lt;br/&gt;&lt;/h1&gt;
-  &lt;p&gt;오세훈같은 자가 서울시장을 유지함에 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;민주당에서 안도의 한숨을 내쉬는 모습&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;웃프다 못해 화가 납니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;진짜 썩은내 풀풀 납니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h1&gt;억강부약 대동세상&lt;/h1&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;강한 자를 누르고 약한 자를 돕는다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이러라고 대통령을 그렇게 응원했건만&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;2년도 안되어 세상이 이상해졌습니다&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;초심을 잊지말고 바로잡아 나가는 정부나 민주당이 되길 바랍니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;PS. 김민석은 포기했습니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281595</guid><pubDate>Fri, 23 Oct 2026 14:34:50 GMT</pubDate></item><item><title>그냥 내편 아닌 사람 무죄나와서 화나신 거 아니에요?[13][14]</title><link>https://www.clien.net/service/board/park/19281592</link><description>
- 
- 
-  &lt;p&gt;내편은 대법 파기환송돼서 사법개혁 외치시는 거고요&lt;/p&gt;
-  &lt;p&gt;매불쇼인가 어디에서 이재명 대법 선고때 "제가 제일 존경하는 조희대 대법원장님"이라고 했다가 결과 뜨자마자 욕하던 것 보면 그게 맞는 것 같은데요&lt;/p&gt;
-  &lt;p&gt;이재명 무죄줬으면 계속 존경하는 조희대 대법원장님 하셨을 거잖아요? 유죄 줘서 조요토미 희대요시 된 거고요ㅎ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281592</guid><pubDate>Fri, 23 Oct 2026 14:34:08 GMT</pubDate></item><item><title>조희대 탄핵 어떻게 생각하세요?[13][0]</title><link>https://www.clien.net/service/board/park/19281591</link><description>
- 
- 
-  &lt;p&gt;저는 어차피 내년 6월에 임기 끝나는거 그냥 냅두는게 더 나을거라 보는데 말이죠. 게다가 조희대는 윤석열처럼 들이받는 배짱도 없는거 같아서 냅둬도 딱히 큰 리스크는 아니고요. 결정적으로 조희대 탄핵의 스모킹건이 있느냐... 저는 애매하다고 봅니다. &lt;/p&gt;
-  &lt;p&gt;(조희대를 옹호할 생각은 1도 없습니다)&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281591</guid><pubDate>Fri, 23 Oct 2026 14:33:05 GMT</pubDate></item><item><title>오세훈 판결은 간단하네요[21][3]</title><link>https://www.clien.net/service/board/park/19281590</link><description>
- 
- 
-  &lt;p&gt;명태균 믿을 수가 없다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;형사재판 유죄가 되려면 유죄 인정할 수 있는 객관적 증거가 있어야 하고,&lt;/p&gt;
-  &lt;p&gt;이 사건에서 물적 증거는 모두 간접적이고 직접적인 증거는 오로지 명태균 진술뿐인데,&lt;/p&gt;
-  &lt;p&gt;그 명태균 증언에 신빙성이 없으니 유죄 못준다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281590</guid><pubDate>Fri, 23 Oct 2026 14:32:57 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19281614</guid><pubDate>Fri, 23 Oct 2026 14:44:20 GMT</pubDate></item></channel></rss>
