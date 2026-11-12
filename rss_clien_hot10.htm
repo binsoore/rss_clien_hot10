@@ -1,5 +1,360 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Thu, 12 Nov 2026 11:00:56 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>스마트글라스 부정행위 문제 해결은 되게 간단합니다[14][1]</title><link>https://www.clien.net/service/board/park/19291112</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Thu, 12 Nov 2026 12:01:03 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>기타 전자기기 LX 지인(Z:IN) 스마트 환기창, 제조사 앱 없이 스마트싱스로 연동했습니다[8][5]</title><link>https://www.clien.net/service/board/lecture/19288610</link><description>
+ 
+ 
+  &lt;p&gt;안녕하세요. 집에 LX하우시스 지인(Z:IN) 자동환기 환기창을 쓰고 있는데, 이걸 스마트싱스에 붙여서 쓰고 있어 공유드립니다. 클로드랑 앉아서 씨름하니 금방 성공하네요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="banner.png" class="fr-dib fr-fil full" data-file-sn="15857374" data-gif="false" data-img-height="640" data-img-width="1280" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15857374/139f4c93f21e40.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이 환기창은 스마트싱스를 지원하지 않습니다. 전용 앱으로만 볼 수 있고, 그 앱도 제조사 서버를 거쳐야 동작합니다. 문제는 그 전용 앱 조차 25년 8월인가 부로 서비스가 종료돼 아예 제어를 할 수 없는 상황이에요. 집에 있는 다른 기기들은 전부 스마트싱스로 묶어 두었는데 환기창만 따로 놀아서, CO2가 올라가면 알아서 켜지게 하고 싶어도 방법이 없었습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;해 본 것&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;기기가 통신하는 방식을 살펴보니, Azure IoT라는 클라우드에 MQTT로 붙고 서버 인증서를 따로 확인하지 않았습니다. 그래서 집 서버(NAS)에 그 클라우드를 흉내 내는 작은 프로그램을 띄우고, 기기가 제조사 서버 대신 거기로 붙게 했습니다. 그리고 그 값을 스마트싱스 가상 디바이스로 넘기는 브리지를 붙였습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;지금 되는 것&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;- 스마트싱스 앱에서 이산화탄소, 초미세먼지, 유해가스(TVOC), 온습도 확인&lt;/p&gt;
+  &lt;p&gt;- 전원, 모드(자동/터보/취침), 풍량, 조명 조작 — 누르면 1~2초 안에 반응&lt;/p&gt;
+  &lt;p&gt;- 필터, 열교환기 남은수명 % 확인&lt;/p&gt;
+  &lt;p&gt;- 스마트싱스 자동화: 저는 "CO2 1,000ppm 넘으면 켜고 터보", "밤 11시 취침 모드", "외출하면 끄기"로 쓰고 있습니다&lt;/p&gt;
+  &lt;p&gt;- 기기가 꺼져 있어도 공기질 값은 계속 들어옵니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;제조사 클라우드를 안 거치니 인터넷이 끊겨도 집 안에서는 동작합니다(스마트싱스 앱 자체는 인터넷이 필요합니다).&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;필요한 것&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;- 항상 켜져 있는 서버 (NAS, 라즈베리파이, 미니 PC 등. Docker로 컨테이너 2개 띄웁니다)&lt;/p&gt;
+  &lt;p&gt;- 기기가 찾아올 호스트 이름 하나 (공유기 로컬 DNS나 가진 도메인에 내부 IP 등록)&lt;/p&gt;
+  &lt;p&gt;- 최초 1회 기기 Wi-Fi 등록용 노트북&lt;/p&gt;
+  &lt;p&gt;- 스마트싱스 계정과 CLI&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;혹시 필요하신분 있으실까봐 &lt;a href="https://github.cowww.clience/lx-ventilation-local/releases/tag/v0.1.0" ori-url="https://github.cowww.clience/lx-ventilation-local/releases/tag/v0.1.0" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;링크&lt;/a&gt; 남깁니다.명령어를 조금 다뤄보신 분이면 30분 정도면 됩니다. 설치 순서는 단계마다 "이게 보이면 성공" 확인 방법까지 README에 적어 뒀습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;주의할 점&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;- 비공식입니다. LX하우시스, 삼성과 관계없고, 본인 기기에만 쓰세요.&lt;/p&gt;
+  &lt;p&gt;- 기기 펌웨어는 건드리지 않습니다. 제조사 앱으로 다시 등록하면 원래대로 돌아갑니다.&lt;/p&gt;
+  &lt;p&gt;- 제가 가진 기종(자동환기, LGH_SMARTVENTIL2021M_G1N)에서만 확인했습니다. 다른 지인 기종 쓰시는 분이 해보시고 알려주시면 문서에 반영하겠습니다.&lt;/p&gt;
+  &lt;p&gt;- 공개판의 Wi-Fi 등록 스크립트는 정리하면서 다시 만든 거라 아직 실기기로 재검증을 못 했습니다. 막히시면 댓글이나 GitHub 이슈로 알려주세요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;같은 환기창 쓰시는 분들께 도움이 되면 좋겠습니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/lecture/19288610</guid><pubDate>Fri, 06 Nov 2026 20:12:15 GMT</pubDate></item><item><title>왜 주식 관련 글이 없나 했더니[14][2]</title><link>https://www.clien.net/service/board/park/19291151</link><description>
+ 
+ 
+  &lt;p&gt;오르고 있군요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;참 투명합니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이건 미국발 AI 상승세 때문이지 정부와는 무관하다고 하겠죠? ㅋㅋㅋ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291151</guid><pubDate>Thu, 12 Nov 2026 11:53:00 GMT</pubDate></item><item><title>마운자로로 몇달 고생한 공무원들 이준석 숟가락에 무능한 사람 됐네요[10][0]</title><link>https://www.clien.net/service/board/park/19291149</link><description>
+ 
+ 
+  &lt;p&gt;식약처랑 관세청이 이제 오늘부터 해외에서 정식 처방받은 마운자로·위고비 포함해서&lt;/p&gt;
+  &lt;p&gt;자가 치료용 의약품은 국내 휴대 반입을 허용하네요~&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;
+    그동안 정상적인 처방을 받고도 통관이 제한되던 불편을 개선한 조치인데&lt;/p&gt;
+  &lt;p&gt;정부와 관계기관이 협의를 거쳐 마련했다는 소식이네요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;물론 관세청과 식약처는 원래 법적으로도 장벽이 높고 복잡 예민해서 한두달이면 빠르게 한거 같네요 ㅎㅎ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그런데 이준석이  관련 질의 했다고 마치 본인이 말 몇 마디로 해결한 성과처럼 홍보하고 있네요 &lt;/p&gt;
+  &lt;p&gt;정작 식약처와 관세청은 그 이전부터 개선 방안을 협의하고 있었는데 말이죠&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이준석 신도들은 성과 가로채기도 모자라서 이제  '말 몇 마디에 해결될 일을 지금까지 뭐 했냐'며 &lt;/p&gt;
+  &lt;p&gt;오히려 고생한 공무원들이랑 정부 비난하고 이준석은 신처럼 찬양하고 있네요 ㅋㅋ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;
+    관세랑 식품의약안전이 엮인 일에 말 몇 마디에 뚝딱 만들어지는줄 아나봐요&lt;/p&gt;
+  &lt;p&gt;무슨 일이든 좋으면 좋다하고 끝내야 하는데 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;꼭 분노를 만들어 정치적 동력으로 삼는 건 이준석의 열성 신도들 문제인지.... &lt;/p&gt;
+  &lt;p&gt;그런 식으로 유도하는 본인의 문제인지 모르겠네요. ㅎ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291149</guid><pubDate>Thu, 12 Nov 2026 11:50:04 GMT</pubDate></item><item><title>안경이 안되면 컨택트 렌즈를 끼면 되잖아요[12][0]</title><link>https://www.clien.net/service/board/park/19291145</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="Screenshot 2026-11-12 at 11.32.03.png" class="fr-dib fr-fil full" data-file-sn="15861386" data-gif="false" data-img-height="560" data-img-width="786" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861386/16aa415290c5a7.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;그럴줄알고 스마트 콘택트 렌즈 준비했습니다. ㅎ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291145</guid><pubDate>Thu, 12 Nov 2026 11:35:05 GMT</pubDate></item><item><title>30대 초반(입사 5년차) 1억은 서울 입장권 같은 게 아닐까 하네요.[18][0]</title><link>https://www.clien.net/service/board/park/19291141</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;입사 5년차 정도까지 1억을 못모으는 경제상황, 소비수준이라면&lt;/p&gt;
+  &lt;p&gt;서울에서 자력으로 자가 마련하긴 어렵지 않나 싶네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;부모님 버프 받는 경우라면 애써서 모을 필요까지는 없겠지만&lt;/p&gt;
+  &lt;p&gt;그게 아니라면 이 시기쯤에서 경제적인 부분에서는 많이 달라지는 것 같더군요. &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291141</guid><pubDate>Thu, 12 Nov 2026 11:32:59 GMT</pubDate></item><item><title>경찰대 폐지는 하는게 맞죠.[25][4]</title><link>https://www.clien.net/service/board/park/19291140</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;소방대학&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;교정대학&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;세무대학이 있나요?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;경찰 간부 엘리트는 어떻게 양성하냐고 하는데&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이미 경찰간부시험이 있습니다 ;; 이미 경찰간부 양성을 하고 있는데 국민세금으로 애들 사관학교 식으로 먹고 재워주면서&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;경위 임용 자동으로 해주는걸 지금까지 하고있는거에요 ;;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;경찰 오래있지도 않아요. 로스쿨 가서 전관 꿀빨려고 가버리지.. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;애초에 경찰이라는 직업자체가 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;엘리트성보단 시민을 위한 품성 자질. 치안행동능력 이런게 중요한 누구나 자격되면 할수있는&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;보편적 직업이죠.  &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이재명 정부 별로 안좋아하고 김민석 지도부 안좋아하는데&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이건 방향은 맞는거죠&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이미 수명을 다한 기관일 뿐이에요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291140</guid><pubDate>Thu, 12 Nov 2026 11:28:02 GMT</pubDate></item><item><title>임원 3년 vs 정직원 5년 (동갑)[23][0]</title><link>https://www.clien.net/service/board/park/19291137</link><description>
+ 
+ 
+  &lt;p&gt;총급여는 임원3년이 약간 더 많음..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이런 선택지에도 요즘은 후자를 선택하는 경우가 많다고 하더라고요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아무래도 스트레스와 책임이라는 부분이 크겠지요.??&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;저는 옛날 사람이라 그래도 직장인 하면서 임원 한 번 해 보는것이 좋다고 보지만요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291137</guid><pubDate>Thu, 12 Nov 2026 11:22:53 GMT</pubDate></item><item><title>정청래 의원은 다음에 공천받을 수 있을까요[14][0]</title><link>https://www.clien.net/service/board/park/19291136</link><description>
+ 
+ 
+  &lt;p&gt;그래도 마포구 지역 기반은 탄탄하다고 본거 같은데 말이죠. 근데 요즘 수도권 민심도 묘해서 다음 총선은 민주당이 쉽지 않을듯...&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291136</guid><pubDate>Thu, 12 Nov 2026 11:22:36 GMT</pubDate></item><item><title>ai안경은 국가수준에서는 방법없을거같은데요[25][0]</title><link>https://www.clien.net/service/board/park/19291132</link><description>
+ 
+ 
+  &lt;p&gt;관리해야할 수험자가 너무 많으니 어렵지 않을까요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;항상 치팅은 방어법보다 먼저 발전하기도 하니..&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;차라리 대학에 자율성을 주고&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;너네가 대학별로 시험을 치든 면접을 보든 알아서 해&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;대신 책임도 너네가 져 하는게 낫지 싶은데요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;대학별로 수험생이 분산되면 각 대학은 관리해야할 &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;수험생 수가 적으니 클리앙에서도 나온 여러 방법을 쓰기도 용이하고요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;보통 대부분 방어법의 단점이 수험자수가 너무 많아서 혹은&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;관리자가 적어서, 아니면 고사장이 너무 많아서 발생하니까요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;대학은 뽑는 인원의 질을 최대한 유지해야하기에&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;오히려 국가가 주관하는 수능보다 더 빡세게 관리하지 않을까 싶은데요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;단순 객관식이 아니라 1:1 수리논술이나 면접구술같이 ai로 하기 어렵게 만들수도 있고요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;수능과는 다르게 재학생들 시험볼때도 기계나 그런걸 다시 쓸수도 있고요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;물론 수험난이도가 엄청 뛰는건 단점이지만&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;누군가 부정행위로 딸깍할 가능성에 억울하기보단 나을거같아요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;국가주관시험이 수능만 있는건 아니고 공무원 시험 등등 많긴해서&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;정부에서도 대책은 고심하긴 해야겠지만요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291132</guid><pubDate>Thu, 12 Nov 2026 11:12:30 GMT</pubDate></item><item><title>정청래 처남 신천지 묻자 강진 처남, 우산으로 찌르고 때렸다[36][0]</title><link>https://www.clien.net/service/board/park/19291131</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;취재진은 지난 7일 정 의원의 셋째 처남이 사는 전남 강진을 찾았다. 정 의원이 호남에 내려올 때 자주 들른다고 말해온 처가다. 처남은 앞서 전화 통화에서 "나 기독교 장로요"라며 욕설을 하고 전화를 끊었다. 보낸 문자는 읽지 않았다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그가 장로로 있다는 교회의 목사 부인은 교인 명부에 그의 이름이 없다고 했다. 하지만 10월 25일자 주보 감사헌금 명단에는 그의 이름이 올라 있었다. 취재진은 마을 다방 주인에게서 그가 사는 마을을 알아냈다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;집 앞에서 만난 처남은 취재진에게 "꺼지라"는 말을 되풀이했다. 형이 신천지 신도가 맞느냐, 정 의원도 알고 있느냐는 질문에는 끝내 답하지 않았다. 대신 "내가 그걸 왜 너한테 대답해야 되냐"고 했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그는 들고 있던 우산으로 강진구 기자를 찔렀다. 손으로 강 기자의 얼굴과 목 사이를 때리기도 했다. 모두 취재진 카메라에 찍혔다. 강 기자는 특수폭행 고소를 검토하고 있다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;수도권에 사는 넷째 처남은 형이 신천지 신도인 줄 몰랐다고 했다. 형의 신앙을 묻자 "형님은 신앙 없어요"라고 답했다. 형이 동료 의원에게 신천지 가입을 권했다는 증언을 전하자 그는 전화를 끊으라고 했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;정 의원은 여전히 답이 없다. 강진구 기자는 전당대회 때 광명의 한 시장에서 정 의원에게 처남이 신천지인 걸 알았느냐고 물었다. 정 의원은 "왜 이래요? 진짜 왜 그래요?"라고만 했다. 최 의원도 '슬픈 가족사'가 김도삼씨 이야기냐는 취재진 문자에 답하지 않았다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;------------&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;아니겠죠. 설마 정청래가 신천지겠습니까. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;근데 처남이라는 분은 왜 기자를 때렸을까요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291131</guid><pubDate>Thu, 12 Nov 2026 11:12:00 GMT</pubDate></item><item><title>엔비디아 좀 담았습니다.[10][1]</title><link>https://www.clien.net/service/board/park/19291130</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="Gemini_Generated_Image_64y8r064y8r064y8.png" class="fr-dib fr-fil full" data-file-sn="15861367" data-gif="false" data-img-height="688" data-img-width="1562" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861367/16a87b862adf53.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;크아악&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291130</guid><pubDate>Thu, 12 Nov 2026 11:02:18 GMT</pubDate></item><item><title>중국의 AI 부정행위 대처법.jpg[5][8]</title><link>https://www.clien.net/service/board/park/19291129</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="51.jpg" class="fr-dib fr-fil full" data-file-sn="15861365" data-gif="false" data-img-height="1733" data-img-width="1179" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861365/160bcb8d853048.jpg?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;중국은 23년부터 중국 대입시험에서 EMP 기기 도입했습니다.&lt;/p&gt;
+  &lt;p&gt;모든 수험생은 시험 20분전에 도착해서 체계적으로 검사받습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;1.스마트 보안검색대 +고사실 입구에서 금속탐지기로 2차 검색&lt;/p&gt;
+  &lt;p&gt;2.모든 수험생이 입실 전 CCTV 녹화 아래 안경을 벗어 지정된 검사대 위에 올려놓으면 감독관이 안경테와 다리에 초소형 카메라·마이크·센서가 숨겨져 있는지 육안과 장비로 정밀 검사&lt;/p&gt;
+  &lt;p&gt;3.전 고사실 5G·무선 신호 차폐&lt;/p&gt;
+  &lt;p&gt;4.민간 AI 플랫폼의 '문제 풀이 기능' 일시 정지&lt;br/&gt;
+    5.AI 스마트 실시간 순찰(AI 감독관): 고사실 내부 CCTV 영상에 AI 행동 분석 알고리즘을 연동해, 수험생이 안경다리를 반복해서 만지거나 비정상적인 시선 처리, 귓속말 등 의심스러운 행동을 보이면 실시간으로 포착해 감독관에게 알리는 지능형 감시 체계를 전 고사장에 적용&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;한국이 대처가 늦은거고 지금이라도 배울건 배워야죠&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291129</guid><pubDate>Thu, 12 Nov 2026 11:19:16 GMT</pubDate></item><item><title>수능-스마트안경 문제 해결법[18][0]</title><link>https://www.clien.net/service/board/park/19291128</link><description>
+ 
+ 
+  &lt;p&gt;무테나 가늘은 금속테 안경만 반입허용하면 안될까요?&lt;/p&gt;
+  &lt;p&gt;경제사정이 좋치 않은 학생은 수능안경 쿠폰 정부에서 지원.&lt;/p&gt;
+  &lt;p&gt;수능시계처럼 수능안경을 적용하면 한번에 해결 될 수 있습니다...라는 생각인데.. 여러분은 어떠신가요?&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291128</guid><pubDate>Thu, 12 Nov 2026 11:01:00 GMT</pubDate></item><item><title>1억모으는게 어려운건 아니죠[37][0]</title><link>https://www.clien.net/service/board/park/19291125</link><description>
+ 
+ 
+  &lt;p&gt;20년 전이면 모를까 요즘기준으로 1억모으는게 어렵다면 소비패턴이 지나치게 사치스러운건 아닌가 점검해볼 필요가 있습니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;월세가 한달에 70이니 식비가 한달에 60이니 하는거보면 경제관념 없다는 생각밖에 안듭니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;서울 근처 수도권에 조금만 알아봐도 관리비까지 30이면 주거비 해결가능하고&lt;/p&gt;
+  &lt;p&gt;식비도 주변회사나 관공서 구내식당 가면 한끼 5-6천원짜리 쉽게 찾아볼수있고 저녁 주말 만들어먹으면 월 식비 30이면 충분합니다&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;저도 저렇게해서 취업하고나서 투자없이 저축만으로 5년에 2억 조금 넘게 모았죠&lt;/p&gt;
+  &lt;p&gt;지금은 저축이 조금 나이브해졌지만 연 3천이상 꾸준히 모으고있습니다&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291125</guid><pubDate>Thu, 12 Nov 2026 10:59:59 GMT</pubDate></item><item><title>정청래) ' 김민석은 기본과 원칙을 지켜라'[15][11]</title><link>https://www.clien.net/service/board/park/19291123</link><description>
+ 
+ 
+  &lt;p&gt;김민석이 이렇게 비겁하게 꼼수로 넘어가도 여기 상주하시는 뉴이재명분들은 여전히 괜찮다고 옹호 하시겠죠? ㅉㅉ &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291123</guid><pubDate>Thu, 12 Nov 2026 10:56:31 GMT</pubDate></item><item><title>세무사 수석 기사네요[10][0]</title><link>https://www.clien.net/service/board/park/19291117</link><description>
+ 
+ 
+  &lt;p&gt;&lt;a href="https://www.intn.co.kr/news/articleView.html?idxno=3000154" ori-url="https://www.intn.co.kr/news/articleView.html?idxno=3000154" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://www.intn.co.kr/news/articleView.html?idxno=3000154&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;대단한듯요&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;AI 안경 ㅋㅋㅋ&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291117</guid><pubDate>Thu, 12 Nov 2026 10:44:53 GMT</pubDate></item><item><title>안경 안 써서 그런지 오늘따라 더 이건희가 보이는 이재용[11][8]</title><link>https://www.clien.net/service/board/park/19291116</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="bBWYTx.webp" class="fr-dib fr-fil full" data-file-sn="15861353" data-gif="false" data-img-height="617" data-img-width="1125" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861353/15655c9e32f567.webp?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="FrPrru.webp" class="fr-dib fr-fil full" data-file-sn="15861354" data-gif="false" data-img-height="782" data-img-width="1371" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861354/15655daa2cfc01.webp?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;유전이란... 이건희인줄 알았습니다. 그냥 복붙이네요.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291116</guid><pubDate>Thu, 12 Nov 2026 10:45:33 GMT</pubDate></item><item><title>경찰, 변호인 조롱하고 바로 구속영장[11][0]</title><link>https://www.clien.net/service/board/park/19291111</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="KakaoTalk_20261112_103003392.png" class="fr-dib fr-fil full" data-file-sn="15861336" data-gif="false" data-img-height="1003" data-img-width="1204" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861336/16a70d6c95b273.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;img alt="KakaoTalk_20261112_103034821.png" class="fr-dib fr-fil full" data-file-sn="15861337" data-gif="false" data-img-height="535" data-img-width="1241" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861337/16a70f1e8e97ec.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;일반인들은 경찰이 하라는데로 하고 끌려갈텐데..&lt;/p&gt;
+  &lt;p&gt;이제 변호인도 조롱하고 힘자랑하는군요&lt;/p&gt;
+  &lt;p&gt;8급 9급 수사관들의 힘자랑 무섭습니다 &lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291111</guid><pubDate>Thu, 12 Nov 2026 10:37:11 GMT</pubDate></item><item><title>김준형 '민주당과 1월 합당 불가능…이언주·강득구 지역에 후보 낼 듯'[13][2]</title><link>https://www.clien.net/service/board/park/19291107</link><description>
+ 
+ 
+  &lt;p&gt;(서울=뉴스1) 박태훈 선임기자 = 김준형 조국혁신당 원내대표는 정청래 전 더불어민주당 대표가 제시한 '1월까지 합당'은 불가능하다고 선을 그었다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;시간도 촉박할 뿐만 아니라 당내 자강 목소리가 높은 것을 이유로 꼽으면서 혁신당과 합당 반대에 앞장선 민주당 의원 지역구에 맞춤형 후보를 낼 수도 있다며 이언주, 강득구 민주당 의원을 거론했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이어 "우리 진영 내부에 합당을 반대하는 사람이 엄연히 존재하고 우리 지도부와 의원들의 공통된 생각은 '자강해야 한다'는 것"이라고 강조했다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;---------------------&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;자강할 거고 1월까지 합당은 불가하지만 합당반대에 앞장선 이언주, 강득구 의원 지역구엔 저격공천 하겠다?&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;뭐죠....?&lt;/p&gt;
+  &lt;p&gt;재밌는 뉴스네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그나저나 다음총선에도 조국은 평택을 나갈텐데, 또 탈락하겠네요. &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291107</guid><pubDate>Thu, 12 Nov 2026 10:33:02 GMT</pubDate></item><item><title>제가 기술이 없어서 못만드는데, 아이디어 투척합니다[10][1]</title><link>https://www.clien.net/service/board/park/19291105</link><description>
+ 
+ 
+  &lt;p&gt;AI 스마트 안경이 요즘 핫한데&lt;/p&gt;
+  &lt;p&gt;이거 쓰고 시험보면 걸리죠?&lt;/p&gt;
+  &lt;p&gt;그래서 준비했습니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;
+    AI 스마트 렌즈  I  : 렌즈에서 초점을 잡거나, 처리하는 사각형등이 정면에서는 관찰될 수 있습니다.&lt;br/&gt;
+                                  시험 감독관과 정면에서 마주치지 않도록 조심하세요.  &lt;br/&gt;
+                                  gpt / 코파일럿 / 제미나이 중 하나의 ai를 탑재할수 있음.&lt;/p&gt;
+  &lt;p&gt;                             가격 : 3,000,000원&lt;br/&gt;
+                                 출시일 : 2028년 1월&lt;br/&gt;&lt;br/&gt;
+    AI 스마트 렌즈 II : AI 스마트 렌즈  I 에 3개의 AI를 모두 탑재할 수 있음.&lt;br/&gt;
+                                 가격 : 5,000,000원&lt;/p&gt;
+  &lt;p&gt;                             출시일 :  2028년 7월&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;AI 스마트 렌즈  III : AI 스마트 렌즈 II 의 기능을 모두 갖고있음.&lt;br/&gt;
+                                  특정 기능 활성화를 통해 반경 10M 이내의 AI 스마트 렌즈 I 과 AI 스마트 렌즈 II 의 작동을&lt;br/&gt;
+                                  30분 동안 멈출수 있음. (1시간 간격으로 사용 가능)&lt;br/&gt;
+                                  가격 : 50,000,000원&lt;/p&gt;
+  &lt;p&gt;                             출시일 :  2029년 7월              &lt;/p&gt;
+  &lt;p&gt;               &lt;/p&gt;
+  &lt;p&gt;AI 스마트 렌즈  III 방지기 : AI 스마트 렌즈 III의 주변 기기 작동 정지 기능 사용시, AI 스마트 렌즈 III가 강제 종료 됨&lt;br/&gt;
+                                  가격 : 10,000,000원&lt;br/&gt;
+                                 출시일 :  2030년 7월&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;그렇습니다....카트라이더 유져 출신입니다.....&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291105</guid><pubDate>Thu, 12 Nov 2026 10:24:43 GMT</pubDate></item><item><title>엔비디아 주식 못사서 아까웠던 분들은 지금을 노려보세요[10][0]</title><link>https://www.clien.net/service/board/park/19291102</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="00000045.png" class="fr-dib fr-fil full" data-file-sn="15861326" data-gif="false" data-img-height="777" data-img-width="852" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861326/1564071cfe3b80.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;작년 6월 가격으로 돌아왔습니다!&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;ㅋㅋ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;놓친기회를 다시 주는것일지도 모릅니다.......ㅋㅋ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291102</guid><pubDate>Thu, 12 Nov 2026 10:21:06 GMT</pubDate></item><item><title>김병주는 뉴스공장 나와서 후원금 달라고 하네요?[10][0]</title><link>https://www.clien.net/service/board/park/19291097</link><description>
+ 
+ 
+  &lt;p&gt;ㅎㅎㅎ&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;참 재밌네요&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291097</guid><pubDate>Thu, 12 Nov 2026 10:10:57 GMT</pubDate></item><item><title>스마트안경으로 변호사·의사 시험 풀어봤더니…결과는?[10][0]</title><link>https://www.clien.net/service/board/park/19291094</link><description>
+ 
+ 
+  &lt;p&gt;자연스럽게 시험지를 바라보는 각도로는 문제를 제대로 인식시키기 어려웠다. 시험지를 90도로 들어 인식시켜야 문제 풀이가 수월했다.&lt;br/&gt;&lt;br/&gt;
+    실제 시험장이라면 안경테를 반복적으로 터치하는 모습도 수상할 텐데, 시험지를 번쩍 드는 행위까지 할 수 있을지 의문이었다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;사용이 미숙한 상태에선 정답률도 실망스러웠다. 변호사시험은 배터리가 방전되기까지 약 34분 동안 19문제를 풀었는데, 그중 5문제만 정답을 맞혔다. 정답률 26% 수준의 결과다.&lt;br/&gt;&lt;br/&gt;
+    문제를 인식시키는 데 좀 더 능숙해진 뒤에는 정답률이 나아졌다. 의사 시험은 10분 동안 20문제를 풀어 13개를 맞혔다. 정답률이 약 65%로 크게 올랐다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href="https://n.news.naver.com/article/421/0009284096?sid=102" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://n.news.naver.com/article/421/0009284096?sid=102&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt; &lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291094</guid><pubDate>Thu, 12 Nov 2026 10:01:30 GMT</pubDate></item><item><title>스마트글라스 부정행위 문제 해결은 되게 간단합니다[16][1]</title><link>https://www.clien.net/service/board/park/19291112</link><description>
  
  
   &lt;p&gt;&lt;img alt="sdafsfdgdfgf.PNG" class="fr-dib fr-fil" data-file-sn="15861339" data-gif="false" data-img-height="694" data-img-width="643" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861339/160a9506d7614a.PNG?scale=width:740"/&gt;&lt;/p&gt;
@@ -13,14 +368,14 @@
   &lt;p&gt;회로만 타버리니까 연기라도 나면 바로 적발되기도 하고요. &lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291112</guid><pubDate>Thu, 12 Nov 2026 10:38:55 GMT</pubDate></item><item><title>(사견) 현실적으로 생각하는 수능 AI 안경 해법[20][0]</title><link>https://www.clien.net/service/board/park/19291109</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291112</guid><pubDate>Thu, 12 Nov 2026 10:38:55 GMT</pubDate></item><item><title>(사견) 현실적으로 생각하는 수능 AI 안경 해법[24][0]</title><link>https://www.clien.net/service/board/park/19291109</link><description>
  
  
   &lt;p&gt;공항 출국장 수준까진 아니더라도 보안검색대 하나 설치해서 모든 소지품들 다 들여다봐야하지 않나 합니다...&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;수만개의 보안검색장비를 하루만 써야하는 전제조건이 붙긴 한데요... 뭐 앞으로 한 10년 이상 쓴다고 생각하면 걍 사두는 것도 방법이지 않나 합니다;;;;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291109</guid><pubDate>Thu, 12 Nov 2026 10:32:19 GMT</pubDate></item><item><title>애플은 이와중에 신고가 갱신 했네요 ㄷㄷㄷ[30][2]</title><link>https://www.clien.net/service/board/park/19291106</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291109</guid><pubDate>Thu, 12 Nov 2026 10:32:19 GMT</pubDate></item><item><title>애플은 이와중에 신고가 갱신 했네요 ㄷㄷㄷ[32][3]</title><link>https://www.clien.net/service/board/park/19291106</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -29,7 +384,7 @@
   &lt;p&gt;뭔가 안정적인 느낌이 드는 종목 같습니다..&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291106</guid><pubDate>Thu, 12 Nov 2026 10:29:19 GMT</pubDate></item><item><title>30대 초중반에 무조건 1억은 모아야 정상?[42][0]</title><link>https://www.clien.net/service/board/park/19291104</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291106</guid><pubDate>Thu, 12 Nov 2026 10:29:19 GMT</pubDate></item><item><title>30대 초중반에 무조건 1억은 모아야 정상?[44][0]</title><link>https://www.clien.net/service/board/park/19291104</link><description>
  
  
   &lt;p&gt;회사 후배랑 얘기하다가 이런 말을 넘 당연하게 해서 당혹스러웠네요&lt;/p&gt;
@@ -43,7 +398,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;수학 자체는 맞는 것 같은데 왜이리 괴리감이 느껴지는지..&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291104</guid><pubDate>Thu, 12 Nov 2026 10:23:47 GMT</pubDate></item><item><title>요즘 옆동네 등지서 이대로면 민주당 총선 망한다 글이 보이는데[20][0]</title><link>https://www.clien.net/service/board/park/19291103</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291104</guid><pubDate>Thu, 12 Nov 2026 10:23:47 GMT</pubDate></item><item><title>요즘 옆동네 등지서 이대로면 민주당 총선 망한다 글이 보이는데[22][0]</title><link>https://www.clien.net/service/board/park/19291103</link><description>
  
  
   &lt;p&gt;예: &lt;a href="https://m.ppomppu.co.kr/new/bbs_view.php?id=freeboard&amp;amp;no=10183527" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://m.ppomppu.co.kr/new/bbs_view.php?id=freeboard&amp;amp;no=10183527&lt;/a&gt;&lt;/p&gt;
@@ -52,7 +407,7 @@
   &lt;p&gt;아니면 중도층이 우리 생각보다 많이 돌아섰는데 국힘 콘크리트는 더 견고해졌다 봐야 할까요..&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291103</guid><pubDate>Thu, 12 Nov 2026 10:21:24 GMT</pubDate></item><item><title>미래에 스마트 렌즈 출시되면 헬이겠네요 .....[22][0]</title><link>https://www.clien.net/service/board/park/19291098</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291103</guid><pubDate>Thu, 12 Nov 2026 10:21:24 GMT</pubDate></item><item><title>미래에 스마트 렌즈 출시되면 헬이겠네요 .....[24][0]</title><link>https://www.clien.net/service/board/park/19291098</link><description>
  
  
   &lt;p&gt;스마트 안경으로도 이정도인데 .... 렌즈 출시되면 헬이겠네요 &lt;/p&gt;
@@ -66,7 +421,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291095</guid><pubDate>Thu, 12 Nov 2026 10:04:26 GMT</pubDate></item><item><title>클리앙에서 양비론의 의미[24][0]</title><link>https://www.clien.net/service/board/park/19291091</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291095</guid><pubDate>Thu, 12 Nov 2026 10:04:26 GMT</pubDate></item><item><title>클리앙에서 양비론의 의미[27][0]</title><link>https://www.clien.net/service/board/park/19291091</link><description>
  
  
   &lt;p&gt;"양비론은 잘못됐다. 양비론 하면 안 된다. 아무렴 국힘이랑 비교하냐"&lt;/p&gt;
@@ -128,7 +483,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;  &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291087</guid><pubDate>Thu, 12 Nov 2026 09:54:20 GMT</pubDate></item><item><title>가능한 사랑 솔직하게 어떻게 보셨나요?[19][0]</title><link>https://www.clien.net/service/board/park/19291086</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291087</guid><pubDate>Thu, 12 Nov 2026 09:54:20 GMT</pubDate></item><item><title>가능한 사랑 솔직하게 어떻게 보셨나요?[20][1]</title><link>https://www.clien.net/service/board/park/19291086</link><description>
  
  
   &lt;p&gt;전 굉장히 슴슴한 음식을 먹는 느낌이였네요&lt;/p&gt;
@@ -160,7 +515,7 @@
   &lt;p&gt;차라리 길에서 벗어나 충주호쪽으로 가볼까도 고민중입니다&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291083</guid><pubDate>Thu, 12 Nov 2026 09:48:56 GMT</pubDate></item><item><title>2026년 시험장 스마트 안경 적발 현황[12][0]</title><link>https://www.clien.net/service/board/park/19291082</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291083</guid><pubDate>Thu, 12 Nov 2026 09:48:56 GMT</pubDate></item><item><title>2026년 시험장 스마트 안경 적발 현황[13][0]</title><link>https://www.clien.net/service/board/park/19291082</link><description>
  
  
   &lt;p&gt;&lt;img alt="L5JZB.webp" class="fr-dib fr-fil full" data-file-sn="15861291" data-gif="false" data-img-height="3737" data-img-width="1080" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861291/156211a9e75898.webp?scale=width:740"/&gt;&lt;/p&gt;
@@ -169,7 +524,7 @@
    (저 사이트에서 직접 퍼온거 아니고 캡쳐되어 돌아다니는 이미지를 퍼왔습니다)
   &lt;/div&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291082</guid><pubDate>Thu, 12 Nov 2026 09:45:47 GMT</pubDate></item><item><title>전월세 계약갱신청구권 비강남이 많이 썼군요[11][0]</title><link>https://www.clien.net/service/board/park/19291051</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291082</guid><pubDate>Thu, 12 Nov 2026 09:45:47 GMT</pubDate></item><item><title>전월세 계약갱신청구권 비강남이 많이 썼군요[12][0]</title><link>https://www.clien.net/service/board/park/19291051</link><description>
  
  
   &lt;p&gt;12일 국토교통부 실거래가시스템의 전월세 거래 신고 자료를 분석한 결과 올해 서울 아파트 전월세 계약 중 신규 및 갱신 여부가 확인된 18만6천724건 가운데 46.5%(8만6천877건)가 갱신계약이었다.&lt;br/&gt;&lt;br/&gt;
@@ -207,7 +562,7 @@
   &lt;p&gt;고견 나눠주시길 부탁드립니다. &lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19290895</guid><pubDate>Wed, 11 Nov 2026 21:04:12 GMT</pubDate></item><item><title>AI가 더 잘하는걸 암기해서 시험 보는게 의미 있을까요?[36][0]</title><link>https://www.clien.net/service/board/park/19291084</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19290895</guid><pubDate>Wed, 11 Nov 2026 21:04:12 GMT</pubDate></item><item><title>AI가 더 잘하는걸 암기해서 시험 보는게 의미 있을까요?[38][0]</title><link>https://www.clien.net/service/board/park/19291084</link><description>
  
  
   &lt;p&gt;오늘 아침 뉴공 들으며 운전 하는데 100년 위원회에서 이 스마트 안경 주제로 말하더라고요.&lt;/p&gt;
@@ -227,7 +582,7 @@
   &lt;p&gt;군대 방독면 안경맞추는 것처럼&lt;/p&gt;
   &lt;p&gt;수능 두세달 전에 안경일괄 맞추고 수능날에는 수능안경만 쓰고 오게끔해야죠.&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291080</guid><pubDate>Thu, 12 Nov 2026 09:41:04 GMT</pubDate></item><item><title>젠슨황 불륜으로 인한 드립 근황.....jpg[12][0]</title><link>https://www.clien.net/service/board/park/19291074</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291080</guid><pubDate>Thu, 12 Nov 2026 09:41:04 GMT</pubDate></item><item><title>젠슨황 불륜으로 인한 드립 근황.....jpg[12][1]</title><link>https://www.clien.net/service/board/park/19291074</link><description>
  
  
   &lt;p&gt;&lt;/p&gt;
@@ -271,7 +626,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291074</guid><pubDate>Thu, 12 Nov 2026 09:35:23 GMT</pubDate></item><item><title>곧 보게 될 것 만 같은....앱...[24][1]</title><link>https://www.clien.net/service/board/park/19291073</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291074</guid><pubDate>Thu, 12 Nov 2026 09:35:23 GMT</pubDate></item><item><title>곧 보게 될 것 만 같은....앱...[28][1]</title><link>https://www.clien.net/service/board/park/19291073</link><description>
  
  
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
@@ -393,14 +748,14 @@
   &lt;p&gt;무슨 주말드라마 마냥 한명씩 공개하는 것도 아니고 재밌군요.&lt;/p&gt;
   &lt;p&gt;자고 일어나서 주가가 떨어져 있길래 보니 무슨 막장 코메디도 아니고ㅋㅋㅋ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291063</guid><pubDate>Thu, 12 Nov 2026 09:24:48 GMT</pubDate></item><item><title>불륜이라고 CEO 하차?[31][0]</title><link>https://www.clien.net/service/board/park/19291061</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291063</guid><pubDate>Thu, 12 Nov 2026 09:24:48 GMT</pubDate></item><item><title>불륜이라고 CEO 하차?[32][0]</title><link>https://www.clien.net/service/board/park/19291061</link><description>
  
  
   &lt;p&gt;이건 말도 안된다고 봅니다. 살인, 강도, 성범죄, 공금 횡령 등이&lt;/p&gt;
   &lt;p&gt;아니면 배꼽 아래 문제로 회사 잘경영하는 CEO를 하차하라는&lt;/p&gt;
   &lt;p&gt;것은 바보짓이라고 봅니다. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291061</guid><pubDate>Thu, 12 Nov 2026 09:14:09 GMT</pubDate></item><item><title>‘비거주 종부세 14억’ 혜택 85%가 ‘강·마·용·성’[21][0]</title><link>https://www.clien.net/service/board/park/19291060</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291061</guid><pubDate>Thu, 12 Nov 2026 09:14:09 GMT</pubDate></item><item><title>‘비거주 종부세 14억’ 혜택 85%가 ‘강·마·용·성’[22][0]</title><link>https://www.clien.net/service/board/park/19291060</link><description>
  
  
   &lt;p&gt;종부세 기본공제를 현행 공시가격 12억원에서 비거주에도 14억원으로 완화하면, 정부안보다 세 부담이 줄어들 수 있는 공시가격 14억원(실거래가 약 20억원) 이상 ‘관외’ 1주택은 2024년 기준 전국 4만6893호로 집계됐다.&lt;/p&gt;
@@ -428,7 +783,7 @@
   &lt;p&gt;뭐 불륜이 잘했다는것 아니지만  다 똑같은 놈들 일텐데 민주당 선거 승리이후 노골적으로 이렇게 지우기 작업 &lt;/p&gt;
   &lt;p&gt;하는것보면 잭슨황이 사실 AI 생태계의 요람을 만든 사람인데 이렇게 불명예 퇴진 하나보네요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291056</guid><pubDate>Thu, 12 Nov 2026 09:03:37 GMT</pubDate></item><item><title>김민석, '신천지 조사 비공개·사과'에 '중진들 권유가 판단에 영향'[24][8]</title><link>https://www.clien.net/service/board/park/19291055</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291056</guid><pubDate>Thu, 12 Nov 2026 09:03:37 GMT</pubDate></item><item><title>김민석, '신천지 조사 비공개·사과'에 '중진들 권유가 판단에 영향'[24][9]</title><link>https://www.clien.net/service/board/park/19291055</link><description>
  
  
   &lt;p&gt;&lt;a href="https://m.dailian.co.kr/news/view/1713967/%EA%B9%80%EB%AF%BC%EC%84%9D-%EC%8B%A0%EC%B2%9C%EC%A7%80-%EC%A1%B0%EC%82%AC-%EB%B9%84%EA%B3%B5%EA%B0%9C%EC%82%AC%EA%B3%BC-%EC%A4%91%EC%A7%84%EB%93%A4-2026" ori-url="https://m.dailian.co.kr/news/view/1713967/%EA%B9%80%EB%AF%BC%EC%84%9D-%EC%8B%A0%EC%B2%9C%EC%A7%80-%EC%A1%B0%EC%82%AC-%EB%B9%84%EA%B3%B5%EA%B0%9C%EC%82%AC%EA%B3%BC-%EC%A4%91%EC%A7%84%EB%93%A4-2026" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://m.dailian.co.kr/news/view/1713967/%EA%B9%80%EB%AF%BC%EC%84%9D-%EC%8B%A0%EC%B2%9C%EC%A7%80-%EC%A1%B0%EC%82%AC-%EB%B9%84%EA%B3%B5%EA%B0%9C%EC%82%AC%EA%B3%BC-%EC%A4%91%EC%A7%84%EB%93%A4-2026&lt;/a&gt;&lt;/p&gt;
@@ -437,441 +792,4 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;이게 뭔가요&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291055</guid><pubDate>Thu, 12 Nov 2026 09:03:18 GMT</pubDate></item><item><title>철학과 대학원 세미나...chatgpt가 교란 중입니다.[19][0]</title><link>https://www.clien.net/service/board/park/19291047</link><description>
- 
- 
-  &lt;p&gt;대학원 세미나에서 논문 발제해야 하는데&lt;/p&gt;
-  &lt;p&gt;논문은 다 읽었는데&lt;/p&gt;
-  &lt;p&gt;유혹을 참지 못하고 chatgpt pro챗에 논문 발제문 만들어보라고 했는데&lt;/p&gt;
-  &lt;p&gt;읽어보니 도저히 저는 이것보다 잘쓸 자신이 없네요.&lt;/p&gt;
-  &lt;p&gt;읽어보고 수정만 해보고 제출합니다...&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291047</guid><pubDate>Thu, 12 Nov 2026 08:44:33 GMT</pubDate></item><item><title>소식 게시판이 조용해서 보니 딘 님이 안 보이시네요.[2][6]</title><link>https://www.clien.net/service/board/park/19291042</link><description>
- 
- 
-  &lt;p&gt;새로운 소식 게시판 업데이트가 없어서 보니&lt;/p&gt;
-  &lt;p&gt;_딘_님이 일주일 넘게 활동이 없으시네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;별일 없으시길 바라며,&lt;/p&gt;
-  &lt;p&gt;잠시 쉬시고 빨리 돌아오시길 바랍니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291042</guid><pubDate>Thu, 12 Nov 2026 08:40:55 GMT</pubDate></item><item><title>한겨레 2026 정치성향테스트[12][0]</title><link>https://www.clien.net/service/board/park/19291040</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://policy-survey-2026.hani.co.kr/" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://policy-survey-2026.hani.co.kr/&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;저는 진보인줄 알았는데 다소 보수로 나오네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;느낌상 대략 공정한 평가인듯 합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291040</guid><pubDate>Thu, 12 Nov 2026 08:32:37 GMT</pubDate></item><item><title>이야기 밑에 오토기어 gv90 계약글 보고 들어가봤는데[13][4]</title><link>https://www.clien.net/service/board/cm_car/19290937</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;예전엔 그래도 조금 차 리뷰어같은 느낌이 났었다고 생각했거든요..?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;근데 이제는 뭐 섬네일만 봐도 처참하네요&lt;/p&gt;
-  &lt;p&gt;막 공구해서 물건 떼다파는 잡상인 같기도 하구요..&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;ㅋㅋㅋ 왜 저렇게 변한건지.... 안타깝네요&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19290937</guid><pubDate>Wed, 11 Nov 2026 22:57:10 GMT</pubDate></item><item><title>부동산시장, 금리인상 '공포'…서울 외곽 ‘영끌족’ 비상[55][5]</title><link>https://www.clien.net/service/board/park/19291048</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://naver.me/GZDSrbSs" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://naver.me/GZDSrbSs&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;투기꾼들 이자부담에 아무리 애원해도 구제해주지 말아야합니다&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291048</guid><pubDate>Thu, 12 Nov 2026 08:46:21 GMT</pubDate></item><item><title>로컬 LLM 경량화 버전 수준은 어느정도려나요.[41][0]</title><link>https://www.clien.net/service/board/park/19291046</link><description>
- 
- 
-  &lt;p&gt;요즘 클로드랑 지피티 가지고 이것저것 가지고 놀고 있는데...&lt;/p&gt;
-  &lt;p&gt;어쩌다 보니 qwen 경량화 버전이 눈에 들어오네요. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지피티의 분석에 따르면 나스에 설치해서 굴릴정도라고....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다반 질문에 대한 답변이 20-25초 정도 걸린다고 하는데 어떠려나 모르겠습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;실제 사용할만한지 설치해서 분석해보라고 시켜놨더니 자기 말로는 12개 질문을 던졌을때 대답을 잘했다고.(...)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;물론 긴 질문이나 복잡한 질문은 대답못하고 간략한 요약이나 검색 용도선에서 사용해야 한다고 결론을 주긴하는데 실제 성능이 어느정도인지 궁금하긴 하네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지금 그 설치한 qwen 경량화 모델에 사용할 web ui 만들라고 시켜놨는데 어떤게 나오려나 궁금합니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;사실 뭔가 복잡한건 지피티랑 클로드 구독돌아가는게 있으니 이걸쓰면 되지만 간단한 정리용도로 사용할만하다면 나쁘진 않을거 같네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;근데 이게 나스 수준의 사양에서도 돌아는가는게 맞는건가.....&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;하는 걱정을 하고 있습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291046</guid><pubDate>Thu, 12 Nov 2026 08:44:20 GMT</pubDate></item><item><title>김민석, 정청래와 신천지 갈등에 '만나서 대화로 풀겠다'[22][13]</title><link>https://www.clien.net/service/board/park/19291043</link><description>
- 
- 
-  &lt;p&gt;&lt;a href="https://www.chosun.com/politics/politics_general/2026/11/12/43USPJEJGFDQVJMW3VQZVOS37A/?utm_source=naver&amp;amp;utm_medium=referral&amp;amp;utm_campaign=naver-news" ori-url="https://www.chosun.com/politics/politics_general/2026/11/12/43USPJEJGFDQVJMW3VQZVOS37A/?utm_source=naver&amp;amp;utm_medium=referral&amp;amp;utm_campaign=naver-news" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://www.chosun.com/politics/politics_general/2026/11/12/43USPJEJGFDQVJMW3VQZVOS37A/?utm_source=naver&amp;amp;utm_medium=referral&amp;amp;utm_campaign=naver-news&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;ㅋㅋㅋㅋㅋ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;신천지 3자연합 까시고 못까면&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;사퇴하세요 진짜 무능 그 자체 네요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291043</guid><pubDate>Thu, 12 Nov 2026 08:39:05 GMT</pubDate></item><item><title>젠슨 황 CEO 자리에서 쫓겨날 가능성이 높네요.[34][0]</title><link>https://www.clien.net/service/board/park/19291034</link><description>
- 
- 
-  &lt;p&gt;두번째 불륜 의혹이 제기된 후, 이사회가 해고를 준비 중이며, 그를 위해 젠슨 황과 긴급 회의를 연다고 합니다. &lt;/p&gt;
-  &lt;p&gt;(WSJ 보도)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;부하 직원과의 사내 불륜이 사실이라면 해고에 해당할 수 있는 사안이라 이사회도 빨리 움직이나 봅니다.&lt;br/&gt;
-    해당 소식에 엔비디아 주가는 시간 외에서 더 하락해서 현재 9% 이상 급락중입니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;젠슨 황 없는 엔비디아는 앙꼬없는 찐빵이다.&lt;/p&gt;
-  &lt;p&gt;vs.&lt;/p&gt;
-  &lt;p&gt;엔비디아의 해자는 굳건하다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291034</guid><pubDate>Thu, 12 Nov 2026 08:11:46 GMT</pubDate></item><item><title>조기분양 고민입니다.[24][0]</title><link>https://www.clien.net/service/board/park/19291032</link><description>
- 
- 
-  &lt;p&gt;공공임대 분양전환 당첨되어 어느덧 조기분양 신청을 받고있습니다. &lt;/p&gt;
-  &lt;p&gt;처음엔 정주를 목적으로 입주했는데 살아보니 좁기도 하고, 마눌님 편의에 심한 결격사항이 있어 이사를 고민중입니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;어찌되었던 이사를 결심한 상태에서 이제 전략적으로 접근을 해야겠는데 이게 고민이네요. 시공사 브랜드파워가 워낙 인지도가 없는터라 적정 분양가 가늠이 잘 안돼요. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;인수를 하고 매도를 하던 인수 포기하고 이사를 먼저 가던, 멀지않은 구축으로 면적 조금 넓혀가려고 합니다. &lt;/p&gt;
-  &lt;p&gt;잘하는 선택인지 모르겠어요. 생각같아선 지금 조건으로 임대만기를 체우고 싶지만 그것도 몇년 안남아서 나중에 시장상황에는 오히려 곤란해지는 거 아닐지 고민도 되고 그러네요. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;일단 얼른 감정가 나와서 어느쪽이던 방향 잡을 수 있었으면 좋겠습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;AI덕에 일자리도 간당간당한데 내집 마련 참 힘드네요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291032</guid><pubDate>Thu, 12 Nov 2026 08:08:19 GMT</pubDate></item><item><title>평촌도 20억까지 얼마안남았네요 ㄷㄷ[20][1]</title><link>https://www.clien.net/service/board/park/19291031</link><description>
- 
- 
-  &lt;p&gt;경기도사랑은 잼통입니다 ㄷㄷ&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291031</guid><pubDate>Thu, 12 Nov 2026 08:14:36 GMT</pubDate></item><item><title>LH 창사 첫 총파업 가나… “공급·임대 업무 마비 우려”[13][1]</title><link>https://www.clien.net/service/board/park/19291025</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;h2&gt;LH 창사 첫 총파업 가나… “공급·임대 업무 마비 우려”&lt;/h2&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정부 공급정책의 선봉장인 한국토지주택공사(LH)가 창사 이래 첫 총파업 위기에 놓였다. 노조 가입률이 99%에 달하는 만큼 파업이 현실화하면 LH가 맡은 정부의 주택공급 사업과 공공임대주택 운영·관리는 물론 건설업계 전반으로 파장이 퍼질 수 있다는 우려가 나온다.&lt;br/&gt;&lt;br/&gt;
-    장효수 LH 노조위원장은 11일 국민일보와의 통화에서 &lt;strong&gt;&lt;span style="color: rgb(238, 0, 0);"&gt;“정부가 소통없이, 어떤 담보도 없이 (분사를) 밀어붙인다면 총파업을 할 수밖에 없다”&lt;/span&gt;&lt;/strong&gt;고 말했다. 전날 3차 노사교섭이 결렬된 뒤 본격적으로 전 조합원이 업무를 중단하는 전면 총파업을 고려하고 있다는 설명이다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;(중략) &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;갈등의 핵심은 정부가 추진하는 LH 조직분리안이다. &lt;strong&gt;&lt;span style="color: rgb(238, 0, 0);"&gt;국토교통부는 지난해 12월 이재명 대통령이 LH의 부채 문제를 해결하기 위해 분사를 검토하라고 지시한 뒤 민간위원들을 포함한 LH 개혁위원회 논의를 거쳐 이를 준비해왔다. &lt;/span&gt;&lt;/strong&gt;이어 지난 9월 LH를 주택도시개발공사와 주택도시자산공사로 분리하는 계획을 제시했지만 부채 분담 등 세부방안은 아직 내놓지 못했다.&lt;br/&gt;&lt;br/&gt;
-    노조는 정부가 충분한 협의 없이 조직개편을 일방적으로 추진한다며 반발하고 있다.  &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://n.news.naver.com/mnews/article/005/0001884619?sid=101" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://n.news.naver.com/mnews/article/005/0001884619?sid=101&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;조직 분리한다고 파업 하나요....?&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291025</guid><pubDate>Thu, 12 Nov 2026 07:55:29 GMT</pubDate></item><item><title>클리앙을 뒤흔들고 있는 작전세력[33][6]</title><link>https://www.clien.net/service/board/park/19291024</link><description>
- 
- 
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/sZDYr3rjqPk" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;=====================&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아직도 작전세력의 테라포밍이라는 생각을 하고 계신 분들이 있나요? &lt;/p&gt;
-  &lt;p&gt;진심으로 그런 생각을 하는 분들은 아마 극소수일 겁니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;회원가입일 같은 것을 무기삼아 상대를 공격하려 하지 마세요. &lt;/p&gt;
-  &lt;p&gt;오래 활동했다는 사실이 여러분에게 클리앙의 정치적 정체성을 독점할 권리를 부여하지 않습니다. &lt;/p&gt;
-  &lt;p&gt;오래된 회원이라고 해서 새로운 회원보다 더 정당한 발언권을 갖는 것도 아니고, &lt;/p&gt;
-  &lt;p&gt;과거의 다수의견이 현재의 소수의견보다 더 옳다는 보장도 없습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;수십 년 동안 이곳에서 활동해 왔다는 사실을 정통성이나 소유권처럼 착각하면서, &lt;/p&gt;
-  &lt;p&gt;이재명 대통령에게 비판적인 목소리를 내는 사람들을 작전세력이니, 테라포밍이니, 외부에서 유입된 사람들이니 하는 식으로 몰아가는 것은 비합리적인 행동입니다.&lt;/p&gt;
-  &lt;p&gt;이것은 시대착오를 넘어 사고방식 자체가 상당히 퇴행적인 것이죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;저는 클리앙에 2026 년 3 월에 가입했습니다. &lt;/p&gt;
-  &lt;p&gt;가입한 계기는 이재명 대통령의 1 월 23 일 그 문제의 X 글 이후 줄기차게 이어진 소셜미디어질 때문이었어요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;제가 세제개편안을 강력하게 반대하는 가장 중요한 이유가 개인적 이해관계 때문이라고 해도 부정할 생각은 없습니다. &lt;/p&gt;
-  &lt;p&gt;하지만 여기 글을 올리는 이유는 다릅니다. &lt;/p&gt;
-  &lt;p&gt;이재명 대통령의 고집이 매우 부당하고 위험할 정도로 폭력적이기 때문입니다.  &lt;/p&gt;
-  &lt;p&gt;그의 잘못된 정책 자체가 문제이기 이전에 비판을 대하는 그의 태도에서 엄청 많이 부족한 인간 됨됨이를 발견했기 때문입니다.      &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;어쨌건 개인의 품성 이야기는 더 길게 할 건 없고, &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이재명 대통령의 주식정책이나 세재개편안을 비판하는 사람들이 많아졌다고 합시다. &lt;/p&gt;
-  &lt;p&gt;그들이 보수 지지자라고 생각하나요?  &lt;/p&gt;
-  &lt;p&gt;제가요?? ㅎㅎ &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정권을 지지하는 것과 정권의 모든 정책에 동의하는 것은 전혀 다른 문제입니다. &lt;/p&gt;
-  &lt;p&gt;오히려 자신이 몸담고 있는 진영에서 내놓은 대통령이기 때문에 더 엄격하게 평가하고 비판해야 하는 것 입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;주식정책에 실망한 사람, 아직 시행되지도 않은 세제개편안이 몰고온 전폭풍(후폭풍의 반대말)으로 자산형성의 기회는 둘째치고 주거안정마저 박탈당했다고 분노하는 사람, 정부의 경제정책에 일관성과 신뢰가 없다고 판단하는 사람들의 목소리를 무조건 반명정서나 작전세력의 결과로 해석한다면, 그것은 현실을 분석하는 능력이 부족하다는 고백이나 다름없습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그리고 저의 경우는 정책실패 이전에 이재명 개인에 대한 인간적 신뢰를 일찌감치 접었기 때문에 그에 대한 ‘진영적 지지’를 완전히 철회한 것 입니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;저는 개인적으로, 이재명 대통령이 다른 것은 몰라도 세제개편안과 공소취소공작 이 두 가지는 한발짝도 양보하지 않을 사람이라는 확신을 가지고 있습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;세제개편안은 그가 이미 ‘부동산과의 전쟁에서 압도적 승리를 거둘것’이라는 선언을 반복적으로 했기 때문에 물러서기에는 너무 늦었고, &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;공소취소공작은 내란청산의 최우선 과제였던 법조카르텔 해체와 일찌감치 엿바꿔 먹을 정도로 사력을 다해 매달리고 있는 일생일대의 최대과제이기 때문에 그렇습니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;전자를 포기하고 후퇴한다면 자신이 스스로 선포한 정권의 최대명분을 잃는 것이기 때문에 그는 정권을 내 놓아야 할 것이고, &lt;/p&gt;
-  &lt;p&gt;후자를 포기한다면 퇴임이후 재판을 받고 감옥에 갈 수도 있다는 원초적 공포심이 그를 지배하고 있기 때문입니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;지금 클리앙에서 과거의 다른 분위기가 휩쓸고 있는 이유는 작전세력이 엔트리즘(테라포밍) 작업을 벌여왔기 때문이 아니라, &lt;/p&gt;
-  &lt;p&gt;대통령이 되어서는 안되는 사람이 내란정국의 물결과 진영의 지지를 토대로 권력의 최정상에 올라 이 생난리를 치는 바람에 민심을 결정적으로 이반시켰기 때문입니다. &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;만일 클리앙 테라포밍인지 엔트리즘인지 작전세력이 존재한다면,&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그 배후 겸 주범은 이재명 대통령 입니다.   &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;국민이 심판하기 전에 진영이 먼저 결단해야 하고.&lt;/p&gt;
-  &lt;p&gt;진영이 결단하기 전에, &lt;/p&gt;
-  &lt;p&gt;민주당이 우물쭈물하지 말고 제정신을 차려야 할 것 입니다. &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291024</guid><pubDate>Thu, 12 Nov 2026 07:51:05 GMT</pubDate></item><item><title>마운자로류의 상온보관..[10][0]</title><link>https://www.clien.net/service/board/park/19291021</link><description>
- 
- 
-  &lt;p&gt;일단 제가 들은건 GLP-1류의 상온보관 입니다만, 마운자로는 더 짧다고 했구요..&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;밑에 마운자로 글의 댓글에서 갑론을박이 벌어지는 상온보관 이야기에서  함정이&lt;/p&gt;
-  &lt;p&gt; "상온배송으로 21일(혹은30일)로 보관일수가 줄면 그걸 다시 냉장한다고 유통기한까지 보관 가능한게 아니라는 겁니다"&lt;/p&gt;
-  &lt;p&gt; 온전히 냉장 배송 한다는 전제하에 최대 보관기간이 가는거죠.... &lt;/p&gt;
-  &lt;p&gt;21일로 줄면, 노출된 펜 전체를 21일내에 소비하지 않으면 약효 의심으로 폐기해야한다고 하더군요...(실제로 무시하고 맞는 사람도 있는 모양이던데 효과가 있는지에 대해서는...ㄷㄷ)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;마운자로로 갈아탈 시기가 오고 있는가봅니다 ㄷㄷㄷㄷ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;P.s (최근 오젬픽때문에 의사,약사 상담할때 들었던 이야기이고 오젬픽은 60일이라고 하더군요...)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291021</guid><pubDate>Thu, 12 Nov 2026 07:49:20 GMT</pubDate></item><item><title>화서 15억 ㄷㄷ 서울 하급지는 화서선에서 정리되네요[11][1]</title><link>https://www.clien.net/service/board/park/19291009</link><description>
- 
- 
-  &lt;p&gt;수원 상승세가 대단합니다&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291009</guid><pubDate>Thu, 12 Nov 2026 07:06:58 GMT</pubDate></item><item><title>뉴스엔 절대 안나오는 부동산 위기[16][6]</title><link>https://www.clien.net/service/board/park/19290991</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="Screenshot_20261112_014942_X.jpg" class="fr-dib fr-fil full" data-file-sn="15861198" data-gif="false" data-img-height="7398" data-img-width="1079" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861198/15494c426a9aba.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;무슨 일이 일어날지 지켜보세요.&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19290991</guid><pubDate>Thu, 12 Nov 2026 03:00:48 GMT</pubDate></item><item><title>88년-92년 방영된 맛의 달인 보는데 당시 일본 엄청나네요[10][0]</title><link>https://www.clien.net/service/board/park/19290990</link><description>
- 
- 
-  &lt;p&gt;88-92 년 사이에 방영된 맛의 달인 보는 중인데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;80년80년 말 90년 초 일본은 너무 잘 살고 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;세련되며 최첨단 나라로 나오네요 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;식문화 트랜드는 2010년대 만화라고 생각해도 다르지 않을 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;정도 입니다 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;80년대에 어떻게 이렇게 수준 높은 만화를 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;쓸수 있는지 대단하다고 밖에 생각이 안들어요 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;한 15 년 전 일본이랑 차이가 없어요? &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그만큼 80-90 년대 일본은 발전했던 것이겠지요 &lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19290990</guid><pubDate>Thu, 12 Nov 2026 02:10:28 GMT</pubDate></item><item><title>여기는 좀 덜한데 온 커뮤가 ai 안경으로 난리네요[10][0]</title><link>https://www.clien.net/service/board/park/19290988</link><description>
- 
- 
-  &lt;p&gt;세무사 시험도 털릴정도니&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;이제 진짜 시험의 종말 시대가 오는거 같군요&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19290988</guid><pubDate>Thu, 12 Nov 2026 02:06:00 GMT</pubDate></item><item><title>차기 엔비디아 수장 후보군에 리사수 물망[12][1]</title><link>https://www.clien.net/service/board/park/19290987</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="PGT20261009002901009_P4.jpg" class="fr-dib fr-fil full" data-file-sn="15861194" data-gif="false" data-img-height="800" data-img-width="1200" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861194/154704a95acb5f.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;a href="https://www.yna.co.kr/view/AKR20261111110900009" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://www.yna.co.kr/view/AKR20261111110900009&lt;/a&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;(타이베이=연합뉴스) 김철문 통신원 = 젠슨 황 엔비디아 최고경영자(CEO)가 불륜 파문으로 자리에서 물러날 가능성이 거론되는 가운데 차기 수장 후보군에 리사 수 AMD CEO가 포함됐다고 대만 매체들이 보도했다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;11일 자유시보 등 대만 언론은 IT 전문 매체 디인포메이션을 인용, 불륜 스캔들에 따른 젠슨 황 CEO의 자진 사퇴에 대비해 관련 업계 내에서 헤드헌팅업체가 후임 후보를 물색하기 시작했을 가능성이 있다고 전했다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;차기 엔비디아 수장 잠재 후보로는 리사 수 CEO와 영국 반도체 설계기업 암(Arm)의 르네 하스 CEO 등이 거론되고 있다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;역시 프로토스의 뒷배를 받고 있는&lt;/p&gt;
-  &lt;p&gt;리사쑤님이...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;해외 뉴스들 보면 CEO 교체를 시간문제로 보는 것 같습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;젠슨황 정도 되는 사람이라면 대의를 그리 모르지 않을 텐데(수많은 사람과 기업 자체가&lt;/p&gt;
-  &lt;p&gt;큰 위험에 처할 수 있는데)&lt;/p&gt;
-  &lt;p&gt;아무도 모르는 속 사정이 있는 것인지 아니면 정말 전략 미인계에&lt;/p&gt;
-  &lt;p&gt;뻔히 넘어간 것인지&lt;/p&gt;
-  &lt;p&gt;지금도 영문을 모르겠네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그래픽카드 일부라도 게이머들에게 돌려주세요. ㅠㅜ&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="sooo.png" class="fr-dib fr-fil full" data-file-sn="15861195" data-gif="false" data-img-height="1024" data-img-width="1536" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861195/1689f68c72d9ea.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="sooo2.png" class="fr-dib fr-fil full" data-file-sn="15861200" data-gif="false" data-img-height="1024" data-img-width="1536" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861200/15a37127231532.png?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;지피티 이미지 이번 거 만화 진짜 잘 그리네요. ㄷㄷㄷ &lt;/p&gt;
-  &lt;p&gt;세세하게 지시하면 제 상상을 스캔한 듯 그려주네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19290987</guid><pubDate>Thu, 12 Nov 2026 01:29:22 GMT</pubDate></item><item><title>평화통일 했을 때 가장 우려되는 점[14][0]</title><link>https://www.clien.net/service/board/park/19290982</link><description>
- 
- 
-  &lt;p&gt;바로 정치수용소의 죄수들입니다. 이 사람들은 반체제라는 이유만으로 도시 단위의 수용소에 갇혔습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;수용소마다 차이가 있겠지만 가장 악독한 수용소의 이야기를 들어보니 옷은 첫 보급받은 것으로 끝나고 밥은 쥐꼬리만큼주니까 배고파서 쥐 잡아먹고 풀 뜯어먹어야 살 수 있답니다. 근데 배급받은 밥 외에 다른 거 먹는거 걸리면 폭행, 구타를 당합니다. 게다가 강x 당해도 구제받을 길이 없대요. 사람취급을 못받고 사는 거에요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;평화통일은 그런 짓을 하게 만든 권력자들의 위치를 어느정도 보장받는 것이 전제가 되어있을텐데 그럼 누가 처벌을 받을까요? 받아도 명령받은 중간관리직 혹은 말단직들 꼬리자르기로 받지 않을까 추측합니다. 피해자들은 통일의 기쁨에 묻혀서 보상금 받고 잊혀지는 최악의 시나리오가 그려지네요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다르게 해석하시는 분이 계실까봐 적지만 무력통일하자는 글 절대 아닙니다.... 예전부터 만약 평화통일이 된다면 이런 문제는 도대체 어떻게 해결이 될까 생각해왔습니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19290982</guid><pubDate>Thu, 12 Nov 2026 01:18:13 GMT</pubDate></item><item><title>우리 국민이 좀 더 정치적이 된 원인은 문재인 전대통령 탓도 있는거 같습니다[25][5]</title><link>https://www.clien.net/service/board/park/19290978</link><description>
- 
- 
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;다른나라의 정당가입율은 잘 모르겠지만&lt;/p&gt;
-  &lt;p&gt;예전부터 유럽(잉글런드)에서도 정치적인 사람을 약간 부담스러워하긴 했던걸로&lt;/p&gt;
-  &lt;p&gt;책에서 읽었습니다 -_-;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;저희 아버지도 민정당 당원이셨지만&lt;/p&gt;
-  &lt;p&gt;그건 뭐 사업하느라 인맥늘일라고 하신거지&lt;/p&gt;
-  &lt;p&gt;딱히 지금도 우파는 아닙니다. 중도에 가깝지...&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;근데 그걸 깨버리신 사람이 문재인 대통령입니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;시대?의 흐름을 따라서 온라인 당원가입을 준비하고 독려하셨죠.&lt;/p&gt;
-  &lt;p&gt;그게 10년전부터의 민주당이구요.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;당원이 아니면 뭐&lt;/p&gt;
-  &lt;p&gt;지지하다가 말고,&lt;/p&gt;
-  &lt;p&gt;이번에는 안찍고,&lt;/p&gt;
-  &lt;p&gt;늦잠자서 안찍고,&lt;/p&gt;
-  &lt;p&gt;남이 뭐라 그러면 아 그래~ 그러고 치우는데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;당원이 되고 권리당원이 되면&lt;/p&gt;
-  &lt;p&gt;소속감이 생기고 책임감이 생겨서&lt;/p&gt;
-  &lt;p&gt;더욱 정치에 몰입하게 되고 진지하게 되버리는데&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;그걸 문재인 대통령이 당대표 시절에 이뤄버린거죠 &lt;/p&gt;
-  &lt;p&gt;-_-;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아래에 문재인 대통령이 뭐 한거 없다는 글도 있던데&lt;/p&gt;
-  &lt;p&gt;제 인생에는 엄청 큰 영향을 끼쳤습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;img alt="16f9ebf6c714f3044.jpg" class="fr-dib fr-fil" data-file-sn="15861178" data-gif="false" data-img-height="960" data-img-width="528" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15861178/159e122dd06d62.jpg?scale=width:740"/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;아 내가 뭘 좀 해주고 싶다...이런 생각을 가지게 만들어버렸거든요.&lt;/p&gt;
-  &lt;p&gt;그래서 지금 이모냥 이꼴입니다 ㅎㅎㅎㅎ&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;span class="fr-video fr-fvc fr-dvi fr-draggable" data-file-sn="15861179" data-role="image-mp4"&gt;
-    &lt;video autoplay="" data-file-key="159e19edb3fa34" id="159e19edb3fa34" loop="loop" muted="" playsinline="" poster="https://edgio.clien.net/F01/2026/11/15861181/159e19edb3fa34.gif?scale=width:740" preload="auto" webkit-playsinline=""&gt;
-     &lt;source src="https://edgio.clien.net/F01/2026/11/15861179/159e19edb3fa34.mp4" type="video/mp4"/&gt;
-    &lt;/video&gt;&lt;button class="search_link" onclick='app.gifDownConfirm("15861181", "159e19edb3fa34", "320", "180")'&gt;&lt;i class="fa fa-download"&gt;&lt;/i&gt;GIF&lt;/button&gt; &lt;/span&gt;&lt;/p&gt;
-  &lt;p&gt;이런 生ki보다는 낫잖아요?&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19290978</guid><pubDate>Thu, 12 Nov 2026 00:45:03 GMT</pubDate></item><item><title>4050 극우화가 진짜 문제에요.[40][3]</title><link>https://www.clien.net/service/board/park/19291015</link><description>
- 
- 
-  &lt;p&gt;3040 보수화가 문제가 아니라니까요.&lt;/p&gt;
-  &lt;p&gt;여기 클리앙부터 급속히 극우화되는거 같아요.&lt;/p&gt;
-  &lt;p&gt;스스로 극우화되었으면서&lt;/p&gt;
-  &lt;p&gt;여전히 진보적인 2030을 극우화되었다고 비난하는게&lt;/p&gt;
-  &lt;p&gt;우스운 일이죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;임대주택확대에 부정적이고&lt;/p&gt;
-  &lt;p&gt;지역균형발전에 반대하고&lt;/p&gt;
-  &lt;p&gt;부자증세정책도 거부하고&lt;/p&gt;
-  &lt;p&gt;외국인난민유입 반대하고&lt;/p&gt;
-  &lt;p&gt;복지확대정책도 우려하고 &lt;/p&gt;
-  &lt;p&gt;시간나면 일본여행가면서&lt;/p&gt;
-  &lt;p&gt;북한에 대해서 적대적이고&lt;/p&gt;
-  &lt;p&gt;재태크는 미국주식시장에&lt;/p&gt;
-  &lt;p&gt;부동산 오르는건 당연하고&lt;/p&gt;
-  &lt;p&gt;보유세 증세는 반대하면서&lt;/p&gt;
-  &lt;p&gt;서민들 임대주택보다 &lt;/p&gt;
-  &lt;p&gt;명품 용산공원이 중요하고&lt;/p&gt;
-  &lt;p&gt;탄소중립은 음모론이고&lt;/p&gt;
-  &lt;p&gt;원전확대는 불가피하고 생각하시면서&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;스스로 합리적 진보라고 생각하시는&lt;/p&gt;
-  &lt;p&gt;인지부조화에 빠진 극우화된 4050이&lt;/p&gt;
-  &lt;p&gt;여전히 진보적인 3040을 보수라고 욕하고 있는거죠.&lt;/p&gt;
-  &lt;p&gt;정말 우스운일이죠.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291015</guid><pubDate>Thu, 12 Nov 2026 07:34:11 GMT</pubDate></item><item><title>2030 탓하는 건 추한 일[14][4]</title><link>https://www.clien.net/service/board/park/19291007</link><description>
- 
- 
-  &lt;p&gt;적어도 30대 남성은 문정권 출범 초기만해도 절대적인 지지층이었습니다. 그런데 민주당 지지율 떨어지니 극우 교육 리박스쿨 일베탓하기 시작했지요. 그렇개 2030남성 고립시키다 그 세대에 타겟한 이준석 같은 정치인 나온거고, 이제는 70대 이상으로 적대적인 세력이 되었지요. &lt;/p&gt;
-  &lt;p&gt;흥미로운 건 같은 2030남성들은 일베몰이하면서, 학교에서 교육을 받은 2030여성은 지지율이 유지되었다는 이유로 일베 세뇌교육을 안받은 것이라는 기적적인 주장을 하면서 개딸이란 애칭 붙이면서 커피 나눠주고 했죠. 그리고 민주당의 자칭 민생정책인 검찰개혁으로 2030여성도 이탈하자 이젠 2030여성까지 묶어 2030을 비판하죠. &lt;/p&gt;
-  &lt;p&gt;세대에 대한 비판이 그나마 과거보다 덜한 이유는 이 지지율 이탈을 이선생 탓할 좋은 기회로 보는 내전 상태 때문인거고 아마 이게 없었으면 2030여성도 지금보다 더 심하게 리박스쿨 몰이당했을겁니다.&lt;/p&gt;
-  &lt;p&gt;한편 90년대00년대를 되돌아보면 진짜 극우 세뇌교육이 대놓고 이루어지던 학교를 다녔고, 대학입학해서 투표하는 사람들도 거의 없었죠. 운동권조차 자기네들 후보 아니면 아예 투표장조차 안가기도 했으니까요.&lt;/p&gt;
-  &lt;p&gt;지지층을 왜 잃었나가 중요한거지 그 지지층 비난해봐야 결국 남는게 없어요. 이선생이니 문조털래유니 서로 탓해봐야 그 옛날 한나라당 포지션이 되어 시대의 뒤안길로 가는 걸 막을 수 없습니다. 뼈를 깎는 자기혁신 엾으면 그 옛날 파란당, 그 때의 고압적인 기성세대 수순 밟는겁니다.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291007</guid><pubDate>Thu, 12 Nov 2026 06:33:51 GMT</pubDate></item><item><title>섬박람회 '30억 체불' 진통…업체들 '도산 위기'[4][8]</title><link>https://www.clien.net/service/board/park/19291005</link><description>
- 
- 
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p class="video"&gt;&lt;iframe allowfullscreen="" frameborder="0" height="360" src="https://www.youtube.com/embed/8Gdhy6mwDV4" width="640"&gt;&lt;/iframe&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;여수세계섬박람회가 막을 내렸지만, 행사에 참여한 업체들은 공사대금과 공연료를 받지 못해 어려움을 겪고 있습니다.&lt;/p&gt;
-  &lt;p&gt;미지급 금액만 30억 원이 넘는다는 주장인데요.&lt;/p&gt;
-  &lt;p&gt;조직위와 대행사가 정산 문제를 놓고 엇갈린 입장을 보이면서 업체들이 법적 대응까지 예고하고 있습니다.&lt;/p&gt;
-  &lt;p&gt;(중략)&lt;/p&gt;
-  &lt;p&gt;행사 운영을 총괄한 대행사는 조직위의 말 바꾸기를 원인으로 지목합니다.&lt;/p&gt;
-  &lt;p&gt;시설 조성 예산이 부족해 행사와 전시 예산 일부를 사용하기로 협의했는데,&lt;/p&gt;
-  &lt;p&gt;공사가 끝나자 조직위가 예산 변경을 불허했다는 겁니다.&lt;/p&gt;
-  &lt;p&gt;조직위도 정산이 늦어진 데 대해서는 책임을 일부 인정하면서도 구체적인 지급 계획에 대해선 답을 피했습니다.&lt;/p&gt;
-  &lt;p&gt;계약 만료일인 12월 31일까지 대행사와 협의를 거치겠다는 입장입니다.&lt;/p&gt;
-  &lt;p&gt;(후략)&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;여러모로 역대급인 행사네요...&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291005</guid><pubDate>Thu, 12 Nov 2026 06:11:35 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19291055</guid><pubDate>Thu, 12 Nov 2026 09:03:18 GMT</pubDate></item></channel></rss>
