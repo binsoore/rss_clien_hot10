@@ -1,5 +1,63 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Thu, 26 Nov 2026 06:00:48 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>집값 정부탓하시는데~ 주식도 그 기준으로 봐야죠 ㅎㅎ[15][0]</title><link>https://www.clien.net/service/board/park/19298656</link><description>
+<rss version="2.0"><channel><title>clien_hot10</title><link>http://www.clien.net</link><description>RSS_clien_hot10</description><lastBuildDate>Thu, 26 Nov 2026 07:00:47 GMT</lastBuildDate><generator>PyRSS2Gen-1.1.0</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>C++29에 추가될 break, continue 문법...ㄷㄷ[12][3]</title><link>https://www.clien.net/service/board/park/19298658</link><description>
+ 
+ 
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;break, continue 범위에 라벨을 지정해서 제어할 수 있게 되네요.&lt;/p&gt;
+  &lt;p&gt;예를 들어&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;pre&gt;search:  // 바깥 반복문의 이름
+for (auto&amp;amp; file : files) {
+    for (auto&amp;amp; line : file.lines) {
+        if (contains_target(line)) {
+            break search;  // 파일 검색 전체 종료!
+        }
+    }
+}
+
+// break search를 실행하면 여기로 나옴&lt;/pre&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이렇게 한방에 2개 루프를 중단하는 것도 가능하고,&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;pre&gt;search:
+for (auto&amp;amp; file : files) {
+    for (auto&amp;amp; line : file.lines) {
+        if (is_invalid(line)) {
+            continue search;  // 이 파일을 건너뛰고 다음 파일로!
+        }
+
+
+        process(line);
+    }
+
+
+    mark_complete(file);  // continue search를 하면 이것도 건너뜀
+}&lt;/pre&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;이렇게 외부 루프 시작으로 갈 수 있게 된다고 하네요.&lt;/p&gt;
+  &lt;p&gt;편리할 것 같긴한데,&lt;/p&gt;
+  &lt;p&gt;루프 길어지고, 라벨 많아지면 음...좀 어려울지도요? &lt;s&gt;어차피 LLM이...&lt;/s&gt;&lt;/p&gt;
+  &lt;p&gt;어쨋든&lt;/p&gt;
+  &lt;p&gt;초안에 채택된 상태입니다.&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298658</guid><pubDate>Thu, 26 Nov 2026 03:21:28 GMT</pubDate></item><item><title>미국주식 살아남은건 SCHD밖에 없는것 같습니다.[10][1]</title><link>https://www.clien.net/service/board/park/19298508</link><description>
+ 
+ 
+  &lt;p&gt;&lt;img alt="02.png" class="fr-dib fr-fil full" data-file-sn="15871009" data-gif="false" data-img-height="454" data-img-width="810" data-role="attach-image" src="https://edgio.clien.net/F01/2026/11/15871009/2335a8f191ecf.png?scale=width:740"/&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;↑&lt;/p&gt;
+  &lt;p&gt;올해 수익률 나스닥과 비교입니다.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;유명한 ETF 많이 찾아봤는데&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;살아남은건 사실상 이놈밖에 없는것 같네요......&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;나스닥은 연초 대비 수익 제로 수준이고(S&amp;amp;P500은 조금 낫습니다)&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;SCHD는 선방......아니 엄청난 수익을 기록중이네요.&lt;/p&gt;
+  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+  &lt;p&gt;빅테크, AI 주식 많은분들은 SCHD 고려 해보시길 바랍니다....&lt;/p&gt;
+ 
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298508</guid><pubDate>Wed, 25 Nov 2026 18:57:08 GMT</pubDate></item><item><title>집값 정부탓하시는데~ 주식도 그 기준으로 봐야죠 ㅎㅎ[21][1]</title><link>https://www.clien.net/service/board/park/19298656</link><description>
  
  
   &lt;p&gt;취임 이전부터 집계된 집값상승으로&lt;/p&gt;
@@ -11,14 +69,14 @@
   &lt;p&gt;올랐네요? 말 끝났죠?&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298656</guid><pubDate>Thu, 26 Nov 2026 01:49:46 GMT</pubDate></item><item><title>한준호의 역할이 정말 기대됩니다[9][5]</title><link>https://www.clien.net/service/board/park/19298650</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298656</guid><pubDate>Thu, 26 Nov 2026 01:49:46 GMT</pubDate></item><item><title>한준호의 역할이 정말 기대됩니다[10][5]</title><link>https://www.clien.net/service/board/park/19298650</link><description>
  
  
   &lt;p&gt;그간의 행안부를 보면서 느꼈던 그 답답함...그 표현못할 찝찝함을...&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;한준호가 정말 얼마나 제대로 타파해줄지...솔직히 정말 기대됩니다. &lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298650</guid><pubDate>Thu, 26 Nov 2026 01:23:00 GMT</pubDate></item><item><title>5년전에 사재기한 하드 출토 결과[11][1]</title><link>https://www.clien.net/service/board/park/19298644</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298650</guid><pubDate>Thu, 26 Nov 2026 01:23:00 GMT</pubDate></item><item><title>5년전에 사재기한 하드 출토 결과[12][1]</title><link>https://www.clien.net/service/board/park/19298644</link><description>
  
  
   &lt;p&gt;며칠전 쿠팡직구로 DAS 5베이 짜리를 샀는데&lt;/p&gt;
@@ -71,12 +129,12 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;이번 블프에 뭔가 떠도 못살것 같습니다 ㄷㄷ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298644</guid><pubDate>Thu, 26 Nov 2026 00:40:57 GMT</pubDate></item><item><title>정청래 - 송영길 말은 곧이곧대로 다 믿지 마세요.[10][6]</title><link>https://www.clien.net/service/board/park/19298619</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298644</guid><pubDate>Thu, 26 Nov 2026 00:40:57 GMT</pubDate></item><item><title>정청래 - 송영길 말은 곧이곧대로 다 믿지 마세요.[10][7]</title><link>https://www.clien.net/service/board/park/19298619</link><description>
  
  
   &lt;p&gt;영길이 수준이야 뭐 두번 말하면 입 아프죠&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298619</guid><pubDate>Wed, 25 Nov 2026 23:13:07 GMT</pubDate></item><item><title>지금 주식상황이 정부탓이라는 사람들은[34][0]</title><link>https://www.clien.net/service/board/park/19298639</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298619</guid><pubDate>Wed, 25 Nov 2026 23:13:07 GMT</pubDate></item><item><title>지금 주식상황이 정부탓이라는 사람들은[39][0]</title><link>https://www.clien.net/service/board/park/19298639</link><description>
  
  
   &lt;p&gt;정부가 성급하게 단일레버리지를 열었다는 거죠?&lt;/p&gt;
@@ -93,7 +151,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;이렇게 글쓰면 저는 정부 빨아주는 사람인거고. 본인들은 뭐 정부가 잘되기를 바라면서 글쓰시는 대단하신 분들인거구요 ㅎㅎㅎㅎ&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298639</guid><pubDate>Thu, 26 Nov 2026 00:24:48 GMT</pubDate></item><item><title>[단독] '중국 전기차보다 싸네'.아이오닉5, 이제 반값에 산다[19][0]</title><link>https://www.clien.net/service/board/park/19298627</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298639</guid><pubDate>Thu, 26 Nov 2026 00:24:48 GMT</pubDate></item><item><title>[단독] '중국 전기차보다 싸네'.아이오닉5, 이제 반값에 산다[20][0]</title><link>https://www.clien.net/service/board/park/19298627</link><description>
  
  
   &lt;p&gt;&lt;a href="https://www.hankyung.com/article/2026112502651" rel="nofollow ugc noopener noreferrer" target="_blank"&gt;https://www.hankyung.com/article/2026112502651&lt;/a&gt;&lt;/p&gt;
@@ -142,7 +200,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298615</guid><pubDate>Wed, 25 Nov 2026 23:02:57 GMT</pubDate></item><item><title>그냥 정부가 부동산의 용도를 정하는게 불쾌해요[10][9]</title><link>https://www.clien.net/service/board/park/19298612</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298615</guid><pubDate>Wed, 25 Nov 2026 23:02:57 GMT</pubDate></item><item><title>그냥 정부가 부동산의 용도를 정하는게 불쾌해요[10][10]</title><link>https://www.clien.net/service/board/park/19298612</link><description>
  
  
   &lt;p&gt;특히 임대형식으로요&lt;/p&gt;
@@ -151,7 +209,7 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;뭐하는 짓인지 모르겠습니다&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298612</guid><pubDate>Wed, 25 Nov 2026 22:58:55 GMT</pubDate></item><item><title>국민연금이 리밸런싱했다면 지금보다 손해폭이 작았겠죠[6][10]</title><link>https://www.clien.net/service/board/park/19298600</link><description>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298612</guid><pubDate>Wed, 25 Nov 2026 22:58:55 GMT</pubDate></item><item><title>국민연금이 리밸런싱했다면 지금보다 손해폭이 작았겠죠[6][11]</title><link>https://www.clien.net/service/board/park/19298600</link><description>
  
  
   &lt;p&gt;아무리 개미들 펌핑이 말도 안되는 수준이었다지만&lt;/p&gt;
@@ -745,23 +803,4 @@
   &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
   &lt;p&gt;간단하게 명의 변경만 하고 쓰려고 했는데 블루핸즈 가서 등록해 달라고 해야 하는 거죠?&lt;/p&gt;
  
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19298142</guid><pubDate>Wed, 25 Nov 2026 07:34:02 GMT</pubDate></item><item><title>저는 이재명 대통령 죄가 없다고 생각합니다[37][8]</title><link>https://www.clien.net/service/board/park/19298505</link><description>
- 
- 
-  &lt;p&gt;그러니 대통령 특별면책법 혹은 무죄법 발의해서 통과시키면 안될까요?&lt;/p&gt;
-  &lt;p&gt;더이상 사법 시스템을 파괴시키면 안될것 같습니다.&lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;곧 태어날 제 아기가 초등학교 교과서에서 삼권분립이라는 말을 보고 "아빠, 삼권분립이 뭐야?" 했을때 "선출권력이 우선시되는 대한민국에서 삼권분립은 사라진 말이란다. 더는 입에 올리면 잡혀간단다." 라고 말하고싶지는 않아요.&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298505</guid><pubDate>Wed, 25 Nov 2026 18:56:41 GMT</pubDate></item><item><title>육아휴직 제도 관련 논란 글은 참 재밌네요[39][2]</title><link>https://www.clien.net/service/board/park/19298498</link><description>
- 
- 
-  &lt;p&gt;제도 취지와 어긋나도 괜찮다는 분들이 많군요...&lt;/p&gt;
-  &lt;p&gt;어쩌면 사회가 많이 병든거 같습니다&lt;/p&gt;
-  &lt;p&gt;각 지자체들 개판으로 예산 집행하는 것들... 정치권 내로남불 시전..&lt;br/&gt;
-    그냥 시민 의식의 반영이다 싶네요 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
-  &lt;p&gt;기분 나쁘신 분들은 미리 죄송합니다 &lt;/p&gt;
-  &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
- 
-</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/park/19298498</guid><pubDate>Wed, 25 Nov 2026 18:29:08 GMT</pubDate></item></channel></rss>
+</description><author></author><guid isPermaLink="true">https://www.clien.net/service/board/cm_car/19298142</guid><pubDate>Wed, 25 Nov 2026 07:34:02 GMT</pubDate></item></channel></rss>
